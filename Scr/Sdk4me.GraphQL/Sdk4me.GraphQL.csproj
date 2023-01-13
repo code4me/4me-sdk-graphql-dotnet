@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>Sdk4me.GraphQL</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+    <Title>Sdk4me.GraphQL</Title>
+    <Authors>Klaas Vandeweerdt</Authors>
+    <Description>A .NET client for accessing the 4me GraphQL API</Description>
+    <Copyright>MIT License</Copyright>
+    <PackageProjectUrl>https://developer.4me.com/graphql</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/code4me/4me-sdk-graphql-dotnet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>4me</PackageTags>
+    <AssemblyVersion>1.0</AssemblyVersion>
+    <FileVersion>1.0</FileVersion>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>LogoDark128x218.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\Local\NuGet\LogoDark128x218.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\Local\NuGet\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Newtonsoft.Json" />
+    <Using Include="Newtonsoft.Json.Linq" />
+    <Using Include="System.Collections.Immutable" />
+    <Using Include="System.Runtime.Serialization" />
+  </ItemGroup>
+
+</Project>
