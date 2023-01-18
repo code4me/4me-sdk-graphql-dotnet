@@ -11,7 +11,7 @@ It abstracts away the complex task of managing low-level details such as sending
 For a general introduction to the GraphQL query language please see [graphql.org](https://graphql.org/), and for a 4me specific introduction see [4me GraphQL Training](https://learning.4me.com/integrations_graphql/).
 
 ## Client
-The `Sdk4meClient` class provides access to all the necessary methods for querying and modifying data. With the `Get` and `Mutation` methods, there are three properties that allow for default behavior customization.
+The `Sdk4meClient` class provides access to all the necessary methods for querying and modifying data. With the `Get` and `Mutation` methods, there are four properties that allow for default behavior customization.
 - The `EnumeratorTolerantSerializer` property, when set to true, allows for ignoring unmappable enumerator values and instead returns null or a default value.
 - The `DefaultItemsPerRequest` property sets the number of items per connection request, with a default and maximum value of 100.
 - The `MaximumRecursiveRequests` property controls the number of recursive requests that the client can make when pagination occurs in the top level query. The default value is 10.
@@ -69,7 +69,7 @@ Console.WriteLine($"{me.Name} ({me.PrimaryEmail})");
 
 #### Get people
 ```csharp
-DataList<Person> people = await client.Get(Query.People);
+DataList<Person> people = await client.Get(Query.Person);
 foreach (Person person in people)
 {   
 }
