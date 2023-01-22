@@ -2198,6 +2198,11 @@
         [EnumMember(Value = "approval")]
         Approval = 1,
         /// <summary>
+        /// Automation.
+        /// </summary>
+        [EnumMember(Value = "automation")]
+        Automation,
+        /// <summary>
         /// Fulfillment Placeholder.
         /// </summary>
         [EnumMember(Value = "fulfillment_placeholder")]

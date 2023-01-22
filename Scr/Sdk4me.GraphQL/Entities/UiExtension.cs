@@ -30,6 +30,23 @@
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
+        /// Description of the user interface Extension.
+        /// </summary>
+        [JsonProperty("description")]
+        public string? Description { get; internal set; }
+
+        [JsonProperty("descriptionAttachments")]
+        internal NodeCollection<Attachment>? DescriptionAttachmentsCollection { get; set; }
+
+        /// <summary>
+        /// Files and inline images linked to the Description field.
+        /// </summary>
+        public DataList<Attachment>? DescriptionAttachments
+        {
+            get => DescriptionAttachmentsCollection?.Data;
+        }
+
+        /// <summary>
         /// Whether the user interface extension is inactive.
         /// </summary>
         [JsonProperty("disabled"), Sdk4meField(true)]
@@ -90,6 +107,7 @@
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)
         {
             HashSet<QueryPageInfo> retval = new();
+            retval.AddRange(DescriptionAttachmentsCollection?.GetQueryPageInfo("descriptionAttachments", depth + 1));
             retval.AddRange(TranslationsCollection?.GetQueryPageInfo("translations", depth + 1));
             retval.AddRange(VersionsCollection?.GetQueryPageInfo("versions", depth + 1));
             return retval;
@@ -97,6 +115,7 @@
 
         internal override void AddToCollection(object data)
         {
+            DescriptionAttachments?.AddRange((data as UiExtension)?.DescriptionAttachments);
             Translations?.AddRange((data as UiExtension)?.Translations);
             Versions?.AddRange((data as UiExtension)?.Versions);
         }

@@ -14,6 +14,15 @@
         }
 
         /// <summary>
+        /// Files and inline images linked to the Description field.
+        /// </summary>
+        public UiExtensionQuery SelectDescriptionAttachments(AttachmentQuery query)
+        {
+            query.FieldName = "descriptionAttachments";
+            return Select(query);
+        }
+
+        /// <summary>
         /// Translations associated with this object.
         /// </summary>
         public UiExtensionQuery SelectTranslations(TranslationQuery query)

@@ -9247,6 +9247,16 @@
         [EnumMember(Value = "createdAt")]
         CreatedAt,
         /// <summary>
+        /// The description field.
+        /// </summary>
+        [EnumMember(Value = "description")]
+        Description,
+        /// <summary>
+        /// The description attachments field.
+        /// </summary>
+        [EnumMember(Value = "descriptionAttachments")]
+        DescriptionAttachments,
+        /// <summary>
         /// The disabled field.
         /// </summary>
         [EnumMember(Value = "disabled")]
@@ -9405,6 +9415,16 @@
         /// </summary>
         [EnumMember(Value = "name")]
         Name,
+        /// <summary>
+        /// The source field.
+        /// </summary>
+        [EnumMember(Value = "source")]
+        Source,
+        /// <summary>
+        /// The source identifier field.
+        /// </summary>
+        [EnumMember(Value = "sourceID")]
+        SourceID,
         /// <summary>
         /// The updated at field.
         /// </summary>

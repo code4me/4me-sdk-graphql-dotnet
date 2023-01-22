@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Text;
 
 namespace Sdk4me.GraphQL
 {
@@ -30,6 +31,17 @@ namespace Sdk4me.GraphQL
         internal virtual string UniqueIdentifier
         {
             get => ID;
+        }
+
+        /// <summary>
+        /// Get the REST API numerical identifier.
+        /// </summary>
+        /// <returns>Returns the REST API numerical identifier; or 0 if the <see cref="ID"/> is null or empty.</returns>
+        public long GetIdentifier()
+        {
+            if (!string.IsNullOrWhiteSpace(ID) && long.TryParse(Encoding.UTF8.GetString(Convert.FromBase64String(ID)).Split('/')[^1], out long retval))
+                return retval;
+            return 0;
         }
 
         /// <summary>

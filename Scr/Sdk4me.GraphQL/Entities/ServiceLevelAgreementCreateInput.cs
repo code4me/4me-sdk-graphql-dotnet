@@ -25,6 +25,7 @@
         private List<string>? personIds;
         private List<string>? siteIds;
         private List<string>? skillPoolIds;
+        private string? customerAccountId;
         private string? clientMutationId;
 
         /// <summary>
@@ -225,6 +226,16 @@
         {
             get => skillPoolIds;
             set => skillPoolIds = Set("skillPoolIds", value);
+        }
+
+        /// <summary>
+        /// Identifier of the account which service level managers are allowed to update the parts of the service level agreement that are intended to be maintained by the service level managers of the customer. More importantly, this field is used to specify whether specialists of the customer are allowed to see the requests that include this service level agreement in their Affected service level agreements section.
+        /// </summary>
+        [JsonProperty("customerAccountId")]
+        public string? CustomerAccountId
+        {
+            get => customerAccountId;
+            set => customerAccountId = Set("customerAccountId", value);
         }
 
         /// <summary>

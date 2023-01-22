@@ -173,7 +173,7 @@
         }
 
         /// <summary>
-        /// Support chat pickup target.
+        /// The number of minutes within which a new or existing chat request that has been assigned to the service desk team is assigned to a specific member within the service desk team, is assigned to another team, or is set to a status other than `assigned`.
         /// </summary>
         [JsonProperty("supportChatPickupTarget")]
         public long? SupportChatPickupTarget

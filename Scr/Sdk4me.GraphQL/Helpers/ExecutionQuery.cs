@@ -16,6 +16,7 @@
         private int depth = 0;
         private List<ExecutionQuery> queries = new();
         private HashSet<string> filters = new();
+        private HashSet<string> customFilters = new();
         private string endCursor = string.Empty;
         private bool onlyQueryID = false;
 
@@ -135,6 +136,15 @@
         {
             get => filters;
             set => filters = value;
+        }
+
+        /// <summary>
+        /// Get or set all custom filters.
+        /// </summary>
+        internal HashSet<string> CustomFilters
+        {
+            get => customFilters;
+            set => customFilters = value;
         }
 
         /// <summary>

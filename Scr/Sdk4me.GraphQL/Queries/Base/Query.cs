@@ -19,6 +19,7 @@ namespace Sdk4me.GraphQL
         private readonly Type dataType = typeof(TEntity);
         private readonly Dictionary<string, IQuery> queries = new();
         private readonly HashSet<string> filters = new();
+        private readonly HashSet<string> customFilters = new();
         private string fieldName = string.Empty;
         private string view = string.Empty;
         private string orderByOrder = string.Empty;
@@ -109,6 +110,14 @@ namespace Sdk4me.GraphQL
         public ImmutableHashSet<string> Filters
         {
             get => filters.ToImmutableHashSet();
+        }
+
+        /// <summary>
+        /// Get all custom filters.
+        /// </summary>
+        public ImmutableHashSet<string> CustomFilters
+        {
+            get => customFilters.ToImmutableHashSet();
         }
 
         /// <summary>
@@ -327,6 +336,20 @@ namespace Sdk4me.GraphQL
         public TEntity Filter(TFields field, FilterOperator filterOperator, bool value)
         {
             return Filter(GetEnumStringValue(field), filterOperator, value);
+        }
+
+        /// <summary>
+        /// Add a custom filter to the query.
+        /// </summary>
+        /// <param name="name">The name of the custom filter (i.e. value of the data-filterable-name attribute of the field in the UI Extension).</param>
+        /// <param name="filterOperator">The filter operator.</param>
+        /// <param name="values">The filter values.</param>
+        /// <returns>The current <see cref="IQuery"/>.</returns>
+        /// <exception cref="NullReferenceException"></exception>
+        internal protected TEntity AddCustomFilter(string name, FilterOperator filterOperator, params string[] values)
+        {
+            customFilters.Add(ExecutionQueryBuilder.BuildCustomFilter(name, filterOperator, values));
+            return this as TEntity ?? throw new NullReferenceException(nameof(TEntity));
         }
 
         private static string GetEnumStringValue(Enum value)

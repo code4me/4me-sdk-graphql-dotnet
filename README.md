@@ -86,7 +86,8 @@ DataList<Person> people = await client.Get(Query.Person
 DataList<Person> people = await client.Get(Query.Person.SelectAll());
 ```
 
-`SelectAll()` will impact performance, try to select the required fields instead.
+`SelectAll()` should only be used for debugging purposes as it may include fields that are not yet available in production and can negatively impact performance.
+It's recommended to only select the necessary fields.
 
 #### Get all people in the Directory and Support Domain accounts
 ```csharp

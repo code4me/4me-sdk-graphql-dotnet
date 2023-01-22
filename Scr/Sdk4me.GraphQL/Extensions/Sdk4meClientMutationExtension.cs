@@ -3082,6 +3082,31 @@
         }
 
         /// <summary>
+        /// Deletes a webhook.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="input">The mutation to execute.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<WebhookDeleteMutationPayload> Mutation(this Sdk4meClient client, WebhookDeleteMutationInput input)
+        {
+            return await client.Mutation(new WebhookDeleteMutation(input));
+        }
+
+        /// <summary>
+        /// Deletes a webhook.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="input">The mutation to execute.</param>
+        /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<WebhookDeleteMutationPayload> Mutation(this Sdk4meClient client, WebhookDeleteMutationInput input, bool throwOnError)
+        {
+            return await client.Mutation(new WebhookDeleteMutation(input), throwOnError);
+        }
+
+        /// <summary>
         /// Creates a new webhook policy.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
@@ -3104,6 +3129,31 @@
         public static async Task<WebhookPolicyCreatePayload> Mutation(this Sdk4meClient client, WebhookPolicyCreateInput input, bool throwOnError)
         {
             return await client.Mutation(new WebhookPolicyCreateMutation(input), throwOnError);
+        }
+
+        /// <summary>
+        /// Deletes a webhook policy.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="input">The mutation to execute.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<WebhookPolicyDeleteMutationPayload> Mutation(this Sdk4meClient client, WebhookPolicyDeleteMutationInput input)
+        {
+            return await client.Mutation(new WebhookPolicyDeleteMutation(input));
+        }
+
+        /// <summary>
+        /// Deletes a webhook policy.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="input">The mutation to execute.</param>
+        /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<WebhookPolicyDeleteMutationPayload> Mutation(this Sdk4meClient client, WebhookPolicyDeleteMutationInput input, bool throwOnError)
+        {
+            return await client.Mutation(new WebhookPolicyDeleteMutation(input), throwOnError);
         }
 
         /// <summary>

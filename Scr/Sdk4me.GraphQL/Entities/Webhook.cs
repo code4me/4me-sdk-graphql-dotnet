@@ -59,6 +59,18 @@
         public string? Name { get; internal set; }
 
         /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source { get; internal set; }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID { get; internal set; }
+
+        /// <summary>
         /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]

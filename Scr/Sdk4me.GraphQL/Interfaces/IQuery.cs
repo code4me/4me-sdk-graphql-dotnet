@@ -57,5 +57,10 @@
         /// Get all filters.
         /// </summary>
         public ImmutableHashSet<string> Filters { get; }
+
+        /// <summary>
+        /// Get all custom filters.
+        /// </summary>
+        public ImmutableHashSet<string> CustomFilters { get; }
     }
 }
