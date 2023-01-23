@@ -1,9 +1,9 @@
 ﻿namespace Sdk4me.GraphQL
 {
     /// <summary>
-    /// An 4me GraphQL ISO8601Time <see cref="JsonConverter"/>.
+    /// An 4me GraphQL ISO8601Timestamp <see cref="JsonConverter"/>.
     /// </summary>
-    public class ISO8601TimeJsonConverter : JsonConverter
+    public class ISO8601TimestampJsonConverter : JsonConverter
     {
         /// <summary>
         /// Determines whether this instance can convert the specified object type.
@@ -12,7 +12,7 @@
         /// <returns> True if this instance can convert the specified object type; otherwise, false.</returns>
         public override bool CanConvert(Type objectType)
         {
-            return (objectType.IsGenericType && objectType.GetGenericTypeDefinition() == typeof(Nullable<>) ? Nullable.GetUnderlyingType(objectType) ?? throw new ArgumentNullException(nameof(objectType)) : objectType) == typeof(TimeSpan);
+            return (objectType.IsGenericType && objectType.GetGenericTypeDefinition() == typeof(Nullable<>) ? Nullable.GetUnderlyingType(objectType) ?? throw new ArgumentNullException(nameof(objectType)) : objectType) == typeof(DateTime);
         }
 
         /// <summary>
@@ -27,14 +27,19 @@
         {
             if (reader.Value is string value)
             {
-                if (value.Split(':') is string[] values && values.Length == 2)
+                if (DateTime.TryParse(value, out DateTime dateTimeValue))
                 {
-                    if (int.TryParse(values[0], out int hours) && int.TryParse(values[1], out int minutes))
-                        return new TimeSpan().Add(TimeSpan.FromHours(hours)).Add(TimeSpan.FromMinutes(minutes));
+                    return dateTimeValue;
                 }
                 else
                 {
-                    TimeSpan.Parse(value);
+                    return value switch
+                    {
+                        "best_effort" => DateTimeValue.BestEffortDateTime,
+                        "no_target" => DateTimeValue.NoTargetDateTime,
+                        "clock_stopped" => DateTimeValue.ClockStoppedDateTime,
+                        _ => null
+                    };
                 }
             }
             return null;
@@ -49,8 +54,15 @@
         /// <param name="serializer">The calling serializer.</param>
         public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
-            if (value is TimeSpan timeSpan)
-                writer.WriteValue($"{Math.Floor(timeSpan.TotalHours):00}:{timeSpan.Minutes:00}");
+            if (value is DateTime dateTime)
+            {
+                if (dateTime.IsBestEffort())
+                    writer.WriteValue(DateTimeValue.BestEffortText);
+                else if (dateTime.IsNoTarget())
+                    writer.WriteValue(DateTimeValue.NoTargetText);
+                else if (dateTime.IsClockStopped())
+                    writer.WriteValue(DateTimeValue.ClockStoppedText);
+            }
             writer.WriteValue(value);
         }
     }

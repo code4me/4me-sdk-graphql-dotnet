@@ -35,6 +35,14 @@ The view argument allows you to target a specific set of data. By default, it is
 The SDK takes care of pagination for you. The maximum number of items returned per connection is 100.
 If your query returns more than 100 items on a connection, it will automatically retrieve the next 100 items without the need to write a new query, thus making it easy to work with large datasets.
 
+### Date and time exceptions
+The 4me GraphQL API has a data type called `ISO8601Timestamp` which includes three non-datetime values: `best_effort`, `no_target`, and `clock_stopped` that cannot be converted to a standard date and time format. To handle these values, the API's SDK includes a custom `JsonConverter` that converts the exception values to specific date and time values:
+- `best_effort` is converted to the date and time value of 0001-01-01 01:01:01.111
+- `no_target` is converted to 0002-02-02 02:02:02.222
+- `clock_stopped` is converted to 0003-03-03 03:03:03.333
+
+These specific values can be accessed through the `DateTimeValue` class.
+
 ## Mutations
 Mutations are used to create, update, or delete data. Like queries, the SDK provides a simple and intuitive way to perform mutations.
 

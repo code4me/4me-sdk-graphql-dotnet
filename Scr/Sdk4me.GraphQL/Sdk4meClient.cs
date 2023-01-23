@@ -17,7 +17,6 @@ namespace Sdk4me.GraphQL
         private readonly HttpClient client;
         private readonly bool traceEnabled = Trace.Listeners != null && Trace.Listeners.Count > 0;
         private readonly string applicationJsonMediaType = "application/json";
-        private readonly DateTime epochDateTimeMinValue = new(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         private AuthenticationToken currentToken;
         private int maximumRecursiveRequests = 10;
         private int maximumQueryDepthLevelConnections = 2;
@@ -154,6 +153,7 @@ namespace Sdk4me.GraphQL
 
             jsonSerializer = new();
             jsonSerializer.Converters.Add(new ISO8601TimeJsonConverter());
+            jsonSerializer.Converters.Add(new ISO8601TimestampJsonConverter());
             jsonSerializer.Converters.Add(new JsonEnumConverter());
 
             client = new();
@@ -253,9 +253,10 @@ namespace Sdk4me.GraphQL
             {
                 JsonSerializerSettings settings = new()
                 {
-                    ContractResolver = new MutationQueryContractResolver(input.Data.GetFields(), typeof(TInEntity)),
-                    Converters = new[] { new ISO8601TimeJsonConverter() }
+                    ContractResolver = new MutationQueryContractResolver(input.Data.GetFields(), typeof(TInEntity))
                 };
+                settings.Converters.Add(new ISO8601TimeJsonConverter());
+                settings.Converters.Add(new ISO8601TimestampJsonConverter());
 
                 string query = $"{{\"query\":{JsonConvert.SerializeObject(ExecutionQueryBuilder.GetGraphQLQuery(input))},\"variables\":{{\"input\":{JsonConvert.SerializeObject(input.Data, settings)}}}}}";
                 JToken responseData = await SendHttpRequest(requestMessage, query);
@@ -428,7 +429,7 @@ namespace Sdk4me.GraphQL
             {
                 currentToken.RequestLimit = Convert.ToInt32(responseMessage.Headers.GetValues("X-RateLimit-Limit").First());
                 currentToken.RequestsRemaining = Convert.ToInt32(responseMessage.Headers.GetValues("X-RateLimit-Remaining").First());
-                currentToken.RequestLimitReset = epochDateTimeMinValue.AddSeconds(Convert.ToInt64(responseMessage.Headers.GetValues("X-RateLimit-Reset").First())).ToLocalTime();
+                currentToken.RequestLimitReset = DateTime.UnixEpoch.AddSeconds(Convert.ToInt64(responseMessage.Headers.GetValues("X-RateLimit-Reset").First())).ToLocalTime();
             }
         }
 
