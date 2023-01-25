@@ -9,7 +9,7 @@
         /// Initialize a new user interface extension version query instance.
         /// </summary>
         public UiExtensionVersionQuery()
-            : base("", typeof(UiExtensionVersion), false)
+            : base("", typeof(UiExtensionVersion), true)
         {
         }
     }
