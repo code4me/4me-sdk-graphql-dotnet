@@ -51,5 +51,16 @@
         {
             return $"https://graphql.{domainName}";
         }
+
+        /// <summary>
+        /// Returns the OAuth 2.0 authentication URL for a custom domain.
+        /// </summary>
+        /// <param name="domainName">The custom domain name.</param>
+        /// <returns>The OAuth 2.0 authentication URL for the specified custom domain.</returns>
+        internal static string GetOAuth2(string domainName)
+        {
+            return $"https://oauth.{domainName}/token";
+
+        }
     }
 }

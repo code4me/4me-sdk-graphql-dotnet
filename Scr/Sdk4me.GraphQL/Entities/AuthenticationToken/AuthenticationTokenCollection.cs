@@ -36,30 +36,50 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// Create a new instance of an <see cref="AuthenticationTokenCollection"/>.
+        /// Create a new instance of an <see cref="AuthenticationTokenCollection"/> with <b>Personal Access Token</b> authentication.
         /// </summary>
-        /// <param name="authenticationToken">The 4me authentication token.</param>
+        /// <param name="authenticationToken">The 4me Personal Access Token.</param>
         public AuthenticationTokenCollection(string authenticationToken)
         {
             Add(authenticationToken);
         }
 
         /// <summary>
+        /// Create a new instance of an <see cref="AuthenticationTokenCollection"/> with <b>OAuth 2.0 Client Credentials Grant</b> authentication.
+        /// </summary>
+        /// <param name="clientID">The 4me OAuth 2.0 client grant client ID.</param>
+        /// <param name="clientSecret">The 4me OAuth 2.0 client grant client secret.</param>
+        public AuthenticationTokenCollection(string clientID, string clientSecret)
+        {
+            Add(clientID, clientSecret);
+        }
+
+        /// <summary>
         /// Create a new instance of an <see cref="AuthenticationTokenCollection"/>.
         /// </summary>
-        /// <param name="authenticationToken">An 4me authentication token to add to the collection.</param>
+        /// <param name="authenticationToken">A 4me authentication token to add to the collection.</param>
         public AuthenticationTokenCollection(AuthenticationToken authenticationToken)
         {
             Add(authenticationToken);
         }
 
         /// <summary>
-        /// Adds a 4me authentication token to the collection.
+        /// Add a 4me Personal Access Token to the collection.
         /// </summary>
-        /// <param name="authenticationToken">The 4me authentication token.</param>
+        /// <param name="authenticationToken">The 4me Personal Access Token.</param>
         public void Add(string authenticationToken)
         {
             Add(new AuthenticationToken(authenticationToken));
+        }
+
+        /// <summary>
+        /// Add a 4me OAuth 2.0 client grant credential to the collection.
+        /// </summary>
+        /// <param name="clientID">The 4me OAuth 2.0 client grant client ID.</param>
+        /// <param name="clientSecret">The 4me OAuth 2.0 client grant client secret.</param>
+        public void Add(string clientID, string clientSecret)
+        {
+            Add(new AuthenticationToken(clientID, clientSecret));
         }
 
         /// <summary>
@@ -71,12 +91,12 @@ namespace Sdk4me.GraphQL
             if (authenticationToken is null)
                 throw new Sdk4meTokenNullReferenceException(nameof(authenticationToken));
 
-            if (string.IsNullOrWhiteSpace(authenticationToken.Token))
-                throw new Sdk4meTokenNullReferenceException($"'{nameof(authenticationToken.Token)}' cannot be null or whitespace.");
+            if (string.IsNullOrWhiteSpace(authenticationToken.Token) && (string.IsNullOrWhiteSpace(authenticationToken.ClientID) || string.IsNullOrWhiteSpace(authenticationToken.ClientSecret)))
+                throw new Sdk4meTokenNullReferenceException($"Missing Client ID and Client Secret, or Personal Access Token");
 
             for (int i = 0; i < authenticationTokens.Count; i++)
             {
-                if (authenticationTokens[i].Token.Equals(authenticationToken.Token))
+                if (authenticationTokens[i].Token.Equals(authenticationToken.Token) && authenticationTokens[i].ClientID.Equals(authenticationToken.ClientID) && authenticationTokens[i].ClientSecret.Equals(authenticationToken.ClientSecret))
                     return;
             }
             authenticationTokens.Add(authenticationToken);

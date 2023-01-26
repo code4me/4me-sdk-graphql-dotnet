@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace Sdk4me.GraphQL
+﻿namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// A 4me GraphQL query.

@@ -14,6 +14,7 @@ namespace Sdk4me.GraphQL
         private readonly JsonSerializer jsonSerializer;
         private readonly string accountID;
         private readonly string url;
+        private readonly string oauth2Url;
         private readonly HttpClient client;
         private readonly bool traceEnabled = Trace.Listeners != null && Trace.Listeners.Count > 0;
         private readonly string applicationJsonMediaType = "application/json";
@@ -147,6 +148,7 @@ namespace Sdk4me.GraphQL
                 throw new ArgumentException($"'{nameof(authenticationTokens)}' cannot be empty.", nameof(authenticationTokens));
 
             url = EndpointUrlBuilder.Get(domainName);
+            oauth2Url = EndpointUrlBuilder.GetOAuth2(domainName);
             this.authenticationTokens = authenticationTokens;
             this.accountID = accountID;
             this.maximumRecursiveRequests = (maximumRecursiveRequests < 1 || maximumRecursiveRequests > 1000) ? 10 : maximumRecursiveRequests;
@@ -356,9 +358,34 @@ namespace Sdk4me.GraphQL
         {
             HttpRequestMessage retval = new(HttpMethod.Post, url);
             currentToken = authenticationTokens.Get();
-            retval.Headers.Authorization = new AuthenticationHeaderValue("Bearer", currentToken.Token);
+            GetAuthenticationToken();
+            retval.Headers.Authorization = new AuthenticationHeaderValue(currentToken.TokenType, currentToken.Token);
             retval.Headers.Add("X-4me-Account", accountID);
             return retval;
+        }
+
+        /// <summary>
+        /// Sets the authentication method, which can be a Personal Access Token or a OAuth 2.0 Client Credential Grant.
+        /// </summary>
+        private void GetAuthenticationToken()
+        {
+            if (currentToken.IsTokenExpired())
+            {
+                using (HttpRequestMessage requestMessage = new(HttpMethod.Post, oauth2Url))
+                {
+                    requestMessage.Content = new FormUrlEncodedContent(new Dictionary<string, string>() { { "grant_type", "client_credentials" }, { "client_id", currentToken.ClientID }, { "client_secret", currentToken.ClientSecret } });
+                    using (HttpResponseMessage responseMessage = client.Send(requestMessage))
+                    {
+                        responseMessage.EnsureSuccessStatusCode();
+
+                        string content = responseMessage.Content.ReadAsStringAsync().Result;
+                        AuthenticationOAuth2Reponse response = JsonConvert.DeserializeObject<AuthenticationOAuth2Reponse>(content) ?? throw new Sdk4meException("Invalid authentication response");
+                        currentToken.Token = response.AccessToken;
+                        currentToken.TokenType = response.TokenType;
+                        currentToken.AuthenticationTokenExpires = DateTime.Now.AddSeconds(response.ExpiresIn);
+                    }
+                }
+            }
         }
 
         /// <summary>

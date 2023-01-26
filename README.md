@@ -17,6 +17,9 @@ The `Sdk4meClient` class provides access to all the necessary methods for queryi
 - The `MaximumRecursiveRequests` property controls the number of recursive requests that the client can make when pagination occurs in the top level query. The default value is 10.
 - The `MaximumQueryDepthLevelConnections` property controls the depth of nested queries. While it is possible to increase this limit, it can negatively affect performance. The default value is 2.
 
+## Authentication
+The SDK supports both Personal Access Token and OAuth 2.0 Client Credential Grant authentication methods. It automatically renews the token 1 minute before it expires when using OAuth 2.0 Client Credential Grant.
+
 ## Querying
 The SDK provides a simple and intuitive way to write queries, allowing you to easily retrieve the data you need.
 The query interface also enables you to write nested queries, which can generate GraphQL connections, making it simple to work with related data.
@@ -67,7 +70,7 @@ The detailed information includes the HTTP verb, the URL and the content. [Trace
 ```csharp
 using Sdk4me.GraphQL;
 
-AuthenticationToken token = new AuthenticationToken("TheBearerToken");
+AuthenticationToken token = new AuthenticationToken("clientID", "clientSecret");
 Sdk4meClient client = new(token, "account-name", EnvironmentType.Production, EnvironmentRegion.EU);
 Person me = client.Me().Result;
 Console.WriteLine($"{me.Name} ({me.PrimaryEmail})");
@@ -285,8 +288,8 @@ By default the SDK will throw an new exception. The mutation method has one addi
 ```csharp
 AuthenticationTokenCollection tokens = new AuthenticationTokenCollection()
 {
-    new AuthenticationToken("TheFirstBearerToken"),
-    new AuthenticationToken("TheSecondBearerToken")
+    new AuthenticationToken("OAuth 2.0 Client Credential Client ID", "OAuth 2.0 Client Credential Client Secret"),
+    new AuthenticationToken("A personal access token")
 };
 
 Sdk4meClient client = new(token, "account-name", EnvironmentType.Demo, EnvironmentRegion.EU);

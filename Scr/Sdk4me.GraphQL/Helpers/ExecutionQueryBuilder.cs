@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Text;
 
 namespace Sdk4me.GraphQL
