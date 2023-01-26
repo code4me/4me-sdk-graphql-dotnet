@@ -95,6 +95,8 @@ namespace Sdk4me.GraphQL
         /// <param name="environment">The 4me environment.</param>
         /// <param name="environmentRegion">The 4me environment region.</param>
         /// <param name="maximumRecursiveRequests">The number of recursive requests.</param>
+        /// <exception cref="ArgumentException"></exception>
+        /// <exception cref="ArgumentNullException"></exception>
         public Sdk4meClient(AuthenticationToken authenticationToken, string accountID, EnvironmentType environment, EnvironmentRegion environmentRegion, int maximumRecursiveRequests = 10)
             : this(new AuthenticationTokenCollection(authenticationToken), accountID, EndpointUrlBuilder.Get(environmentRegion, environment), maximumRecursiveRequests)
         {
@@ -122,6 +124,8 @@ namespace Sdk4me.GraphQL
         /// <param name="environment">The 4me environment.</param>
         /// <param name="environmentRegion">The 4me environment region.</param>
         /// <param name="maximumRecursiveRequests">The number of recursive requests.</param>
+        /// <exception cref="ArgumentException"></exception>
+        /// <exception cref="ArgumentNullException"></exception>
         public Sdk4meClient(AuthenticationTokenCollection authenticationTokens, string accountID, EnvironmentType environment, EnvironmentRegion environmentRegion, int maximumRecursiveRequests = 10)
             : this(authenticationTokens, accountID, EndpointUrlBuilder.Get(environmentRegion, environment), maximumRecursiveRequests)
         {
@@ -377,7 +381,6 @@ namespace Sdk4me.GraphQL
                     using (HttpResponseMessage responseMessage = client.Send(requestMessage))
                     {
                         responseMessage.EnsureSuccessStatusCode();
-
                         string content = responseMessage.Content.ReadAsStringAsync().Result;
                         AuthenticationOAuth2Reponse response = JsonConvert.DeserializeObject<AuthenticationOAuth2Reponse>(content) ?? throw new Sdk4meException("Invalid authentication response");
                         currentToken.Token = response.AccessToken;

@@ -5,6 +5,7 @@
     /// </summary>
     public sealed class AuthenticationToken
     {
+        private readonly int identifier = 0;
         private readonly string clientID = string.Empty;
         private readonly string clientSecret = string.Empty;
         private string authenticationToken = string.Empty;
@@ -14,6 +15,14 @@
         private DateTime requestLimitReset = DateTime.MinValue;
         private DateTime updatedAt = DateTime.MinValue;
         private DateTime authenticationTokenExpires = DateTime.MinValue;
+
+        /// <summary>
+        /// Gets the unique identifier.
+        /// </summary>
+        internal int Identifier
+        {
+            get => identifier;
+        }
 
         /// <summary>
         /// Get the 4me authentication token.
@@ -102,7 +111,7 @@
         /// <returns>True if the current token is expired; otherwise false</returns>
         internal bool IsTokenExpired()
         {
-            return authenticationTokenExpires < DateTime.Now.AddMinutes(-1);
+            return authenticationTokenExpires < DateTime.Now.AddMinutes(+1);
         }
 
         /// <summary>
@@ -114,6 +123,7 @@
             this.authenticationToken = authenticationToken;
             authenticationTokenExpires = DateTime.MaxValue;
             tokenType = "bearer";
+            identifier = authenticationToken.GetHashCode();
         }
 
         /// <summary>
@@ -127,6 +137,7 @@
             this.clientSecret = clientSecret;
             authenticationTokenExpires = DateTime.MinValue;
             tokenType = string.Empty;
+            identifier = (clientID + clientSecret).GetHashCode();
         }
     }
 }
