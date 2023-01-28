@@ -18,6 +18,7 @@
         private string? label;
         private string? location;
         private DateOnly? warrantyExpiryDate;
+        private string? remarks;
         private decimal? purchaseValue;
         private string? purchaseValueCurrency;
         private List<string>? userIds;
@@ -150,6 +151,16 @@
         {
             get => warrantyExpiryDate;
             set => warrantyExpiryDate = Set("warrantyExpiryDate", value);
+        }
+
+        /// <summary>
+        /// Any additional information about the configuration item that might prove useful. When creating a new configuration item and a value is not specified for this field, it is set to the remarks of the CI's product.
+        /// </summary>
+        [JsonProperty("remarks")]
+        public string? Remarks
+        {
+            get => remarks;
+            set => remarks = Set("remarks", value);
         }
 
         /// <summary>

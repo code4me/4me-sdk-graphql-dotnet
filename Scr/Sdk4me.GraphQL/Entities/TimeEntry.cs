@@ -12,10 +12,28 @@
         public Account? Account { get; internal set; }
 
         /// <summary>
+        /// The Activity identifier is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider. Some examples of activities are standard requests, a high impact incident or a request for information. The Activity identifier can be used to support integrations between the billing system of the service provider and the 4me account in which the activities are performed.
+        /// </summary>
+        [JsonProperty("activityID")]
+        public string? ActivityID { get; internal set; }
+
+        /// <summary>
         /// The record in which the Time spent field was filled out to cause the time entry to be generated.
         /// </summary>
         [JsonProperty("assignment")]
         public HasTimeEntries? Assignment { get; internal set; }
+
+        /// <summary>
+        /// The Billing identifier is the unique identifier by which all the activities that are performed through the coverage of the service level agreement are known in the billing system of the service provider. The billing identifier can be used to support integrations between the billing system of the service provider and the 4me account in which the activities are performed.
+        /// </summary>
+        [JsonProperty("billingID")]
+        public string? BillingID { get; internal set; }
+
+        /// <summary>
+        /// The Charge identifier is the unique identifier by which an effort class that is linked to a time entry when an activity was performed through the coverage of the service level agreement is known in the billing system of the service provider. The effort class represents the type of effort that was performed when working on an activity. Some examples of effort classes are 'Billable - Normal Hours', 'Billable overtime', 'Non Billable' or 'Senior System Engineer'. The Charge identifier can be used to support integrations between the billing system of the service provider and the 4me account in which the activities are performed. In the billing system the Charge IDs will be linked to the rates that have been agreed on in the service contract.
+        /// </summary>
+        [JsonProperty("chargeID")]
+        public string? ChargeID { get; internal set; }
 
         /// <summary>
         /// Whether the time entry should be considered a correction for a time entry that was registered for a date that has already been locked.

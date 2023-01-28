@@ -12,6 +12,18 @@
         public Account? Account { get; internal set; }
 
         /// <summary>
+        /// The Activity identifier is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider. This contains the activityIDs related to request categories.
+        /// </summary>
+        [JsonProperty("activityID")]
+        public ActivityID? ActivityID { get; internal set; }
+
+        /// <summary>
+        /// The Billing identifier is the unique identifier by which all the activities that are performed through the coverage of the service level agreement are known in the billing system of the service provider.
+        /// </summary>
+        [JsonProperty("billingID")]
+        public string? BillingID { get; internal set; }
+
+        /// <summary>
         /// Used to specify how people who are to be covered by the service level agreement are to be selected.
         /// </summary>
         [JsonProperty("coverage")]
@@ -46,8 +58,19 @@
             get => CustomerRepresentativesCollection?.Data;
         }
 
+        [JsonProperty("effortClassChargeIDs")]
+        internal NodeCollection<EffortClassChargeID>? EffortClassChargeIDsCollection { get; set; }
+
         /// <summary>
-        /// The date through which the agreement will be active. The agreement expires at the end of this day if it is not renewed before then. When the agreement has expired, its status will automatically be set to "Expired".
+        /// The Charge IDs are the unique identifiers by which an effort class that is linked to a time entry when an activity was performed through the coverage of the service level agreement is known in the billing system of the service provider.
+        /// </summary>
+        public DataList<EffortClassChargeID>? EffortClassChargeIDs
+        {
+            get => EffortClassChargeIDsCollection?.Data;
+        }
+
+        /// <summary>
+        /// The date through which the agreement will be active. The agreement expires at the end of this day if it is not renewed before then. When the agreement has expired, its status will automatically be set to `expired`.
         /// </summary>
         [JsonProperty("expiryDate")]
         public DateOnly? ExpiryDate { get; internal set; }
@@ -177,6 +200,17 @@
         [JsonProperty("sourceID"), Sdk4meField(true)]
         public string? SourceID { get; internal set; }
 
+        [JsonProperty("standardServiceRequestActivityIDs")]
+        internal NodeCollection<StandardServiceRequestActivityID>? StandardServiceRequestActivityIDsCollection { get; set; }
+
+        /// <summary>
+        /// Represents the activityIDs for standard service requests. The Activity identifier is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider.
+        /// </summary>
+        public DataList<StandardServiceRequestActivityID>? StandardServiceRequestActivityIDs
+        {
+            get => StandardServiceRequestActivityIDsCollection?.Data;
+        }
+
         /// <summary>
         /// The first day during which the agreement is active.
         /// </summary>
@@ -211,6 +245,7 @@
         {
             HashSet<QueryPageInfo> retval = new();
             retval.AddRange(CustomerRepresentativesCollection?.GetQueryPageInfo("customerRepresentatives", depth + 1));
+            retval.AddRange(EffortClassChargeIDsCollection?.GetQueryPageInfo("effortClassChargeIDs", depth + 1));
             retval.AddRange(InvoicesCollection?.GetQueryPageInfo("invoices", depth + 1));
             retval.AddRange(OrganizationsCollection?.GetQueryPageInfo("organizations", depth + 1));
             retval.AddRange(PeopleCollection?.GetQueryPageInfo("people", depth + 1));
@@ -218,12 +253,14 @@
             retval.AddRange(ServiceInstancesCollection?.GetQueryPageInfo("serviceInstances", depth + 1));
             retval.AddRange(SitesCollection?.GetQueryPageInfo("sites", depth + 1));
             retval.AddRange(SkillPoolsCollection?.GetQueryPageInfo("skillPools", depth + 1));
+            retval.AddRange(StandardServiceRequestActivityIDsCollection?.GetQueryPageInfo("standardServiceRequestActivityIDs", depth + 1));
             return retval;
         }
 
         internal override void AddToCollection(object data)
         {
             CustomerRepresentatives?.AddRange((data as ServiceLevelAgreement)?.CustomerRepresentatives);
+            EffortClassChargeIDs?.AddRange((data as ServiceLevelAgreement)?.EffortClassChargeIDs);
             Invoices?.AddRange((data as ServiceLevelAgreement)?.Invoices);
             Organizations?.AddRange((data as ServiceLevelAgreement)?.Organizations);
             People?.AddRange((data as ServiceLevelAgreement)?.People);
@@ -231,6 +268,7 @@
             ServiceInstances?.AddRange((data as ServiceLevelAgreement)?.ServiceInstances);
             Sites?.AddRange((data as ServiceLevelAgreement)?.Sites);
             SkillPools?.AddRange((data as ServiceLevelAgreement)?.SkillPools);
+            StandardServiceRequestActivityIDs?.AddRange((data as ServiceLevelAgreement)?.StandardServiceRequestActivityIDs);
         }
     }
 }

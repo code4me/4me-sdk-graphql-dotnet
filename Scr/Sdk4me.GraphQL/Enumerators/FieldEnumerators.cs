@@ -28,6 +28,43 @@
     }
 
     /// <summary>
+    /// The <see cref="ActivityID">ActivityID</see> fields.
+    /// </summary>
+    public enum ActivityIDField
+    {
+        /// <summary>
+        /// The high field.
+        /// </summary>
+        [EnumMember(Value = "high")]
+        High,
+        /// <summary>
+        /// The low field.
+        /// </summary>
+        [EnumMember(Value = "low")]
+        Low,
+        /// <summary>
+        /// The medium field.
+        /// </summary>
+        [EnumMember(Value = "medium")]
+        Medium,
+        /// <summary>
+        /// The rfc field.
+        /// </summary>
+        [EnumMember(Value = "rfc")]
+        Rfc,
+        /// <summary>
+        /// The rfi field.
+        /// </summary>
+        [EnumMember(Value = "rfi")]
+        Rfi,
+        /// <summary>
+        /// The top field.
+        /// </summary>
+        [EnumMember(Value = "top")]
+        Top,
+    }
+
+    /// <summary>
     /// The <see cref="Address">Address</see> fields.
     /// </summary>
     public enum AddressField
@@ -354,10 +391,10 @@
         [EnumMember(Value = "actionType")]
         ActionType,
         /// <summary>
-        /// The board field.
+        /// The agile board field.
         /// </summary>
-        [EnumMember(Value = "board")]
-        Board,
+        [EnumMember(Value = "agileBoard")]
+        AgileBoard,
         /// <summary>
         /// The created at field.
         /// </summary>
@@ -1812,6 +1849,38 @@
         /// </summary>
         [EnumMember(Value = "timesheetSettings")]
         TimesheetSettings,
+        /// <summary>
+        /// The updated at field.
+        /// </summary>
+        [EnumMember(Value = "updatedAt")]
+        UpdatedAt,
+    }
+
+    /// <summary>
+    /// The <see cref="EffortClassChargeID">EffortClassChargeID</see> fields.
+    /// </summary>
+    public enum EffortClassChargeIDField
+    {
+        /// <summary>
+        /// The charge identifier field.
+        /// </summary>
+        [EnumMember(Value = "chargeID")]
+        ChargeID,
+        /// <summary>
+        /// The created at field.
+        /// </summary>
+        [EnumMember(Value = "createdAt")]
+        CreatedAt,
+        /// <summary>
+        /// The effort class field.
+        /// </summary>
+        [EnumMember(Value = "effortClass")]
+        EffortClass,
+        /// <summary>
+        /// The identifier field.
+        /// </summary>
+        [EnumMember(Value = "id")]
+        ID,
         /// <summary>
         /// The updated at field.
         /// </summary>
@@ -6480,6 +6549,16 @@
         [EnumMember(Value = "account")]
         Account,
         /// <summary>
+        /// The activity identifier field.
+        /// </summary>
+        [EnumMember(Value = "activityID")]
+        ActivityID,
+        /// <summary>
+        /// The billing identifier field.
+        /// </summary>
+        [EnumMember(Value = "billingID")]
+        BillingID,
+        /// <summary>
         /// The coverage field.
         /// </summary>
         [EnumMember(Value = "coverage")]
@@ -6504,6 +6583,11 @@
         /// </summary>
         [EnumMember(Value = "customerRepresentatives")]
         CustomerRepresentatives,
+        /// <summary>
+        /// The effort class charge ids field.
+        /// </summary>
+        [EnumMember(Value = "effortClassChargeIDs")]
+        EffortClassChargeIDs,
         /// <summary>
         /// The expiry date field.
         /// </summary>
@@ -6589,6 +6673,11 @@
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
+        /// <summary>
+        /// The standard service request activity ids field.
+        /// </summary>
+        [EnumMember(Value = "standardServiceRequestActivityIDs")]
+        StandardServiceRequestActivityIDs,
         /// <summary>
         /// The start date field.
         /// </summary>
@@ -7789,6 +7878,38 @@
     }
 
     /// <summary>
+    /// The <see cref="StandardServiceRequestActivityID">StandardServiceRequestActivityID</see> fields.
+    /// </summary>
+    public enum StandardServiceRequestActivityIDField
+    {
+        /// <summary>
+        /// The activity identifier field.
+        /// </summary>
+        [EnumMember(Value = "activityID")]
+        ActivityID,
+        /// <summary>
+        /// The created at field.
+        /// </summary>
+        [EnumMember(Value = "createdAt")]
+        CreatedAt,
+        /// <summary>
+        /// The identifier field.
+        /// </summary>
+        [EnumMember(Value = "id")]
+        ID,
+        /// <summary>
+        /// The standard service request field.
+        /// </summary>
+        [EnumMember(Value = "standardServiceRequest")]
+        StandardServiceRequest,
+        /// <summary>
+        /// The updated at field.
+        /// </summary>
+        [EnumMember(Value = "updatedAt")]
+        UpdatedAt,
+    }
+
+    /// <summary>
     /// The <see cref="Survey">Survey</see> fields.
     /// </summary>
     public enum SurveyField
@@ -8888,6 +9009,21 @@
         /// </summary>
         [EnumMember(Value = "account")]
         Account,
+        /// <summary>
+        /// The activity identifier field.
+        /// </summary>
+        [EnumMember(Value = "activityID")]
+        ActivityID,
+        /// <summary>
+        /// The billing identifier field.
+        /// </summary>
+        [EnumMember(Value = "billingID")]
+        BillingID,
+        /// <summary>
+        /// The charge identifier field.
+        /// </summary>
+        [EnumMember(Value = "chargeID")]
+        ChargeID,
         /// <summary>
         /// The correction field.
         /// </summary>

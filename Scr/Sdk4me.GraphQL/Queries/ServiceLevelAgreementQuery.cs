@@ -23,6 +23,15 @@
         }
 
         /// <summary>
+        /// The Charge IDs are the unique identifiers by which an effort class that is linked to a time entry when an activity was performed through the coverage of the service level agreement is known in the billing system of the service provider.
+        /// </summary>
+        public ServiceLevelAgreementQuery SelectEffortClassChargeIDs(EffortClassChargeIDQuery query)
+        {
+            query.FieldName = "effortClassChargeIDs";
+            return Select(query);
+        }
+
+        /// <summary>
         /// Invoices associated with this object.
         /// </summary>
         public ServiceLevelAgreementQuery SelectInvoices(InvoiceQuery query)
@@ -82,6 +91,15 @@
         public ServiceLevelAgreementQuery SelectSkillPools(SkillPoolQuery query)
         {
             query.FieldName = "skillPools";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Represents the activityIDs for standard service requests. The Activity identifier is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider.
+        /// </summary>
+        public ServiceLevelAgreementQuery SelectStandardServiceRequestActivityIDs(StandardServiceRequestActivityIDQuery query)
+        {
+            query.FieldName = "standardServiceRequestActivityIDs";
             return Select(query);
         }
     }

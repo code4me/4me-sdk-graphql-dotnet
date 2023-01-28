@@ -11,20 +11,13 @@
             DataList<ServiceInstance> serviceInstances = client.Get(Query.ServiceInstance
                 .View(ServiceInstanceView.All)
                 .SelectAll()
-                .SelectChildServiceInstances(new ServiceInstanceQuery()
-                    .SelectAll())
-                .SelectConfigurationItems(new ConfigurationItemQuery()
-                    .SelectAll())
-                .SelectCustomFieldsAttachments(new AttachmentQuery()
-                    .SelectAll())
-                .SelectParentServiceInstances(new ServiceInstanceQuery()
-                    .SelectAll())
-                .SelectRemarksAttachments(new AttachmentQuery()
-                    .SelectAll())
-                .SelectServiceLevelAgreements(new ServiceLevelAgreementQuery()
-                    .SelectAll())
-                .SelectTranslations(new TranslationQuery()
-                    .SelectAll())
+                .SelectChildServiceInstances(new ServiceInstanceQuery())
+                .SelectConfigurationItems(new ConfigurationItemQuery())
+                .SelectCustomFieldsAttachments(new AttachmentQuery())
+                .SelectParentServiceInstances(new ServiceInstanceQuery())
+                .SelectRemarksAttachments(new AttachmentQuery())
+                .SelectServiceLevelAgreements(new ServiceLevelAgreementQuery())
+                .SelectTranslations(new TranslationQuery())
                 ).Result;
 
             Assert.IsNotNull(serviceInstances);

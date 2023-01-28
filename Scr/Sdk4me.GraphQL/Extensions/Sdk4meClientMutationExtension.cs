@@ -857,6 +857,31 @@
         }
 
         /// <summary>
+        /// Adds a new note to a record.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="input">The mutation to execute.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<NoteCreatePayload> Mutation(this Sdk4meClient client, NoteCreateInput input)
+        {
+            return await client.Mutation(new NoteCreateMutation(input));
+        }
+
+        /// <summary>
+        /// Adds a new note to a record.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="input">The mutation to execute.</param>
+        /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<NoteCreatePayload> Mutation(this Sdk4meClient client, NoteCreateInput input, bool throwOnError)
+        {
+            return await client.Mutation(new NoteCreateMutation(input), throwOnError);
+        }
+
+        /// <summary>
         /// Creates a new organization.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>

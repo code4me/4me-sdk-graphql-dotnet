@@ -53,7 +53,7 @@
         public Person? CustomerRepresentative { get; internal set; }
 
         /// <summary>
-        /// The date through which the agreement will be active. The agreement expires at the end of this day if it is not renewed before then. When the agreement has expired, its status will automatically be set to "Expired".
+        /// The date through which the agreement will be active. The agreement expires at the end of this day if it is not renewed before then. When the agreement has expired, its status will automatically be set to `expired`.
         /// </summary>
         [JsonProperty("expiryDate")]
         public DateOnly? ExpiryDate { get; internal set; }

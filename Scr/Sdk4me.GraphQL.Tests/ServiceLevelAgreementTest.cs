@@ -13,6 +13,8 @@
                 .SelectAll()
                 .SelectCustomerRepresentatives(new PersonQuery()
                     .SelectAll())
+                .SelectEffortClassChargeIDs(new EffortClassChargeIDQuery()
+                    .SelectAll())
                 .SelectInvoices(new InvoiceQuery()
                     .SelectAll())
                 .SelectOrganizations(new OrganizationQuery()
@@ -26,6 +28,8 @@
                 .SelectSites(new SiteQuery()
                     .SelectAll())
                 .SelectSkillPools(new SkillPoolQuery()
+                    .SelectAll())
+                .SelectStandardServiceRequestActivityIDs(new StandardServiceRequestActivityIDQuery()
                     .SelectAll())
                 ).Result;
 

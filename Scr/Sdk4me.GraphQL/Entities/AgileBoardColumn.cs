@@ -20,8 +20,8 @@
         /// <summary>
         /// Agile board the column is part of.
         /// </summary>
-        [JsonProperty("board")]
-        public AgileBoard? Board { get; internal set; }
+        [JsonProperty("agileBoard")]
+        public AgileBoard? AgileBoard { get; internal set; }
 
         /// <summary>
         /// The date and time at which the record was created.

@@ -20,11 +20,15 @@
         private string? remarks;
         private SlaCoverage? coverage;
         private bool? useKnowledgeFromServiceProvider;
+        private string? billingID;
+        private ActivityIDInput? activityID;
         private List<string>? customerRepresentativeIds;
         private List<string>? organizationIds;
         private List<string>? personIds;
         private List<string>? siteIds;
         private List<string>? skillPoolIds;
+        private List<EffortClassChargeIDInput>? newEffortClassChargeIDs;
+        private List<StandardServiceRequestActivityIDInput>? newStandardServiceRequestActivityIDs;
         private string? customerAccountId;
         private string? clientMutationId;
 
@@ -179,6 +183,26 @@
         }
 
         /// <summary>
+        /// The Billing identifier is the unique identifier by which all the activities that are performed through the coverage of the service level agreement are known in the billing system of the service provider.
+        /// </summary>
+        [JsonProperty("billingID")]
+        public string? BillingID
+        {
+            get => billingID;
+            set => billingID = Set("billingID", value);
+        }
+
+        /// <summary>
+        /// The Activity identifier is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider. This contains the activityIDs related to request categories.
+        /// </summary>
+        [JsonProperty("activityID")]
+        public ActivityIDInput? ActivityID
+        {
+            get => activityID;
+            set => activityID = Set("activityID", value);
+        }
+
+        /// <summary>
         /// Identifiers of the people who represents the customer organization for the service level agreement.
         /// </summary>
         [JsonProperty("customerRepresentativeIds")]
@@ -226,6 +250,26 @@
         {
             get => skillPoolIds;
             set => skillPoolIds = Set("skillPoolIds", value);
+        }
+
+        /// <summary>
+        /// The Charge IDs are the unique identifiers by which an effort class that is linked to a time entry when an activity was performed through the coverage of the service level agreement is known in the billing system of the service provider.
+        /// </summary>
+        [JsonProperty("newEffortClassChargeIDs")]
+        public List<EffortClassChargeIDInput>? NewEffortClassChargeIDs
+        {
+            get => newEffortClassChargeIDs;
+            set => newEffortClassChargeIDs = Set("newEffortClassChargeIDs", value);
+        }
+
+        /// <summary>
+        /// Represents the activityIDs for standard service requests. The Activity identifier is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider.
+        /// </summary>
+        [JsonProperty("newStandardServiceRequestActivityIDs")]
+        public List<StandardServiceRequestActivityIDInput>? NewStandardServiceRequestActivityIDs
+        {
+            get => newStandardServiceRequestActivityIDs;
+            set => newStandardServiceRequestActivityIDs = Set("newStandardServiceRequestActivityIDs", value);
         }
 
         /// <summary>
