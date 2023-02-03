@@ -27,6 +27,8 @@
                     .SelectAll())
                 .SelectTimeEntries(new TimeEntryQuery()
                     .SelectAll())
+                .SelectWatches(new WatchQuery()
+                    .SelectAll())
                 ).Result;
 
             Assert.IsNotNull(requests);

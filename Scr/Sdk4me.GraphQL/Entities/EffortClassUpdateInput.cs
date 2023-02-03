@@ -12,6 +12,7 @@
         private string? name;
         private long? position;
         private List<string>? timesheetSettingIds;
+        private List<string>? serviceOfferingIds;
         private string? id;
         private string? clientMutationId;
 
@@ -76,13 +77,23 @@
         }
 
         /// <summary>
-        /// Timesheet settings of this effort class.
+        /// IDs of the timesheet settings of this effort class.
         /// </summary>
         [JsonProperty("timesheetSettingIds")]
         public List<string>? TimesheetSettingIds
         {
             get => timesheetSettingIds;
             set => timesheetSettingIds = Set("timesheetSettingIds", value);
+        }
+
+        /// <summary>
+        /// IDs of the service offerings of this effort class.
+        /// </summary>
+        [JsonProperty("serviceOfferingIds")]
+        public List<string>? ServiceOfferingIds
+        {
+            get => serviceOfferingIds;
+            set => serviceOfferingIds = Set("serviceOfferingIds", value);
         }
 
         /// <summary>

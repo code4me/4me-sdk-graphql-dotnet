@@ -11,6 +11,8 @@
             DataList<EffortClass> effortClasses = client.Get(Query.EffortClass
                 .View(DefaultView.None)
                 .SelectAll()
+                .SelectServiceOfferings(new ServiceOfferingQuery()
+                    .SelectAll())
                 .SelectTimesheetSettings(new TimesheetSettingQuery()
                     .SelectAll())
                 ).Result;

@@ -49,8 +49,10 @@
         private string? templateId;
         private bool? urgent;
         private DateTime? waitingUntil;
+        private List<WatchInput>? newWatches;
         private List<string>? configurationItemIds;
         private string? id;
+        private List<string>? watchesToDelete;
         private string? clientMutationId;
 
         /// <summary>
@@ -494,6 +496,16 @@
         }
 
         /// <summary>
+        /// New or updated watches.
+        /// </summary>
+        [JsonProperty("newWatches")]
+        public List<WatchInput>? NewWatches
+        {
+            get => newWatches;
+            set => newWatches = Set("newWatches", value);
+        }
+
+        /// <summary>
         /// Identifiers of the configuration items to relate to the request. When this field is used to update an existing request, all configuration items that were linked to this request will be replaced by the supplied configuration items.
         /// </summary>
         [JsonProperty("configurationItemIds")]
@@ -511,6 +523,16 @@
         {
             get => id;
             set => id = Set("id", value);
+        }
+
+        /// <summary>
+        /// Identifiers of watches to delete.
+        /// </summary>
+        [JsonProperty("watchesToDelete")]
+        public List<string>? WatchesToDelete
+        {
+            get => watchesToDelete;
+            set => watchesToDelete = Set("watchesToDelete", value);
         }
 
         /// <summary>

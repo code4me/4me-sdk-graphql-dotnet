@@ -11,7 +11,7 @@
         /// <returns>The task object representing the asynchronous operation.</returns>
         public static async Task<Person> Me(this Sdk4meClient client)
         {
-            DataList<Person> people = await client.Get<Person>(Query.Me.Select("*"));
+            DataList<Person> people = await client.Get<Person>(Query.Me.SelectAll());
             return people.First();
         }
 
@@ -21,7 +21,7 @@
         /// <returns>The task object representing the asynchronous operation.</returns>
         public static async Task<Account> Account(this Sdk4meClient client)
         {
-            DataList<Account> accounts = await client.Get<Account>(Query.Account.Select("*"));
+            DataList<Account> accounts = await client.Get<Account>(Query.Account.SelectAll());
             return accounts.First();
         }
 
@@ -33,7 +33,7 @@
         /// <returns>The task object representing the asynchronous operation.</returns>
         public static async Task<RateLimit> RateLimit(this Sdk4meClient client)
         {
-            DataList<RateLimit> rateLimits = await client.Get<RateLimit>(Query.RateLimit.Select("*"));
+            DataList<RateLimit> rateLimits = await client.Get<RateLimit>(Query.RateLimit.SelectAll());
             return rateLimits.First();
         }
     }

@@ -14,6 +14,15 @@
         }
 
         /// <summary>
+        /// Service offerings of this effort class.
+        /// </summary>
+        public EffortClassQuery SelectServiceOfferings(ServiceOfferingQuery query)
+        {
+            query.FieldName = "serviceOfferings";
+            return Select(query);
+        }
+
+        /// <summary>
         /// Timesheet settings of this effort class.
         /// </summary>
         public EffortClassQuery SelectTimesheetSettings(TimesheetSettingQuery query)

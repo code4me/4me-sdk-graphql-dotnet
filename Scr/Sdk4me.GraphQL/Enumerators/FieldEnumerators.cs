@@ -1835,6 +1835,11 @@
         [EnumMember(Value = "position")]
         Position,
         /// <summary>
+        /// The service offerings field.
+        /// </summary>
+        [EnumMember(Value = "serviceOfferings")]
+        ServiceOfferings,
+        /// <summary>
         /// The source field.
         /// </summary>
         [EnumMember(Value = "source")]
@@ -5433,6 +5438,11 @@
         /// </summary>
         [EnumMember(Value = "waitingUntil")]
         WaitingUntil,
+        /// <summary>
+        /// The watches field.
+        /// </summary>
+        [EnumMember(Value = "watches")]
+        Watches,
         /// <summary>
         /// The workflow field.
         /// </summary>
@@ -9499,6 +9509,38 @@
         /// </summary>
         [EnumMember(Value = "versionNr")]
         VersionNr,
+    }
+
+    /// <summary>
+    /// The <see cref="Watch">Watch</see> fields.
+    /// </summary>
+    public enum WatchField
+    {
+        /// <summary>
+        /// The added by field.
+        /// </summary>
+        [EnumMember(Value = "addedBy")]
+        AddedBy,
+        /// <summary>
+        /// The created at field.
+        /// </summary>
+        [EnumMember(Value = "createdAt")]
+        CreatedAt,
+        /// <summary>
+        /// The identifier field.
+        /// </summary>
+        [EnumMember(Value = "id")]
+        ID,
+        /// <summary>
+        /// The person field.
+        /// </summary>
+        [EnumMember(Value = "person")]
+        Person,
+        /// <summary>
+        /// The updated at field.
+        /// </summary>
+        [EnumMember(Value = "updatedAt")]
+        UpdatedAt,
     }
 
     /// <summary>

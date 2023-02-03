@@ -41,6 +41,17 @@
         [JsonProperty("position"), Sdk4meField(true)]
         public long? Position { get; internal set; }
 
+        [JsonProperty("serviceOfferings")]
+        internal NodeCollection<ServiceOffering>? ServiceOfferingsCollection { get; set; }
+
+        /// <summary>
+        /// Service offerings of this effort class.
+        /// </summary>
+        public DataList<ServiceOffering>? ServiceOfferings
+        {
+            get => ServiceOfferingsCollection?.Data;
+        }
+
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
@@ -73,12 +84,14 @@
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)
         {
             HashSet<QueryPageInfo> retval = new();
+            retval.AddRange(ServiceOfferingsCollection?.GetQueryPageInfo("serviceOfferings", depth + 1));
             retval.AddRange(TimesheetSettingsCollection?.GetQueryPageInfo("timesheetSettings", depth + 1));
             return retval;
         }
 
         internal override void AddToCollection(object data)
         {
+            ServiceOfferings?.AddRange((data as EffortClass)?.ServiceOfferings);
             TimesheetSettings?.AddRange((data as EffortClass)?.TimesheetSettings);
         }
     }

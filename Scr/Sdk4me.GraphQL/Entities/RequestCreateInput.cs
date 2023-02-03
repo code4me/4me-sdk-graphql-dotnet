@@ -49,6 +49,7 @@
         private string? templateId;
         private bool? urgent;
         private DateTime? waitingUntil;
+        private List<WatchInput>? newWatches;
         private List<string>? configurationItemIds;
         private string? supportDomain;
         private string? clientMutationId;
@@ -491,6 +492,16 @@
         {
             get => waitingUntil;
             set => waitingUntil = Set("waitingUntil", value);
+        }
+
+        /// <summary>
+        /// New or updated watches.
+        /// </summary>
+        [JsonProperty("newWatches")]
+        public List<WatchInput>? NewWatches
+        {
+            get => newWatches;
+            set => newWatches = Set("newWatches", value);
         }
 
         /// <summary>

@@ -86,6 +86,15 @@
         }
 
         /// <summary>
+        /// List of all people watching the request.
+        /// </summary>
+        public RequestQuery SelectWatches(WatchQuery query)
+        {
+            query.FieldName = "watches";
+            return Select(query);
+        }
+
+        /// <summary>
         /// <br>Filter the 'Request' by their custom fields that have been marked as 'Filterable' in their UI Extension.</br>
         /// <br>Additional information is available on the <see href="https://developer.4me.com/graphql/input_object/requestcustomfilter/">4me developer site</see>.</br>
         /// </summary>

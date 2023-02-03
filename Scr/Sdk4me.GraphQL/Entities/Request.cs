@@ -436,6 +436,17 @@
         [JsonProperty("waitingUntil")]
         public DateTime? WaitingUntil { get; internal set; }
 
+        [JsonProperty("watches")]
+        internal NodeCollection<Watch>? WatchesCollection { get; set; }
+
+        /// <summary>
+        /// List of all people watching the request.
+        /// </summary>
+        public DataList<Watch>? Watches
+        {
+            get => WatchesCollection?.Data;
+        }
+
         /// <summary>
         /// Used to link the request to a workflow.
         /// </summary>
@@ -453,6 +464,7 @@
             retval.AddRange(NotesCollection?.GetQueryPageInfo("notes", depth + 1));
             retval.AddRange(SprintBacklogItemsCollection?.GetQueryPageInfo("sprintBacklogItems", depth + 1));
             retval.AddRange(TimeEntriesCollection?.GetQueryPageInfo("timeEntries", depth + 1));
+            retval.AddRange(WatchesCollection?.GetQueryPageInfo("watches", depth + 1));
             return retval;
         }
 
@@ -466,6 +478,7 @@
             Notes?.AddRange((data as Request)?.Notes);
             SprintBacklogItems?.AddRange((data as Request)?.SprintBacklogItems);
             TimeEntries?.AddRange((data as Request)?.TimeEntries);
+            Watches?.AddRange((data as Request)?.Watches);
         }
     }
 }
