@@ -33,6 +33,12 @@
                     EnvironmentType.Demo => "4me-demo.com",
                     _ => "us.4me.com",
                 },
+                EnvironmentRegion.CH => environment switch
+                {
+                    EnvironmentType.Quality => "ch.4me.qa",
+                    EnvironmentType.Demo => "4me-demo.com",
+                    _ => "ch.4me.com",
+                },
                 _ => environment switch
                 {
                     EnvironmentType.Quality => "4me.qa",
