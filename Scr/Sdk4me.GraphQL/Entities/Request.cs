@@ -180,6 +180,17 @@
         [JsonProperty("knowledgeArticle")]
         public KnowledgeArticle? KnowledgeArticle { get; internal set; }
 
+        [JsonProperty("knowledgeArticles")]
+        internal NodeCollection<KnowledgeArticle>? KnowledgeArticlesCollection { get; set; }
+
+        /// <summary>
+        /// Knowledge articles of the current request account.
+        /// </summary>
+        public DataList<KnowledgeArticle>? KnowledgeArticles
+        {
+            get => KnowledgeArticlesCollection?.Data;
+        }
+
         /// <summary>
         /// Current state of the record.
         /// </summary>
@@ -461,6 +472,7 @@
             retval.AddRange(ConfigurationItemsCollection?.GetQueryPageInfo("configurationItems", depth + 1));
             retval.AddRange(CustomFieldsAttachmentsCollection?.GetQueryPageInfo("customFieldsAttachments", depth + 1));
             retval.AddRange(GroupedRequestsCollection?.GetQueryPageInfo("groupedRequests", depth + 1));
+            retval.AddRange(KnowledgeArticlesCollection?.GetQueryPageInfo("knowledgeArticles", depth + 1));
             retval.AddRange(NotesCollection?.GetQueryPageInfo("notes", depth + 1));
             retval.AddRange(SprintBacklogItemsCollection?.GetQueryPageInfo("sprintBacklogItems", depth + 1));
             retval.AddRange(TimeEntriesCollection?.GetQueryPageInfo("timeEntries", depth + 1));
@@ -475,6 +487,7 @@
             ConfigurationItems?.AddRange((data as Request)?.ConfigurationItems);
             CustomFieldsAttachments?.AddRange((data as Request)?.CustomFieldsAttachments);
             GroupedRequests?.AddRange((data as Request)?.GroupedRequests);
+            KnowledgeArticles?.AddRange((data as Request)?.KnowledgeArticles);
             Notes?.AddRange((data as Request)?.Notes);
             SprintBacklogItems?.AddRange((data as Request)?.SprintBacklogItems);
             TimeEntries?.AddRange((data as Request)?.TimeEntries);

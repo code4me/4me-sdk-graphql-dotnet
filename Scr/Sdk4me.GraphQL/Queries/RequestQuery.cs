@@ -59,6 +59,15 @@
         }
 
         /// <summary>
+        /// Knowledge articles of the current request account.
+        /// </summary>
+        public RequestQuery SelectKnowledgeArticles(KnowledgeArticleQuery query)
+        {
+            query.FieldName = "knowledgeArticles";
+            return Select(query);
+        }
+
+        /// <summary>
         /// Notes of the record.
         /// </summary>
         public RequestQuery SelectNotes(NoteQuery query)

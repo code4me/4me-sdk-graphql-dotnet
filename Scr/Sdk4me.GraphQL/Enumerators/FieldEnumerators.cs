@@ -5239,6 +5239,11 @@
         [EnumMember(Value = "knowledgeArticle")]
         KnowledgeArticle,
         /// <summary>
+        /// The knowledge articles field.
+        /// </summary>
+        [EnumMember(Value = "knowledgeArticles")]
+        KnowledgeArticles,
+        /// <summary>
         /// The life cycle state field.
         /// </summary>
         [EnumMember(Value = "lifeCycleState")]
