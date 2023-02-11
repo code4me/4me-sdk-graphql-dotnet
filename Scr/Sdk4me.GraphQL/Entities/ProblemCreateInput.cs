@@ -20,7 +20,6 @@
         private long? productBacklogEstimate;
         private DateTime? analysisTargetAt;
         private ProblemCategory? category;
-        private string? changeId;
         private string? workflowId;
         private ProblemImpact? impact;
         private string? knowledgeArticleId;
@@ -191,16 +190,6 @@
         {
             get => category;
             set => category = Set("category", value);
-        }
-
-        /// <summary>
-        /// DEPRECATED: Use "workflowId" instead.
-        /// </summary>
-        [JsonProperty("changeId")]
-        public string? ChangeId
-        {
-            get => changeId;
-            set => changeId = Set("changeId", value);
         }
 
         /// <summary>

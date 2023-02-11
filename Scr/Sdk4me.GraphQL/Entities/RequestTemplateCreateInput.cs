@@ -11,10 +11,8 @@
         private bool? assetSelection;
         private bool? assignToSelf;
         private RequestCategory? category;
-        private string? changeManagerId;
         private string? workflowManagerId;
         private string? workflowTemplateId;
-        private string? changeTemplateId;
         private string? configurationItemId;
         private RequestCompletionReason? completionReason;
         private bool? copySubjectToRequests;
@@ -101,16 +99,6 @@
         }
 
         /// <summary>
-        /// DEPRECATED: use "workflowManagerId" instead.
-        /// </summary>
-        [JsonProperty("changeManagerId")]
-        public string? ChangeManagerId
-        {
-            get => changeManagerId;
-            set => changeManagerId = Set("changeManagerId", value);
-        }
-
-        /// <summary>
         /// Identifier of the Workflow Manager linked to the request template. _Required_ when a Workflow Template is defined, and the Service does not define a Workflow Manager.
         /// </summary>
         [JsonProperty("workflowManagerId")]
@@ -128,16 +116,6 @@
         {
             get => workflowTemplateId;
             set => workflowTemplateId = Set("workflowTemplateId", value);
-        }
-
-        /// <summary>
-        /// DEPRECATED: use "workflowTemplateId" instead.
-        /// </summary>
-        [JsonProperty("changeTemplateId")]
-        public string? ChangeTemplateId
-        {
-            get => changeTemplateId;
-            set => changeTemplateId = Set("changeTemplateId", value);
         }
 
         /// <summary>

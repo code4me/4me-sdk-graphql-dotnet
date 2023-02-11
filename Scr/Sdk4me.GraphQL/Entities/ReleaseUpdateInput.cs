@@ -13,7 +13,6 @@
         private string? managerId;
         private string? note;
         private string? subject;
-        private List<string>? changeIds;
         private List<string>? workflowIds;
         private string? id;
         private string? clientMutationId;
@@ -96,16 +95,6 @@
         {
             get => subject;
             set => subject = Set("subject", value);
-        }
-
-        /// <summary>
-        /// DEPRECATED: use "workflowIds" instead.
-        /// </summary>
-        [JsonProperty("changeIds")]
-        public List<string>? ChangeIds
-        {
-            get => changeIds;
-            set => changeIds = Set("changeIds", value);
         }
 
         /// <summary>

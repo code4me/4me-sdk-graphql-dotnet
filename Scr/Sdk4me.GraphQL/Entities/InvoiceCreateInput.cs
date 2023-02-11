@@ -7,7 +7,6 @@
     {
         private string? source;
         private string? sourceID;
-        private string? changeId;
         private string? workflowId;
         private string? projectId;
         private string? slaId;
@@ -53,16 +52,6 @@
         {
             get => sourceID;
             set => sourceID = Set("sourceID", value);
-        }
-
-        /// <summary>
-        /// DEPRECATED: use "workflowId" instead.
-        /// </summary>
-        [JsonProperty("changeId")]
-        public string? ChangeId
-        {
-            get => changeId;
-            set => changeId = Set("changeId", value);
         }
 
         /// <summary>

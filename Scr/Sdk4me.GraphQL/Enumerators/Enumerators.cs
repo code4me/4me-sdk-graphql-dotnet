@@ -1080,16 +1080,19 @@
         /// <summary>
         /// DEPRECATED: N/A - Cost is Zero/Included in Other configuration item or Service.
         /// </summary>
+        [Obsolete("Not applicable.")]
         [EnumMember(Value = "na_cost_is_zero")]
         NaCostIsZero,
         /// <summary>
         /// DEPRECATED: N/A - Leased.
         /// </summary>
+        [Obsolete("Not applicable.")]
         [EnumMember(Value = "na_leased")]
         NaLeased,
         /// <summary>
         /// DEPRECATED: N/A - Not Capitalized.
         /// </summary>
+        [Obsolete("Not applicable.")]
         [EnumMember(Value = "na_not_capitalized")]
         NaNotCapitalized,
         /// <summary>

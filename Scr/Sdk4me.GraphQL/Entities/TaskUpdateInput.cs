@@ -16,7 +16,6 @@
         private List<AttachmentInput>? customFieldsAttachments;
         private DateTime? assignedAt;
         private TaskCategory? category;
-        private string? changeId;
         private string? workflowId;
         private DateTime? finishedAt;
         private TaskImpact? impact;
@@ -158,16 +157,6 @@
         {
             get => category;
             set => category = Set("category", value);
-        }
-
-        /// <summary>
-        /// DEPRECATED: use "workflowId" instead.
-        /// </summary>
-        [JsonProperty("changeId")]
-        public string? ChangeId
-        {
-            get => changeId;
-            set => changeId = Set("changeId", value);
         }
 
         /// <summary>

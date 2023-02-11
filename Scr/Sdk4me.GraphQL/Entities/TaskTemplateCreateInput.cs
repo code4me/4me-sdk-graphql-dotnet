@@ -8,14 +8,12 @@
         private string? source;
         private string? sourceID;
         private string? uiExtensionId;
-        private bool? assignToChangeManager;
         private bool? assignToWorkflowManager;
         private bool? assignToRequester;
         private bool? assignToRequesterBusinessUnitManager;
         private bool? assignToRequesterManager;
         private bool? assignToServiceOwner;
         private TaskCategory? category;
-        private bool? copyNotesToChange;
         private bool? copyNotesToWorkflow;
         private bool? disabled;
         private string? effortClassId;
@@ -26,7 +24,6 @@
         private string? pdfDesignId;
         private long? plannedDuration;
         private long? plannedEffort;
-        private long? plannedEffortChangeManager;
         private long? plannedEffortWorkflowManager;
         private long? plannedEffortRequester;
         private long? plannedEffortRequesterBusinessUnitManager;
@@ -74,16 +71,6 @@
         {
             get => uiExtensionId;
             set => uiExtensionId = Set("uiExtensionId", value);
-        }
-
-        /// <summary>
-        /// DEPRECATED: use "assignToWorkflowManager" instead.
-        /// </summary>
-        [JsonProperty("assignToChangeManager")]
-        public bool? AssignToChangeManager
-        {
-            get => assignToChangeManager;
-            set => assignToChangeManager = Set("assignToChangeManager", value);
         }
 
         /// <summary>
@@ -144,16 +131,6 @@
         {
             get => category;
             set => category = Set("category", value);
-        }
-
-        /// <summary>
-        /// DEPRECATED: use "copyNotesToWorkflow" instead.
-        /// </summary>
-        [JsonProperty("copyNotesToChange")]
-        public bool? CopyNotesToChange
-        {
-            get => copyNotesToChange;
-            set => copyNotesToChange = Set("copyNotesToChange", value);
         }
 
         /// <summary>
@@ -254,16 +231,6 @@
         {
             get => plannedEffort;
             set => plannedEffort = Set("plannedEffort", value);
-        }
-
-        /// <summary>
-        /// DEPRECATED: use "plannedEffortWorkflowManager" instead.
-        /// </summary>
-        [JsonProperty("plannedEffortChangeManager")]
-        public long? PlannedEffortChangeManager
-        {
-            get => plannedEffortChangeManager;
-            set => plannedEffortChangeManager = Set("plannedEffortChangeManager", value);
         }
 
         /// <summary>

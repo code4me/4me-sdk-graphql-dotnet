@@ -28,7 +28,6 @@
         private string? timeZone;
         private decimal? datavalue;
         private string? workHoursId;
-        private List<string>? changeIds;
         private List<string>? workflowIds;
         private List<ProjectPhaseInput>? newPhases;
         private List<string>? problemIds;
@@ -264,16 +263,6 @@
         {
             get => workHoursId;
             set => workHoursId = Set("workHoursId", value);
-        }
-
-        /// <summary>
-        /// DEPRECATED: use "workflowIds" instead.
-        /// </summary>
-        [JsonProperty("changeIds")]
-        public List<string>? ChangeIds
-        {
-            get => changeIds;
-            set => changeIds = Set("changeIds", value);
         }
 
         /// <summary>

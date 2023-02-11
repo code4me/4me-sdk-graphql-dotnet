@@ -10,7 +10,6 @@
         private string? name;
         private AgreementStatus? status;
         private string? customerId;
-        private string? customerRepresentativeId;
         private string? serviceLevelManagerId;
         private string? serviceOfferingId;
         private string? serviceInstanceId;
@@ -82,16 +81,6 @@
         {
             get => customerId;
             set => customerId = Set("customerId", value);
-        }
-
-        /// <summary>
-        /// DEPRECATED: use "customerRepresentativeIds" instead.
-        /// </summary>
-        [JsonProperty("customerRepresentativeId")]
-        public string? CustomerRepresentativeId
-        {
-            get => customerRepresentativeId;
-            set => customerRepresentativeId = Set("customerRepresentativeId", value);
         }
 
         /// <summary>

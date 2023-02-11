@@ -19,7 +19,6 @@
         private long? productBacklogEstimate;
         private bool? addressed;
         private RequestCategory? category;
-        private string? changeId;
         private string? workflowId;
         private RequestCompletionReason? completionReason;
         private DateTime? downtimeEndAt;
@@ -192,16 +191,6 @@
         {
             get => category;
             set => category = Set("category", value);
-        }
-
-        /// <summary>
-        /// DEPRECATED: use "workflowId" instead.
-        /// </summary>
-        [JsonProperty("changeId")]
-        public string? ChangeId
-        {
-            get => changeId;
-            set => changeId = Set("changeId", value);
         }
 
         /// <summary>
