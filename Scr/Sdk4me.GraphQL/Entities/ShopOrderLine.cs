@@ -132,6 +132,12 @@
         public string? RecurringPriceCurrency { get; internal set; }
 
         /// <summary>
+        /// The person creating the shop order line.
+        /// </summary>
+        [JsonProperty("requestedBy")]
+        public Person? RequestedBy { get; internal set; }
+
+        /// <summary>
         /// The person for whom the shop order line was submitted.
         /// </summary>
         [JsonProperty("requestedFor"), Sdk4meField(true)]

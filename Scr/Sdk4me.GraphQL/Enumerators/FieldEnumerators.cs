@@ -7350,6 +7350,11 @@
         [EnumMember(Value = "recurringPriceCurrency")]
         RecurringPriceCurrency,
         /// <summary>
+        /// The requested by field.
+        /// </summary>
+        [EnumMember(Value = "requestedBy")]
+        RequestedBy,
+        /// <summary>
         /// The requested for field.
         /// </summary>
         [EnumMember(Value = "requestedFor")]

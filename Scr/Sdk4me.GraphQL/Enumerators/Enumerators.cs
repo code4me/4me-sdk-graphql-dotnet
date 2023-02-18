@@ -1080,19 +1080,19 @@
         /// <summary>
         /// DEPRECATED: N/A - Cost is Zero/Included in Other configuration item or Service.
         /// </summary>
-        [Obsolete("Not applicable.")]
+        [Obsolete("N/A - Cost is Zero/Included in Other CI or Service.")]
         [EnumMember(Value = "na_cost_is_zero")]
         NaCostIsZero,
         /// <summary>
         /// DEPRECATED: N/A - Leased.
         /// </summary>
-        [Obsolete("Not applicable.")]
+        [Obsolete("N/A - Leased.")]
         [EnumMember(Value = "na_leased")]
         NaLeased,
         /// <summary>
         /// DEPRECATED: N/A - Not Capitalized.
         /// </summary>
-        [Obsolete("Not applicable.")]
+        [Obsolete("N/A - Not Capitalized.")]
         [EnumMember(Value = "na_not_capitalized")]
         NaNotCapitalized,
         /// <summary>
@@ -3339,8 +3339,9 @@
     public enum WorkflowStatus
     {
         /// <summary>
-        /// Approval.
+        /// DEPRECATED: Approval - use In Progress instead.
         /// </summary>
+        [Obsolete("Approval - use In Progress instead.")]
         [EnumMember(Value = "approval")]
         Approval = 1,
         /// <summary>
@@ -3354,10 +3355,16 @@
         [EnumMember(Value = "completed")]
         Completed,
         /// <summary>
-        /// Implementation.
+        /// DEPRECATED: Implementation - use In Progress instead.
         /// </summary>
+        [Obsolete("Implementation - use In Progress instead.")]
         [EnumMember(Value = "implementation")]
         Implementation,
+        /// <summary>
+        /// In Progress.
+        /// </summary>
+        [EnumMember(Value = "in_progress")]
+        InProgress,
         /// <summary>
         /// Progress Halted.
         /// </summary>
@@ -3369,8 +3376,9 @@
         [EnumMember(Value = "registered")]
         Registered,
         /// <summary>
-        /// Risk &amp; Impact.
+        /// DEPRECATED: Risk &amp; Impact - use In Progress instead.
         /// </summary>
+        [Obsolete("Risk &amp; Impact - use In Progress instead.")]
         [EnumMember(Value = "risk_and_impact")]
         RiskAndImpact,
     }
