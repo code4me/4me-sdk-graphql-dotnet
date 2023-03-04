@@ -93,6 +93,12 @@
         [JsonProperty("keywords")]
         public string? Keywords { get; internal set; }
 
+        /// <summary>
+        /// Whether the knowledge article needs to be available to anyone, including people without access to 4me.
+        /// </summary>
+        [JsonProperty("public")]
+        public bool? Public { get; internal set; }
+
         [JsonProperty("requests")]
         internal NodeCollection<Request>? RequestsCollection { get; set; }
 

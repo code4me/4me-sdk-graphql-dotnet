@@ -11,6 +11,7 @@
         private string? createdById;
         private string? description;
         private bool? endUsers;
+        private bool? @public;
         private string? instructions;
         private bool? internalSpecialists;
         private bool? keyContacts;
@@ -82,6 +83,16 @@
         {
             get => endUsers;
             set => endUsers = Set("endUsers", value);
+        }
+
+        /// <summary>
+        /// Whether the knowledge article needs to be available to anyone, including people without access to 4me.
+        /// </summary>
+        [JsonProperty("public")]
+        public bool? Public
+        {
+            get => @public;
+            set => @public = Set("public", value);
         }
 
         /// <summary>

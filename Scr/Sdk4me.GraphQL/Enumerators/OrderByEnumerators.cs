@@ -465,6 +465,11 @@
         [EnumMember(Value = "keyContacts")]
         KeyContacts,
         /// <summary>
+        /// Order by public.
+        /// </summary>
+        [EnumMember(Value = "public")]
+        Public,
+        /// <summary>
         /// Order by service name.
         /// </summary>
         [EnumMember(Value = "serviceName")]

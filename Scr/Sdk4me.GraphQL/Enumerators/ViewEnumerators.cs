@@ -235,6 +235,11 @@
         [EnumMember(Value = "all")]
         All,
         /// <summary>
+        /// Knowledge articles managed in this account.
+        /// </summary>
+        [EnumMember(Value = "managed_in_this_account")]
+        ManagedInThisAccount,
+        /// <summary>
         /// Knowledge articles managed by me.
         /// </summary>
         [EnumMember(Value = "managed_by_me")]
@@ -245,8 +250,9 @@
         [EnumMember(Value = "my_teams_services")]
         MyTeamsServices,
         /// <summary>
-        /// Knowledge articles provided to me.
+        /// Deprecated: use `all` instead.
         /// </summary>
+        [Obsolete("use `all` instead")]
         [EnumMember(Value = "provided_to_me")]
         ProvidedToMe,
     }

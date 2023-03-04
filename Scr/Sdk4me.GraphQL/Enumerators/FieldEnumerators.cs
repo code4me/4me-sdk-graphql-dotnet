@@ -2464,6 +2464,11 @@
         [EnumMember(Value = "keywords")]
         Keywords,
         /// <summary>
+        /// The public field.
+        /// </summary>
+        [EnumMember(Value = "public")]
+        Public,
+        /// <summary>
         /// The requests field.
         /// </summary>
         [EnumMember(Value = "requests")]
