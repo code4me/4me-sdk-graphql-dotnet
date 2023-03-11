@@ -113,12 +113,12 @@
         [EnumMember(Value = "all")]
         All,
         /// <summary>
-        /// Scim user automation rules.
+        /// System for cross-domain identity management (SCIM) user automation rules.
         /// </summary>
         [EnumMember(Value = "scim_user")]
         ScimUser,
         /// <summary>
-        /// Scim group automation rules.
+        /// System for cross-domain identity management (SCIM) group automation rules.
         /// </summary>
         [EnumMember(Value = "scim_group")]
         ScimGroup,

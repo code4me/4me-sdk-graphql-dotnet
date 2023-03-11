@@ -106,6 +106,12 @@
         public long? Rate { get; internal set; }
 
         /// <summary>
+        /// Recurrence for maintenance of configuration items created from the product.
+        /// </summary>
+        [JsonProperty("recurrence")]
+        public RecurrenceTemplate? Recurrence { get; internal set; }
+
+        /// <summary>
         /// Any additional information about the product that might prove useful.
         /// </summary>
         [JsonProperty("remarks")]
@@ -188,6 +194,18 @@
         /// </summary>
         [JsonProperty("usefulLife")]
         public long? UsefulLife { get; internal set; }
+
+        /// <summary>
+        /// The person who will be responsible for coordinating the workflows that will be generated automatically in accordance with the recurrence schedule.
+        /// </summary>
+        [JsonProperty("workflowManager")]
+        public Person? WorkflowManager { get; internal set; }
+
+        /// <summary>
+        /// The workflow template that is used to periodically maintain configuration items created from the product.
+        /// </summary>
+        [JsonProperty("workflowTemplate")]
+        public WorkflowTemplate? WorkflowTemplate { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)
         {

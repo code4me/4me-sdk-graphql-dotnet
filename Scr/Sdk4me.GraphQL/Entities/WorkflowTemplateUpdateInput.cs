@@ -15,7 +15,7 @@
         private string? instructions;
         private WorkflowJustification? justification;
         private string? note;
-        private WorkflowTemplateRecurrenceInput? recurrence;
+        private RecurrenceInput? recurrence;
         private string? serviceId;
         private string? subject;
         private List<WorkflowTemplateTaskTemplateInput>? newTaskTemplateRelations;
@@ -127,7 +127,7 @@
         /// Recurrence for the workflow template.
         /// </summary>
         [JsonProperty("recurrence")]
-        public WorkflowTemplateRecurrenceInput? Recurrence
+        public RecurrenceInput? Recurrence
         {
             get => recurrence;
             set => recurrence = Set("recurrence", value);

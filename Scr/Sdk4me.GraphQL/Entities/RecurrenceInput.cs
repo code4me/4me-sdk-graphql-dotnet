@@ -1,11 +1,13 @@
 ﻿namespace Sdk4me.GraphQL
 {
     /// <summary>
-    /// The <see href="https://developer.4me.com/graphql/input_object/workflowtemplaterecurrenceinput/">WorkflowTemplateRecurrenceInput</see> object.
+    /// The <see href="https://developer.4me.com/graphql/input_object/recurrenceinput/">RecurrenceInput</see> object.
     /// </summary>
-    public class WorkflowTemplateRecurrenceInput : PropertyChangeSet
+    public class RecurrenceInput : PropertyChangeSet
     {
         private RecurrenceFrequency? frequency;
+        private TimeSpan? timeOfDay;
+        private string? timeZone;
         private long? interval;
         private DateOnly? startDate;
         private DateOnly? endDate;
@@ -15,9 +17,8 @@
         private RecurrenceDayOfWeekIndex? dayOfWeekIndex;
         private List<DayNames>? dayOfWeekDay;
         private List<long>? monthOfYear;
+        private string? calendarId;
         private bool? disabled;
-        private TimeSpan? timeOfDay;
-        private string? timeZone;
 
         /// <summary>
         /// The frequency of the recurrence.
@@ -27,6 +28,27 @@
         {
             get => frequency;
             set => frequency = Set("frequency", value);
+        }
+
+        /// <summary>
+        /// The time of day to start the scheduled Workflow.
+        /// </summary>
+        [JsonProperty("timeOfDay")]
+        public TimeSpan? TimeOfDay
+        {
+            get => timeOfDay;
+            set => timeOfDay = Set("timeOfDay", value);
+        }
+
+        /// <summary>
+        /// <br>The time zone for the `timeOfDay` field.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see></br>.
+        /// </summary>
+        [JsonProperty("timeZone")]
+        public string? TimeZone
+        {
+            get => timeZone;
+            set => timeZone = Set("timeZone", value);
         }
 
         /// <summary>
@@ -61,13 +83,13 @@
 
         /// <summary>
         /// <br>_Required_ when `frequency` is `daily`, ignored in all other cases. List of days of the week, e.g. `1,2,3,4,5`.</br>
-        /// <br>- * `0`: Sunday</br>
-        /// <br>- * `1`: Monday</br>
-        /// <br>- * `2`: Tuesday</br>
-        /// <br>- * `3`: Wednesday</br>
-        /// <br>- * `4`: Thursday</br>
-        /// <br>- * `5`: Friday</br>
-        /// <br>- * `6`: Saturday</br>.
+        /// <br>- `0`: Sunday</br>
+        /// <br>- `1`: Monday</br>
+        /// <br>- `2`: Tuesday</br>
+        /// <br>- `3`: Wednesday</br>
+        /// <br>- `4`: Thursday</br>
+        /// <br>- `5`: Friday</br>
+        /// <br>- `6`: Saturday</br>.
         /// </summary>
         [JsonProperty("day")]
         public List<long>? Day
@@ -78,13 +100,13 @@
 
         /// <summary>
         /// <br>_Required_ when `frequency` is `monthly` and `day_of_week` is `false`, ignored in all other cases. List of days of the month, e.g. `11,21,-1`.</br>
-        /// <br>- * `1`: Day one</br>
-        /// <br>- * `2`: Day two</br>
-        /// <br>- * `3`: Day three</br>
-        /// <br>- * ...</br>
-        /// <br>- * `30`: Day thirty</br>
-        /// <br>- * `31`: Day thirty-one</br>
-        /// <br>- * `-1`: Last day of month</br>.
+        /// <br>- `1`: Day one</br>
+        /// <br>- `2`: Day two</br>
+        /// <br>- `3`: Day three</br>
+        /// <br>- ...</br>
+        /// <br>- `30`: Day thirty</br>
+        /// <br>- `31`: Day thirty-one</br>
+        /// <br>- `-1`: Last day of month</br>.
         /// </summary>
         [JsonProperty("dayOfMonth")]
         public List<long>? DayOfMonth
@@ -125,24 +147,34 @@
 
         /// <summary>
         /// <br>_Required_ when `frequency` is `yearly`, ignored in all other cases. List of months of the year, e.g. `3,6,9,12`.</br>
-        /// <br>- * `1`: January</br>
-        /// <br>- * `2`: February</br>
-        /// <br>- * `3`: March</br>
-        /// <br>- * `4`: April</br>
-        /// <br>- * `5`: May</br>
-        /// <br>- * `6`: June</br>
-        /// <br>- * `7`: July</br>
-        /// <br>- * `8`: August</br>
-        /// <br>- * `9`: September</br>
-        /// <br>- * `10`: October</br>
-        /// <br>- * `11`: November</br>
-        /// <br>- * `12`: December</br>.
+        /// <br>- `1`: January</br>
+        /// <br>- `2`: February</br>
+        /// <br>- `3`: March</br>
+        /// <br>- `4`: April</br>
+        /// <br>- `5`: May</br>
+        /// <br>- `6`: June</br>
+        /// <br>- `7`: July</br>
+        /// <br>- `8`: August</br>
+        /// <br>- `9`: September</br>
+        /// <br>- `10`: October</br>
+        /// <br>- `11`: November</br>
+        /// <br>- `12`: December</br>.
         /// </summary>
         [JsonProperty("monthOfYear")]
         public List<long>? MonthOfYear
         {
             get => monthOfYear;
             set => monthOfYear = Set("monthOfYear", value);
+        }
+
+        /// <summary>
+        /// Select a calendar to skip occurrences of the recurrence during off-hours and holidays.
+        /// </summary>
+        [JsonProperty("calendarId")]
+        public string? CalendarId
+        {
+            get => calendarId;
+            set => calendarId = Set("calendarId", value);
         }
 
         /// <summary>
@@ -153,27 +185,6 @@
         {
             get => disabled;
             set => disabled = Set("disabled", value);
-        }
-
-        /// <summary>
-        /// The time of day to start the scheduled Workflow.
-        /// </summary>
-        [JsonProperty("timeOfDay")]
-        public TimeSpan? TimeOfDay
-        {
-            get => timeOfDay;
-            set => timeOfDay = Set("timeOfDay", value);
-        }
-
-        /// <summary>
-        /// <br>The time zone for the `timeOfDay` field.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see></br>.
-        /// </summary>
-        [JsonProperty("timeZone")]
-        public string? TimeZone
-        {
-            get => timeZone;
-            set => timeZone = Set("timeZone", value);
         }
     }
 }

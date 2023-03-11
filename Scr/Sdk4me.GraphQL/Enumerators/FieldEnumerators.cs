@@ -1316,6 +1316,11 @@
         [EnumMember(Value = "product")]
         Product,
         /// <summary>
+        /// The recurrence field.
+        /// </summary>
+        [EnumMember(Value = "recurrence")]
+        Recurrence,
+        /// <summary>
         /// The remarks field.
         /// </summary>
         [EnumMember(Value = "remarks")]
@@ -1415,6 +1420,16 @@
         /// </summary>
         [EnumMember(Value = "warrantyExpiryDate")]
         WarrantyExpiryDate,
+        /// <summary>
+        /// The workflow manager field.
+        /// </summary>
+        [EnumMember(Value = "workflowManager")]
+        WorkflowManager,
+        /// <summary>
+        /// The workflow template field.
+        /// </summary>
+        [EnumMember(Value = "workflowTemplate")]
+        WorkflowTemplate,
     }
 
     /// <summary>
@@ -3469,6 +3484,11 @@
         [EnumMember(Value = "rate")]
         Rate,
         /// <summary>
+        /// The recurrence field.
+        /// </summary>
+        [EnumMember(Value = "recurrence")]
+        Recurrence,
+        /// <summary>
         /// The remarks field.
         /// </summary>
         [EnumMember(Value = "remarks")]
@@ -3533,6 +3553,16 @@
         /// </summary>
         [EnumMember(Value = "usefulLife")]
         UsefulLife,
+        /// <summary>
+        /// The workflow manager field.
+        /// </summary>
+        [EnumMember(Value = "workflowManager")]
+        WorkflowManager,
+        /// <summary>
+        /// The workflow template field.
+        /// </summary>
+        [EnumMember(Value = "workflowTemplate")]
+        WorkflowTemplate,
     }
 
     /// <summary>
@@ -4915,6 +4945,11 @@
     public enum RecurrenceField
     {
         /// <summary>
+        /// The calendar field.
+        /// </summary>
+        [EnumMember(Value = "calendar")]
+        Calendar,
+        /// <summary>
         /// The day field.
         /// </summary>
         [EnumMember(Value = "day")]
@@ -4989,6 +5024,73 @@
         /// </summary>
         [EnumMember(Value = "startDate")]
         StartDate,
+        /// <summary>
+        /// The time of day field.
+        /// </summary>
+        [EnumMember(Value = "timeOfDay")]
+        TimeOfDay,
+        /// <summary>
+        /// The time zone field.
+        /// </summary>
+        [EnumMember(Value = "timeZone")]
+        TimeZone,
+    }
+
+    /// <summary>
+    /// The <see cref="RecurrenceTemplate">RecurrenceTemplate</see> fields.
+    /// </summary>
+    public enum RecurrenceTemplateField
+    {
+        /// <summary>
+        /// The calendar field.
+        /// </summary>
+        [EnumMember(Value = "calendar")]
+        Calendar,
+        /// <summary>
+        /// The day field.
+        /// </summary>
+        [EnumMember(Value = "day")]
+        Day,
+        /// <summary>
+        /// The day of month field.
+        /// </summary>
+        [EnumMember(Value = "dayOfMonth")]
+        DayOfMonth,
+        /// <summary>
+        /// The day of week field.
+        /// </summary>
+        [EnumMember(Value = "dayOfWeek")]
+        DayOfWeek,
+        /// <summary>
+        /// The day of week day field.
+        /// </summary>
+        [EnumMember(Value = "dayOfWeekDay")]
+        DayOfWeekDay,
+        /// <summary>
+        /// The day of week index field.
+        /// </summary>
+        [EnumMember(Value = "dayOfWeekIndex")]
+        DayOfWeekIndex,
+        /// <summary>
+        /// The disabled field.
+        /// </summary>
+        [EnumMember(Value = "disabled")]
+        Disabled,
+        /// <summary>
+        /// The frequency field.
+        /// </summary>
+        [EnumMember(Value = "frequency")]
+        Frequency,
+        /// <summary>
+        /// The interval field.
+        /// </summary>
+        [EnumMember(Value = "interval")]
+        Interval,
+        /// <summary>
+        /// The month of year field.
+        /// </summary>
+        [EnumMember(Value = "monthOfYear")]
+        MonthOfYear,
         /// <summary>
         /// The time of day field.
         /// </summary>
@@ -7890,6 +7992,11 @@
         /// </summary>
         [EnumMember(Value = "serviceOffering")]
         ServiceOffering,
+        /// <summary>
+        /// The service level agreement notification scheme field.
+        /// </summary>
+        [EnumMember(Value = "slaNotificationScheme")]
+        SlaNotificationScheme,
         /// <summary>
         /// The support hours field.
         /// </summary>

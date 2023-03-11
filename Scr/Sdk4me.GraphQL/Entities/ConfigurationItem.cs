@@ -174,6 +174,12 @@
         public Product? Product { get; internal set; }
 
         /// <summary>
+        /// Recurrence for maintenance of the configuration item.
+        /// </summary>
+        [JsonProperty("recurrence")]
+        public Recurrence? Recurrence { get; internal set; }
+
+        /// <summary>
         /// Any additional information about the configuration item that might prove useful. When creating a new configuration item and a value is not specified for this field, it is set to the remarks of the CI's product.
         /// </summary>
         [JsonProperty("remarks")]
@@ -312,6 +318,18 @@
         /// </summary>
         [JsonProperty("warrantyExpiryDate")]
         public DateOnly? WarrantyExpiryDate { get; internal set; }
+
+        /// <summary>
+        /// The person who will be responsible for coordinating the workflows that will be generated automatically in accordance with the recurrence schedule.
+        /// </summary>
+        [JsonProperty("workflowManager")]
+        public Person? WorkflowManager { get; internal set; }
+
+        /// <summary>
+        /// The workflow template that is used to periodically maintain the configuration item.
+        /// </summary>
+        [JsonProperty("workflowTemplate")]
+        public WorkflowTemplate? WorkflowTemplate { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)
         {

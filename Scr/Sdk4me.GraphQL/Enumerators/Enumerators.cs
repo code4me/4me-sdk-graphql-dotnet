@@ -2581,7 +2581,7 @@
         [EnumMember(Value = "risk")]
         Risk,
         /// <summary>
-        /// SCIM User.
+        /// System for cross-domain identity management (SCIM) User.
         /// </summary>
         [EnumMember(Value = "scim_user")]
         ScimUser,

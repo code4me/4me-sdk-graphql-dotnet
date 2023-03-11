@@ -20,13 +20,16 @@
         private string? name;
         private string? productID;
         private long? rate;
+        private RecurrenceInput? recurrence;
         private string? remarks;
+        private decimal? salvageValue;
+        private string? salvageValueCurrency;
         private string? serviceId;
         private string? supplierId;
         private string? supportTeamId;
         private long? usefulLife;
-        private decimal? salvageValue;
-        private string? salvageValueCurrency;
+        private string? workflowManagerId;
+        private string? workflowTemplateId;
         private string? id;
         private string? clientMutationId;
 
@@ -181,6 +184,16 @@
         }
 
         /// <summary>
+        /// Recurrence for maintenance of configuration items created from the product.
+        /// </summary>
+        [JsonProperty("recurrence")]
+        public RecurrenceInput? Recurrence
+        {
+            get => recurrence;
+            set => recurrence = Set("recurrence", value);
+        }
+
+        /// <summary>
         /// Any additional information about the product that might prove useful.
         /// </summary>
         [JsonProperty("remarks")]
@@ -188,6 +201,27 @@
         {
             get => remarks;
             set => remarks = Set("remarks", value);
+        }
+
+        /// <summary>
+        /// The value of this configuration item at the end of its useful life (i.e. at the end of its depreciation period). When a value is not specified for this field, it is set to zero.
+        /// </summary>
+        [JsonProperty("salvageValue")]
+        public decimal? SalvageValue
+        {
+            get => salvageValue;
+            set => salvageValue = Set("salvageValue", value);
+        }
+
+        /// <summary>
+        /// <br>The currency of the salvage value attributed to this configuration item.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/salvagevaluecurrency/">4me developer site</see></br>.
+        /// </summary>
+        [JsonProperty("salvageValueCurrency")]
+        public string? SalvageValueCurrency
+        {
+            get => salvageValueCurrency;
+            set => salvageValueCurrency = Set("salvageValueCurrency", value);
         }
 
         /// <summary>
@@ -231,24 +265,23 @@
         }
 
         /// <summary>
-        /// The value of this configuration item at the end of its useful life (i.e. at the end of its depreciation period). When a value is not specified for this field, it is set to zero.
+        /// The person who will be responsible for coordinating the workflows that will be generated automatically in accordance with the recurrence schedule.
         /// </summary>
-        [JsonProperty("salvageValue")]
-        public decimal? SalvageValue
+        [JsonProperty("workflowManagerId")]
+        public string? WorkflowManagerId
         {
-            get => salvageValue;
-            set => salvageValue = Set("salvageValue", value);
+            get => workflowManagerId;
+            set => workflowManagerId = Set("workflowManagerId", value);
         }
 
         /// <summary>
-        /// <br>The currency of the salvage value attributed to this configuration item.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/salvagevaluecurrency/">4me developer site</see></br>.
+        /// The workflow template that is used to periodically maintain configuration items created from the product.
         /// </summary>
-        [JsonProperty("salvageValueCurrency")]
-        public string? SalvageValueCurrency
+        [JsonProperty("workflowTemplateId")]
+        public string? WorkflowTemplateId
         {
-            get => salvageValueCurrency;
-            set => salvageValueCurrency = Set("salvageValueCurrency", value);
+            get => workflowTemplateId;
+            set => workflowTemplateId = Set("workflowTemplateId", value);
         }
 
         /// <summary>

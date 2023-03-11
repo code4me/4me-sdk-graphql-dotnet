@@ -12,11 +12,13 @@
         private List<AttachmentInput>? customFieldsAttachments;
         private List<string>? alternateNames;
         private string? assetID;
+        private List<string>? contractIds;
         private string? financialOwnerId;
         private DateOnly? inUseSince;
         private string? label;
         private DateOnly? licenseExpiryDate;
         private CiLicenseType? licenseType;
+        private List<string>? licensedSiteIds;
         private string? location;
         private string? name;
         private long? nrOfCores;
@@ -25,10 +27,12 @@
         private string? productId;
         private decimal? purchaseValue;
         private string? purchaseValueCurrency;
+        private RecurrenceInput? recurrence;
         private string? remarks;
         private ProductCategoryRuleSet? ruleSet;
         private string? serialNr;
         private string? serviceId;
+        private List<string>? serviceInstanceIds;
         private string? siteId;
         private bool? siteLicense;
         private CiStatus? status;
@@ -36,12 +40,11 @@
         private string? supportTeamId;
         private string? systemID;
         private bool? temporaryLicense;
-        private DateOnly? warrantyExpiryDate;
         private List<string>? userIds;
-        private List<string>? licensedSiteIds;
+        private DateOnly? warrantyExpiryDate;
+        private string? workflowManagerId;
+        private string? workflowTemplateId;
         private List<CiRelationInput>? newCiRelations;
-        private List<string>? contractIds;
-        private List<string>? serviceInstanceIds;
         private string? clientMutationId;
 
         /// <summary>
@@ -115,6 +118,16 @@
         }
 
         /// <summary>
+        /// Identifiers of the contracts of this configuration item.
+        /// </summary>
+        [JsonProperty("contractIds")]
+        public List<string>? ContractIds
+        {
+            get => contractIds;
+            set => contractIds = Set("contractIds", value);
+        }
+
+        /// <summary>
         /// Identifier of the internal organization which budget is used to pay for the configuration item. If the configuration item is leased or rented, the organization that pays the lease or rent is selected in this field. When creating a new configuration item and a value is not specified for this field, it is set to the financial owner of the CI's product.
         /// </summary>
         [JsonProperty("financialOwnerId")]
@@ -162,6 +175,16 @@
         {
             get => licenseType;
             set => licenseType = Set("licenseType", value);
+        }
+
+        /// <summary>
+        /// Identifiers of the sites at which the software that is covered by the license certificate may be used.
+        /// </summary>
+        [JsonProperty("licensedSiteIds")]
+        public List<string>? LicensedSiteIds
+        {
+            get => licensedSiteIds;
+            set => licensedSiteIds = Set("licensedSiteIds", value);
         }
 
         /// <summary>
@@ -246,6 +269,16 @@
         }
 
         /// <summary>
+        /// Recurrence for maintenance of the configuration item.
+        /// </summary>
+        [JsonProperty("recurrence")]
+        public RecurrenceInput? Recurrence
+        {
+            get => recurrence;
+            set => recurrence = Set("recurrence", value);
+        }
+
+        /// <summary>
         /// Any additional information about the configuration item that might prove useful. When creating a new configuration item and a value is not specified for this field, it is set to the remarks of the CI's product.
         /// </summary>
         [JsonProperty("remarks")]
@@ -283,6 +316,16 @@
         {
             get => serviceId;
             set => serviceId = Set("serviceId", value);
+        }
+
+        /// <summary>
+        /// Identifiers of the service instances of this configuration item.
+        /// </summary>
+        [JsonProperty("serviceInstanceIds")]
+        public List<string>? ServiceInstanceIds
+        {
+            get => serviceInstanceIds;
+            set => serviceInstanceIds = Set("serviceInstanceIds", value);
         }
 
         /// <summary>
@@ -356,16 +399,6 @@
         }
 
         /// <summary>
-        /// The date through which the warranty coverage for the configuration item is valid. The warranty expires at the end of this day.
-        /// </summary>
-        [JsonProperty("warrantyExpiryDate")]
-        public DateOnly? WarrantyExpiryDate
-        {
-            get => warrantyExpiryDate;
-            set => warrantyExpiryDate = Set("warrantyExpiryDate", value);
-        }
-
-        /// <summary>
         /// Identifiers of the users of this configuration item.
         /// </summary>
         [JsonProperty("userIds")]
@@ -376,13 +409,33 @@
         }
 
         /// <summary>
-        /// Identifiers of the sites at which the software that is covered by the license certificate may be used.
+        /// The date through which the warranty coverage for the configuration item is valid. The warranty expires at the end of this day.
         /// </summary>
-        [JsonProperty("licensedSiteIds")]
-        public List<string>? LicensedSiteIds
+        [JsonProperty("warrantyExpiryDate")]
+        public DateOnly? WarrantyExpiryDate
         {
-            get => licensedSiteIds;
-            set => licensedSiteIds = Set("licensedSiteIds", value);
+            get => warrantyExpiryDate;
+            set => warrantyExpiryDate = Set("warrantyExpiryDate", value);
+        }
+
+        /// <summary>
+        /// The person who will be responsible for coordinating the workflows that will be generated automatically in accordance with the recurrence schedule.
+        /// </summary>
+        [JsonProperty("workflowManagerId")]
+        public string? WorkflowManagerId
+        {
+            get => workflowManagerId;
+            set => workflowManagerId = Set("workflowManagerId", value);
+        }
+
+        /// <summary>
+        /// The workflow template that is used to periodically maintain the configuration item.
+        /// </summary>
+        [JsonProperty("workflowTemplateId")]
+        public string? WorkflowTemplateId
+        {
+            get => workflowTemplateId;
+            set => workflowTemplateId = Set("workflowTemplateId", value);
         }
 
         /// <summary>
@@ -393,26 +446,6 @@
         {
             get => newCiRelations;
             set => newCiRelations = Set("newCiRelations", value);
-        }
-
-        /// <summary>
-        /// Identifiers of the contracts of this configuration item.
-        /// </summary>
-        [JsonProperty("contractIds")]
-        public List<string>? ContractIds
-        {
-            get => contractIds;
-            set => contractIds = Set("contractIds", value);
-        }
-
-        /// <summary>
-        /// Identifiers of the service instances of this configuration item.
-        /// </summary>
-        [JsonProperty("serviceInstanceIds")]
-        public List<string>? ServiceInstanceIds
-        {
-            get => serviceInstanceIds;
-            set => serviceInstanceIds = Set("serviceInstanceIds", value);
         }
 
         /// <summary>

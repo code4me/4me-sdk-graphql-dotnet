@@ -10,6 +10,7 @@
         private long? responseTarget;
         private long? resolutionTarget;
         private string? supportHoursId;
+        private string? slaNotificationSchemeId;
 
         /// <summary>
         /// Identifier of the object to update using these values. For new objects it should be `null`.
@@ -59,6 +60,16 @@
         {
             get => supportHoursId;
             set => supportHoursId = Set("supportHoursId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the service level agreement notification scheme for a request when it affects an active service level agreement that is based on the service offering. Only enabled service level agreement notification schemes that are linked to the same account as the service offering can be selected.
+        /// </summary>
+        [JsonProperty("slaNotificationSchemeId")]
+        public string? SlaNotificationSchemeId
+        {
+            get => slaNotificationSchemeId;
+            set => slaNotificationSchemeId = Set("slaNotificationSchemeId", value);
         }
     }
 }
