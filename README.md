@@ -174,19 +174,23 @@ DataList<Person> people = client.Get(query).Result;
 
 #### Create a new person
 ```csharp
-PersonCreatePayload result = await client.Mutation(new PersonCreateInput
-{
+CustomFieldCollection customFields = new();
+customFields.AddOrUpdate("internal_reference", "an internal reference");
+
+PersonCreateInput input = new() {
     Name = "James",
     PrimaryEmail = "james@company.com",
     Disabled= true,
+    CustomFields = customFields,
     EmployeeID = "123",
     TeamIds = new() { "NG1lLnFhL1RlYW0vMjA1MTQ", "NG1lLnFhL1RlYW0vMjA1MGv" },
     Source = "Sdk4me",
     TimeFormat24h = true,
     TimeZone = "Brussels",
     DoNotTranslateLanguages = new() { "en", "nl" }
-}, false);
+};
 
+PersonCreatePayload result = await client.Mutation(input, false);
 if (result.IsError())
 {
     Debug.WriteLine(result.Errors.ToString());
@@ -213,6 +217,23 @@ catch (Sdk4meException ex)
 {
     Debug.WriteLine(ex.Message);
 }
+```
+
+#### Updating the custom fields of an existing person
+```csharp
+Person person = client.Get(
+    new PersonQuery()
+        .Select(PersonField.CustomFields)
+        .Filter(PersonField.ID, FilterOperator.Equals, "NG1lLnFhL1blcnNvbi8yMjMxSjIx")
+    ).Result.First();
+
+person.CustomFields.AddOrUpdate("internal_reference", "none");
+
+PersonUpdatePayload result = client.Mutation(new PersonUpdateInput()
+{
+    ID = person.ID,
+    CustomFields = person.CustomFields
+}).Result;
 ```
 
 ### Attachments
