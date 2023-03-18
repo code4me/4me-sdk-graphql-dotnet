@@ -566,6 +566,11 @@
         [EnumMember(Value = "CREATE")]
         Create = 1,
         /// <summary>
+        /// Similar to CREATE. Difference is that discovered records within this product (category) will only be linked to this record on create. So if the discovered records are already present in 4me they will remain linked to their current parent, the value supplied in the mutation will be ignored.
+        /// </summary>
+        [EnumMember(Value = "DEFAULT")]
+        Default,
+        /// <summary>
         /// Creates a new record if one does not already exists, otherwise updates the existing record using the values supplied.
         /// </summary>
         [EnumMember(Value = "UPDATE")]
@@ -1815,6 +1820,23 @@
         /// </summary>
         [EnumMember(Value = "in_production")]
         InProduction,
+    }
+
+    /// <summary>
+    /// The service offering charge type.
+    /// </summary>
+    public enum ServiceOfferingChargeType
+    {
+        /// <summary>
+        /// Fixed Price.
+        /// </summary>
+        [EnumMember(Value = "fixed_price")]
+        FixedPrice = 1,
+        /// <summary>
+        /// Time &amp; Material.
+        /// </summary>
+        [EnumMember(Value = "time_material")]
+        TimeMaterial,
     }
 
     /// <summary>

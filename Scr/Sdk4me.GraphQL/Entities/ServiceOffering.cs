@@ -18,6 +18,42 @@
         public decimal? Availability { get; internal set; }
 
         /// <summary>
+        /// Defines how a high incident must be charged: as a Fixed Price or in Time and Materials.
+        /// </summary>
+        [JsonProperty("chargeTypeHigh")]
+        public ServiceOfferingChargeType? ChargeTypeHigh { get; internal set; }
+
+        /// <summary>
+        /// Defines how a low incident must be charged: as a Fixed Price or in Time and Materials.
+        /// </summary>
+        [JsonProperty("chargeTypeLow")]
+        public ServiceOfferingChargeType? ChargeTypeLow { get; internal set; }
+
+        /// <summary>
+        /// Defines how a medium incident must be charged: as a Fixed Price or in Time and Materials.
+        /// </summary>
+        [JsonProperty("chargeTypeMedium")]
+        public ServiceOfferingChargeType? ChargeTypeMedium { get; internal set; }
+
+        /// <summary>
+        /// Defines how a RFC must be charged: as a Fixed Price or in Time and Materials.
+        /// </summary>
+        [JsonProperty("chargeTypeRfc")]
+        public ServiceOfferingChargeType? ChargeTypeRfc { get; internal set; }
+
+        /// <summary>
+        /// Defines how a RFI must be charged: as a Fixed Price or in Time and Materials.
+        /// </summary>
+        [JsonProperty("chargeTypeRfi")]
+        public ServiceOfferingChargeType? ChargeTypeRfi { get; internal set; }
+
+        /// <summary>
+        /// Defines how a top incident must be charged: as a Fixed Price or in Time and Materials.
+        /// </summary>
+        [JsonProperty("chargeTypeTop")]
+        public ServiceOfferingChargeType? ChargeTypeTop { get; internal set; }
+
+        /// <summary>
         /// The amount that the service provider will charge the customer for the delivery of the service per charge driver, per charge term.
         /// </summary>
         [JsonProperty("charges")]
@@ -62,6 +98,17 @@
         /// </summary>
         [JsonProperty("defaultEffortClass")]
         public EffortClass? DefaultEffortClass { get; internal set; }
+
+        [JsonProperty("effortClassRates")]
+        internal NodeCollection<EffortClassRate>? EffortClassRatesCollection { get; set; }
+
+        /// <summary>
+        /// Effort class rates of the service offering.
+        /// </summary>
+        public DataList<EffortClassRate>? EffortClassRates
+        {
+            get => EffortClassRatesCollection?.Data;
+        }
 
         [JsonProperty("effortClasses")]
         internal NodeCollection<EffortClass>? EffortClassesCollection { get; set; }
@@ -147,6 +194,84 @@
         {
             get => PrerequisitesAttachmentsCollection?.Data;
         }
+
+        /// <summary>
+        /// Defines the fixed price rate for a high incident.
+        /// </summary>
+        [JsonProperty("rateHigh")]
+        public decimal? RateHigh { get; internal set; }
+
+        /// <summary>
+        /// <br>Defines the currency for the fixed price rate of a high incident.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/ratehighcurrency/">4me developer site</see></br>.
+        /// </summary>
+        [JsonProperty("rateHighCurrency")]
+        public string? RateHighCurrency { get; internal set; }
+
+        /// <summary>
+        /// Defines the fixed price rate for a low incident.
+        /// </summary>
+        [JsonProperty("rateLow")]
+        public decimal? RateLow { get; internal set; }
+
+        /// <summary>
+        /// <br>Defines the currency for the fixed price rate of a low incident.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/ratelowcurrency/">4me developer site</see></br>.
+        /// </summary>
+        [JsonProperty("rateLowCurrency")]
+        public string? RateLowCurrency { get; internal set; }
+
+        /// <summary>
+        /// Defines the fixed price rate for a medium incident.
+        /// </summary>
+        [JsonProperty("rateMedium")]
+        public decimal? RateMedium { get; internal set; }
+
+        /// <summary>
+        /// <br>Defines the currency for the fixed price rate of a medium incident.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/ratemediumcurrency/">4me developer site</see></br>.
+        /// </summary>
+        [JsonProperty("rateMediumCurrency")]
+        public string? RateMediumCurrency { get; internal set; }
+
+        /// <summary>
+        /// Defines the fixed price rate for a RFC.
+        /// </summary>
+        [JsonProperty("rateRfc")]
+        public decimal? RateRfc { get; internal set; }
+
+        /// <summary>
+        /// <br>Defines the currency for the fixed price rate of a RFC.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/raterfccurrency/">4me developer site</see></br>.
+        /// </summary>
+        [JsonProperty("rateRfcCurrency")]
+        public string? RateRfcCurrency { get; internal set; }
+
+        /// <summary>
+        /// Defines the fixed price rate for a RFI.
+        /// </summary>
+        [JsonProperty("rateRfi")]
+        public decimal? RateRfi { get; internal set; }
+
+        /// <summary>
+        /// <br>Defines the currency for the fixed price rate of a RFI.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/raterficurrency/">4me developer site</see></br>.
+        /// </summary>
+        [JsonProperty("rateRfiCurrency")]
+        public string? RateRfiCurrency { get; internal set; }
+
+        /// <summary>
+        /// Defines the fixed price rate for a top incident.
+        /// </summary>
+        [JsonProperty("rateTop")]
+        public decimal? RateTop { get; internal set; }
+
+        /// <summary>
+        /// <br>Defines the currency for the fixed price rate of a top incident.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/ratetopcurrency/">4me developer site</see></br>.
+        /// </summary>
+        [JsonProperty("rateTopCurrency")]
+        public string? RateTopCurrency { get; internal set; }
 
         /// <summary>
         /// The Recovery Point Objective (RPO) is the maximum targeted duration in minutes in which data (transactions) might be lost from an IT service due to a major incident.
@@ -509,6 +634,7 @@
             HashSet<QueryPageInfo> retval = new();
             retval.AddRange(ChargesAttachmentsCollection?.GetQueryPageInfo("chargesAttachments", depth + 1));
             retval.AddRange(ContinuityAttachmentsCollection?.GetQueryPageInfo("continuityAttachments", depth + 1));
+            retval.AddRange(EffortClassRatesCollection?.GetQueryPageInfo("effortClassRates", depth + 1));
             retval.AddRange(EffortClassesCollection?.GetQueryPageInfo("effortClasses", depth + 1));
             retval.AddRange(LimitationsAttachmentsCollection?.GetQueryPageInfo("limitationsAttachments", depth + 1));
             retval.AddRange(PenaltiesAttachmentsCollection?.GetQueryPageInfo("penaltiesAttachments", depth + 1));
@@ -526,6 +652,7 @@
         {
             ChargesAttachments?.AddRange((data as ServiceOffering)?.ChargesAttachments);
             ContinuityAttachments?.AddRange((data as ServiceOffering)?.ContinuityAttachments);
+            EffortClassRates?.AddRange((data as ServiceOffering)?.EffortClassRates);
             EffortClasses?.AddRange((data as ServiceOffering)?.EffortClasses);
             LimitationsAttachments?.AddRange((data as ServiceOffering)?.LimitationsAttachments);
             PenaltiesAttachments?.AddRange((data as ServiceOffering)?.PenaltiesAttachments);

@@ -1909,6 +1909,48 @@
     }
 
     /// <summary>
+    /// The <see cref="EffortClassRate">EffortClassRate</see> fields.
+    /// </summary>
+    public enum EffortClassRateField
+    {
+        /// <summary>
+        /// The created at field.
+        /// </summary>
+        [EnumMember(Value = "createdAt")]
+        CreatedAt,
+        /// <summary>
+        /// The effort class field.
+        /// </summary>
+        [EnumMember(Value = "effortClass")]
+        EffortClass,
+        /// <summary>
+        /// The identifier field.
+        /// </summary>
+        [EnumMember(Value = "id")]
+        ID,
+        /// <summary>
+        /// The rate field.
+        /// </summary>
+        [EnumMember(Value = "rate")]
+        Rate,
+        /// <summary>
+        /// The rate currency field.
+        /// </summary>
+        [EnumMember(Value = "rateCurrency")]
+        RateCurrency,
+        /// <summary>
+        /// The service offering field.
+        /// </summary>
+        [EnumMember(Value = "serviceOffering")]
+        ServiceOffering,
+        /// <summary>
+        /// The updated at field.
+        /// </summary>
+        [EnumMember(Value = "updatedAt")]
+        UpdatedAt,
+    }
+
+    /// <summary>
     /// The <see cref="Feedback">Feedback</see> fields.
     /// </summary>
     public enum FeedbackField
@@ -6843,6 +6885,36 @@
         [EnumMember(Value = "availability")]
         Availability,
         /// <summary>
+        /// The charge type high field.
+        /// </summary>
+        [EnumMember(Value = "chargeTypeHigh")]
+        ChargeTypeHigh,
+        /// <summary>
+        /// The charge type low field.
+        /// </summary>
+        [EnumMember(Value = "chargeTypeLow")]
+        ChargeTypeLow,
+        /// <summary>
+        /// The charge type medium field.
+        /// </summary>
+        [EnumMember(Value = "chargeTypeMedium")]
+        ChargeTypeMedium,
+        /// <summary>
+        /// The charge type rfc field.
+        /// </summary>
+        [EnumMember(Value = "chargeTypeRfc")]
+        ChargeTypeRfc,
+        /// <summary>
+        /// The charge type rfi field.
+        /// </summary>
+        [EnumMember(Value = "chargeTypeRfi")]
+        ChargeTypeRfi,
+        /// <summary>
+        /// The charge type top field.
+        /// </summary>
+        [EnumMember(Value = "chargeTypeTop")]
+        ChargeTypeTop,
+        /// <summary>
         /// The charges field.
         /// </summary>
         [EnumMember(Value = "charges")]
@@ -6872,6 +6944,11 @@
         /// </summary>
         [EnumMember(Value = "defaultEffortClass")]
         DefaultEffortClass,
+        /// <summary>
+        /// The effort class rates field.
+        /// </summary>
+        [EnumMember(Value = "effortClassRates")]
+        EffortClassRates,
         /// <summary>
         /// The effort classes field.
         /// </summary>
@@ -6927,6 +7004,66 @@
         /// </summary>
         [EnumMember(Value = "prerequisitesAttachments")]
         PrerequisitesAttachments,
+        /// <summary>
+        /// The rate high field.
+        /// </summary>
+        [EnumMember(Value = "rateHigh")]
+        RateHigh,
+        /// <summary>
+        /// The rate high currency field.
+        /// </summary>
+        [EnumMember(Value = "rateHighCurrency")]
+        RateHighCurrency,
+        /// <summary>
+        /// The rate low field.
+        /// </summary>
+        [EnumMember(Value = "rateLow")]
+        RateLow,
+        /// <summary>
+        /// The rate low currency field.
+        /// </summary>
+        [EnumMember(Value = "rateLowCurrency")]
+        RateLowCurrency,
+        /// <summary>
+        /// The rate medium field.
+        /// </summary>
+        [EnumMember(Value = "rateMedium")]
+        RateMedium,
+        /// <summary>
+        /// The rate medium currency field.
+        /// </summary>
+        [EnumMember(Value = "rateMediumCurrency")]
+        RateMediumCurrency,
+        /// <summary>
+        /// The rate rfc field.
+        /// </summary>
+        [EnumMember(Value = "rateRfc")]
+        RateRfc,
+        /// <summary>
+        /// The rate rfc currency field.
+        /// </summary>
+        [EnumMember(Value = "rateRfcCurrency")]
+        RateRfcCurrency,
+        /// <summary>
+        /// The rate rfi field.
+        /// </summary>
+        [EnumMember(Value = "rateRfi")]
+        RateRfi,
+        /// <summary>
+        /// The rate rfi currency field.
+        /// </summary>
+        [EnumMember(Value = "rateRfiCurrency")]
+        RateRfiCurrency,
+        /// <summary>
+        /// The rate top field.
+        /// </summary>
+        [EnumMember(Value = "rateTop")]
+        RateTop,
+        /// <summary>
+        /// The rate top currency field.
+        /// </summary>
+        [EnumMember(Value = "rateTopCurrency")]
+        RateTopCurrency,
         /// <summary>
         /// The recovery point objective field.
         /// </summary>
@@ -7953,6 +8090,11 @@
     public enum StandardServiceRequestField
     {
         /// <summary>
+        /// The charge type field.
+        /// </summary>
+        [EnumMember(Value = "chargeType")]
+        ChargeType,
+        /// <summary>
         /// The created at field.
         /// </summary>
         [EnumMember(Value = "createdAt")]
@@ -7962,6 +8104,16 @@
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
+        /// <summary>
+        /// The rate field.
+        /// </summary>
+        [EnumMember(Value = "rate")]
+        Rate,
+        /// <summary>
+        /// The rate currency field.
+        /// </summary>
+        [EnumMember(Value = "rateCurrency")]
+        RateCurrency,
         /// <summary>
         /// The request template field.
         /// </summary>
@@ -9152,10 +9304,30 @@
         [EnumMember(Value = "billingID")]
         BillingID,
         /// <summary>
+        /// The charge field.
+        /// </summary>
+        [EnumMember(Value = "charge")]
+        Charge,
+        /// <summary>
+        /// The charge currency field.
+        /// </summary>
+        [EnumMember(Value = "chargeCurrency")]
+        ChargeCurrency,
+        /// <summary>
         /// The charge identifier field.
         /// </summary>
         [EnumMember(Value = "chargeID")]
         ChargeID,
+        /// <summary>
+        /// The charge rate field.
+        /// </summary>
+        [EnumMember(Value = "chargeRate")]
+        ChargeRate,
+        /// <summary>
+        /// The charge type field.
+        /// </summary>
+        [EnumMember(Value = "chargeType")]
+        ChargeType,
         /// <summary>
         /// The correction field.
         /// </summary>

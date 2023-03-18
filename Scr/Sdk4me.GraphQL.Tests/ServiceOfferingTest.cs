@@ -17,6 +17,8 @@
                     .SelectAll())
                 .SelectEffortClasses(new EffortClassQuery()
                     .SelectAll())
+                .SelectEffortClassRates(new EffortClassRateQuery()
+                    .SelectAll())
                 .SelectLimitationsAttachments(new AttachmentQuery()
                     .SelectAll())
                 .SelectPenaltiesAttachments(new AttachmentQuery()

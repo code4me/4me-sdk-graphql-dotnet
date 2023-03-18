@@ -6,10 +6,29 @@
     public class StandardServiceRequest : Node
     {
         /// <summary>
+        /// Defines how the standard service request must be charged: as a Fixed Price or in Time and Materials.
+        /// </summary>
+        [JsonProperty("chargeType")]
+        public ServiceOfferingChargeType? ChargeType { get; internal set; }
+
+        /// <summary>
         /// The date and time at which the standard service request was created.
         /// </summary>
         [JsonProperty("createdAt"), Sdk4meField(true)]
         public DateTime? CreatedAt { get; internal set; }
+
+        /// <summary>
+        /// Defines the fixed price rate for the standard service request.
+        /// </summary>
+        [JsonProperty("rate")]
+        public decimal? Rate { get; internal set; }
+
+        /// <summary>
+        /// <br>Defines the currency for the fixed price rate of the standard service request.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/ratecurrency/">4me developer site</see></br>.
+        /// </summary>
+        [JsonProperty("rateCurrency")]
+        public string? RateCurrency { get; internal set; }
 
         /// <summary>
         /// The request template related to the service offering. Only the request templates that are linked to the same service as the service offering can be selected.

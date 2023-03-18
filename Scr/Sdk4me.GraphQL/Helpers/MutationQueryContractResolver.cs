@@ -42,7 +42,7 @@ namespace Sdk4me.GraphQL
             JsonProperty property = base.CreateProperty(member, memberSerialization);
             property.ShouldSerialize = instance =>
             {
-                return property.DeclaringType != inputType || property.PropertyName != null && fields.Contains(property.PropertyName);
+                return property.DeclaringType != inputType || (property.PropertyName != null && fields.Contains(property.PropertyName));
             };
             return property;
         }

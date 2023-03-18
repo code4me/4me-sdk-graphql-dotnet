@@ -30,10 +30,35 @@
         public string? BillingID { get; internal set; }
 
         /// <summary>
+        /// For a Time and Materials activity the charge is calculated by multiplying the time spent by the charge rate of the person’s who spent the time based on the selected effort class. For a Fixed Price activity the charge is the amount defined for the fixed price activity in the service offering (of the billable service level agreement related to the request).
+        /// </summary>
+        [JsonProperty("charge")]
+        public decimal? Charge { get; internal set; }
+
+        /// <summary>
+        /// <br>The currency of the charge field value of the time entry.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/chargecurrency/">4me developer site</see></br>.
+        /// </summary>
+        [JsonProperty("chargeCurrency")]
+        public string? ChargeCurrency { get; internal set; }
+
+        /// <summary>
         /// The Charge identifier is the unique identifier by which an effort class that is linked to a time entry when an activity was performed through the coverage of the service level agreement is known in the billing system of the service provider. The effort class represents the type of effort that was performed when working on an activity. Some examples of effort classes are 'Billable - Normal Hours', 'Billable overtime', 'Non Billable' or 'Senior System Engineer'. The Charge identifier can be used to support integrations between the billing system of the service provider and the 4me account in which the activities are performed. In the billing system the Charge IDs will be linked to the rates that have been agreed on in the service contract.
         /// </summary>
         [JsonProperty("chargeID")]
         public string? ChargeID { get; internal set; }
+
+        /// <summary>
+        /// Shows the charging rate per hour and is defined by the effort class that was selected when the person registered the time entry.
+        /// </summary>
+        [JsonProperty("chargeRate")]
+        public decimal? ChargeRate { get; internal set; }
+
+        /// <summary>
+        /// The charge type field defines how the activity must be charged: as a Fixed Price or in Time and Materials.
+        /// </summary>
+        [JsonProperty("chargeType")]
+        public ServiceOfferingChargeType? ChargeType { get; internal set; }
 
         /// <summary>
         /// Whether the time entry should be considered a correction for a time entry that was registered for a date that has already been locked.

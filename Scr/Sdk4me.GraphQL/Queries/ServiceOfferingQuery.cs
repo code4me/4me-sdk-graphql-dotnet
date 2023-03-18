@@ -32,6 +32,15 @@
         }
 
         /// <summary>
+        /// Effort class rates of the service offering.
+        /// </summary>
+        public ServiceOfferingQuery SelectEffortClassRates(EffortClassRateQuery query)
+        {
+            query.FieldName = "effortClassRates";
+            return Select(query);
+        }
+
+        /// <summary>
         /// Effort classes of the service offering.
         /// </summary>
         public ServiceOfferingQuery SelectEffortClasses(EffortClassQuery query)

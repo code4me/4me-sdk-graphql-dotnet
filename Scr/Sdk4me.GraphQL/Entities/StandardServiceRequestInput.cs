@@ -11,6 +11,9 @@
         private long? resolutionTarget;
         private string? supportHoursId;
         private string? slaNotificationSchemeId;
+        private ServiceOfferingChargeType? chargeType;
+        private decimal? rate;
+        private string? rateCurrency;
 
         /// <summary>
         /// Identifier of the object to update using these values. For new objects it should be `null`.
@@ -70,6 +73,37 @@
         {
             get => slaNotificationSchemeId;
             set => slaNotificationSchemeId = Set("slaNotificationSchemeId", value);
+        }
+
+        /// <summary>
+        /// Defines how a standard service request must be charged: as a Fixed Price or in Time and Materials.
+        /// </summary>
+        [JsonProperty("chargeType")]
+        public ServiceOfferingChargeType? ChargeType
+        {
+            get => chargeType;
+            set => chargeType = Set("chargeType", value);
+        }
+
+        /// <summary>
+        /// Defines the fixed price rate for a standard service request.
+        /// </summary>
+        [JsonProperty("rate")]
+        public decimal? Rate
+        {
+            get => rate;
+            set => rate = Set("rate", value);
+        }
+
+        /// <summary>
+        /// <br>Defines the currency for the fixed price rate of a standard service request.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/ratecurrency/">4me developer site</see></br>.
+        /// </summary>
+        [JsonProperty("rateCurrency")]
+        public string? RateCurrency
+        {
+            get => rateCurrency;
+            set => rateCurrency = Set("rateCurrency", value);
         }
     }
 }
