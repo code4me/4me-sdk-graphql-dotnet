@@ -6,7 +6,7 @@
     public class WebhookPolicyDeleteMutationPayload : Payload
     {
         /// <summary>
-        /// `true` when the record was successfully deleted, `false` otherwise.
+        /// <c>true</c> when the record was successfully deleted, <c>false</c> otherwise.
         /// </summary>
         [JsonProperty("success"), Sdk4meField(true)]
         public bool? Success { get; internal set; }

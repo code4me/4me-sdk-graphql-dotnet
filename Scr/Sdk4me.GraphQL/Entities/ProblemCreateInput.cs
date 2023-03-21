@@ -63,7 +63,7 @@
         }
 
         /// <summary>
-        /// Values for custom fields to be used by the user interface Extension that is linked to the record.
+        /// Values for custom fields to be used by the UI Extension that is linked to the record.
         /// </summary>
         [JsonProperty("customFields")]
         public CustomFieldCollection? CustomFields
@@ -83,7 +83,7 @@
         }
 
         /// <summary>
-        /// User interface extension that is to be applied to the record.
+        /// UI extension that is to be applied to the record.
         /// </summary>
         [JsonProperty("uiExtensionId")]
         public string? UiExtensionId
@@ -113,7 +113,7 @@
         }
 
         /// <summary>
-        /// Identifier of the board this item is placed on.
+        /// ID of the board this item is placed on.
         /// </summary>
         [JsonProperty("agileBoardId")]
         public string? AgileBoardId
@@ -123,7 +123,7 @@
         }
 
         /// <summary>
-        /// Identifier of the column this item is placed in.
+        /// ID of the column this item is placed in.
         /// </summary>
         [JsonProperty("agileBoardColumnId")]
         public string? AgileBoardColumnId
@@ -203,7 +203,7 @@
         }
 
         /// <summary>
-        /// Used to select the extent to which the service is impacted when an incident occurs that is caused by the problem. Defaults to `none`.
+        /// Used to select the extent to which the service is impacted when an incident occurs that is caused by the problem. Defaults to <c>none</c>.
         /// </summary>
         [JsonProperty("impact")]
         public ProblemImpact? Impact
@@ -343,7 +343,7 @@
         }
 
         /// <summary>
-        /// The date and time at which the status of the problem is to be updated from `waiting_for` to `assigned`. This field is available only when the Status field is set to `waiting_for`.
+        /// The date and time at which the status of the problem is to be updated from <c>waiting_for</c> to <c>assigned</c>. This field is available only when the Status field is set to <c>waiting_for</c>.
         /// </summary>
         [JsonProperty("waitingUntil")]
         public DateTime? WaitingUntil

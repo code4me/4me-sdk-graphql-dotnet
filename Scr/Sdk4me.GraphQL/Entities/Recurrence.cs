@@ -33,45 +33,45 @@ namespace Sdk4me.GraphQL
         public Calendar? Calendar { get; internal set; }
 
         /// <summary>
-        /// <br>_Required_ when `frequency` is `daily`, ignored in all other cases. List of days of the week, e.g. `1,2,3,4,5`.</br>
-        /// <br>- `0`: Sunday</br>
-        /// <br>- `1`: Monday</br>
-        /// <br>- `2`: Tuesday</br>
-        /// <br>- `3`: Wednesday</br>
-        /// <br>- `4`: Thursday</br>
-        /// <br>- `5`: Friday</br>
-        /// <br>- `6`: Saturday</br>.
+        /// <br><em>Required</em> when <c>frequency</c> is <c>daily</c>, ignored in all other cases. List of days of the week, e.g. <c>1,2,3,4,5</c>.</br>
+        /// <br>• <c>0</c>: Sunday</br>
+        /// <br>• <c>1</c>: Monday</br>
+        /// <br>• <c>2</c>: Tuesday</br>
+        /// <br>• <c>3</c>: Wednesday</br>
+        /// <br>• <c>4</c>: Thursday</br>
+        /// <br>• <c>5</c>: Friday</br>
+        /// <br>• <c>6</c>: Saturday</br>
         /// </summary>
         [JsonProperty("day"), Sdk4meField(true)]
         public List<long>? Day { get; internal set; }
 
         /// <summary>
-        /// <br>_Required_ when `frequency` is `monthly` and `day_of_week` is `false`, ignored in all other cases. List of days of the month, e.g. `11,21,-1`.</br>
-        /// <br>- `1`: Day one</br>
-        /// <br>- `2`: Day two</br>
-        /// <br>- `3`: Day three</br>
-        /// <br>- ...</br>
-        /// <br>- `30`: Day thirty</br>
-        /// <br>- `31`: Day thirty-one</br>
-        /// <br>- `-1`: Last day of month</br>.
+        /// <br><em>Required</em> when <c>frequency</c> is <c>monthly</c> and <c>day_of_week</c> is <c>false</c>, ignored in all other cases. List of days of the month, e.g. <c>11,21,-1</c>.</br>
+        /// <br>• <c>1</c>: Day one</br>
+        /// <br>• <c>2</c>: Day two</br>
+        /// <br>• <c>3</c>: Day three</br>
+        /// <br>• ...</br>
+        /// <br>• <c>30</c>: Day thirty</br>
+        /// <br>• <c>31</c>: Day thirty-one</br>
+        /// <br>• <c>-1</c>: Last day of month</br>
         /// </summary>
         [JsonProperty("dayOfMonth"), Sdk4meField(true)]
         public List<long>? DayOfMonth { get; internal set; }
 
         /// <summary>
-        /// Indicates whether or not the `dayOfWeekIndex` and `dayOfWeekDay` values should be considered. Can only be set to `true` when `frequency` is `monthly` or `yearly`.
+        /// Indicates whether or not the <c>dayOfWeekIndex</c> and <c>dayOfWeekDay</c> values should be considered. Can only be set to <c>true</c> when <c>frequency</c> is <c>monthly</c> or <c>yearly</c>.
         /// </summary>
         [JsonProperty("dayOfWeek"), Sdk4meField(true)]
         public bool? DayOfWeek { get; internal set; }
 
         /// <summary>
-        /// _Required_ when `dayOfWeek` is `true`, ignored in all other cases. list of days of the week.
+        /// <em>Required</em> when <c>dayOfWeek</c> is <c>true</c>, ignored in all other cases. list of days of the week.
         /// </summary>
         [JsonProperty("dayOfWeekDay"), Sdk4meField(true)]
         public List<DayNames>? DayOfWeekDay { get; internal set; }
 
         /// <summary>
-        /// _Required_ when `dayOfWeek` is `true`, ignored in all other cases.
+        /// <em>Required</em> when <c>dayOfWeek</c> is <c>true</c>, ignored in all other cases.
         /// </summary>
         [JsonProperty("dayOfWeekIndex"), Sdk4meField(true)]
         public RecurrenceDayOfWeekIndex? DayOfWeekIndex { get; internal set; }
@@ -95,7 +95,7 @@ namespace Sdk4me.GraphQL
         public RecurrenceFrequency? Frequency { get; internal set; }
 
         /// <summary>
-        /// The ICAL representation of the recurrency (without time_of_day).
+        /// The ICAL representation of the recurrency (without time_of_day)
         /// </summary>
         [JsonProperty("ical")]
         public string? Ical { get; internal set; }
@@ -119,19 +119,19 @@ namespace Sdk4me.GraphQL
         public string? LastOccurrenceErrors { get; internal set; }
 
         /// <summary>
-        /// <br>_Required_ when `frequency` is `yearly`, ignored in all other cases. List of months of the year, e.g. `3,6,9,12`.</br>
-        /// <br>- `1`: January</br>
-        /// <br>- `2`: February</br>
-        /// <br>- `3`: March</br>
-        /// <br>- `4`: April</br>
-        /// <br>- `5`: May</br>
-        /// <br>- `6`: June</br>
-        /// <br>- `7`: July</br>
-        /// <br>- `8`: August</br>
-        /// <br>- `9`: September</br>
-        /// <br>- `10`: October</br>
-        /// <br>- `11`: November</br>
-        /// <br>- `12`: December</br>.
+        /// <br><em>Required</em> when <c>frequency</c> is <c>yearly</c>, ignored in all other cases. List of months of the year, e.g. <c>3,6,9,12</c>.</br>
+        /// <br>• <c>1</c>: January</br>
+        /// <br>• <c>2</c>: February</br>
+        /// <br>• <c>3</c>: March</br>
+        /// <br>• <c>4</c>: April</br>
+        /// <br>• <c>5</c>: May</br>
+        /// <br>• <c>6</c>: June</br>
+        /// <br>• <c>7</c>: July</br>
+        /// <br>• <c>8</c>: August</br>
+        /// <br>• <c>9</c>: September</br>
+        /// <br>• <c>10</c>: October</br>
+        /// <br>• <c>11</c>: November</br>
+        /// <br>• <c>12</c>: December</br>
         /// </summary>
         [JsonProperty("monthOfYear"), Sdk4meField(true)]
         public List<long>? MonthOfYear { get; internal set; }
@@ -155,8 +155,8 @@ namespace Sdk4me.GraphQL
         public TimeSpan? TimeOfDay { get; internal set; }
 
         /// <summary>
-        /// <br>The time zone for the `timeOfDay` field.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see></br>.
+        /// <br>The time zone for the <c>timeOfDay</c> field.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("timeZone"), Sdk4meField(true)]
         public string? TimeZone { get; internal set; }

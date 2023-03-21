@@ -23,7 +23,7 @@
         }
 
         /// <summary>
-        /// Used to select the service instances for which the people, who are covered for them by an active service level agreement, need to see the broadcast. This table field is available only when the "People covered for the following service instance(s)" visibility option is selected.
+        /// Used to select the service instances for which the people, who are covered for them by an active SLA, need to see the broadcast. This table field is available only when the "People covered for the following service instance(s)" visibility option is selected.
         /// </summary>
         public BroadcastQuery SelectServiceInstances(ServiceInstanceQuery query)
         {

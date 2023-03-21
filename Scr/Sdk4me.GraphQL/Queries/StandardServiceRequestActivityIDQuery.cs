@@ -6,7 +6,7 @@
     public class StandardServiceRequestActivityIDQuery : Query<StandardServiceRequestActivityIDQuery, StandardServiceRequestActivityIDField, DefaultView, DefaultOrderField>
     {
         /// <summary>
-        /// Initialize a new standard service request activity identifier query instance.
+        /// Initialize a new standard service request activity id query instance.
         /// </summary>
         public StandardServiceRequestActivityIDQuery()
             : base("", typeof(StandardServiceRequestActivityID), true)

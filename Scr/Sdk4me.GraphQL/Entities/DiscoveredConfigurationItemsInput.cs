@@ -23,7 +23,7 @@
         }
 
         /// <summary>
-        /// Alternative identifiers for the client application. When a configuration item or product with the given `sourceID` is found linked to one of these alternative sources it will be identified as the same. For configuration items the source field in 4me will be updated to the `source` value supplied.
+        /// Alternative identifiers for the client application. When a configuration item or product with the given <c>sourceID</c> is found linked to one of these alternative sources it will be identified as the same. For configuration items the source field in 4me will be updated to the <c>source</c> value supplied.
         /// </summary>
         [JsonProperty("alternativeSources")]
         public List<string>? AlternativeSources

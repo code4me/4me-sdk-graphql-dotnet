@@ -61,7 +61,7 @@
         }
 
         /// <summary>
-        /// Values for custom fields to be used by the user interface Extension that is linked to the record.
+        /// Values for custom fields to be used by the UI Extension that is linked to the record.
         /// </summary>
         [JsonProperty("customFields")]
         public CustomFieldCollection? CustomFields
@@ -81,7 +81,7 @@
         }
 
         /// <summary>
-        /// User interface extension that is to be applied to the record.
+        /// UI extension that is to be applied to the record.
         /// </summary>
         [JsonProperty("uiExtensionId")]
         public string? UiExtensionId
@@ -91,7 +91,7 @@
         }
 
         /// <summary>
-        /// Identifier of the person who is responsible for ensuring that the availability targets specified in the active service level agreements for the service are met.
+        /// Identifier of the person who is responsible for ensuring that the availability targets specified in the active SLAs for the service are met.
         /// </summary>
         [JsonProperty("availabilityManagerId")]
         public string? AvailabilityManagerId
@@ -121,7 +121,7 @@
         }
 
         /// <summary>
-        /// Identifier of the person who is responsible for creating and maintaining the continuity plans for the service's instances that have an active service level agreement with a continuity target.
+        /// Identifier of the person who is responsible for creating and maintaining the continuity plans for the service's instances that have an active SLA with a continuity target.
         /// </summary>
         [JsonProperty("continuityManagerId")]
         public string? ContinuityManagerId
@@ -221,7 +221,7 @@
         }
 
         /// <summary>
-        /// Identifier of the person who is responsible for ensuring that the service level targets specified in the service level agreements for the service are met.
+        /// Identifier of the person who is responsible for ensuring that the service level targets specified in the SLAs for the service are met.
         /// </summary>
         [JsonProperty("serviceOwnerId")]
         public string? ServiceOwnerId
@@ -251,7 +251,7 @@
         }
 
         /// <summary>
-        /// The node identifier of the record to update.
+        /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
         public string? ID

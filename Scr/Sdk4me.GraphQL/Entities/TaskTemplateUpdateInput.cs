@@ -66,7 +66,7 @@
         }
 
         /// <summary>
-        /// User interface extension that is to be applied to the record.
+        /// UI extension that is to be applied to the record.
         /// </summary>
         [JsonProperty("uiExtensionId")]
         public string? UiExtensionId
@@ -136,7 +136,7 @@
         }
 
         /// <summary>
-        /// Whether the Copy note to workflow box of tasks that were created based on the template needs to be checked by default. (The Copy notes to workflow checkbox is called "Copy notes to workflow by default" when the task template is in Edit mode.).
+        /// Whether the Copy note to workflow box of tasks that were created based on the template needs to be checked by default. (The Copy notes to workflow checkbox is called "Copy notes to workflow by default" when the task template is in Edit mode.)
         /// </summary>
         [JsonProperty("copyNotesToWorkflow")]
         public bool? CopyNotesToWorkflow
@@ -286,7 +286,7 @@
         }
 
         /// <summary>
-        /// Default: `false` - Whether the provider indicates not to be accountable for the affected service level agreements linked to the requests that are linked to the workflow of a task that was created based on the template.
+        /// Default: <c>false</c> - Whether the provider indicates not to be accountable for the affected SLAs linked to the requests that are linked to the workflow of a task that was created based on the template.
         /// </summary>
         [JsonProperty("providerNotAccountable")]
         public bool? ProviderNotAccountable
@@ -406,7 +406,7 @@
         }
 
         /// <summary>
-        /// The node identifier of the record to update.
+        /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
         public string? ID

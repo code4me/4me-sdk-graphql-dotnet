@@ -49,7 +49,7 @@
 
         /// <summary>
         /// <br>The currency of the price of this shop article.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/pricecurrency/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("priceCurrency")]
         public string? PriceCurrency { get; internal set; }
@@ -68,7 +68,7 @@
 
         /// <summary>
         /// <br>The currency of the recurring price of this shop article.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/recurringpricecurrency/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("recurringPriceCurrency")]
         public string? RecurringPriceCurrency { get; internal set; }

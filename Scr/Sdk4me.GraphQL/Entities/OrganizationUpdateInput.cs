@@ -60,7 +60,7 @@
         }
 
         /// <summary>
-        /// Values for custom fields to be used by the user interface Extension that is linked to the record.
+        /// Values for custom fields to be used by the UI Extension that is linked to the record.
         /// </summary>
         [JsonProperty("customFields")]
         public CustomFieldCollection? CustomFields
@@ -80,7 +80,7 @@
         }
 
         /// <summary>
-        /// User interface extension that is to be applied to the record.
+        /// UI extension that is to be applied to the record.
         /// </summary>
         [JsonProperty("uiExtensionId")]
         public string? UiExtensionId
@@ -162,9 +162,10 @@
         /// <summary>
         /// <br>Which region the organization belongs to. It is possible to select a previously entered region name or to enter a new one. The Region field of a business unit's child organizations cannot be modified, as it is automatically set to the same value as the Region field of the business unit.</br>
         /// <br>Examples of commonly used region names are:</br>
+        /// <br></br>
         /// <br>- Asia Pacific (APAC)</br>
         /// <br>- Europe, Middle East &amp; Africa (EMEA)</br>
-        /// <br>- North America (NA)</br>.
+        /// <br>- North America (NA)</br>
         /// </summary>
         [JsonProperty("region")]
         public string? Region
@@ -224,7 +225,7 @@
         }
 
         /// <summary>
-        /// The node identifier of the record to update.
+        /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
         public string? ID

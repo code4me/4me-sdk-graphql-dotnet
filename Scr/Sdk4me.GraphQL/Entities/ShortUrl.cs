@@ -24,19 +24,19 @@
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
-        /// Kind of uniform resource identifier the short URL forwards to.
+        /// Kind of URI the short URL forwards to.
         /// </summary>
         [JsonProperty("dataType"), Sdk4meField(true)]
         public ShortUrlDataType? DataType { get; internal set; }
 
         /// <summary>
-        /// The automatically generated website address that is forwarded to uniform resource identifier.
+        /// The automatically generated website address that is forwarded to URI.
         /// </summary>
         [JsonProperty("shortUrl"), Sdk4meField(true)]
         public string? URL { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }

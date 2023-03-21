@@ -12,7 +12,7 @@
         public Account? Account { get; internal set; }
 
         /// <summary>
-        /// The date and time at which the async query was set to the status `completed`.
+        /// The date and time at which the async query was set to the status <c>completed</c>.
         /// </summary>
         [JsonProperty("completedAt"), Sdk4meField(true)]
         public DateTime? CompletedAt { get; internal set; }
@@ -54,19 +54,22 @@
         public string? ResultUrl { get; internal set; }
 
         /// <summary>
-        /// The date and time at which the async query was set to status `in_progress`.
+        /// The date and time at which the async query was set to status <c>in_progress</c>.
         /// </summary>
         [JsonProperty("startedAt"), Sdk4meField(true)]
         public DateTime? StartedAt { get; internal set; }
 
         /// <summary>
-        /// The current status of the async query.
+        /// <br>The current status of the async query. Valid values are:</br>
+        /// <br>• <c>queued</c>: The async query has been received and is waiting to be executed.</br>
+        /// <br>• <c>in_progress</c>: The async query is being executed.</br>
+        /// <br>• <c>completed</c>: The async query execution has been completed. Results can be found by downloading the <c>result_url</c>.</br>
         /// </summary>
         [JsonProperty("status"), Sdk4meField(true)]
         public AsyncQueryStatus? Status { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the async query. If the async query has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the async query. If the async query has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }

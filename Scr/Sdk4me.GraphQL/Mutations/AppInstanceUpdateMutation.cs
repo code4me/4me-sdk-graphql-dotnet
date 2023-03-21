@@ -1,7 +1,7 @@
 ﻿namespace Sdk4me.GraphQL
 {
     /// <summary>
-    /// Updates an existing application instance.
+    /// Updates an existing app instance.
     /// </summary>
     internal class AppInstanceUpdateMutation : Mutation<AppInstanceUpdatePayload, AppInstanceUpdateInput>
     {

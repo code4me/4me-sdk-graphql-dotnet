@@ -122,7 +122,7 @@
         }
 
         /// <summary>
-        /// The last day on which the service provider organization can still be contacted to terminate the service level agreement (SLA) to ensure that it expires on the intended expiry date. The Notice date field is left empty, and the Expiry date field is filled out, when the service level agreement is to expire on a specific date and no notice needs to be given to terminate it.
+        /// The last day on which the service provider organization can still be contacted to terminate the service level agreement (SLA) to ensure that it expires on the intended expiry date. The Notice date field is left empty, and the Expiry date field is filled out, when the SLA is to expire on a specific date and no notice needs to be given to terminate it.
         /// </summary>
         [JsonProperty("noticeDate")]
         public DateOnly? NoticeDate
@@ -132,7 +132,7 @@
         }
 
         /// <summary>
-        /// The date through which the service level agreement (SLA) will be active. The service level agreement expires at the end of this day if it is not renewed before then. When the service level agreement has expired, its status will automatically be set to "Expired".
+        /// The date through which the service level agreement (SLA) will be active. The SLA expires at the end of this day if it is not renewed before then. When the SLA has expired, its status will automatically be set to "Expired".
         /// </summary>
         [JsonProperty("expiryDate")]
         public DateOnly? ExpiryDate
@@ -162,7 +162,7 @@
         }
 
         /// <summary>
-        /// Whether knowledge articles from the service provider should be exposed to the people covered by the service instances related to the service level agreement. Only available for service level agreements where the `coverage` field is set to `service_instances`.
+        /// Whether knowledge articles from the service provider should be exposed to the people covered by the service instances related to the service level agreement. Only available for service level agreements where the <c>coverage</c> field is set to <c>service_instances</c>.
         /// </summary>
         [JsonProperty("useKnowledgeFromServiceProvider")]
         public bool? UseKnowledgeFromServiceProvider
@@ -172,7 +172,7 @@
         }
 
         /// <summary>
-        /// The Billing identifier is the unique identifier by which all the activities that are performed through the coverage of the service level agreement are known in the billing system of the service provider.
+        /// The Billing ID is the unique identifier by which all the activities that are performed through the coverage of the SLA are known in the billing system of the service provider.
         /// </summary>
         [JsonProperty("billingID")]
         public string? BillingID
@@ -182,7 +182,7 @@
         }
 
         /// <summary>
-        /// The Activity identifier is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider. This contains the activityIDs related to request categories.
+        /// The Activity ID is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider. This contains the activityIDs related to request categories.
         /// </summary>
         [JsonProperty("activityID")]
         public ActivityIDInput? ActivityID
@@ -202,7 +202,7 @@
         }
 
         /// <summary>
-        /// Identifiers of the organizations of the service level agreement. Only available for service level agreements where the `coverage` field is set to `organizations_and_descendants`, `organizations` or `organizations_and_sites`.
+        /// Identifiers of the organizations of the service level agreement. Only available for service level agreements where the <c>coverage</c> field is set to <c>organizations_and_descendants</c>, <c>organizations</c> or <c>organizations_and_sites</c>.
         /// </summary>
         [JsonProperty("organizationIds")]
         public List<string>? OrganizationIds
@@ -212,7 +212,7 @@
         }
 
         /// <summary>
-        /// Identifiers of the people of the service level agreement. Only available for service level agreements where the `coverage` field is set to `people`.
+        /// Identifiers of the people of the service level agreement. Only available for service level agreements where the <c>coverage</c> field is set to <c>people</c>.
         /// </summary>
         [JsonProperty("personIds")]
         public List<string>? PersonIds
@@ -222,7 +222,7 @@
         }
 
         /// <summary>
-        /// Identifiers of the sites of the service level agreement. Only available for service level agreements where the `coverage` field is set to `sites` or `organizations_and_sites`.
+        /// Identifiers of the sites of the service level agreement. Only available for service level agreements where the <c>coverage</c> field is set to <c>sites</c> or <c>organizations_and_sites</c>.
         /// </summary>
         [JsonProperty("siteIds")]
         public List<string>? SiteIds
@@ -232,7 +232,7 @@
         }
 
         /// <summary>
-        /// Identifiers of the skill pools of the service level agreement. Only available for service level agreements where the `coverage` field is set to `skill_pools`.
+        /// Identifiers of the skill pools of the service level agreement. Only available for service level agreements where the <c>coverage</c> field is set to <c>skill_pools</c>.
         /// </summary>
         [JsonProperty("skillPoolIds")]
         public List<string>? SkillPoolIds
@@ -242,7 +242,7 @@
         }
 
         /// <summary>
-        /// The Charge IDs are the unique identifiers by which an effort class that is linked to a time entry when an activity was performed through the coverage of the service level agreement is known in the billing system of the service provider.
+        /// The Charge IDs are the unique identifiers by which an effort class that is linked to a time entry when an activity was performed through the coverage of the SLA is known in the billing system of the service provider.
         /// </summary>
         [JsonProperty("newEffortClassChargeIDs")]
         public List<EffortClassChargeIDInput>? NewEffortClassChargeIDs
@@ -252,7 +252,7 @@
         }
 
         /// <summary>
-        /// Represents the activityIDs for standard service requests. The Activity identifier is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider.
+        /// Represents the activityIDs for standard service requests. The Activity ID is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider
         /// </summary>
         [JsonProperty("newStandardServiceRequestActivityIDs")]
         public List<StandardServiceRequestActivityIDInput>? NewStandardServiceRequestActivityIDs
@@ -262,7 +262,7 @@
         }
 
         /// <summary>
-        /// Identifier of the account which service level managers are allowed to update the parts of the service level agreement that are intended to be maintained by the service level managers of the customer. More importantly, this field is used to specify whether specialists of the customer are allowed to see the requests that include this service level agreement in their Affected service level agreements section.
+        /// Identifier of the account which service level managers are allowed to update the parts of the SLA that are intended to be maintained by the service level managers of the customer. More importantly, this field is used to specify whether specialists of the customer are allowed to see the requests that include this SLA in their Affected SLAs section.
         /// </summary>
         [JsonProperty("customerAccountId")]
         public string? CustomerAccountId

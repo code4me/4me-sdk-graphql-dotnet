@@ -23,7 +23,7 @@
         }
 
         /// <summary>
-        /// Uniquely identify the user for Single Sign-On.
+        /// Uniquely identify the user for Single Sign-On
         /// </summary>
         [JsonProperty("authenticationID"), Sdk4meField(true)]
         public string? AuthenticationID { get; internal set; }
@@ -75,7 +75,7 @@
 
         /// <summary>
         /// <br>The currency of the cost per hour value of this skill pool.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/costperhourcurrency/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("costPerHourCurrency")]
         public string? CostPerHourCurrency { get; internal set; }
@@ -104,13 +104,13 @@
         }
 
         /// <summary>
-        /// `true` when the person may no longer be related to other records.
+        /// <c>true</c> when the person may no longer be related to other records.
         /// </summary>
         [JsonProperty("disabled")]
         public bool? Disabled { get; internal set; }
 
         /// <summary>
-        /// The languages that should not be translated automatically for the person. Translations will not be offered to the person for texts in any of these languages. This field can contain a comma-separated list of language codes. Supported language codes are: en, nl, de, fr, es, pt, it, da, fi, sv, pl, cs, tr, ru, ar, identifier, fa, no, zh, ja, ko, he, hi, ms.
+        /// The languages that should not be translated automatically for the person. Translations will not be offered to the person for texts in any of these languages. This field can contain a comma-separated list of language codes. Supported language codes are: en, nl, de, fr, es, pt, it, da, fi, sv, pl, cs, tr, ru, ar, id, fa, no, zh, ja, ko, he, hi, ms.
         /// </summary>
         [JsonProperty("doNotTranslateLanguages")]
         public List<string>? DoNotTranslateLanguages { get; internal set; }
@@ -128,7 +128,7 @@
         public bool? ExcludeTeamNotifications { get; internal set; }
 
         /// <summary>
-        /// `true` when the person registered as a guest in self service.
+        /// <c>true</c> when the person registered as a guest in self service.
         /// </summary>
         [JsonProperty("guest")]
         public bool? Guest { get; internal set; }
@@ -158,7 +158,7 @@
 
         /// <summary>
         /// <br>The language preference of the person.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/language/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/language/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("language")]
         public string? Language { get; internal set; }
@@ -293,19 +293,19 @@
 
         /// <summary>
         /// <br>The time zone in which the person normally resides.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("timeZone")]
         public string? TimeZone { get; internal set; }
 
         /// <summary>
-        /// User interface extension that is linked to the record.
+        /// UI extension that is linked to the record.
         /// </summary>
         [JsonProperty("uiExtension")]
         public UiExtension? UiExtension { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }

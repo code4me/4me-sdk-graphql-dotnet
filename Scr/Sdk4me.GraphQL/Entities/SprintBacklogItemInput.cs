@@ -13,7 +13,7 @@
         private string? recordId;
 
         /// <summary>
-        /// Identifier of the object to update using these values. For new objects it should be `null`.
+        /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
         /// </summary>
         [JsonProperty("id")]
         public string? ID
@@ -23,7 +23,7 @@
         }
 
         /// <summary>
-        /// Whether this item has been completed in this sprint. `null` indicates the item was removed from the sprint.
+        /// Whether this item has been completed in this sprint. <c>null</c> indicates the item was removed from the sprint.
         /// </summary>
         [JsonProperty("done")]
         public bool? Done

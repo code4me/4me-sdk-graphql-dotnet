@@ -15,7 +15,7 @@
         private bool? integration;
 
         /// <summary>
-        /// Identifier of the object to update using these values. For new objects it should be `null`.
+        /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
         /// </summary>
         [JsonProperty("id")]
         public string? ID
@@ -85,7 +85,7 @@
         }
 
         /// <summary>
-        /// The Integration field is a hidden checkbox that can be set to `true` using this API or the Import functionality. When checked, the address is displayed as read-only in the user interface to prevent users from updating it.
+        /// The Integration field is a hidden checkbox that can be set to <c>true</c> using this API or the Import functionality. When checked, the address is displayed as read-only in the user interface to prevent users from updating it.
         /// </summary>
         [JsonProperty("integration")]
         public bool? Integration

@@ -12,7 +12,7 @@
         public Account? Account { get; internal set; }
 
         /// <summary>
-        /// Application offering (version) this instance is at.
+        /// App offering (version) this instance is at.
         /// </summary>
         [JsonProperty("appOffering")]
         public AppOffering? AppOffering { get; internal set; }
@@ -52,49 +52,49 @@
         }
 
         /// <summary>
-        /// Account this application instance is for.
+        /// Account this app instance is for.
         /// </summary>
         [JsonProperty("customerAccount")]
         public Account? CustomerAccount { get; internal set; }
 
         /// <summary>
-        /// Contact person of customer regarding this application instance.
+        /// Contact person of customer regarding this app instance.
         /// </summary>
         [JsonProperty("customerRepresentative")]
         public Person? CustomerRepresentative { get; internal set; }
 
         /// <summary>
-        /// Whether the application instance is currently enabled for this customer.
+        /// Whether the app instance is currently enabled for this customer.
         /// </summary>
         [JsonProperty("disabled")]
         public bool? Disabled { get; internal set; }
 
         /// <summary>
-        /// Whether the customer has enabled this application instance.
+        /// Whether the customer has enabled this app instance.
         /// </summary>
         [JsonProperty("enabledByCustomer"), Sdk4meField(true)]
         public bool? EnabledByCustomer { get; internal set; }
 
         /// <summary>
-        /// Whether the application is currently suspended for this customer.
+        /// Whether the app is currently suspended for this customer.
         /// </summary>
         [JsonProperty("suspended")]
         public bool? Suspended { get; internal set; }
 
         /// <summary>
-        /// Extra information why the application is currently suspended for this customer.
+        /// Extra information why the app is currently suspended for this customer.
         /// </summary>
         [JsonProperty("suspensionComment")]
         public string? SuspensionComment { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         /// <summary>
-        /// Webhook of this application instance.
+        /// Webhook of this app instance.
         /// </summary>
         [JsonProperty("webhook"), Sdk4meField(true)]
         public Webhook? Webhook { get; internal set; }

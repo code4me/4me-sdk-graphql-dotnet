@@ -1,7 +1,7 @@
 ﻿namespace Sdk4me.GraphQL
 {
     /// <summary>
-    /// Updates an existing user interface extension.
+    /// Updates an existing UI extension.
     /// </summary>
     internal class UiExtensionUpdateMutation : Mutation<UiExtensionUpdatePayload, UiExtensionUpdateInput>
     {

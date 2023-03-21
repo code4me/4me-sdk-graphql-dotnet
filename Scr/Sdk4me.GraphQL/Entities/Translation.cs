@@ -31,7 +31,7 @@
 
         /// <summary>
         /// <br>The language in which the text is specified.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/language/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/language/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("language"), Sdk4meField(true)]
         public string? Language { get; internal set; }
@@ -49,7 +49,7 @@
         public string? Text { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }

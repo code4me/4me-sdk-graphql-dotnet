@@ -6,7 +6,7 @@
     public class SlaNotificationRuleQuery : Query<SlaNotificationRuleQuery, SlaNotificationRuleField, DefaultView, DefaultOrderField>
     {
         /// <summary>
-        /// Initialize a new service level agreement notification rule query instance.
+        /// Initialize a new sla notification rule query instance.
         /// </summary>
         public SlaNotificationRuleQuery()
             : base("", typeof(SlaNotificationRule), true)

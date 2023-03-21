@@ -33,31 +33,31 @@ namespace Sdk4me.GraphQL
         public bool? NotifyCurrentAssignee { get; internal set; }
 
         /// <summary>
-        /// Whether to notify the first line team coordinator of the service instance of the affected service level agreement.
+        /// Whether to notify the first line team coordinator of the service instance of the affected SLA.
         /// </summary>
         [JsonProperty("notifyFirstLineTeamCoordinator"), Sdk4meField(true)]
         public bool? NotifyFirstLineTeamCoordinator { get; internal set; }
 
         /// <summary>
-        /// Whether to notify the first line team manager of the service instance of the affected service level agreement.
+        /// Whether to notify the first line team manager of the service instance of the affected SLA.
         /// </summary>
         [JsonProperty("notifyFirstLineTeamManager"), Sdk4meField(true)]
         public bool? NotifyFirstLineTeamManager { get; internal set; }
 
         /// <summary>
-        /// Whether to notify the service owner of the service of the affected service level agreement.
+        /// Whether to notify the service owner of the service of the affected SLA.
         /// </summary>
         [JsonProperty("notifyServiceOwner"), Sdk4meField(true)]
         public bool? NotifyServiceOwner { get; internal set; }
 
         /// <summary>
-        /// Whether to notify the support team coordinator of the service instance of the affected service level agreement.
+        /// Whether to notify the support team coordinator of the service instance of the affected SLA.
         /// </summary>
         [JsonProperty("notifySupportTeamCoordinator"), Sdk4meField(true)]
         public bool? NotifySupportTeamCoordinator { get; internal set; }
 
         /// <summary>
-        /// Whether to notify the support team manager of the service instance of the affected service level agreement.
+        /// Whether to notify the support team manager of the service instance of the affected SLA.
         /// </summary>
         [JsonProperty("notifySupportTeamManager"), Sdk4meField(true)]
         public bool? NotifySupportTeamManager { get; internal set; }

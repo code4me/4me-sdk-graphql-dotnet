@@ -152,7 +152,7 @@
 
         /// <summary>
         /// <br>The time zone that applies to the start, notice and expiry dates, and to the support hours.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("timeZone")]
         public string? TimeZone
@@ -162,7 +162,7 @@
         }
 
         /// <summary>
-        /// The number of minutes within which a new or existing request that has been assigned to the service desk team is assigned to a specific member within the service desk team, is assigned to another team, or is set to a status other than `assigned`.
+        /// The number of minutes within which a new or existing request that has been assigned to the service desk team is assigned to a specific member within the service desk team, is assigned to another team, or is set to a status other than <c>assigned</c>.
         /// </summary>
         [JsonProperty("pickupTarget")]
         public long? PickupTarget
@@ -172,7 +172,7 @@
         }
 
         /// <summary>
-        /// The number of minutes within which a new or existing chat request that has been assigned to the service desk team is assigned to a specific member within the service desk team, is assigned to another team, or is set to a status other than `assigned`.
+        /// The number of minutes within which a new or existing chat request that has been assigned to the service desk team is assigned to a specific member within the service desk team, is assigned to another team, or is set to a status other than <c>assigned</c>.
         /// </summary>
         [JsonProperty("supportChatPickupTarget")]
         public long? SupportChatPickupTarget
@@ -222,7 +222,7 @@
         }
 
         /// <summary>
-        /// The maximum percentage of requests that were reopened (i.e. which status in the account that is covered by the first line support agreement was updated from `completed` to another status).
+        /// The maximum percentage of requests that were reopened (i.e. which status in the account that is covered by the first line support agreement was updated from <c>completed</c> to another status).
         /// </summary>
         [JsonProperty("rejectedSolutions")]
         public long? RejectedSolutions

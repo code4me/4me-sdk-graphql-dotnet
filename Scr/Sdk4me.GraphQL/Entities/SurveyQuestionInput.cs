@@ -15,7 +15,7 @@
         private long? weight;
 
         /// <summary>
-        /// Identifier of the object to update using these values. For new objects it should be `null`.
+        /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
         /// </summary>
         [JsonProperty("id")]
         public string? ID

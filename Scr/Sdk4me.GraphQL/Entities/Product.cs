@@ -52,7 +52,12 @@
         }
 
         /// <summary>
-        /// Used to specify whether or not configuration items that are based on the product are typically depreciated and if so, which depreciation method is normally applied.
+        /// <br>Used to specify whether or not configuration items that are based on the product are typically depreciated and if so, which depreciation method is normally applied. Valid values are:</br>
+        /// <br>• <c>not_depreciated</c>: Not Depreciated</br>
+        /// <br>• <c>double_declining_balance</c>: Double Declining Balance</br>
+        /// <br>• <c>reducing_balance</c>: Reducing Balance (or Diminishing Value)</br>
+        /// <br>• <c>straight_line</c>: Straight Line (or Prime Cost)</br>
+        /// <br>• <c>sum_of_the_years_digits</c>: Sum of the Year's Digits</br>
         /// </summary>
         [JsonProperty("depreciationMethod")]
         public ProductDepreciationMethod? DepreciationMethod { get; internal set; }
@@ -76,7 +81,7 @@
         public string? Model { get; internal set; }
 
         /// <summary>
-        /// The name of the product. Fill out the Brand, Model, Product identifier (optional) and Category fields to automatically generate a name based on the values entered in these fields.
+        /// The name of the product. Fill out the Brand, Model, Product ID (optional) and Category fields to automatically generate a name based on the values entered in these fields.
         /// </summary>
         [JsonProperty("name"), Sdk4meField(true)]
         public string? Name { get; internal set; }
@@ -94,7 +99,7 @@
         public ProductCategory? ProductCategory { get; internal set; }
 
         /// <summary>
-        /// The unique identifier of the product that is used by the manufacturer. The concatenation of `brand` and `productID` must be unique within a 4me account.
+        /// The unique identifier of the product that is used by the manufacturer. The concatenation of <c>brand</c> and <c>productID</c> must be unique within a 4me account.
         /// </summary>
         [JsonProperty("productID")]
         public string? ProductID { get; internal set; }
@@ -142,7 +147,7 @@
 
         /// <summary>
         /// <br>The currency of the salvage value of this product.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/salvagevaluecurrency/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("salvageValueCurrency")]
         public string? SalvageValueCurrency { get; internal set; }
@@ -178,13 +183,13 @@
         public Team? SupportTeam { get; internal set; }
 
         /// <summary>
-        /// User interface extension that is to be added to the configuration items that are based on the product.
+        /// UI extension that is to be added to the configuration items that are based on the product.
         /// </summary>
         [JsonProperty("uiExtension")]
         public UiExtension? UiExtension { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }

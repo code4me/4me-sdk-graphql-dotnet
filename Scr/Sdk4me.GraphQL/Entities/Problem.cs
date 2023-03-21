@@ -129,7 +129,7 @@
         public long? PlannedEffort { get; internal set; }
 
         /// <summary>
-        /// The record identifier as displayed in the user interface.
+        /// The record ID as displayed in the UI
         /// </summary>
         [JsonProperty("problemId"), Sdk4meField(true)]
         public string? ProblemId { get; internal set; }
@@ -170,7 +170,7 @@
         }
 
         /// <summary>
-        /// The number of minutes it took to complete this problem, which is calculated as the difference between the `createdAt` and `solvedAt` values.
+        /// The number of minutes it took to complete this problem, which is calculated as the difference between the <c>createdAt</c> and <c>solvedAt</c> values.
         /// </summary>
         [JsonProperty("resolutionDuration")]
         public long? ResolutionDuration { get; internal set; }
@@ -263,13 +263,13 @@
         }
 
         /// <summary>
-        /// User interface extension that is linked to the record.
+        /// UI extension that is linked to the record.
         /// </summary>
         [JsonProperty("uiExtension")]
         public UiExtension? UiExtension { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }
@@ -281,7 +281,7 @@
         public bool? Urgent { get; internal set; }
 
         /// <summary>
-        /// The date and time at which the status of the problem is to be updated from `waiting_for` to `assigned`. This field is available only when the Status field is set to `waiting_for`.
+        /// The date and time at which the status of the problem is to be updated from <c>waiting_for</c> to <c>assigned</c>. This field is available only when the Status field is set to <c>waiting_for</c>.
         /// </summary>
         [JsonProperty("waitingUntil")]
         public DateTime? WaitingUntil { get; internal set; }

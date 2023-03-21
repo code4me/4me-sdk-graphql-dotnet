@@ -16,7 +16,7 @@
         private string? clientMutationId;
 
         /// <summary>
-        /// Values for custom fields to be used by the user interface Extension that is linked to the record.
+        /// Values for custom fields to be used by the UI Extension that is linked to the record.
         /// </summary>
         [JsonProperty("customFields")]
         public CustomFieldCollection? CustomFields
@@ -36,7 +36,7 @@
         }
 
         /// <summary>
-        /// Identifier of the contact person of customer regarding this application instance.
+        /// Identifier of the contact person of customer regarding this app instance.
         /// </summary>
         [JsonProperty("customerRepresentativeId")]
         public string? CustomerRepresentativeId
@@ -46,7 +46,7 @@
         }
 
         /// <summary>
-        /// Whether the application instance is currently enabled for this customer.
+        /// Whether the app instance is currently enabled for this customer.
         /// </summary>
         [JsonProperty("disabled")]
         public bool? Disabled
@@ -56,7 +56,7 @@
         }
 
         /// <summary>
-        /// Whether the customer has enabled this application instance.
+        /// Whether the customer has enabled this app instance.
         /// </summary>
         [JsonProperty("enabledByCustomer")]
         public bool? EnabledByCustomer
@@ -66,7 +66,7 @@
         }
 
         /// <summary>
-        /// Whether the application instance is currently suspended for this customer.
+        /// Whether the app instance is currently suspended for this customer.
         /// </summary>
         [JsonProperty("suspended")]
         public bool? Suspended
@@ -76,7 +76,7 @@
         }
 
         /// <summary>
-        /// Extra information why the application instance is currently suspended for this customer.
+        /// Extra information why the app instance is currently suspended for this customer.
         /// </summary>
         [JsonProperty("suspensionComment")]
         public string? SuspensionComment
@@ -86,7 +86,7 @@
         }
 
         /// <summary>
-        /// The node identifier of the record to update.
+        /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
         public string? ID

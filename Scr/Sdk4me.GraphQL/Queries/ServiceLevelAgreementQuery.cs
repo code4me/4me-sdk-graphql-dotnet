@@ -23,7 +23,7 @@
         }
 
         /// <summary>
-        /// The Charge IDs are the unique identifiers by which an effort class that is linked to a time entry when an activity was performed through the coverage of the service level agreement is known in the billing system of the service provider.
+        /// The Charge IDs are the unique identifiers by which an effort class that is linked to a time entry when an activity was performed through the coverage of the SLA is known in the billing system of the service provider.
         /// </summary>
         public ServiceLevelAgreementQuery SelectEffortClassChargeIDs(EffortClassChargeIDQuery query)
         {
@@ -41,7 +41,7 @@
         }
 
         /// <summary>
-        /// Organizations of the service level agreement. Only available for service level agreements where the `coverage` field is set to `organizations_and_descendants`, `organizations` or `organizations_and_sites`.
+        /// Organizations of the service level agreement. Only available for service level agreements where the <c>coverage</c> field is set to <c>organizations_and_descendants</c>, <c>organizations</c> or <c>organizations_and_sites</c>.
         /// </summary>
         public ServiceLevelAgreementQuery SelectOrganizations(OrganizationQuery query)
         {
@@ -50,7 +50,7 @@
         }
 
         /// <summary>
-        /// People of the service level agreement. Only available for service level agreements where the `coverage` field is set to `people`.
+        /// People of the service level agreement. Only available for service level agreements where the <c>coverage</c> field is set to <c>people</c>.
         /// </summary>
         public ServiceLevelAgreementQuery SelectPeople(PersonQuery query)
         {
@@ -68,7 +68,7 @@
         }
 
         /// <summary>
-        /// The service instances that consume the service instance for which the service level agreement is registered. Only available for service level agreements where the `coverage` field is set to `service_instances`.
+        /// The service instances that consume the service instance for which the service level agreement is registered. Only available for service level agreements where the <c>coverage</c> field is set to <c>service_instances</c>.
         /// </summary>
         public ServiceLevelAgreementQuery SelectServiceInstances(ParentServiceInstanceQuery query)
         {
@@ -77,7 +77,7 @@
         }
 
         /// <summary>
-        /// Sites of the service level agreement. Only available for service level agreements where the `coverage` field is set to `sites` or `organizations_and_sites`.
+        /// Sites of the service level agreement. Only available for service level agreements where the <c>coverage</c> field is set to <c>sites</c> or <c>organizations_and_sites</c>.
         /// </summary>
         public ServiceLevelAgreementQuery SelectSites(SiteQuery query)
         {
@@ -86,7 +86,7 @@
         }
 
         /// <summary>
-        /// Skill pools of the service level agreement. Only available for service level agreements where the `coverage` field is set to `skill_pools`.
+        /// Skill pools of the service level agreement. Only available for service level agreements where the <c>coverage</c> field is set to <c>skill_pools</c>.
         /// </summary>
         public ServiceLevelAgreementQuery SelectSkillPools(SkillPoolQuery query)
         {
@@ -95,7 +95,7 @@
         }
 
         /// <summary>
-        /// Represents the activityIDs for standard service requests. The Activity identifier is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider.
+        /// Represents the activityIDs for standard service requests. The Activity ID is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider.
         /// </summary>
         public ServiceLevelAgreementQuery SelectStandardServiceRequestActivityIDs(StandardServiceRequestActivityIDQuery query)
         {

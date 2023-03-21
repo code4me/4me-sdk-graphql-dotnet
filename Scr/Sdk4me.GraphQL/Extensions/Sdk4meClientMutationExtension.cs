@@ -56,7 +56,7 @@
         }
 
         /// <summary>
-        /// Creates a new application instance.
+        /// Creates a new app instance.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
@@ -68,7 +68,7 @@
         }
 
         /// <summary>
-        /// Creates a new application instance.
+        /// Creates a new app instance.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
@@ -81,7 +81,7 @@
         }
 
         /// <summary>
-        /// Updates an existing application instance.
+        /// Updates an existing app instance.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
@@ -93,7 +93,7 @@
         }
 
         /// <summary>
-        /// Updates an existing application instance.
+        /// Updates an existing app instance.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
@@ -106,7 +106,7 @@
         }
 
         /// <summary>
-        /// Creates a new application offering automation rule.
+        /// Creates a new app offering automation rule.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
@@ -118,7 +118,7 @@
         }
 
         /// <summary>
-        /// Creates a new application offering automation rule.
+        /// Creates a new app offering automation rule.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
@@ -131,7 +131,7 @@
         }
 
         /// <summary>
-        /// Updates an existing application offering automation rule.
+        /// Updates an existing app offering automation rule.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
@@ -143,7 +143,7 @@
         }
 
         /// <summary>
-        /// Updates an existing application offering automation rule.
+        /// Updates an existing app offering automation rule.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
@@ -156,7 +156,7 @@
         }
 
         /// <summary>
-        /// Creates a new application offering.
+        /// Creates a new app offering.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
@@ -168,7 +168,7 @@
         }
 
         /// <summary>
-        /// Creates a new application offering.
+        /// Creates a new app offering.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
@@ -181,7 +181,7 @@
         }
 
         /// <summary>
-        /// Updates an existing application offering.
+        /// Updates an existing app offering.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
@@ -193,7 +193,7 @@
         }
 
         /// <summary>
-        /// Updates an existing application offering.
+        /// Updates an existing app offering.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
@@ -356,7 +356,7 @@
         }
 
         /// <summary>
-        /// Creates a new configuration item. **Important**: To facilitate integrations with discovery tools, the create is treated as an update in case the provided `name` or `label` is already used by an inactive configuration item in the same account.
+        /// Creates a new configuration item. **Important**: To facilitate integrations with discovery tools, the create is treated as an update in case the provided <c>name</c> or <c>label</c> is already used by an inactive CI in the same account.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
@@ -368,7 +368,7 @@
         }
 
         /// <summary>
-        /// Creates a new configuration item. **Important**: To facilitate integrations with discovery tools, the create is treated as an update in case the provided `name` or `label` is already used by an inactive configuration item in the same account.
+        /// Creates a new configuration item. **Important**: To facilitate integrations with discovery tools, the create is treated as an update in case the provided <c>name</c> or <c>label</c> is already used by an inactive CI in the same account.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
@@ -559,17 +559,20 @@
         /// <br>This mutation can be used to push at most 100 discovered configuration items to 4me at once.</br>
         /// <br>A more extensive description of this functionality can be found on the</br>
         /// <br><see href="https://developer.4me.com/v1/import/discovery_tools/#using-graphql">Discovery Tools page of the developer documentation</see>.</br>
+        /// <br></br>
         /// <br>The query will be executed in the background. Typically the following fields should be queried:</br>
-        /// <br>- asyncQuery { resultUrl errorCount }</br>
-        /// <br>- configurationItems { identifier sourceID }</br>
-        /// <br>On initial submission the `configurationItems` field will be `null`.</br>
-        /// <br>The `resultUrl` contains an expiring link to the location where the resulting JSON is available</br>
+        /// <code>
+        /// asyncQuery { resultUrl errorCount }
+        /// configurationItems { id sourceID }
+        /// </code>
+        /// <br>On initial submission the <c>configurationItems</c> field will be <c>null</c>.</br>
+        /// <br>The <c>resultUrl</c> contains an expiring link to the location where the resulting JSON is available</br>
         /// <br>once the query has been executed.</br>
         /// <br>It is possible to poll the link every couple of seconds to check whether the query is completed.</br>
-        /// <br>Initially the link will point to an empty JSON document (`{}`), once the query is completed it will contain</br>
+        /// <br>Initially the link will point to an empty JSON document (<c>{}</c>), once the query is completed it will contain</br>
         /// <br>the JSON result of this mutation.</br>
-        /// <br>In the result both the `asyncQuery` and `configurationItems` fields as requested on submission are present.</br>
-        /// <br>The `errorCount` can for example be used to see whether processing was successful (then it is `0`).</br>.
+        /// <br>In the result both the <c>asyncQuery</c> and <c>configurationItems</c> fields as requested on submission are present.</br>
+        /// <br>The <c>errorCount</c> can for example be used to see whether processing was successful (then it is <c>0</c>).</br>
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
@@ -584,17 +587,20 @@
         /// <br>This mutation can be used to push at most 100 discovered configuration items to 4me at once.</br>
         /// <br>A more extensive description of this functionality can be found on the</br>
         /// <br><see href="https://developer.4me.com/v1/import/discovery_tools/#using-graphql">Discovery Tools page of the developer documentation</see>.</br>
+        /// <br></br>
         /// <br>The query will be executed in the background. Typically the following fields should be queried:</br>
-        /// <br>- asyncQuery { resultUrl errorCount }</br>
-        /// <br>- configurationItems { identifier sourceID }</br>
-        /// <br>On initial submission the `configurationItems` field will be `null`.</br>
-        /// <br>The `resultUrl` contains an expiring link to the location where the resulting JSON is available</br>
+        /// <code>
+        /// asyncQuery { resultUrl errorCount }
+        /// configurationItems { id sourceID }
+        /// </code>
+        /// <br>On initial submission the <c>configurationItems</c> field will be <c>null</c>.</br>
+        /// <br>The <c>resultUrl</c> contains an expiring link to the location where the resulting JSON is available</br>
         /// <br>once the query has been executed.</br>
         /// <br>It is possible to poll the link every couple of seconds to check whether the query is completed.</br>
-        /// <br>Initially the link will point to an empty JSON document (`{}`), once the query is completed it will contain</br>
+        /// <br>Initially the link will point to an empty JSON document (<c>{}</c>), once the query is completed it will contain</br>
         /// <br>the JSON result of this mutation.</br>
-        /// <br>In the result both the `asyncQuery` and `configurationItems` fields as requested on submission are present.</br>
-        /// <br>The `errorCount` can for example be used to see whether processing was successful (then it is `0`).</br>.
+        /// <br>In the result both the <c>asyncQuery</c> and <c>configurationItems</c> fields as requested on submission are present.</br>
+        /// <br>The <c>errorCount</c> can for example be used to see whether processing was successful (then it is <c>0</c>).</br>
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
@@ -2482,7 +2488,7 @@
         }
 
         /// <summary>
-        /// Creates a new service level agreement notification scheme.
+        /// Creates a new SLA notification scheme.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
@@ -2494,7 +2500,7 @@
         }
 
         /// <summary>
-        /// Creates a new service level agreement notification scheme.
+        /// Creates a new SLA notification scheme.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
@@ -2507,7 +2513,7 @@
         }
 
         /// <summary>
-        /// Updates an existing service level agreement notification scheme.
+        /// Updates an existing SLA notification scheme.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
@@ -2519,7 +2525,7 @@
         }
 
         /// <summary>
-        /// Updates an existing service level agreement notification scheme.
+        /// Updates an existing SLA notification scheme.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
@@ -3032,7 +3038,7 @@
         }
 
         /// <summary>
-        /// Creates a new user interface extension.
+        /// Creates a new UI extension.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
@@ -3044,7 +3050,7 @@
         }
 
         /// <summary>
-        /// Creates a new user interface extension.
+        /// Creates a new UI extension.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
@@ -3057,7 +3063,7 @@
         }
 
         /// <summary>
-        /// Updates an existing user interface extension.
+        /// Updates an existing UI extension.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
@@ -3069,7 +3075,7 @@
         }
 
         /// <summary>
-        /// Updates an existing user interface extension.
+        /// Updates an existing UI extension.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>

@@ -6,7 +6,7 @@
     public class EffortClassChargeIDQuery : Query<EffortClassChargeIDQuery, EffortClassChargeIDField, DefaultView, DefaultOrderField>
     {
         /// <summary>
-        /// Initialize a new effort class charge identifier query instance.
+        /// Initialize a new effort class charge id query instance.
         /// </summary>
         public EffortClassChargeIDQuery()
             : base("", typeof(EffortClassChargeID), true)

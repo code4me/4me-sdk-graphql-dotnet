@@ -57,7 +57,7 @@
         }
 
         /// <summary>
-        /// User interface extension that is to be applied to the record.
+        /// UI extension that is to be applied to the record.
         /// </summary>
         [JsonProperty("uiExtensionId")]
         public string? UiExtensionId
@@ -127,7 +127,7 @@
         }
 
         /// <summary>
-        /// Whether the Copy note to project box of project tasks that were created based on the template needs to be checked by default. (The Copy notes to project checkbox is called "Copy notes to project by default" when the project task template is in Edit mode.).
+        /// Whether the Copy note to project box of project tasks that were created based on the template needs to be checked by default. (The Copy notes to project checkbox is called "Copy notes to project by default" when the project task template is in Edit mode.)
         /// </summary>
         [JsonProperty("copyNotesToProject")]
         public bool? CopyNotesToProject

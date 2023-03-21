@@ -18,7 +18,7 @@
         private string? reference;
 
         /// <summary>
-        /// Identifier of the object to update using these values. For new objects it should be `null`.
+        /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
         /// </summary>
         [JsonProperty("id")]
         public string? ID
@@ -28,7 +28,7 @@
         }
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// An identifier for the client application submitting the resource or the name of an external system
         /// </summary>
         [JsonProperty("source")]
         public string? Source
@@ -38,7 +38,7 @@
         }
 
         /// <summary>
-        /// The unique identifier of the resource in an external system.
+        /// The unique identifier of the resource in an external system
         /// </summary>
         [JsonProperty("sourceID")]
         public string? SourceID
@@ -58,7 +58,7 @@
         }
 
         /// <summary>
-        /// Values for custom fields to be used by the user interface Extension that is linked to the record.
+        /// Values for custom fields to be used by the UI Extension that is linked to the record.
         /// </summary>
         [JsonProperty("customFields")]
         public CustomFieldCollection? CustomFields

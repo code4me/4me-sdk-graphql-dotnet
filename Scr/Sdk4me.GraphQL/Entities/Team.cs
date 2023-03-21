@@ -136,19 +136,19 @@
 
         /// <summary>
         /// <br>The time zone that applies to the selected work hours.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("timeZone")]
         public string? TimeZone { get; internal set; }
 
         /// <summary>
-        /// User interface extension that is linked to the record.
+        /// UI extension that is linked to the record.
         /// </summary>
         [JsonProperty("uiExtension")]
         public UiExtension? UiExtension { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }

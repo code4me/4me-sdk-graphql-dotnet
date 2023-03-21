@@ -12,7 +12,7 @@
         public Person? Assignee { get; internal set; }
 
         /// <summary>
-        /// **link to Project Summary** - The hyperlink to the Project Summary PDF file that was generated for the assignee when the assignment was last set to the status `assigned` (for project tasks of the category `approval` only).
+        /// <strong>link to Project Summary</strong> - The hyperlink to the Project Summary PDF file that was generated for the assignee when the assignment was last set to the status <c>assigned</c> (for project tasks of the category <c>approval</c> only).
         /// </summary>
         [JsonProperty("attachment")]
         public string? Attachment { get; internal set; }
@@ -36,13 +36,13 @@
         public ProjectTaskStatus? Status { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the assignment. If the assignment has had no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the assignment. If the assignment has had no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         /// <summary>
-        /// Used to specify the date and time at which the status of the assignment is to be updated from `waiting_for` to `assigned`. This field is available only when the Status field is set to `waiting_for`.
+        /// Used to specify the date and time at which the status of the assignment is to be updated from <c>waiting_for</c> to <c>assigned</c>. This field is available only when the Status field is set to <c>waiting_for</c>.
         /// </summary>
         [JsonProperty("waitingUntil")]
         public DateTime? WaitingUntil { get; internal set; }

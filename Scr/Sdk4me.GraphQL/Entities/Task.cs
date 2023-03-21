@@ -151,7 +151,7 @@
         public LifeCycleState? LifeCycleState { get; internal set; }
 
         /// <summary>
-        /// The person to whom the task is to be assigned. This field's value is `null` in case of an approval task with multiple approvers.
+        /// The person to whom the task is to be assigned. This field's value is <c>null</c> in case of an approval task with multiple approvers.
         /// </summary>
         [JsonProperty("member"), Sdk4meField(true)]
         public Person? Member { get; internal set; }
@@ -204,7 +204,7 @@
         public long? PlannedEffort { get; internal set; }
 
         /// <summary>
-        /// Whether the provider indicates not to be accountable for the affected service level agreements linked to the requests that are linked to the workflow of a task that was created based on the template.
+        /// Whether the provider indicates not to be accountable for the affected SLAs linked to the requests that are linked to the workflow of a task that was created based on the template.
         /// </summary>
         [JsonProperty("providerNotAccountable")]
         public bool? ProviderNotAccountable { get; internal set; }
@@ -240,7 +240,7 @@
         public long? RequiredApprovals { get; internal set; }
 
         /// <summary>
-        /// The number of minutes it took to complete this problem, which is calculated as the difference between the `assignedAt` and `finishedAt` values.
+        /// The number of minutes it took to complete this problem, which is calculated as the difference between the <c>assignedAt</c> and <c>finishedAt</c> values.
         /// </summary>
         [JsonProperty("resolutionDuration")]
         public long? ResolutionDuration { get; internal set; }
@@ -310,7 +310,7 @@
         public string? SupplierRequestID { get; internal set; }
 
         /// <summary>
-        /// The record identifier as displayed in the user interface.
+        /// The record ID as displayed in the UI
         /// </summary>
         [JsonProperty("taskId")]
         public string? TaskId { get; internal set; }
@@ -339,7 +339,7 @@
         }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }
@@ -351,7 +351,7 @@
         public bool? Urgent { get; internal set; }
 
         /// <summary>
-        /// The date and time at which the status of the task is to be updated from `waiting_for` to `assigned`. This field is available only when the Status field is set to `waiting_for`.
+        /// The date and time at which the status of the task is to be updated from <c>waiting_for</c> to <c>assigned</c>. This field is available only when the Status field is set to <c>waiting_for</c>.
         /// </summary>
         [JsonProperty("waitingUntil")]
         public DateTime? WaitingUntil { get; internal set; }

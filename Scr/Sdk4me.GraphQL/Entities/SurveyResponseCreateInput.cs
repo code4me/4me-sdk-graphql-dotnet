@@ -109,7 +109,7 @@
         }
 
         /// <summary>
-        /// Identifiers of the service level agreements this response is for. (Ignored when supplying a personId.).
+        /// Identifiers of the SLAs this response is for. (Ignored when supplying a personId.)
         /// </summary>
         [JsonProperty("slaIds")]
         public List<string>? SlaIds

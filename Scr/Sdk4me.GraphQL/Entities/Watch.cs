@@ -24,7 +24,7 @@
         public Person? Person { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the watch. If the watch has had no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the watch. If the watch has had no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt")]
         public DateTime? UpdatedAt { get; internal set; }

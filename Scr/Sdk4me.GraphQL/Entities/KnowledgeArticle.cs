@@ -18,7 +18,7 @@
         public DateOnly? ArchiveDate { get; internal set; }
 
         /// <summary>
-        /// Whether the knowledge article needs to be available to the people who are a member of the support team of one of the service instances that are selected in the Coverage section of an active service level agreement for the service that is linked to the article.
+        /// Whether the knowledge article needs to be available to the people who are a member of the support team of one of the service instances that are selected in the Coverage section of an active SLA for the service that is linked to the article.
         /// </summary>
         [JsonProperty("coveredSpecialists")]
         public bool? CoveredSpecialists { get; internal set; }
@@ -53,7 +53,7 @@
         }
 
         /// <summary>
-        /// Whether the knowledge article needs to be available to anyone who is covered by an active service level agreement for the service that is linked to the article.
+        /// Whether the knowledge article needs to be available to anyone who is covered by an active SLA for the service that is linked to the article.
         /// </summary>
         [JsonProperty("endUsers")]
         public bool? EndUsers { get; internal set; }
@@ -82,7 +82,7 @@
         public bool? InternalSpecialists { get; internal set; }
 
         /// <summary>
-        /// Whether the knowledge article needs to be available to the people who have the Key Contact role of the customer account of an active service level agreement for the service that is linked to the article.
+        /// Whether the knowledge article needs to be available to the people who have the Key Contact role of the customer account of an active SLA for the service that is linked to the article.
         /// </summary>
         [JsonProperty("keyContacts")]
         public bool? KeyContacts { get; internal set; }
@@ -163,7 +163,7 @@
         }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }

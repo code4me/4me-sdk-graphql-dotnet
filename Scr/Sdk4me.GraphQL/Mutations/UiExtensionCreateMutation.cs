@@ -1,7 +1,7 @@
 ﻿namespace Sdk4me.GraphQL
 {
     /// <summary>
-    /// Creates a new user interface extension.
+    /// Creates a new UI extension.
     /// </summary>
     internal class UiExtensionCreateMutation : Mutation<UiExtensionCreatePayload, UiExtensionCreateInput>
     {

@@ -23,7 +23,7 @@
         }
 
         /// <summary>
-        /// Service level agreements of this survey response.
+        /// SLAs of this survey response.
         /// </summary>
         public SurveyResponseQuery SelectSlas(ServiceLevelAgreementQuery query)
         {

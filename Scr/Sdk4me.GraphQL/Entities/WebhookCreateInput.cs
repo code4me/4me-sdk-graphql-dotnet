@@ -65,7 +65,7 @@
         }
 
         /// <summary>
-        /// Publicly accessible uniform resource identifier that 4me can use to POST http messages to.
+        /// Publicly accessible URI that 4me can use to POST http messages to.
         /// </summary>
         [JsonProperty("uri")]
         public string? Uri

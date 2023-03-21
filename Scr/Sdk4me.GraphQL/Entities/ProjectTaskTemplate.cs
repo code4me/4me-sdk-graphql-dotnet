@@ -70,7 +70,7 @@
         public ProjectTaskCategory? Category { get; internal set; }
 
         /// <summary>
-        /// Whether the Copy note to project box of project tasks that were created based on the template needs to be checked by default. (The Copy notes to project checkbox is called "Copy notes to project by default" when the project task template is in Edit mode.).
+        /// Whether the Copy note to project box of project tasks that were created based on the template needs to be checked by default. (The Copy notes to project checkbox is called "Copy notes to project by default" when the project task template is in Edit mode.)
         /// </summary>
         [JsonProperty("copyNotesToProject")]
         public bool? CopyNotesToProject { get; internal set; }
@@ -246,13 +246,13 @@
         public Team? Team { get; internal set; }
 
         /// <summary>
-        /// User interface extension that is to be added to a new project task when it is being created based on the template.
+        /// UI extension that is to be added to a new project task when it is being created based on the template.
         /// </summary>
         [JsonProperty("uiExtension")]
         public UiExtension? UiExtension { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }

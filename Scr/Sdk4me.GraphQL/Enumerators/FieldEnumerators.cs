@@ -11,7 +11,7 @@
         [EnumMember(Value = "disabled")]
         Disabled,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -85,7 +85,7 @@
         [EnumMember(Value = "country")]
         Country,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -172,7 +172,7 @@
         [EnumMember(Value = "firstLineTeam")]
         FirstLineTeam,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -339,7 +339,7 @@
         [EnumMember(Value = "disabled")]
         Disabled,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -354,7 +354,7 @@
         [EnumMember(Value = "name")]
         Name,
         /// <summary>
-        /// The picture uniform resource identifier field.
+        /// The picture uri field.
         /// </summary>
         [EnumMember(Value = "pictureUri")]
         PictureUri,
@@ -364,7 +364,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -406,7 +406,7 @@
         [EnumMember(Value = "dialogType")]
         DialogType,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -446,7 +446,7 @@
         [EnumMember(Value = "updatedAt")]
         UpdatedAt,
         /// <summary>
-        /// The work-in-progress limit field.
+        /// The wip limit field.
         /// </summary>
         [EnumMember(Value = "wipLimit")]
         WipLimit,
@@ -485,7 +485,7 @@
         [EnumMember(Value = "account")]
         Account,
         /// <summary>
-        /// The application offering field.
+        /// The app offering field.
         /// </summary>
         [EnumMember(Value = "appOffering")]
         AppOffering,
@@ -530,7 +530,7 @@
         [EnumMember(Value = "enabledByCustomer")]
         EnabledByCustomer,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -572,7 +572,7 @@
         [EnumMember(Value = "account")]
         Account,
         /// <summary>
-        /// The application instances field.
+        /// The app instances field.
         /// </summary>
         [EnumMember(Value = "appInstances")]
         AppInstances,
@@ -592,7 +592,7 @@
         [EnumMember(Value = "complianceAttachments")]
         ComplianceAttachments,
         /// <summary>
-        /// The configuration uniform resource identifier template field.
+        /// The configuration uri template field.
         /// </summary>
         [EnumMember(Value = "configurationUriTemplate")]
         ConfigurationUriTemplate,
@@ -627,7 +627,7 @@
         [EnumMember(Value = "featuresAttachments")]
         FeaturesAttachments,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -642,7 +642,7 @@
         [EnumMember(Value = "name")]
         Name,
         /// <summary>
-        /// The picture uniform resource identifier field.
+        /// The picture uri field.
         /// </summary>
         [EnumMember(Value = "pictureUri")]
         PictureUri,
@@ -687,12 +687,12 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
         /// <summary>
-        /// The user interface extension version field.
+        /// The ui extension version field.
         /// </summary>
         [EnumMember(Value = "uiExtensionVersion")]
         UiExtensionVersion,
@@ -702,7 +702,7 @@
         [EnumMember(Value = "updatedAt")]
         UpdatedAt,
         /// <summary>
-        /// The webhook uniform resource identifier template field.
+        /// The webhook uri template field.
         /// </summary>
         [EnumMember(Value = "webhookUriTemplate")]
         WebhookUriTemplate,
@@ -724,7 +724,7 @@
         [EnumMember(Value = "actions")]
         Actions,
         /// <summary>
-        /// The application offering field.
+        /// The app offering field.
         /// </summary>
         [EnumMember(Value = "appOffering")]
         AppOffering,
@@ -754,7 +754,7 @@
         [EnumMember(Value = "generic")]
         Generic,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -801,7 +801,7 @@
         [EnumMember(Value = "effect")]
         Effect,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -833,7 +833,7 @@
         [EnumMember(Value = "createdAt")]
         CreatedAt,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -855,7 +855,7 @@
         [EnumMember(Value = "filename")]
         Filename,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -902,7 +902,7 @@
         [EnumMember(Value = "sizeLimit")]
         SizeLimit,
         /// <summary>
-        /// The upload uniform resource identifier field.
+        /// The upload uri field.
         /// </summary>
         [EnumMember(Value = "uploadUri")]
         UploadUri,
@@ -954,7 +954,7 @@
         [EnumMember(Value = "generic")]
         Generic,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -974,7 +974,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -1055,7 +1055,7 @@
         [EnumMember(Value = "endAt")]
         EndAt,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -1080,7 +1080,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -1142,7 +1142,7 @@
         [EnumMember(Value = "holidays")]
         Holidays,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -1157,7 +1157,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -1206,12 +1206,12 @@
         [EnumMember(Value = "alternateNames")]
         AlternateNames,
         /// <summary>
-        /// The asset identifier field.
+        /// The asset id field.
         /// </summary>
         [EnumMember(Value = "assetID")]
         AssetID,
         /// <summary>
-        /// The configuration item relations field.
+        /// The ci relations field.
         /// </summary>
         [EnumMember(Value = "ciRelations")]
         CiRelations,
@@ -1241,7 +1241,7 @@
         [EnumMember(Value = "financialOwner")]
         FinancialOwner,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -1286,22 +1286,22 @@
         [EnumMember(Value = "name")]
         Name,
         /// <summary>
-        /// The number of cores field.
+        /// The nr of cores field.
         /// </summary>
         [EnumMember(Value = "nrOfCores")]
         NrOfCores,
         /// <summary>
-        /// The number of licenses field.
+        /// The nr of licenses field.
         /// </summary>
         [EnumMember(Value = "nrOfLicenses")]
         NrOfLicenses,
         /// <summary>
-        /// The number of processors field.
+        /// The nr of processors field.
         /// </summary>
         [EnumMember(Value = "nrOfProcessors")]
         NrOfProcessors,
         /// <summary>
-        /// The picture uniform resource identifier field.
+        /// The picture uri field.
         /// </summary>
         [EnumMember(Value = "pictureUri")]
         PictureUri,
@@ -1341,7 +1341,7 @@
         [EnumMember(Value = "ruleSet")]
         RuleSet,
         /// <summary>
-        /// The serial number field.
+        /// The serial nr field.
         /// </summary>
         [EnumMember(Value = "serialNr")]
         SerialNr,
@@ -1371,7 +1371,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -1396,7 +1396,7 @@
         [EnumMember(Value = "supportTeam")]
         SupportTeam,
         /// <summary>
-        /// The system identifier field.
+        /// The system id field.
         /// </summary>
         [EnumMember(Value = "systemID")]
         SystemID,
@@ -1443,7 +1443,7 @@
         [EnumMember(Value = "configurationItem")]
         ConfigurationItem,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -1465,7 +1465,7 @@
     public enum ContactField
     {
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -1485,7 +1485,7 @@
         [EnumMember(Value = "protocol")]
         Protocol,
         /// <summary>
-        /// The uniform resource identifier field.
+        /// The uri field.
         /// </summary>
         [EnumMember(Value = "uri")]
         Uri,
@@ -1547,7 +1547,7 @@
         [EnumMember(Value = "expiryDate")]
         ExpiryDate,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -1582,7 +1582,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -1612,7 +1612,7 @@
         [EnumMember(Value = "timeZone")]
         TimeZone,
         /// <summary>
-        /// The user interface extension field.
+        /// The ui extension field.
         /// </summary>
         [EnumMember(Value = "uiExtension")]
         UiExtension,
@@ -1659,7 +1659,7 @@
         [EnumMember(Value = "disabled")]
         Disabled,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -1669,7 +1669,7 @@
         [EnumMember(Value = "name")]
         Name,
         /// <summary>
-        /// The picture uniform resource identifier field.
+        /// The picture uri field.
         /// </summary>
         [EnumMember(Value = "pictureUri")]
         PictureUri,
@@ -1684,12 +1684,12 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
         /// <summary>
-        /// The user interface extension field.
+        /// The ui extension field.
         /// </summary>
         [EnumMember(Value = "uiExtension")]
         UiExtension,
@@ -1741,7 +1741,7 @@
         [EnumMember(Value = "disabled")]
         Disabled,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -1761,7 +1761,7 @@
         [EnumMember(Value = "name")]
         Name,
         /// <summary>
-        /// The picture uniform resource identifier field.
+        /// The picture uri field.
         /// </summary>
         [EnumMember(Value = "pictureUri")]
         PictureUri,
@@ -1776,7 +1776,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -1798,7 +1798,7 @@
     public enum CustomFieldField
     {
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -1835,7 +1835,7 @@
         [EnumMember(Value = "disabled")]
         Disabled,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -1860,7 +1860,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -1882,7 +1882,7 @@
     public enum EffortClassChargeIDField
     {
         /// <summary>
-        /// The charge identifier field.
+        /// The charge id field.
         /// </summary>
         [EnumMember(Value = "chargeID")]
         ChargeID,
@@ -1897,7 +1897,7 @@
         [EnumMember(Value = "effortClass")]
         EffortClass,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -1924,7 +1924,7 @@
         [EnumMember(Value = "effortClass")]
         EffortClass,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -2035,7 +2035,7 @@
         [EnumMember(Value = "firstCallResolutions")]
         FirstCallResolutions,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -2105,7 +2105,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -2237,7 +2237,7 @@
         [EnumMember(Value = "endAt")]
         EndAt,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -2247,7 +2247,7 @@
         [EnumMember(Value = "name")]
         Name,
         /// <summary>
-        /// The picture uniform resource identifier field.
+        /// The picture uri field.
         /// </summary>
         [EnumMember(Value = "pictureUri")]
         PictureUri,
@@ -2257,7 +2257,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -2344,7 +2344,7 @@
         [EnumMember(Value = "flsa")]
         Flsa,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -2354,12 +2354,12 @@
         [EnumMember(Value = "invoiceDate")]
         InvoiceDate,
         /// <summary>
-        /// The invoice number field.
+        /// The invoice nr field.
         /// </summary>
         [EnumMember(Value = "invoiceNr")]
         InvoiceNr,
         /// <summary>
-        /// The purchase order number field.
+        /// The po nr field.
         /// </summary>
         [EnumMember(Value = "poNr")]
         PoNr,
@@ -2404,7 +2404,7 @@
         [EnumMember(Value = "service")]
         Service,
         /// <summary>
-        /// The service level agreement field.
+        /// The sla field.
         /// </summary>
         [EnumMember(Value = "sla")]
         Sla,
@@ -2414,7 +2414,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -2491,7 +2491,7 @@
         [EnumMember(Value = "endUsers")]
         EndUsers,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -2546,7 +2546,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -2593,7 +2593,7 @@
         [EnumMember(Value = "createdAt")]
         CreatedAt,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -2690,12 +2690,12 @@
         [EnumMember(Value = "disabled")]
         Disabled,
         /// <summary>
-        /// The financial identifier field.
+        /// The financial id field.
         /// </summary>
         [EnumMember(Value = "financialID")]
         FinancialID,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -2725,7 +2725,7 @@
         [EnumMember(Value = "people")]
         People,
         /// <summary>
-        /// The picture uniform resource identifier field.
+        /// The picture uri field.
         /// </summary>
         [EnumMember(Value = "pictureUri")]
         PictureUri,
@@ -2760,7 +2760,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -2775,7 +2775,7 @@
         [EnumMember(Value = "timeAllocations")]
         TimeAllocations,
         /// <summary>
-        /// The user interface extension field.
+        /// The ui extension field.
         /// </summary>
         [EnumMember(Value = "uiExtension")]
         UiExtension,
@@ -2817,7 +2817,7 @@
         [EnumMember(Value = "endAt")]
         EndAt,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -2837,7 +2837,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -2864,7 +2864,7 @@
     public enum ParentServiceInstanceField
     {
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -2916,7 +2916,7 @@
         [EnumMember(Value = "html")]
         Html,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -2992,7 +2992,7 @@
         [EnumMember(Value = "addresses")]
         Addresses,
         /// <summary>
-        /// The authentication identifier field.
+        /// The authentication id field.
         /// </summary>
         [EnumMember(Value = "authenticationID")]
         AuthenticationID,
@@ -3052,7 +3052,7 @@
         [EnumMember(Value = "doNotTranslateLanguages")]
         DoNotTranslateLanguages,
         /// <summary>
-        /// The employee identifier field.
+        /// The employee id field.
         /// </summary>
         [EnumMember(Value = "employeeID")]
         EmployeeID,
@@ -3067,7 +3067,7 @@
         [EnumMember(Value = "guest")]
         Guest,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -3127,7 +3127,7 @@
         [EnumMember(Value = "permissions")]
         Permissions,
         /// <summary>
-        /// The picture uniform resource identifier field.
+        /// The picture uri field.
         /// </summary>
         [EnumMember(Value = "pictureUri")]
         PictureUri,
@@ -3162,12 +3162,12 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
         /// <summary>
-        /// The support identifier field.
+        /// The support id field.
         /// </summary>
         [EnumMember(Value = "supportID")]
         SupportID,
@@ -3177,7 +3177,7 @@
         [EnumMember(Value = "teams")]
         Teams,
         /// <summary>
-        /// The time format 24 hours field.
+        /// The time format 24 h field.
         /// </summary>
         [EnumMember(Value = "timeFormat24h")]
         TimeFormat24h,
@@ -3187,7 +3187,7 @@
         [EnumMember(Value = "timeZone")]
         TimeZone,
         /// <summary>
-        /// The user interface extension field.
+        /// The ui extension field.
         /// </summary>
         [EnumMember(Value = "uiExtension")]
         UiExtension,
@@ -3264,7 +3264,7 @@
         [EnumMember(Value = "customFieldsAttachments")]
         CustomFieldsAttachments,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -3309,7 +3309,7 @@
         [EnumMember(Value = "plannedEffort")]
         PlannedEffort,
         /// <summary>
-        /// The problem identifier field.
+        /// The problem id field.
         /// </summary>
         [EnumMember(Value = "problemId")]
         ProblemId,
@@ -3364,7 +3364,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -3389,7 +3389,7 @@
         [EnumMember(Value = "supplier")]
         Supplier,
         /// <summary>
-        /// The supplier request identifier field.
+        /// The supplier request id field.
         /// </summary>
         [EnumMember(Value = "supplierRequestID")]
         SupplierRequestID,
@@ -3404,7 +3404,7 @@
         [EnumMember(Value = "timeEntries")]
         TimeEntries,
         /// <summary>
-        /// The user interface extension field.
+        /// The ui extension field.
         /// </summary>
         [EnumMember(Value = "uiExtension")]
         UiExtension,
@@ -3491,7 +3491,7 @@
         [EnumMember(Value = "financialOwner")]
         FinancialOwner,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -3506,7 +3506,7 @@
         [EnumMember(Value = "name")]
         Name,
         /// <summary>
-        /// The picture uniform resource identifier field.
+        /// The picture uri field.
         /// </summary>
         [EnumMember(Value = "pictureUri")]
         PictureUri,
@@ -3516,7 +3516,7 @@
         [EnumMember(Value = "productCategory")]
         ProductCategory,
         /// <summary>
-        /// The product identifier field.
+        /// The product id field.
         /// </summary>
         [EnumMember(Value = "productID")]
         ProductID,
@@ -3566,7 +3566,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -3581,7 +3581,7 @@
         [EnumMember(Value = "supportTeam")]
         SupportTeam,
         /// <summary>
-        /// The user interface extension field.
+        /// The ui extension field.
         /// </summary>
         [EnumMember(Value = "uiExtension")]
         UiExtension,
@@ -3638,7 +3638,7 @@
         [EnumMember(Value = "disabled")]
         Disabled,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -3653,7 +3653,7 @@
         [EnumMember(Value = "name")]
         Name,
         /// <summary>
-        /// The picture uniform resource identifier field.
+        /// The picture uri field.
         /// </summary>
         [EnumMember(Value = "pictureUri")]
         PictureUri,
@@ -3673,7 +3673,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -3732,7 +3732,7 @@
         [EnumMember(Value = "group")]
         Group,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -3742,7 +3742,7 @@
         [EnumMember(Value = "name")]
         Name,
         /// <summary>
-        /// The picture uniform resource identifier field.
+        /// The picture uri field.
         /// </summary>
         [EnumMember(Value = "pictureUri")]
         PictureUri,
@@ -3767,7 +3767,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -3777,7 +3777,7 @@
         [EnumMember(Value = "translations")]
         Translations,
         /// <summary>
-        /// The user interface extension field.
+        /// The ui extension field.
         /// </summary>
         [EnumMember(Value = "uiExtension")]
         UiExtension,
@@ -3859,7 +3859,7 @@
         [EnumMember(Value = "effort")]
         Effort,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -3904,7 +3904,7 @@
         [EnumMember(Value = "program")]
         Program,
         /// <summary>
-        /// The project identifier field.
+        /// The project id field.
         /// </summary>
         [EnumMember(Value = "projectId")]
         ProjectId,
@@ -3944,7 +3944,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -3974,7 +3974,7 @@
         [EnumMember(Value = "totalCost")]
         TotalCost,
         /// <summary>
-        /// The user interface extension field.
+        /// The ui extension field.
         /// </summary>
         [EnumMember(Value = "uiExtension")]
         UiExtension,
@@ -4031,7 +4031,7 @@
         [EnumMember(Value = "disabled")]
         Disabled,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -4066,7 +4066,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -4093,7 +4093,7 @@
         [EnumMember(Value = "createdAt")]
         CreatedAt,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -4150,7 +4150,7 @@
         [EnumMember(Value = "disabled")]
         Disabled,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -4185,7 +4185,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -4277,7 +4277,7 @@
         [EnumMember(Value = "finishedAt")]
         FinishedAt,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -4337,7 +4337,7 @@
         [EnumMember(Value = "project")]
         Project,
         /// <summary>
-        /// The project task identifier field.
+        /// The project task id field.
         /// </summary>
         [EnumMember(Value = "projectTaskId")]
         ProjectTaskId,
@@ -4362,7 +4362,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -4397,7 +4397,7 @@
         [EnumMember(Value = "supplier")]
         Supplier,
         /// <summary>
-        /// The supplier request identifier field.
+        /// The supplier request id field.
         /// </summary>
         [EnumMember(Value = "supplierRequestID")]
         SupplierRequestID,
@@ -4432,7 +4432,7 @@
         [EnumMember(Value = "waitingUntil")]
         WaitingUntil,
         /// <summary>
-        /// The work hours are 24x7 field.
+        /// The work hours are 24 x 7 field.
         /// </summary>
         [EnumMember(Value = "workHoursAre24x7")]
         WorkHoursAre24x7,
@@ -4459,7 +4459,7 @@
         [EnumMember(Value = "createdAt")]
         CreatedAt,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -4556,7 +4556,7 @@
         [EnumMember(Value = "effortClass")]
         EffortClass,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -4646,7 +4646,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -4671,7 +4671,7 @@
         [EnumMember(Value = "team")]
         Team,
         /// <summary>
-        /// The user interface extension field.
+        /// The ui extension field.
         /// </summary>
         [EnumMember(Value = "uiExtension")]
         UiExtension,
@@ -4681,7 +4681,7 @@
         [EnumMember(Value = "updatedAt")]
         UpdatedAt,
         /// <summary>
-        /// The work hours are 24x7 field.
+        /// The work hours are 24 x 7 field.
         /// </summary>
         [EnumMember(Value = "workHoursAre24x7")]
         WorkHoursAre24x7,
@@ -4698,7 +4698,7 @@
         [EnumMember(Value = "assignee")]
         Assignee,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -4720,7 +4720,7 @@
         [EnumMember(Value = "automationRules")]
         AutomationRules,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -4757,7 +4757,7 @@
         [EnumMember(Value = "disabled")]
         Disabled,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -4772,7 +4772,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -4804,7 +4804,7 @@
         [EnumMember(Value = "createdAt")]
         CreatedAt,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -4846,7 +4846,7 @@
         [EnumMember(Value = "fullDescription")]
         FullDescription,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -4861,7 +4861,7 @@
         [EnumMember(Value = "name")]
         Name,
         /// <summary>
-        /// The picture uniform resource identifier field.
+        /// The picture uri field.
         /// </summary>
         [EnumMember(Value = "pictureUri")]
         PictureUri,
@@ -4908,7 +4908,7 @@
     public enum ProviderShopOrderLineField
     {
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -5186,7 +5186,7 @@
         [EnumMember(Value = "customFieldsAttachments")]
         CustomFieldsAttachments,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -5211,7 +5211,7 @@
         [EnumMember(Value = "notes")]
         Notes,
         /// <summary>
-        /// The release identifier field.
+        /// The release id field.
         /// </summary>
         [EnumMember(Value = "releaseId")]
         ReleaseId,
@@ -5221,7 +5221,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -5236,7 +5236,7 @@
         [EnumMember(Value = "subject")]
         Subject,
         /// <summary>
-        /// The user interface extension field.
+        /// The ui extension field.
         /// </summary>
         [EnumMember(Value = "uiExtension")]
         UiExtension,
@@ -5268,7 +5268,7 @@
         [EnumMember(Value = "addressed")]
         Addressed,
         /// <summary>
-        /// The affected service level agreements field.
+        /// The affected slas field.
         /// </summary>
         [EnumMember(Value = "affectedSlas")]
         AffectedSlas,
@@ -5373,7 +5373,7 @@
         [EnumMember(Value = "grouping")]
         Grouping,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -5468,7 +5468,7 @@
         [EnumMember(Value = "reopenCount")]
         ReopenCount,
         /// <summary>
-        /// The request identifier field.
+        /// The request id field.
         /// </summary>
         [EnumMember(Value = "requestId")]
         RequestId,
@@ -5528,7 +5528,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -5553,7 +5553,7 @@
         [EnumMember(Value = "supplier")]
         Supplier,
         /// <summary>
-        /// The supplier request identifier field.
+        /// The supplier request id field.
         /// </summary>
         [EnumMember(Value = "supplierRequestID")]
         SupplierRequestID,
@@ -5680,7 +5680,7 @@
         [EnumMember(Value = "endUsers")]
         EndUsers,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -5760,7 +5760,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -5810,7 +5810,7 @@
         [EnumMember(Value = "translations")]
         Translations,
         /// <summary>
-        /// The user interface extension field.
+        /// The ui extension field.
         /// </summary>
         [EnumMember(Value = "uiExtension")]
         UiExtension,
@@ -5882,7 +5882,7 @@
         [EnumMember(Value = "endAt")]
         EndAt,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -5927,7 +5927,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -5989,7 +5989,7 @@
         [EnumMember(Value = "filters")]
         Filters,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -6049,7 +6049,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -6106,7 +6106,7 @@
         [EnumMember(Value = "customFieldsAttachments")]
         CustomFieldsAttachments,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -6146,7 +6146,7 @@
         [EnumMember(Value = "resolutionDuration")]
         ResolutionDuration,
         /// <summary>
-        /// The risk identifier field.
+        /// The risk id field.
         /// </summary>
         [EnumMember(Value = "riskId")]
         RiskId,
@@ -6166,7 +6166,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -6181,7 +6181,7 @@
         [EnumMember(Value = "subject")]
         Subject,
         /// <summary>
-        /// The user interface extension field.
+        /// The ui extension field.
         /// </summary>
         [EnumMember(Value = "uiExtension")]
         UiExtension,
@@ -6218,7 +6218,7 @@
         [EnumMember(Value = "disabled")]
         Disabled,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -6253,7 +6253,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -6305,7 +6305,7 @@
         [EnumMember(Value = "disabled")]
         Disabled,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -6315,7 +6315,7 @@
         [EnumMember(Value = "name")]
         Name,
         /// <summary>
-        /// The picture uniform resource identifier field.
+        /// The picture uri field.
         /// </summary>
         [EnumMember(Value = "pictureUri")]
         PictureUri,
@@ -6330,7 +6330,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -6422,7 +6422,7 @@
         [EnumMember(Value = "firstLineTeam")]
         FirstLineTeam,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -6442,7 +6442,7 @@
         [EnumMember(Value = "name")]
         Name,
         /// <summary>
-        /// The picture uniform resource identifier field.
+        /// The picture uri field.
         /// </summary>
         [EnumMember(Value = "pictureUri")]
         PictureUri,
@@ -6487,7 +6487,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -6507,7 +6507,7 @@
         [EnumMember(Value = "translations")]
         Translations,
         /// <summary>
-        /// The user interface extension field.
+        /// The ui extension field.
         /// </summary>
         [EnumMember(Value = "uiExtension")]
         UiExtension,
@@ -6544,7 +6544,7 @@
         [EnumMember(Value = "descriptionAttachments")]
         DescriptionAttachments,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -6554,7 +6554,7 @@
         [EnumMember(Value = "name")]
         Name,
         /// <summary>
-        /// The picture uniform resource identifier field.
+        /// The picture uri field.
         /// </summary>
         [EnumMember(Value = "pictureUri")]
         PictureUri,
@@ -6569,7 +6569,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -6626,7 +6626,7 @@
         [EnumMember(Value = "firstLineTeam")]
         FirstLineTeam,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -6641,7 +6641,7 @@
         [EnumMember(Value = "parentServiceInstances")]
         ParentServiceInstances,
         /// <summary>
-        /// The picture uniform resource identifier field.
+        /// The picture uri field.
         /// </summary>
         [EnumMember(Value = "pictureUri")]
         PictureUri,
@@ -6671,7 +6671,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -6691,7 +6691,7 @@
         [EnumMember(Value = "translations")]
         Translations,
         /// <summary>
-        /// The user interface extension field.
+        /// The ui extension field.
         /// </summary>
         [EnumMember(Value = "uiExtension")]
         UiExtension,
@@ -6713,12 +6713,12 @@
         [EnumMember(Value = "account")]
         Account,
         /// <summary>
-        /// The activity identifier field.
+        /// The activity id field.
         /// </summary>
         [EnumMember(Value = "activityID")]
         ActivityID,
         /// <summary>
-        /// The billing identifier field.
+        /// The billing id field.
         /// </summary>
         [EnumMember(Value = "billingID")]
         BillingID,
@@ -6758,7 +6758,7 @@
         [EnumMember(Value = "expiryDate")]
         ExpiryDate,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -6833,7 +6833,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -6955,7 +6955,7 @@
         [EnumMember(Value = "effortClasses")]
         EffortClasses,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -7240,22 +7240,22 @@
         [EnumMember(Value = "shopArticles")]
         ShopArticles,
         /// <summary>
-        /// The service level agreement notification scheme high field.
+        /// The sla notification scheme high field.
         /// </summary>
         [EnumMember(Value = "slaNotificationSchemeHigh")]
         SlaNotificationSchemeHigh,
         /// <summary>
-        /// The service level agreement notification scheme low field.
+        /// The sla notification scheme low field.
         /// </summary>
         [EnumMember(Value = "slaNotificationSchemeLow")]
         SlaNotificationSchemeLow,
         /// <summary>
-        /// The service level agreement notification scheme medium field.
+        /// The sla notification scheme medium field.
         /// </summary>
         [EnumMember(Value = "slaNotificationSchemeMedium")]
         SlaNotificationSchemeMedium,
         /// <summary>
-        /// The service level agreement notification scheme top field.
+        /// The sla notification scheme top field.
         /// </summary>
         [EnumMember(Value = "slaNotificationSchemeTop")]
         SlaNotificationSchemeTop,
@@ -7265,7 +7265,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -7387,7 +7387,7 @@
         [EnumMember(Value = "fullDescription")]
         FullDescription,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -7402,7 +7402,7 @@
         [EnumMember(Value = "name")]
         Name,
         /// <summary>
-        /// The picture uniform resource identifier field.
+        /// The picture uri field.
         /// </summary>
         [EnumMember(Value = "pictureUri")]
         PictureUri,
@@ -7462,7 +7462,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -7477,7 +7477,7 @@
         [EnumMember(Value = "timeZone")]
         TimeZone,
         /// <summary>
-        /// The user interface extension field.
+        /// The ui extension field.
         /// </summary>
         [EnumMember(Value = "uiExtension")]
         UiExtension,
@@ -7539,7 +7539,7 @@
         [EnumMember(Value = "fulfillmentTemplate")]
         FulfillmentTemplate,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -7614,7 +7614,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -7666,7 +7666,7 @@
         [EnumMember(Value = "dataType")]
         DataType,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -7681,7 +7681,7 @@
         [EnumMember(Value = "updatedAt")]
         UpdatedAt,
         /// <summary>
-        /// The uniform resource identifier field.
+        /// The uri field.
         /// </summary>
         [EnumMember(Value = "uri")]
         Uri,
@@ -7723,7 +7723,7 @@
         [EnumMember(Value = "disabled")]
         Disabled,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -7738,7 +7738,7 @@
         [EnumMember(Value = "people")]
         People,
         /// <summary>
-        /// The picture uniform resource identifier field.
+        /// The picture uri field.
         /// </summary>
         [EnumMember(Value = "pictureUri")]
         PictureUri,
@@ -7758,7 +7758,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -7768,7 +7768,7 @@
         [EnumMember(Value = "timeZone")]
         TimeZone,
         /// <summary>
-        /// The user interface extension field.
+        /// The ui extension field.
         /// </summary>
         [EnumMember(Value = "uiExtension")]
         UiExtension,
@@ -7810,7 +7810,7 @@
         [EnumMember(Value = "disabled")]
         Disabled,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -7830,7 +7830,7 @@
         [EnumMember(Value = "name")]
         Name,
         /// <summary>
-        /// The picture uniform resource identifier field.
+        /// The picture uri field.
         /// </summary>
         [EnumMember(Value = "pictureUri")]
         PictureUri,
@@ -7850,7 +7850,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -7924,7 +7924,7 @@
         [EnumMember(Value = "disabled")]
         Disabled,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -7934,7 +7934,7 @@
         [EnumMember(Value = "name")]
         Name,
         /// <summary>
-        /// The service level agreement notification rules field.
+        /// The sla notification rules field.
         /// </summary>
         [EnumMember(Value = "slaNotificationRules")]
         SlaNotificationRules,
@@ -7944,7 +7944,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -7986,7 +7986,7 @@
         [EnumMember(Value = "endAt")]
         EndAt,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -8006,7 +8006,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -8058,7 +8058,7 @@
         [EnumMember(Value = "estimate")]
         Estimate,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -8100,7 +8100,7 @@
         [EnumMember(Value = "createdAt")]
         CreatedAt,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -8145,7 +8145,7 @@
         [EnumMember(Value = "serviceOffering")]
         ServiceOffering,
         /// <summary>
-        /// The service level agreement notification scheme field.
+        /// The sla notification scheme field.
         /// </summary>
         [EnumMember(Value = "slaNotificationScheme")]
         SlaNotificationScheme,
@@ -8167,7 +8167,7 @@
     public enum StandardServiceRequestActivityIDField
     {
         /// <summary>
-        /// The activity identifier field.
+        /// The activity id field.
         /// </summary>
         [EnumMember(Value = "activityID")]
         ActivityID,
@@ -8177,7 +8177,7 @@
         [EnumMember(Value = "createdAt")]
         CreatedAt,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -8224,7 +8224,7 @@
         [EnumMember(Value = "disabled")]
         Disabled,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -8244,7 +8244,7 @@
         [EnumMember(Value = "name")]
         Name,
         /// <summary>
-        /// The picture uniform resource identifier field.
+        /// The picture uri field.
         /// </summary>
         [EnumMember(Value = "pictureUri")]
         PictureUri,
@@ -8259,7 +8259,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -8286,7 +8286,7 @@
         [EnumMember(Value = "createdAt")]
         CreatedAt,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -8306,7 +8306,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -8363,7 +8363,7 @@
         [EnumMember(Value = "guidanceAttachments")]
         GuidanceAttachments,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -8383,7 +8383,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -8435,7 +8435,7 @@
         [EnumMember(Value = "createdAt")]
         CreatedAt,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -8460,7 +8460,7 @@
         [EnumMember(Value = "service")]
         Service,
         /// <summary>
-        /// The service level agreements field.
+        /// The slas field.
         /// </summary>
         [EnumMember(Value = "slas")]
         Slas,
@@ -8470,7 +8470,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -8572,7 +8572,7 @@
         [EnumMember(Value = "finishedAt")]
         FinishedAt,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -8682,7 +8682,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -8712,12 +8712,12 @@
         [EnumMember(Value = "supplier")]
         Supplier,
         /// <summary>
-        /// The supplier request identifier field.
+        /// The supplier request id field.
         /// </summary>
         [EnumMember(Value = "supplierRequestID")]
         SupplierRequestID,
         /// <summary>
-        /// The task identifier field.
+        /// The task id field.
         /// </summary>
         [EnumMember(Value = "taskId")]
         TaskId,
@@ -8752,7 +8752,7 @@
         [EnumMember(Value = "waitingUntil")]
         WaitingUntil,
         /// <summary>
-        /// The work hours are 24x7 field.
+        /// The work hours are 24 x 7 field.
         /// </summary>
         [EnumMember(Value = "workHoursAre24x7")]
         WorkHoursAre24x7,
@@ -8779,7 +8779,7 @@
         [EnumMember(Value = "createdAt")]
         CreatedAt,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -8876,7 +8876,7 @@
         [EnumMember(Value = "effortClass")]
         EffortClass,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -8991,7 +8991,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -9016,7 +9016,7 @@
         [EnumMember(Value = "team")]
         Team,
         /// <summary>
-        /// The user interface extension field.
+        /// The ui extension field.
         /// </summary>
         [EnumMember(Value = "uiExtension")]
         UiExtension,
@@ -9031,7 +9031,7 @@
         [EnumMember(Value = "urgent")]
         Urgent,
         /// <summary>
-        /// The work hours are 24x7 field.
+        /// The work hours are 24 x 7 field.
         /// </summary>
         [EnumMember(Value = "workHoursAre24x7")]
         WorkHoursAre24x7,
@@ -9053,7 +9053,7 @@
         [EnumMember(Value = "approver")]
         Approver,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -9115,7 +9115,7 @@
         [EnumMember(Value = "disabled")]
         Disabled,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -9140,7 +9140,7 @@
         [EnumMember(Value = "name")]
         Name,
         /// <summary>
-        /// The picture uniform resource identifier field.
+        /// The picture uri field.
         /// </summary>
         [EnumMember(Value = "pictureUri")]
         PictureUri,
@@ -9165,7 +9165,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -9175,7 +9175,7 @@
         [EnumMember(Value = "timeZone")]
         TimeZone,
         /// <summary>
-        /// The user interface extension field.
+        /// The ui extension field.
         /// </summary>
         [EnumMember(Value = "uiExtension")]
         UiExtension,
@@ -9237,7 +9237,7 @@
         [EnumMember(Value = "group")]
         Group,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -9267,7 +9267,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -9294,12 +9294,12 @@
         [EnumMember(Value = "account")]
         Account,
         /// <summary>
-        /// The activity identifier field.
+        /// The activity id field.
         /// </summary>
         [EnumMember(Value = "activityID")]
         ActivityID,
         /// <summary>
-        /// The billing identifier field.
+        /// The billing id field.
         /// </summary>
         [EnumMember(Value = "billingID")]
         BillingID,
@@ -9314,7 +9314,7 @@
         [EnumMember(Value = "chargeCurrency")]
         ChargeCurrency,
         /// <summary>
-        /// The charge identifier field.
+        /// The charge id field.
         /// </summary>
         [EnumMember(Value = "chargeID")]
         ChargeID,
@@ -9374,7 +9374,7 @@
         [EnumMember(Value = "effortClass")]
         EffortClass,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -9414,7 +9414,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -9491,7 +9491,7 @@
         [EnumMember(Value = "effortClasses")]
         EffortClasses,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -9541,7 +9541,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -9608,7 +9608,7 @@
         [EnumMember(Value = "field")]
         Field,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -9645,7 +9645,7 @@
         [EnumMember(Value = "createdAt")]
         CreatedAt,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -9702,7 +9702,7 @@
         [EnumMember(Value = "disabled")]
         Disabled,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -9717,7 +9717,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -9774,7 +9774,7 @@
         [EnumMember(Value = "html")]
         Html,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -9789,7 +9789,7 @@
         [EnumMember(Value = "status")]
         Status,
         /// <summary>
-        /// The user interface extension field.
+        /// The ui extension field.
         /// </summary>
         [EnumMember(Value = "uiExtension")]
         UiExtension,
@@ -9799,7 +9799,7 @@
         [EnumMember(Value = "updatedAt")]
         UpdatedAt,
         /// <summary>
-        /// The version number field.
+        /// The version nr field.
         /// </summary>
         [EnumMember(Value = "versionNr")]
         VersionNr,
@@ -9821,7 +9821,7 @@
         [EnumMember(Value = "createdAt")]
         CreatedAt,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -9873,7 +9873,7 @@
         [EnumMember(Value = "event")]
         Event,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -9893,7 +9893,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -9903,7 +9903,7 @@
         [EnumMember(Value = "updatedAt")]
         UpdatedAt,
         /// <summary>
-        /// The uniform resource identifier field.
+        /// The uri field.
         /// </summary>
         [EnumMember(Value = "uri")]
         Uri,
@@ -9935,7 +9935,7 @@
         [EnumMember(Value = "disabled")]
         Disabled,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -10027,7 +10027,7 @@
         [EnumMember(Value = "customFieldsAttachments")]
         CustomFieldsAttachments,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -10107,7 +10107,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -10142,7 +10142,7 @@
         [EnumMember(Value = "updatedAt")]
         UpdatedAt,
         /// <summary>
-        /// The workflow identifier field.
+        /// The workflow id field.
         /// </summary>
         [EnumMember(Value = "workflowId")]
         WorkflowId,
@@ -10169,7 +10169,7 @@
         [EnumMember(Value = "createdAt")]
         CreatedAt,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -10216,7 +10216,7 @@
         [EnumMember(Value = "failureTaskTemplate")]
         FailureTaskTemplate,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -10278,7 +10278,7 @@
         [EnumMember(Value = "disabled")]
         Disabled,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -10333,7 +10333,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -10348,7 +10348,7 @@
         [EnumMember(Value = "taskTemplateRelations")]
         TaskTemplateRelations,
         /// <summary>
-        /// The user interface extension field.
+        /// The ui extension field.
         /// </summary>
         [EnumMember(Value = "uiExtension")]
         UiExtension,
@@ -10385,7 +10385,7 @@
         [EnumMember(Value = "createdAt")]
         CreatedAt,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -10432,7 +10432,7 @@
         [EnumMember(Value = "disabled")]
         Disabled,
         /// <summary>
-        /// The identifier field.
+        /// The id field.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
@@ -10467,7 +10467,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// The source identifier field.
+        /// The source id field.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,

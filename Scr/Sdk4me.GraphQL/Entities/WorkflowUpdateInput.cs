@@ -48,7 +48,7 @@
         }
 
         /// <summary>
-        /// Values for custom fields to be used by the user interface Extension that is linked to the record.
+        /// Values for custom fields to be used by the UI Extension that is linked to the record.
         /// </summary>
         [JsonProperty("customFields")]
         public CustomFieldCollection? CustomFields
@@ -128,7 +128,7 @@
         }
 
         /// <summary>
-        /// Linked project.
+        /// Linked project
         /// </summary>
         [JsonProperty("projectId")]
         public string? ProjectId
@@ -218,7 +218,7 @@
         }
 
         /// <summary>
-        /// The node identifier of the record to update.
+        /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
         public string? ID

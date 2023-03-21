@@ -33,7 +33,7 @@
     }
 
     /// <summary>
-    /// The affected service level agreement accountability.
+    /// The affected sla accountability.
     /// </summary>
     public enum AffectedSlaAccountability
     {
@@ -43,7 +43,7 @@
         [EnumMember(Value = "provider")]
         Provider = 1,
         /// <summary>
-        /// Service level agreement Not Affected.
+        /// SLA Not Affected.
         /// </summary>
         [EnumMember(Value = "sla_not_affected")]
         SlaNotAffected,
@@ -222,7 +222,7 @@
     }
 
     /// <summary>
-    /// The configuration item license type.
+    /// The ci license type.
     /// </summary>
     public enum CiLicenseType
     {
@@ -259,7 +259,7 @@
     }
 
     /// <summary>
-    /// The configuration item relation relation type.
+    /// The ci relation relation type.
     /// </summary>
     public enum CiRelationRelationType
     {
@@ -296,7 +296,7 @@
     }
 
     /// <summary>
-    /// The configuration item status.
+    /// The ci status.
     /// </summary>
     public enum CiStatus
     {
@@ -735,12 +735,12 @@
     public enum ParentServiceInstanceImpactRelation
     {
         /// <summary>
-        /// Degraded if Service Instance of service level agreement is Down or Degraded.
+        /// Degraded if Service Instance of SLA is Down or Degraded.
         /// </summary>
         [EnumMember(Value = "degraded")]
         Degraded = 1,
         /// <summary>
-        /// Down if Service Instance of service level agreement is Down.
+        /// Down if Service Instance of SLA is Down.
         /// </summary>
         [EnumMember(Value = "down")]
         Down,
@@ -1019,7 +1019,7 @@
         [EnumMember(Value = "solved")]
         Solved,
         /// <summary>
-        /// Waiting for.
+        /// Waiting for...
         /// </summary>
         [EnumMember(Value = "waiting_for")]
         WaitingFor,
@@ -1083,7 +1083,7 @@
         [EnumMember(Value = "double_declining_balance")]
         DoubleDecliningBalance = 1,
         /// <summary>
-        /// DEPRECATED: N/A - Cost is Zero/Included in Other configuration item or Service.
+        /// DEPRECATED: N/A - Cost is Zero/Included in Other CI or Service.
         /// </summary>
         [Obsolete("N/A - Cost is Zero/Included in Other CI or Service.")]
         [EnumMember(Value = "na_cost_is_zero")]
@@ -1355,7 +1355,7 @@
         [EnumMember(Value = "rejected")]
         Rejected,
         /// <summary>
-        /// Waiting for.
+        /// Waiting for...
         /// </summary>
         [EnumMember(Value = "waiting_for")]
         WaitingFor,
@@ -1666,7 +1666,7 @@
         [EnumMember(Value = "waiting_for_customer")]
         WaitingForCustomer,
         /// <summary>
-        /// Waiting for.
+        /// Waiting for...
         /// </summary>
         [EnumMember(Value = "waiting_for")]
         WaitingFor,
@@ -2110,7 +2110,7 @@
         [EnumMember(Value = "twitter")]
         Twitter,
         /// <summary>
-        /// Uniform resource identifier.
+        /// URI.
         /// </summary>
         [EnumMember(Value = "uri")]
         Uri,
@@ -2122,12 +2122,12 @@
     }
 
     /// <summary>
-    /// The service level agreement coverage.
+    /// The sla coverage.
     /// </summary>
     public enum SlaCoverage
     {
         /// <summary>
-        /// People Using configuration items of the Service Instance.
+        /// People Using CIs of the Service Instance.
         /// </summary>
         [EnumMember(Value = "cis_of_service_instance")]
         CisOfServiceInstance = 1,
@@ -2374,7 +2374,7 @@
         [EnumMember(Value = "waiting_for_customer")]
         WaitingForCustomer,
         /// <summary>
-        /// Waiting for.
+        /// Waiting for...
         /// </summary>
         [EnumMember(Value = "waiting_for")]
         WaitingFor,
@@ -2533,12 +2533,12 @@
     }
 
     /// <summary>
-    /// The user interface extension category.
+    /// The ui extension category.
     /// </summary>
     public enum UiExtensionCategory
     {
         /// <summary>
-        /// Application Offering.
+        /// App Offering.
         /// </summary>
         [EnumMember(Value = "app_offering")]
         AppOffering = 1,
@@ -2603,7 +2603,7 @@
         [EnumMember(Value = "risk")]
         Risk,
         /// <summary>
-        /// System for cross-domain identity management (SCIM) User.
+        /// SCIM User.
         /// </summary>
         [EnumMember(Value = "scim_user")]
         ScimUser,
@@ -2645,7 +2645,7 @@
     }
 
     /// <summary>
-    /// The user interface extension version status.
+    /// The ui extension version status.
     /// </summary>
     public enum UiExtensionVersionStatus
     {
@@ -2672,22 +2672,22 @@
     public enum WebhookEvent
     {
         /// <summary>
-        /// Application instance.create.
+        /// App instance.create.
         /// </summary>
         [EnumMember(Value = "app_instance.create")]
         AppInstanceCreate = 1,
         /// <summary>
-        /// Application instance.delete.
+        /// App instance.delete.
         /// </summary>
         [EnumMember(Value = "app_instance.delete")]
         AppInstanceDelete,
         /// <summary>
-        /// Application instance.secrets-update.
+        /// App instance.secrets-update.
         /// </summary>
         [EnumMember(Value = "app_instance.secrets-update")]
         AppInstanceSecretsUpdate,
         /// <summary>
-        /// Application instance.update.
+        /// App instance.update.
         /// </summary>
         [EnumMember(Value = "app_instance.update")]
         AppInstanceUpdate,

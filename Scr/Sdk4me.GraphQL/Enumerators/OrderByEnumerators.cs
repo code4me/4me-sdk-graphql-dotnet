@@ -13,7 +13,7 @@
     }
 
     /// <summary>
-    /// The affected service level agreement order.
+    /// The affected sla order.
     /// </summary>
     public enum AffectedSlaOrderField
     {
@@ -53,7 +53,7 @@
         [EnumMember(Value = "impact")]
         Impact,
         /// <summary>
-        /// Order by request identifier.
+        /// Order by request id.
         /// </summary>
         [EnumMember(Value = "requestId")]
         RequestId,
@@ -87,7 +87,7 @@
     }
 
     /// <summary>
-    /// The application instance order.
+    /// The app instance order.
     /// </summary>
     public enum AppInstanceOrderField
     {
@@ -97,7 +97,7 @@
         [EnumMember(Value = "accountName")]
         AccountName,
         /// <summary>
-        /// Order by application offering reference.
+        /// Order by app offering reference.
         /// </summary>
         [EnumMember(Value = "appOfferingReference")]
         AppOfferingReference,
@@ -119,7 +119,7 @@
     }
 
     /// <summary>
-    /// The application offering order.
+    /// The app offering order.
     /// </summary>
     public enum AppOfferingOrderField
     {
@@ -408,7 +408,7 @@
         [EnumMember(Value = "invoiceDate")]
         InvoiceDate,
         /// <summary>
-        /// Order by invoice number.
+        /// Order by invoice nr.
         /// </summary>
         [EnumMember(Value = "invoiceNr")]
         InvoiceNr,
@@ -556,7 +556,7 @@
     public enum PersonOrderField
     {
         /// <summary>
-        /// Order by authentication identifier.
+        /// Order by authentication id.
         /// </summary>
         [EnumMember(Value = "authenticationID")]
         AuthenticationID,
@@ -571,7 +571,7 @@
         [EnumMember(Value = "disabled")]
         Disabled,
         /// <summary>
-        /// Order by employee identifier.
+        /// Order by employee id.
         /// </summary>
         [EnumMember(Value = "employeeID")]
         EmployeeID,
@@ -596,7 +596,7 @@
         [EnumMember(Value = "siteName")]
         SiteName,
         /// <summary>
-        /// Order by support identifier.
+        /// Order by support id.
         /// </summary>
         [EnumMember(Value = "supportID")]
         SupportID,
@@ -628,7 +628,7 @@
         [EnumMember(Value = "category")]
         Category,
         /// <summary>
-        /// Order by change identifier.
+        /// Order by change id.
         /// </summary>
         [EnumMember(Value = "changeId")]
         ChangeId,
@@ -658,12 +658,12 @@
         [EnumMember(Value = "memberName")]
         MemberName,
         /// <summary>
-        /// Order by problem identifier.
+        /// Order by problem id.
         /// </summary>
         [EnumMember(Value = "problemId")]
         ProblemId,
         /// <summary>
-        /// Order by project identifier.
+        /// Order by project id.
         /// </summary>
         [EnumMember(Value = "projectId")]
         ProjectId,
@@ -703,7 +703,7 @@
         [EnumMember(Value = "urgent")]
         Urgent,
         /// <summary>
-        /// Order by workflow identifier.
+        /// Order by workflow id.
         /// </summary>
         [EnumMember(Value = "workflowId")]
         WorkflowId,
@@ -799,7 +799,7 @@
         [EnumMember(Value = "program")]
         Program,
         /// <summary>
-        /// Order by project identifier.
+        /// Order by project id.
         /// </summary>
         [EnumMember(Value = "projectId")]
         ProjectId,
@@ -856,7 +856,7 @@
         [EnumMember(Value = "lifeCycleState")]
         LifeCycleState,
         /// <summary>
-        /// Order by project task identifier.
+        /// Order by project task id.
         /// </summary>
         [EnumMember(Value = "projectTaskId")]
         ProjectTaskId,
@@ -977,7 +977,7 @@
         [EnumMember(Value = "lifeCycleState")]
         LifeCycleState,
         /// <summary>
-        /// Order by release identifier.
+        /// Order by release id.
         /// </summary>
         [EnumMember(Value = "releaseId")]
         ReleaseId,
@@ -1014,7 +1014,7 @@
         [EnumMember(Value = "category")]
         Category,
         /// <summary>
-        /// Order by change identifier.
+        /// Order by change id.
         /// </summary>
         [EnumMember(Value = "changeId")]
         ChangeId,
@@ -1069,17 +1069,17 @@
         [EnumMember(Value = "nextTargetAt")]
         NextTargetAt,
         /// <summary>
-        /// Order by problem identifier.
+        /// Order by problem id.
         /// </summary>
         [EnumMember(Value = "problemId")]
         ProblemId,
         /// <summary>
-        /// Order by project identifier.
+        /// Order by project id.
         /// </summary>
         [EnumMember(Value = "projectId")]
         ProjectId,
         /// <summary>
-        /// Order by request identifier.
+        /// Order by request id.
         /// </summary>
         [EnumMember(Value = "requestId")]
         RequestId,
@@ -1139,7 +1139,7 @@
         [EnumMember(Value = "urgent")]
         Urgent,
         /// <summary>
-        /// Order by workflow identifier.
+        /// Order by workflow id.
         /// </summary>
         [EnumMember(Value = "workflowId")]
         WorkflowId,
@@ -1230,7 +1230,7 @@
     public enum ReservationOrderField
     {
         /// <summary>
-        /// Order by configuration item name.
+        /// Order by ci name.
         /// </summary>
         [EnumMember(Value = "ciName")]
         CiName,
@@ -1554,7 +1554,7 @@
         [EnumMember(Value = "reference")]
         Reference,
         /// <summary>
-        /// Order by shop article identifier.
+        /// Order by shop article id.
         /// </summary>
         [EnumMember(Value = "shopArticleId")]
         ShopArticleId,
@@ -1564,7 +1564,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// Order by source identifier.
+        /// Order by source id.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -1616,7 +1616,7 @@
         [EnumMember(Value = "recurringPrice")]
         RecurringPrice,
         /// <summary>
-        /// Order by shop order line identifier.
+        /// Order by shop order line id.
         /// </summary>
         [EnumMember(Value = "shopOrderLineId")]
         ShopOrderLineId,
@@ -1626,7 +1626,7 @@
         [EnumMember(Value = "source")]
         Source,
         /// <summary>
-        /// Order by source identifier.
+        /// Order by source id.
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
@@ -1663,7 +1663,7 @@
         [EnumMember(Value = "dataType")]
         DataType,
         /// <summary>
-        /// Order by uniform resource identifier.
+        /// Order by uri.
         /// </summary>
         [EnumMember(Value = "uri")]
         Uri,
@@ -1860,7 +1860,7 @@
         [EnumMember(Value = "supplierName")]
         SupplierName,
         /// <summary>
-        /// Order by task identifier.
+        /// Order by task id.
         /// </summary>
         [EnumMember(Value = "taskId")]
         TaskId,
@@ -1961,7 +1961,7 @@
         [EnumMember(Value = "createdAt")]
         CreatedAt,
         /// <summary>
-        /// Order by customer category identifier.
+        /// Order by customer category id.
         /// </summary>
         [EnumMember(Value = "customerCategoryId")]
         CustomerCategoryId,
@@ -1981,7 +1981,7 @@
         [EnumMember(Value = "name")]
         Name,
         /// <summary>
-        /// Order by service category identifier.
+        /// Order by service category id.
         /// </summary>
         [EnumMember(Value = "serviceCategoryId")]
         ServiceCategoryId,
@@ -2099,7 +2099,7 @@
     }
 
     /// <summary>
-    /// The user interface extension order.
+    /// The ui extension order.
     /// </summary>
     public enum UiExtensionOrderField
     {
@@ -2146,7 +2146,7 @@
         [EnumMember(Value = "category")]
         Category,
         /// <summary>
-        /// Order by change identifier.
+        /// Order by change id.
         /// </summary>
         [EnumMember(Value = "changeId")]
         ChangeId,
@@ -2211,7 +2211,7 @@
         [EnumMember(Value = "updatedAt")]
         UpdatedAt,
         /// <summary>
-        /// Order by workflow identifier.
+        /// Order by workflow id.
         /// </summary>
         [EnumMember(Value = "workflowId")]
         WorkflowId,

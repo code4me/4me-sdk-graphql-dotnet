@@ -15,7 +15,7 @@
         internal NodeCollection<AppInstance>? AppInstancesCollection { get; set; }
 
         /// <summary>
-        /// Instances of this application.
+        /// Instances of this app.
         /// </summary>
         public DataList<AppInstance>? AppInstances
         {
@@ -26,7 +26,7 @@
         internal NodeCollection<AppOfferingAutomationRule>? AutomationRulesCollection { get; set; }
 
         /// <summary>
-        /// Automation rules of this application offering.
+        /// Automation rules of this app offering.
         /// </summary>
         public DataList<AppOfferingAutomationRule>? AutomationRules
         {
@@ -34,7 +34,7 @@
         }
 
         /// <summary>
-        /// Compliance description of the application offering.
+        /// Compliance description of the app offering.
         /// </summary>
         [JsonProperty("compliance")]
         public string? Compliance { get; internal set; }
@@ -51,7 +51,7 @@
         }
 
         /// <summary>
-        /// The uniform resource identifier where the application can be configured. The placeholder {account} can be used to include the customer account identifier in the uniform resource identifier.
+        /// The URI where the app can be configured. The placeholder {account} can be used to include the customer account id in the URI.
         /// </summary>
         [JsonProperty("configurationUriTemplate")]
         public string? ConfigurationUriTemplate { get; internal set; }
@@ -63,7 +63,7 @@
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
-        /// Description of the application offering.
+        /// Description of the app offering.
         /// </summary>
         [JsonProperty("description")]
         public string? Description { get; internal set; }
@@ -80,13 +80,13 @@
         }
 
         /// <summary>
-        /// Whether the application offering may not be used for new instances.
+        /// Whether the app offering may not be used for new instances.
         /// </summary>
         [JsonProperty("disabled")]
         public bool? Disabled { get; internal set; }
 
         /// <summary>
-        /// Feature description of the application offering.
+        /// Feature description of the app offering.
         /// </summary>
         [JsonProperty("features")]
         public string? Features { get; internal set; }
@@ -103,13 +103,13 @@
         }
 
         /// <summary>
-        /// Whether this is the latest published version of the application offering or the current draft.
+        /// Whether this is the latest published version of the app offering or the current draft.
         /// </summary>
         [JsonProperty("latest"), Sdk4meField(true)]
         public bool? Latest { get; internal set; }
 
         /// <summary>
-        /// Name of the application offering.
+        /// Name of the app offering.
         /// </summary>
         [JsonProperty("name"), Sdk4meField(true)]
         public string? Name { get; internal set; }
@@ -139,25 +139,25 @@
         public long? PolicyJwtClaimExpiresIn { get; internal set; }
 
         /// <summary>
-        /// Whether this application offering is published or draft.
+        /// Whether this app offering is published or draft.
         /// </summary>
         [JsonProperty("published"), Sdk4meField(true)]
         public bool? Published { get; internal set; }
 
         /// <summary>
-        /// This reference can be used to link the application offering to an instance using the 4me APIs or the 4me Import functionality.
+        /// This reference can be used to link the app offering to an instance using the 4me APIs or the 4me Import functionality.
         /// </summary>
         [JsonProperty("reference")]
         public string? Reference { get; internal set; }
 
         /// <summary>
-        /// Scopes of this application offering.
+        /// Scopes of this app offering.
         /// </summary>
         [JsonProperty("scopes")]
         public List<AppOfferingScope>? Scopes { get; internal set; }
 
         /// <summary>
-        /// Service instance that is linked to the application offering.
+        /// Service instance that is linked to the app offering.
         /// </summary>
         [JsonProperty("serviceInstance")]
         public ServiceInstance? ServiceInstance { get; internal set; }
@@ -175,19 +175,19 @@
         public string? SourceID { get; internal set; }
 
         /// <summary>
-        /// User interface extension version that is linked to the application offering.
+        /// UI extension version that is linked to the app offering.
         /// </summary>
         [JsonProperty("uiExtensionVersion")]
         public UiExtensionVersion? UiExtensionVersion { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         /// <summary>
-        /// The uniform resource identifier for the app's webhook. The placeholder {account} can be used to include the customer account identifier in the uniform resource identifier.
+        /// The URI for the app's webhook. The placeholder {account} can be used to include the customer account id in the URI.
         /// </summary>
         [JsonProperty("webhookUriTemplate")]
         public string? WebhookUriTemplate { get; internal set; }

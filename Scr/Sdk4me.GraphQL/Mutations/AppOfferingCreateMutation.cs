@@ -1,7 +1,7 @@
 ﻿namespace Sdk4me.GraphQL
 {
     /// <summary>
-    /// Creates a new application offering.
+    /// Creates a new app offering.
     /// </summary>
     internal class AppOfferingCreateMutation : Mutation<AppOfferingCreatePayload, AppOfferingCreateInput>
     {

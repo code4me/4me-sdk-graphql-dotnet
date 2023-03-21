@@ -148,7 +148,7 @@
         internal NodeCollection<WorkflowTaskTemplateRelation>? TaskTemplateRelationsCollection { get; set; }
 
         /// <summary>
-        /// Task template relations of the workflow template.
+        /// Task template relations of the workflow template
         /// </summary>
         public DataList<WorkflowTaskTemplateRelation>? TaskTemplateRelations
         {
@@ -156,13 +156,13 @@
         }
 
         /// <summary>
-        /// User interface extension that is to be added to a new workflow when it is being created based on the template.
+        /// UI extension that is to be added to a new workflow when it is being created based on the template.
         /// </summary>
         [JsonProperty("uiExtension")]
         public UiExtension? UiExtension { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }

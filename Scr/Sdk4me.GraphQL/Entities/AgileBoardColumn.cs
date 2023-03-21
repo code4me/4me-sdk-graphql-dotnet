@@ -47,7 +47,7 @@
         }
 
         /// <summary>
-        /// Person to assign the item to when action type is `assign` and an item is added to this column.
+        /// Person to assign the item to when action type is <c>assign</c> and an item is added to this column.
         /// </summary>
         [JsonProperty("member")]
         public Person? Member { get; internal set; }
@@ -71,13 +71,13 @@
         public long? RemoveAfter { get; internal set; }
 
         /// <summary>
-        /// Team to assign the item to when action type is `assign` and an item is added to this column.
+        /// Team to assign the item to when action type is <c>assign</c> and an item is added to this column.
         /// </summary>
         [JsonProperty("team")]
         public Team? Team { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }

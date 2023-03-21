@@ -8,7 +8,7 @@
         private DiscoveredReferenceArrayStrategyInput? ciUserIds;
 
         /// <summary>
-        /// How to process the `userIds` supplied for configuration items.
+        /// How to process the <c>userIds</c> supplied for configuration items.
         /// </summary>
         [JsonProperty("ciUserIds")]
         public DiscoveredReferenceArrayStrategyInput? CiUserIds

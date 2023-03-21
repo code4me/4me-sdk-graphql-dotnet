@@ -69,13 +69,13 @@
         }
 
         /// <summary>
-        /// The internal organization which budget is used to pay for the configuration item. If the configuration item is leased or rented, the organization that pays the lease or rent is selected in this field. When creating a new configuration item and a value is not specified for this field, it is set to the financial owner of the CI's product.
+        /// The internal organization which budget is used to pay for the configuration item. If the CI is leased or rented, the organization that pays the lease or rent is selected in this field. When creating a new CI and a value is not specified for this field, it is set to the financial owner of the CI's product.
         /// </summary>
         [JsonProperty("financialOwner"), Sdk4meField(true)]
         public Organization? FinancialOwner { get; internal set; }
 
         /// <summary>
-        /// The date on which the expense for the configuration item (CI) was incurred or, if the configuration item is depreciated over time, the date on which the depreciation was started. This is typically the invoice date.
+        /// The date on which the expense for the configuration item (CI) was incurred or, if the CI is depreciated over time, the date on which the depreciation was started. This is typically the invoice date.
         /// </summary>
         [JsonProperty("inUseSince")]
         public DateOnly? InUseSince { get; internal set; }
@@ -92,7 +92,7 @@
         }
 
         /// <summary>
-        /// The label that is attached to the configuration item (CI). A label is automatically generated using the same prefix of other configuration items of the same product category, followed by the next available number as the suffix.
+        /// The label that is attached to the configuration item (CI). A label is automatically generated using the same prefix of other CIs of the same product category, followed by the next available number as the suffix.
         /// </summary>
         [JsonProperty("label"), Sdk4meField(true)]
         public string? Label { get; internal set; }
@@ -121,13 +121,13 @@
         }
 
         /// <summary>
-        /// The name or number of the room in which the configuration item is located, if it concerns a hardware configuration item.
+        /// The name or number of the room in which the CI is located, if it concerns a hardware CI.
         /// </summary>
         [JsonProperty("location")]
         public string? Location { get; internal set; }
 
         /// <summary>
-        /// The name of the configuration item (CI). When creating a new configuration item and a value is not specified for this field, it is set to the name of the CI's product.
+        /// The name of the configuration item (CI). When creating a new CI and a value is not specified for this field, it is set to the name of the CI's product.
         /// </summary>
         [JsonProperty("name"), Sdk4meField(true)]
         public string? Name { get; internal set; }
@@ -180,7 +180,7 @@
         public Recurrence? Recurrence { get; internal set; }
 
         /// <summary>
-        /// Any additional information about the configuration item that might prove useful. When creating a new configuration item and a value is not specified for this field, it is set to the remarks of the CI's product.
+        /// Any additional information about the configuration item that might prove useful. When creating a new CI and a value is not specified for this field, it is set to the remarks of the CI's product.
         /// </summary>
         [JsonProperty("remarks")]
         public string? Remarks { get; internal set; }
@@ -208,19 +208,19 @@
         }
 
         /// <summary>
-        /// The Rule set field is automatically set to the rule set of the product category, except when the configuration item is a license certificate, in which case the rule set is `license_certificate`.
+        /// The Rule set field is automatically set to the rule set of the product category, except when the CI is a license certificate, in which case the rule set is <c>license_certificate</c>.
         /// </summary>
         [JsonProperty("ruleSet"), Sdk4meField(true)]
         public ProductCategoryRuleSet? RuleSet { get; internal set; }
 
         /// <summary>
-        /// Serial number of the configuration item. The concatenation of `product`'s' `brand` and `serialNr` must be unique within a 4me account.
+        /// Serial number of the configuration item. The concatenation of <c>product</c>'s' <c>brand</c> and <c>serialNr</c> must be unique within a 4me account.
         /// </summary>
         [JsonProperty("serialNr"), Sdk4meField(true)]
         public string? SerialNr { get; internal set; }
 
         /// <summary>
-        /// Which service instance(s) the configuration item is, or will be, a part of. When creating a new configuration item and a value is not specified for this field, it is set to the service of the CI's product.
+        /// Which service instance(s) the configuration item is, or will be, a part of. When creating a new CI and a value is not specified for this field, it is set to the service of the CI's product.
         /// </summary>
         [JsonProperty("service"), Sdk4meField(true)]
         public Service? Service { get; internal set; }
@@ -237,13 +237,13 @@
         }
 
         /// <summary>
-        /// Where the configuration item is located, if it concerns a hardware configuration item.
+        /// Where the CI is located, if it concerns a hardware CI.
         /// </summary>
         [JsonProperty("site"), Sdk4meField(true)]
         public Site? Site { get; internal set; }
 
         /// <summary>
-        /// `true` for license certificates that may only be used at one or more specific locations.
+        /// <c>true</c> for license certificates that may only be used at one or more specific locations.
         /// </summary>
         [JsonProperty("siteLicense")]
         public bool? SiteLicense { get; internal set; }
@@ -267,7 +267,7 @@
         public CiStatus? Status { get; internal set; }
 
         /// <summary>
-        /// The supplier from which the configuration item (CI) has been obtained. When creating a new configuration item and a value is not specified for this field, it is set to the supplier of the CI's product.
+        /// The supplier from which the configuration item (CI) has been obtained. When creating a new CI and a value is not specified for this field, it is set to the supplier of the CI's product.
         /// </summary>
         [JsonProperty("supplier")]
         public Organization? Supplier { get; internal set; }
@@ -279,7 +279,7 @@
         public Account? SupportAccount { get; internal set; }
 
         /// <summary>
-        /// The team responsible for supporting the configuration item and maintaining its information in the configuration management database (CMDB). When creating a new configuration item and a value is not specified for this field, it is set to the support team of the CI's product. Optional when status of configuration item equals "Removed", required otherwise.
+        /// The team responsible for supporting the configuration item and maintaining its information in the configuration management database (CMDB). When creating a new CI and a value is not specified for this field, it is set to the support team of the CI's product. Optional when status of CI equals "Removed", required otherwise.
         /// </summary>
         [JsonProperty("supportTeam"), Sdk4meField(true)]
         public Team? SupportTeam { get; internal set; }
@@ -291,13 +291,13 @@
         public string? SystemID { get; internal set; }
 
         /// <summary>
-        /// `true` for license certificates that are not valid indefinitely.
+        /// <c>true</c> for license certificates that are not valid indefinitely.
         /// </summary>
         [JsonProperty("temporaryLicense")]
         public bool? TemporaryLicense { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }

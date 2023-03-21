@@ -43,7 +43,7 @@
         }
 
         /// <summary>
-        /// A short description of the reservation.
+        /// A short description of the reservation
         /// </summary>
         [JsonProperty("name")]
         public string? Name
@@ -153,7 +153,7 @@
         }
 
         /// <summary>
-        /// Full description of the reservation.
+        /// Full description of the reservation
         /// </summary>
         [JsonProperty("description")]
         public string? Description

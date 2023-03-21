@@ -12,7 +12,7 @@
         public Account? Account { get; internal set; }
 
         /// <summary>
-        /// The person who is responsible for ensuring that the availability targets specified in the active service level agreements for the service are met.
+        /// The person who is responsible for ensuring that the availability targets specified in the active SLAs for the service are met.
         /// </summary>
         [JsonProperty("availabilityManager")]
         public Person? AvailabilityManager { get; internal set; }
@@ -30,7 +30,7 @@
         public Person? ChangeManager { get; internal set; }
 
         /// <summary>
-        /// The person who is responsible for creating and maintaining the continuity plans for the service's instances that have an active service level agreement with a continuity target.
+        /// The person who is responsible for creating and maintaining the continuity plans for the service's instances that have an active SLA with a continuity target.
         /// </summary>
         [JsonProperty("continuityManager")]
         public Person? ContinuityManager { get; internal set; }
@@ -157,7 +157,7 @@
         }
 
         /// <summary>
-        /// The person who is responsible for ensuring that the service level targets specified in the service level agreements for the service are met.
+        /// The person who is responsible for ensuring that the service level targets specified in the SLAs for the service are met.
         /// </summary>
         [JsonProperty("serviceOwner")]
         public Person? ServiceOwner { get; internal set; }
@@ -204,13 +204,13 @@
         }
 
         /// <summary>
-        /// User interface extension that is linked to the record.
+        /// UI extension that is linked to the record.
         /// </summary>
         [JsonProperty("uiExtension")]
         public UiExtension? UiExtension { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }

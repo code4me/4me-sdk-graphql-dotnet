@@ -75,7 +75,7 @@
         }
 
         /// <summary>
-        /// Values for custom fields to be used by the user interface Extension that is linked to the record.
+        /// Values for custom fields to be used by the UI Extension that is linked to the record.
         /// </summary>
         [JsonProperty("customFields")]
         public CustomFieldCollection? CustomFields
@@ -95,7 +95,7 @@
         }
 
         /// <summary>
-        /// User interface extension that is to be applied to the record.
+        /// UI extension that is to be applied to the record.
         /// </summary>
         [JsonProperty("uiExtensionId")]
         public string? UiExtensionId
@@ -105,7 +105,7 @@
         }
 
         /// <summary>
-        /// Uniquely identify the user for Single Sign-On.
+        /// Uniquely identify the user for Single Sign-On
         /// </summary>
         [JsonProperty("authenticationID")]
         public string? AuthenticationID
@@ -136,7 +136,7 @@
 
         /// <summary>
         /// <br>The currency of the cost per hour value attributed to this person.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/costperhourcurrency/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("costPerHourCurrency")]
         public string? CostPerHourCurrency
@@ -146,7 +146,7 @@
         }
 
         /// <summary>
-        /// `true` when the person may no longer be related to other records.
+        /// <c>true</c> when the person may no longer be related to other records.
         /// </summary>
         [JsonProperty("disabled")]
         public bool? Disabled
@@ -156,7 +156,7 @@
         }
 
         /// <summary>
-        /// The languages that should not be translated automatically for the person. Translations will not be offered to the person for texts in any of these languages. Supported language codes are: `en`, `nl`, `de`, `fr`, `es`, `pt`, `it`, `da`, `fi`, `sv`, `pl`, `cs`, `tr`, `ru`, `ar`, `id`, `fa`, `no`, `zh`, `ja`, `ko`, `he`, `hi`, `ms`.
+        /// The languages that should not be translated automatically for the person. Translations will not be offered to the person for texts in any of these languages. Supported language codes are: <c>en</c>, <c>nl</c>, <c>de</c>, <c>fr</c>, <c>es</c>, <c>pt</c>, <c>it</c>, <c>da</c>, <c>fi</c>, <c>sv</c>, <c>pl</c>, <c>cs</c>, <c>tr</c>, <c>ru</c>, <c>ar</c>, <c>id</c>, <c>fa</c>, <c>no</c>, <c>zh</c>, <c>ja</c>, <c>ko</c>, <c>he</c>, <c>hi</c>, <c>ms</c>.
         /// </summary>
         [JsonProperty("doNotTranslateLanguages")]
         public List<string>? DoNotTranslateLanguages
@@ -317,7 +317,7 @@
 
         /// <summary>
         /// <br>The time zone in which the person normally resides.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("timeZone")]
         public string? TimeZone

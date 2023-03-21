@@ -16,7 +16,7 @@
         private long? wipLimit;
 
         /// <summary>
-        /// Identifier of the object to update using these values. For new objects it should be `null`.
+        /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
         /// </summary>
         [JsonProperty("id")]
         public string? ID
@@ -56,7 +56,7 @@
         }
 
         /// <summary>
-        /// Identifier of the person to assign the item to when action type is `assign` and an item is added to this column.
+        /// Identifier of the person to assign the item to when action type is <c>assign</c> and an item is added to this column.
         /// </summary>
         [JsonProperty("memberId")]
         public string? MemberId
@@ -86,7 +86,7 @@
         }
 
         /// <summary>
-        /// Identifier of the team to assign the item to when action type is `assign` and an item is added to this column.
+        /// Identifier of the team to assign the item to when action type is <c>assign</c> and an item is added to this column.
         /// </summary>
         [JsonProperty("teamId")]
         public string? TeamId

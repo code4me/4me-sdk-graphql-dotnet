@@ -18,7 +18,7 @@
         public bool? AssetSelection { get; internal set; }
 
         /// <summary>
-        /// Whether the request will be assigned to the provided Team after the workflow is completed. When `false` the request will be completed after the workflow completes.
+        /// Whether the request will be assigned to the provided Team after the workflow is completed. When <c>false</c> the request will be completed after the workflow completes.
         /// </summary>
         [JsonProperty("assignAfterWorkflowCompletion")]
         public bool? AssignAfterWorkflowCompletion { get; internal set; }
@@ -53,7 +53,7 @@
         public RequestCompletionReason? CompletionReason { get; internal set; }
 
         /// <summary>
-        /// The configuration item that needs to be copied to the Configuration item field of a new request when it is being created based on the template.
+        /// The CI that needs to be copied to the Configuration item field of a new request when it is being created based on the template.
         /// </summary>
         [JsonProperty("configurationItem")]
         public ConfigurationItem? ConfigurationItem { get; internal set; }
@@ -269,7 +269,7 @@
 
         /// <summary>
         /// <br>The time zone that applies to the selected support hours.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("timeZone")]
         public string? TimeZone { get; internal set; }
@@ -286,13 +286,13 @@
         }
 
         /// <summary>
-        /// User interface extension that is to be added to a new request when it is being created based on the template.
+        /// UI extension that is to be added to a new request when it is being created based on the template.
         /// </summary>
         [JsonProperty("uiExtension")]
         public UiExtension? UiExtension { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }
@@ -304,13 +304,13 @@
         public bool? Urgent { get; internal set; }
 
         /// <summary>
-        /// Used to relate a Workflow Manager to the request template. _Required_ when a Workflow Template is defined, and the Service does not define a Workflow Manager.
+        /// Used to relate a Workflow Manager to the request template. <em>Required</em> when a Workflow Template is defined, and the Service does not define a Workflow Manager.
         /// </summary>
         [JsonProperty("workflowManager")]
         public Person? WorkflowManager { get; internal set; }
 
         /// <summary>
-        /// Used to relate a Workflow Template to the request template. _Required_ when the _Status_ is set to _Workflow Pending_.
+        /// Used to relate a Workflow Template to the request template. <em>Required</em> when the <em>Status</em> is set to _Workflow Pending_.
         /// </summary>
         [JsonProperty("workflowTemplate"), Sdk4meField(true)]
         public WorkflowTemplate? WorkflowTemplate { get; internal set; }

@@ -27,7 +27,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// Name of the expression, which can be used to refer to the expression from the rule's conditions, actions, or from other expressions.'.
+        /// Name of the expression, which can be used to refer to the expression from the rule's conditions, actions, or from other expressions.'
         /// </summary>
         [JsonProperty("name"), Sdk4meField(true)]
         public string? Name { get; internal set; }

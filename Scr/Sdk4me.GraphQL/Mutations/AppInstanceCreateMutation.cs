@@ -1,7 +1,7 @@
 ﻿namespace Sdk4me.GraphQL
 {
     /// <summary>
-    /// Creates a new application instance.
+    /// Creates a new app instance.
     /// </summary>
     internal class AppInstanceCreateMutation : Mutation<AppInstanceCreatePayload, AppInstanceCreateInput>
     {

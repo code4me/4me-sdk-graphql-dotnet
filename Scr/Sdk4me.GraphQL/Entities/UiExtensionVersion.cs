@@ -6,19 +6,19 @@
     public class UiExtensionVersion : Node
     {
         /// <summary>
-        /// The date and time at which this version of the user interface extension was activated.
+        /// The date and time at which this version of the UI extension was activated.
         /// </summary>
         [JsonProperty("activatedAt"), Sdk4meField(true)]
         public DateTime? ActivatedAt { get; internal set; }
 
         /// <summary>
-        /// The date and time at which this version of the user interface extension was archived.
+        /// The date and time at which this version of the UI extension was archived.
         /// </summary>
         [JsonProperty("archivedAt"), Sdk4meField(true)]
         public DateTime? ArchivedAt { get; internal set; }
 
         /// <summary>
-        /// The date and time at which this version of the user interface extension was created.
+        /// The date and time at which this version of the UI extension was created.
         /// </summary>
         [JsonProperty("createdAt"), Sdk4meField(true)]
         public DateTime? CreatedAt { get; internal set; }
@@ -48,19 +48,19 @@
         public UiExtensionVersionStatus? Status { get; internal set; }
 
         /// <summary>
-        /// User interface extension this version belongs to.
+        /// UI extension this version belongs to.
         /// </summary>
         [JsonProperty("uiExtension")]
         public UiExtension? UiExtension { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of this version of the user interface extension. If this version of the user interface extension has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of this version of the UI extension. If this version of the UI extension has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         /// <summary>
-        /// The version number (1..) of this version of the user interface extension.
+        /// The version number (1..) of this version of the UI extension.
         /// </summary>
         [JsonProperty("versionNr"), Sdk4meField(true)]
         public long? VersionNr { get; internal set; }

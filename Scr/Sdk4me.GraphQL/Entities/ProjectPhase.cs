@@ -30,7 +30,7 @@
         public long? Position { get; internal set; }
 
         /// <summary>
-        /// Indicates the date and time at which the first project task of the phase was set to a status other than `registered` or `canceled`.
+        /// Indicates the date and time at which the first project task of the phase was set to a status other than <c>registered</c> or <c>canceled</c>.
         /// </summary>
         [JsonProperty("startedAt"), Sdk4meField(true)]
         public DateTime? StartedAt { get; internal set; }
@@ -42,7 +42,7 @@
         public ProjectPhaseStatus? Status { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the project phase. If the phase has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the project phase. If the phase has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }

@@ -12,13 +12,13 @@
         public Account? Account { get; internal set; }
 
         /// <summary>
-        /// The version with Status `active`.
+        /// The version with Status <c>active</c>.
         /// </summary>
         [JsonProperty("activeVersion"), Sdk4meField(true)]
         public UiExtensionVersion? ActiveVersion { get; internal set; }
 
         /// <summary>
-        /// The type of record in which the user interface extension can be selected.
+        /// The type of record in which the UI extension can be selected.
         /// </summary>
         [JsonProperty("category")]
         public UiExtensionCategory? Category { get; internal set; }
@@ -30,7 +30,7 @@
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
-        /// Description of the user interface Extension.
+        /// Description of the UI Extension.
         /// </summary>
         [JsonProperty("description")]
         public string? Description { get; internal set; }
@@ -47,13 +47,13 @@
         }
 
         /// <summary>
-        /// Whether the user interface extension is inactive.
+        /// Whether the UI extension is inactive.
         /// </summary>
         [JsonProperty("disabled"), Sdk4meField(true)]
         public bool? Disabled { get; internal set; }
 
         /// <summary>
-        /// The name of the user interface extension.
+        /// The name of the UI extension.
         /// </summary>
         [JsonProperty("name"), Sdk4meField(true)]
         public string? Name { get; internal set; }
@@ -71,7 +71,7 @@
         public string? SourceID { get; internal set; }
 
         /// <summary>
-        /// The text that is to be displayed as the section header above the user interface extension when the user interface extension is presented within a form.
+        /// The text that is to be displayed as the section header above the UI extension when the UI extension is presented within a form.
         /// </summary>
         [JsonProperty("title")]
         public string? Title { get; internal set; }
@@ -88,7 +88,7 @@
         }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }
@@ -97,7 +97,7 @@
         internal NodeCollection<UiExtensionVersion>? VersionsCollection { get; set; }
 
         /// <summary>
-        /// Versions of the user interface extension.
+        /// Versions of the UI extension.
         /// </summary>
         public DataList<UiExtensionVersion>? Versions
         {

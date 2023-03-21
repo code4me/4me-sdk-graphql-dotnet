@@ -47,7 +47,7 @@
         }
 
         /// <summary>
-        /// User interface extension that is to be applied to the record.
+        /// UI extension that is to be applied to the record.
         /// </summary>
         [JsonProperty("uiExtensionId")]
         public string? UiExtensionId
@@ -57,7 +57,7 @@
         }
 
         /// <summary>
-        /// Compliance description of the application offering.
+        /// Compliance description of the app offering.
         /// </summary>
         [JsonProperty("compliance")]
         public string? Compliance
@@ -67,7 +67,7 @@
         }
 
         /// <summary>
-        /// Description of the application offering.
+        /// Description of the app offering.
         /// </summary>
         [JsonProperty("description")]
         public string? Description
@@ -77,7 +77,7 @@
         }
 
         /// <summary>
-        /// Whether the application offering may not be used for new instances.
+        /// Whether the app offering may not be used for new instances.
         /// </summary>
         [JsonProperty("disabled")]
         public bool? Disabled
@@ -87,7 +87,7 @@
         }
 
         /// <summary>
-        /// Feature description of the application offering.
+        /// Feature description of the app offering.
         /// </summary>
         [JsonProperty("features")]
         public string? Features
@@ -97,7 +97,7 @@
         }
 
         /// <summary>
-        /// Name of the application offering.
+        /// Name of the app offering.
         /// </summary>
         [JsonProperty("name")]
         public string? Name
@@ -107,7 +107,7 @@
         }
 
         /// <summary>
-        /// The algorithm used for generating the policy for the application offering's webhook.
+        /// The algorithm used for generating the policy for the app offering's webhook.
         /// </summary>
         [JsonProperty("policyJwtAlg")]
         public WebhookPolicyJwtAlg? PolicyJwtAlg
@@ -117,7 +117,7 @@
         }
 
         /// <summary>
-        /// The audience for the policy for the application offering's webhook.
+        /// The audience for the policy for the app offering's webhook.
         /// </summary>
         [JsonProperty("policyJwtAudience")]
         public string? PolicyJwtAudience
@@ -127,7 +127,7 @@
         }
 
         /// <summary>
-        /// The claim expiry time for the policy for the application offering's webhook.
+        /// The claim expiry time for the policy for the app offering's webhook.
         /// </summary>
         [JsonProperty("policyJwtClaimExpiresIn")]
         public long? PolicyJwtClaimExpiresIn
@@ -137,7 +137,7 @@
         }
 
         /// <summary>
-        /// This reference can be used to link the application offering to an instance using the 4me APIs or the 4me Import functionality.
+        /// This reference can be used to link the app offering to an instance using the 4me APIs or the 4me Import functionality.
         /// </summary>
         [JsonProperty("reference")]
         public string? Reference
@@ -147,7 +147,7 @@
         }
 
         /// <summary>
-        /// Identifier of the the service instance this application offering is linked to.
+        /// Identifier of the the service instance this app offering is linked to.
         /// </summary>
         [JsonProperty("serviceInstanceId")]
         public string? ServiceInstanceId
@@ -157,7 +157,7 @@
         }
 
         /// <summary>
-        /// Identifier of the user interface extension version that is linked to the application offering.
+        /// Identifier of the UI extension version that is linked to the app offering.
         /// </summary>
         [JsonProperty("uiExtensionVersionId")]
         public string? UiExtensionVersionId
@@ -167,7 +167,7 @@
         }
 
         /// <summary>
-        /// The uniform resource identifier where the application can be configured. The placeholder {account} can be used to include the customer account identifier in the uniform resource identifier.
+        /// The URI where the app can be configured. The placeholder {account} can be used to include the customer account id in the URI.
         /// </summary>
         [JsonProperty("configurationUriTemplate")]
         public string? ConfigurationUriTemplate
@@ -177,7 +177,7 @@
         }
 
         /// <summary>
-        /// The uniform resource identifier for the application offering's webhook. The placeholder {account} can be used to include the customer account identifier in the uniform resource identifier.
+        /// The URI for the app offering's webhook. The placeholder {account} can be used to include the customer account id in the URI.
         /// </summary>
         [JsonProperty("webhookUriTemplate")]
         public string? WebhookUriTemplate
@@ -187,7 +187,7 @@
         }
 
         /// <summary>
-        /// Scopes of this application offering.
+        /// Scopes of this app offering
         /// </summary>
         [JsonProperty("newScopes")]
         public List<AppOfferingScopeInput>? NewScopes
@@ -197,7 +197,7 @@
         }
 
         /// <summary>
-        /// The node identifier of the record to update.
+        /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
         public string? ID
@@ -207,7 +207,7 @@
         }
 
         /// <summary>
-        /// Identifiers of scopes to remove from the application offering.
+        /// Identifiers of scopes to remove from the app offering.
         /// </summary>
         [JsonProperty("scopesToDelete")]
         public List<string>? ScopesToDelete

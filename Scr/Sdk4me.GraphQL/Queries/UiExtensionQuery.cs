@@ -6,7 +6,7 @@
     public class UiExtensionQuery : Query<UiExtensionQuery, UiExtensionField, UiExtensionView, UiExtensionOrderField>
     {
         /// <summary>
-        /// Initialize a new user interface extension query instance.
+        /// Initialize a new ui extension query instance.
         /// </summary>
         public UiExtensionQuery()
             : base("uiExtensions", typeof(UiExtension), true)
@@ -32,7 +32,7 @@
         }
 
         /// <summary>
-        /// Versions of the user interface extension.
+        /// Versions of the UI extension.
         /// </summary>
         public UiExtensionQuery SelectVersions(UiExtensionVersionQuery query)
         {

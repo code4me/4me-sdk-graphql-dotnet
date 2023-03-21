@@ -64,7 +64,7 @@
         }
 
         /// <summary>
-        /// User interface extension that is to be applied to the record.
+        /// UI extension that is to be applied to the record.
         /// </summary>
         [JsonProperty("uiExtensionId")]
         public string? UiExtensionId
@@ -74,7 +74,7 @@
         }
 
         /// <summary>
-        /// Values for custom fields to be used by the user interface Extension that is linked to the record.
+        /// Values for custom fields to be used by the UI Extension that is linked to the record.
         /// </summary>
         [JsonProperty("customFields")]
         public CustomFieldCollection? CustomFields
@@ -114,7 +114,12 @@
         }
 
         /// <summary>
-        /// Used to specify whether or not configuration items that are based on the product are typically depreciated and if so, which depreciation method is normally applied.
+        /// <br>Used to specify whether or not configuration items that are based on the product are typically depreciated and if so, which depreciation method is normally applied. Valid values are:</br>
+        /// <br>• <c>not_depreciated</c>: Not Depreciated</br>
+        /// <br>• <c>double_declining_balance</c>: Double Declining Balance</br>
+        /// <br>• <c>reducing_balance</c>: Reducing Balance (or Diminishing Value)</br>
+        /// <br>• <c>straight_line</c>: Straight Line (or Prime Cost)</br>
+        /// <br>• <c>sum_of_the_years_digits</c>: Sum of the Year's Digits</br>
         /// </summary>
         [JsonProperty("depreciationMethod")]
         public ProductDepreciationMethod? DepreciationMethod
@@ -154,7 +159,7 @@
         }
 
         /// <summary>
-        /// The name of the product. Fill out the Brand, Model, Product identifier (optional) and Category fields to automatically generate a name based on the values entered in these fields.
+        /// The name of the product. Fill out the Brand, Model, Product ID (optional) and Category fields to automatically generate a name based on the values entered in these fields.
         /// </summary>
         [JsonProperty("name")]
         public string? Name
@@ -164,7 +169,7 @@
         }
 
         /// <summary>
-        /// The unique identifier of the product that is used by the manufacturer. The concatenation of `brand` and `productID` must be unique within a 4me account.
+        /// The unique identifier of the product that is used by the manufacturer. The concatenation of <c>brand</c> and <c>productID</c> must be unique within a 4me account.
         /// </summary>
         [JsonProperty("productID")]
         public string? ProductID
@@ -215,7 +220,7 @@
 
         /// <summary>
         /// <br>The currency of the salvage value attributed to this configuration item.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/salvagevaluecurrency/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("salvageValueCurrency")]
         public string? SalvageValueCurrency
@@ -285,7 +290,7 @@
         }
 
         /// <summary>
-        /// The node identifier of the record to update.
+        /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
         public string? ID

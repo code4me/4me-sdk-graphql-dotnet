@@ -27,19 +27,19 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// Start of the period.
+        /// Start of the period
         /// </summary>
         [JsonProperty("from"), Sdk4meField(true)]
         public DateTime? From { get; internal set; }
 
         /// <summary>
-        /// Provider Not Accountable.
+        /// Provider Not Accountable
         /// </summary>
         [JsonProperty("providerNotAccountable"), Sdk4meField(true)]
         public bool? ProviderNotAccountable { get; internal set; }
 
         /// <summary>
-        /// End of the period.
+        /// End of the period
         /// </summary>
         [JsonProperty("to"), Sdk4meField(true)]
         public DateTime? To { get; internal set; }

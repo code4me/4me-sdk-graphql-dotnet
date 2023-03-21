@@ -78,7 +78,7 @@
         }
 
         /// <summary>
-        /// Values for custom fields to be used by the user interface Extension that is linked to the record.
+        /// Values for custom fields to be used by the UI Extension that is linked to the record.
         /// </summary>
         [JsonProperty("customFields")]
         public CustomFieldCollection? CustomFields
@@ -128,7 +128,7 @@
         }
 
         /// <summary>
-        /// Identifier of the internal organization which budget is used to pay for the configuration item. If the configuration item is leased or rented, the organization that pays the lease or rent is selected in this field. When creating a new configuration item and a value is not specified for this field, it is set to the financial owner of the CI's product.
+        /// Identifier of the internal organization which budget is used to pay for the configuration item. If the CI is leased or rented, the organization that pays the lease or rent is selected in this field. When creating a new CI and a value is not specified for this field, it is set to the financial owner of the CI's product.
         /// </summary>
         [JsonProperty("financialOwnerId")]
         public string? FinancialOwnerId
@@ -138,7 +138,7 @@
         }
 
         /// <summary>
-        /// The date on which the expense for the configuration item (CI) was incurred or, if the configuration item is depreciated over time, the date on which the depreciation was started. This is typically the invoice date.
+        /// The date on which the expense for the configuration item (CI) was incurred or, if the CI is depreciated over time, the date on which the depreciation was started. This is typically the invoice date.
         /// </summary>
         [JsonProperty("inUseSince")]
         public DateOnly? InUseSince
@@ -148,7 +148,7 @@
         }
 
         /// <summary>
-        /// The label that is attached to the configuration item (CI). A label is automatically generated using the same prefix of other configuration items of the same product category, followed by the next available number as the suffix.
+        /// The label that is attached to the configuration item (CI). A label is automatically generated using the same prefix of other CIs of the same product category, followed by the next available number as the suffix.
         /// </summary>
         [JsonProperty("label")]
         public string? Label
@@ -188,7 +188,7 @@
         }
 
         /// <summary>
-        /// The name or number of the room in which the configuration item is located, if it concerns a hardware configuration item.
+        /// The name or number of the room in which the CI is located, if it concerns a hardware CI.
         /// </summary>
         [JsonProperty("location")]
         public string? Location
@@ -198,7 +198,7 @@
         }
 
         /// <summary>
-        /// The name of the configuration item (CI). When creating a new configuration item and a value is not specified for this field, it is set to the name of the CI's product.
+        /// The name of the configuration item (CI). When creating a new CI and a value is not specified for this field, it is set to the name of the CI's product.
         /// </summary>
         [JsonProperty("name")]
         public string? Name
@@ -259,7 +259,7 @@
 
         /// <summary>
         /// <br>The currency of the purchase value attributed to this configuration item.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/purchasevaluecurrency/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("purchaseValueCurrency")]
         public string? PurchaseValueCurrency
@@ -279,7 +279,7 @@
         }
 
         /// <summary>
-        /// Any additional information about the configuration item that might prove useful. When creating a new configuration item and a value is not specified for this field, it is set to the remarks of the CI's product.
+        /// Any additional information about the configuration item that might prove useful. When creating a new CI and a value is not specified for this field, it is set to the remarks of the CI's product.
         /// </summary>
         [JsonProperty("remarks")]
         public string? Remarks
@@ -289,7 +289,7 @@
         }
 
         /// <summary>
-        /// The Rule set field is automatically set to the rule set of product category, except when the configuration item is a license certificate, in which case the rule set is `license_certificate`.
+        /// The Rule set field is automatically set to the rule set of product category, except when the CI is a license certificate, in which case the rule set is <c>license_certificate</c>.
         /// </summary>
         [JsonProperty("ruleSet")]
         public ProductCategoryRuleSet? RuleSet
@@ -299,7 +299,7 @@
         }
 
         /// <summary>
-        /// Serial number of the configuration item. The concatenation of `product`'s' `brand` and `serialNr` must be unique within a 4me account.
+        /// Serial number of the configuration item. The concatenation of <c>product</c>'s' <c>brand</c> and <c>serialNr</c> must be unique within a 4me account.
         /// </summary>
         [JsonProperty("serialNr")]
         public string? SerialNr
@@ -309,7 +309,7 @@
         }
 
         /// <summary>
-        /// Which service instance(s) the configuration item is, or will be, a part of. When creating a new configuration item and a value is not specified for this field, it is set to the service of the CI's product.
+        /// Which service instance(s) the configuration item is, or will be, a part of. When creating a new CI and a value is not specified for this field, it is set to the service of the CI's product.
         /// </summary>
         [JsonProperty("serviceId")]
         public string? ServiceId
@@ -329,7 +329,7 @@
         }
 
         /// <summary>
-        /// Where the configuration item is located, if it concerns a hardware configuration item.
+        /// Where the CI is located, if it concerns a hardware CI.
         /// </summary>
         [JsonProperty("siteId")]
         public string? SiteId
@@ -339,7 +339,7 @@
         }
 
         /// <summary>
-        /// `true` for license certificates that may only be used at one or more specific locations.
+        /// <c>true</c> for license certificates that may only be used at one or more specific locations.
         /// </summary>
         [JsonProperty("siteLicense")]
         public bool? SiteLicense
@@ -359,7 +359,7 @@
         }
 
         /// <summary>
-        /// Identifier of the supplier from which the configuration item (CI) has been obtained. When creating a new configuration item and a value is not specified for this field, it is set to the supplier of the CI's product.
+        /// Identifier of the supplier from which the configuration item (CI) has been obtained. When creating a new CI and a value is not specified for this field, it is set to the supplier of the CI's product.
         /// </summary>
         [JsonProperty("supplierId")]
         public string? SupplierId
@@ -369,7 +369,7 @@
         }
 
         /// <summary>
-        /// Identifier of the team responsible for supporting the configuration item and maintaining its information in the configuration management database (CMDB). When creating a new configuration item and a value is not specified for this field, it is set to the support team of the CI's product. Optional when status of configuration item equals "Removed", required otherwise.
+        /// Identifier of the team responsible for supporting the configuration item and maintaining its information in the configuration management database (CMDB). When creating a new CI and a value is not specified for this field, it is set to the support team of the CI's product. Optional when status of CI equals "Removed", required otherwise.
         /// </summary>
         [JsonProperty("supportTeamId")]
         public string? SupportTeamId
@@ -389,7 +389,7 @@
         }
 
         /// <summary>
-        /// `true` for license certificates that are not valid indefinitely.
+        /// <c>true</c> for license certificates that are not valid indefinitely.
         /// </summary>
         [JsonProperty("temporaryLicense")]
         public bool? TemporaryLicense

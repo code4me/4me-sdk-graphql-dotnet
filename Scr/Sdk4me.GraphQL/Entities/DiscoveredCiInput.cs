@@ -34,7 +34,7 @@
         }
 
         /// <summary>
-        /// Values for custom fields to be used by the user interface Extension that is linked to the record.
+        /// Values for custom fields to be used by the UI Extension that is linked to the record.
         /// </summary>
         [JsonProperty("customFields")]
         public CustomFieldCollection? CustomFields
@@ -54,7 +54,7 @@
         }
 
         /// <summary>
-        /// The unique identifier of the configuration item in an external system.
+        /// The unique identifier of the configuration item in an external system
         /// </summary>
         [JsonProperty("sourceID")]
         public string? SourceID
@@ -94,7 +94,7 @@
         }
 
         /// <summary>
-        /// Serial number of the configuration item. The concatenation of `product`'s' `brand` and `serialNr` must be unique within a 4me account.
+        /// Serial number of the configuration item. The concatenation of <c>product</c>'s' <c>brand</c> and <c>serialNr</c> must be unique within a 4me account.
         /// </summary>
         [JsonProperty("serialNr")]
         public string? SerialNr
@@ -114,7 +114,7 @@
         }
 
         /// <summary>
-        /// The date on which the expense for the configuration item (CI) was incurred or, if the configuration item is depreciated over time, the date on which the depreciation was started. This is typically the invoice date.
+        /// The date on which the expense for the configuration item (CI) was incurred or, if the CI is depreciated over time, the date on which the depreciation was started. This is typically the invoice date.
         /// </summary>
         [JsonProperty("inUseSince")]
         public DateOnly? InUseSince
@@ -124,7 +124,7 @@
         }
 
         /// <summary>
-        /// The label that is attached to the configuration item (CI). A label is automatically generated using the same prefix of other configuration items of the same product category, followed by the next available number as the suffix.
+        /// The label that is attached to the configuration item (CI). A label is automatically generated using the same prefix of other CIs of the same product category, followed by the next available number as the suffix.
         /// </summary>
         [JsonProperty("label")]
         public string? Label
@@ -134,7 +134,7 @@
         }
 
         /// <summary>
-        /// The name or number of the room in which the configuration item is located, if it concerns a hardware configuration item.
+        /// The name or number of the room in which the CI is located, if it concerns a hardware CI.
         /// </summary>
         [JsonProperty("location")]
         public string? Location
@@ -154,7 +154,7 @@
         }
 
         /// <summary>
-        /// Any additional information about the configuration item that might prove useful. When creating a new configuration item and a value is not specified for this field, it is set to the remarks of the CI's product.
+        /// Any additional information about the configuration item that might prove useful. When creating a new CI and a value is not specified for this field, it is set to the remarks of the CI's product.
         /// </summary>
         [JsonProperty("remarks")]
         public string? Remarks
@@ -175,7 +175,7 @@
 
         /// <summary>
         /// <br>The currency of the purchase value attributed to this configuration item.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/purchasevaluecurrency/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("purchaseValueCurrency")]
         public string? PurchaseValueCurrency

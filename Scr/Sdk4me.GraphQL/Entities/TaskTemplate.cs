@@ -81,7 +81,7 @@
         }
 
         /// <summary>
-        /// Whether the Copy note to workflow box of tasks that were created based on the template needs to be checked by default. (The Copy notes to workflow checkbox is called "Copy notes to workflow by default" when the task template is in Edit mode.).
+        /// Whether the Copy note to workflow box of tasks that were created based on the template needs to be checked by default. (The Copy notes to workflow checkbox is called "Copy notes to workflow by default" when the task template is in Edit mode.)
         /// </summary>
         [JsonProperty("copyNotesToWorkflow")]
         public bool? CopyNotesToWorkflow { get; internal set; }
@@ -205,7 +205,7 @@
         public long? PlannedEffortWorkflowManager { get; internal set; }
 
         /// <summary>
-        /// Whether the provider indicates not to be accountable for the affected service level agreements linked to the requests that are linked to the workflow of a task that was created based on the template.
+        /// Whether the provider indicates not to be accountable for the affected SLAs linked to the requests that are linked to the workflow of a task that was created based on the template.
         /// </summary>
         [JsonProperty("providerNotAccountable")]
         public bool? ProviderNotAccountable { get; internal set; }
@@ -287,13 +287,13 @@
         public Team? Team { get; internal set; }
 
         /// <summary>
-        /// User interface extension that is to be added to a new task when it is being created based on the template.
+        /// UI extension that is to be added to a new task when it is being created based on the template.
         /// </summary>
         [JsonProperty("uiExtension")]
         public UiExtension? UiExtension { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }

@@ -100,7 +100,7 @@
 
         /// <summary>
         /// <br>The currency of the cost per hour value attributed to this skill pool.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/costperhourcurrency/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("costPerHourCurrency")]
         public string? CostPerHourCurrency
@@ -120,7 +120,7 @@
         }
 
         /// <summary>
-        /// The node identifier of the record to update.
+        /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
         public string? ID

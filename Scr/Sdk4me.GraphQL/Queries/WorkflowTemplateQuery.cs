@@ -59,7 +59,7 @@
         }
 
         /// <summary>
-        /// Task template relations of the workflow template.
+        /// Task template relations of the workflow template
         /// </summary>
         public WorkflowTemplateQuery SelectTaskTemplateRelations(WorkflowTaskTemplateRelationQuery query)
         {

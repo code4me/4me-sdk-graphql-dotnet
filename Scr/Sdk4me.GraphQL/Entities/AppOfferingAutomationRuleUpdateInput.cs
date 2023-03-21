@@ -27,7 +27,7 @@
         }
 
         /// <summary>
-        /// The Condition field is used to define the condition that needs to be met in order for the update action(s) of the rule to be performed. For example: `is_assigned and !badge`.
+        /// The Condition field is used to define the condition that needs to be met in order for the update action(s) of the rule to be performed. For example: <c>is_assigned and !badge</c>.
         /// </summary>
         [JsonProperty("condition")]
         public string? Condition
@@ -57,7 +57,11 @@
         }
 
         /// <summary>
-        /// The record type this rule is linked to.
+        /// <br>The record type this rule is linked to.</br>
+        /// <br>Valid values are:</br>
+        /// <br>• <c>request</c></br>
+        /// <br>• <c>task</c></br>
+        /// <br>• <c>ci</c></br>
         /// </summary>
         [JsonProperty("generic")]
         public string? Generic
@@ -87,7 +91,7 @@
         }
 
         /// <summary>
-        /// The Trigger field is used to specify when the automation rule is to be triggered, for example `on status update` or `on note added`.
+        /// The Trigger field is used to specify when the automation rule is to be triggered, for example <c>on status update</c> or <c>on note added</c>.
         /// </summary>
         [JsonProperty("trigger")]
         public string? Trigger
@@ -97,7 +101,7 @@
         }
 
         /// <summary>
-        /// The node identifier of the record to update.
+        /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
         public string? ID

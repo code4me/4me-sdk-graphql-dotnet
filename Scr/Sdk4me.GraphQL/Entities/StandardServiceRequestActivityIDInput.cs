@@ -10,7 +10,7 @@
         private string? activityID;
 
         /// <summary>
-        /// Identifier of the object to update using these values. For new objects it should be `null`.
+        /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
         /// </summary>
         [JsonProperty("id")]
         public string? ID
@@ -20,7 +20,7 @@
         }
 
         /// <summary>
-        /// The standard service request identifier for which a billing identifier is provided.
+        /// The standard service request ID for which a billing identifier is provided.
         /// </summary>
         [JsonProperty("standardServiceRequestId")]
         public string? StandardServiceRequestId

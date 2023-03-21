@@ -50,7 +50,7 @@
         }
 
         /// <summary>
-        /// The Condition field is used to define the condition that needs to be met in order for the update action(s) of the rule to be performed. For example: `is_assigned and !badge`.
+        /// The Condition field is used to define the condition that needs to be met in order for the update action(s) of the rule to be performed. For example: <c>is_assigned and !badge</c>.
         /// </summary>
         [JsonProperty("condition")]
         public string? Condition
@@ -90,7 +90,16 @@
         }
 
         /// <summary>
-        /// When the automation rule is not linked to one specific record but to all records of a type, the Generic field contains the record type.
+        /// <br>When the automation rule is not linked to one specific record but to all records of a type, the Generic field contains the record type. Valid values are:</br>
+        /// <br>• <c>request</c></br>
+        /// <br>• <c>problem</c></br>
+        /// <br>• <c>workflow</c></br>
+        /// <br>• <c>task</c></br>
+        /// <br>• <c>project_task</c></br>
+        /// <br>• <c>ci</c></br>
+        /// <br>• <c>risk</c></br>
+        /// <br>• <c>scim_user</c></br>
+        /// <br>• <c>scim_group</c></br>
         /// </summary>
         [JsonProperty("generic")]
         public string? Generic
@@ -130,7 +139,7 @@
         }
 
         /// <summary>
-        /// The Trigger field is used to specify when the automation rule is to be triggered, for example `on status update` or `on note added`.
+        /// The Trigger field is used to specify when the automation rule is to be triggered, for example <c>on status update</c> or <c>on note added</c>.
         /// </summary>
         [JsonProperty("trigger")]
         public string? Trigger

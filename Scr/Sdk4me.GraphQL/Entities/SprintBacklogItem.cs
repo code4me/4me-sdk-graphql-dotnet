@@ -18,7 +18,7 @@
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
-        /// Whether this item has been completed in this sprint. `null` indicates the item was removed from the sprint.
+        /// Whether this item has been completed in this sprint. <c>null</c> indicates the item was removed from the sprint.
         /// </summary>
         [JsonProperty("done"), Sdk4meField(true)]
         public bool? Done { get; internal set; }
@@ -54,7 +54,7 @@
         public Sprint? Sprint { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }

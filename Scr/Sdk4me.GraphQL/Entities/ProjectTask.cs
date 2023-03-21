@@ -192,7 +192,7 @@
         public Project? Project { get; internal set; }
 
         /// <summary>
-        /// The record identifier as displayed in the user interface.
+        /// The record ID as displayed in the UI
         /// </summary>
         [JsonProperty("projectTaskId")]
         public string? ProjectTaskId { get; internal set; }
@@ -204,7 +204,7 @@
         public long? RequiredApprovals { get; internal set; }
 
         /// <summary>
-        /// The number of minutes it took to complete this project task, which is calculated as the difference between the `assignedAt` and `finishedAt` values.
+        /// The number of minutes it took to complete this project task, which is calculated as the difference between the <c>assignedAt</c> and <c>finishedAt</c> values.
         /// </summary>
         [JsonProperty("resolutionDuration")]
         public long? ResolutionDuration { get; internal set; }
@@ -303,7 +303,7 @@
         }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }
@@ -315,7 +315,7 @@
         public bool? Urgent { get; internal set; }
 
         /// <summary>
-        /// The date and time at which the status of the project task is to be updated from `waiting_for` to `assigned`. This field is available only when the Status field is set to `waiting_for`.
+        /// The date and time at which the status of the project task is to be updated from <c>waiting_for</c> to <c>assigned</c>. This field is available only when the Status field is set to <c>waiting_for</c>.
         /// </summary>
         [JsonProperty("waitingUntil")]
         public DateTime? WaitingUntil { get; internal set; }

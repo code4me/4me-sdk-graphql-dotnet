@@ -1,7 +1,7 @@
 ﻿namespace Sdk4me.GraphQL
 {
     /// <summary>
-    /// Creates a new service level agreement notification scheme.
+    /// Creates a new SLA notification scheme.
     /// </summary>
     internal class SlaNotificationSchemeCreateMutation : Mutation<SlaNotificationSchemeCreatePayload, SlaNotificationSchemeCreateInput>
     {

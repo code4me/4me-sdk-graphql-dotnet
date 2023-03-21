@@ -16,7 +16,7 @@
         private string? rateCurrency;
 
         /// <summary>
-        /// Identifier of the object to update using these values. For new objects it should be `null`.
+        /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
         /// </summary>
         [JsonProperty("id")]
         public string? ID
@@ -36,7 +36,7 @@
         }
 
         /// <summary>
-        /// Number of minutes within which a response needs to have been provided for a request to which the request template has been applied and which requester is covered by an service level agreement that is based on the service offering.
+        /// Number of minutes within which a response needs to have been provided for a request to which the request template has been applied and which requester is covered by an SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("responseTarget")]
         public long? ResponseTarget
@@ -46,7 +46,7 @@
         }
 
         /// <summary>
-        /// Number of minutes within which a request needs to have been completed when the request template has been applied to the request and the requester is covered by an service level agreement that is based on the service offering.
+        /// Number of minutes within which a request needs to have been completed when the request template has been applied to the request and the requester is covered by an SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("resolutionTarget")]
         public long? ResolutionTarget
@@ -56,7 +56,7 @@
         }
 
         /// <summary>
-        /// Identifier of the calendar that defines the support hours for a request to which the request template has been applied and which requester is covered by an service level agreement that is based on the service offering.
+        /// Identifier of the calendar that defines the support hours for a request to which the request template has been applied and which requester is covered by an SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("supportHoursId")]
         public string? SupportHoursId
@@ -66,7 +66,7 @@
         }
 
         /// <summary>
-        /// Identifier of the service level agreement notification scheme for a request when it affects an active service level agreement that is based on the service offering. Only enabled service level agreement notification schemes that are linked to the same account as the service offering can be selected.
+        /// Identifier of the SLA notification scheme for a request when it affects an active SLA that is based on the service offering. Only enabled SLA notification schemes that are linked to the same account as the service offering can be selected.
         /// </summary>
         [JsonProperty("slaNotificationSchemeId")]
         public string? SlaNotificationSchemeId
@@ -97,7 +97,7 @@
 
         /// <summary>
         /// <br>Defines the currency for the fixed price rate of a standard service request.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/ratecurrency/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("rateCurrency")]
         public string? RateCurrency

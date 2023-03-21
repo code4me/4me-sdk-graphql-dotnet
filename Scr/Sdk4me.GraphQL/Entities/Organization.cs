@@ -146,9 +146,10 @@
         /// <summary>
         /// <br>Which region the organization belongs to.</br>
         /// <br>Examples of commonly used region names are:</br>
+        /// <br></br>
         /// <br>- Asia Pacific (APAC)</br>
         /// <br>- Europe, Middle East &amp; Africa (EMEA)</br>
-        /// <br>- North America (NA)</br>.
+        /// <br>- North America (NA)</br>
         /// </summary>
         [JsonProperty("region")]
         public string? Region { get; internal set; }
@@ -185,7 +186,7 @@
         internal NodeCollection<ServiceLevelAgreement>? ServiceLevelAgreementsCollection { get; set; }
 
         /// <summary>
-        /// Service level agreements which coverage field is set to `organizations` and which cover the organization.
+        /// Service level agreements which coverage field is set to <c>organizations</c> and which cover the organization.
         /// </summary>
         public DataList<ServiceLevelAgreement>? ServiceLevelAgreements
         {
@@ -222,13 +223,13 @@
         }
 
         /// <summary>
-        /// User interface extension that is linked to the record.
+        /// UI extension that is linked to the record.
         /// </summary>
         [JsonProperty("uiExtension")]
         public UiExtension? UiExtension { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }

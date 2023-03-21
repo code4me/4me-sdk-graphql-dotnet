@@ -33,7 +33,7 @@
         }
 
         /// <summary>
-        /// Whether the service level agreement notification scheme may no longer be related to other records.
+        /// Whether the SLA notification scheme may no longer be related to other records.
         /// </summary>
         [JsonProperty("disabled")]
         public bool? Disabled
@@ -43,7 +43,7 @@
         }
 
         /// <summary>
-        /// The name of the service level agreement notification scheme.
+        /// The name of the SLA notification scheme.
         /// </summary>
         [JsonProperty("name")]
         public string? Name
@@ -53,7 +53,7 @@
         }
 
         /// <summary>
-        /// Rules of this service level agreement notification scheme.
+        /// Rules of this SLA notification scheme.
         /// </summary>
         [JsonProperty("newSlaNotificationRules")]
         public List<SlaNotificationRuleInput>? NewSlaNotificationRules

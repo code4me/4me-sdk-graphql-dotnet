@@ -12,7 +12,7 @@
         public Account? Account { get; internal set; }
 
         /// <summary>
-        /// The Activity identifier is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider. Some examples of activities are standard requests, a high impact incident or a request for information. The Activity identifier can be used to support integrations between the billing system of the service provider and the 4me account in which the activities are performed.
+        /// The Activity ID is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider. Some examples of activities are standard requests, a high impact incident or a request for information. The Activity ID can be used to support integrations between the billing system of the service provider and the 4me account in which the activities are performed.
         /// </summary>
         [JsonProperty("activityID")]
         public string? ActivityID { get; internal set; }
@@ -24,26 +24,26 @@
         public HasTimeEntries? Assignment { get; internal set; }
 
         /// <summary>
-        /// The Billing identifier is the unique identifier by which all the activities that are performed through the coverage of the service level agreement are known in the billing system of the service provider. The billing identifier can be used to support integrations between the billing system of the service provider and the 4me account in which the activities are performed.
+        /// The Billing ID is the unique identifier by which all the activities that are performed through the coverage of the SLA are known in the billing system of the service provider. The billing ID can be used to support integrations between the billing system of the service provider and the 4me account in which the activities are performed.
         /// </summary>
         [JsonProperty("billingID")]
         public string? BillingID { get; internal set; }
 
         /// <summary>
-        /// For a Time and Materials activity the charge is calculated by multiplying the time spent by the charge rate of the person’s who spent the time based on the selected effort class. For a Fixed Price activity the charge is the amount defined for the fixed price activity in the service offering (of the billable service level agreement related to the request).
+        /// For a Time and Materials activity the charge is calculated by multiplying the time spent by the charge rate of the person’s who spent the time based on the selected effort class. For a Fixed Price activity the charge is the amount defined for the fixed price activity in the service offering (of the billable SLA related to the request).
         /// </summary>
         [JsonProperty("charge")]
         public decimal? Charge { get; internal set; }
 
         /// <summary>
         /// <br>The currency of the charge field value of the time entry.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/chargecurrency/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("chargeCurrency")]
         public string? ChargeCurrency { get; internal set; }
 
         /// <summary>
-        /// The Charge identifier is the unique identifier by which an effort class that is linked to a time entry when an activity was performed through the coverage of the service level agreement is known in the billing system of the service provider. The effort class represents the type of effort that was performed when working on an activity. Some examples of effort classes are 'Billable - Normal Hours', 'Billable overtime', 'Non Billable' or 'Senior System Engineer'. The Charge identifier can be used to support integrations between the billing system of the service provider and the 4me account in which the activities are performed. In the billing system the Charge IDs will be linked to the rates that have been agreed on in the service contract.
+        /// The Charge ID is the unique identifier by which an effort class that is linked to a time entry when an activity was performed through the coverage of the SLA is known in the billing system of the service provider. The effort class represents the type of effort that was performed when working on an activity. Some examples of effort classes are 'Billable - Normal Hours', 'Billable overtime', 'Non Billable' or 'Senior System Engineer'. The Charge ID can be used to support integrations between the billing system of the service provider and the 4me account in which the activities are performed. In the billing system the Charge IDs will be linked to the rates that have been agreed on in the service contract.
         /// </summary>
         [JsonProperty("chargeID")]
         public string? ChargeID { get; internal set; }
@@ -74,7 +74,7 @@
 
         /// <summary>
         /// <br>The currency of the cost value of the time entry.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/costcurrency/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("costCurrency")]
         public string? CostCurrency { get; internal set; }
@@ -182,13 +182,13 @@
         public TimeAllocation? TimeAllocation { get; internal set; }
 
         /// <summary>
-        /// The number of minutes that was spent on the selected time allocation. The number of minutes is allowed to be negative only when the correction field is set to `true`.
+        /// The number of minutes that was spent on the selected time allocation. The number of minutes is allowed to be negative only when the correction field is set to <c>true</c>.
         /// </summary>
         [JsonProperty("timeSpent"), Sdk4meField(true)]
         public long? TimeSpent { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }

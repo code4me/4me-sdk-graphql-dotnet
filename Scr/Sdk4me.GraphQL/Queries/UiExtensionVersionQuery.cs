@@ -6,7 +6,7 @@
     public class UiExtensionVersionQuery : Query<UiExtensionVersionQuery, UiExtensionVersionField, DefaultView, DefaultOrderField>
     {
         /// <summary>
-        /// Initialize a new user interface extension version query instance.
+        /// Initialize a new ui extension version query instance.
         /// </summary>
         public UiExtensionVersionQuery()
             : base("", typeof(UiExtensionVersion), true)

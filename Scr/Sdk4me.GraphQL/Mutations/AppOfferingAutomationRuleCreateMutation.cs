@@ -1,7 +1,7 @@
 ﻿namespace Sdk4me.GraphQL
 {
     /// <summary>
-    /// Creates a new application offering automation rule.
+    /// Creates a new app offering automation rule.
     /// </summary>
     internal class AppOfferingAutomationRuleCreateMutation : Mutation<AppOfferingAutomationRuleCreatePayload, AppOfferingAutomationRuleCreateInput>
     {

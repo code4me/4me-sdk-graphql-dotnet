@@ -25,7 +25,7 @@
         }
 
         /// <summary>
-        /// User interface extension that is to be applied to the record.
+        /// UI extension that is to be applied to the record.
         /// </summary>
         [JsonProperty("uiExtensionId")]
         public string? UiExtensionId
@@ -35,7 +35,7 @@
         }
 
         /// <summary>
-        /// The unique identifier of the product in an external system.
+        /// The unique identifier of the product in an external system
         /// </summary>
         [JsonProperty("sourceID")]
         public string? SourceID
@@ -75,7 +75,7 @@
         }
 
         /// <summary>
-        /// The unique identifier of the product that is used by the manufacturer. The concatenation of `brand` and `productID` must be unique within a 4me account.
+        /// The unique identifier of the product that is used by the manufacturer. The concatenation of <c>brand</c> and <c>productID</c> must be unique within a 4me account.
         /// </summary>
         [JsonProperty("productID")]
         public string? ProductID

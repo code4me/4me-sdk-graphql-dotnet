@@ -25,7 +25,7 @@
 
         /// <summary>
         /// <br>The currency of the rate per hour for the effort class.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/ratecurrency/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("rateCurrency")]
         public string? RateCurrency { get; internal set; }
@@ -37,7 +37,7 @@
         public ServiceOffering? ServiceOffering { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the effort class rate. If the effort class rate has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the effort class rate. If the effort class rate has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt")]
         public DateTime? UpdatedAt { get; internal set; }

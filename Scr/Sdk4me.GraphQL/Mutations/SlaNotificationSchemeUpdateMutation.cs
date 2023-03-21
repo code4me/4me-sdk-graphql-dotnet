@@ -1,7 +1,7 @@
 ﻿namespace Sdk4me.GraphQL
 {
     /// <summary>
-    /// Updates an existing service level agreement notification scheme.
+    /// Updates an existing SLA notification scheme.
     /// </summary>
     internal class SlaNotificationSchemeUpdateMutation : Mutation<SlaNotificationSchemeUpdatePayload, SlaNotificationSchemeUpdateInput>
     {

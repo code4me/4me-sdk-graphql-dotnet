@@ -38,7 +38,7 @@
         }
 
         /// <summary>
-        /// The type of record in which the user interface extension can be selected.
+        /// The type of record in which the UI extension can be selected.
         /// </summary>
         [JsonProperty("category")]
         public UiExtensionCategory? Category
@@ -48,7 +48,7 @@
         }
 
         /// <summary>
-        /// Whether the user interface extension is inactive.
+        /// Whether the UI extension is inactive.
         /// </summary>
         [JsonProperty("disabled")]
         public bool? Disabled
@@ -58,7 +58,7 @@
         }
 
         /// <summary>
-        /// The name of the user interface extension.
+        /// The name of the UI extension.
         /// </summary>
         [JsonProperty("name")]
         public string? Name
@@ -68,7 +68,7 @@
         }
 
         /// <summary>
-        /// The text that is to be displayed as the section header above the user interface extension when the user interface extension is presented within a form.
+        /// The text that is to be displayed as the section header above the UI extension when the UI extension is presented within a form.
         /// </summary>
         [JsonProperty("title")]
         public string? Title
@@ -78,7 +78,7 @@
         }
 
         /// <summary>
-        /// Set to `true` to promote the Prepared Version to the Active Version. If the was an Active Version, it will be Archived.
+        /// Set to <c>true</c> to promote the Prepared Version to the Active Version. If the was an Active Version, it will be Archived.
         /// </summary>
         [JsonProperty("activate")]
         public bool? Activate

@@ -6,7 +6,7 @@
     public class AffectedSlaQuery : Query<AffectedSlaQuery, AffectedSlaField, AffectedSlaView, AffectedSlaOrderField>
     {
         /// <summary>
-        /// Initialize a new affected service level agreement query instance.
+        /// Initialize a new affected sla query instance.
         /// </summary>
         public AffectedSlaQuery()
             : base("affectedSlas", typeof(AffectedSla), true)

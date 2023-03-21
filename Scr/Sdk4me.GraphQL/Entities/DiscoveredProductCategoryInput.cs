@@ -32,7 +32,7 @@
         }
 
         /// <summary>
-        /// The unique identifier of the product category in an external system.
+        /// The unique identifier of the product category in an external system
         /// </summary>
         [JsonProperty("sourceID")]
         public string? SourceID

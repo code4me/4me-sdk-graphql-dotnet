@@ -6,7 +6,7 @@
     public class AppOfferingQuery : Query<AppOfferingQuery, AppOfferingField, AppOfferingView, AppOfferingOrderField>
     {
         /// <summary>
-        /// Initialize a new application offering query instance.
+        /// Initialize a new app offering query instance.
         /// </summary>
         public AppOfferingQuery()
             : base("appOfferings", typeof(AppOffering), true)
@@ -14,7 +14,7 @@
         }
 
         /// <summary>
-        /// Instances of this application.
+        /// Instances of this app.
         /// </summary>
         public AppOfferingQuery SelectAppInstances(AppInstanceQuery query)
         {
@@ -23,7 +23,7 @@
         }
 
         /// <summary>
-        /// Automation rules of this application offering.
+        /// Automation rules of this app offering.
         /// </summary>
         public AppOfferingQuery SelectAutomationRules(AppOfferingAutomationRuleQuery query)
         {

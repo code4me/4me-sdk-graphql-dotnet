@@ -6,7 +6,7 @@
     public class AppOfferingAutomationRuleQuery : Query<AppOfferingAutomationRuleQuery, AppOfferingAutomationRuleField, DefaultView, DefaultOrderField>
     {
         /// <summary>
-        /// Initialize a new application offering automation rule query instance.
+        /// Initialize a new app offering automation rule query instance.
         /// </summary>
         public AppOfferingAutomationRuleQuery()
             : base("", typeof(AppOfferingAutomationRule), true)

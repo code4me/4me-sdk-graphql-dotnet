@@ -72,7 +72,7 @@
         }
 
         /// <summary>
-        /// The start date and time of the broadcast. (If the broadcast should start at midnight at the start of a day, specify 00:00.).
+        /// The start date and time of the broadcast. (If the broadcast should start at midnight at the start of a day, specify 00:00.)
         /// </summary>
         [JsonProperty("startAt")]
         public DateTime? StartAt
@@ -82,7 +82,7 @@
         }
 
         /// <summary>
-        /// The end date and time of the broadcast. This field is left empty when the message is to be broadcasted until the Disabled box is checked. (If the broadcast should end at midnight at the end of a day, specify 12:00am or 24:00.).
+        /// The end date and time of the broadcast. This field is left empty when the message is to be broadcasted until the Disabled box is checked. (If the broadcast should end at midnight at the end of a day, specify 12:00am or 24:00.)
         /// </summary>
         [JsonProperty("endAt")]
         public DateTime? EndAt
@@ -93,7 +93,7 @@
 
         /// <summary>
         /// <br>The time zone that applies to the dates and times specified in the Start and End fields.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("timeZone")]
         public string? TimeZone
@@ -123,7 +123,7 @@
         }
 
         /// <summary>
-        /// The service instances for which the people, who are covered for them by an active service level agreement, need to see the broadcast. This is available only when the "People covered for the following service instance(s)" visibility option is selected.
+        /// The service instances for which the people, who are covered for them by an active SLA, need to see the broadcast. This is available only when the "People covered for the following service instance(s)" visibility option is selected.
         /// </summary>
         [JsonProperty("serviceInstanceIds")]
         public List<string>? ServiceInstanceIds
@@ -143,7 +143,7 @@
         }
 
         /// <summary>
-        /// The node identifier of the record to update.
+        /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
         public string? ID

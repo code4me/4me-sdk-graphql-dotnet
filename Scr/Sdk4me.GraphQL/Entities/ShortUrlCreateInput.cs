@@ -33,7 +33,7 @@
         }
 
         /// <summary>
-        /// Identifier of the configuration item for which a request is to be registered in 4me Self Service when the short URL is used.
+        /// Identifier of the CI for which a request is to be registered in 4me Self Service when the short URL is used.
         /// </summary>
         [JsonProperty("ciId")]
         public string? CiId

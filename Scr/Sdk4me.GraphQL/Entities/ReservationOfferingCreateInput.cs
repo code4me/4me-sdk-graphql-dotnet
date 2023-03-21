@@ -46,7 +46,7 @@
         }
 
         /// <summary>
-        /// A short description of the reservation offering.
+        /// A short description of the reservation offering
         /// </summary>
         [JsonProperty("name")]
         public string? Name
@@ -97,7 +97,7 @@
 
         /// <summary>
         /// <br>The time zone that applies to the selected calendar.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("timeZone")]
         public string? TimeZone

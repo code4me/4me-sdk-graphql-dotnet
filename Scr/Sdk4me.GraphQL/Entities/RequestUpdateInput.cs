@@ -75,7 +75,7 @@
         }
 
         /// <summary>
-        /// Values for custom fields to be used by the user interface Extension that is linked to the record.
+        /// Values for custom fields to be used by the UI Extension that is linked to the record.
         /// </summary>
         [JsonProperty("customFields")]
         public CustomFieldCollection? CustomFields
@@ -115,7 +115,7 @@
         }
 
         /// <summary>
-        /// Identifier of the board this item is placed on.
+        /// ID of the board this item is placed on.
         /// </summary>
         [JsonProperty("agileBoardId")]
         public string? AgileBoardId
@@ -125,7 +125,7 @@
         }
 
         /// <summary>
-        /// Identifier of the column this item is placed in.
+        /// ID of the column this item is placed in.
         /// </summary>
         [JsonProperty("agileBoardColumnId")]
         public string? AgileBoardColumnId
@@ -175,7 +175,7 @@
         }
 
         /// <summary>
-        /// Default: `false` - When the Satisfaction field of the request is set to 'Dissatisfied', a person who has the Service Desk Manager role, can check the Addressed box to indicate that the requester has been conciliated.
+        /// Default: <c>false</c> - When the Satisfaction field of the request is set to 'Dissatisfied', a person who has the Service Desk Manager role, can check the Addressed box to indicate that the requester has been conciliated.
         /// </summary>
         [JsonProperty("addressed")]
         public bool? Addressed
@@ -195,7 +195,7 @@
         }
 
         /// <summary>
-        /// Identifier of workflow to link request to.
+        /// ID of workflow to link request to.
         /// </summary>
         [JsonProperty("workflowId")]
         public string? WorkflowId
@@ -235,7 +235,7 @@
         }
 
         /// <summary>
-        /// The date and time that has been agreed on for the completion of the request. The desired completion overwrites the automatically calculated resolution target of any affected service level agreement that is related to the request when the desired completion is later than the affected service level agreements resolution target. By default, the person selected in the Requested by field receives a notification based on the 'Desired Completion Set for Request' email template whenever the value in the Desired completion field is set, updated or removed.
+        /// The date and time that has been agreed on for the completion of the request. The desired completion overwrites the automatically calculated resolution target of any affected SLA that is related to the request when the desired completion is later than the affected SLA's resolution target. By default, the person selected in the Requested by field receives a notification based on the 'Desired Completion Set for Request' email template whenever the value in the Desired completion field is set, updated or removed.
         /// </summary>
         [JsonProperty("desiredCompletionAt")]
         public DateTime? DesiredCompletionAt
@@ -245,7 +245,7 @@
         }
 
         /// <summary>
-        /// Identifier of the request group that is used to group the requests that have been submitted for the resolution of exactly the same incident, for the implementation of exactly the same change, for the provision of exactly the same information, etc.
+        /// ID of the request group that is used to group the requests that have been submitted for the resolution of exactly the same incident, for the implementation of exactly the same change, for the provision of exactly the same information, etc.
         /// </summary>
         [JsonProperty("groupedIntoId")]
         public string? GroupedIntoId
@@ -265,7 +265,7 @@
         }
 
         /// <summary>
-        /// Used to provide information that is visible only for people who have the Auditor, Specialist or Account Administrator role of the account for which the internal note is intended. The `X-4me-Account` header sent determines the account.
+        /// Used to provide information that is visible only for people who have the Auditor, Specialist or Account Administrator role of the account for which the internal note is intended. The <c>X-4me-Account</c> header sent determines the account.
         /// </summary>
         [JsonProperty("internalNote")]
         public string? InternalNote
@@ -275,7 +275,7 @@
         }
 
         /// <summary>
-        /// The attachments used in the `internalNote` field.
+        /// The attachments used in the <c>internalNote</c> field.
         /// </summary>
         [JsonProperty("internalNoteAttachments")]
         public List<AttachmentInput>? InternalNoteAttachments
@@ -305,7 +305,7 @@
         }
 
         /// <summary>
-        /// Identifier of the person to whom the request is to be assigned.
+        /// ID of the person to whom the request is to be assigned.
         /// </summary>
         [JsonProperty("memberId")]
         public string? MemberId
@@ -325,7 +325,7 @@
         }
 
         /// <summary>
-        /// The attachments used in the `note` field.
+        /// The attachments used in the <c>note</c> field.
         /// </summary>
         [JsonProperty("noteAttachments")]
         public List<AttachmentInput>? NoteAttachments
@@ -335,7 +335,7 @@
         }
 
         /// <summary>
-        /// Identifier of problem to link request to.
+        /// ID of problem to link request to.
         /// </summary>
         [JsonProperty("problemId")]
         public string? ProblemId
@@ -345,7 +345,7 @@
         }
 
         /// <summary>
-        /// Identifier of project to link request to.
+        /// ID of project to link request to.
         /// </summary>
         [JsonProperty("projectId")]
         public string? ProjectId
@@ -355,7 +355,7 @@
         }
 
         /// <summary>
-        /// Default: `false` - Whether the provider currently indicates not to be accountable.
+        /// Default: <c>false</c> - Whether the provider currently indicates not to be accountable.
         /// </summary>
         [JsonProperty("providerNotAccountable")]
         public bool? ProviderNotAccountable
@@ -365,7 +365,7 @@
         }
 
         /// <summary>
-        /// Identifier of the person who submitted the request. Defaults to the Requested for field if its value was explicitely provided, otherwise it defaults to the current authenticated person.
+        /// ID of the person who submitted the request. Defaults to the Requested for field if its value was explicitely provided, otherwise it defaults to the current authenticated person
         /// </summary>
         [JsonProperty("requestedById")]
         public string? RequestedById
@@ -375,7 +375,7 @@
         }
 
         /// <summary>
-        /// Identifier of the person for whom the request was submitted. The person selected in the Requested by field is automatically selected in this field, but another person can be selected if the request is submitted for another person.
+        /// ID of the person for whom the request was submitted. The person selected in the Requested by field is automatically selected in this field, but another person can be selected if the request is submitted for another person.
         /// </summary>
         [JsonProperty("requestedForId")]
         public string? RequestedForId
@@ -385,7 +385,7 @@
         }
 
         /// <summary>
-        /// Default: `false` - A request can be marked as reviewed by the problem manager of the service of the service instance that is linked to the request. Marking a request as reviewed excludes it from the 'Requests for Problem Identification' view.
+        /// Default: <c>false</c> - A request can be marked as reviewed by the problem manager of the service of the service instance that is linked to the request. Marking a request as reviewed excludes it from the 'Requests for Problem Identification' view.
         /// </summary>
         [JsonProperty("reviewed")]
         public bool? Reviewed
@@ -395,7 +395,7 @@
         }
 
         /// <summary>
-        /// Identifier of the service instance in which the cause of the incident resides, for which the change is requested, or about which information is needed.
+        /// ID of the service instance in which the cause of the incident resides, for which the change is requested, or about which information is needed.
         /// </summary>
         [JsonProperty("serviceInstanceId")]
         public string? ServiceInstanceId
@@ -405,7 +405,7 @@
         }
 
         /// <summary>
-        /// Default: `assigned` - Used to select the current status of the request.
+        /// Default: <c>assigned</c> - Used to select the current status of the request.
         /// </summary>
         [JsonProperty("status")]
         public RequestStatus? Status
@@ -425,7 +425,7 @@
         }
 
         /// <summary>
-        /// Identifier of the supplier organization that has been asked to assist with the request. The supplier organization is automatically selected in this field after a service instance has been selected that is provided by an external service provider organization.
+        /// ID of the supplier organization that has been asked to assist with the request. The supplier organization is automatically selected in this field after a service instance has been selected that is provided by an external service provider organization.
         /// </summary>
         [JsonProperty("supplierId")]
         public string? SupplierId
@@ -445,7 +445,7 @@
         }
 
         /// <summary>
-        /// Identifier of the team to which the request is to be assigned. By default, the first line team of the service instance that is related to the request will be selected. If a first line team has not been specified for the service instance, the support team of the service instance will be selected instead.
+        /// ID of the team to which the request is to be assigned. By default, the first line team of the service instance that is related to the request will be selected. If a first line team has not been specified for the service instance, the support team of the service instance will be selected instead.
         /// </summary>
         [JsonProperty("teamId")]
         public string? TeamId
@@ -455,7 +455,7 @@
         }
 
         /// <summary>
-        /// Identifier of the request template to apply to the request.
+        /// ID of the request template to apply to the request.
         /// </summary>
         [JsonProperty("templateId")]
         public string? TemplateId
@@ -465,7 +465,7 @@
         }
 
         /// <summary>
-        /// Setting to `true` marks request as urgent.
+        /// Setting to <c>true</c> marks request as urgent.
         /// </summary>
         [JsonProperty("urgent")]
         public bool? Urgent
@@ -475,7 +475,7 @@
         }
 
         /// <summary>
-        /// The date and time at which the status of the request is to be updated from `waiting_for` to `assigned`. This field is available only when the Status field is set to `waiting_for`.
+        /// The date and time at which the status of the request is to be updated from <c>waiting_for</c> to <c>assigned</c>. This field is available only when the Status field is set to <c>waiting_for</c>.
         /// </summary>
         [JsonProperty("waitingUntil")]
         public DateTime? WaitingUntil
@@ -505,7 +505,7 @@
         }
 
         /// <summary>
-        /// The node identifier of the record to update.
+        /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
         public string? ID

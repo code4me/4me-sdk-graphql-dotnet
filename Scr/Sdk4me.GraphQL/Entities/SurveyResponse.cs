@@ -62,7 +62,7 @@
         internal NodeCollection<ServiceLevelAgreement>? SlasCollection { get; set; }
 
         /// <summary>
-        /// Service level agreements of this survey response.
+        /// SLAs of this survey response.
         /// </summary>
         public DataList<ServiceLevelAgreement>? Slas
         {
@@ -88,7 +88,7 @@
         public Survey? Survey { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }

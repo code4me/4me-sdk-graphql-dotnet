@@ -12,7 +12,7 @@
         private bool? integration;
 
         /// <summary>
-        /// Identifier of the object to update using these values. For new objects it should be `null`.
+        /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
         /// </summary>
         [JsonProperty("id")]
         public string? ID
@@ -22,7 +22,15 @@
         }
 
         /// <summary>
-        /// The Label of the contact details.
+        /// <br>The Label of the contact details. Valid values are:</br>
+        /// <br>• <c>fax</c>: only for <c>telephone</c></br>
+        /// <br>• <c>general</c>: only for organization <c>telephone</c>, <c>email</c> and <c>website</c></br>
+        /// <br>• <c>home</c>: only for person <c>telephone</c></br>
+        /// <br>• <c>mobile</c>: only for person <c>telephone</c></br>
+        /// <br>• <c>personal</c>: only for person <c>email</c> and <c>website</c></br>
+        /// <br>• <c>service_desk</c>: only for organization <c>telephone</c>, <c>email</c> and <c>website</c></br>
+        /// <br>• <c>service_desk_fax</c>: only for organization <c>telephone</c></br>
+        /// <br>• <c>work</c>: only for organization <c>telephone</c>, and for person <c>telephone</c>, <c>email</c> and <c>website</c></br>
         /// </summary>
         [JsonProperty("label")]
         public ContactLabel? Label
@@ -52,7 +60,7 @@
         }
 
         /// <summary>
-        /// Can be set to `true` using this API or the Import functionality. When checked, the contact is displayed as read-only in the user interface to prevent users from updating it.
+        /// Can be set to <c>true</c> using this API or the Import functionality. When checked, the contact is displayed as read-only in the user interface to prevent users from updating it.
         /// </summary>
         [JsonProperty("integration")]
         public bool? Integration

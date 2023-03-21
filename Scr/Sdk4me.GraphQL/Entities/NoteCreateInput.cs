@@ -23,7 +23,7 @@
         }
 
         /// <summary>
-        /// The attachments used in the `note` field.
+        /// The attachments used in the <c>note</c> field.
         /// </summary>
         [JsonProperty("attachments")]
         public List<AttachmentInput>? Attachments

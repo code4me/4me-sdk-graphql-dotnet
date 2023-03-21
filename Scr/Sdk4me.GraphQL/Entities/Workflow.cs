@@ -156,7 +156,7 @@
         }
 
         /// <summary>
-        /// Linked project.
+        /// Linked project
         /// </summary>
         [JsonProperty("project"), Sdk4meField(true)]
         public Project? Project { get; internal set; }
@@ -179,7 +179,7 @@
         }
 
         /// <summary>
-        /// The number of minutes it took to complete this workflow, which is calculated as the difference between the `createdAt` and `completedAt` values.
+        /// The number of minutes it took to complete this workflow, which is calculated as the difference between the <c>createdAt</c> and <c>completedAt</c> values.
         /// </summary>
         [JsonProperty("resolutionDuration")]
         public long? ResolutionDuration { get; internal set; }
@@ -238,13 +238,13 @@
         public WorkflowTemplate? Template { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         /// <summary>
-        /// The record identifier as displayed in the user interface.
+        /// The record ID as displayed in the UI
         /// </summary>
         [JsonProperty("workflowId")]
         public string? WorkflowId { get; internal set; }

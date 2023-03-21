@@ -145,8 +145,8 @@
         }
 
         /// <summary>
-        /// <br>Currency of the `amount` value of the invoice.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see></br>.
+        /// <br>Currency of the <c>amount</c> value of the invoice.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("currency")]
         public string? Currency
@@ -157,7 +157,12 @@
 
         /// <summary>
         /// <br>Used to specify whether or not configuration items that are linked to this invoice are depreciated</br>
-        /// <br>and if so, which depreciation method is to be applied</br>.
+        /// <br>and if so, which depreciation method is to be applied. Valid values are:</br>
+        /// <br>• <c>not_depreciated</c>: Not Depreciated</br>
+        /// <br>• <c>double_declining_balance</c>: Double Declining Balance</br>
+        /// <br>• <c>reducing_balance</c>: Reducing Balance (or Diminishing Value)</br>
+        /// <br>• <c>straight_line</c>: Straight Line (or Prime Cost)</br>
+        /// <br>• <c>sum_of_the_years_digits</c>: Sum of the Year's Digits</br>
         /// </summary>
         [JsonProperty("depreciationMethod")]
         public ProductDepreciationMethod? DepreciationMethod
@@ -257,7 +262,7 @@
         }
 
         /// <summary>
-        /// Used to specify the yearly rate that should be applied to calculate the depreciation of the configuration item (CI) using the reducing balance (or diminishing value) method. When creating a new configuration item and a value is not specified for this field, it is set to the rate of the CI's product.
+        /// Used to specify the yearly rate that should be applied to calculate the depreciation of the configuration item (CI) using the reducing balance (or diminishing value) method. When creating a new CI and a value is not specified for this field, it is set to the rate of the CI's product.
         /// </summary>
         [JsonProperty("rate")]
         public long? Rate
@@ -278,7 +283,7 @@
 
         /// <summary>
         /// <br>The currency of the salvage value attributed to this configuration item.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/salvagevaluecurrency/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("salvageValueCurrency")]
         public string? SalvageValueCurrency
@@ -298,7 +303,7 @@
         }
 
         /// <summary>
-        /// The number of years within which the configuration item is to be depreciated. When creating a new configuration item and a value is not specified for this field, it is set to the useful life of the CI's product.
+        /// The number of years within which the configuration item is to be depreciated. When creating a new CI and a value is not specified for this field, it is set to the useful life of the CI's product.
         /// </summary>
         [JsonProperty("usefulLife")]
         public long? UsefulLife

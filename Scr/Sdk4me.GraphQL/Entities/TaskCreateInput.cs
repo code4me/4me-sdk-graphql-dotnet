@@ -88,7 +88,7 @@
         }
 
         /// <summary>
-        /// Identifier of the board this item is placed on.
+        /// ID of the board this item is placed on.
         /// </summary>
         [JsonProperty("agileBoardId")]
         public string? AgileBoardId
@@ -98,7 +98,7 @@
         }
 
         /// <summary>
-        /// Identifier of the column this item is placed in.
+        /// ID of the column this item is placed in.
         /// </summary>
         [JsonProperty("agileBoardColumnId")]
         public string? AgileBoardColumnId
@@ -118,7 +118,7 @@
         }
 
         /// <summary>
-        /// Values for custom fields to be used by the user interface Extension that is linked to the record.
+        /// Values for custom fields to be used by the UI Extension that is linked to the record.
         /// </summary>
         [JsonProperty("customFields")]
         public CustomFieldCollection? CustomFields
@@ -198,7 +198,7 @@
         }
 
         /// <summary>
-        /// The attachments used in the `instructions` field.
+        /// The attachments used in the <c>instructions</c> field.
         /// </summary>
         [JsonProperty("instructionsAttachments")]
         public List<AttachmentInput>? InstructionsAttachments
@@ -208,7 +208,7 @@
         }
 
         /// <summary>
-        /// Identifier of the person to whom the task is to be assigned. This field's value is `null` in case of an approval task with multiple approvers.
+        /// Identifier of the person to whom the task is to be assigned. This field's value is <c>null</c> in case of an approval task with multiple approvers.
         /// </summary>
         [JsonProperty("memberId")]
         public string? MemberId
@@ -228,7 +228,7 @@
         }
 
         /// <summary>
-        /// The attachments used in the `note` field.
+        /// The attachments used in the <c>note</c> field.
         /// </summary>
         [JsonProperty("noteAttachments")]
         public List<AttachmentInput>? NoteAttachments
@@ -378,7 +378,7 @@
         }
 
         /// <summary>
-        /// The date and time at which the status of the task is to be updated from `waiting_for` to `assigned`. This field is available only when the Status field is set to `waiting_for`.
+        /// The date and time at which the status of the task is to be updated from <c>waiting_for</c> to <c>assigned</c>. This field is available only when the Status field is set to <c>waiting_for</c>.
         /// </summary>
         [JsonProperty("waitingUntil")]
         public DateTime? WaitingUntil

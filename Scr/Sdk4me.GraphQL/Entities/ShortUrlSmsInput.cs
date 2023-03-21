@@ -9,7 +9,7 @@
         private string? tel;
 
         /// <summary>
-        /// Text of the SMS message.
+        /// Text of the SMS message
         /// </summary>
         [JsonProperty("body")]
         public string? Body
@@ -19,7 +19,7 @@
         }
 
         /// <summary>
-        /// Telephone number of the recipient of the SMS message.
+        /// Telephone number of the recipient of the SMS message
         /// </summary>
         [JsonProperty("tel")]
         public string? Tel

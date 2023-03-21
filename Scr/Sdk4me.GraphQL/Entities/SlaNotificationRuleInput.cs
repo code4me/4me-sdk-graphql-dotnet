@@ -15,7 +15,7 @@
         private bool? notifySupportTeamManager;
 
         /// <summary>
-        /// Identifier of the object to update using these values. For new objects it should be `null`.
+        /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
         /// </summary>
         [JsonProperty("id")]
         public string? ID
@@ -45,7 +45,7 @@
         }
 
         /// <summary>
-        /// Whether to notify the first line team coordinator of the service instance of the affected service level agreement.
+        /// Whether to notify the first line team coordinator of the service instance of the affected SLA.
         /// </summary>
         [JsonProperty("notifyFirstLineTeamCoordinator")]
         public bool? NotifyFirstLineTeamCoordinator
@@ -55,7 +55,7 @@
         }
 
         /// <summary>
-        /// Whether to notify the first line team manager of the service instance of the affected service level agreement.
+        /// Whether to notify the first line team manager of the service instance of the affected SLA.
         /// </summary>
         [JsonProperty("notifyFirstLineTeamManager")]
         public bool? NotifyFirstLineTeamManager
@@ -65,7 +65,7 @@
         }
 
         /// <summary>
-        /// Whether to notify the service owner of the service of the affected service level agreement.
+        /// Whether to notify the service owner of the service of the affected SLA.
         /// </summary>
         [JsonProperty("notifyServiceOwner")]
         public bool? NotifyServiceOwner
@@ -75,7 +75,7 @@
         }
 
         /// <summary>
-        /// Whether to notify the support team coordinator of the service instance of the affected service level agreement.
+        /// Whether to notify the support team coordinator of the service instance of the affected SLA.
         /// </summary>
         [JsonProperty("notifySupportTeamCoordinator")]
         public bool? NotifySupportTeamCoordinator
@@ -85,7 +85,7 @@
         }
 
         /// <summary>
-        /// Whether to notify the support team manager of the service instance of the affected service level agreement.
+        /// Whether to notify the support team manager of the service instance of the affected SLA.
         /// </summary>
         [JsonProperty("notifySupportTeamManager")]
         public bool? NotifySupportTeamManager

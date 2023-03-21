@@ -60,7 +60,7 @@
         }
 
         /// <summary>
-        /// User interface extension that is to be applied to the record.
+        /// UI extension that is to be applied to the record.
         /// </summary>
         [JsonProperty("uiExtensionId")]
         public string? UiExtensionId
@@ -100,7 +100,7 @@
         }
 
         /// <summary>
-        /// Identifier of the Workflow Manager linked to the request template. _Required_ when a Workflow Template is defined, and the Service does not define a Workflow Manager.
+        /// Identifier of the Workflow Manager linked to the request template. <em>Required</em> when a Workflow Template is defined, and the Service does not define a Workflow Manager.
         /// </summary>
         [JsonProperty("workflowManagerId")]
         public string? WorkflowManagerId
@@ -110,7 +110,7 @@
         }
 
         /// <summary>
-        /// Identifier of the Workflow Template related to the request template. _Required_ when the _Status_ is set to _Workflow Pending_.
+        /// Identifier of the Workflow Template related to the request template. <em>Required</em> when the <em>Status</em> is set to _Workflow Pending_.
         /// </summary>
         [JsonProperty("workflowTemplateId")]
         public string? WorkflowTemplateId
@@ -120,7 +120,7 @@
         }
 
         /// <summary>
-        /// Identifier of the configuration item that needs to be copied to the Configuration item field of a new request when it is being created based on the template.
+        /// Identifier of the CI that needs to be copied to the Configuration item field of a new request when it is being created based on the template.
         /// </summary>
         [JsonProperty("configurationItemId")]
         public string? ConfigurationItemId
@@ -321,7 +321,7 @@
 
         /// <summary>
         /// <br>The time zone that applies to the selected support hours.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("timeZone")]
         public string? TimeZone
@@ -351,7 +351,7 @@
         }
 
         /// <summary>
-        /// The node identifier of the record to update.
+        /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
         public string? ID

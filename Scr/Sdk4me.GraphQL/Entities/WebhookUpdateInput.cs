@@ -66,7 +66,7 @@
         }
 
         /// <summary>
-        /// Publicly accessible uniform resource identifier that 4me can use to POST http messages to.
+        /// Publicly accessible URI that 4me can use to POST http messages to.
         /// </summary>
         [JsonProperty("uri")]
         public string? Uri
@@ -86,7 +86,7 @@
         }
 
         /// <summary>
-        /// The node identifier of the record to update.
+        /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
         public string? ID

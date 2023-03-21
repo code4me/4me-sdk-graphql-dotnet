@@ -47,7 +47,7 @@
         }
 
         /// <summary>
-        /// Values for custom fields to be used by the user interface Extension that is linked to the record.
+        /// Values for custom fields to be used by the UI Extension that is linked to the record.
         /// </summary>
         [JsonProperty("customFields")]
         public CustomFieldCollection? CustomFields
@@ -67,7 +67,7 @@
         }
 
         /// <summary>
-        /// User interface extension that is to be applied to the record.
+        /// UI extension that is to be applied to the record.
         /// </summary>
         [JsonProperty("uiExtensionId")]
         public string? UiExtensionId
@@ -108,8 +108,9 @@
 
         /// <summary>
         /// <br>The date through which the contract will be active. The contract expires at the end of this day if it is not renewed before then.</br>
-        /// <br>When the contract has expired, its status will automatically be set to `expired`.</br>
-        /// <br>As long as notice still needs to be given to terminate the contract, the `expiryDate` field is to remain empty.</br>.
+        /// <br>When the contract has expired, its status will automatically be set to <c>expired</c>.</br>
+        /// <br></br>
+        /// <br>As long as notice still needs to be given to terminate the contract, the <c>expiryDate</c> field is to remain empty.</br>
         /// </summary>
         [JsonProperty("expiryDate")]
         public DateOnly? ExpiryDate
@@ -120,9 +121,10 @@
 
         /// <summary>
         /// <br>The name of the contract.</br>
-        /// <br>If a unique identifier is given to each contract, then this identifier can be added at the start of the name.</br>
+        /// <br>If a unique ID is given to each contract, then this ID can be added at the start of the name.</br>
+        /// <br></br>
         /// <br>Example:</br>
-        /// <br>* 2EGXQ2W – Dell 3-Year ProSupport and Next Business Day Onsite Repair for CMP00035</br>.
+        /// <br>• 2EGXQ2W – Dell 3-Year ProSupport and Next Business Day Onsite Repair for CMP00035</br>
         /// </summary>
         [JsonProperty("name")]
         public string? Name
@@ -133,8 +135,9 @@
 
         /// <summary>
         /// <br>The last day on which the supplier organization can still be contacted to terminate the contract to ensure that it expires on the intended expiry date.</br>
-        /// <br>The `noticeDate` field is left empty, and the `expiryDate` field is filled out, when the contract is to expire on a specific date and no notice needs to be given to terminate it.</br>
-        /// <br>As long as notice still needs to be given to terminate the contract, the `expiryDate` field is to remain empty.</br>.
+        /// <br>The <c>noticeDate</c> field is left empty, and the <c>expiryDate</c> field is filled out, when the contract is to expire on a specific date and no notice needs to be given to terminate it.</br>
+        /// <br></br>
+        /// <br>As long as notice still needs to be given to terminate the contract, the <c>expiryDate</c> field is to remain empty.</br>
         /// </summary>
         [JsonProperty("noticeDate")]
         public DateOnly? NoticeDate
@@ -195,7 +198,7 @@
 
         /// <summary>
         /// <br>The time zone that applies to the start date, notice date and expiry date of the contract.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("timeZone")]
         public string? TimeZone
@@ -215,7 +218,7 @@
         }
 
         /// <summary>
-        /// The node identifier of the record to update.
+        /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
         public string? ID

@@ -175,7 +175,7 @@
         }
 
         /// <summary>
-        /// The number of minutes that was spent on the selected time allocation. The number of minutes is allowed to be negative only when the correction field is set to `true`.
+        /// The number of minutes that was spent on the selected time allocation. The number of minutes is allowed to be negative only when the correction field is set to <c>true</c>.
         /// </summary>
         [JsonProperty("timeSpent")]
         public long? TimeSpent
@@ -185,7 +185,7 @@
         }
 
         /// <summary>
-        /// The node identifier of the record to update.
+        /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
         public string? ID

@@ -21,7 +21,7 @@
         internal NodeCollection<AffectedSla>? AffectedSlasCollection { get; set; }
 
         /// <summary>
-        /// Affected service level agreements of the request.
+        /// Affected SLAs of the request.
         /// </summary>
         public DataList<AffectedSla>? AffectedSlas
         {
@@ -122,7 +122,7 @@
         }
 
         /// <summary>
-        /// The date and time that has been agreed on for the completion of the request. The desired completion overwrites the automatically calculated resolution target of any affected service level agreement that is related to the request when the desired completion is later than the affected service level agreements resolution target. By default, the person selected in the Requested by field receives a notification based on the 'Desired Completion Set for Request' email template whenever the value in the Desired completion field is set, updated or removed.
+        /// The date and time that has been agreed on for the completion of the request. The desired completion overwrites the automatically calculated resolution target of any affected SLA that is related to the request when the desired completion is later than the affected SLA's resolution target. By default, the person selected in the Requested by field receives a notification based on the 'Desired Completion Set for Request' email template whenever the value in the Desired completion field is set, updated or removed.
         /// </summary>
         [JsonProperty("desiredCompletionAt")]
         public DateTime? DesiredCompletionAt { get; internal set; }
@@ -140,7 +140,7 @@
         public DateTime? DowntimeStartAt { get; internal set; }
 
         /// <summary>
-        /// The `satisfiedUrl` and the `dissatisfiedUrl` of the `requestedFor`. In case the `requestedBy` is different form the `requestedFor`, the satisfaction link of the `requestedBy` are also included. Feedback is `null` in case no feedback for the request can be provided at this time.
+        /// The <c>satisfiedUrl</c> and the <c>dissatisfiedUrl</c> of the <c>requestedFor</c>. In case the <c>requestedBy</c> is different form the <c>requestedFor</c>, the satisfaction link of the <c>requestedBy</c> are also included. Feedback is <c>null</c> in case no feedback for the request can be provided at this time.
         /// </summary>
         [JsonProperty("feedback")]
         public Feedback? Feedback { get; internal set; }
@@ -163,7 +163,7 @@
         }
 
         /// <summary>
-        /// Default: `none`.
+        /// Default: <c>none</c>
         /// </summary>
         [JsonProperty("grouping"), Sdk4meField(true)]
         public RequestGrouping? Grouping { get; internal set; }
@@ -210,7 +210,7 @@
         public Person? Member { get; internal set; }
 
         /// <summary>
-        /// Empty when the status of the request is `completed`. The next target equals the response target when a response target exists and the response target is less than the desired completion. Otherwise, the next target equals the desired completion when a desired completion exists. Otherwise, if the status is `waiting_for_customer` the next target is `clock_stopped` when an affected service level agreement is linked to the request which Accountability field is set to `provider` or `supplier`. Otherwise, if the status is `waiting_for_customer` the next target is `best_effort`. Otherwise the next target is the resolution target when a resolution target exists. In all other cases, the next target is `best_effort`.
+        /// Empty when the status of the request is <c>completed</c>. The next target equals the response target when a response target exists and the response target is less than the desired completion. Otherwise, the next target equals the desired completion when a desired completion exists. Otherwise, if the status is <c>waiting_for_customer</c> the next target is <c>clock_stopped</c> when an affected SLA is linked to the request which Accountability field is set to <c>provider</c> or <c>supplier</c>. Otherwise, if the status is <c>waiting_for_customer</c> the next target is <c>best_effort</c>. Otherwise the next target is the resolution target when a resolution target exists. In all other cases, the next target is <c>best_effort</c>.
         /// </summary>
         [JsonProperty("nextTargetAt"), Sdk4meField(true)]
         public string? NextTargetAt { get; internal set; }
@@ -281,13 +281,13 @@
         public bool? ProviderWasNotAccountable { get; internal set; }
 
         /// <summary>
-        /// Automatically set to the number of times that the status of the request has changed from `completed` to a different value in the account from which the request data is retrieved.
+        /// Automatically set to the number of times that the status of the request has changed from <c>completed</c> to a different value in the account from which the request data is retrieved.
         /// </summary>
         [JsonProperty("reopenCount")]
         public long? ReopenCount { get; internal set; }
 
         /// <summary>
-        /// The record identifier as displayed in the user interface.
+        /// The record ID as displayed in the UI
         /// </summary>
         [JsonProperty("requestId")]
         public string? RequestId { get; internal set; }
@@ -305,32 +305,32 @@
         public Person? RequestedFor { get; internal set; }
 
         /// <summary>
-        /// Automatically set to the most stringent resolution target of the request's affected service level agreements, which Accountability field is not set to `sla_not_affected` and which are linked to an service level agreement for which the person who is selected in the Requested for field has coverage.
+        /// Automatically set to the most stringent resolution target of the request's affected SLAs, which Accountability field is not set to <c>sla_not_affected</c> and which are linked to an SLA for which the person who is selected in the Requested for field has coverage.
         /// </summary>
         [JsonProperty("requesterResolutionTargetAt")]
         public DateTime? RequesterResolutionTargetAt { get; internal set; }
 
         /// <summary>
-        /// The number of minutes it took to complete this request, which is calculated as the difference between the `createdAt` and `completedAt` values.
+        /// The number of minutes it took to complete this request, which is calculated as the difference between the <c>createdAt</c> and <c>completedAt</c> values.
         /// </summary>
         [JsonProperty("resolutionDuration")]
         public long? ResolutionDuration { get; internal set; }
 
         /// <summary>
-        /// Automatically indicates when the current assignment team needs to have completed the request. The target displayed in this field is the most stringent resolution target of the affected service level agreements that are related to the request and for which the current assignment team is responsible.
+        /// Automatically indicates when the current assignment team needs to have completed the request. The target displayed in this field is the most stringent resolution target of the affected SLAs that are related to the request and for which the current assignment team is responsible.
         /// </summary>
         [JsonProperty("resolutionTargetAt")]
         public string? ResolutionTargetAt { get; internal set; }
 
         /// <summary>
-        /// Automatically indicates when the current assignment team needs to have responded to the request. The target displayed in this field is the most stringent response target of the affected service level agreements that are related to the request and for which the current assignment team is responsible.
+        /// Automatically indicates when the current assignment team needs to have responded to the request. The target displayed in this field is the most stringent response target of the affected SLAs that are related to the request and for which the current assignment team is responsible.
         /// </summary>
         [JsonProperty("responseTargetAt")]
         public string? ResponseTargetAt { get; internal set; }
 
         /// <summary>
         /// <br>A request can be marked as reviewed by the problem manager of the service of the service instance that is linked to the request. Marking a request as reviewed excludes it from the 'Requests for Problem Identification' view.</br>
-        /// <br>This field is automatically set to `true` when the Service instance field is empty, when the request is linked to a problem or workflow, or when the Grouping field is set to `grouped`. This field is also set to `true` when the completion_reason is `solved` and the impact is different from `top`</br>.
+        /// <br>This field is automatically set to <c>true</c> when the Service instance field is empty, when the request is linked to a problem or workflow, or when the Grouping field is set to <c>grouped</c>. This field is also set to <c>true</c> when the completion_reason is <c>solved</c> and the impact is different from <c>top</c>.</br>
         /// </summary>
         [JsonProperty("reviewed")]
         public bool? Reviewed { get; internal set; }
@@ -430,7 +430,7 @@
         }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }
@@ -442,7 +442,7 @@
         public bool? Urgent { get; internal set; }
 
         /// <summary>
-        /// Used to specify the date and time at which the status of the request is to be updated from `waiting_for` to `assigned`. This field is available only when the Status field is set to `waiting_for`.
+        /// Used to specify the date and time at which the status of the request is to be updated from <c>waiting_for</c> to <c>assigned</c>. This field is available only when the Status field is set to <c>waiting_for</c>.
         /// </summary>
         [JsonProperty("waitingUntil")]
         public DateTime? WaitingUntil { get; internal set; }

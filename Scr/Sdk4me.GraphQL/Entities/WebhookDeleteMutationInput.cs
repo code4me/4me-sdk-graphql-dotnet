@@ -9,7 +9,7 @@
         private string? clientMutationId;
 
         /// <summary>
-        /// The node identifier of the record to delete.
+        /// The node ID of the record to delete.
         /// </summary>
         [JsonProperty("id")]
         public string? ID

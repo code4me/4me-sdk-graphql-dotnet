@@ -19,7 +19,7 @@
 
         /// <summary>
         /// <br>The currency of the cost per hour value of this skill pool.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/costperhourcurrency/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("costPerHourCurrency")]
         public string? CostPerHourCurrency { get; internal set; }
@@ -95,7 +95,7 @@
         public string? SourceID { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }

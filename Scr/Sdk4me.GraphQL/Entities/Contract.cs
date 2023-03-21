@@ -70,7 +70,7 @@
         public Person? CustomerRepresentative { get; internal set; }
 
         /// <summary>
-        /// The date through which the agreement will be active. The agreement expires at the end of this day if it is not renewed before then. When the agreement has expired, its status will automatically be set to `expired`.
+        /// The date through which the agreement will be active. The agreement expires at the end of this day if it is not renewed before then. When the agreement has expired, its status will automatically be set to <c>expired</c>.
         /// </summary>
         [JsonProperty("expiryDate")]
         public DateOnly? ExpiryDate { get; internal set; }
@@ -88,9 +88,10 @@
 
         /// <summary>
         /// <br>The name of the contract.</br>
-        /// <br>If a unique identifier is given to each contract, then this identifier can be added at the start of the name.</br>
+        /// <br>If a unique ID is given to each contract, then this ID can be added at the start of the name.</br>
+        /// <br></br>
         /// <br>Example:</br>
-        /// <br>* 2EGXQ2W – Dell 3-Year ProSupport and Next Business Day Onsite Repair for CMP00035</br>.
+        /// <br>• 2EGXQ2W – Dell 3-Year ProSupport and Next Business Day Onsite Repair for CMP00035</br>
         /// </summary>
         [JsonProperty("name")]
         public string? Name { get; internal set; }
@@ -156,19 +157,19 @@
 
         /// <summary>
         /// <br>The time zone that applies to the start date, notice date and expiry date of the contract.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("timeZone")]
         public string? TimeZone { get; internal set; }
 
         /// <summary>
-        /// User interface extension that is linked to the record.
+        /// UI extension that is linked to the record.
         /// </summary>
         [JsonProperty("uiExtension")]
         public UiExtension? UiExtension { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt")]
         public DateTime? UpdatedAt { get; internal set; }

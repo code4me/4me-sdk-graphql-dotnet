@@ -94,7 +94,7 @@
         }
 
         /// <summary>
-        /// The duration, expressed as percentage of the total number of service hours, during which the service is to be available to customers with an active service level agreement that is based on the service offering.
+        /// The duration, expressed as percentage of the total number of service hours, during which the service is to be available to customers with an active SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("availability")]
         public decimal? Availability
@@ -124,7 +124,7 @@
         }
 
         /// <summary>
-        /// Identifier of the effort class that is selected by default, when someone registers time on a request with an affected service level agreement linked to this service offering.
+        /// Identifier of the effort class that is selected by default, when someone registers time on a request with an affected SLA linked to this service offering.
         /// </summary>
         [JsonProperty("defaultEffortClassId")]
         public string? DefaultEffortClassId
@@ -204,7 +204,7 @@
         }
 
         /// <summary>
-        /// Used to specify the maximum number of times per month that the service may become unavailable to customers with an active service level agreement that is based on the service offering.
+        /// Used to specify the maximum number of times per month that the service may become unavailable to customers with an active SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("reliability")]
         public string? Reliability
@@ -214,7 +214,7 @@
         }
 
         /// <summary>
-        /// Used to specify how often the representative of a customer of an active service level agreement that is based on the service offering will receive a report comparing the service level targets specified in the service offering with the actual level of service provided.
+        /// Used to specify how often the representative of a customer of an active SLA that is based on the service offering will receive a report comparing the service level targets specified in the service offering with the actual level of service provided.
         /// </summary>
         [JsonProperty("reportFrequency")]
         public ServiceOfferingReportFrequency? ReportFrequency
@@ -224,7 +224,7 @@
         }
 
         /// <summary>
-        /// The number of minutes within which a request with the impact value "High - Service Degraded for Several Users" is to be resolved when it affects an active service level agreement that is based on the service offering.
+        /// The number of minutes within which a request with the impact value "High - Service Degraded for Several Users" is to be resolved when it affects an active SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("resolutionTargetHigh")]
         public long? ResolutionTargetHigh
@@ -234,7 +234,7 @@
         }
 
         /// <summary>
-        /// The number of minutes within which a request with the impact value "Low - Service Degraded for One User" is to be resolved when it affects an active service level agreement that is based on the service offering.
+        /// The number of minutes within which a request with the impact value "Low - Service Degraded for One User" is to be resolved when it affects an active SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("resolutionTargetLow")]
         public long? ResolutionTargetLow
@@ -244,7 +244,7 @@
         }
 
         /// <summary>
-        /// The number of minutes within which a request with the impact value "Medium - Service Down for One User" is to be resolved when it affects an active service level agreement that is based on the service offering.
+        /// The number of minutes within which a request with the impact value "Medium - Service Down for One User" is to be resolved when it affects an active SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("resolutionTargetMedium")]
         public long? ResolutionTargetMedium
@@ -254,7 +254,7 @@
         }
 
         /// <summary>
-        /// The number of minutes within which a request with the category "RFC - Request for Change" is to be resolved when it affects an active service level agreement that is based on the service offering.
+        /// The number of minutes within which a request with the category "RFC - Request for Change" is to be resolved when it affects an active SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("resolutionTargetRfc")]
         public long? ResolutionTargetRfc
@@ -264,7 +264,7 @@
         }
 
         /// <summary>
-        /// The number of minutes within which a request with the category "RFI - Request for Information" is to be resolved when it affects an active service level agreement that is based on the service offering.
+        /// The number of minutes within which a request with the category "RFI - Request for Information" is to be resolved when it affects an active SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("resolutionTargetRfi")]
         public long? ResolutionTargetRfi
@@ -274,7 +274,7 @@
         }
 
         /// <summary>
-        /// The number of minutes within which a request with the impact value "Top - Service Down for Several Users" is to be resolved when it affects an active service level agreement that is based on the service offering.
+        /// The number of minutes within which a request with the impact value "Top - Service Down for Several Users" is to be resolved when it affects an active SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("resolutionTargetTop")]
         public long? ResolutionTargetTop
@@ -294,7 +294,7 @@
         }
 
         /// <summary>
-        /// The number of minutes within which a response needs to have been provided for a request with the impact "High - Service Degraded for Several Users" when it affects an active service level agreement that is based on the service offering.
+        /// The number of minutes within which a response needs to have been provided for a request with the impact "High - Service Degraded for Several Users" when it affects an active SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("responseTargetHigh")]
         public long? ResponseTargetHigh
@@ -304,7 +304,7 @@
         }
 
         /// <summary>
-        /// The number of minutes within which a response needs to have been provided for a request with the impact "Low - Service Degraded for One User" when it affects an active service level agreement that is based on the service offering.
+        /// The number of minutes within which a response needs to have been provided for a request with the impact "Low - Service Degraded for One User" when it affects an active SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("responseTargetLow")]
         public long? ResponseTargetLow
@@ -314,7 +314,7 @@
         }
 
         /// <summary>
-        /// The number of minutes within which a response needs to have been provided for a request with the impact "Medium - Service Down for One User" when it affects an active service level agreement that is based on the service offering.
+        /// The number of minutes within which a response needs to have been provided for a request with the impact "Medium - Service Down for One User" when it affects an active SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("responseTargetMedium")]
         public long? ResponseTargetMedium
@@ -324,7 +324,7 @@
         }
 
         /// <summary>
-        /// The number of minutes within which a response needs to have been provided for a request with the category "RFC - Request for Change" when it affects an active service level agreement that is based on the service offering.
+        /// The number of minutes within which a response needs to have been provided for a request with the category "RFC - Request for Change" when it affects an active SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("responseTargetRfc")]
         public long? ResponseTargetRfc
@@ -334,7 +334,7 @@
         }
 
         /// <summary>
-        /// The number of minutes within which a response needs to have been provided for a request with the category "RFI - Request for Information" when it affects an active service level agreement that is based on the service offering.
+        /// The number of minutes within which a response needs to have been provided for a request with the category "RFI - Request for Information" when it affects an active SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("responseTargetRfi")]
         public long? ResponseTargetRfi
@@ -344,7 +344,7 @@
         }
 
         /// <summary>
-        /// The number of minutes within which a response needs to have been provided for a request with the impact "Top - Service Down for Several Users" when it affects an active service level agreement that is based on the service offering.
+        /// The number of minutes within which a response needs to have been provided for a request with the impact "Top - Service Down for Several Users" when it affects an active SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("responseTargetTop")]
         public long? ResponseTargetTop
@@ -364,7 +364,7 @@
         }
 
         /// <summary>
-        /// How often an active service level agreement that is based on the service offering will be reviewed with the representative of its customer.
+        /// How often an active SLA that is based on the service offering will be reviewed with the representative of its customer.
         /// </summary>
         [JsonProperty("reviewFrequency")]
         public ServiceOfferingReviewFrequency? ReviewFrequency
@@ -414,7 +414,7 @@
         }
 
         /// <summary>
-        /// Identifier of the calendar that defines the support hours for a request with the impact "High - Service Degraded for Several Users" when it affects an active service level agreement that is based on the service offering.
+        /// Identifier of the calendar that defines the support hours for a request with the impact "High - Service Degraded for Several Users" when it affects an active SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("supportHoursHighId")]
         public string? SupportHoursHighId
@@ -424,7 +424,7 @@
         }
 
         /// <summary>
-        /// Identifier of the calendar that defines the support hours for a request with the impact "Low - Service Degraded for One User" when it affects an active service level agreement that is based on the service offering.
+        /// Identifier of the calendar that defines the support hours for a request with the impact "Low - Service Degraded for One User" when it affects an active SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("supportHoursLowId")]
         public string? SupportHoursLowId
@@ -434,7 +434,7 @@
         }
 
         /// <summary>
-        /// Identifier of the calendar that defines the support hours for a request with the impact "Medium - Service Down for One User" when it affects an active service level agreement that is based on the service offering.
+        /// Identifier of the calendar that defines the support hours for a request with the impact "Medium - Service Down for One User" when it affects an active SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("supportHoursMediumId")]
         public string? SupportHoursMediumId
@@ -444,7 +444,7 @@
         }
 
         /// <summary>
-        /// Identifier of the calendar that defines the support hours for a request with the category "RFC - Request for Change" when it affects an active service level agreement that is based on the service offering.
+        /// Identifier of the calendar that defines the support hours for a request with the category "RFC - Request for Change" when it affects an active SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("supportHoursRfcId")]
         public string? SupportHoursRfcId
@@ -454,7 +454,7 @@
         }
 
         /// <summary>
-        /// Identifier of the calendar that defines the support hours for a request with the category "RFI - Request for Information" when it affects an active service level agreement that is based on the service offering.
+        /// Identifier of the calendar that defines the support hours for a request with the category "RFI - Request for Information" when it affects an active SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("supportHoursRfiId")]
         public string? SupportHoursRfiId
@@ -464,7 +464,7 @@
         }
 
         /// <summary>
-        /// Identifier of the calendar that defines the support hours for a request with the impact "Top - Service Down for Several Users" when it affects an active service level agreement that is based on the service offering.
+        /// Identifier of the calendar that defines the support hours for a request with the impact "Top - Service Down for Several Users" when it affects an active SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("supportHoursTopId")]
         public string? SupportHoursTopId
@@ -485,7 +485,7 @@
 
         /// <summary>
         /// <br>The time zone that applies to the selected service hours.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("timeZone")]
         public string? TimeZone
@@ -526,7 +526,7 @@
 
         /// <summary>
         /// <br>Defines the currency for the fixed price rate of a top incident.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/ratetopcurrency/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("rateTopCurrency")]
         public string? RateTopCurrency
@@ -557,7 +557,7 @@
 
         /// <summary>
         /// <br>Defines the currency for the fixed price rate of a high incident.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/ratehighcurrency/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("rateHighCurrency")]
         public string? RateHighCurrency
@@ -588,7 +588,7 @@
 
         /// <summary>
         /// <br>Defines the currency for the fixed price rate of a medium incident.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/ratemediumcurrency/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("rateMediumCurrency")]
         public string? RateMediumCurrency
@@ -619,7 +619,7 @@
 
         /// <summary>
         /// <br>Defines the currency for the fixed price rate of a low incident.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/ratelowcurrency/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("rateLowCurrency")]
         public string? RateLowCurrency
@@ -650,7 +650,7 @@
 
         /// <summary>
         /// <br>Defines the currency for the fixed price rate of a RFC.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/raterfccurrency/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("rateRfcCurrency")]
         public string? RateRfcCurrency
@@ -681,7 +681,7 @@
 
         /// <summary>
         /// <br>Defines the currency for the fixed price rate of a RFI.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/raterficurrency/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("rateRfiCurrency")]
         public string? RateRfiCurrency
@@ -711,7 +711,7 @@
         }
 
         /// <summary>
-        /// The node identifier of the record to update.
+        /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
         public string? ID

@@ -33,13 +33,15 @@ namespace Sdk4me.GraphQL
         public List<string>? AllowedExtensions { get; internal set; }
 
         /// <summary>
-        /// Type of storage facility in use.
+        /// <br>Type of storage facility in use. One of:</br>
+        /// <br>• <c>local</c>: On-premise environment storage.</br>
+        /// <br>• <c>s3</c>: Cloud environment storage.</br>
         /// </summary>
         [JsonProperty("provider"), Sdk4meField(true)]
         public string? Provider { get; internal set; }
 
         /// <summary>
-        /// The mandatory fields and their values that should be added to an upload POST to the `uploadUri`.
+        /// The mandatory fields and their values that should be added to an upload POST to the <c>uploadUri</c>.
         /// </summary>
         [JsonProperty("providerParameters"), Sdk4meField(true)]
         public JToken? ProviderParameters { get; internal set; }
@@ -51,7 +53,7 @@ namespace Sdk4me.GraphQL
         public long? SizeLimit { get; internal set; }
 
         /// <summary>
-        /// The uniform resource identifier that attachments should be uploaded to.
+        /// The URI that attachments should be uploaded to.
         /// </summary>
         [JsonProperty("uploadUri"), Sdk4meField(true)]
         public string? UploadUri { get; internal set; }

@@ -18,13 +18,13 @@
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
-        /// Whether the service level agreement notification scheme may no longer be related to other records.
+        /// Whether the SLA notification scheme may no longer be related to other records.
         /// </summary>
         [JsonProperty("disabled")]
         public bool? Disabled { get; internal set; }
 
         /// <summary>
-        /// The name of the service level agreement notification scheme.
+        /// The name of the SLA notification scheme.
         /// </summary>
         [JsonProperty("name"), Sdk4meField(true)]
         public string? Name { get; internal set; }
@@ -33,7 +33,7 @@
         internal NodeCollection<SlaNotificationRule>? SlaNotificationRulesCollection { get; set; }
 
         /// <summary>
-        /// Rules of the service level agreement notification scheme.
+        /// Rules of the SLA notification scheme.
         /// </summary>
         public DataList<SlaNotificationRule>? SlaNotificationRules
         {
@@ -53,7 +53,7 @@
         public string? SourceID { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }

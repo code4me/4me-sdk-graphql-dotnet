@@ -13,17 +13,17 @@
     }
 
     /// <summary>
-    /// The affected service level agreement view.
+    /// The affected sla view.
     /// </summary>
     public enum AffectedSlaView
     {
         /// <summary>
-        /// All affected service level agreements which account equals the value supplied via the `X-4me-Account` header.
+        /// All affected slas which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
         /// <summary>
-        /// Affected service level agreements.
+        /// Affected slas.
         /// </summary>
         [EnumMember(Value = "all")]
         All,
@@ -35,7 +35,7 @@
     public enum AgileBoardView
     {
         /// <summary>
-        /// All agile boards which account equals the value supplied via the `X-4me-Account` header.
+        /// All agile boards which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -47,34 +47,34 @@
     }
 
     /// <summary>
-    /// The application instance view.
+    /// The app instance view.
     /// </summary>
     public enum AppInstanceView
     {
         /// <summary>
-        /// All application instances which account equals the value supplied via the `X-4me-Account` header.
+        /// All app instances which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
         /// <summary>
-        /// Application instances.
+        /// App instances.
         /// </summary>
         [EnumMember(Value = "all")]
         All,
     }
 
     /// <summary>
-    /// The application offering view.
+    /// The app offering view.
     /// </summary>
     public enum AppOfferingView
     {
         /// <summary>
-        /// All application offerings which account equals the value supplied via the `X-4me-Account` header.
+        /// All app offerings which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
         /// <summary>
-        /// Application offerings.
+        /// App offerings.
         /// </summary>
         [EnumMember(Value = "all")]
         All,
@@ -86,7 +86,7 @@
     public enum ArchiveView
     {
         /// <summary>
-        /// All archives which account equals the value supplied via the `X-4me-Account` header.
+        /// All archives which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -103,7 +103,7 @@
     public enum AutomationRuleView
     {
         /// <summary>
-        /// All automation rules which account equals the value supplied via the `X-4me-Account` header.
+        /// All automation rules which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -113,12 +113,12 @@
         [EnumMember(Value = "all")]
         All,
         /// <summary>
-        /// System for cross-domain identity management (SCIM) user automation rules.
+        /// Scim user automation rules.
         /// </summary>
         [EnumMember(Value = "scim_user")]
         ScimUser,
         /// <summary>
-        /// System for cross-domain identity management (SCIM) group automation rules.
+        /// Scim group automation rules.
         /// </summary>
         [EnumMember(Value = "scim_group")]
         ScimGroup,
@@ -130,7 +130,7 @@
     public enum ConfigurationItemView
     {
         /// <summary>
-        /// All configuration items which account equals the value supplied via the `X-4me-Account` header.
+        /// All configuration items which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -140,12 +140,12 @@
         [EnumMember(Value = "all")]
         All,
         /// <summary>
-        /// Configuration items supported by my teams.
+        /// Cis supported by my teams.
         /// </summary>
         [EnumMember(Value = "supported_by_my_teams")]
         SupportedByMyTeams,
         /// <summary>
-        /// Spare configuration items.
+        /// Spare cis.
         /// </summary>
         [EnumMember(Value = "spare_cis")]
         SpareCis,
@@ -157,7 +157,7 @@
     public enum ContractView
     {
         /// <summary>
-        /// All contracts which account equals the value supplied via the `X-4me-Account` header.
+        /// All contracts which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -174,7 +174,7 @@
     public enum CustomCollectionElementView
     {
         /// <summary>
-        /// All custom collection elements which account equals the value supplied via the `X-4me-Account` header.
+        /// All custom collection elements which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -191,7 +191,7 @@
     public enum FirstLineSupportAgreementView
     {
         /// <summary>
-        /// All first line support agreements which account equals the value supplied via the `X-4me-Account` header.
+        /// All first line support agreements which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -208,7 +208,7 @@
     public enum InvoiceView
     {
         /// <summary>
-        /// All invoices which account equals the value supplied via the `X-4me-Account` header.
+        /// All invoices which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -225,7 +225,7 @@
     public enum KnowledgeArticleView
     {
         /// <summary>
-        /// All knowledge articles which account equals the value supplied via the `X-4me-Account` header.
+        /// All knowledge articles which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -263,7 +263,7 @@
     public enum OrganizationView
     {
         /// <summary>
-        /// All organizations which account equals the value supplied via the `X-4me-Account` header.
+        /// All organizations which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -285,7 +285,7 @@
     public enum OutOfOfficePeriodView
     {
         /// <summary>
-        /// All out of office periods which account equals the value supplied via the `X-4me-Account` header.
+        /// All out of office periods which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -307,7 +307,7 @@
     public enum PersonView
     {
         /// <summary>
-        /// All people which account equals the value supplied via the `X-4me-Account` header.
+        /// All people which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -339,7 +339,7 @@
     public enum ProblemView
     {
         /// <summary>
-        /// All problems which account equals the value supplied via the `X-4me-Account` header.
+        /// All problems which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -381,7 +381,7 @@
     public enum ProductBacklogView
     {
         /// <summary>
-        /// All product backlogs which account equals the value supplied via the `X-4me-Account` header.
+        /// All product backlogs which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -398,7 +398,7 @@
     public enum ProductView
     {
         /// <summary>
-        /// All products which account equals the value supplied via the `X-4me-Account` header.
+        /// All products which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -420,7 +420,7 @@
     public enum ProjectTaskTemplateView
     {
         /// <summary>
-        /// All project task templates which account equals the value supplied via the `X-4me-Account` header.
+        /// All project task templates which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -437,7 +437,7 @@
     public enum ProjectTaskView
     {
         /// <summary>
-        /// All project tasks which account equals the value supplied via the `X-4me-Account` header.
+        /// All project tasks which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -474,7 +474,7 @@
     public enum ProjectTemplateView
     {
         /// <summary>
-        /// All project templates which account equals the value supplied via the `X-4me-Account` header.
+        /// All project templates which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -491,7 +491,7 @@
     public enum ProjectView
     {
         /// <summary>
-        /// All projects which account equals the value supplied via the `X-4me-Account` header.
+        /// All projects which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -528,7 +528,7 @@
     public enum ReleaseView
     {
         /// <summary>
-        /// All releases which account equals the value supplied via the `X-4me-Account` header.
+        /// All releases which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -560,7 +560,7 @@
     public enum RequestTemplateView
     {
         /// <summary>
-        /// All request templates which account equals the value supplied via the `X-4me-Account` header.
+        /// All request templates which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -577,7 +577,7 @@
     public enum RequestView
     {
         /// <summary>
-        /// All requests which account equals the value supplied via the `X-4me-Account` header.
+        /// All requests which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -644,7 +644,7 @@
     public enum ReservationOfferingView
     {
         /// <summary>
-        /// All reservation offerings which account equals the value supplied via the `X-4me-Account` header.
+        /// All reservation offerings which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -661,7 +661,7 @@
     public enum ReservationView
     {
         /// <summary>
-        /// All reservations which account equals the value supplied via the `X-4me-Account` header.
+        /// All reservations which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -683,7 +683,7 @@
     public enum RiskView
     {
         /// <summary>
-        /// All risks which account equals the value supplied via the `X-4me-Account` header.
+        /// All risks which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -710,7 +710,7 @@
     public enum ScrumWorkspaceView
     {
         /// <summary>
-        /// All scrum workspaces which account equals the value supplied via the `X-4me-Account` header.
+        /// All scrum workspaces which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -727,7 +727,7 @@
     public enum ServiceInstanceView
     {
         /// <summary>
-        /// All service instances which account equals the value supplied via the `X-4me-Account` header.
+        /// All service instances which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -744,7 +744,7 @@
     public enum ServiceLevelAgreementView
     {
         /// <summary>
-        /// All service level agreements which account equals the value supplied via the `X-4me-Account` header.
+        /// All service level agreements which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -761,7 +761,7 @@
     public enum ServiceOfferingView
     {
         /// <summary>
-        /// All service offerings which account equals the value supplied via the `X-4me-Account` header.
+        /// All service offerings which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -778,7 +778,7 @@
     public enum ServiceView
     {
         /// <summary>
-        /// All services which account equals the value supplied via the `X-4me-Account` header.
+        /// All services which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -795,7 +795,7 @@
     public enum ShopArticleView
     {
         /// <summary>
-        /// All shop articles which account equals the value supplied via the `X-4me-Account` header.
+        /// All shop articles which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -812,7 +812,7 @@
     public enum ShopOrderLineView
     {
         /// <summary>
-        /// All shop order lines which account equals the value supplied via the `X-4me-Account` header.
+        /// All shop order lines which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -844,7 +844,7 @@
     public enum ShortUrlView
     {
         /// <summary>
-        /// All short urls which account equals the value supplied via the `X-4me-Account` header.
+        /// All short urls which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -861,7 +861,7 @@
     public enum SiteView
     {
         /// <summary>
-        /// All sites which account equals the value supplied via the `X-4me-Account` header.
+        /// All sites which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -878,7 +878,7 @@
     public enum SkillPoolView
     {
         /// <summary>
-        /// All skill pools which account equals the value supplied via the `X-4me-Account` header.
+        /// All skill pools which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -895,7 +895,7 @@
     public enum SprintView
     {
         /// <summary>
-        /// All sprints which account equals the value supplied via the `X-4me-Account` header.
+        /// All sprints which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -912,7 +912,7 @@
     public enum SurveyResponseView
     {
         /// <summary>
-        /// All survey responses which account equals the value supplied via the `X-4me-Account` header.
+        /// All survey responses which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -929,7 +929,7 @@
     public enum SurveyView
     {
         /// <summary>
-        /// All surveys which account equals the value supplied via the `X-4me-Account` header.
+        /// All surveys which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -946,7 +946,7 @@
     public enum TaskTemplateView
     {
         /// <summary>
-        /// All task templates which account equals the value supplied via the `X-4me-Account` header.
+        /// All task templates which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -963,7 +963,7 @@
     public enum TaskView
     {
         /// <summary>
-        /// All tasks which account equals the value supplied via the `X-4me-Account` header.
+        /// All tasks which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -1005,7 +1005,7 @@
     public enum TeamView
     {
         /// <summary>
-        /// All teams which account equals the value supplied via the `X-4me-Account` header.
+        /// All teams which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -1032,7 +1032,7 @@
     public enum TimeAllocationView
     {
         /// <summary>
-        /// All time allocations which account equals the value supplied via the `X-4me-Account` header.
+        /// All time allocations which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -1049,7 +1049,7 @@
     public enum TimeEntryView
     {
         /// <summary>
-        /// All time entries which account equals the value supplied via the `X-4me-Account` header.
+        /// All time entries which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -1078,7 +1078,7 @@
     public enum TrashView
     {
         /// <summary>
-        /// All trashes which account equals the value supplied via the `X-4me-Account` header.
+        /// All trashes which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -1090,17 +1090,17 @@
     }
 
     /// <summary>
-    /// The user interface extension view.
+    /// The ui extension view.
     /// </summary>
     public enum UiExtensionView
     {
         /// <summary>
-        /// All user interface extensions which account equals the value supplied via the `X-4me-Account` header.
+        /// All ui extensions which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
         /// <summary>
-        /// User interface extensions.
+        /// Ui extensions.
         /// </summary>
         [EnumMember(Value = "all")]
         All,
@@ -1112,7 +1112,7 @@
     public enum WorkflowTemplateView
     {
         /// <summary>
-        /// All workflow templates which account equals the value supplied via the `X-4me-Account` header.
+        /// All workflow templates which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,
@@ -1129,7 +1129,7 @@
     public enum WorkflowView
     {
         /// <summary>
-        /// All workflows which account equals the value supplied via the `X-4me-Account` header.
+        /// All workflows which account equals the value supplied via the `x-4me-account` header.
         /// </summary>
         [EnumMember(Value = "current_account")]
         CurrentAccount,

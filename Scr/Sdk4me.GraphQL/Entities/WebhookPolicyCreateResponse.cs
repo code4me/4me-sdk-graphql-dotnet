@@ -48,7 +48,7 @@
         public long? JwtClaimExpiresIn { get; internal set; }
 
         /// <summary>
-        /// Unique identifier of this webhook policy.
+        /// Unique identifier of this webhook policy
         /// </summary>
         [JsonProperty("name"), Sdk4meField(true)]
         public string? Name { get; internal set; }
@@ -60,7 +60,7 @@
         public string? PublicKeyPem { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }

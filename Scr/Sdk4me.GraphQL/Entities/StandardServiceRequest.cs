@@ -25,7 +25,7 @@
 
         /// <summary>
         /// <br>Defines the currency for the fixed price rate of the standard service request.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/ratecurrency/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("rateCurrency")]
         public string? RateCurrency { get; internal set; }
@@ -37,25 +37,25 @@
         public RequestTemplate? RequestTemplate { get; internal set; }
 
         /// <summary>
-        /// Number of minutes within which a request needs to have been completed when the request template has been applied to the request and the requester is covered by an service level agreement that is based on the service offering.
+        /// Number of minutes within which a request needs to have been completed when the request template has been applied to the request and the requester is covered by an SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("resolutionTarget")]
         public long? ResolutionTarget { get; internal set; }
 
         /// <summary>
-        /// Number of business days within which a request needs to have been completed when the request template has been applied to the request and the requester is covered by an service level agreement that is based on the service offering.
+        /// Number of business days within which a request needs to have been completed when the request template has been applied to the request and the requester is covered by an SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("resolutionTargetInDays")]
         public long? ResolutionTargetInDays { get; internal set; }
 
         /// <summary>
-        /// Number of minutes within which a response needs to have been provided for a request to which the request template has been applied and which requester is covered by an service level agreement that is based on the service offering.
+        /// Number of minutes within which a response needs to have been provided for a request to which the request template has been applied and which requester is covered by an SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("responseTarget")]
         public long? ResponseTarget { get; internal set; }
 
         /// <summary>
-        /// Number of business days within which a response needs to have been provided for a request to which the request template has been applied and which requester is covered by an service level agreement that is based on the service offering.
+        /// Number of business days within which a response needs to have been provided for a request to which the request template has been applied and which requester is covered by an SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("responseTargetInDays")]
         public long? ResponseTargetInDays { get; internal set; }
@@ -67,19 +67,19 @@
         public ServiceOffering? ServiceOffering { get; internal set; }
 
         /// <summary>
-        /// The service level agreement notification scheme for a request when it affects an active service level agreement that is based on the service offering. Only enabled service level agreement notification schemes that are linked to the same account as the service offering can be selected.
+        /// The SLA notification scheme for a request when it affects an active SLA that is based on the service offering. Only enabled SLA notification schemes that are linked to the same account as the service offering can be selected.
         /// </summary>
         [JsonProperty("slaNotificationScheme")]
         public SlaNotificationScheme? SlaNotificationScheme { get; internal set; }
 
         /// <summary>
-        /// The calendar that defines the support hours for a request to which the request template has been applied and which requester is covered by an service level agreement that is based on the service offering.
+        /// The calendar that defines the support hours for a request to which the request template has been applied and which requester is covered by an SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("supportHours")]
         public Calendar? SupportHours { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the standard service request. If the standard service request has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the standard service request. If the standard service request has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }

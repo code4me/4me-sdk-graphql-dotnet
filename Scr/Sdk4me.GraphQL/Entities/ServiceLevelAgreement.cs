@@ -12,13 +12,13 @@
         public Account? Account { get; internal set; }
 
         /// <summary>
-        /// The Activity identifier is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider. This contains the activityIDs related to request categories.
+        /// The Activity ID is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider. This contains the activityIDs related to request categories.
         /// </summary>
         [JsonProperty("activityID")]
         public ActivityID? ActivityID { get; internal set; }
 
         /// <summary>
-        /// The Billing identifier is the unique identifier by which all the activities that are performed through the coverage of the service level agreement are known in the billing system of the service provider.
+        /// The Billing ID is the unique identifier by which all the activities that are performed through the coverage of the SLA are known in the billing system of the service provider.
         /// </summary>
         [JsonProperty("billingID")]
         public string? BillingID { get; internal set; }
@@ -62,7 +62,7 @@
         internal NodeCollection<EffortClassChargeID>? EffortClassChargeIDsCollection { get; set; }
 
         /// <summary>
-        /// The Charge IDs are the unique identifiers by which an effort class that is linked to a time entry when an activity was performed through the coverage of the service level agreement is known in the billing system of the service provider.
+        /// The Charge IDs are the unique identifiers by which an effort class that is linked to a time entry when an activity was performed through the coverage of the SLA is known in the billing system of the service provider.
         /// </summary>
         public DataList<EffortClassChargeID>? EffortClassChargeIDs
         {
@@ -70,7 +70,7 @@
         }
 
         /// <summary>
-        /// The date through which the agreement will be active. The agreement expires at the end of this day if it is not renewed before then. When the agreement has expired, its status will automatically be set to `expired`.
+        /// The date through which the agreement will be active. The agreement expires at the end of this day if it is not renewed before then. When the agreement has expired, its status will automatically be set to <c>expired</c>.
         /// </summary>
         [JsonProperty("expiryDate")]
         public DateOnly? ExpiryDate { get; internal set; }
@@ -102,7 +102,7 @@
         internal NodeCollection<Organization>? OrganizationsCollection { get; set; }
 
         /// <summary>
-        /// Organizations of the service level agreement. Only available for service level agreements where the `coverage` field is set to `organizations_and_descendants`, `organizations` or `organizations_and_sites`.
+        /// Organizations of the service level agreement. Only available for service level agreements where the <c>coverage</c> field is set to <c>organizations_and_descendants</c>, <c>organizations</c> or <c>organizations_and_sites</c>.
         /// </summary>
         public DataList<Organization>? Organizations
         {
@@ -113,7 +113,7 @@
         internal NodeCollection<Person>? PeopleCollection { get; set; }
 
         /// <summary>
-        /// People of the service level agreement. Only available for service level agreements where the `coverage` field is set to `people`.
+        /// People of the service level agreement. Only available for service level agreements where the <c>coverage</c> field is set to <c>people</c>.
         /// </summary>
         public DataList<Person>? People
         {
@@ -147,7 +147,7 @@
         internal NodeCollection<ParentServiceInstance>? ServiceInstancesCollection { get; set; }
 
         /// <summary>
-        /// The service instances that consume the service instance for which the service level agreement is registered. Only available for service level agreements where the `coverage` field is set to `service_instances`.
+        /// The service instances that consume the service instance for which the service level agreement is registered. Only available for service level agreements where the <c>coverage</c> field is set to <c>service_instances</c>.
         /// </summary>
         public DataList<ParentServiceInstance>? ServiceInstances
         {
@@ -170,7 +170,7 @@
         internal NodeCollection<Site>? SitesCollection { get; set; }
 
         /// <summary>
-        /// Sites of the service level agreement. Only available for service level agreements where the `coverage` field is set to `sites` or `organizations_and_sites`.
+        /// Sites of the service level agreement. Only available for service level agreements where the <c>coverage</c> field is set to <c>sites</c> or <c>organizations_and_sites</c>.
         /// </summary>
         public DataList<Site>? Sites
         {
@@ -181,7 +181,7 @@
         internal NodeCollection<SkillPool>? SkillPoolsCollection { get; set; }
 
         /// <summary>
-        /// Skill pools of the service level agreement. Only available for service level agreements where the `coverage` field is set to `skill_pools`.
+        /// Skill pools of the service level agreement. Only available for service level agreements where the <c>coverage</c> field is set to <c>skill_pools</c>.
         /// </summary>
         public DataList<SkillPool>? SkillPools
         {
@@ -204,7 +204,7 @@
         internal NodeCollection<StandardServiceRequestActivityID>? StandardServiceRequestActivityIDsCollection { get; set; }
 
         /// <summary>
-        /// Represents the activityIDs for standard service requests. The Activity identifier is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider.
+        /// Represents the activityIDs for standard service requests. The Activity ID is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider.
         /// </summary>
         public DataList<StandardServiceRequestActivityID>? StandardServiceRequestActivityIDs
         {
@@ -230,13 +230,13 @@
         public Account? SupportDomain { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         /// <summary>
-        /// Whether knowledge articles from the service provider should be exposed to the people covered by the service instances related to the service level agreement. Only available for service level agreements where the `coverage` field is set to `service_instances`.
+        /// Whether knowledge articles from the service provider should be exposed to the people covered by the service instances related to the service level agreement. Only available for service level agreements where the <c>coverage</c> field is set to <c>service_instances</c>.
         /// </summary>
         [JsonProperty("useKnowledgeFromServiceProvider")]
         public bool? UseKnowledgeFromServiceProvider { get; internal set; }

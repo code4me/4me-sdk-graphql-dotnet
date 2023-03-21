@@ -33,7 +33,7 @@
 
         /// <summary>
         /// <br>The language in which the text is specified.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/language/">4me developer site</see></br>.
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/language/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("language")]
         public string? Language

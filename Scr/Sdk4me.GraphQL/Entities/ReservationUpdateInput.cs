@@ -44,7 +44,7 @@
         }
 
         /// <summary>
-        /// A short description of the reservation.
+        /// A short description of the reservation
         /// </summary>
         [JsonProperty("name")]
         public string? Name
@@ -154,7 +154,7 @@
         }
 
         /// <summary>
-        /// Full description of the reservation.
+        /// Full description of the reservation
         /// </summary>
         [JsonProperty("description")]
         public string? Description
@@ -174,7 +174,7 @@
         }
 
         /// <summary>
-        /// The node identifier of the record to update.
+        /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
         public string? ID

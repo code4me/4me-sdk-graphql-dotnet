@@ -24,7 +24,7 @@
         public string? Country { get; internal set; }
 
         /// <summary>
-        /// The Integration field is a hidden checkbox that can be set to `true` using this API or the Import functionality. When checked, the address is displayed as read-only in the user interface to prevent users from updating it.
+        /// The Integration field is a hidden checkbox that can be set to <c>true</c> using this API or the Import functionality. When checked, the address is displayed as read-only in the user interface to prevent users from updating it.
         /// </summary>
         [JsonProperty("integration"), Sdk4meField(true)]
         public bool? Integration { get; internal set; }

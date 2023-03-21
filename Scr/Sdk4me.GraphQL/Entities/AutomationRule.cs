@@ -18,7 +18,7 @@
         public List<AutomationRuleAction>? Actions { get; internal set; }
 
         /// <summary>
-        /// The Condition field is used to define the condition that needs to be met in order for the update action(s) of the rule to be performed. For example: `is_assigned and !badge`.
+        /// The Condition field is used to define the condition that needs to be met in order for the update action(s) of the rule to be performed. For example: <c>is_assigned and !badge</c>.
         /// </summary>
         [JsonProperty("condition"), Sdk4meField(true)]
         public string? Condition { get; internal set; }
@@ -30,7 +30,7 @@
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
-        /// 'A high-level description of the automation rule's function.'.
+        /// 'A high-level description of the automation rule's function.'
         /// </summary>
         [JsonProperty("description")]
         public string? Description { get; internal set; }
@@ -48,7 +48,17 @@
         public List<AutomationRuleExpression>? Expressions { get; internal set; }
 
         /// <summary>
-        /// When the automation rule is not linked to one specific record but to all records of a type, the Generic field contains the record type.
+        /// <br>When the automation rule is not linked to one specific record but to all records of a type, the Generic field contains the record type.</br>
+        /// <br>Valid values are:</br>
+        /// <br>• <c>request</c></br>
+        /// <br>• <c>problem</c></br>
+        /// <br>• <c>workflow</c></br>
+        /// <br>• <c>task</c></br>
+        /// <br>• <c>project_task</c></br>
+        /// <br>• <c>ci</c></br>
+        /// <br>• <c>risk</c></br>
+        /// <br>• <c>scim_user</c></br>
+        /// <br>• <c>scim_group</c></br>
         /// </summary>
         [JsonProperty("generic"), Sdk4meField(true)]
         public string? Generic { get; internal set; }
@@ -84,13 +94,13 @@
         public string? SourceID { get; internal set; }
 
         /// <summary>
-        /// The Trigger field is used to specify when the automation rule is to be triggered, for example `on status update` or `on note added`.
+        /// The Trigger field is used to specify when the automation rule is to be triggered, for example <c>on status update</c> or <c>on note added</c>.
         /// </summary>
         [JsonProperty("trigger"), Sdk4meField(true)]
         public string? Trigger { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the record. If the record has no updates it contains the `createdAt` value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }
