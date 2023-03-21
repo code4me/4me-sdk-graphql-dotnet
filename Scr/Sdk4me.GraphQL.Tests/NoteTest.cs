@@ -12,7 +12,8 @@
             {
                 Text = "Hello World !!!",
                 Internal = true,
-                OwnerId = "NG1lMjQuMjIxMjExMDAxMzIzQDRtZS1kZW1vLmNvbS9SZXEvNzAyMjk" }
+                OwnerId = "NG1lMjQuMjMwMzE5MjI1MDU5QDRtZS1kZW1vLmNvbS9SZXEvNzA1MzE"
+            }
             ).Result;
 
             Assert.IsNotNull(noteCreatePayload);
