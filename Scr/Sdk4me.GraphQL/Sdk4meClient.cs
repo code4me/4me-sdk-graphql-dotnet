@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using Newtonsoft.Json.Converters;
+using System.Diagnostics;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -261,6 +262,7 @@ namespace Sdk4me.GraphQL
                 {
                     ContractResolver = new MutationQueryContractResolver(input.Data.GetFields(), typeof(TInEntity))
                 };
+                settings.Converters.Add(new StringEnumConverter());
                 settings.Converters.Add(new ISO8601TimeJsonConverter());
                 settings.Converters.Add(new ISO8601TimestampJsonConverter());
 
