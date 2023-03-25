@@ -14,6 +14,15 @@
         }
 
         /// <summary>
+        /// Effort classes linked to the skill pool.
+        /// </summary>
+        public SkillPoolQuery SelectEffortClasses(EffortClassQuery query)
+        {
+            query.FieldName = "effortClasses";
+            return Select(query);
+        }
+
+        /// <summary>
         /// People linked as a member to the skill pool.
         /// </summary>
         public SkillPoolQuery SelectMembers(PersonQuery query)

@@ -36,6 +36,17 @@
         [JsonProperty("disabled"), Sdk4meField(true)]
         public bool? Disabled { get; internal set; }
 
+        [JsonProperty("effortClasses")]
+        internal NodeCollection<EffortClass>? EffortClassesCollection { get; set; }
+
+        /// <summary>
+        /// Effort classes linked to the skill pool.
+        /// </summary>
+        public DataList<EffortClass>? EffortClasses
+        {
+            get => EffortClassesCollection?.Data;
+        }
+
         /// <summary>
         /// The manager or supervisor of the skill pool. This person is able to maintain the information about the skill pool. The manager of a skill pool does not need to be a member of the skill pool.
         /// </summary>
@@ -103,6 +114,7 @@
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)
         {
             HashSet<QueryPageInfo> retval = new();
+            retval.AddRange(EffortClassesCollection?.GetQueryPageInfo("effortClasses", depth + 1));
             retval.AddRange(MembersCollection?.GetQueryPageInfo("members", depth + 1));
             retval.AddRange(RemarksAttachmentsCollection?.GetQueryPageInfo("remarksAttachments", depth + 1));
             return retval;
@@ -110,6 +122,7 @@
 
         internal override void AddToCollection(object data)
         {
+            EffortClasses?.AddRange((data as SkillPool)?.EffortClasses);
             Members?.AddRange((data as SkillPool)?.Members);
             RemarksAttachments?.AddRange((data as SkillPool)?.RemarksAttachments);
         }

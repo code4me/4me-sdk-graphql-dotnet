@@ -1855,6 +1855,11 @@
         [EnumMember(Value = "serviceOfferings")]
         ServiceOfferings,
         /// <summary>
+        /// The skill pools field.
+        /// </summary>
+        [EnumMember(Value = "skillPools")]
+        SkillPools,
+        /// <summary>
         /// The source field.
         /// </summary>
         [EnumMember(Value = "source")]
@@ -7809,6 +7814,11 @@
         /// </summary>
         [EnumMember(Value = "disabled")]
         Disabled,
+        /// <summary>
+        /// The effort classes field.
+        /// </summary>
+        [EnumMember(Value = "effortClasses")]
+        EffortClasses,
         /// <summary>
         /// The id field.
         /// </summary>

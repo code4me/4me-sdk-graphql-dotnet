@@ -13,6 +13,8 @@
                 .SelectAll()
                 .SelectServiceOfferings(new ServiceOfferingQuery()
                     .SelectAll())
+                .SelectSkillPools(new SkillPoolQuery()
+                    .SelectAll())
                 .SelectTimesheetSettings(new TimesheetSettingQuery()
                     .SelectAll())
                 ).Result;

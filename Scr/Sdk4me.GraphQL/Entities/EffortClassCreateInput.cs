@@ -13,6 +13,7 @@
         private long? position;
         private List<string>? timesheetSettingIds;
         private List<string>? serviceOfferingIds;
+        private List<string>? skillPoolIds;
         private string? clientMutationId;
 
         /// <summary>
@@ -93,6 +94,16 @@
         {
             get => serviceOfferingIds;
             set => serviceOfferingIds = Set("serviceOfferingIds", value);
+        }
+
+        /// <summary>
+        /// IDs of the skill pools of this effort class.
+        /// </summary>
+        [JsonProperty("skillPoolIds")]
+        public List<string>? SkillPoolIds
+        {
+            get => skillPoolIds;
+            set => skillPoolIds = Set("skillPoolIds", value);
         }
 
         /// <summary>

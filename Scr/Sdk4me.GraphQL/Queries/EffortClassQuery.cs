@@ -23,6 +23,15 @@
         }
 
         /// <summary>
+        /// Skill pools of this effort class.
+        /// </summary>
+        public EffortClassQuery SelectSkillPools(SkillPoolQuery query)
+        {
+            query.FieldName = "skillPools";
+            return Select(query);
+        }
+
+        /// <summary>
         /// Timesheet settings of this effort class.
         /// </summary>
         public EffortClassQuery SelectTimesheetSettings(TimesheetSettingQuery query)

@@ -52,6 +52,17 @@
             get => ServiceOfferingsCollection?.Data;
         }
 
+        [JsonProperty("skillPools")]
+        internal NodeCollection<SkillPool>? SkillPoolsCollection { get; set; }
+
+        /// <summary>
+        /// Skill pools of this effort class.
+        /// </summary>
+        public DataList<SkillPool>? SkillPools
+        {
+            get => SkillPoolsCollection?.Data;
+        }
+
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
@@ -85,6 +96,7 @@
         {
             HashSet<QueryPageInfo> retval = new();
             retval.AddRange(ServiceOfferingsCollection?.GetQueryPageInfo("serviceOfferings", depth + 1));
+            retval.AddRange(SkillPoolsCollection?.GetQueryPageInfo("skillPools", depth + 1));
             retval.AddRange(TimesheetSettingsCollection?.GetQueryPageInfo("timesheetSettings", depth + 1));
             return retval;
         }
@@ -92,6 +104,7 @@
         internal override void AddToCollection(object data)
         {
             ServiceOfferings?.AddRange((data as EffortClass)?.ServiceOfferings);
+            SkillPools?.AddRange((data as EffortClass)?.SkillPools);
             TimesheetSettings?.AddRange((data as EffortClass)?.TimesheetSettings);
         }
     }

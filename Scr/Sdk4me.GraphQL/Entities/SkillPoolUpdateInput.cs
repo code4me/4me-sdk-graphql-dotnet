@@ -15,6 +15,7 @@
         private decimal? costPerHour;
         private string? costPerHourCurrency;
         private List<string>? memberIds;
+        private List<string>? effortClassIds;
         private string? id;
         private string? clientMutationId;
 
@@ -117,6 +118,16 @@
         {
             get => memberIds;
             set => memberIds = Set("memberIds", value);
+        }
+
+        /// <summary>
+        /// Effort classes that are linked to the skill pool.
+        /// </summary>
+        [JsonProperty("effortClassIds")]
+        public List<string>? EffortClassIds
+        {
+            get => effortClassIds;
+            set => effortClassIds = Set("effortClassIds", value);
         }
 
         /// <summary>

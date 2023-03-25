@@ -11,6 +11,8 @@
             DataList<SkillPool> skillPools = client.Get(Query.SkillPool
                 .View(SkillPoolView.All)
                 .SelectAll()
+                .SelectEffortClasses(new EffortClassQuery()
+                    .SelectAll())
                 .SelectMembers(new PersonQuery()
                     .SelectAll())
                 .SelectRemarksAttachments(new AttachmentQuery()
