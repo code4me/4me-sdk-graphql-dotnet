@@ -2344,6 +2344,11 @@
         [EnumMember(Value = "description")]
         Description,
         /// <summary>
+        /// The financial id field.
+        /// </summary>
+        [EnumMember(Value = "financialID")]
+        FinancialID,
+        /// <summary>
         /// The flsa field.
         /// </summary>
         [EnumMember(Value = "flsa")]

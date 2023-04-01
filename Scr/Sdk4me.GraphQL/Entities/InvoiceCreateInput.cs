@@ -23,6 +23,7 @@
         private DateOnly? invoiceDate;
         private string? invoiceNr;
         private string? poNr;
+        private string? financialID;
         private decimal? quantity;
         private string? remarks;
         private string? serviceId;
@@ -219,6 +220,16 @@
         {
             get => poNr;
             set => poNr = Set("poNr", value);
+        }
+
+        /// <summary>
+        /// The unique identifier by which the invoice is known in the financial system.
+        /// </summary>
+        [JsonProperty("financialID")]
+        public string? FinancialID
+        {
+            get => financialID;
+            set => financialID = Set("financialID", value);
         }
 
         /// <summary>

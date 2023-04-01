@@ -90,6 +90,12 @@
         public string? Description { get; internal set; }
 
         /// <summary>
+        /// The unique identifier by which the invoice is known in the financial system.
+        /// </summary>
+        [JsonProperty("financialID")]
+        public string? FinancialID { get; internal set; }
+
+        /// <summary>
         /// The first line support agreement linked to this invoice.
         /// </summary>
         [JsonProperty("flsa")]
