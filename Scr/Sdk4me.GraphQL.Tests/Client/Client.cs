@@ -11,23 +11,42 @@ namespace Sdk4me.GraphQL.Tests
             if (client != null)
                 return client;
 
-            //get account and token
+            //get all information
             IConfigurationProvider secretProvider = new ConfigurationBuilder().AddUserSecrets<ConnectionSecret>().Build().Providers.First();
-            if (!secretProvider.TryGet("Account", out string? account) || !secretProvider.TryGet("Token", out string? token))
+            if (!secretProvider.TryGet("Account", out string? account) 
+                || !secretProvider.TryGet("Token", out string? token) 
+                || !secretProvider.TryGet("ClientID", out string? clientID)
+                || !secretProvider.TryGet("ClientSecret", out string? clientSecret))
             {
-                Assert.Fail("No account of token information available via the user secret file");
+                Assert.Fail("Missing information in the user secret file");
                 return null;
             }
 
-            if (account == null || token == null)
+            if (account == null || token == null || clientID == null || clientSecret == null)
             {
-                Assert.Fail("No account of token information available via the user secret file");
+                Assert.Fail("Null value information in the user secret file");
                 return null;
             }
 
-            //connect to client
-            client = new(new AuthenticationToken(token), account, EnvironmentType.Demo, EnvironmentRegion.EU, 5);
-            client.MaximumQueryDepthLevelConnections = 3;
+            if (!string.IsNullOrEmpty(clientID) && !string.IsNullOrWhiteSpace(clientSecret))
+            {
+                client = new(new AuthenticationToken(clientID, clientSecret), account, EnvironmentType.Demo, EnvironmentRegion.EU, 5)
+                {
+                    MaximumQueryDepthLevelConnections = 3
+                };
+            }
+            else if (!string.IsNullOrEmpty(token))
+            {
+                client = new(new AuthenticationToken(token), account, EnvironmentType.Demo, EnvironmentRegion.EU, 5)
+                {
+                    MaximumQueryDepthLevelConnections = 3
+                };
+            }
+            else
+            {
+                Assert.Fail("Invalid information in the user secret file");
+                return null;
+            }
             return client;
         }
     }
