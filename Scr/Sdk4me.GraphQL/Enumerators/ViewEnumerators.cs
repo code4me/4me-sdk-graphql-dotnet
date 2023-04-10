@@ -220,6 +220,23 @@
     }
 
     /// <summary>
+    /// The knowledge article template view.
+    /// </summary>
+    public enum KnowledgeArticleTemplateView
+    {
+        /// <summary>
+        /// All knowledge article templates which account equals the value supplied via the `x-4me-account` header.
+        /// </summary>
+        [EnumMember(Value = "current_account")]
+        CurrentAccount,
+        /// <summary>
+        /// Knowledge article templates.
+        /// </summary>
+        [EnumMember(Value = "all")]
+        All,
+    }
+
+    /// <summary>
     /// The knowledge article view.
     /// </summary>
     public enum KnowledgeArticleView

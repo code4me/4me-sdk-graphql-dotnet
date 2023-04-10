@@ -36,6 +36,23 @@
         public Person? CreatedBy { get; internal set; }
 
         /// <summary>
+        /// Values of custom fields.
+        /// </summary>
+        [JsonProperty("customFields")]
+        public CustomFieldCollection? CustomFields { get; internal set; }
+
+        [JsonProperty("customFieldsAttachments")]
+        internal NodeCollection<Attachment>? CustomFieldsAttachmentsCollection { get; set; }
+
+        /// <summary>
+        /// Inline images linked to one of the custom fields.
+        /// </summary>
+        public DataList<Attachment>? CustomFieldsAttachments
+        {
+            get => CustomFieldsAttachmentsCollection?.Data;
+        }
+
+        /// <summary>
         /// Describes the situation and/or environment in which the instructions of the knowledge article may be helpful.
         /// </summary>
         [JsonProperty("description")]
@@ -120,7 +137,7 @@
         internal NodeCollection<ServiceInstance>? ServiceInstancesCollection { get; set; }
 
         /// <summary>
-        /// Services linked to this knowledge article.
+        /// Service instances linked to this knowledge article.
         /// </summary>
         public DataList<ServiceInstance>? ServiceInstances
         {
@@ -151,6 +168,12 @@
         [JsonProperty("subject"), Sdk4meField(true)]
         public string? Subject { get; internal set; }
 
+        /// <summary>
+        /// The knowledge article template that this knowledge article is based on.
+        /// </summary>
+        [JsonProperty("template")]
+        public KnowledgeArticleTemplate? Template { get; internal set; }
+
         [JsonProperty("translations")]
         internal NodeCollection<Translation>? TranslationsCollection { get; set; }
 
@@ -177,6 +200,7 @@
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)
         {
             HashSet<QueryPageInfo> retval = new();
+            retval.AddRange(CustomFieldsAttachmentsCollection?.GetQueryPageInfo("customFieldsAttachments", depth + 1));
             retval.AddRange(DescriptionAttachmentsCollection?.GetQueryPageInfo("descriptionAttachments", depth + 1));
             retval.AddRange(InstructionsAttachmentsCollection?.GetQueryPageInfo("instructionsAttachments", depth + 1));
             retval.AddRange(RequestsCollection?.GetQueryPageInfo("requests", depth + 1));
@@ -187,6 +211,7 @@
 
         internal override void AddToCollection(object data)
         {
+            CustomFieldsAttachments?.AddRange((data as KnowledgeArticle)?.CustomFieldsAttachments);
             DescriptionAttachments?.AddRange((data as KnowledgeArticle)?.DescriptionAttachments);
             InstructionsAttachments?.AddRange((data as KnowledgeArticle)?.InstructionsAttachments);
             Requests?.AddRange((data as KnowledgeArticle)?.Requests);

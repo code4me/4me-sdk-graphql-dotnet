@@ -96,6 +96,11 @@
         public static InvoiceQuery Invoice => new();
 
         /// <summary>
+        /// Returns a new instance of the <see cref="KnowledgeArticleTemplate"/> with a default field selection.
+        /// </summary>
+        public static KnowledgeArticleTemplateQuery KnowledgeArticleTemplate => new();
+
+        /// <summary>
         /// Returns a new instance of the <see cref="KnowledgeArticle"/> with a default field selection.
         /// </summary>
         public static KnowledgeArticleQuery KnowledgeArticle => new();

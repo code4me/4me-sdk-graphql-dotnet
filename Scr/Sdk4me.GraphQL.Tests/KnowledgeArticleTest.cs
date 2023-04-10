@@ -11,6 +11,8 @@
             DataList<KnowledgeArticle> knowledgeArticles = client.Get(Query.KnowledgeArticle
                 .View(KnowledgeArticleView.All)
                 .SelectAll()
+                .SelectCustomFieldsAttachments(new AttachmentQuery()
+                    .SelectAll())
                 .SelectDescriptionAttachments(new AttachmentQuery()
                     .SelectAll())
                 .SelectInstructionsAttachments(new AttachmentQuery()

@@ -2486,6 +2486,16 @@
         [EnumMember(Value = "createdBy")]
         CreatedBy,
         /// <summary>
+        /// The custom fields field.
+        /// </summary>
+        [EnumMember(Value = "customFields")]
+        CustomFields,
+        /// <summary>
+        /// The custom fields attachments field.
+        /// </summary>
+        [EnumMember(Value = "customFieldsAttachments")]
+        CustomFieldsAttachments,
+        /// <summary>
         /// The description field.
         /// </summary>
         [EnumMember(Value = "description")]
@@ -2571,6 +2581,11 @@
         [EnumMember(Value = "subject")]
         Subject,
         /// <summary>
+        /// The template field.
+        /// </summary>
+        [EnumMember(Value = "template")]
+        Template,
+        /// <summary>
         /// The translations field.
         /// </summary>
         [EnumMember(Value = "translations")]
@@ -2585,6 +2600,68 @@
         /// </summary>
         [EnumMember(Value = "updatedBy")]
         UpdatedBy,
+    }
+
+    /// <summary>
+    /// The <see cref="KnowledgeArticleTemplate">KnowledgeArticleTemplate</see> fields.
+    /// </summary>
+    public enum KnowledgeArticleTemplateField
+    {
+        /// <summary>
+        /// The account field.
+        /// </summary>
+        [EnumMember(Value = "account")]
+        Account,
+        /// <summary>
+        /// The created at field.
+        /// </summary>
+        [EnumMember(Value = "createdAt")]
+        CreatedAt,
+        /// <summary>
+        /// The disabled field.
+        /// </summary>
+        [EnumMember(Value = "disabled")]
+        Disabled,
+        /// <summary>
+        /// The id field.
+        /// </summary>
+        [EnumMember(Value = "id")]
+        ID,
+        /// <summary>
+        /// The service field.
+        /// </summary>
+        [EnumMember(Value = "service")]
+        Service,
+        /// <summary>
+        /// The service instances field.
+        /// </summary>
+        [EnumMember(Value = "serviceInstances")]
+        ServiceInstances,
+        /// <summary>
+        /// The source field.
+        /// </summary>
+        [EnumMember(Value = "source")]
+        Source,
+        /// <summary>
+        /// The source id field.
+        /// </summary>
+        [EnumMember(Value = "sourceID")]
+        SourceID,
+        /// <summary>
+        /// The subject field.
+        /// </summary>
+        [EnumMember(Value = "subject")]
+        Subject,
+        /// <summary>
+        /// The ui extension field.
+        /// </summary>
+        [EnumMember(Value = "uiExtension")]
+        UiExtension,
+        /// <summary>
+        /// The updated at field.
+        /// </summary>
+        [EnumMember(Value = "updatedAt")]
+        UpdatedAt,
     }
 
     /// <summary>

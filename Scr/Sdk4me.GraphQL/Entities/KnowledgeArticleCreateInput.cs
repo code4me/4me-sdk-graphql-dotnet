@@ -7,6 +7,9 @@
     {
         private string? source;
         private string? sourceID;
+        private CustomFieldCollection? customFields;
+        private List<AttachmentInput>? customFieldsAttachments;
+        private DateOnly? archiveDate;
         private bool? coveredSpecialists;
         private string? createdById;
         private string? description;
@@ -17,10 +20,10 @@
         private bool? keyContacts;
         private string? keywords;
         private string? serviceId;
+        private List<string>? serviceInstanceIds;
         private KnowledgeArticleStatus? status;
         private string? subject;
-        private DateOnly? archiveDate;
-        private List<string>? serviceInstanceIds;
+        private string? templateId;
         private string? clientMutationId;
 
         /// <summary>
@@ -41,6 +44,36 @@
         {
             get => sourceID;
             set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// Values for custom fields to be used by the UI Extension that is linked to the record.
+        /// </summary>
+        [JsonProperty("customFields")]
+        public CustomFieldCollection? CustomFields
+        {
+            get => customFields;
+            set => customFields = Set("customFields", value);
+        }
+
+        /// <summary>
+        /// The attachments used in the custom fields' values.
+        /// </summary>
+        [JsonProperty("customFieldsAttachments")]
+        public List<AttachmentInput>? CustomFieldsAttachments
+        {
+            get => customFieldsAttachments;
+            set => customFieldsAttachments = Set("customFieldsAttachments", value);
+        }
+
+        /// <summary>
+        /// The date until which the knowledge article will be active. The knowledge article will be archived at the beginning of this day. When the knowledge article is archived, its status will automatically be set to "Archived".
+        /// </summary>
+        [JsonProperty("archiveDate")]
+        public DateOnly? ArchiveDate
+        {
+            get => archiveDate;
+            set => archiveDate = Set("archiveDate", value);
         }
 
         /// <summary>
@@ -144,6 +177,16 @@
         }
 
         /// <summary>
+        /// Identifiers of service instances linked to this knowledge article.
+        /// </summary>
+        [JsonProperty("serviceInstanceIds")]
+        public List<string>? ServiceInstanceIds
+        {
+            get => serviceInstanceIds;
+            set => serviceInstanceIds = Set("serviceInstanceIds", value);
+        }
+
+        /// <summary>
         /// The current status of the knowledge article.
         /// </summary>
         [JsonProperty("status")]
@@ -164,23 +207,13 @@
         }
 
         /// <summary>
-        /// The date until which the knowledge article will be active. The knowledge article will be archived at the beginning of this day. When the knowledge article is archived, its status will automatically be set to "Archived".
+        /// Identifier of the knowledge article template that this knowledge article is based on.
         /// </summary>
-        [JsonProperty("archiveDate")]
-        public DateOnly? ArchiveDate
+        [JsonProperty("templateId")]
+        public string? TemplateId
         {
-            get => archiveDate;
-            set => archiveDate = Set("archiveDate", value);
-        }
-
-        /// <summary>
-        /// Identifiers of services linked to this knowledge article.
-        /// </summary>
-        [JsonProperty("serviceInstanceIds")]
-        public List<string>? ServiceInstanceIds
-        {
-            get => serviceInstanceIds;
-            set => serviceInstanceIds = Set("serviceInstanceIds", value);
+            get => templateId;
+            set => templateId = Set("templateId", value);
         }
 
         /// <summary>

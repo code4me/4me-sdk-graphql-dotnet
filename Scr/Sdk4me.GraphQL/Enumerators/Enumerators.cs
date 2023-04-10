@@ -2553,6 +2553,11 @@
         [EnumMember(Value = "custom_collection")]
         CustomCollection,
         /// <summary>
+        /// Knowledge Article Template.
+        /// </summary>
+        [EnumMember(Value = "knowledge_article_template")]
+        KnowledgeArticleTemplate,
+        /// <summary>
         /// Organization.
         /// </summary>
         [EnumMember(Value = "organization")]

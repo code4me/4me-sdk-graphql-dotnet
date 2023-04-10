@@ -492,6 +492,38 @@
     }
 
     /// <summary>
+    /// The knowledge article template order.
+    /// </summary>
+    public enum KnowledgeArticleTemplateOrderField
+    {
+        /// <summary>
+        /// Order by created at.
+        /// </summary>
+        [EnumMember(Value = "createdAt")]
+        CreatedAt,
+        /// <summary>
+        /// Order by disabled.
+        /// </summary>
+        [EnumMember(Value = "disabled")]
+        Disabled,
+        /// <summary>
+        /// Order by service name.
+        /// </summary>
+        [EnumMember(Value = "serviceName")]
+        ServiceName,
+        /// <summary>
+        /// Order by subject.
+        /// </summary>
+        [EnumMember(Value = "subject")]
+        Subject,
+        /// <summary>
+        /// Order by updated at.
+        /// </summary>
+        [EnumMember(Value = "updatedAt")]
+        UpdatedAt,
+    }
+
+    /// <summary>
     /// The organization order.
     /// </summary>
     public enum OrganizationOrderField
