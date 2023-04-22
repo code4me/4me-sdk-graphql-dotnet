@@ -5472,6 +5472,7 @@
         /// <summary>
         /// The knowledge article field.
         /// </summary>
+        [Obsolete("Use `knowledgeArticles` instead.")]
         [EnumMember(Value = "knowledgeArticle")]
         KnowledgeArticle,
         /// <summary>

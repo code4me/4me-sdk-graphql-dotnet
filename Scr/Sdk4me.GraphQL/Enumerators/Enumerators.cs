@@ -190,35 +190,55 @@
     public enum BroadcastVisibility
     {
         /// <summary>
-        /// Account Specialists.
+        /// Account specialists.
         /// </summary>
         [EnumMember(Value = "account_specialists")]
         AccountSpecialists = 1,
         /// <summary>
-        /// All Of Account.
+        /// All people registered in the account.
         /// </summary>
         [EnumMember(Value = "all_of_account")]
         AllOfAccount,
         /// <summary>
-        /// Covered For Any.
+        /// People covered for any of our service instances.
         /// </summary>
         [EnumMember(Value = "covered_for_any")]
         CoveredForAny,
         /// <summary>
-        /// Covered For.
+        /// People covered for the following service instance(s).
         /// </summary>
         [EnumMember(Value = "covered_for")]
         CoveredFor,
         /// <summary>
-        /// Customers.
+        /// Specialists in requests from the following customers.
         /// </summary>
         [EnumMember(Value = "customers")]
         Customers,
         /// <summary>
-        /// Members Of Teams.
+        /// Members of the following skill pool(s).
+        /// </summary>
+        [EnumMember(Value = "members_of_skill_pools")]
+        MembersOfSkillPools,
+        /// <summary>
+        /// Members of the following team(s).
         /// </summary>
         [EnumMember(Value = "members_of_teams")]
         MembersOfTeams,
+        /// <summary>
+        /// People of the following organization(s) and their descendants.
+        /// </summary>
+        [EnumMember(Value = "organizations_and_descendants")]
+        OrganizationsAndDescendants,
+        /// <summary>
+        /// People of the following organization(s).
+        /// </summary>
+        [EnumMember(Value = "organizations")]
+        Organizations,
+        /// <summary>
+        /// People of the following site(s).
+        /// </summary>
+        [EnumMember(Value = "sites")]
+        Sites,
     }
 
     /// <summary>

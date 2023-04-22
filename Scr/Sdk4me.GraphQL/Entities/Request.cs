@@ -177,6 +177,7 @@
         /// <summary>
         /// Automatically set to the latest knowledge article that was applied to the request.
         /// </summary>
+        [Obsolete("Use `knowledgeArticles` instead.")]
         [JsonProperty("knowledgeArticle")]
         public KnowledgeArticle? KnowledgeArticle { get; internal set; }
 

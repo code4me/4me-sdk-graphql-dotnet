@@ -29,6 +29,7 @@
         private string? internalNote;
         private List<AttachmentInput>? internalNoteAttachments;
         private string? knowledgeArticleId;
+        private List<string>? knowledgeArticleIds;
         private RequestMajorIncidentStatus? majorIncidentStatus;
         private string? memberId;
         private string? note;
@@ -286,11 +287,22 @@
         /// <summary>
         /// Latest knowledge article applied to the request.
         /// </summary>
+        [Obsolete("Use `knowledgeArticleIds` instead.")]
         [JsonProperty("knowledgeArticleId")]
         public string? KnowledgeArticleId
         {
             get => knowledgeArticleId;
             set => knowledgeArticleId = Set("knowledgeArticleId", value);
+        }
+
+        /// <summary>
+        /// Knowledge articles applied to the request.
+        /// </summary>
+        [JsonProperty("knowledgeArticleIds")]
+        public List<string>? KnowledgeArticleIds
+        {
+            get => knowledgeArticleIds;
+            set => knowledgeArticleIds = Set("knowledgeArticleIds", value);
         }
 
         /// <summary>
