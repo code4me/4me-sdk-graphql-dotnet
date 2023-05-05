@@ -528,6 +528,11 @@
         [EnumMember(Value = "my_teams_services")]
         MyTeamsServices,
         /// <summary>
+        /// Portfolio insight.
+        /// </summary>
+        [EnumMember(Value = "portfolio_insight")]
+        PortfolioInsight,
+        /// <summary>
         /// Archived projects.
         /// </summary>
         [EnumMember(Value = "archive")]
@@ -653,6 +658,11 @@
         /// </summary>
         [EnumMember(Value = "trash")]
         Trash,
+        /// <summary>
+        /// Requests of my organization (only for key contacts).
+        /// </summary>
+        [EnumMember(Value = "requests_of_my_organization")]
+        RequestsOfMyOrganization,
     }
 
     /// <summary>
