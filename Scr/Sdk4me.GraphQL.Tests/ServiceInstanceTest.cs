@@ -10,6 +10,7 @@
         {
             DataList<ServiceInstance> serviceInstances = client.Get(Query.ServiceInstance
                 .View(ServiceInstanceView.All)
+                .ItemsPerRequest(10)
                 .SelectAll()
                 .SelectChildServiceInstances(new ServiceInstanceQuery())
                 .SelectConfigurationItems(new ConfigurationItemQuery())
