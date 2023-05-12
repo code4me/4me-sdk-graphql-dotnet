@@ -12,6 +12,12 @@
         public Person? Approver { get; internal set; }
 
         /// <summary>
+        /// The summary PDF file that was generated for the approver when the approval was last set to the status <c>assigned</c>.
+        /// </summary>
+        [JsonProperty("attachment")]
+        public Attachment? Attachment { get; internal set; }
+
+        /// <summary>
         /// The date and time at which the approval was created.
         /// </summary>
         [JsonProperty("createdAt"), Sdk4meField(true)]

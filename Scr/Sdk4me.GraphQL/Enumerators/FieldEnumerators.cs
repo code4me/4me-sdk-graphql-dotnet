@@ -8867,6 +8867,11 @@
         [EnumMember(Value = "approver")]
         Approver,
         /// <summary>
+        /// The attachment field.
+        /// </summary>
+        [EnumMember(Value = "attachment")]
+        Attachment,
+        /// <summary>
         /// The created at field.
         /// </summary>
         [EnumMember(Value = "createdAt")]
