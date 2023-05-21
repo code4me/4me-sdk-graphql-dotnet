@@ -8049,6 +8049,23 @@
     }
 
     /// <summary>
+    /// The <see cref="Snapshot">Snapshot</see> fields.
+    /// </summary>
+    public enum SnapshotField
+    {
+        /// <summary>
+        /// The download url field.
+        /// </summary>
+        [EnumMember(Value = "downloadUrl")]
+        DownloadUrl,
+        /// <summary>
+        /// The started at field.
+        /// </summary>
+        [EnumMember(Value = "startedAt")]
+        StartedAt,
+    }
+
+    /// <summary>
     /// The <see cref="Sprint">Sprint</see> fields.
     /// </summary>
     public enum SprintField
@@ -8572,6 +8589,58 @@
         /// </summary>
         [EnumMember(Value = "survey")]
         Survey,
+        /// <summary>
+        /// The updated at field.
+        /// </summary>
+        [EnumMember(Value = "updatedAt")]
+        UpdatedAt,
+    }
+
+    /// <summary>
+    /// The <see cref="SyncSet">SyncSet</see> fields.
+    /// </summary>
+    public enum SyncSetField
+    {
+        /// <summary>
+        /// The account field.
+        /// </summary>
+        [EnumMember(Value = "account")]
+        Account,
+        /// <summary>
+        /// The created at field.
+        /// </summary>
+        [EnumMember(Value = "createdAt")]
+        CreatedAt,
+        /// <summary>
+        /// The description field.
+        /// </summary>
+        [EnumMember(Value = "description")]
+        Description,
+        /// <summary>
+        /// The description attachments field.
+        /// </summary>
+        [EnumMember(Value = "descriptionAttachments")]
+        DescriptionAttachments,
+        /// <summary>
+        /// The id field.
+        /// </summary>
+        [EnumMember(Value = "id")]
+        ID,
+        /// <summary>
+        /// The last snapshot field.
+        /// </summary>
+        [EnumMember(Value = "lastSnapshot")]
+        LastSnapshot,
+        /// <summary>
+        /// The name field.
+        /// </summary>
+        [EnumMember(Value = "name")]
+        Name,
+        /// <summary>
+        /// The types field.
+        /// </summary>
+        [EnumMember(Value = "types")]
+        Types,
         /// <summary>
         /// The updated at field.
         /// </summary>

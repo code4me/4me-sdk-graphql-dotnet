@@ -296,6 +296,11 @@
         public static SurveyQuery Survey => new();
 
         /// <summary>
+        /// Returns a new instance of the <see cref="SyncSet"/> with a default field selection.
+        /// </summary>
+        public static SyncSetQuery SyncSet => new();
+
+        /// <summary>
         /// Returns a new instance of the <see cref="TaskTemplate"/> with a default field selection.
         /// </summary>
         public static TaskTemplateQuery TaskTemplate => new();

@@ -884,6 +884,16 @@
         [EnumMember(Value = "specialist")]
         Specialist,
         /// <summary>
+        /// Workflow automator auditor.
+        /// </summary>
+        [EnumMember(Value = "workflow_automator_auditor")]
+        WorkflowAutomatorAuditor,
+        /// <summary>
+        /// Workflow automator specialist.
+        /// </summary>
+        [EnumMember(Value = "workflow_automator_specialist")]
+        WorkflowAutomatorSpecialist,
+        /// <summary>
         /// Workflow manager.
         /// </summary>
         [EnumMember(Value = "workflow_manager")]

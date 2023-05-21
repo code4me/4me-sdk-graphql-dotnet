@@ -702,6 +702,18 @@
         }
 
         /// <summary>
+        /// Root connection for retrieving SyncSet records.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="query">The query to execute.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<DataList<SyncSet>> Get(this Sdk4meClient client, SyncSetQuery query)
+        {
+            return await client.Get<SyncSet>(query);
+        }
+
+        /// <summary>
         /// Root connection for retrieving TaskTemplate records.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
