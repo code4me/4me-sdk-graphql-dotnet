@@ -30,6 +30,12 @@
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
+        /// The person who created the UI extension.
+        /// </summary>
+        [JsonProperty("createdBy")]
+        public Person? CreatedBy { get; internal set; }
+
+        /// <summary>
         /// Description of the UI Extension.
         /// </summary>
         [JsonProperty("description")]
@@ -92,6 +98,12 @@
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }
+
+        /// <summary>
+        /// The person who last updated the UI extension.
+        /// </summary>
+        [JsonProperty("updatedBy")]
+        public Person? UpdatedBy { get; internal set; }
 
         [JsonProperty("versions")]
         internal NodeCollection<UiExtensionVersion>? VersionsCollection { get; set; }

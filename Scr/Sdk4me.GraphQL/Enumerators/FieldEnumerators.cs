@@ -9854,6 +9854,11 @@
         [EnumMember(Value = "createdAt")]
         CreatedAt,
         /// <summary>
+        /// The created by field.
+        /// </summary>
+        [EnumMember(Value = "createdBy")]
+        CreatedBy,
+        /// <summary>
         /// The description field.
         /// </summary>
         [EnumMember(Value = "description")]
@@ -9903,6 +9908,11 @@
         /// </summary>
         [EnumMember(Value = "updatedAt")]
         UpdatedAt,
+        /// <summary>
+        /// The updated by field.
+        /// </summary>
+        [EnumMember(Value = "updatedBy")]
+        UpdatedBy,
         /// <summary>
         /// The versions field.
         /// </summary>
