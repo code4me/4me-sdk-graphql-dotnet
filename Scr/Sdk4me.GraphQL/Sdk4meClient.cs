@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json.Converters;
 using System.Diagnostics;
 using System.Net.Http.Headers;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -13,19 +14,19 @@ namespace Sdk4me.GraphQL
     {
         private readonly AuthenticationTokenCollection authenticationTokens;
         private readonly JsonSerializer jsonSerializer;
-        private readonly string accountID;
         private readonly string url;
         private readonly string oauth2Url;
         private readonly HttpClient client;
         private readonly bool traceEnabled = Trace.Listeners != null && Trace.Listeners.Count > 0;
         private readonly string applicationJsonMediaType = "application/json";
         private AuthenticationToken currentToken;
+        private string accountID;
         private int maximumRecursiveRequests = 10;
         private int maximumQueryDepthLevelConnections = 2;
         private int itemsPerRequest = 100;
 
         /// <summary>
-        /// <br>Gets or sets the number of recursive requests.</br>
+        /// <br>Get or set the number of recursive requests.</br>
         /// <br>The value must be at least 1 and maximum 1000.</br>
         /// </summary>
         public int MaximumRecursiveRequests
@@ -35,7 +36,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// <br>Set the maximum number of GraphQL depth level connections.</br>
+        /// <br>Get or set the maximum number of GraphQL depth level connections.</br>
         /// <br>The value must be at least 1 and maximum 13.</br>
         /// <para>Warning: changing this to a higher value can impact performance significantly because of the built-in pagination handling. The default value is 2.</para>
         /// </summary>
@@ -46,7 +47,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// <br>Set the number of objects returned per API call.</br>
+        /// <br>Get or set the number of objects returned per API call.</br>
         /// <br>The value needs to be between 1 and 100 inclusive.</br>
         /// </summary>
         public int DefaultItemsPerRequest
@@ -61,6 +62,15 @@ namespace Sdk4me.GraphQL
                     _ => value,
                 };
             }
+        }
+
+        /// <summary>
+        /// Get or set the 4me account ID.
+        /// </summary>
+        public string AccountID
+        {
+            get => accountID;
+            set => accountID = value;
         }
 
         /// <summary>
@@ -164,6 +174,7 @@ namespace Sdk4me.GraphQL
             jsonSerializer.Converters.Add(new JsonEnumConverter());
 
             client = new();
+            client.SetUserAgent("Sdk4me.GraphQL");
             currentToken = authenticationTokens.Get();
         }
 
@@ -236,7 +247,7 @@ namespace Sdk4me.GraphQL
         /// <param name="input">The mutation input data.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
-        public async Task<TOutEntity> Mutation<TOutEntity, TInEntity>(Mutation<TOutEntity, TInEntity> input)
+        internal async Task<TOutEntity> Mutation<TOutEntity, TInEntity>(Mutation<TOutEntity, TInEntity> input)
             where TOutEntity : class
             where TInEntity : PropertyChangeSet
         {
@@ -252,7 +263,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
-        public async Task<TOutEntity> Mutation<TOutEntity, TInEntity>(Mutation<TOutEntity, TInEntity> input, bool throwOnError)
+        internal async Task<TOutEntity> Mutation<TOutEntity, TInEntity>(Mutation<TOutEntity, TInEntity> input, bool throwOnError)
             where TOutEntity : class
             where TInEntity : PropertyChangeSet
         {
@@ -366,7 +377,7 @@ namespace Sdk4me.GraphQL
             currentToken = authenticationTokens.Get();
             GetAuthenticationToken();
             retval.Headers.Authorization = new AuthenticationHeaderValue(currentToken.TokenType, currentToken.Token);
-            retval.Headers.Add("X-4me-Account", accountID);
+            retval.Headers.Add("x-4me-Account", accountID);
             return retval;
         }
 
@@ -476,7 +487,10 @@ namespace Sdk4me.GraphQL
             try
             {
                 if (traceEnabled)
+                {
                     Trace.WriteLine($"{requestMessage.Method} \"{requestMessage.RequestUri?.AbsoluteUri}\"");
+                    Trace.WriteLine($"x-4me-Account: {accountID}");
+                }
                 Trace.Flush();
             }
             catch

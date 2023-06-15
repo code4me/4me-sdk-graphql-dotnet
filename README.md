@@ -314,4 +314,5 @@ AuthenticationTokenCollection tokens = new AuthenticationTokenCollection()
 };
 
 Sdk4meClient client = new(token, "account-name", EnvironmentType.Demo, EnvironmentRegion.EU);
+client.AccountID = "new-account-name";
 ```
