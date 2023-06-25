@@ -295,6 +295,31 @@
         /// Add a filter to the query.
         /// </summary>
         /// <param name="field">The field name.</param>
+        /// <param name="filterOperator">The filter operator, which should be <c>Present</c> or <c>Blankt</c>.</param>
+        /// <returns>The current <see cref="IQuery"/>.</returns>
+        /// <exception cref="NullReferenceException"></exception>
+        public TEntity Filter(string field, FilterOperator filterOperator)
+        {
+            filters.Add(ExecutionQueryBuilder.BuildStringFilter(field, filterOperator));
+            return this as TEntity ?? throw new NullReferenceException(nameof(TEntity));
+        }
+
+        /// <summary>
+        /// Add a filter to the query.
+        /// </summary>
+        /// <param name="field">The field name.</param>
+        /// <param name="filterOperator">The filter operator, which should be <c>Present</c> or <c>Blankt</c>.</param>
+        /// <returns>The current <see cref="IQuery"/>.</returns>
+        /// <exception cref="NullReferenceException"></exception>
+        public TEntity Filter(TFields field, FilterOperator filterOperator)
+        {
+            return Filter(GetEnumStringValue(field), filterOperator);
+        }
+
+        /// <summary>
+        /// Add a filter to the query.
+        /// </summary>
+        /// <param name="field">The field name.</param>
         /// <param name="filterOperator">The filter operator.</param>
         /// <param name="values">The filter values.</param>
         /// <returns>The current <see cref="IQuery"/>.</returns>

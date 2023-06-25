@@ -16,13 +16,13 @@
     <RepositoryUrl>https://github.com/code4me/4me-sdk-graphql-dotnet</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>4me</PackageTags>
-    <AssemblyVersion>1.0.5</AssemblyVersion>
-    <FileVersion>1.0.5</FileVersion>
+    <AssemblyVersion>1.0.6</AssemblyVersion>
+    <FileVersion>1.0.6</FileVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>LogoDark128x218.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-    <Version>1.0.5</Version>
+    <Version>1.0.6</Version>
   </PropertyGroup>
 
   <ItemGroup>

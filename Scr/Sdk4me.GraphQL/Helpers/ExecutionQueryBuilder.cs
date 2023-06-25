@@ -377,7 +377,7 @@ namespace Sdk4me.GraphQL
                     builder.Append(" values:");
                 builder.Append(serializedValues.Length switch
                 {
-                    0 => "[null]",
+                    0 => "[]",
                     1 => $"[{serializedValues[0]}]",
                     _ => $"[{string.Join(',', serializedValues)}]"
                 });
@@ -396,6 +396,14 @@ namespace Sdk4me.GraphQL
             {
                 throw new Sdk4meFilterException("Invalid custom filter operator");
             }
+        }
+
+        internal static string BuildStringFilter(string field, FilterOperator filterOperator)
+        {
+            if (filterOperator == FilterOperator.Present || filterOperator == FilterOperator.Empty)
+                return BuildStringFilter(field, filterOperator, Array.Empty<string>());
+            else
+                throw new Sdk4meFilterException("Invalid filter operator");
         }
 
         internal static string BuildStringFilter(string field, FilterOperator filterOperator, params string?[] values)
@@ -443,6 +451,8 @@ namespace Sdk4me.GraphQL
         private static string[] SerializeObject(params string?[] values)
         {
             List<string> retval = new();
+            if (values == null)
+                values = Array.Empty<string>();
             foreach (string? value in values)
                 retval.Add(SerializeObject(value));
             return retval.ToArray();

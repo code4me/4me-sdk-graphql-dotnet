@@ -146,10 +146,26 @@ client.MaximumQueryDepthLevelConnections = 5;
 ```
 
 #### Filtering
+There are three methods to filtering: `Filter`, `CustomFilter` and, `FreeFormatFilter`.
+Filters can only be applied at the top level of the query.
+
 ```csharp
 IQuery query = Query.Person.Filter(PersonField.Name, FilterOperator.Equals, "Howard");
 ```
-Filters can only be used on the top level query.
+The `Filter` method allows you to specify field filters at the top level of the query.
+You can define the field, the operator (e.g., equals, not equals), and the value to match against.
+
+```csharp
+PersonQuery query = new PersonQuery()
+    .CustomFilter("Age", FilterOperator.NotEquals, new string[] { null });
+```
+The `CustomFilter` method enables the use of existing custom filters.
+
+```csharp
+PersonQuery query = new PersonQuery()
+    .FreeFormatFilter("Howard");
+```
+The `FreeFormatFilter` method enables the usage of same filter functionality available in the top screen filter in the user interface (UI).
 
 #### Sorting
 ```csharp
@@ -171,6 +187,8 @@ PersonQuery query = new PersonQuery()
         .Select(PermissionField.Account, PermissionField.Roles))
     .SelectTeams(new TeamQuery()
         .ItemsPerRequest(10)
+        .SelectConfigurationManager(new PersonQuery()
+            .Select(PersonField.Name, PersonField.EmployeeID))
         .SelectMembers(new PersonQuery()
             .ItemsPerRequest(50)
             .Select(PersonField.Name)))
