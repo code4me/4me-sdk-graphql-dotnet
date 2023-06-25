@@ -14,11 +14,51 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public ProblemQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Board this item is placed on.
+        /// </summary>
+        public ProblemQuery SelectAgileBoard(AgileBoardQuery query)
+        {
+            query.FieldName = "agileBoard";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Column this item is placed in.
+        /// </summary>
+        public ProblemQuery SelectAgileBoardColumn(AgileBoardColumnQuery query)
+        {
+            query.FieldName = "agileBoardColumn";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Configuration items of this problem.
         /// </summary>
         public ProblemQuery SelectConfigurationItems(ConfigurationItemQuery query)
         {
             query.FieldName = "configurationItems";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Values of custom fields.
+        /// </summary>
+        public ProblemQuery SelectCustomFields(CustomFieldQuery query)
+        {
+            query.FieldName = "customFields";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -32,6 +72,36 @@
         }
 
         /// <summary>
+        /// The knowledge article which instructions should be followed to resolve incidents caused by this problem until a structural solution has been implemented.
+        /// </summary>
+        public ProblemQuery SelectKnowledgeArticle(KnowledgeArticleQuery query)
+        {
+            query.FieldName = "knowledgeArticle";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Person who is responsible for coordinating the problem through root cause analysis, the proposal of a structural solution and ultimately its closure.
+        /// </summary>
+        public ProblemQuery SelectManager(PersonQuery query)
+        {
+            query.FieldName = "manager";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The person to whom the problem is to be assigned.
+        /// </summary>
+        public ProblemQuery SelectMember(PersonQuery query)
+        {
+            query.FieldName = "member";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Notes of the record.
         /// </summary>
         public ProblemQuery SelectNotes(NoteQuery query)
@@ -41,11 +111,41 @@
         }
 
         /// <summary>
+        /// Product backlog this item is placed on.
+        /// </summary>
+        public ProblemQuery SelectProductBacklog(ProductBacklogQuery query)
+        {
+            query.FieldName = "productBacklog";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Used to link the problem to a project.
+        /// </summary>
+        public ProblemQuery SelectProject(ProjectQuery query)
+        {
+            query.FieldName = "project";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Requests of this problem.
         /// </summary>
         public ProblemQuery SelectRequests(RequestQuery query)
         {
             query.FieldName = "requests";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The service in which instance(s) the problem resides.
+        /// </summary>
+        public ProblemQuery SelectService(ServiceQuery query)
+        {
+            query.FieldName = "service";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -68,6 +168,26 @@
         }
 
         /// <summary>
+        /// The supplier organization that has been asked for a solution to the problem.
+        /// </summary>
+        public ProblemQuery SelectSupplier(OrganizationQuery query)
+        {
+            query.FieldName = "supplier";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The team to which the problem is to be assigned. After a service has been selected in the Service field, the support team of the service is automatically selected in this field.
+        /// </summary>
+        public ProblemQuery SelectTeam(TeamQuery query)
+        {
+            query.FieldName = "team";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Time entries for this record.
         /// </summary>
         public ProblemQuery SelectTimeEntries(TimeEntryQuery query)
@@ -77,11 +197,31 @@
         }
 
         /// <summary>
+        /// UI extension that is linked to the record.
+        /// </summary>
+        public ProblemQuery SelectUiExtension(UiExtensionQuery query)
+        {
+            query.FieldName = "uiExtension";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Inline images linked to the Workaround field.
         /// </summary>
         public ProblemQuery SelectWorkaroundAttachments(AttachmentQuery query)
         {
             query.FieldName = "workaroundAttachments";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The workflow that will implement the proposed permanent solution for the problem.
+        /// </summary>
+        public ProblemQuery SelectWorkflow(WorkflowQuery query)
+        {
+            query.FieldName = "workflow";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -117,7 +257,7 @@
         /// <br>• Matches are case-sensitive.</br>
         /// </param>
         /// <exception cref="NullReferenceException"></exception>
-        public ProblemQuery CustomFilter(string name, FilterOperator filterOperator, params string[] values)
+        public ProblemQuery CustomFilter(string name, FilterOperator filterOperator, params string?[] values)
         {
             return AddCustomFilter(name, filterOperator, values);
         }

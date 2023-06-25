@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public ProjectTemplateQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Phases of the project template.
         /// </summary>
         public ProjectTemplateQuery SelectPhases(ProjectTemplatePhaseQuery query)

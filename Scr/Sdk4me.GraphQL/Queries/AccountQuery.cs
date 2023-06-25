@@ -12,5 +12,15 @@
             : base("account", typeof(Account), false)
         {
         }
+
+        /// <summary>
+        /// The organization for which the account was prepared.
+        /// </summary>
+        public AccountQuery SelectOrganization(OrganizationQuery query)
+        {
+            query.FieldName = "organization";
+            query.IsConnection = false;
+            return Select(query);
+        }
     }
 }

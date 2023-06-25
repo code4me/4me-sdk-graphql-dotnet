@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public ServiceInstanceQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Children of the service instance.
         /// </summary>
         public ServiceInstanceQuery SelectChildServiceInstances(ServiceInstanceQuery query)
@@ -32,11 +42,31 @@
         }
 
         /// <summary>
+        /// Values of custom fields.
+        /// </summary>
+        public ServiceInstanceQuery SelectCustomFields(CustomFieldQuery query)
+        {
+            query.FieldName = "customFields";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
         public ServiceInstanceQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Used to select the team that will automatically be selected in the Team field of requests to which the service instance is linked after they have been submitted using Self Service or when they are generated using the Requests API, Mail API or Events API.
+        /// </summary>
+        public ServiceInstanceQuery SelectFirstLineTeam(TeamQuery query)
+        {
+            query.FieldName = "firstLineTeam";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -59,6 +89,16 @@
         }
 
         /// <summary>
+        /// The service which functionality the service instance provides.
+        /// </summary>
+        public ServiceInstanceQuery SelectService(ServiceQuery query)
+        {
+            query.FieldName = "service";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Service level agreements of the service instance.
         /// </summary>
         public ServiceInstanceQuery SelectServiceLevelAgreements(ServiceLevelAgreementQuery query)
@@ -68,11 +108,31 @@
         }
 
         /// <summary>
+        /// The team that will, by default, be selected in the Team field of a request when the service instance is manually selected in the Service instance field of the request, or when the service instance is applied from the Service Hierarchy Browser.
+        /// </summary>
+        public ServiceInstanceQuery SelectSupportTeam(TeamQuery query)
+        {
+            query.FieldName = "supportTeam";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Translations associated with this object.
         /// </summary>
         public ServiceInstanceQuery SelectTranslations(TranslationQuery query)
         {
             query.FieldName = "translations";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// UI extension that is linked to the record.
+        /// </summary>
+        public ServiceInstanceQuery SelectUiExtension(UiExtensionQuery query)
+        {
+            query.FieldName = "uiExtension";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -108,7 +168,7 @@
         /// <br>• Matches are case-sensitive.</br>
         /// </param>
         /// <exception cref="NullReferenceException"></exception>
-        public ServiceInstanceQuery CustomFilter(string name, FilterOperator filterOperator, params string[] values)
+        public ServiceInstanceQuery CustomFilter(string name, FilterOperator filterOperator, params string?[] values)
         {
             return AddCustomFilter(name, filterOperator, values);
         }

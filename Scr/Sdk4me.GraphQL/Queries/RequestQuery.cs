@@ -14,11 +14,41 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public RequestQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Affected SLAs of the request.
         /// </summary>
         public RequestQuery SelectAffectedSlas(AffectedSlaQuery query)
         {
             query.FieldName = "affectedSlas";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Board this item is placed on.
+        /// </summary>
+        public RequestQuery SelectAgileBoard(AgileBoardQuery query)
+        {
+            query.FieldName = "agileBoard";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Column this item is placed in.
+        /// </summary>
+        public RequestQuery SelectAgileBoardColumn(AgileBoardColumnQuery query)
+        {
+            query.FieldName = "agileBoardColumn";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -41,11 +71,51 @@
         }
 
         /// <summary>
+        /// Automatically set to the person who submitted the request.
+        /// </summary>
+        public RequestQuery SelectCreatedBy(PersonQuery query)
+        {
+            query.FieldName = "createdBy";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Values of custom fields.
+        /// </summary>
+        public RequestQuery SelectCustomFields(CustomFieldQuery query)
+        {
+            query.FieldName = "customFields";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
         public RequestQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The <c>satisfiedUrl</c> and the <c>dissatisfiedUrl</c> of the <c>requestedFor</c>. In case the <c>requestedBy</c> is different form the <c>requestedFor</c>, the satisfaction link of the <c>requestedBy</c> are also included. Feedback is <c>null</c> in case no feedback for the request can be provided at this time.
+        /// </summary>
+        public RequestQuery SelectFeedback(FeedbackQuery query)
+        {
+            query.FieldName = "feedback";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The request group that is used to group the requests that have been submitted for the resolution of exactly the same incident, for the implementation of exactly the same change, for the provision of exactly the same information, etc.
+        /// </summary>
+        public RequestQuery SelectGroupedInto(RequestQuery query)
+        {
+            query.FieldName = "groupedInto";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -59,11 +129,31 @@
         }
 
         /// <summary>
+        /// Automatically set to the latest knowledge article that was applied to the request.
+        /// </summary>
+        public RequestQuery SelectKnowledgeArticle(KnowledgeArticleQuery query)
+        {
+            query.FieldName = "knowledgeArticle";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Knowledge articles of the current request account.
         /// </summary>
         public RequestQuery SelectKnowledgeArticles(KnowledgeArticleQuery query)
         {
             query.FieldName = "knowledgeArticles";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The person to whom the request is to be assigned.
+        /// </summary>
+        public RequestQuery SelectMember(PersonQuery query)
+        {
+            query.FieldName = "member";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -77,11 +167,121 @@
         }
 
         /// <summary>
+        /// Automatically set when the request is saved for the first time to the organization that the person, who is selected in the Requested for field, belongs.
+        /// </summary>
+        public RequestQuery SelectOrganization(OrganizationQuery query)
+        {
+            query.FieldName = "organization";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Used to link the request to a problem.
+        /// </summary>
+        public RequestQuery SelectProblem(ProblemQuery query)
+        {
+            query.FieldName = "problem";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Product backlog this item is placed on.
+        /// </summary>
+        public RequestQuery SelectProductBacklog(ProductBacklogQuery query)
+        {
+            query.FieldName = "productBacklog";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Used to link the request to a project.
+        /// </summary>
+        public RequestQuery SelectProject(ProjectQuery query)
+        {
+            query.FieldName = "project";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The person who submitted the request.
+        /// </summary>
+        public RequestQuery SelectRequestedBy(PersonQuery query)
+        {
+            query.FieldName = "requestedBy";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The person for whom the request was submitted. The person selected in the Requested by field is automatically selected in this field, but another person can be selected if the request is submitted for another person.
+        /// </summary>
+        public RequestQuery SelectRequestedFor(PersonQuery query)
+        {
+            query.FieldName = "requestedFor";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The service instance in which the cause of the incident resides, for which the change is requested, or about which information is needed.
+        /// </summary>
+        public RequestQuery SelectServiceInstance(ServiceInstanceQuery query)
+        {
+            query.FieldName = "serviceInstance";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Sprint backlog items associated with this object.
         /// </summary>
         public RequestQuery SelectSprintBacklogItems(SprintBacklogItemQuery query)
         {
             query.FieldName = "sprintBacklogItems";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The supplier organization that has been asked to assist with the request. The supplier organization is automatically selected in this field after a service instance has been selected that is provided by an external service provider organization.
+        /// </summary>
+        public RequestQuery SelectSupplier(OrganizationQuery query)
+        {
+            query.FieldName = "supplier";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The task that caused the request to be automatically generated.
+        /// </summary>
+        public RequestQuery SelectTask(TaskQuery query)
+        {
+            query.FieldName = "task";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The team to which the request is to be assigned. By default, the first line team of the service instance that is related to the request will be selected. If a first line team has not been specified for the service instance, the support team of the service instance will be selected instead.
+        /// </summary>
+        public RequestQuery SelectTeam(TeamQuery query)
+        {
+            query.FieldName = "team";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The link to the request template that was last applied to the request.
+        /// </summary>
+        public RequestQuery SelectTemplate(RequestTemplateQuery query)
+        {
+            query.FieldName = "template";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -100,6 +300,16 @@
         public RequestQuery SelectWatches(WatchQuery query)
         {
             query.FieldName = "watches";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Used to link the request to a workflow.
+        /// </summary>
+        public RequestQuery SelectWorkflow(WorkflowQuery query)
+        {
+            query.FieldName = "workflow";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -135,9 +345,9 @@
         /// <br>• Matches are case-sensitive.</br>
         /// </param>
         /// <exception cref="NullReferenceException"></exception>
-        public RequestQuery CustomFilter(string name, FilterOperator filterOperator, params string[] values)
+        public RequestQuery CustomFilter(string name, FilterOperator filterOperator, params string?[] values)
         {
-            return AddCustomFilter(name, filterOperator, values);
+            return AddCustomFilter(name, filterOperator, values ?? new string?[] { null });
         }
     }
 }

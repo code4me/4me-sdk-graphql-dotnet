@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public HolidayQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Calendars of the holiday.
         /// </summary>
         public HolidayQuery SelectCalendars(CalendarQuery query)

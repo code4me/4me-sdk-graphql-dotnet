@@ -14,11 +14,31 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public ProductQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Configuration items of the product.
         /// </summary>
         public ProductQuery SelectConfigurationItems(ConfigurationItemQuery query)
         {
             query.FieldName = "configurationItems";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Values of custom fields.
+        /// </summary>
+        public ProductQuery SelectCustomFields(CustomFieldQuery query)
+        {
+            query.FieldName = "customFields";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -32,11 +52,101 @@
         }
 
         /// <summary>
+        /// The internal organization which budget is normally used to obtain the product.
+        /// </summary>
+        public ProductQuery SelectFinancialOwner(OrganizationQuery query)
+        {
+            query.FieldName = "financialOwner";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The appropriate product category for the product.
+        /// </summary>
+        public ProductQuery SelectProductCategory(ProductCategoryQuery query)
+        {
+            query.FieldName = "productCategory";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Recurrence for maintenance of configuration items created from the product.
+        /// </summary>
+        public ProductQuery SelectRecurrence(RecurrenceTemplateQuery query)
+        {
+            query.FieldName = "recurrence";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Inline images linked to the Remarks field.
         /// </summary>
         public ProductQuery SelectRemarksAttachments(AttachmentQuery query)
         {
             query.FieldName = "remarksAttachments";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The Service which Service Instances would typically include the product.
+        /// </summary>
+        public ProductQuery SelectService(ServiceQuery query)
+        {
+            query.FieldName = "service";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The organization from which the product is typically obtained. If the product is developed internally, select the internal organization that develops it. Note that a lease company should be selected in this field if the product is normally leased.
+        /// </summary>
+        public ProductQuery SelectSupplier(OrganizationQuery query)
+        {
+            query.FieldName = "supplier";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The team responsible for maintaining the product's information in the configuration management database (CMDB).
+        /// </summary>
+        public ProductQuery SelectSupportTeam(TeamQuery query)
+        {
+            query.FieldName = "supportTeam";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// UI extension that is to be added to the configuration items that are based on the product.
+        /// </summary>
+        public ProductQuery SelectUiExtension(UiExtensionQuery query)
+        {
+            query.FieldName = "uiExtension";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The person who will be responsible for coordinating the workflows that will be generated automatically in accordance with the recurrence schedule.
+        /// </summary>
+        public ProductQuery SelectWorkflowManager(PersonQuery query)
+        {
+            query.FieldName = "workflowManager";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The workflow template that is used to periodically maintain configuration items created from the product.
+        /// </summary>
+        public ProductQuery SelectWorkflowTemplate(WorkflowTemplateQuery query)
+        {
+            query.FieldName = "workflowTemplate";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -72,7 +182,7 @@
         /// <br>• Matches are case-sensitive.</br>
         /// </param>
         /// <exception cref="NullReferenceException"></exception>
-        public ProductQuery CustomFilter(string name, FilterOperator filterOperator, params string[] values)
+        public ProductQuery CustomFilter(string name, FilterOperator filterOperator, params string?[] values)
         {
             return AddCustomFilter(name, filterOperator, values);
         }

@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public AppOfferingQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Instances of this app.
         /// </summary>
         public AppOfferingQuery SelectAppInstances(AppInstanceQuery query)
@@ -55,6 +65,36 @@
         public AppOfferingQuery SelectFeaturesAttachments(AttachmentQuery query)
         {
             query.FieldName = "featuresAttachments";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Scopes of this app offering.
+        /// </summary>
+        public AppOfferingQuery SelectScopes(AppOfferingScopeQuery query)
+        {
+            query.FieldName = "scopes";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Service instance that is linked to the app offering.
+        /// </summary>
+        public AppOfferingQuery SelectServiceInstance(ServiceInstanceQuery query)
+        {
+            query.FieldName = "serviceInstance";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// UI extension version that is linked to the app offering.
+        /// </summary>
+        public AppOfferingQuery SelectUiExtensionVersion(UiExtensionVersionQuery query)
+        {
+            query.FieldName = "uiExtensionVersion";
+            query.IsConnection = false;
             return Select(query);
         }
     }

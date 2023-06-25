@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public ProductBacklogQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Files and inline images linked to the description field.
         /// </summary>
         public ProductBacklogQuery SelectDescriptionAttachments(AttachmentQuery query)
@@ -28,6 +38,16 @@
         public ProductBacklogQuery SelectItems(ProductBacklogItemQuery query)
         {
             query.FieldName = "items";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Person responsible for maximizing the value of the work done based on this product backlog.
+        /// </summary>
+        public ProductBacklogQuery SelectProductOwner(PersonQuery query)
+        {
+            query.FieldName = "productOwner";
+            query.IsConnection = false;
             return Select(query);
         }
 

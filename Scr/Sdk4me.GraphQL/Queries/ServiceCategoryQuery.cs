@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public ServiceCategoryQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Inline images linked to the Description field.
         /// </summary>
         public ServiceCategoryQuery SelectDescriptionAttachments(AttachmentQuery query)

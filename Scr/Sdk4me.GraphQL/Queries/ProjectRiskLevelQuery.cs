@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public ProjectRiskLevelQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Files and inline images linked to the Information field.
         /// </summary>
         public ProjectRiskLevelQuery SelectInformationAttachments(AttachmentQuery query)

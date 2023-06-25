@@ -14,11 +14,31 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public SurveyQuestionQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Files and inline images linked to the Guidance field.
         /// </summary>
         public SurveyQuestionQuery SelectGuidanceAttachments(AttachmentQuery query)
         {
             query.FieldName = "guidanceAttachments";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Survey the question is part of.
+        /// </summary>
+        public SurveyQuestionQuery SelectSurvey(SurveyQuery query)
+        {
+            query.FieldName = "survey";
+            query.IsConnection = false;
             return Select(query);
         }
     }

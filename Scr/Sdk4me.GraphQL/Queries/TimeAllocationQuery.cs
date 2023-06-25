@@ -14,11 +14,31 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public TimeAllocationQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Customer organizations of the time allocation.
         /// </summary>
         public TimeAllocationQuery SelectCustomers(OrganizationQuery query)
         {
             query.FieldName = "customers";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The effort class that is selected by default, when someone registers time on this time allocation.
+        /// </summary>
+        public TimeAllocationQuery SelectEffortClass(EffortClassQuery query)
+        {
+            query.FieldName = "effortClass";
+            query.IsConnection = false;
             return Select(query);
         }
 

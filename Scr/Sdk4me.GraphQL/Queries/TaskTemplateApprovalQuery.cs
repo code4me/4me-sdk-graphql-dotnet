@@ -12,5 +12,15 @@
             : base("", typeof(TaskTemplateApproval), true)
         {
         }
+
+        /// <summary>
+        /// The person who is selected as the approver for the task template approval.
+        /// </summary>
+        public TaskTemplateApprovalQuery SelectApprover(PersonQuery query)
+        {
+            query.FieldName = "approver";
+            query.IsConnection = false;
+            return Select(query);
+        }
     }
 }

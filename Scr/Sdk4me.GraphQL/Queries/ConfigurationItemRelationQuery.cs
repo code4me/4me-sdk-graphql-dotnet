@@ -12,5 +12,15 @@
             : base("", typeof(ConfigurationItemRelation), true)
         {
         }
+
+        /// <summary>
+        /// Related configuration item.
+        /// </summary>
+        public ConfigurationItemRelationQuery SelectConfigurationItem(ConfigurationItemQuery query)
+        {
+            query.FieldName = "configurationItem";
+            query.IsConnection = false;
+            return Select(query);
+        }
     }
 }

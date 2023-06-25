@@ -14,6 +14,26 @@
         }
 
         /// <summary>
+        /// The account.
+        /// </summary>
+        public NoteQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Person who added this note.
+        /// </summary>
+        public NoteQuery SelectPerson(PersonQuery query)
+        {
+            query.FieldName = "person";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Files and inline images linked to the Text field.
         /// </summary>
         public NoteQuery SelectTextAttachments(AttachmentQuery query)

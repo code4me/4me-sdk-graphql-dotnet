@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public MeQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Addresses of the record.
         /// </summary>
         public MeQuery SelectAddresses(AddressQuery query)
@@ -50,6 +60,16 @@
         }
 
         /// <summary>
+        /// Values of custom fields.
+        /// </summary>
+        public MeQuery SelectCustomFields(CustomFieldQuery query)
+        {
+            query.FieldName = "customFields";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
         public MeQuery SelectCustomFieldsAttachments(AttachmentQuery query)
@@ -64,6 +84,26 @@
         public MeQuery SelectInformationAttachments(AttachmentQuery query)
         {
             query.FieldName = "informationAttachments";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The manager or supervisor to whom the person reports.
+        /// </summary>
+        public MeQuery SelectManager(PersonQuery query)
+        {
+            query.FieldName = "manager";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The organization for which the person works as an employee or long-term contractor.
+        /// </summary>
+        public MeQuery SelectOrganization(OrganizationQuery query)
+        {
+            query.FieldName = "organization";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -86,6 +126,16 @@
         }
 
         /// <summary>
+        /// Where the person is stationed.
+        /// </summary>
+        public MeQuery SelectSite(SiteQuery query)
+        {
+            query.FieldName = "site";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Skill pools this person belongs to.
         /// </summary>
         public MeQuery SelectSkillPools(SkillPoolQuery query)
@@ -100,6 +150,26 @@
         public MeQuery SelectTeams(TeamQuery query)
         {
             query.FieldName = "teams";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// UI extension that is linked to the record.
+        /// </summary>
+        public MeQuery SelectUiExtension(UiExtensionQuery query)
+        {
+            query.FieldName = "uiExtension";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Calendar that represents the work hours of the person.
+        /// </summary>
+        public MeQuery SelectWorkHours(CalendarQuery query)
+        {
+            query.FieldName = "workHours";
+            query.IsConnection = false;
             return Select(query);
         }
     }

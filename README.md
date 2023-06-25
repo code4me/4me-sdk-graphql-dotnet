@@ -89,8 +89,22 @@ foreach (Person person in people)
 ##### Specific fields
 ```csharp
 DataList<Person> people = await client.Get(Query.Person
-    .Select(PersonField.ID, PersonField.Name, PersonField.CustomFields));
+    .Select(PersonField.ID, PersonField.Organization, PersonField.Name, PersonField.CustomFields));
 ```
+By using the `Select` method on the `Query.Person` object, you can specify the fields you want to include in the response.
+The example shows the selection of fields such as `ID`, `Organization`, `Name`, and `CustomFields`.
+By default, a set of fields will be returned for all selected GraphQL `OBJECT` type fields, such as `Organization` and `CustomFields`.
+
+```csharp
+DataList<Person> people = await client.Get(Query.Person
+    .Select(PersonField.ID, PersonField.Name)
+        .SelectOrganization(new OrganizationQuery()
+        .Select(OrganizationField.ID, OrganizationField.Name, OrganizationField.Disabled)));
+```
+
+To further refine the selection of fields by using a query for a specific GraphQL `OBJECT` type field, in this case, `Organization`.
+By using the `SelectOrganization` method on the `Query.Person` object, you can specify the fields to include for the `Organization` field.
+The example demonstrates the selection of fields like `ID`, `Name`, and `Disabled` for the `Organization` field.
 
 ##### All fields
 ```csharp

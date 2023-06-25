@@ -14,6 +14,36 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public CustomCollectionElementQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Collection of this element.
+        /// </summary>
+        public CustomCollectionElementQuery SelectCustomCollection(CustomCollectionQuery query)
+        {
+            query.FieldName = "customCollection";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Values of custom fields.
+        /// </summary>
+        public CustomCollectionElementQuery SelectCustomFields(CustomFieldQuery query)
+        {
+            query.FieldName = "customFields";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
         public CustomCollectionElementQuery SelectCustomFieldsAttachments(AttachmentQuery query)
@@ -72,7 +102,7 @@
         /// <br>• Matches are case-sensitive.</br>
         /// </param>
         /// <exception cref="NullReferenceException"></exception>
-        public CustomCollectionElementQuery CustomFilter(string name, FilterOperator filterOperator, params string[] values)
+        public CustomCollectionElementQuery CustomFilter(string name, FilterOperator filterOperator, params string?[] values)
         {
             return AddCustomFilter(name, filterOperator, values);
         }

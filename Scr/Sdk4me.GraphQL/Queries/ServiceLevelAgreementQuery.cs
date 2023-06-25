@@ -14,6 +14,46 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public ServiceLevelAgreementQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The Activity ID is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider. This contains the activityIDs related to request categories.
+        /// </summary>
+        public ServiceLevelAgreementQuery SelectActivityID(ActivityIDQuery query)
+        {
+            query.FieldName = "activityID";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The organization that pays for the agreement.
+        /// </summary>
+        public ServiceLevelAgreementQuery SelectCustomer(OrganizationQuery query)
+        {
+            query.FieldName = "customer";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The customer account this record belongs to.
+        /// </summary>
+        public ServiceLevelAgreementQuery SelectCustomerAccount(AccountQuery query)
+        {
+            query.FieldName = "customerAccount";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// The people who represent the customer organization for the service level agreement.
         /// </summary>
         public ServiceLevelAgreementQuery SelectCustomerRepresentatives(PersonQuery query)
@@ -68,11 +108,41 @@
         }
 
         /// <summary>
+        /// The service instance that will be used to provide the service to the customer of the service level agreement. Only service instances that are linked to the same service as the selected service offering can be selected.
+        /// </summary>
+        public ServiceLevelAgreementQuery SelectServiceInstance(ServiceInstanceQuery query)
+        {
+            query.FieldName = "serviceInstance";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// The service instances that consume the service instance for which the service level agreement is registered. Only available for service level agreements where the <c>coverage</c> field is set to <c>service_instances</c>.
         /// </summary>
         public ServiceLevelAgreementQuery SelectServiceInstances(ParentServiceInstanceQuery query)
         {
             query.FieldName = "serviceInstances";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The person of the service provider organization who acts as the service level manager for the customer of the service level agreement.
+        /// </summary>
+        public ServiceLevelAgreementQuery SelectServiceLevelManager(PersonQuery query)
+        {
+            query.FieldName = "serviceLevelManager";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Service offering that specifies the conditions that apply to the service level agreement.
+        /// </summary>
+        public ServiceLevelAgreementQuery SelectServiceOffering(ServiceOfferingQuery query)
+        {
+            query.FieldName = "serviceOffering";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -100,6 +170,16 @@
         public ServiceLevelAgreementQuery SelectStandardServiceRequestActivityIDs(StandardServiceRequestActivityIDQuery query)
         {
             query.FieldName = "standardServiceRequestActivityIDs";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The support domain account that offers the support to users covered by this the service level agreement.
+        /// </summary>
+        public ServiceLevelAgreementQuery SelectSupportDomain(AccountQuery query)
+        {
+            query.FieldName = "supportDomain";
+            query.IsConnection = false;
             return Select(query);
         }
     }

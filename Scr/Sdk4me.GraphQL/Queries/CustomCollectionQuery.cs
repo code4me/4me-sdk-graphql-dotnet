@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public CustomCollectionQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Elements of this custom collection.
         /// </summary>
         public CustomCollectionQuery SelectCollectionElements(CustomCollectionElementQuery query)
@@ -28,6 +38,16 @@
         public CustomCollectionQuery SelectDescriptionAttachments(AttachmentQuery query)
         {
             query.FieldName = "descriptionAttachments";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// UI extension that is linked to the collection.
+        /// </summary>
+        public CustomCollectionQuery SelectUiExtension(UiExtensionQuery query)
+        {
+            query.FieldName = "uiExtension";
+            query.IsConnection = false;
             return Select(query);
         }
     }

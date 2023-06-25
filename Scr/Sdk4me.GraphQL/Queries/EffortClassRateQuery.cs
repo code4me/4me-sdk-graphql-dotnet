@@ -12,5 +12,25 @@
             : base("", typeof(EffortClassRate), true)
         {
         }
+
+        /// <summary>
+        /// The effort class of the effort class rate.
+        /// </summary>
+        public EffortClassRateQuery SelectEffortClass(EffortClassQuery query)
+        {
+            query.FieldName = "effortClass";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The service offering of the effort class rate.
+        /// </summary>
+        public EffortClassRateQuery SelectServiceOffering(ServiceOfferingQuery query)
+        {
+            query.FieldName = "serviceOffering";
+            query.IsConnection = false;
+            return Select(query);
+        }
     }
 }

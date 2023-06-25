@@ -14,6 +14,36 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public ProjectTaskQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Board this item is placed on.
+        /// </summary>
+        public ProjectTaskQuery SelectAgileBoard(AgileBoardQuery query)
+        {
+            query.FieldName = "agileBoard";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Column this item is placed in.
+        /// </summary>
+        public ProjectTaskQuery SelectAgileBoardColumn(AgileBoardColumnQuery query)
+        {
+            query.FieldName = "agileBoardColumn";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Assignments of the project task.
         /// </summary>
         public ProjectTaskQuery SelectAssignments(ProjectTaskAssignmentQuery query)
@@ -28,6 +58,16 @@
         public ProjectTaskQuery SelectAutomationRules(AutomationRuleQuery query)
         {
             query.FieldName = "automationRules";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Values of custom fields.
+        /// </summary>
+        public ProjectTaskQuery SelectCustomFields(CustomFieldQuery query)
+        {
+            query.FieldName = "customFields";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -59,11 +99,51 @@
         }
 
         /// <summary>
+        /// The PDF design associated with the task.
+        /// </summary>
+        public ProjectTaskQuery SelectPdfDesign(PdfDesignQuery query)
+        {
+            query.FieldName = "pdfDesign";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The phase of the project to which the project task belongs.
+        /// </summary>
+        public ProjectTaskQuery SelectPhase(ProjectPhaseQuery query)
+        {
+            query.FieldName = "phase";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Predecessors of the project task.
         /// </summary>
         public ProjectTaskQuery SelectPredecessors(ProjectTaskQuery query)
         {
             query.FieldName = "predecessors";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The project to which the project task belongs.
+        /// </summary>
+        public ProjectTaskQuery SelectProject(ProjectQuery query)
+        {
+            query.FieldName = "project";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Skill pool that represents the specific expertise needed to complete the task.
+        /// </summary>
+        public ProjectTaskQuery SelectSkillPool(SkillPoolQuery query)
+        {
+            query.FieldName = "skillPool";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -82,6 +162,36 @@
         public ProjectTaskQuery SelectSuccessors(ProjectTaskQuery query)
         {
             query.FieldName = "successors";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The supplier organization that has been asked to assist with the completion of the project task.
+        /// </summary>
+        public ProjectTaskQuery SelectSupplier(OrganizationQuery query)
+        {
+            query.FieldName = "supplier";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The team to which the project task is to be assigned.
+        /// </summary>
+        public ProjectTaskQuery SelectTeam(TeamQuery query)
+        {
+            query.FieldName = "team";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The project task template that was used to register the project task.
+        /// </summary>
+        public ProjectTaskQuery SelectTemplate(ProjectTaskTemplateQuery query)
+        {
+            query.FieldName = "template";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -126,7 +236,7 @@
         /// <br>• Matches are case-sensitive.</br>
         /// </param>
         /// <exception cref="NullReferenceException"></exception>
-        public ProjectTaskQuery CustomFilter(string name, FilterOperator filterOperator, params string[] values)
+        public ProjectTaskQuery CustomFilter(string name, FilterOperator filterOperator, params string?[] values)
         {
             return AddCustomFilter(name, filterOperator, values);
         }

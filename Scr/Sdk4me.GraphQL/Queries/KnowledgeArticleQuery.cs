@@ -14,6 +14,36 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public KnowledgeArticleQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The person who created the knowledge article.
+        /// </summary>
+        public KnowledgeArticleQuery SelectCreatedBy(PersonQuery query)
+        {
+            query.FieldName = "createdBy";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Values of custom fields.
+        /// </summary>
+        public KnowledgeArticleQuery SelectCustomFields(CustomFieldQuery query)
+        {
+            query.FieldName = "customFields";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
         public KnowledgeArticleQuery SelectCustomFieldsAttachments(AttachmentQuery query)
@@ -50,6 +80,16 @@
         }
 
         /// <summary>
+        /// Service for which the knowledge article is made available.
+        /// </summary>
+        public KnowledgeArticleQuery SelectService(ServiceQuery query)
+        {
+            query.FieldName = "service";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Service instances linked to this knowledge article.
         /// </summary>
         public KnowledgeArticleQuery SelectServiceInstances(ServiceInstanceQuery query)
@@ -59,11 +99,31 @@
         }
 
         /// <summary>
+        /// The knowledge article template that this knowledge article is based on.
+        /// </summary>
+        public KnowledgeArticleQuery SelectTemplate(KnowledgeArticleTemplateQuery query)
+        {
+            query.FieldName = "template";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Translations associated with this object.
         /// </summary>
         public KnowledgeArticleQuery SelectTranslations(TranslationQuery query)
         {
             query.FieldName = "translations";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The person who last updated the knowledge article.
+        /// </summary>
+        public KnowledgeArticleQuery SelectUpdatedBy(PersonQuery query)
+        {
+            query.FieldName = "updatedBy";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -99,7 +159,7 @@
         /// <br>• Matches are case-sensitive.</br>
         /// </param>
         /// <exception cref="NullReferenceException"></exception>
-        public KnowledgeArticleQuery CustomFilter(string name, FilterOperator filterOperator, params string[] values)
+        public KnowledgeArticleQuery CustomFilter(string name, FilterOperator filterOperator, params string?[] values)
         {
             return AddCustomFilter(name, filterOperator, values);
         }

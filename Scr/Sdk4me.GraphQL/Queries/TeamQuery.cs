@@ -14,11 +14,71 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public TeamQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Used to automatically link records to the agile board when they are assigned to the team.
+        /// </summary>
+        public TeamQuery SelectAgileBoard(AgileBoardQuery query)
+        {
+            query.FieldName = "agileBoard";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The person who maintains the information about the configuration items that the team supports.
+        /// </summary>
+        public TeamQuery SelectConfigurationManager(PersonQuery query)
+        {
+            query.FieldName = "configurationManager";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The current team coordinator for the team. Only members of the team can be selected in this field.
+        /// </summary>
+        public TeamQuery SelectCoordinator(PersonQuery query)
+        {
+            query.FieldName = "coordinator";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Values of custom fields.
+        /// </summary>
+        public TeamQuery SelectCustomFields(CustomFieldQuery query)
+        {
+            query.FieldName = "customFields";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
         public TeamQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The manager or supervisor of the team. This person is able to maintain the information about the team. The manager of a team does not need to be a member of the team.
+        /// </summary>
+        public TeamQuery SelectManager(PersonQuery query)
+        {
+            query.FieldName = "manager";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -37,6 +97,36 @@
         public TeamQuery SelectRemarksAttachments(AttachmentQuery query)
         {
             query.FieldName = "remarksAttachments";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Scrum workspace used by this team to plan their work.
+        /// </summary>
+        public TeamQuery SelectScrumWorkspace(ScrumWorkspaceQuery query)
+        {
+            query.FieldName = "scrumWorkspace";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// UI extension that is linked to the record.
+        /// </summary>
+        public TeamQuery SelectUiExtension(UiExtensionQuery query)
+        {
+            query.FieldName = "uiExtension";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The calendar that defines the work hours during which the team is available for work on all types of assignments.
+        /// </summary>
+        public TeamQuery SelectWorkHours(CalendarQuery query)
+        {
+            query.FieldName = "workHours";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -72,7 +162,7 @@
         /// <br>• Matches are case-sensitive.</br>
         /// </param>
         /// <exception cref="NullReferenceException"></exception>
-        public TeamQuery CustomFilter(string name, FilterOperator filterOperator, params string[] values)
+        public TeamQuery CustomFilter(string name, FilterOperator filterOperator, params string?[] values)
         {
             return AddCustomFilter(name, filterOperator, values);
         }

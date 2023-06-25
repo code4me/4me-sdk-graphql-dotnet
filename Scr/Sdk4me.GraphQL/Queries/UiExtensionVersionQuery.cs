@@ -12,5 +12,15 @@
             : base("", typeof(UiExtensionVersion), true)
         {
         }
+
+        /// <summary>
+        /// UI extension this version belongs to.
+        /// </summary>
+        public UiExtensionVersionQuery SelectUiExtension(UiExtensionQuery query)
+        {
+            query.FieldName = "uiExtension";
+            query.IsConnection = false;
+            return Select(query);
+        }
     }
 }

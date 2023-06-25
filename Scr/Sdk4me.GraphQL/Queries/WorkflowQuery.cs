@@ -14,11 +14,31 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public WorkflowQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Automation rules associated with this record.
         /// </summary>
         public WorkflowQuery SelectAutomationRules(AutomationRuleQuery query)
         {
             query.FieldName = "automationRules";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Values of custom fields.
+        /// </summary>
+        public WorkflowQuery SelectCustomFields(CustomFieldQuery query)
+        {
+            query.FieldName = "customFields";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -37,6 +57,16 @@
         public WorkflowQuery SelectInvoices(InvoiceQuery query)
         {
             query.FieldName = "invoices";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Who is responsible for coordinating the implementation of the workflow. If a manager is not specified for a new workflow, the API user is selected in the Manager field by default.
+        /// </summary>
+        public WorkflowQuery SelectManager(PersonQuery query)
+        {
+            query.FieldName = "manager";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -68,6 +98,26 @@
         }
 
         /// <summary>
+        /// Linked project
+        /// </summary>
+        public WorkflowQuery SelectProject(ProjectQuery query)
+        {
+            query.FieldName = "project";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The release that the workflow is a part of.
+        /// </summary>
+        public WorkflowQuery SelectRelease(ReleaseQuery query)
+        {
+            query.FieldName = "release";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// All requests of this workflow.
         /// </summary>
         public WorkflowQuery SelectRequests(RequestQuery query)
@@ -77,11 +127,31 @@
         }
 
         /// <summary>
+        /// The service that will directly be affected by the workflow implementation, or in case of an emergency change, the service that was directly affected by the workflow implementation.
+        /// </summary>
+        public WorkflowQuery SelectService(ServiceQuery query)
+        {
+            query.FieldName = "service";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// All tasks of this workflow.
         /// </summary>
         public WorkflowQuery SelectTasks(TaskQuery query)
         {
             query.FieldName = "tasks";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The workflow template that was used to register the workflow.
+        /// </summary>
+        public WorkflowQuery SelectTemplate(WorkflowTemplateQuery query)
+        {
+            query.FieldName = "template";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -117,7 +187,7 @@
         /// <br>• Matches are case-sensitive.</br>
         /// </param>
         /// <exception cref="NullReferenceException"></exception>
-        public WorkflowQuery CustomFilter(string name, FilterOperator filterOperator, params string[] values)
+        public WorkflowQuery CustomFilter(string name, FilterOperator filterOperator, params string?[] values)
         {
             return AddCustomFilter(name, filterOperator, values);
         }

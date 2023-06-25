@@ -14,11 +14,31 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public OrganizationQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Addresses of the record.
         /// </summary>
         public OrganizationQuery SelectAddresses(AddressQuery query)
         {
             query.FieldName = "addresses";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Refers to itself if the organization is a business unit, or refers to the business unit that the organization belongs to.
+        /// </summary>
+        public OrganizationQuery SelectBusinessUnitOrganization(OrganizationQuery query)
+        {
+            query.FieldName = "businessUnitOrganization";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -50,11 +70,51 @@
         }
 
         /// <summary>
+        /// Values of custom fields.
+        /// </summary>
+        public OrganizationQuery SelectCustomFields(CustomFieldQuery query)
+        {
+            query.FieldName = "customFields";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
         public OrganizationQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The manager of the organization.
+        /// </summary>
+        public OrganizationQuery SelectManager(PersonQuery query)
+        {
+            query.FieldName = "manager";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Refers to the order template that is used for purchases of people defined in this organization or its descendants.
+        /// </summary>
+        public OrganizationQuery SelectOrderTemplate(RequestTemplateQuery query)
+        {
+            query.FieldName = "orderTemplate";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The organization's parent organization.
+        /// </summary>
+        public OrganizationQuery SelectParent(OrganizationQuery query)
+        {
+            query.FieldName = "parent";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -95,11 +155,31 @@
         }
 
         /// <summary>
+        /// The person who acts as the substitute of the organization's manager.
+        /// </summary>
+        public OrganizationQuery SelectSubstitute(PersonQuery query)
+        {
+            query.FieldName = "substitute";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Time allocations of this organization.
         /// </summary>
         public OrganizationQuery SelectTimeAllocations(TimeAllocationQuery query)
         {
             query.FieldName = "timeAllocations";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// UI extension that is linked to the record.
+        /// </summary>
+        public OrganizationQuery SelectUiExtension(UiExtensionQuery query)
+        {
+            query.FieldName = "uiExtension";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -135,7 +215,7 @@
         /// <br>• Matches are case-sensitive.</br>
         /// </param>
         /// <exception cref="NullReferenceException"></exception>
-        public OrganizationQuery CustomFilter(string name, FilterOperator filterOperator, params string[] values)
+        public OrganizationQuery CustomFilter(string name, FilterOperator filterOperator, params string?[] values)
         {
             return AddCustomFilter(name, filterOperator, values);
         }

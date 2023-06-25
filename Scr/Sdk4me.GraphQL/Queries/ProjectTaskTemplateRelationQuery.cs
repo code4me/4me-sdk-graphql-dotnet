@@ -21,5 +21,25 @@
             query.FieldName = "automationRules";
             return Select(query);
         }
+
+        /// <summary>
+        /// The phase of the project template that the project task template is a part of.
+        /// </summary>
+        public ProjectTaskTemplateRelationQuery SelectPhase(ProjectTemplatePhaseQuery query)
+        {
+            query.FieldName = "phase";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The project task template that is related to the project template.
+        /// </summary>
+        public ProjectTaskTemplateRelationQuery SelectTaskTemplate(ProjectTaskTemplateQuery query)
+        {
+            query.FieldName = "taskTemplate";
+            query.IsConnection = false;
+            return Select(query);
+        }
     }
 }

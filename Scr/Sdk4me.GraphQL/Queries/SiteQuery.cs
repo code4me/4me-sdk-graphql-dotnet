@@ -14,11 +14,31 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public SiteQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Addresses of the record.
         /// </summary>
         public SiteQuery SelectAddresses(AddressQuery query)
         {
             query.FieldName = "addresses";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Values of custom fields.
+        /// </summary>
+        public SiteQuery SelectCustomFields(CustomFieldQuery query)
+        {
+            query.FieldName = "customFields";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -46,6 +66,16 @@
         public SiteQuery SelectRemarksAttachments(AttachmentQuery query)
         {
             query.FieldName = "remarksAttachments";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// UI extension that is linked to the record.
+        /// </summary>
+        public SiteQuery SelectUiExtension(UiExtensionQuery query)
+        {
+            query.FieldName = "uiExtension";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -81,7 +111,7 @@
         /// <br>• Matches are case-sensitive.</br>
         /// </param>
         /// <exception cref="NullReferenceException"></exception>
-        public SiteQuery CustomFilter(string name, FilterOperator filterOperator, params string[] values)
+        public SiteQuery CustomFilter(string name, FilterOperator filterOperator, params string?[] values)
         {
             return AddCustomFilter(name, filterOperator, values);
         }

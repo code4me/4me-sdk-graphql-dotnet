@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public ConfigurationItemQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Relations to other configuration items.
         /// </summary>
         public ConfigurationItemQuery SelectCiRelations(ConfigurationItemRelationQuery query)
@@ -32,11 +42,31 @@
         }
 
         /// <summary>
+        /// Values of custom fields.
+        /// </summary>
+        public ConfigurationItemQuery SelectCustomFields(CustomFieldQuery query)
+        {
+            query.FieldName = "customFields";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
         public ConfigurationItemQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The internal organization which budget is used to pay for the configuration item. If the CI is leased or rented, the organization that pays the lease or rent is selected in this field. When creating a new CI and a value is not specified for this field, it is set to the financial owner of the CI's product.
+        /// </summary>
+        public ConfigurationItemQuery SelectFinancialOwner(OrganizationQuery query)
+        {
+            query.FieldName = "financialOwner";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -68,6 +98,26 @@
         }
 
         /// <summary>
+        /// Related product.
+        /// </summary>
+        public ConfigurationItemQuery SelectProduct(ProductQuery query)
+        {
+            query.FieldName = "product";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Recurrence for maintenance of the configuration item.
+        /// </summary>
+        public ConfigurationItemQuery SelectRecurrence(RecurrenceQuery query)
+        {
+            query.FieldName = "recurrence";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Files and inline images linked to the Remarks field.
         /// </summary>
         public ConfigurationItemQuery SelectRemarksAttachments(AttachmentQuery query)
@@ -86,6 +136,16 @@
         }
 
         /// <summary>
+        /// Which service instance(s) the configuration item is, or will be, a part of. When creating a new CI and a value is not specified for this field, it is set to the service of the CI's product.
+        /// </summary>
+        public ConfigurationItemQuery SelectService(ServiceQuery query)
+        {
+            query.FieldName = "service";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// All service instances of this configuration item.
         /// </summary>
         public ConfigurationItemQuery SelectServiceInstances(ServiceInstanceQuery query)
@@ -95,11 +155,71 @@
         }
 
         /// <summary>
+        /// Where the CI is located, if it concerns a hardware CI.
+        /// </summary>
+        public ConfigurationItemQuery SelectSite(SiteQuery query)
+        {
+            query.FieldName = "site";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The supplier from which the configuration item (CI) has been obtained. When creating a new CI and a value is not specified for this field, it is set to the supplier of the CI's product.
+        /// </summary>
+        public ConfigurationItemQuery SelectSupplier(OrganizationQuery query)
+        {
+            query.FieldName = "supplier";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The account of the team that supports this configuration item.
+        /// </summary>
+        public ConfigurationItemQuery SelectSupportAccount(AccountQuery query)
+        {
+            query.FieldName = "supportAccount";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The team responsible for supporting the configuration item and maintaining its information in the configuration management database (CMDB). When creating a new CI and a value is not specified for this field, it is set to the support team of the CI's product. Optional when status of CI equals "Removed", required otherwise.
+        /// </summary>
+        public ConfigurationItemQuery SelectSupportTeam(TeamQuery query)
+        {
+            query.FieldName = "supportTeam";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// All users of this configuration item.
         /// </summary>
         public ConfigurationItemQuery SelectUsers(PersonQuery query)
         {
             query.FieldName = "users";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The person who will be responsible for coordinating the workflows that will be generated automatically in accordance with the recurrence schedule.
+        /// </summary>
+        public ConfigurationItemQuery SelectWorkflowManager(PersonQuery query)
+        {
+            query.FieldName = "workflowManager";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The workflow template that is used to periodically maintain the configuration item.
+        /// </summary>
+        public ConfigurationItemQuery SelectWorkflowTemplate(WorkflowTemplateQuery query)
+        {
+            query.FieldName = "workflowTemplate";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -135,7 +255,7 @@
         /// <br>• Matches are case-sensitive.</br>
         /// </param>
         /// <exception cref="NullReferenceException"></exception>
-        public ConfigurationItemQuery CustomFilter(string name, FilterOperator filterOperator, params string[] values)
+        public ConfigurationItemQuery CustomFilter(string name, FilterOperator filterOperator, params string?[] values)
         {
             return AddCustomFilter(name, filterOperator, values);
         }

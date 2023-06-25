@@ -12,5 +12,15 @@
             : base("", typeof(ParentServiceInstance), true)
         {
         }
+
+        /// <summary>
+        /// Service instance consuming the service instance of the service level agreement.
+        /// </summary>
+        public ParentServiceInstanceQuery SelectServiceInstance(ServiceInstanceQuery query)
+        {
+            query.FieldName = "serviceInstance";
+            query.IsConnection = false;
+            return Select(query);
+        }
     }
 }

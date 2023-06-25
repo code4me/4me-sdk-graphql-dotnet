@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public SlaNotificationSchemeQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Rules of the SLA notification scheme.
         /// </summary>
         public SlaNotificationSchemeQuery SelectSlaNotificationRules(SlaNotificationRuleQuery query)

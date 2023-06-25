@@ -12,5 +12,35 @@
             : base("archive", typeof(Archive), true)
         {
         }
+
+        /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public ArchiveQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The archived record.
+        /// </summary>
+        public ArchiveQuery SelectArchived(HasLifeCycleStateQuery query)
+        {
+            query.FieldName = "archived";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The person who archived the record.
+        /// </summary>
+        public ArchiveQuery SelectArchivedBy(PersonQuery query)
+        {
+            query.FieldName = "archivedBy";
+            query.IsConnection = false;
+            return Select(query);
+        }
     }
 }

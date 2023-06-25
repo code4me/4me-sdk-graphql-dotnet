@@ -14,6 +14,26 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public ProjectQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Values of custom fields.
+        /// </summary>
+        public ProjectQuery SelectCustomFields(CustomFieldQuery query)
+        {
+            query.FieldName = "customFields";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
         public ProjectQuery SelectCustomFieldsAttachments(AttachmentQuery query)
@@ -23,11 +43,31 @@
         }
 
         /// <summary>
+        /// Used to select the organization for which the project is to be implemented.
+        /// </summary>
+        public ProjectQuery SelectCustomer(OrganizationQuery query)
+        {
+            query.FieldName = "customer";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Invoices associated with this object.
         /// </summary>
         public ProjectQuery SelectInvoices(InvoiceQuery query)
         {
             query.FieldName = "invoices";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The person who is responsible for coordinating the implementation of the project.
+        /// </summary>
+        public ProjectQuery SelectManager(PersonQuery query)
+        {
+            query.FieldName = "manager";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -77,11 +117,41 @@
         }
 
         /// <summary>
+        /// The service for which the project will be implemented.
+        /// </summary>
+        public ProjectQuery SelectService(ServiceQuery query)
+        {
+            query.FieldName = "service";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Tasks of the project.
         /// </summary>
         public ProjectQuery SelectTasks(ProjectTaskQuery query)
         {
             query.FieldName = "tasks";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// UI extension that is linked to the record.
+        /// </summary>
+        public ProjectQuery SelectUiExtension(UiExtensionQuery query)
+        {
+            query.FieldName = "uiExtension";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The calendar that defines the work hours that are to be used to calculate the anticipated assignment and completion target for the tasks of the project.
+        /// </summary>
+        public ProjectQuery SelectWorkHours(CalendarQuery query)
+        {
+            query.FieldName = "workHours";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -126,7 +196,7 @@
         /// <br>• Matches are case-sensitive.</br>
         /// </param>
         /// <exception cref="NullReferenceException"></exception>
-        public ProjectQuery CustomFilter(string name, FilterOperator filterOperator, params string[] values)
+        public ProjectQuery CustomFilter(string name, FilterOperator filterOperator, params string?[] values)
         {
             return AddCustomFilter(name, filterOperator, values);
         }

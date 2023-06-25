@@ -12,5 +12,15 @@
             : base("", typeof(ProjectTaskAssignment), true)
         {
         }
+
+        /// <summary>
+        /// The person who is selected as the assignee for the assignment.
+        /// </summary>
+        public ProjectTaskAssignmentQuery SelectAssignee(PersonQuery query)
+        {
+            query.FieldName = "assignee";
+            query.IsConnection = false;
+            return Select(query);
+        }
     }
 }

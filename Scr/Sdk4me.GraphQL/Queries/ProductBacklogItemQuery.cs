@@ -12,5 +12,15 @@
             : base("", typeof(ProductBacklogItem), true)
         {
         }
+
+        /// <summary>
+        /// Product backlog this item is placed on.
+        /// </summary>
+        public ProductBacklogItemQuery SelectProductBacklog(ProductBacklogQuery query)
+        {
+            query.FieldName = "productBacklog";
+            query.IsConnection = false;
+            return Select(query);
+        }
     }
 }

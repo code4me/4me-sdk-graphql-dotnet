@@ -12,5 +12,15 @@
             : base("", typeof(StandardServiceRequestActivityID), true)
         {
         }
+
+        /// <summary>
+        /// The standard service request for which an activityID is provided.
+        /// </summary>
+        public StandardServiceRequestActivityIDQuery SelectStandardServiceRequest(StandardServiceRequestQuery query)
+        {
+            query.FieldName = "standardServiceRequest";
+            query.IsConnection = false;
+            return Select(query);
+        }
     }
 }

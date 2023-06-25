@@ -12,5 +12,15 @@
             : base("", typeof(EffortClassChargeID), true)
         {
         }
+
+        /// <summary>
+        /// The effort class for which a chargeID is provided.
+        /// </summary>
+        public EffortClassChargeIDQuery SelectEffortClass(EffortClassQuery query)
+        {
+            query.FieldName = "effortClass";
+            query.IsConnection = false;
+            return Select(query);
+        }
     }
 }

@@ -14,6 +14,36 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public UiExtensionQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The version with Status <c>active</c>.
+        /// </summary>
+        public UiExtensionQuery SelectActiveVersion(UiExtensionVersionQuery query)
+        {
+            query.FieldName = "activeVersion";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The person who created the UI extension.
+        /// </summary>
+        public UiExtensionQuery SelectCreatedBy(PersonQuery query)
+        {
+            query.FieldName = "createdBy";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Files and inline images linked to the Description field.
         /// </summary>
         public UiExtensionQuery SelectDescriptionAttachments(AttachmentQuery query)
@@ -28,6 +58,16 @@
         public UiExtensionQuery SelectTranslations(TranslationQuery query)
         {
             query.FieldName = "translations";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The person who last updated the UI extension.
+        /// </summary>
+        public UiExtensionQuery SelectUpdatedBy(PersonQuery query)
+        {
+            query.FieldName = "updatedBy";
+            query.IsConnection = false;
             return Select(query);
         }
 

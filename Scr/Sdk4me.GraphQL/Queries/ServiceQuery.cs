@@ -14,6 +14,66 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public ServiceQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The person who is responsible for ensuring that the availability targets specified in the active SLAs for the service are met.
+        /// </summary>
+        public ServiceQuery SelectAvailabilityManager(PersonQuery query)
+        {
+            query.FieldName = "availabilityManager";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The person who is responsible for ensuring that the service is not affected by incidents that are caused by capacity shortages.
+        /// </summary>
+        public ServiceQuery SelectCapacityManager(PersonQuery query)
+        {
+            query.FieldName = "capacityManager";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The person who is responsible for coordinating the changes of the service.
+        /// </summary>
+        public ServiceQuery SelectChangeManager(PersonQuery query)
+        {
+            query.FieldName = "changeManager";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The person who is responsible for creating and maintaining the continuity plans for the service's instances that have an active SLA with a continuity target.
+        /// </summary>
+        public ServiceQuery SelectContinuityManager(PersonQuery query)
+        {
+            query.FieldName = "continuityManager";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Values of custom fields.
+        /// </summary>
+        public ServiceQuery SelectCustomFields(CustomFieldQuery query)
+        {
+            query.FieldName = "customFields";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
         public ServiceQuery SelectCustomFieldsAttachments(AttachmentQuery query)
@@ -28,6 +88,46 @@
         public ServiceQuery SelectDescriptionAttachments(AttachmentQuery query)
         {
             query.FieldName = "descriptionAttachments";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The team that will, by default, be selected in the First line team field of a new service instance when it is being registered for the service.
+        /// </summary>
+        public ServiceQuery SelectFirstLineTeam(TeamQuery query)
+        {
+            query.FieldName = "firstLineTeam";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The person who is responsible for the quality of the knowledge articles for the service.
+        /// </summary>
+        public ServiceQuery SelectKnowledgeManager(PersonQuery query)
+        {
+            query.FieldName = "knowledgeManager";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The person who is responsible for coordinating the problems that directly affect the service.
+        /// </summary>
+        public ServiceQuery SelectProblemManager(PersonQuery query)
+        {
+            query.FieldName = "problemManager";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The person who is responsible for coordinating the releases of the service.
+        /// </summary>
+        public ServiceQuery SelectReleaseManager(PersonQuery query)
+        {
+            query.FieldName = "releaseManager";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -59,11 +159,61 @@
         }
 
         /// <summary>
+        /// The person who is responsible for ensuring that the service level targets specified in the SLAs for the service are met.
+        /// </summary>
+        public ServiceQuery SelectServiceOwner(PersonQuery query)
+        {
+            query.FieldName = "serviceOwner";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The organization that provides the service.
+        /// </summary>
+        public ServiceQuery SelectServiceProvider(OrganizationQuery query)
+        {
+            query.FieldName = "serviceProvider";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The team  that will, by default, be selected in the Support team field of a service instance when one is registered for the service. Similarly, this team will be selected in the Team field of a problem when the service is related to it.
+        /// </summary>
+        public ServiceQuery SelectSupportTeam(TeamQuery query)
+        {
+            query.FieldName = "supportTeam";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Survey used to measure customer rating of this service.
+        /// </summary>
+        public ServiceQuery SelectSurvey(SurveyQuery query)
+        {
+            query.FieldName = "survey";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Translations associated with this object.
         /// </summary>
         public ServiceQuery SelectTranslations(TranslationQuery query)
         {
             query.FieldName = "translations";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// UI extension that is linked to the record.
+        /// </summary>
+        public ServiceQuery SelectUiExtension(UiExtensionQuery query)
+        {
+            query.FieldName = "uiExtension";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -99,7 +249,7 @@
         /// <br>• Matches are case-sensitive.</br>
         /// </param>
         /// <exception cref="NullReferenceException"></exception>
-        public ServiceQuery CustomFilter(string name, FilterOperator filterOperator, params string[] values)
+        public ServiceQuery CustomFilter(string name, FilterOperator filterOperator, params string?[] values)
         {
             return AddCustomFilter(name, filterOperator, values);
         }

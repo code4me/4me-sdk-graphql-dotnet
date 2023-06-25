@@ -14,6 +14,26 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public ReleaseQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Values of custom fields.
+        /// </summary>
+        public ReleaseQuery SelectCustomFields(CustomFieldQuery query)
+        {
+            query.FieldName = "customFields";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
         public ReleaseQuery SelectCustomFieldsAttachments(AttachmentQuery query)
@@ -23,11 +43,31 @@
         }
 
         /// <summary>
+        /// The person who is responsible for coordinating the implementation of the release. The person must have the release Manager role.
+        /// </summary>
+        public ReleaseQuery SelectManager(PersonQuery query)
+        {
+            query.FieldName = "manager";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Notes of the record.
         /// </summary>
         public ReleaseQuery SelectNotes(NoteQuery query)
         {
             query.FieldName = "notes";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// UI extension that is linked to the record.
+        /// </summary>
+        public ReleaseQuery SelectUiExtension(UiExtensionQuery query)
+        {
+            query.FieldName = "uiExtension";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -72,7 +112,7 @@
         /// <br>• Matches are case-sensitive.</br>
         /// </param>
         /// <exception cref="NullReferenceException"></exception>
-        public ReleaseQuery CustomFilter(string name, FilterOperator filterOperator, params string[] values)
+        public ReleaseQuery CustomFilter(string name, FilterOperator filterOperator, params string?[] values)
         {
             return AddCustomFilter(name, filterOperator, values);
         }

@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public ContractQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// All configuration items of the contract.
         /// </summary>
         public ContractQuery SelectConfigurationItems(ConfigurationItemQuery query)
@@ -23,11 +33,51 @@
         }
 
         /// <summary>
+        /// Values of custom fields.
+        /// </summary>
+        public ContractQuery SelectCustomFields(CustomFieldQuery query)
+        {
+            query.FieldName = "customFields";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
         public ContractQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The organization that pays for the agreement.
+        /// </summary>
+        public ContractQuery SelectCustomer(OrganizationQuery query)
+        {
+            query.FieldName = "customer";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The customer account this record belongs to.
+        /// </summary>
+        public ContractQuery SelectCustomerAccount(AccountQuery query)
+        {
+            query.FieldName = "customerAccount";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The person who represents the customer organization for the contract.
+        /// </summary>
+        public ContractQuery SelectCustomerRepresentative(PersonQuery query)
+        {
+            query.FieldName = "customerRepresentative";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -46,6 +96,36 @@
         public ContractQuery SelectRemarksAttachments(AttachmentQuery query)
         {
             query.FieldName = "remarksAttachments";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The organization that has provided the contract to the customer.
+        /// </summary>
+        public ContractQuery SelectSupplier(OrganizationQuery query)
+        {
+            query.FieldName = "supplier";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The person who represents the supplier of the contract.
+        /// </summary>
+        public ContractQuery SelectSupplierContact(PersonQuery query)
+        {
+            query.FieldName = "supplierContact";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// UI extension that is linked to the record.
+        /// </summary>
+        public ContractQuery SelectUiExtension(UiExtensionQuery query)
+        {
+            query.FieldName = "uiExtension";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -81,7 +161,7 @@
         /// <br>• Matches are case-sensitive.</br>
         /// </param>
         /// <exception cref="NullReferenceException"></exception>
-        public ContractQuery CustomFilter(string name, FilterOperator filterOperator, params string[] values)
+        public ContractQuery CustomFilter(string name, FilterOperator filterOperator, params string?[] values)
         {
             return AddCustomFilter(name, filterOperator, values);
         }

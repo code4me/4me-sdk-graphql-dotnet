@@ -14,11 +14,41 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public RiskQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Values of custom fields.
+        /// </summary>
+        public RiskQuery SelectCustomFields(CustomFieldQuery query)
+        {
+            query.FieldName = "customFields";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
         public RiskQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The manager of the risk. This person is able to maintain the information about the risk.
+        /// </summary>
+        public RiskQuery SelectManager(PersonQuery query)
+        {
+            query.FieldName = "manager";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -59,6 +89,16 @@
         }
 
         /// <summary>
+        /// UI extension that is linked to the record.
+        /// </summary>
+        public RiskQuery SelectUiExtension(UiExtensionQuery query)
+        {
+            query.FieldName = "uiExtension";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// <br>Filter the 'Risk' by their custom fields that have been marked as 'Filterable' in their UI Extension.</br>
         /// <br>Additional information is available on the <see href="https://developer.4me.com/graphql/input_object/riskcustomfilter/">4me developer site</see>.</br>
         /// </summary>
@@ -90,7 +130,7 @@
         /// <br>• Matches are case-sensitive.</br>
         /// </param>
         /// <exception cref="NullReferenceException"></exception>
-        public RiskQuery CustomFilter(string name, FilterOperator filterOperator, params string[] values)
+        public RiskQuery CustomFilter(string name, FilterOperator filterOperator, params string?[] values)
         {
             return AddCustomFilter(name, filterOperator, values);
         }

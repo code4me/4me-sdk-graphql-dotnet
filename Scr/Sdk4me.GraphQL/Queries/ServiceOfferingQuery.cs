@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public ServiceOfferingQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Inline images linked to the Charges field.
         /// </summary>
         public ServiceOfferingQuery SelectChargesAttachments(AttachmentQuery query)
@@ -28,6 +38,16 @@
         public ServiceOfferingQuery SelectContinuityAttachments(AttachmentQuery query)
         {
             query.FieldName = "continuityAttachments";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The effort class that is selected by default, when someone registers time on a request with an active affected SLA based on the service offering.
+        /// </summary>
+        public ServiceOfferingQuery SelectDefaultEffortClass(EffortClassQuery query)
+        {
+            query.FieldName = "defaultEffortClass";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -86,6 +106,26 @@
         }
 
         /// <summary>
+        /// The service for which the service offering is being prepared.
+        /// </summary>
+        public ServiceOfferingQuery SelectService(ServiceQuery query)
+        {
+            query.FieldName = "service";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Calendar that defines the hours during which the service is supposed to be available.
+        /// </summary>
+        public ServiceOfferingQuery SelectServiceHours(CalendarQuery query)
+        {
+            query.FieldName = "serviceHours";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Service level agreements of the service offering.
         /// </summary>
         public ServiceOfferingQuery SelectServiceLevelAgreements(ServiceLevelAgreementQuery query)
@@ -104,6 +144,46 @@
         }
 
         /// <summary>
+        /// The SLA notification scheme for a request with the impact "High - Service Degraded for Several Users" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        public ServiceOfferingQuery SelectSlaNotificationSchemeHigh(SlaNotificationSchemeQuery query)
+        {
+            query.FieldName = "slaNotificationSchemeHigh";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The SLA notification scheme for a request with the impact "Low - Service Degraded for One User" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        public ServiceOfferingQuery SelectSlaNotificationSchemeLow(SlaNotificationSchemeQuery query)
+        {
+            query.FieldName = "slaNotificationSchemeLow";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The SLA notification scheme for a request with the impact "Medium - Service Down for One User" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        public ServiceOfferingQuery SelectSlaNotificationSchemeMedium(SlaNotificationSchemeQuery query)
+        {
+            query.FieldName = "slaNotificationSchemeMedium";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The SLA notification scheme for a request with the impact "Top - Service Down for Several Users" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        public ServiceOfferingQuery SelectSlaNotificationSchemeTop(SlaNotificationSchemeQuery query)
+        {
+            query.FieldName = "slaNotificationSchemeTop";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Standard service requests of the service offering.
         /// </summary>
         public ServiceOfferingQuery SelectStandardServiceRequests(StandardServiceRequestQuery query)
@@ -118,6 +198,66 @@
         public ServiceOfferingQuery SelectSummaryAttachments(AttachmentQuery query)
         {
             query.FieldName = "summaryAttachments";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The calendar that defines the support hours for a request with the impact "High - Service Degraded for Several Users" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        public ServiceOfferingQuery SelectSupportHoursHigh(CalendarQuery query)
+        {
+            query.FieldName = "supportHoursHigh";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The calendar that defines the support hours for a request with the impact "Low - Service Degraded for One User" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        public ServiceOfferingQuery SelectSupportHoursLow(CalendarQuery query)
+        {
+            query.FieldName = "supportHoursLow";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The calendar that defines the support hours for a request with the impact "Medium - Service Down for One User" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        public ServiceOfferingQuery SelectSupportHoursMedium(CalendarQuery query)
+        {
+            query.FieldName = "supportHoursMedium";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The calendar that defines the support hours for a request with the category "RFC - Request for Change" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        public ServiceOfferingQuery SelectSupportHoursRfc(CalendarQuery query)
+        {
+            query.FieldName = "supportHoursRfc";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The calendar that defines the support hours for a request with the category "RFI - Request for Information" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        public ServiceOfferingQuery SelectSupportHoursRfi(CalendarQuery query)
+        {
+            query.FieldName = "supportHoursRfi";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The calendar that defines the support hours for a request with the impact "Top - Service Down for Several Users" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        public ServiceOfferingQuery SelectSupportHoursTop(CalendarQuery query)
+        {
+            query.FieldName = "supportHoursTop";
+            query.IsConnection = false;
             return Select(query);
         }
 

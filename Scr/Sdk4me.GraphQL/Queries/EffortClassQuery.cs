@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public EffortClassQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Service offerings of this effort class.
         /// </summary>
         public EffortClassQuery SelectServiceOfferings(ServiceOfferingQuery query)

@@ -14,6 +14,26 @@
         }
 
         /// <summary>
+        /// The account this record belongs to.
+        /// </summary>
+        public AppInstanceQuery SelectAccount(AccountQuery query)
+        {
+            query.FieldName = "account";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// App offering (version) this instance is at.
+        /// </summary>
+        public AppInstanceQuery SelectAppOffering(AppOfferingQuery query)
+        {
+            query.FieldName = "appOffering";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Automation rules of this instance.
         /// </summary>
         public AppInstanceQuery SelectAutomationRules(AutomationRuleQuery query)
@@ -23,11 +43,61 @@
         }
 
         /// <summary>
+        /// Values of custom fields.
+        /// </summary>
+        public AppInstanceQuery SelectCustomFields(CustomFieldQuery query)
+        {
+            query.FieldName = "customFields";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
         public AppInstanceQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Account this app instance is for.
+        /// </summary>
+        public AppInstanceQuery SelectCustomerAccount(AccountQuery query)
+        {
+            query.FieldName = "customerAccount";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Contact person of customer regarding this app instance.
+        /// </summary>
+        public AppInstanceQuery SelectCustomerRepresentative(PersonQuery query)
+        {
+            query.FieldName = "customerRepresentative";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Webhook of this app instance.
+        /// </summary>
+        public AppInstanceQuery SelectWebhook(WebhookQuery query)
+        {
+            query.FieldName = "webhook";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The current policy used for the instance's webhook.
+        /// </summary>
+        public AppInstanceQuery SelectWebhookPolicy(WebhookPolicyQuery query)
+        {
+            query.FieldName = "webhookPolicy";
+            query.IsConnection = false;
             return Select(query);
         }
 
@@ -63,7 +133,7 @@
         /// <br>• Matches are case-sensitive.</br>
         /// </param>
         /// <exception cref="NullReferenceException"></exception>
-        public AppInstanceQuery CustomFilter(string name, FilterOperator filterOperator, params string[] values)
+        public AppInstanceQuery CustomFilter(string name, FilterOperator filterOperator, params string?[] values)
         {
             return AddCustomFilter(name, filterOperator, values);
         }
