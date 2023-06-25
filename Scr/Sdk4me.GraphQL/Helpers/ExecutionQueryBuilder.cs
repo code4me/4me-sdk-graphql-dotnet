@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using Newtonsoft.Json.Linq;
+using System.Reflection;
 using System.Text;
 
 namespace Sdk4me.GraphQL
@@ -76,10 +77,14 @@ namespace Sdk4me.GraphQL
 
                 if (executionQuery.Depth.Equals(0))
                 {
-                    if (executionQuery.Filters.Count > 0 || executionQuery.CustomFilters.Count > 0)
+                    if (executionQuery.Filters.Count > 0 || executionQuery.CustomFilters.Count > 0 || executionQuery.QueryFilter != string.Empty)
                     {
                         builder.Append($" filter:{{");
-                        builder.Append(string.Join(" ", executionQuery.Filters));
+
+                        if (executionQuery.Filters.Count > 0)
+                        {
+                            builder.Append(string.Join(" ", executionQuery.Filters));
+                        }
 
                         if (executionQuery.CustomFilters.Count > 0)
                         {
@@ -89,6 +94,14 @@ namespace Sdk4me.GraphQL
                             builder.Append(string.Join(" ", executionQuery.CustomFilters));
                             builder.Append(']');
                         }
+
+                        if (executionQuery.QueryFilter != string.Empty)
+                        {
+                            if (executionQuery.Filters.Count > 0 || executionQuery.CustomFilters.Count > 0)
+                                builder.Append(' ');
+                            builder.Append(executionQuery.QueryFilter);
+                        }
+
                         builder.Append('}');
                     }
 
@@ -163,6 +176,7 @@ namespace Sdk4me.GraphQL
                 OrderByOrder = query.SelectedOrderByOrder,
                 ItemsPerRequest = query.SelectedItemsPerRequest ?? defaultItemsPerRequest,
                 Filters = query.Filters.ToHashSet(),
+                QueryFilter = query.QueryFilter,
                 CustomFilters = query.CustomFilters.ToHashSet(),
                 Fields = GetExecutionQueryFields(query.DataType, query.SelectedFields),
                 IsConnection = query.IsConnection,
@@ -300,7 +314,7 @@ namespace Sdk4me.GraphQL
             return retval;
         }
 
-        internal static string BuildDateTimeFilter(string field, FilterOperator filterOperator, params DateTime[] values)
+        internal static string BuildDateTimeFilter(string field, FilterOperator filterOperator, params DateTime?[] values)
         {
             string[] serializedValue = SerializeObject(values);
 
@@ -344,6 +358,11 @@ namespace Sdk4me.GraphQL
                 throw new Sdk4meFilterException("Invalid boolean filter operator");
         }
 
+        internal static string BuildQueryFilter(string? value)
+        {
+            return value == null ? string.Empty : $"query:{SerializeObject(value)}";
+        }
+
         internal static string BuildCustomFilter(string name, FilterOperator filterOperator, params string?[] values)
         {
             if (filterOperator == FilterOperator.In || filterOperator == FilterOperator.NotIn || filterOperator == FilterOperator.Equals || filterOperator == FilterOperator.NotEquals)
@@ -359,7 +378,7 @@ namespace Sdk4me.GraphQL
                 builder.Append(serializedValues.Length switch
                 {
                     0 => "[null]",
-                    1 => $"[{string.Join(',', serializedValues)}]",
+                    1 => $"[{serializedValues[0]}]",
                     _ => $"[{string.Join(',', serializedValues)}]"
                 });
                 builder.Append('}');
@@ -371,7 +390,7 @@ namespace Sdk4me.GraphQL
             }
             else if (filterOperator == FilterOperator.Empty)
             {
-                return $"customFilters:{{name:{SerializeObject(name)} values:[null]}}";
+                return $"{{name:{SerializeObject(name)} values:[null]}}";
             }
             else
             {
@@ -379,7 +398,7 @@ namespace Sdk4me.GraphQL
             }
         }
 
-        internal static string BuildStringFilter(string field, FilterOperator filterOperator, params string[] values)
+        internal static string BuildStringFilter(string field, FilterOperator filterOperator, params string?[] values)
         {
             if (filterOperator == FilterOperator.In || filterOperator == FilterOperator.NotIn || filterOperator == FilterOperator.Equals || filterOperator == FilterOperator.NotEquals)
             {
@@ -394,7 +413,7 @@ namespace Sdk4me.GraphQL
                 builder.Append(serializedValues.Length switch
                 {
                     0 => "[]",
-                    1 => $"{serializedValues[0]}",
+                    1 => $"[{serializedValues[0]}]",
                     _ => $"[{string.Join(',', serializedValues)}]"
                 });
                 builder.Append('}');
@@ -429,11 +448,17 @@ namespace Sdk4me.GraphQL
             return retval.ToArray();
         }
 
-        private static string[] SerializeObject(params DateTime[] values)
+        private static string[] SerializeObject(params DateTime?[] values)
         {
             List<string> retval = new();
-            foreach (DateTime value in values)
-                retval.Add(JsonConvert.SerializeObject(value));
+            foreach (DateTime? value in values)
+            {
+                if (value == null)
+                    retval.Add("null");
+                else
+                    retval.Add(JsonConvert.SerializeObject(value));
+            }
+                
             return retval.ToArray();
         }
     }

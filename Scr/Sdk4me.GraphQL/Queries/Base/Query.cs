@@ -18,6 +18,7 @@
         private readonly Dictionary<string, IQuery> queries = new();
         private readonly HashSet<string> filters = new();
         private readonly HashSet<string> customFilters = new();
+        private string queryFilter = string.Empty;
         private string fieldName = string.Empty;
         private string view = string.Empty;
         private string orderByOrder = string.Empty;
@@ -108,6 +109,14 @@
         public ImmutableHashSet<string> Filters
         {
             get => filters.ToImmutableHashSet();
+        }
+
+        /// <summary>
+        /// Get the free format search query filter.
+        /// </summary>
+        public string QueryFilter
+        {
+            get => queryFilter;
         }
 
         /// <summary>
@@ -263,7 +272,7 @@
         /// <param name="values">The filter values.</param>
         /// <returns>The current <see cref="IQuery"/>.</returns>
         /// <exception cref="NullReferenceException"></exception>
-        public TEntity Filter(string field, FilterOperator filterOperator, params string[] values)
+        public TEntity Filter(string field, FilterOperator filterOperator, params string?[] values)
         {
             filters.Add(ExecutionQueryBuilder.BuildStringFilter(field, filterOperator, values));
             return this as TEntity ?? throw new NullReferenceException(nameof(TEntity));
@@ -277,7 +286,7 @@
         /// <param name="values">The filter values.</param>
         /// <returns>The current <see cref="IQuery"/>.</returns>
         /// <exception cref="NullReferenceException"></exception>
-        public TEntity Filter(TFields field, FilterOperator filterOperator, params string[] values)
+        public TEntity Filter(TFields field, FilterOperator filterOperator, params string?[] values)
         {
             return Filter(GetEnumStringValue(field), filterOperator, values);
         }
@@ -290,7 +299,7 @@
         /// <param name="values">The filter values.</param>
         /// <returns>The current <see cref="IQuery"/>.</returns>
         /// <exception cref="NullReferenceException"></exception>
-        public TEntity Filter(string field, FilterOperator filterOperator, params DateTime[] values)
+        public TEntity Filter(string field, FilterOperator filterOperator, params DateTime?[] values)
         {
             filters.Add(ExecutionQueryBuilder.BuildDateTimeFilter(field, filterOperator, values));
             return this as TEntity ?? throw new NullReferenceException(nameof(TEntity));
@@ -304,7 +313,7 @@
         /// <param name="values">The filter values.</param>
         /// <returns>The current <see cref="IQuery"/>.</returns>
         /// <exception cref="NullReferenceException"></exception>
-        public TEntity Filter(TFields field, FilterOperator filterOperator, params DateTime[] values)
+        public TEntity Filter(TFields field, FilterOperator filterOperator, params DateTime?[] values)
         {
             return Filter(GetEnumStringValue(field), filterOperator, values);
         }
@@ -334,6 +343,18 @@
         public TEntity Filter(TFields field, FilterOperator filterOperator, bool value)
         {
             return Filter(GetEnumStringValue(field), filterOperator, value);
+        }
+
+        /// <summary>
+        /// Set the free format search query filter.
+        /// </summary>
+        /// <param name="value">The filter value.</param>
+        /// <returns>The current <see cref="IQuery"/>.</returns>
+        /// <exception cref="NullReferenceException"></exception>
+        public TEntity FreeFormatFilter(string? value)
+        {
+            queryFilter = ExecutionQueryBuilder.BuildQueryFilter(value);
+            return this as TEntity ?? throw new NullReferenceException(nameof(TEntity));
         }
 
         /// <summary>

@@ -17,6 +17,7 @@
         private List<ExecutionQuery> queries = new();
         private HashSet<string> filters = new();
         private HashSet<string> customFilters = new();
+        private string queryFilter = string.Empty;
         private string endCursor = string.Empty;
         private bool onlyQueryID = false;
 
@@ -136,6 +137,15 @@
         {
             get => filters;
             set => filters = value;
+        }
+
+        /// <summary>
+        /// Get or set the query filter.
+        /// </summary>
+        internal string QueryFilter
+        {
+            get => queryFilter;
+            set => queryFilter = value;
         }
 
         /// <summary>

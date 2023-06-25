@@ -59,6 +59,11 @@
         public ImmutableHashSet<string> Filters { get; }
 
         /// <summary>
+        /// Get the free format search query filter.
+        /// </summary>
+        public string QueryFilter { get; }
+
+        /// <summary>
         /// Get all custom filters.
         /// </summary>
         public ImmutableHashSet<string> CustomFilters { get; }
