@@ -344,7 +344,7 @@
         /// <param name="values">The filter values.</param>
         /// <returns>The current <see cref="IQuery"/>.</returns>
         /// <exception cref="NullReferenceException"></exception>
-        internal protected TEntity AddCustomFilter(string name, FilterOperator filterOperator, params string[] values)
+        internal protected TEntity AddCustomFilter(string name, FilterOperator filterOperator, params string?[] values)
         {
             customFilters.Add(ExecutionQueryBuilder.BuildCustomFilter(name, filterOperator, values));
             return this as TEntity ?? throw new NullReferenceException(nameof(TEntity));

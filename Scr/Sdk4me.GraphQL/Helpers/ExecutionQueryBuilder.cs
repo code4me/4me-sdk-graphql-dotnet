@@ -359,7 +359,7 @@ namespace Sdk4me.GraphQL
                 builder.Append(serializedValues.Length switch
                 {
                     0 => "[null]",
-                    1 => $"{serializedValues[0]}",
+                    1 => $"[{string.Join(',', serializedValues)}]",
                     _ => $"[{string.Join(',', serializedValues)}]"
                 });
                 builder.Append('}');
