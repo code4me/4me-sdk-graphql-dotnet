@@ -451,8 +451,7 @@ namespace Sdk4me.GraphQL
         private static string[] SerializeObject(params string?[] values)
         {
             List<string> retval = new();
-            if (values == null)
-                values = Array.Empty<string>();
+            values ??= Array.Empty<string>();
             foreach (string? value in values)
                 retval.Add(SerializeObject(value));
             return retval.ToArray();

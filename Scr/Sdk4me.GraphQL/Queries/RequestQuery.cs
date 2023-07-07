@@ -347,7 +347,7 @@
         /// <exception cref="NullReferenceException"></exception>
         public RequestQuery CustomFilter(string name, FilterOperator filterOperator, params string?[] values)
         {
-            return AddCustomFilter(name, filterOperator, values ?? new string?[] { null });
+            return AddCustomFilter(name, filterOperator, values);
         }
     }
 }

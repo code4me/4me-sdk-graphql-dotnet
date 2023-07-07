@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json.Converters;
 using System.Diagnostics;
 using System.Net.Http.Headers;
-using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -312,29 +311,61 @@ namespace Sdk4me.GraphQL
             if (!file.Exists)
                 throw new FileNotFoundException(file.FullName);
 
+            using (FileStream stream = file.OpenRead())
+                return await UploadAttachment(stream as Stream, file.Name, contentType);
+        }
+
+        /// <summary>
+        /// Upload a file to the 4me AWS S3 storage. 
+        /// </summary>
+        /// <param name="stream">The content to upload. The stream needs to support seeking in order to determine the HTTP Content-Length header.</param>
+        /// <param name="fileName">The file name.</param>
+        /// <param name="contentType">The content type of the file.</param>
+        /// <returns>A <see cref="AttachmentUploadResponse"/> containing the 4me AWS S3 file storage reference key and file size.</returns>
+        /// <exception cref="FileNotFoundException"></exception>
+        /// <exception cref="Sdk4meException"></exception>
+        public async Task<AttachmentUploadResponse> UploadAttachment(StreamReader stream, string fileName, string contentType)
+        {
+            return await UploadAttachment(stream.BaseStream, fileName, contentType);
+        }
+
+        /// <summary>
+        /// Upload a file to the 4me AWS S3 storage. 
+        /// </summary>
+        /// <param name="stream">The content to upload. The stream needs to support seeking in order to determine the HTTP Content-Length header.</param>
+        /// <param name="fileName">The file name.</param>
+        /// <param name="contentType">The content type of the file.</param>
+        /// <returns>A <see cref="AttachmentUploadResponse"/> containing the 4me AWS S3 file storage reference key and file size.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public async Task<AttachmentUploadResponse> UploadAttachment(Stream stream, string fileName, string contentType)
+        {
+            if (!stream.CanSeek)
+                throw new Sdk4meException("The stream needs to support seeking in order to determine the HTTP Content-Length header.");
+
             DataList<AttachmentStorage> attachmentStorages = await Get<AttachmentStorage>(Query.AttachmentStorage);
             if (attachmentStorages.FirstOrDefault() is AttachmentStorage attachmentStorage)
             {
-                if (attachmentStorage.AllowedExtensions != null && attachmentStorage.AllowedExtensions.Contains(file.Extension.TrimStart('.')))
+                string fileExtension = Path.GetExtension(fileName).TrimStart('.');
+                if (attachmentStorage.AllowedExtensions != null && attachmentStorage.AllowedExtensions.Contains(fileExtension, StringComparer.InvariantCultureIgnoreCase))
                 {
-                    if (file.Length >= attachmentStorage.SizeLimit)
+                    if (stream.Length >= attachmentStorage.SizeLimit)
                         throw new Sdk4meException($"File size exceeded, the maximum size is {attachmentStorage.SizeLimit} byte");
 
                     Dictionary<string, string> storageFacility = attachmentStorage?.ProviderParameters?.ToObject<Dictionary<string, string>>() ?? throw new Sdk4meException("File upload failed, invalid AttachmentStorage.ProviderParameters value.");
                     MultipartFormDataContent multipartContent = new()
-                {
-                    { new StringContent(contentType), "Content-Type" },
-                    { new StringContent(storageFacility["acl"]), "acl" },
-                    { new StringContent(storageFacility["key"]), "key" },
-                    { new StringContent(storageFacility["policy"]), "policy" },
-                    { new StringContent(storageFacility["success_action_status"]), "success_action_status" },
-                    { new StringContent(storageFacility["x-amz-algorithm"]), "x-amz-algorithm" },
-                    { new StringContent(storageFacility["x-amz-credential"]), "x-amz-credential" },
-                    { new StringContent(storageFacility["x-amz-date"]), "x-amz-date" },
-                    { new StringContent(storageFacility["x-amz-server-side-encryption"]), "x-amz-server-side-encryption" },
-                    { new StringContent(storageFacility["x-amz-signature"]), "x-amz-signature" },
-                    { new ByteArrayContent(File.ReadAllBytes(file.FullName)), "file", file.Name }
-                };
+                    {
+                        { new StringContent(contentType), "Content-Type" },
+                        { new StringContent(storageFacility["acl"]), "acl" },
+                        { new StringContent(storageFacility["key"]), "key" },
+                        { new StringContent(storageFacility["policy"]), "policy" },
+                        { new StringContent(storageFacility["success_action_status"]), "success_action_status" },
+                        { new StringContent(storageFacility["x-amz-algorithm"]), "x-amz-algorithm" },
+                        { new StringContent(storageFacility["x-amz-credential"]), "x-amz-credential" },
+                        { new StringContent(storageFacility["x-amz-date"]), "x-amz-date" },
+                        { new StringContent(storageFacility["x-amz-server-side-encryption"]), "x-amz-server-side-encryption" },
+                        { new StringContent(storageFacility["x-amz-signature"]), "x-amz-signature" },
+                        { new StreamContent(stream), "file", fileName }
+                    };
 
                     using (HttpRequestMessage requestMessage = new(HttpMethod.Post, attachmentStorage.UploadUri) { Content = multipartContent })
                     {
@@ -351,7 +382,7 @@ namespace Sdk4me.GraphQL
                                     return new()
                                     {
                                         Key = match.Value,
-                                        Size = file.Length
+                                        Size = stream.Length
                                     };
                                 }
                                 else
@@ -362,7 +393,10 @@ namespace Sdk4me.GraphQL
                         }
                     }
                 }
-                throw new Sdk4meException($"The {file.Extension} extension is not allowed on this 4me instance.");
+                if (fileExtension == string.Empty)
+                    throw new Sdk4meException($"A file name without extension is not allowed on this 4me instance.");
+                else
+                    throw new Sdk4meException($"The '{fileExtension}' extension is not allowed on this 4me instance.");
             }
             throw new Sdk4meException("No AttachmentStorage object returned by the GraphQL API.");
         }
