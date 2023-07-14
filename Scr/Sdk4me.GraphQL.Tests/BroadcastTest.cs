@@ -32,6 +32,12 @@ namespace Sdk4me.GraphQL.Tests
 
             Assert.IsNotNull(broadcasts);
             Console.WriteLine($"Count: {broadcasts.Count}");
+
+            if (broadcasts.Any())
+            {
+                broadcasts = client.Get(new BroadcastQuery(broadcasts.First().ID)).Result;
+                Assert.IsNotNull(broadcasts);
+            }
         }
     }
 }

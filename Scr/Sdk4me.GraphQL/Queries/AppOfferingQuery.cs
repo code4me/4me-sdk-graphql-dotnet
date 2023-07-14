@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new app offering query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the app offering.</param>
+        public AppOfferingQuery(string id)
+            : base("AppOffering", id, typeof(AppOffering), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public AppOfferingQuery SelectAccount(AccountQuery query)

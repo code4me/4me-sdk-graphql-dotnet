@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new service offering query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the service offering.</param>
+        public ServiceOfferingQuery(string id)
+            : base("ServiceOffering", id, typeof(ServiceOffering), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public ServiceOfferingQuery SelectAccount(AccountQuery query)

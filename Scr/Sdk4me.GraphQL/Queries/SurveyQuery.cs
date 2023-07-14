@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new survey query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the survey.</param>
+        public SurveyQuery(string id)
+            : base("Survey", id, typeof(Survey), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public SurveyQuery SelectAccount(AccountQuery query)

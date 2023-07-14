@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new project category query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the project category.</param>
+        public ProjectCategoryQuery(string id)
+            : base("ProjectCategory", id, typeof(ProjectCategory), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public ProjectCategoryQuery SelectAccount(AccountQuery query)

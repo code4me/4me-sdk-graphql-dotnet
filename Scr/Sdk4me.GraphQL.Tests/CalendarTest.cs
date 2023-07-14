@@ -22,6 +22,12 @@
             Assert.IsNotNull(calendar);
             Assert.IsNotNull(calendar.CalendarHours);
             Assert.IsTrue(calendar.CalendarHours.Count > 1);
+
+            if (calendars.Any())
+            {
+                calendars = client.Get(new CalendarQuery(calendars.First().ID)).Result;
+                Assert.IsNotNull(calendars);
+            }
         }
     }
 }

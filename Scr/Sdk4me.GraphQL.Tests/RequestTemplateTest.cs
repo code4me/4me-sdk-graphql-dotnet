@@ -33,6 +33,12 @@
 
             Assert.IsNotNull(requestTemplates);
             Console.WriteLine($"Count: {requestTemplates.Count}");
+
+            if (requestTemplates.Any())
+            {
+                requestTemplates = client.Get(new RequestTemplateQuery(requestTemplates.First().ID)).Result;
+                Assert.IsNotNull(requestTemplates);
+            }
         }
     }
 }

@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new contract query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the contract.</param>
+        public ContractQuery(string id)
+            : base("Contract", id, typeof(Contract), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public ContractQuery SelectAccount(AccountQuery query)

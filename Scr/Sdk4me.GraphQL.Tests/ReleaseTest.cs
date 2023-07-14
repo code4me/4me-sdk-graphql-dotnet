@@ -21,6 +21,12 @@
 
             Assert.IsNotNull(releases);
             Console.WriteLine($"Count: {releases.Count}");
+
+            if (releases.Any())
+            {
+                releases = client.Get(new ReleaseQuery(releases.First().ID)).Result;
+                Assert.IsNotNull(releases);
+            }
         }
     }
 }

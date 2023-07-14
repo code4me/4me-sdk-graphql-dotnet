@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new timesheet setting query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the timesheet setting.</param>
+        public TimesheetSettingQuery(string id)
+            : base("TimesheetSetting", id, typeof(TimesheetSetting), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public TimesheetSettingQuery SelectAccount(AccountQuery query)

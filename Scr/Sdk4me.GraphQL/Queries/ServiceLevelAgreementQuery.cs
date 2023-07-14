@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new service level agreement query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the service level agreement.</param>
+        public ServiceLevelAgreementQuery(string id)
+            : base("ServiceLevelAgreement", id, typeof(ServiceLevelAgreement), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public ServiceLevelAgreementQuery SelectAccount(AccountQuery query)

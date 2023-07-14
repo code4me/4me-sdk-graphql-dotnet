@@ -25,6 +25,12 @@
 
             Assert.IsNotNull(risks);
             Console.WriteLine($"Count: {risks.Count}");
+
+            if (risks.Any())
+            {
+                risks = client.Get(new RiskQuery(risks.First().ID)).Result;
+                Assert.IsNotNull(risks);
+            }
         }
     }
 }

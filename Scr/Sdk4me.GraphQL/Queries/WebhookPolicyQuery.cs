@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new webhook policy query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the webhook policy.</param>
+        public WebhookPolicyQuery(string id)
+            : base("WebhookPolicy", id, typeof(WebhookPolicy), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public WebhookPolicyQuery SelectAccount(AccountQuery query)

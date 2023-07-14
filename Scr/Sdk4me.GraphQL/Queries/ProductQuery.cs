@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new product query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the product.</param>
+        public ProductQuery(string id)
+            : base("Product", id, typeof(Product), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public ProductQuery SelectAccount(AccountQuery query)

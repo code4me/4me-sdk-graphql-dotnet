@@ -27,6 +27,12 @@
 
             Assert.IsNotNull(projectTaskTemplates);
             Console.WriteLine($"Count: {projectTaskTemplates.Count}");
+
+            if (projectTaskTemplates.Any())
+            {
+                projectTaskTemplates = client.Get(new ProjectTaskTemplateQuery(projectTaskTemplates.First().ID)).Result;
+                Assert.IsNotNull(projectTaskTemplates);
+            }
         }
     }
 }

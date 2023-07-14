@@ -33,6 +33,12 @@
 
             Assert.IsNotNull(projects);
             Console.WriteLine($"Count: {projects.Count}");
+
+            if (projects.Any())
+            {
+                projects = client.Get(new ProjectQuery(projects.First().ID)).Result;
+                Assert.IsNotNull(projects);
+            }
         }
     }
 }

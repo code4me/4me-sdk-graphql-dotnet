@@ -23,6 +23,12 @@
 
             Assert.IsNotNull(appOfferings);
             Console.WriteLine($"Count: {appOfferings.Count}");
+
+            if (appOfferings.Any())
+            {
+                appOfferings = client.Get(new AppOfferingQuery(appOfferings.First().ID)).Result;
+                Assert.IsNotNull(appOfferings);
+            }
         }
     }
 }

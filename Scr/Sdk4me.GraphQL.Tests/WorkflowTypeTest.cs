@@ -19,6 +19,12 @@
 
             Assert.IsNotNull(workflowTypes);
             Console.WriteLine($"Count: {workflowTypes.Count}");
+
+            if (workflowTypes.Any())
+            {
+                workflowTypes = client.Get(new WorkflowTypeQuery(workflowTypes.First().ID)).Result;
+                Assert.IsNotNull(workflowTypes);
+            }
         }
     }
 }

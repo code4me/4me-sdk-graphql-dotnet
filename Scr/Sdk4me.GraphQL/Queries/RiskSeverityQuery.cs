@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new risk severity query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the risk severity.</param>
+        public RiskSeverityQuery(string id)
+            : base("RiskSeverity", id, typeof(RiskSeverity), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public RiskSeverityQuery SelectAccount(AccountQuery query)

@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new person query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the person.</param>
+        public PersonQuery(string id)
+            : base("Person", id, typeof(Person), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public PersonQuery SelectAccount(AccountQuery query)

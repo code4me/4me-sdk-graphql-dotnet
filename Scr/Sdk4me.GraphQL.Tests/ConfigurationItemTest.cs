@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.Contracts;
+using System.Globalization;
 
 namespace Sdk4me.GraphQL.Tests
 {
@@ -37,6 +38,12 @@ namespace Sdk4me.GraphQL.Tests
 
             Assert.IsNotNull(configurationItems);
             Console.WriteLine($"Count: {configurationItems.Count}");
+
+            if (configurationItems.Any())
+            {
+                configurationItems = client.Get(new ConfigurationItemQuery(configurationItems.First().ID)).Result;
+                Assert.IsNotNull(configurationItems);
+            }
         }
     }
 }

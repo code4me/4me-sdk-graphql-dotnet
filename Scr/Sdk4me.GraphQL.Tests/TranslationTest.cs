@@ -18,6 +18,12 @@
 
             Assert.IsNotNull(translations);
             Console.WriteLine($"Count: {translations.Count}");
+
+            if (translations.Any())
+            {
+                translations = client.Get(new TranslationQuery(translations.First().ID)).Result;
+                Assert.IsNotNull(translations);
+            }
         }
     }
 }

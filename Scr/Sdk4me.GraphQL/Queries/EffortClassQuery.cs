@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new effort class query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the effort class.</param>
+        public EffortClassQuery(string id)
+            : base("EffortClass", id, typeof(EffortClass), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public EffortClassQuery SelectAccount(AccountQuery query)

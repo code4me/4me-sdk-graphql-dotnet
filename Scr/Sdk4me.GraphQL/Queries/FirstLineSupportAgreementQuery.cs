@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new first line support agreement query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the first line support agreement.</param>
+        public FirstLineSupportAgreementQuery(string id)
+            : base("FirstLineSupportAgreement", id, typeof(FirstLineSupportAgreement), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public FirstLineSupportAgreementQuery SelectAccount(AccountQuery query)

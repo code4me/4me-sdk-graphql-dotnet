@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new sync set query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the sync set.</param>
+        public SyncSetQuery(string id)
+            : base("SyncSet", id, typeof(SyncSet), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public SyncSetQuery SelectAccount(AccountQuery query)

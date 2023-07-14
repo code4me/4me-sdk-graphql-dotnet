@@ -17,6 +17,12 @@
 
             Assert.IsNotNull(slaNotificationSchemes);
             Console.WriteLine($"Count: {slaNotificationSchemes.Count}");
+
+            if (slaNotificationSchemes.Any())
+            {
+                slaNotificationSchemes = client.Get(new SlaNotificationSchemeQuery(slaNotificationSchemes.First().ID)).Result;
+                Assert.IsNotNull(slaNotificationSchemes);
+            }
         }
     }
 }

@@ -21,6 +21,12 @@
 
             Assert.IsNotNull(uiExtensions);
             Console.WriteLine($"Count: {uiExtensions.Count}");
+
+            if (uiExtensions.Any())
+            {
+                uiExtensions = client.Get(new UiExtensionQuery(uiExtensions.First().ID)).Result;
+                Assert.IsNotNull(uiExtensions);
+            }
         }
     }
 }

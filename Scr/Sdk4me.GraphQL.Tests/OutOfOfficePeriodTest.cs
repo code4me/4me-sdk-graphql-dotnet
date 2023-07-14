@@ -15,6 +15,12 @@
 
             Assert.IsNotNull(outOfOfficePeriods);
             Console.WriteLine($"Count: {outOfOfficePeriods.Count}");
+
+            if (outOfOfficePeriods.Any())
+            {
+                outOfOfficePeriods = client.Get(new OutOfOfficePeriodQuery(outOfOfficePeriods.First().ID)).Result;
+                Assert.IsNotNull(outOfOfficePeriods);
+            }
         }
     }
 }

@@ -19,6 +19,12 @@
 
             Assert.IsNotNull(invoices);
             Console.WriteLine($"Count: {invoices.Count}");
+
+            if (invoices.Any())
+            {
+                invoices = client.Get(new InvoiceQuery(invoices.First().ID)).Result;
+                Assert.IsNotNull(invoices);
+            }
         }
     }
 }

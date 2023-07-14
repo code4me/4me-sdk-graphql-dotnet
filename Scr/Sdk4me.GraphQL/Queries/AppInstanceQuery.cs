@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new app instance query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the app instance.</param>
+        public AppInstanceQuery(string id)
+            : base("AppInstance", id, typeof(AppInstance), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public AppInstanceQuery SelectAccount(AccountQuery query)

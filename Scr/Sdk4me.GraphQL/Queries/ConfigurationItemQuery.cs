@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new configuration item query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the configuration item.</param>
+        public ConfigurationItemQuery(string id)
+            : base("ConfigurationItem", id, typeof(ConfigurationItem), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public ConfigurationItemQuery SelectAccount(AccountQuery query)

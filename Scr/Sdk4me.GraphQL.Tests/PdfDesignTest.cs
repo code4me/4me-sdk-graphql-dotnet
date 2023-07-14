@@ -21,6 +21,12 @@
 
             Assert.IsNotNull(pdfDesigns);
             Console.WriteLine($"Count: {pdfDesigns.Count}");
+
+            if (pdfDesigns.Any())
+            {
+                pdfDesigns = client.Get(new PdfDesignQuery(pdfDesigns.First().ID)).Result;
+                Assert.IsNotNull(pdfDesigns);
+            }
         }
     }
 }

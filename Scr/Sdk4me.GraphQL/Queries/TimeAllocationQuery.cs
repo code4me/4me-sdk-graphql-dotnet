@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new time allocation query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the time allocation.</param>
+        public TimeAllocationQuery(string id)
+            : base("TimeAllocation", id, typeof(TimeAllocation), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public TimeAllocationQuery SelectAccount(AccountQuery query)

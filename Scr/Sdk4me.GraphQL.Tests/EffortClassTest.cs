@@ -21,6 +21,12 @@
 
             Assert.IsNotNull(effortClasses);
             Console.WriteLine($"Count: {effortClasses.Count}");
+
+            if (effortClasses.Any())
+            {
+                effortClasses = client.Get(new EffortClassQuery(effortClasses.First().ID)).Result;
+                Assert.IsNotNull(effortClasses);
+            }
         }
     }
 }

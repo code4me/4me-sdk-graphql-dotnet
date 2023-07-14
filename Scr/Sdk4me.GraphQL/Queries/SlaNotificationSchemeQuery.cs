@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new sla notification scheme query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the sla notification scheme.</param>
+        public SlaNotificationSchemeQuery(string id)
+            : base("SlaNotificationScheme", id, typeof(SlaNotificationScheme), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public SlaNotificationSchemeQuery SelectAccount(AccountQuery query)

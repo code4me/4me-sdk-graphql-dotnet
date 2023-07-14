@@ -19,6 +19,12 @@
 
             Assert.IsNotNull(agileBoards);
             Console.WriteLine($"Count: {agileBoards.Count}");
+
+            if (agileBoards.Any())
+            {
+                agileBoards = client.Get(new AgileBoardQuery(agileBoards.First().ID)).Result;
+                Assert.IsNotNull(agileBoards);
+            }
         }
     }
 }

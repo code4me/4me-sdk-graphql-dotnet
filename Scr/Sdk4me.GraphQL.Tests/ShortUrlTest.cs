@@ -15,6 +15,12 @@
 
             Assert.IsNotNull(shortUrls);
             Console.WriteLine($"Count: {shortUrls.Count}");
+
+            if (shortUrls.Any())
+            {
+                shortUrls = client.Get(new ShortUrlQuery(shortUrls.First().ID)).Result;
+                Assert.IsNotNull(shortUrls);
+            }
         }
     }
 }

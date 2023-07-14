@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new holiday query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the holiday.</param>
+        public HolidayQuery(string id)
+            : base("Holiday", id, typeof(Holiday), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public HolidayQuery SelectAccount(AccountQuery query)

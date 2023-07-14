@@ -19,6 +19,12 @@
 
             Assert.IsNotNull(sprints);
             Console.WriteLine($"Count: {sprints.Count}");
+
+            if (sprints.Any())
+            {
+                sprints = client.Get(new SprintQuery(sprints.First().ID)).Result;
+                Assert.IsNotNull(sprints);
+            }
         }
     }
 }

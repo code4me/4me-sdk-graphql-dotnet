@@ -33,6 +33,12 @@
 
             Assert.IsNotNull(tasks);
             Console.WriteLine($"Count: {tasks.Count}");
+
+            if (tasks.Any())
+            {
+                tasks = client.Get(new TaskQuery(tasks.First().ID)).Result;
+                Assert.IsNotNull(tasks);
+            }
         }
     }
 }

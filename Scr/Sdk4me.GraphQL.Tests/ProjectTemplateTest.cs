@@ -23,6 +23,12 @@
 
             Assert.IsNotNull(projectTemplates);
             Console.WriteLine($"Count: {projectTemplates.Count}");
+
+            if (projectTemplates.Any())
+            {
+                projectTemplates = client.Get(new ProjectTemplateQuery(projectTemplates.First().ID)).Result;
+                Assert.IsNotNull(projectTemplates);
+            }
         }
     }
 }

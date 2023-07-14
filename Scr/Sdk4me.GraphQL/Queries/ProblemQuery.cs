@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new problem query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the problem.</param>
+        public ProblemQuery(string id)
+            : base("Problem", id, typeof(Problem), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public ProblemQuery SelectAccount(AccountQuery query)

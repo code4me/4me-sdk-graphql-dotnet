@@ -155,6 +155,14 @@ IQuery query = Query.Person.Filter(PersonField.Name, FilterOperator.Equals, "How
 The `Filter` method allows you to specify field filters at the top level of the query.
 You can define the field, the operator (e.g., equals, not equals), and the value to match against.
 
+
+```csharp
+PersonQuery query = new PersonQuery("NG1lLnFhL1blcnNvbi8yMjMxSjIx");
+```
+The `ID` filtering allows you to search for an object based on its unique ID.
+When using the `ID` filter, any additional filters and view selections will be ignored.
+It is recommended to use the ID filter instead of the `.Filter(PersonField.ID, FilterOperator.Equals, "")` approach, as it provides an average response time improvement of approximately 15%.
+
 ```csharp
 PersonQuery query = new PersonQuery()
     .CustomFilter("Age", FilterOperator.NotEquals, new string[] { null });
@@ -254,9 +262,8 @@ catch (Sdk4meException ex)
 #### Updating the custom fields of an existing person
 ```csharp
 Person person = client.Get(
-    new PersonQuery()
+    new PersonQuery("NG1lLnFhL1blcnNvbi8yMjMxSjIx")
         .Select(PersonField.CustomFields)
-        .Filter(PersonField.ID, FilterOperator.Equals, "NG1lLnFhL1blcnNvbi8yMjMxSjIx")
     ).Result.First();
 
 person.CustomFields.AddOrUpdate("internal_reference", "none");
@@ -292,6 +299,39 @@ var updatedRequest = client.Mutation(new RequestUpdateInput()
         } 
     }
 }).Result;
+```
+
+#### Upload an attachment
+```csharp
+using (HttpClient httpClient = new())
+{
+    using (HttpResponseMessage responseMessage = await httpClient.GetAsync("https://www.4me.com/wp-content/uploads/2023/02/4me-platform-features-large.png"))
+    {
+        using (Stream stream = await responseMessage.Content.ReadAsStreamAsync())
+        {
+            AttachmentUploadResponse response = await client.UploadAttachment(stream, "4me-platform-features-large.png", "image/png");
+
+            DataList<Request> requests = await client.Get(new RequestQuery("NG1lLnFhL1nNvb4MjMxSjIx"));
+            if (requests.Any())
+            {
+                RequestUpdatePayload updatedRequest = await client.Mutation(new RequestUpdateInput()
+                {
+                    ID = requests.First().ID,
+                    Note = "[The Complete Service Management Platform](https://www.4me.com/)",
+                    NoteAttachments = new List<AttachmentInput>()
+                    {
+                        new AttachmentInput
+                        {
+                            Key = response.Key,
+                            Size = response.Size,
+                            Inline = false
+                        }
+                    }
+                });
+            }
+        }
+    }
+}
 ```
 
 #### Upload an inline attachment

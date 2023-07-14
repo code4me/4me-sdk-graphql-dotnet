@@ -21,6 +21,12 @@ namespace Sdk4me.GraphQL.Tests
 
             Assert.IsNotNull(contracts);
             Console.WriteLine($"Count: {contracts.Count}");
+
+            if (contracts.Any())
+            {
+                contracts = client.Get(new ContractQuery(contracts.First().ID)).Result;
+                Assert.IsNotNull(contracts);
+            }
         }
     }
 }

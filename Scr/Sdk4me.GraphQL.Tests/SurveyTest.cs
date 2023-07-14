@@ -23,6 +23,12 @@
 
             Assert.IsNotNull(surveys);
             Console.WriteLine($"Count: {surveys.Count}");
+
+            if (surveys.Any())
+            {
+                surveys = client.Get(new SurveyQuery(surveys.First().ID)).Result;
+                Assert.IsNotNull(surveys);
+            }
         }
     }
 }

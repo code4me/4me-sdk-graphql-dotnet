@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new risk query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the risk.</param>
+        public RiskQuery(string id)
+            : base("Risk", id, typeof(Risk), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public RiskQuery SelectAccount(AccountQuery query)

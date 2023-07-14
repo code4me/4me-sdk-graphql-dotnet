@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new automation rule query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the automation rule.</param>
+        public AutomationRuleQuery(string id)
+            : base("AutomationRule", id, typeof(AutomationRule), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public AutomationRuleQuery SelectAccount(AccountQuery query)

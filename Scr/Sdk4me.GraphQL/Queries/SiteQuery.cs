@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new site query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the site.</param>
+        public SiteQuery(string id)
+            : base("Site", id, typeof(Site), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public SiteQuery SelectAccount(AccountQuery query)

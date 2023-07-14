@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new service instance query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the service instance.</param>
+        public ServiceInstanceQuery(string id)
+            : base("ServiceInstance", id, typeof(ServiceInstance), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public ServiceInstanceQuery SelectAccount(AccountQuery query)

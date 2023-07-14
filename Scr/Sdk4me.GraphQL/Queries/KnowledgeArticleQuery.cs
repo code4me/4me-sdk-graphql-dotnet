@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new knowledge article query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the knowledge article.</param>
+        public KnowledgeArticleQuery(string id)
+            : base("KnowledgeArticle", id, typeof(KnowledgeArticle), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public KnowledgeArticleQuery SelectAccount(AccountQuery query)

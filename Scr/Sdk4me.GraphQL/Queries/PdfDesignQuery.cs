@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new pdf design query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the pdf design.</param>
+        public PdfDesignQuery(string id)
+            : base("PdfDesign", id, typeof(PdfDesign), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public PdfDesignQuery SelectAccount(AccountQuery query)

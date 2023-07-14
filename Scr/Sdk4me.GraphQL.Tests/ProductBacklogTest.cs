@@ -21,6 +21,12 @@
 
             Assert.IsNotNull(productBacklogs);
             Console.WriteLine($"Count: {productBacklogs.Count}");
+
+            if (productBacklogs.Any())
+            {
+                productBacklogs = client.Get(new ProductBacklogQuery(productBacklogs.First().ID)).Result;
+                Assert.IsNotNull(productBacklogs);
+            }
         }
     }
 }

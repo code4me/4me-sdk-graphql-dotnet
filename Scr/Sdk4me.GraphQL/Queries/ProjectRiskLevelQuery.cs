@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new project risk level query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the project risk level.</param>
+        public ProjectRiskLevelQuery(string id)
+            : base("ProjectRiskLevel", id, typeof(ProjectRiskLevel), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public ProjectRiskLevelQuery SelectAccount(AccountQuery query)

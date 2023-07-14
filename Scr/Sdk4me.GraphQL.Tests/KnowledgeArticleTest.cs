@@ -30,6 +30,12 @@
 
             Assert.IsNotNull(knowledgeArticles);
             Console.WriteLine($"Count: {knowledgeArticles.Count}");
+
+            if (knowledgeArticles.Any())
+            {
+                knowledgeArticles = client.Get(new KnowledgeArticleQuery(knowledgeArticles.First().ID)).Result;
+                Assert.IsNotNull(knowledgeArticles);
+            }
         }
     }
 }

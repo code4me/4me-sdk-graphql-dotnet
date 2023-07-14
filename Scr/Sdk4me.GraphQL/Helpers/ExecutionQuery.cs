@@ -17,6 +17,7 @@
         private List<ExecutionQuery> queries = new();
         private HashSet<string> filters = new();
         private HashSet<string> customFilters = new();
+        private string filterByID = string.Empty;
         private string queryFilter = string.Empty;
         private string endCursor = string.Empty;
         private bool onlyQueryID = false;
@@ -149,6 +150,15 @@
         }
 
         /// <summary>
+        /// Get or set the filter by ID value.
+        /// </summary>
+        internal string FilterByID
+        {
+            get => filterByID;
+            set => filterByID = value;
+        }
+
+        /// <summary>
         /// Get or set all custom filters.
         /// </summary>
         internal HashSet<string> CustomFilters
@@ -191,6 +201,15 @@
                 }
             }
             return retval;
+        }
+
+        /// <summary>
+        /// Return the root expected root object name of the JSON response.
+        /// </summary>
+        /// <returns></returns>
+        internal string GetResponseObjectName()
+        {
+            return !string.IsNullOrWhiteSpace(filterByID) ? "node" : fieldName;
         }
 
         /// <summary>

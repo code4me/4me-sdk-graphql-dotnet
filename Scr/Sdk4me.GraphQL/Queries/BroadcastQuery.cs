@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new broadcast query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the broadcast.</param>
+        public BroadcastQuery(string id)
+            : base("Broadcast", id, typeof(Broadcast), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public BroadcastQuery SelectAccount(AccountQuery query)

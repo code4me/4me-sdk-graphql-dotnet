@@ -24,6 +24,12 @@
 
             Assert.IsNotNull(serviceCategories);
             Console.WriteLine($"Count: {serviceCategories.Count}");
+
+            if (serviceCategories.Any())
+            {
+                serviceCategories = client.Get(new ServiceCategoryQuery(serviceCategories.First().ID)).Result;
+                Assert.IsNotNull(serviceCategories);
+            }
         }
     }
 }

@@ -64,6 +64,11 @@
         public string QueryFilter { get; }
 
         /// <summary>
+        /// Get the ID filter query value.
+        /// </summary>
+        public string FilterByID { get; }
+
+        /// <summary>
         /// Get all custom filters.
         /// </summary>
         public ImmutableHashSet<string> CustomFilters { get; }

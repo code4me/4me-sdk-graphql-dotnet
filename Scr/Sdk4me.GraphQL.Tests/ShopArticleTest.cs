@@ -15,6 +15,12 @@
 
             Assert.IsNotNull(shopArticles);
             Console.WriteLine($"Count: {shopArticles.Count}");
+
+            if (shopArticles.Any())
+            {
+                shopArticles = client.Get(new ShopArticleQuery(shopArticles.First().ID)).Result;
+                Assert.IsNotNull(shopArticles);
+            }
         }
     }
 }

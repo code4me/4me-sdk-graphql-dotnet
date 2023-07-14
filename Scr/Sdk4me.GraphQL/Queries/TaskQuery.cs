@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new task query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the task.</param>
+        public TaskQuery(string id)
+            : base("Task", id, typeof(Task), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public TaskQuery SelectAccount(AccountQuery query)

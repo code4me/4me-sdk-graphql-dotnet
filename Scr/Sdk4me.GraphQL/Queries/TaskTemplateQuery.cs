@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new task template query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the task template.</param>
+        public TaskTemplateQuery(string id)
+            : base("TaskTemplate", id, typeof(TaskTemplate), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public TaskTemplateQuery SelectAccount(AccountQuery query)

@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new workflow type query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the workflow type.</param>
+        public WorkflowTypeQuery(string id)
+            : base("WorkflowType", id, typeof(WorkflowType), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public WorkflowTypeQuery SelectAccount(AccountQuery query)

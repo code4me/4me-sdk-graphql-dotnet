@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new knowledge article template query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the knowledge article template.</param>
+        public KnowledgeArticleTemplateQuery(string id)
+            : base("KnowledgeArticleTemplate", id, typeof(KnowledgeArticleTemplate), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public KnowledgeArticleTemplateQuery SelectAccount(AccountQuery query)

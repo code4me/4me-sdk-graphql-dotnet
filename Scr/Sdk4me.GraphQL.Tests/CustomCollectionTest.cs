@@ -20,6 +20,11 @@
             Assert.IsNotNull(customCollections);
             Console.WriteLine($"Count: {customCollections.Count}");
 
+            if (customCollections.Any())
+            {
+                customCollections = client.Get(new CustomCollectionQuery(customCollections.First().ID)).Result;
+                Assert.IsNotNull(customCollections);
+            }
         }
     }
 }

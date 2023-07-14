@@ -17,6 +17,12 @@
 
             Assert.IsNotNull(knowledgeArticleTemplates);
             Console.WriteLine($"Count: {knowledgeArticleTemplates.Count}");
+
+            if (knowledgeArticleTemplates.Any())
+            {
+                knowledgeArticleTemplates = client.Get(new KnowledgeArticleTemplateQuery(knowledgeArticleTemplates.First().ID)).Result;
+                Assert.IsNotNull(knowledgeArticleTemplates);
+            }
         }
     }
 }

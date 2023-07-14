@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new affected sla query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the affected sla.</param>
+        public AffectedSlaQuery(string id)
+            : base("AffectedSla", id, typeof(AffectedSla), false)
+        {
+        }
+
+        /// <summary>
         /// The First line team field is automatically set to the team that, at the time the affected SLA was created, was selected in the First line team field of the related service instance.
         /// </summary>
         public AffectedSlaQuery SelectFirstLineTeam(TeamQuery query)

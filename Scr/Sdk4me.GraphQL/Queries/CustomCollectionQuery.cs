@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new custom collection query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the custom collection.</param>
+        public CustomCollectionQuery(string id)
+            : base("CustomCollection", id, typeof(CustomCollection), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public CustomCollectionQuery SelectAccount(AccountQuery query)

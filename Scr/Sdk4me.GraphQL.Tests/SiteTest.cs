@@ -23,6 +23,12 @@
 
             Assert.IsNotNull(sites);
             Console.WriteLine($"Count: {sites.Count}");
+
+            if (sites.Any())
+            {
+                sites = client.Get(new SiteQuery(sites.First().ID)).Result;
+                Assert.IsNotNull(sites);
+            }
         }
     }
 }

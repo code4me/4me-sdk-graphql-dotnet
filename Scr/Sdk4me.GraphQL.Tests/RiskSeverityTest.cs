@@ -22,6 +22,12 @@
 
             Assert.IsNotNull(riskSeverities);
             Console.WriteLine($"Count: {riskSeverities.Count}");
+
+            if (riskSeverities.Any())
+            {
+                riskSeverities = client.Get(new RiskSeverityQuery(riskSeverities.First().ID)).Result;
+                Assert.IsNotNull(riskSeverities);
+            }
         }
     }
 }

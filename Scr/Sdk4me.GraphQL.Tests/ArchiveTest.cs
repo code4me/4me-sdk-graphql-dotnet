@@ -15,6 +15,12 @@
 
             Assert.IsNotNull(archives);
             Console.WriteLine($"Count: {archives.Count}");
+
+            if (archives.Any())
+            {
+                archives = client.Get(new ArchiveQuery(archives.First().ID)).Result;
+                Assert.IsNotNull(archives);
+            }
         }
     }
 }

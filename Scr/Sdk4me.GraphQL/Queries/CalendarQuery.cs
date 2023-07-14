@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new calendar query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the calendar.</param>
+        public CalendarQuery(string id)
+            : base("Calendar", id, typeof(Calendar), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public CalendarQuery SelectAccount(AccountQuery query)

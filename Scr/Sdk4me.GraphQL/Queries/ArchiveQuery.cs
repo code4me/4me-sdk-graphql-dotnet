@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new archive query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the archive.</param>
+        public ArchiveQuery(string id)
+            : base("Archive", id, typeof(Archive), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public ArchiveQuery SelectAccount(AccountQuery query)

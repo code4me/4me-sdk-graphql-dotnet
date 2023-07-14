@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new shop article query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the shop article.</param>
+        public ShopArticleQuery(string id)
+            : base("ShopArticle", id, typeof(ShopArticle), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public ShopArticleQuery SelectAccount(AccountQuery query)

@@ -35,6 +35,12 @@
 
             Assert.IsNotNull(serviceLevelAgreements);
             Console.WriteLine($"Count: {serviceLevelAgreements.Count}");
+
+            if (serviceLevelAgreements.Any())
+            {
+                serviceLevelAgreements = client.Get(new ServiceLevelAgreementQuery(serviceLevelAgreements.First().ID)).Result;
+                Assert.IsNotNull(serviceLevelAgreements);
+            }
         }
     }
 }

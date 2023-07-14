@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new skill pool query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the skill pool.</param>
+        public SkillPoolQuery(string id)
+            : base("SkillPool", id, typeof(SkillPool), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public SkillPoolQuery SelectAccount(AccountQuery query)

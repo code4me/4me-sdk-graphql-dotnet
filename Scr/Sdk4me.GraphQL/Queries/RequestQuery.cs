@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new request query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the request.</param>
+        public RequestQuery(string id)
+            : base("Request", id, typeof(Request), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public RequestQuery SelectAccount(AccountQuery query)

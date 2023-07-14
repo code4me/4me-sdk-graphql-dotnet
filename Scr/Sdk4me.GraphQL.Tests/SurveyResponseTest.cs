@@ -1,4 +1,6 @@
-﻿namespace Sdk4me.GraphQL.Tests
+﻿using Microsoft.VisualBasic;
+
+namespace Sdk4me.GraphQL.Tests
 {
     [TestClass]
     public class SurveyResponseTest
@@ -19,6 +21,12 @@
 
             Assert.IsNotNull(surveyResponses);
             Console.WriteLine($"Count: {surveyResponses.Count}");
+
+            if (surveyResponses.Any())
+            {
+                surveyResponses = client.Get(new SurveyResponseQuery(surveyResponses.First().ID)).Result;
+                Assert.IsNotNull(surveyResponses);
+            }
         }
     }
 }

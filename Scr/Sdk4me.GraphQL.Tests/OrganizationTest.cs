@@ -35,6 +35,12 @@
 
             Assert.IsNotNull(organizations);
             Console.WriteLine($"Count: {organizations.Count}");
+
+            if (organizations.Any())
+            {
+                organizations = client.Get(new OrganizationQuery(organizations.First().ID)).Result;
+                Assert.IsNotNull(organizations);
+            }
         }
     }
 }

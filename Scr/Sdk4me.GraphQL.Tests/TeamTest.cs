@@ -1,4 +1,6 @@
-﻿namespace Sdk4me.GraphQL.Tests
+﻿using System.Threading.Tasks;
+
+namespace Sdk4me.GraphQL.Tests
 {
     [TestClass]
     public class TeamTest
@@ -21,6 +23,12 @@
 
             Assert.IsNotNull(teams);
             Console.WriteLine($"Count: {teams.Count}");
+
+            if (teams.Any())
+            {
+                teams = client.Get(new TeamQuery(teams.First().ID)).Result;
+                Assert.IsNotNull(teams);
+            }
         }
     }
 }

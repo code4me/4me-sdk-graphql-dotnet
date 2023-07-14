@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new release query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the release.</param>
+        public ReleaseQuery(string id)
+            : base("Release", id, typeof(Release), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public ReleaseQuery SelectAccount(AccountQuery query)

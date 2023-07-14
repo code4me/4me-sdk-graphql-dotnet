@@ -21,6 +21,12 @@
 
             Assert.IsNotNull(products);
             Console.WriteLine($"Count: {products.Count}");
+
+            if (products.Any())
+            {
+                products = client.Get(new ProductQuery(products.First().ID)).Result;
+                Assert.IsNotNull(products);
+            }
         }
     }
 }

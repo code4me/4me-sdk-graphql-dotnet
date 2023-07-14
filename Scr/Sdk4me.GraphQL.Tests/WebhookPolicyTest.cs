@@ -15,6 +15,12 @@
 
             Assert.IsNotNull(webhookPolicies);
             Console.WriteLine($"Count: {webhookPolicies.Count}");
+
+            if (webhookPolicies.Any())
+            {
+                webhookPolicies = client.Get(new WebhookPolicyQuery(webhookPolicies.First().ID)).Result;
+                Assert.IsNotNull(webhookPolicies);
+            }
         }
     }
 }

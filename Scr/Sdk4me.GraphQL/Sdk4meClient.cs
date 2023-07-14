@@ -213,7 +213,7 @@ namespace Sdk4me.GraphQL
                 JToken responseData = await SendHttpRequest(requestMessage, query);
 
                 NodeCollection<TEntity> nodes = new();
-                if (responseData[executionQuery.FieldName] is JToken responseObject)
+                if (responseData[executionQuery.GetResponseObjectName()] is JToken responseObject)
                 {
                     if (responseObject["nodes"] != null && responseObject.ToObject<NodeCollection<TEntity>>(jsonSerializer) is NodeCollection<TEntity> collection)
                         nodes = collection;

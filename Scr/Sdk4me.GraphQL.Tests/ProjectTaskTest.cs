@@ -8,7 +8,7 @@
         [TestMethod]
         public void Get()
         {
-            DataList<ProjectTask> projects = client.Get(Query.ProjectTask
+            DataList<ProjectTask> projectsTasks = client.Get(Query.ProjectTask
                 .View(ProjectTaskView.All)
                 .SelectAll()
                 .SelectAssignments(new ProjectTaskAssignmentQuery()
@@ -31,8 +31,14 @@
                     .SelectAll())
                 ).Result;
 
-            Assert.IsNotNull(projects);
-            Console.WriteLine($"Count: {projects.Count}");
+            Assert.IsNotNull(projectsTasks);
+            Console.WriteLine($"Count: {projectsTasks.Count}");
+
+            if (projectsTasks.Any())
+            {
+                projectsTasks = client.Get(new ProjectTaskQuery(projectsTasks.First().ID)).Result;
+                Assert.IsNotNull(projectsTasks);
+            }
         }
     }
 }

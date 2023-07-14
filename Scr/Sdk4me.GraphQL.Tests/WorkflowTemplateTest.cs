@@ -25,6 +25,12 @@
 
             Assert.IsNotNull(workflowTemplates);
             Console.WriteLine($"Count: {workflowTemplates.Count}");
+
+            if (workflowTemplates.Any())
+            {
+                workflowTemplates = client.Get(new WorkflowTemplateQuery(workflowTemplates.First().ID)).Result;
+                Assert.IsNotNull(workflowTemplates);
+            }
         }
     }
 }

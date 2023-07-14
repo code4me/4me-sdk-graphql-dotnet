@@ -20,6 +20,7 @@
         private readonly HashSet<string> customFilters = new();
         private string queryFilter = string.Empty;
         private string fieldName = string.Empty;
+        private string filterByID = string.Empty;
         private string view = string.Empty;
         private string orderByOrder = string.Empty;
         private string orderByField = string.Empty;
@@ -120,6 +121,14 @@
         }
 
         /// <summary>
+        /// Get the ID filter query value.
+        /// </summary>
+        public string FilterByID
+        {
+            get => filterByID;
+        }
+
+        /// <summary>
         /// Get all custom filters.
         /// </summary>
         public ImmutableHashSet<string> CustomFilters
@@ -137,6 +146,22 @@
         protected Query(string fieldName, Type dataType, bool isConnection)
         {
             this.fieldName = fieldName;
+            this.dataType = typeof(Node).IsAssignableFrom(dataType) ? dataType : throw new Sdk4meException($"{nameof(dataType)} does not implement {nameof(Node)}");
+            this.isConnection = isConnection;
+        }
+
+        /// <summary>
+        /// Create a new Query instance.
+        /// </summary>
+        /// <param name="fieldName">The field name.</param>
+        /// <param name="filterByID">The ID to filter on.</param>
+        /// <param name="dataType">The query data type.</param>
+        /// <param name="isConnection">True when the field is a connection, otherwise false.</param>
+        /// <exception cref="Sdk4meException"></exception>
+        protected Query(string fieldName, string filterByID, Type dataType, bool isConnection)
+        {
+            this.fieldName = fieldName;
+            this.filterByID = filterByID;
             this.dataType = typeof(Node).IsAssignableFrom(dataType) ? dataType : throw new Sdk4meException($"{nameof(dataType)} does not implement {nameof(Node)}");
             this.isConnection = isConnection;
         }

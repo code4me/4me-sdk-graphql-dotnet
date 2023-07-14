@@ -21,6 +21,12 @@
 
             Assert.IsNotNull(skillPools);
             Console.WriteLine($"Count: {skillPools.Count}");
+
+            if (skillPools.Any())
+            {
+                skillPools = client.Get(new SkillPoolQuery(skillPools.First().ID)).Result;
+                Assert.IsNotNull(skillPools);
+            }
         }
     }
 }

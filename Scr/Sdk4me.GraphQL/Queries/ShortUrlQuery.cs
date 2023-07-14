@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new short url query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the short url.</param>
+        public ShortUrlQuery(string id)
+            : base("ShortUrl", id, typeof(ShortUrl), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public ShortUrlQuery SelectAccount(AccountQuery query)

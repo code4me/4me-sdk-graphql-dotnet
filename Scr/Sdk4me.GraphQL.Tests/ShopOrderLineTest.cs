@@ -19,6 +19,12 @@
 
             Assert.IsNotNull(shopOrderLines);
             Console.WriteLine($"Count: {shopOrderLines.Count}");
+
+            if (shopOrderLines.Any())
+            {
+                shopOrderLines = client.Get(new ShopOrderLineQuery(shopOrderLines.First().ID)).Result;
+                Assert.IsNotNull(shopOrderLines);
+            }
         }
     }
 }

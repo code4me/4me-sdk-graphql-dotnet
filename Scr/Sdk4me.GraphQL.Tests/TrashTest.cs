@@ -15,6 +15,12 @@
 
             Assert.IsNotNull(trashes);
             Console.WriteLine($"Count: {trashes.Count}");
+
+            if (trashes.Any())
+            {
+                trashes = client.Get(new TrashQuery(trashes.First().ID)).Result;
+                Assert.IsNotNull(trashes);
+            }
         }
     }
 }

@@ -23,6 +23,12 @@
 
             Assert.IsNotNull(timeAllocations);
             Console.WriteLine($"Count: {timeAllocations.Count}");
+
+            if (timeAllocations.Any())
+            {
+                timeAllocations = client.Get(new TimeAllocationQuery(timeAllocations.First().ID)).Result;
+                Assert.IsNotNull(timeAllocations);
+            }
         }
     }
 }

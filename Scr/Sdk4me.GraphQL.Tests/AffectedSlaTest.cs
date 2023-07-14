@@ -21,6 +21,9 @@
             AffectedSla affectedSla = affectedSlas.First();
             Assert.IsNotNull(affectedSla.ID);
 
+            affectedSla = client.Get(new AffectedSlaQuery(affectedSla.ID)).Result.First();
+            Assert.IsNotNull(affectedSla.ID);
+
             IEnumerable<AffectedSla> noTargets = affectedSlas.Where(x => x.NextTargetAt != null && x.NextTargetAt.Value.IsNoTarget());
             Console.WriteLine($"No target count: {noTargets.Count()}");
             Assert.IsNotNull(noTargets);

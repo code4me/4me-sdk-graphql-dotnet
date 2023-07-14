@@ -19,6 +19,12 @@
 
             Assert.IsNotNull(timesheetSettings);
             Console.WriteLine($"Count: {timesheetSettings.Count}");
+
+            if (timesheetSettings.Any())
+            {
+                timesheetSettings = client.Get(new TimesheetSettingQuery(timesheetSettings.First().ID)).Result;
+                Assert.IsNotNull(timesheetSettings);
+            }
         }
     }
 }

@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new project task query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the project task.</param>
+        public ProjectTaskQuery(string id)
+            : base("ProjectTask", id, typeof(ProjectTask), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public ProjectTaskQuery SelectAccount(AccountQuery query)

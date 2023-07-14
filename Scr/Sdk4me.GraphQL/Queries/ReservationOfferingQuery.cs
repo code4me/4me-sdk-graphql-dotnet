@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new reservation offering query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the reservation offering.</param>
+        public ReservationOfferingQuery(string id)
+            : base("ReservationOffering", id, typeof(ReservationOffering), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public ReservationOfferingQuery SelectAccount(AccountQuery query)

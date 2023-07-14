@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new time entry query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the time entry.</param>
+        public TimeEntryQuery(string id)
+            : base("TimeEntry", id, typeof(TimeEntry), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public TimeEntryQuery SelectAccount(AccountQuery query)

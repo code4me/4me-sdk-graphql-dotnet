@@ -35,6 +35,12 @@
 
             Assert.IsNotNull(people);
             Console.WriteLine($"Count: {people.Count}");
+
+            if (people.Any())
+            {
+                people = client.Get(new PersonQuery(people.First().ID)).Result;
+                Assert.IsNotNull(people);
+            }
         }
     }
 }

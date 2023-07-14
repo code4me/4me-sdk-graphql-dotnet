@@ -17,6 +17,12 @@
 
             Assert.IsNotNull(holidays);
             Console.WriteLine($"Count: {holidays.Count}");
+
+            if (holidays.Any())
+            {
+                holidays = client.Get(new HolidayQuery(holidays.First().ID)).Result;
+                Assert.IsNotNull(holidays);
+            }
         }
     }
 }

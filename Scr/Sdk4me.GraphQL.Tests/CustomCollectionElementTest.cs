@@ -1,4 +1,6 @@
-﻿namespace Sdk4me.GraphQL.Tests
+﻿using System.Diagnostics.Contracts;
+
+namespace Sdk4me.GraphQL.Tests
 {
     [TestClass]
     public class CustomCollectionElementTest
@@ -21,6 +23,12 @@
 
             Assert.IsNotNull(customCollectionElements);
             Console.WriteLine($"Count: {customCollectionElements.Count}");
+
+            if (customCollectionElements.Any())
+            {
+                customCollectionElements = client.Get(new CustomCollectionElementQuery(customCollectionElements.First().ID)).Result;
+                Assert.IsNotNull(customCollectionElements);
+            }
         }
     }
 }

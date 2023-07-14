@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new scrum workspace query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the scrum workspace.</param>
+        public ScrumWorkspaceQuery(string id)
+            : base("ScrumWorkspace", id, typeof(ScrumWorkspace), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public ScrumWorkspaceQuery SelectAccount(AccountQuery query)

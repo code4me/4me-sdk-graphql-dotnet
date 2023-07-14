@@ -21,6 +21,12 @@
 
             Assert.IsNotNull(firstLineSupportAgreements);
             Console.WriteLine($"Count: {firstLineSupportAgreements.Count}");
+
+            if (firstLineSupportAgreements.Any())
+            {
+                firstLineSupportAgreements = client.Get(new FirstLineSupportAgreementQuery(firstLineSupportAgreements.First().ID)).Result;
+                Assert.IsNotNull(firstLineSupportAgreements);
+            }
         }
     }
 }

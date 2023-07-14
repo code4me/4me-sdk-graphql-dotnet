@@ -17,6 +17,12 @@
 
             Assert.IsNotNull(projectRiskLevels);
             Console.WriteLine($"Count: {projectRiskLevels.Count}");
+
+            if (projectRiskLevels.Any())
+            {
+                projectRiskLevels = client.Get(new ProjectRiskLevelQuery(projectRiskLevels.First().ID)).Result;
+                Assert.IsNotNull(projectRiskLevels);
+            }
         }
     }
 }

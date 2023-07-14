@@ -19,6 +19,12 @@
 
             Assert.IsNotNull(scrumWorkspaces);
             Console.WriteLine($"Count: {scrumWorkspaces.Count}");
+
+            if (scrumWorkspaces.Any())
+            {
+                scrumWorkspaces = client.Get(new ScrumWorkspaceQuery(scrumWorkspaces.First().ID)).Result;
+                Assert.IsNotNull(scrumWorkspaces);
+            }
         }
     }
 }

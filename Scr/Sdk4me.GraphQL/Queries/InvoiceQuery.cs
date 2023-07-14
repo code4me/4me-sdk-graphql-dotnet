@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new invoice query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the invoice.</param>
+        public InvoiceQuery(string id)
+            : base("Invoice", id, typeof(Invoice), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public InvoiceQuery SelectAccount(AccountQuery query)

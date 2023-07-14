@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new translation query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the translation.</param>
+        public TranslationQuery(string id)
+            : base("Translation", id, typeof(Translation), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public TranslationQuery SelectAccount(AccountQuery query)

@@ -31,6 +31,12 @@
 
             Assert.IsNotNull(problems);
             Console.WriteLine($"Count: {problems.Count}");
+
+            if (problems.Any())
+            {
+                problems = client.Get(new ProblemQuery(problems.First().ID)).Result;
+                Assert.IsNotNull(problems);
+            }
         }
     }
 }

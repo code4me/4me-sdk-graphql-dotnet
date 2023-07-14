@@ -27,6 +27,12 @@
 
             Assert.IsNotNull(services);
             Console.WriteLine($"Count: {services.Count}");
+
+            if (services.Any())
+            {
+                services = client.Get(new ServiceQuery(services.First().ID)).Result;
+                Assert.IsNotNull(services);
+            }
         }
     }
 }

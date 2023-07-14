@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new shop order line query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the shop order line.</param>
+        public ShopOrderLineQuery(string id)
+            : base("ShopOrderLine", id, typeof(ShopOrderLine), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public ShopOrderLineQuery SelectAccount(AccountQuery query)

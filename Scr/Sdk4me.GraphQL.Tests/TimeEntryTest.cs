@@ -17,6 +17,12 @@
 
             Assert.IsNotNull(timeEntries);
             Console.WriteLine($"Count: {timeEntries.Count}");
+
+            if (timeEntries.Any())
+            {
+                timeEntries = client.Get(new TimeEntryQuery(timeEntries.First().ID)).Result;
+                Assert.IsNotNull(timeEntries);
+            }
         }
     }
 }

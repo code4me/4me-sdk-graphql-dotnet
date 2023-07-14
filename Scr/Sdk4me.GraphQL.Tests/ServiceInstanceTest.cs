@@ -23,6 +23,12 @@
 
             Assert.IsNotNull(serviceInstances);
             Console.WriteLine($"Count: {serviceInstances.Count}");
+
+            if (serviceInstances.Any())
+            {
+                serviceInstances = client.Get(new ServiceInstanceQuery(serviceInstances.First().ID)).Result;
+                Assert.IsNotNull(serviceInstances);
+            }
         }
     }
 }

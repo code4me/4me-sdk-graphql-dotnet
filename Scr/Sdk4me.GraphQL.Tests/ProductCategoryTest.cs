@@ -22,6 +22,12 @@
 
             Assert.IsNotNull(productCategories);
             Console.WriteLine($"Count: {productCategories.Count}");
+
+            if (productCategories.Any())
+            {
+                productCategories = client.Get(new ProductCategoryQuery(productCategories.First().ID)).Result;
+                Assert.IsNotNull(productCategories);
+            }
         }
     }
 }

@@ -31,6 +31,12 @@
 
             Assert.IsNotNull(taskTemplates);
             Console.WriteLine($"Count: {taskTemplates.Count}");
+
+            if (taskTemplates.Any())
+            {
+                taskTemplates = client.Get(new TaskTemplateQuery(taskTemplates.First().ID)).Result;
+                Assert.IsNotNull(taskTemplates);
+            }
         }
     }
 }

@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new organization query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the organization.</param>
+        public OrganizationQuery(string id)
+            : base("Organization", id, typeof(Organization), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public OrganizationQuery SelectAccount(AccountQuery query)

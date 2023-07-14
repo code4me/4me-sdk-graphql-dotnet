@@ -17,6 +17,12 @@
 
             Assert.IsNotNull(webhooks);
             Console.WriteLine($"Count: {webhooks.Count}");
+
+            if (webhooks.Any())
+            {
+                webhooks = client.Get(new WebhookQuery(webhooks.First().ID)).Result;
+                Assert.IsNotNull(webhooks);
+            }
         }
     }
 }

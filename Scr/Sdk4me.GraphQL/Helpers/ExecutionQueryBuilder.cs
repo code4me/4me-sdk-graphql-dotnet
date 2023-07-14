@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Text;
 
 namespace Sdk4me.GraphQL
@@ -69,7 +68,23 @@ namespace Sdk4me.GraphQL
         {
             StringBuilder builder = new();
 
-            if (executionQuery.IsConnection)
+            if (!string.IsNullOrEmpty(executionQuery.FilterByID))
+            {
+                builder.Append($"node(id: {SerializeObject(executionQuery.FilterByID)}) {{... on {executionQuery.DataType.Name} {{");
+                
+                string fields = string.Join(" ", executionQuery.Fields.Where(x => x.IsSelected).Select(x => x.Name));
+                builder.Append(fields);
+                builder.Append(fields != string.Empty && executionQuery.Queries.Any() ? " " : "");
+
+                HashSet<string> subQueries = new();
+                foreach (ExecutionQuery query in executionQuery.Queries)
+                    subQueries.Add(GetGraphQLQuery(query));
+                subQueries.RemoveWhere(x => string.IsNullOrWhiteSpace(x));
+                builder.Append(string.Join(" ", subQueries));
+
+                builder.Append("}}");
+            }
+            else if (executionQuery.IsConnection)
             {
                 builder.Append(executionQuery.FieldName);
                 builder.Append('(');
@@ -177,6 +192,7 @@ namespace Sdk4me.GraphQL
                 ItemsPerRequest = query.SelectedItemsPerRequest ?? defaultItemsPerRequest,
                 Filters = query.Filters.ToHashSet(),
                 QueryFilter = query.QueryFilter,
+                FilterByID = query.FilterByID,
                 CustomFilters = query.CustomFilters.ToHashSet(),
                 Fields = GetExecutionQueryFields(query.DataType, query.SelectedFields),
                 IsConnection = query.IsConnection,

@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new agile board query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the agile board.</param>
+        public AgileBoardQuery(string id)
+            : base("AgileBoard", id, typeof(AgileBoard), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public AgileBoardQuery SelectAccount(AccountQuery query)

@@ -17,6 +17,12 @@
 
             Assert.IsNotNull(syncSets);
             Console.WriteLine($"Count: {syncSets.Count}");
+
+            if (syncSets.Any())
+            {
+                syncSets = client.Get(new SyncSetQuery(syncSets.First().ID)).Result;
+                Assert.IsNotNull(syncSets);
+            }
         }
     }
 }

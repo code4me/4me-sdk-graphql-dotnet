@@ -19,6 +19,12 @@
 
             Assert.IsNotNull(appInstances);
             Console.WriteLine($"Count: {appInstances.Count}");
+
+            if (appInstances.Any())
+            {
+                appInstances = client.Get(new AppInstanceQuery(appInstances.First().ID)).Result;
+                Assert.IsNotNull(appInstances);
+            }
         }
     }
 }

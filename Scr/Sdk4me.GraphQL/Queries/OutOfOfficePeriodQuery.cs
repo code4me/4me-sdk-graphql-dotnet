@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new out of office period query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the out of office period.</param>
+        public OutOfOfficePeriodQuery(string id)
+            : base("OutOfOfficePeriod", id, typeof(OutOfOfficePeriod), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public OutOfOfficePeriodQuery SelectAccount(AccountQuery query)

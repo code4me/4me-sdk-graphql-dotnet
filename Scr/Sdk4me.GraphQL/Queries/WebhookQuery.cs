@@ -14,6 +14,16 @@
         }
 
         /// <summary>
+        /// Initialize a new webhook query instance.
+        /// <br>Additional filters and views will be ignored.</br>
+        /// </summary>
+        /// <param name="id">The ID of the webhook.</param>
+        public WebhookQuery(string id)
+            : base("Webhook", id, typeof(Webhook), false)
+        {
+        }
+
+        /// <summary>
         /// The account this record belongs to.
         /// </summary>
         public WebhookQuery SelectAccount(AccountQuery query)
