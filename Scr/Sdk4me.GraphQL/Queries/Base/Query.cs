@@ -18,9 +18,9 @@
         private readonly Dictionary<string, IQuery> queries = new();
         private readonly HashSet<string> filters = new();
         private readonly HashSet<string> customFilters = new();
+        private readonly string filterByID = string.Empty;
         private string queryFilter = string.Empty;
         private string fieldName = string.Empty;
-        private string filterByID = string.Empty;
         private string view = string.Empty;
         private string orderByOrder = string.Empty;
         private string orderByField = string.Empty;

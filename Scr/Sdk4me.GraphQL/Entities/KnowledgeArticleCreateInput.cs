@@ -13,6 +13,7 @@
         private bool? coveredSpecialists;
         private string? createdById;
         private string? description;
+        private List<AttachmentInput>? descriptionAttachments;
         private bool? endUsers;
         private bool? @public;
         private string? instructions;
@@ -104,6 +105,16 @@
         {
             get => description;
             set => description = Set("description", value);
+        }
+
+        /// <summary>
+        /// The attachments used in the <c>description</c> field.
+        /// </summary>
+        [JsonProperty("descriptionAttachments")]
+        public List<AttachmentInput>? DescriptionAttachments
+        {
+            get => descriptionAttachments;
+            set => descriptionAttachments = Set("descriptionAttachments", value);
         }
 
         /// <summary>

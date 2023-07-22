@@ -11,6 +11,7 @@
         private long? number;
         private string? scrumWorkspaceId;
         private string? description;
+        private List<AttachmentInput>? descriptionAttachments;
         private DateTime? startAt;
         private SprintStatus? status;
         private List<SprintBacklogItemInput>? newSprintBacklogItems;
@@ -76,6 +77,16 @@
         {
             get => description;
             set => description = Set("description", value);
+        }
+
+        /// <summary>
+        /// The attachments used in the <c>description</c> field.
+        /// </summary>
+        [JsonProperty("descriptionAttachments")]
+        public List<AttachmentInput>? DescriptionAttachments
+        {
+            get => descriptionAttachments;
+            set => descriptionAttachments = Set("descriptionAttachments", value);
         }
 
         /// <summary>

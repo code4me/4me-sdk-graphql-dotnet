@@ -17,6 +17,7 @@
         private string? name;
         private DateOnly? noticeDate;
         private string? remarks;
+        private List<AttachmentInput>? remarksAttachments;
         private DateOnly? startDate;
         private AgreementStatus? status;
         private string? supplierId;
@@ -154,6 +155,16 @@
         {
             get => remarks;
             set => remarks = Set("remarks", value);
+        }
+
+        /// <summary>
+        /// The attachments used in the <c>remarks</c> field.
+        /// </summary>
+        [JsonProperty("remarksAttachments")]
+        public List<AttachmentInput>? RemarksAttachments
+        {
+            get => remarksAttachments;
+            set => remarksAttachments = Set("remarksAttachments", value);
         }
 
         /// <summary>

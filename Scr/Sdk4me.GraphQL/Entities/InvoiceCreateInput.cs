@@ -26,6 +26,7 @@
         private string? financialID;
         private decimal? quantity;
         private string? remarks;
+        private List<AttachmentInput>? remarksAttachments;
         private string? serviceId;
         private string? supplierId;
         private long? rate;
@@ -243,13 +244,23 @@
         }
 
         /// <summary>
-        /// Any additional information about the contract that might prove useful.
+        /// Any additional information about the invoice that might prove useful.
         /// </summary>
         [JsonProperty("remarks")]
         public string? Remarks
         {
             get => remarks;
             set => remarks = Set("remarks", value);
+        }
+
+        /// <summary>
+        /// The attachments used in the <c>remarks</c> field.
+        /// </summary>
+        [JsonProperty("remarksAttachments")]
+        public List<AttachmentInput>? RemarksAttachments
+        {
+            get => remarksAttachments;
+            set => remarksAttachments = Set("remarksAttachments", value);
         }
 
         /// <summary>

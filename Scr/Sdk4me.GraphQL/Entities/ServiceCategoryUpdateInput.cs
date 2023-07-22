@@ -9,6 +9,7 @@
         private string? sourceID;
         private string? pictureUri;
         private string? description;
+        private List<AttachmentInput>? descriptionAttachments;
         private string? name;
         private List<string>? serviceIds;
         private string? id;
@@ -52,6 +53,16 @@
         {
             get => description;
             set => description = Set("description", value);
+        }
+
+        /// <summary>
+        /// The attachments used in the <c>description</c> field.
+        /// </summary>
+        [JsonProperty("descriptionAttachments")]
+        public List<AttachmentInput>? DescriptionAttachments
+        {
+            get => descriptionAttachments;
+            set => descriptionAttachments = Set("descriptionAttachments", value);
         }
 
         /// <summary>

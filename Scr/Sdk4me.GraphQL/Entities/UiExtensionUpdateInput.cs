@@ -8,6 +8,8 @@
         private string? source;
         private string? sourceID;
         private UiExtensionCategory? category;
+        private string? description;
+        private List<AttachmentInput>? descriptionAttachments;
         private bool? disabled;
         private string? name;
         private string? title;
@@ -46,6 +48,26 @@
         {
             get => category;
             set => category = Set("category", value);
+        }
+
+        /// <summary>
+        /// Description of the UI extension.
+        /// </summary>
+        [JsonProperty("description")]
+        public string? Description
+        {
+            get => description;
+            set => description = Set("description", value);
+        }
+
+        /// <summary>
+        /// The attachments used in the <c>description</c> field.
+        /// </summary>
+        [JsonProperty("descriptionAttachments")]
+        public List<AttachmentInput>? DescriptionAttachments
+        {
+            get => descriptionAttachments;
+            set => descriptionAttachments = Set("descriptionAttachments", value);
         }
 
         /// <summary>

@@ -22,6 +22,7 @@
         private long? rate;
         private RecurrenceInput? recurrence;
         private string? remarks;
+        private List<AttachmentInput>? remarksAttachments;
         private decimal? salvageValue;
         private string? salvageValueCurrency;
         private string? serviceId;
@@ -206,6 +207,16 @@
         {
             get => remarks;
             set => remarks = Set("remarks", value);
+        }
+
+        /// <summary>
+        /// The attachments used in the <c>remarks</c> field.
+        /// </summary>
+        [JsonProperty("remarksAttachments")]
+        public List<AttachmentInput>? RemarksAttachments
+        {
+            get => remarksAttachments;
+            set => remarksAttachments = Set("remarksAttachments", value);
         }
 
         /// <summary>

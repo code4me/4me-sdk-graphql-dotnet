@@ -17,6 +17,7 @@
         private DateOnly? noticeDate;
         private DateOnly? expiryDate;
         private string? remarks;
+        private List<AttachmentInput>? remarksAttachments;
         private SlaCoverage? coverage;
         private bool? useKnowledgeFromServiceProvider;
         private string? billingID;
@@ -151,6 +152,16 @@
         {
             get => remarks;
             set => remarks = Set("remarks", value);
+        }
+
+        /// <summary>
+        /// The attachments used in the <c>remarks</c> field.
+        /// </summary>
+        [JsonProperty("remarksAttachments")]
+        public List<AttachmentInput>? RemarksAttachments
+        {
+            get => remarksAttachments;
+            set => remarksAttachments = Set("remarksAttachments", value);
         }
 
         /// <summary>

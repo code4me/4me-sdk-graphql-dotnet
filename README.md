@@ -10,6 +10,8 @@ It abstracts away the complex task of managing low-level details such as sending
 
 For a general introduction to the GraphQL query language please see [graphql.org](https://graphql.org/), and for a 4me specific introduction see [4me GraphQL Training](https://learning.4me.com/integrations_graphql/).
 
+The data entities in the SDK are modeled after the 4me Quality Assurance GraphQL schema, which may include objects or properties that are not yet available in production.
+
 ## Client
 The `Sdk4meClient` class provides access to all the necessary methods for querying and modifying data. With the `Get` and `Mutation` methods, there are four properties that allow for default behavior customization.
 - The `EnumeratorTolerantSerializer` property, when set to true, allows for ignoring unmappable enumerator values and instead returns null or a default value.

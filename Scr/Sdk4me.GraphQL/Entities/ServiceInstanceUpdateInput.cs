@@ -13,6 +13,7 @@
         private string? firstLineTeamId;
         private string? name;
         private string? remarks;
+        private List<AttachmentInput>? remarksAttachments;
         private string? serviceId;
         private ServiceInstanceStatus? status;
         private string? supportTeamId;
@@ -98,6 +99,16 @@
         {
             get => remarks;
             set => remarks = Set("remarks", value);
+        }
+
+        /// <summary>
+        /// The attachments used in the <c>remarks</c> field.
+        /// </summary>
+        [JsonProperty("remarksAttachments")]
+        public List<AttachmentInput>? RemarksAttachments
+        {
+            get => remarksAttachments;
+            set => remarksAttachments = Set("remarksAttachments", value);
         }
 
         /// <summary>

@@ -19,6 +19,7 @@
         private DateTime? endAt;
         private long? duration;
         private string? description;
+        private List<AttachmentInput>? descriptionAttachments;
         private ReservationRecurrenceInput? recurrence;
         private string? id;
         private string? clientMutationId;
@@ -161,6 +162,16 @@
         {
             get => description;
             set => description = Set("description", value);
+        }
+
+        /// <summary>
+        /// The attachments used in the <c>description</c> field.
+        /// </summary>
+        [JsonProperty("descriptionAttachments")]
+        public List<AttachmentInput>? DescriptionAttachments
+        {
+            get => descriptionAttachments;
+            set => descriptionAttachments = Set("descriptionAttachments", value);
         }
 
         /// <summary>
