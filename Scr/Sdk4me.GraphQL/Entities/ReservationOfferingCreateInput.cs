@@ -22,6 +22,7 @@
         private bool? allowRepeat;
         private long? minAdvanceDuration;
         private long? maxAdvanceDuration;
+        private bool? privateReservations;
         private List<string>? configurationItemIds;
         private string? clientMutationId;
 
@@ -194,6 +195,16 @@
         {
             get => maxAdvanceDuration;
             set => maxAdvanceDuration = Set("maxAdvanceDuration", value);
+        }
+
+        /// <summary>
+        /// Reservations of this reservation offering are private and can not be viewed by other end users.
+        /// </summary>
+        [JsonProperty("privateReservations")]
+        public bool? PrivateReservations
+        {
+            get => privateReservations;
+            set => privateReservations = Set("privateReservations", value);
         }
 
         /// <summary>

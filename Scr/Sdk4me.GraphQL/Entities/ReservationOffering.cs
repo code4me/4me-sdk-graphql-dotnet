@@ -100,6 +100,12 @@
         [JsonProperty("preparationDuration")]
         public long? PreparationDuration { get; internal set; }
 
+        /// <summary>
+        /// Reservations of this reservation offering are private and can not be viewed by other end users.
+        /// </summary>
+        [JsonProperty("privateReservations")]
+        public bool? PrivateReservations { get; internal set; }
+
         [JsonProperty("requestTemplates")]
         internal NodeCollection<RequestTemplate>? RequestTemplatesCollection { get; set; }
 

@@ -47,7 +47,7 @@
         public long? AgileBoardColumnPosition { get; internal set; }
 
         /// <summary>
-        /// Automatically set to the number of times that the Team field of the request has been set to a team that is registered in the accounts from which the request data is retrieved.
+        /// Automatically set to the number of times that the Team field of the request has been set to a team that is registered in the accounts from which the request data is retrieved. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
         /// </summary>
         [JsonProperty("assignmentCount")]
         public long? AssignmentCount { get; internal set; }
@@ -70,13 +70,13 @@
         public RequestCategory? Category { get; internal set; }
 
         /// <summary>
-        /// Automatically set to the date and time at which the request is saved with the status "Completed".
+        /// Automatically set to the date and time at which the request is saved with the status "Completed". This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
         /// </summary>
         [JsonProperty("completedAt"), Sdk4meField(true)]
         public DateTime? CompletedAt { get; internal set; }
 
         /// <summary>
-        /// The appropriate completion reason for the request when it has been completed.
+        /// The appropriate completion reason for the request when it has been completed. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
         /// </summary>
         [JsonProperty("completionReason")]
         public RequestCompletionReason? CompletionReason { get; internal set; }
@@ -85,7 +85,7 @@
         internal NodeCollection<ConfigurationItem>? ConfigurationItemsCollection { get; set; }
 
         /// <summary>
-        /// Configuration items of the request.
+        /// Configuration items of the request. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
         /// </summary>
         public DataList<ConfigurationItem>? ConfigurationItems
         {
@@ -199,19 +199,19 @@
         public LifeCycleState? LifeCycleState { get; internal set; }
 
         /// <summary>
-        /// Used to indicate the status in the major incident management process.
+        /// Used to indicate the status in the major incident management process. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
         /// </summary>
         [JsonProperty("majorIncidentStatus")]
         public RequestMajorIncidentStatus? MajorIncidentStatus { get; internal set; }
 
         /// <summary>
-        /// The person to whom the request is to be assigned.
+        /// The person to whom the request is to be assigned. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
         /// </summary>
         [JsonProperty("member"), Sdk4meField(true)]
         public Person? Member { get; internal set; }
 
         /// <summary>
-        /// Empty when the status of the request is <c>completed</c>. The next target equals the response target when a response target exists and the response target is less than the desired completion. Otherwise, the next target equals the desired completion when a desired completion exists. Otherwise, if the status is <c>waiting_for_customer</c> the next target is <c>clock_stopped</c> when an affected SLA is linked to the request which Accountability field is set to <c>provider</c> or <c>supplier</c>. Otherwise, if the status is <c>waiting_for_customer</c> the next target is <c>best_effort</c>. Otherwise the next target is the resolution target when a resolution target exists. In all other cases, the next target is <c>best_effort</c>.
+        /// Empty when the status of the request is <c>completed</c>. The next target equals the response target when a response target exists and the response target is less than the desired completion. Otherwise, the next target equals the desired completion when a desired completion exists. Otherwise, if the status is <c>waiting_for_customer</c> the next target is <c>clock_stopped</c> when an affected SLA is linked to the request which Accountability field is set to <c>provider</c> or <c>supplier</c>. Otherwise, if the status is <c>waiting_for_customer</c> the next target is <c>best_effort</c>. Otherwise the next target is the resolution target when a resolution target exists. In all other cases, the next target is <c>best_effort</c>. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
         /// </summary>
         [JsonProperty("nextTargetAt"), Sdk4meField(true)]
         public string? NextTargetAt { get; internal set; }
@@ -282,7 +282,7 @@
         public bool? ProviderWasNotAccountable { get; internal set; }
 
         /// <summary>
-        /// Automatically set to the number of times that the status of the request has changed from <c>completed</c> to a different value in the account from which the request data is retrieved.
+        /// Automatically set to the number of times that the status of the request has changed from <c>completed</c> to a different value in the account from which the request data is retrieved. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
         /// </summary>
         [JsonProperty("reopenCount")]
         public long? ReopenCount { get; internal set; }
@@ -378,7 +378,7 @@
         }
 
         /// <summary>
-        /// Used to select the current status of the request.
+        /// Used to select the current status of the request. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
         /// </summary>
         [JsonProperty("status"), Sdk4meField(true)]
         public RequestStatus? Status { get; internal set; }
@@ -390,13 +390,13 @@
         public string? Subject { get; internal set; }
 
         /// <summary>
-        /// The supplier organization that has been asked to assist with the request. The supplier organization is automatically selected in this field after a service instance has been selected that is provided by an external service provider organization.
+        /// The supplier organization that has been asked to assist with the request. The supplier organization is automatically selected in this field after a service instance has been selected that is provided by an external service provider organization. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
         /// </summary>
         [JsonProperty("supplier")]
         public Organization? Supplier { get; internal set; }
 
         /// <summary>
-        /// The identifier under which the request has been registered at the supplier organization. If the supplier provided a link to the request, enter the entire URL in this field.
+        /// The identifier under which the request has been registered at the supplier organization. If the supplier provided a link to the request, enter the entire URL in this field. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
         /// </summary>
         [JsonProperty("supplierRequestID")]
         public string? SupplierRequestID { get; internal set; }
@@ -408,7 +408,7 @@
         public Task? Task { get; internal set; }
 
         /// <summary>
-        /// The team to which the request is to be assigned. By default, the first line team of the service instance that is related to the request will be selected. If a first line team has not been specified for the service instance, the support team of the service instance will be selected instead.
+        /// The team to which the request is to be assigned. By default, the first line team of the service instance that is related to the request will be selected. If a first line team has not been specified for the service instance, the support team of the service instance will be selected instead. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
         /// </summary>
         [JsonProperty("team"), Sdk4meField(true)]
         public Team? Team { get; internal set; }

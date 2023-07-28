@@ -6122,6 +6122,11 @@
         [EnumMember(Value = "preparationDuration")]
         PreparationDuration,
         /// <summary>
+        /// The private reservations field.
+        /// </summary>
+        [EnumMember(Value = "privateReservations")]
+        PrivateReservations,
+        /// <summary>
         /// The request templates field.
         /// </summary>
         [EnumMember(Value = "requestTemplates")]
