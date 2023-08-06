@@ -151,6 +151,12 @@
         public string? Reference { get; internal set; }
 
         /// <summary>
+        /// This app requires an enabled OAuth person.
+        /// </summary>
+        [JsonProperty("requiresEnabledOauthPerson")]
+        public bool? RequiresEnabledOauthPerson { get; internal set; }
+
+        /// <summary>
         /// Scopes of this app offering.
         /// </summary>
         [JsonProperty("scopes")]

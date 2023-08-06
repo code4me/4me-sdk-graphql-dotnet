@@ -188,6 +188,12 @@
         public string? Name { get; internal set; }
 
         /// <summary>
+        /// An enabled OAuth person is mentionable and visible in suggest fields, just like a real person.
+        /// </summary>
+        [JsonProperty("oauthPersonEnablement")]
+        public bool? OauthPersonEnablement { get; internal set; }
+
+        /// <summary>
         /// The organization for which the person works as an employee or long-term contractor.
         /// </summary>
         [JsonProperty("organization")]

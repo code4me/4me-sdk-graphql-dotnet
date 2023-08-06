@@ -22,6 +22,7 @@
         private string? uiExtensionVersionId;
         private string? configurationUriTemplate;
         private string? webhookUriTemplate;
+        private bool? requiresEnabledOauthPerson;
         private List<AppOfferingScopeInput>? newScopes;
         private string? id;
         private List<string>? scopesToDelete;
@@ -195,6 +196,16 @@
         {
             get => webhookUriTemplate;
             set => webhookUriTemplate = Set("webhookUriTemplate", value);
+        }
+
+        /// <summary>
+        /// This app requires an enabled OAuth person.
+        /// </summary>
+        [JsonProperty("requiresEnabledOauthPerson")]
+        public bool? RequiresEnabledOauthPerson
+        {
+            get => requiresEnabledOauthPerson;
+            set => requiresEnabledOauthPerson = Set("requiresEnabledOauthPerson", value);
         }
 
         /// <summary>

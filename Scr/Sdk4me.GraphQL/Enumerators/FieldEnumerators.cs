@@ -672,6 +672,11 @@
         [EnumMember(Value = "reference")]
         Reference,
         /// <summary>
+        /// The requires enabled oauth person field.
+        /// </summary>
+        [EnumMember(Value = "requiresEnabledOauthPerson")]
+        RequiresEnabledOauthPerson,
+        /// <summary>
         /// The scopes field.
         /// </summary>
         [EnumMember(Value = "scopes")]
@@ -3198,6 +3203,11 @@
         /// </summary>
         [EnumMember(Value = "name")]
         Name,
+        /// <summary>
+        /// The oauth person enablement field.
+        /// </summary>
+        [EnumMember(Value = "oauthPersonEnablement")]
+        OauthPersonEnablement,
         /// <summary>
         /// The organization field.
         /// </summary>

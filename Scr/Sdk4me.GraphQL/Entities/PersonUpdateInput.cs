@@ -38,6 +38,7 @@
         private List<string>? teamIds;
         private List<string>? skillPoolIds;
         private List<string>? configurationItemIds;
+        private bool? oauthPersonEnablement;
         private List<AddressInput>? newAddresses;
         private List<ContactInput>? newContacts;
         private List<PermissionInput>? permissions;
@@ -378,6 +379,16 @@
         {
             get => configurationItemIds;
             set => configurationItemIds = Set("configurationItemIds", value);
+        }
+
+        /// <summary>
+        /// An enabled OAuth person is mentionable and visible in suggest fields, just like a real person.
+        /// </summary>
+        [JsonProperty("oauthPersonEnablement")]
+        public bool? OauthPersonEnablement
+        {
+            get => oauthPersonEnablement;
+            set => oauthPersonEnablement = Set("oauthPersonEnablement", value);
         }
 
         /// <summary>
