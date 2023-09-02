@@ -8,7 +8,11 @@
         private string? id;
         private string? requestTemplateId;
         private long? responseTarget;
+        private long? responseTargetInDays;
+        private bool? responseTargetBestEffort;
         private long? resolutionTarget;
+        private long? resolutionTargetInDays;
+        private bool? resolutionTargetBestEffort;
         private string? supportHoursId;
         private string? slaNotificationSchemeId;
         private ServiceOfferingChargeType? chargeType;
@@ -46,6 +50,26 @@
         }
 
         /// <summary>
+        /// Number of business days within which a response needs to have been provided for a request to which the request template has been applied and which requester is covered by an SLA that is based on the service offering.
+        /// </summary>
+        [JsonProperty("responseTargetInDays")]
+        public long? ResponseTargetInDays
+        {
+            get => responseTargetInDays;
+            set => responseTargetInDays = Set("responseTargetInDays", value);
+        }
+
+        /// <summary>
+        /// Set response target to Best Effort when the request template has been applied to the request and the requester is covered by an SLA that is based on the service offering.
+        /// </summary>
+        [JsonProperty("responseTargetBestEffort")]
+        public bool? ResponseTargetBestEffort
+        {
+            get => responseTargetBestEffort;
+            set => responseTargetBestEffort = Set("responseTargetBestEffort", value);
+        }
+
+        /// <summary>
         /// Number of minutes within which a request needs to have been completed when the request template has been applied to the request and the requester is covered by an SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("resolutionTarget")]
@@ -53,6 +77,26 @@
         {
             get => resolutionTarget;
             set => resolutionTarget = Set("resolutionTarget", value);
+        }
+
+        /// <summary>
+        /// Number of business days within which a request needs to have been completed when the request template has been applied to the request and the requester is covered by an SLA that is based on the service offering.
+        /// </summary>
+        [JsonProperty("resolutionTargetInDays")]
+        public long? ResolutionTargetInDays
+        {
+            get => resolutionTargetInDays;
+            set => resolutionTargetInDays = Set("resolutionTargetInDays", value);
+        }
+
+        /// <summary>
+        /// Set the resolution target to Best Effort when the request template has been applied to the request and the requester is covered by an SLA that is based on the service offering.
+        /// </summary>
+        [JsonProperty("resolutionTargetBestEffort")]
+        public bool? ResolutionTargetBestEffort
+        {
+            get => resolutionTargetBestEffort;
+            set => resolutionTargetBestEffort = Set("resolutionTargetBestEffort", value);
         }
 
         /// <summary>

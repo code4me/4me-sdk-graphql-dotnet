@@ -8250,6 +8250,11 @@
         [EnumMember(Value = "resolutionTarget")]
         ResolutionTarget,
         /// <summary>
+        /// The resolution target best effort field.
+        /// </summary>
+        [EnumMember(Value = "resolutionTargetBestEffort")]
+        ResolutionTargetBestEffort,
+        /// <summary>
         /// The resolution target in days field.
         /// </summary>
         [EnumMember(Value = "resolutionTargetInDays")]
@@ -8259,6 +8264,11 @@
         /// </summary>
         [EnumMember(Value = "responseTarget")]
         ResponseTarget,
+        /// <summary>
+        /// The response target best effort field.
+        /// </summary>
+        [EnumMember(Value = "responseTargetBestEffort")]
+        ResponseTargetBestEffort,
         /// <summary>
         /// The response target in days field.
         /// </summary>

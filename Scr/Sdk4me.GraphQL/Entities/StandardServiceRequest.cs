@@ -43,6 +43,12 @@
         public long? ResolutionTarget { get; internal set; }
 
         /// <summary>
+        /// Resolution target is Best Effort when the request template has been applied to the request and the requester is covered by an SLA that is based on the service offering.
+        /// </summary>
+        [JsonProperty("resolutionTargetBestEffort")]
+        public bool? ResolutionTargetBestEffort { get; internal set; }
+
+        /// <summary>
         /// Number of business days within which a request needs to have been completed when the request template has been applied to the request and the requester is covered by an SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("resolutionTargetInDays")]
@@ -53,6 +59,12 @@
         /// </summary>
         [JsonProperty("responseTarget")]
         public long? ResponseTarget { get; internal set; }
+
+        /// <summary>
+        /// Response target is Best Effort when the request template has been applied to the request and the requester is covered by an SLA that is based on the service offering.
+        /// </summary>
+        [JsonProperty("responseTargetBestEffort")]
+        public bool? ResponseTargetBestEffort { get; internal set; }
 
         /// <summary>
         /// Number of business days within which a response needs to have been provided for a request to which the request template has been applied and which requester is covered by an SLA that is based on the service offering.
