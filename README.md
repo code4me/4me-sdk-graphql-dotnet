@@ -4,6 +4,9 @@ A .NET client for accessing the [4me GraphQL API](https://developer.4me.com/grap
 ## Licensing
 The SDK uses the [Newtonsoft.Json framework](https://github.com/JamesNK/Newtonsoft.Json) NuGet Package, which is a high-performance JSON framework for .NET and available under [MIT licensing](https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md).
 
+## NuGet
+Stable binaries are published to [NuGet.org](https://www.nuget.org), and contain everything you need to use [.NET SDK for 4me GraphQL](https://www.nuget.org/packages/Sdk4me.GraphQL) in your application.
+
 # Introduction
 The .NET SDK simplifies the process of interacting with the 4me GraphQL API, allowing you to take full advantage of its query and mutation capabilities with ease.
 It abstracts away the complex task of managing low-level details such as sending requests, parsing responses, filtering and pagination, making it simple to integrate 4me GraphQL API into your .NET applications and fully leverage its functionalities.
@@ -101,7 +104,7 @@ By default, a set of fields will be returned for all selected GraphQL `OBJECT` t
 DataList<Person> people = await client.Get(Query.Person
     .Select(PersonField.ID, PersonField.Name)
         .SelectOrganization(new OrganizationQuery()
-        .Select(OrganizationField.ID, OrganizationField.Name, OrganizationField.Disabled)));
+            .Select(OrganizationField.ID, OrganizationField.Name, OrganizationField.Disabled)));
 ```
 
 To further refine the selection of fields by using a query for a specific GraphQL `OBJECT` type field, in this case, `Organization`.
@@ -120,7 +123,7 @@ It's recommended to only select the necessary fields.
 ```csharp
 DataList<Person> people = await client.Get(Query.Person.View(PeronsView.All));
 ```
-A views can only be used on the top level query.
+A view can only be used on the top level query.
 
 #### Nested queries and items per request
 ```csharp
