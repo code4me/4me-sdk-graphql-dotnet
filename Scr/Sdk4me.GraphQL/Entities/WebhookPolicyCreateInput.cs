@@ -6,10 +6,10 @@
     public class WebhookPolicyCreateInput : PropertyChangeSet
     {
         private bool? disabled;
-        private WebhookPolicyJwtAlg? jwtAlg;
         private long? jwtClaimExpiresIn;
         private string? jwtAudience;
         private string? clientMutationId;
+        private WebhookPolicyJwtAlg? jwtAlg;
 
         /// <summary>
         /// Whether the webhook policy will be applied.
@@ -19,16 +19,6 @@
         {
             get => disabled;
             set => disabled = Set("disabled", value);
-        }
-
-        /// <summary>
-        /// The algorithm to use for cryptographic signing of webhook messages.
-        /// </summary>
-        [JsonProperty("jwtAlg")]
-        public WebhookPolicyJwtAlg? JwtAlg
-        {
-            get => jwtAlg;
-            set => jwtAlg = Set("jwtAlg", value);
         }
 
         /// <summary>
@@ -59,6 +49,16 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The algorithm to use for cryptographic signing of webhook messages.
+        /// </summary>
+        [JsonProperty("jwtAlg")]
+        public WebhookPolicyJwtAlg? JwtAlg
+        {
+            get => jwtAlg;
+            set => jwtAlg = Set("jwtAlg", value);
         }
     }
 }

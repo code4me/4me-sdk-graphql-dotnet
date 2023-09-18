@@ -12,9 +12,9 @@
         private bool? enabledByCustomer;
         private bool? suspended;
         private string? suspensionComment;
+        private string? clientMutationId;
         private string? customerAccountId;
         private string? appOfferingId;
-        private string? clientMutationId;
 
         /// <summary>
         /// Values for custom fields to be used by the UI Extension that is linked to the record.
@@ -87,6 +87,16 @@
         }
 
         /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
         /// Identifier of the account this app instance is for.
         /// </summary>
         [JsonProperty("customerAccountId")]
@@ -104,16 +114,6 @@
         {
             get => appOfferingId;
             set => appOfferingId = Set("appOfferingId", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
         }
     }
 }

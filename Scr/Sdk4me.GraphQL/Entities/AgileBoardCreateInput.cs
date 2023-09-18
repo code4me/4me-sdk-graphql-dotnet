@@ -11,10 +11,10 @@
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
         private bool? disabled;
-        private string? name;
         private string? managerId;
         private List<AgileBoardColumnInput>? newColumns;
         private string? clientMutationId;
+        private string? name;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -77,16 +77,6 @@
         }
 
         /// <summary>
-        /// Name of the agile board.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
-        }
-
-        /// <summary>
         /// Identifier of the manager of the agile board.
         /// </summary>
         [JsonProperty("managerId")]
@@ -114,6 +104,16 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Name of the agile board.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
         }
     }
 }

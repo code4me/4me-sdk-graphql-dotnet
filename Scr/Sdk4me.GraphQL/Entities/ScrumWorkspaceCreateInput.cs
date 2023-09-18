@@ -8,15 +8,15 @@
         private string? source;
         private string? sourceID;
         private string? pictureUri;
-        private string? agileBoardId;
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
         private bool? disabled;
-        private string? name;
-        private string? productBacklogId;
-        private long? sprintLength;
-        private string? teamId;
         private string? clientMutationId;
+        private string? name;
+        private string? teamId;
+        private string? productBacklogId;
+        private string? agileBoardId;
+        private long? sprintLength;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -46,16 +46,6 @@
         {
             get => pictureUri;
             set => pictureUri = Set("pictureUri", value);
-        }
-
-        /// <summary>
-        /// Identifier of the agile board used to track the progress of this workspace's active sprint.
-        /// </summary>
-        [JsonProperty("agileBoardId")]
-        public string? AgileBoardId
-        {
-            get => agileBoardId;
-            set => agileBoardId = Set("agileBoardId", value);
         }
 
         /// <summary>
@@ -89,6 +79,16 @@
         }
 
         /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
         /// Name of the scrum workspace.
         /// </summary>
         [JsonProperty("name")]
@@ -96,26 +96,6 @@
         {
             get => name;
             set => name = Set("name", value);
-        }
-
-        /// <summary>
-        /// Identifier of the product backlog used when planning sprints.
-        /// </summary>
-        [JsonProperty("productBacklogId")]
-        public string? ProductBacklogId
-        {
-            get => productBacklogId;
-            set => productBacklogId = Set("productBacklogId", value);
-        }
-
-        /// <summary>
-        /// Standard length in weeks of new sprints planned in this scrum workspace.
-        /// </summary>
-        [JsonProperty("sprintLength")]
-        public long? SprintLength
-        {
-            get => sprintLength;
-            set => sprintLength = Set("sprintLength", value);
         }
 
         /// <summary>
@@ -129,13 +109,33 @@
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// Identifier of the product backlog used when planning sprints.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("productBacklogId")]
+        public string? ProductBacklogId
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
+            get => productBacklogId;
+            set => productBacklogId = Set("productBacklogId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the agile board used to track the progress of this workspace's active sprint.
+        /// </summary>
+        [JsonProperty("agileBoardId")]
+        public string? AgileBoardId
+        {
+            get => agileBoardId;
+            set => agileBoardId = Set("agileBoardId", value);
+        }
+
+        /// <summary>
+        /// Standard length in weeks of new sprints planned in this scrum workspace.
+        /// </summary>
+        [JsonProperty("sprintLength")]
+        public long? SprintLength
+        {
+            get => sprintLength;
+            set => sprintLength = Set("sprintLength", value);
         }
     }
 }

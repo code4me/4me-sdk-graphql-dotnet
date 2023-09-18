@@ -73,11 +73,11 @@
         }
 
         /// <summary>
-        /// The Charge IDs are the unique identifiers by which an effort class that is linked to a time entry when an activity was performed through the coverage of the SLA is known in the billing system of the service provider.
+        /// The Rate IDs are the unique identifiers by which an effort class that is linked to a time entry when an activity was performed through the coverage of the SLA is known in the billing system of the service provider.
         /// </summary>
-        public ServiceLevelAgreementQuery SelectEffortClassChargeIDs(EffortClassChargeIDQuery query)
+        public ServiceLevelAgreementQuery SelectEffortClassRateIDs(EffortClassRateIDQuery query)
         {
-            query.FieldName = "effortClassChargeIDs";
+            query.FieldName = "effortClassRateIDs";
             return Select(query);
         }
 

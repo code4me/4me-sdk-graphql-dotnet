@@ -5,20 +5,20 @@
     /// </summary>
     public class TranslationCreateInput : PropertyChangeSet
     {
-        private string? text;
+        private string? clientMutationId;
         private string? field;
         private string? language;
         private string? ownerId;
-        private string? clientMutationId;
+        private string? text;
 
         /// <summary>
-        /// The text of the translation.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("text")]
-        public string? Text
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => text;
-            set => text = Set("text", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -53,13 +53,13 @@
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// The text of the translation.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("text")]
+        public string? Text
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
+            get => text;
+            set => text = Set("text", value);
         }
     }
 }

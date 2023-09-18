@@ -18,13 +18,13 @@
         private bool? disabled;
         private string? inboundEmailLocalPart;
         private string? managerId;
-        private string? name;
         private string? remarks;
         private List<AttachmentInput>? remarksAttachments;
         private string? timeZone;
         private string? workHoursId;
         private List<string>? memberIds;
         private string? clientMutationId;
+        private string? name;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -157,16 +157,6 @@
         }
 
         /// <summary>
-        /// The name of the team.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
-        }
-
-        /// <summary>
         /// Any additional information about the team that might prove useful.
         /// </summary>
         [JsonProperty("remarks")]
@@ -225,6 +215,16 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The name of the team.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
         }
     }
 }

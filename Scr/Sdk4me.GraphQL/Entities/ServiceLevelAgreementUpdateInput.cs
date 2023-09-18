@@ -20,19 +20,19 @@
         private List<AttachmentInput>? remarksAttachments;
         private SlaCoverage? coverage;
         private bool? useKnowledgeFromServiceProvider;
-        private string? billingID;
+        private string? agreementID;
         private ActivityIDInput? activityID;
         private List<string>? customerRepresentativeIds;
         private List<string>? organizationIds;
         private List<string>? personIds;
         private List<string>? siteIds;
         private List<string>? skillPoolIds;
-        private List<EffortClassChargeIDInput>? newEffortClassChargeIDs;
+        private List<EffortClassRateIDInput>? newEffortClassRateIDs;
         private List<StandardServiceRequestActivityIDInput>? newStandardServiceRequestActivityIDs;
+        private string? clientMutationId;
         private string? id;
         private List<string>? standardServiceRequestActivityIDsToDelete;
-        private List<string>? effortClassChargeIDsToDelete;
-        private string? clientMutationId;
+        private List<string>? effortClassRateIDsToDelete;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -185,13 +185,13 @@
         }
 
         /// <summary>
-        /// The Billing ID is the unique identifier by which all the activities that are performed through the coverage of the SLA are known in the billing system of the service provider.
+        /// The Agreement ID is the unique identifier by which all the activities that are performed through the coverage of the SLA are known in the billing system of the service provider.
         /// </summary>
-        [JsonProperty("billingID")]
-        public string? BillingID
+        [JsonProperty("agreementID")]
+        public string? AgreementID
         {
-            get => billingID;
-            set => billingID = Set("billingID", value);
+            get => agreementID;
+            set => agreementID = Set("agreementID", value);
         }
 
         /// <summary>
@@ -255,13 +255,13 @@
         }
 
         /// <summary>
-        /// The Charge IDs are the unique identifiers by which an effort class that is linked to a time entry when an activity was performed through the coverage of the SLA is known in the billing system of the service provider.
+        /// The Rate IDs are the unique identifiers by which an effort class that is linked to a time entry when an activity was performed through the coverage of the SLA is known in the billing system of the service provider.
         /// </summary>
-        [JsonProperty("newEffortClassChargeIDs")]
-        public List<EffortClassChargeIDInput>? NewEffortClassChargeIDs
+        [JsonProperty("newEffortClassRateIDs")]
+        public List<EffortClassRateIDInput>? NewEffortClassRateIDs
         {
-            get => newEffortClassChargeIDs;
-            set => newEffortClassChargeIDs = Set("newEffortClassChargeIDs", value);
+            get => newEffortClassRateIDs;
+            set => newEffortClassRateIDs = Set("newEffortClassRateIDs", value);
         }
 
         /// <summary>
@@ -275,6 +275,16 @@
         }
 
         /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
@@ -285,7 +295,7 @@
         }
 
         /// <summary>
-        /// Identifiers of effort class chargeIDs to remove from the SLA.
+        /// Identifiers of effort class rateIDs to remove from the SLA.
         /// </summary>
         [JsonProperty("standardServiceRequestActivityIDsToDelete")]
         public List<string>? StandardServiceRequestActivityIDsToDelete
@@ -295,23 +305,13 @@
         }
 
         /// <summary>
-        /// Identifiers of effort class chargeIDs to remove from the SLA.
+        /// Identifiers of effort class rateIDs to remove from the SLA.
         /// </summary>
-        [JsonProperty("effortClassChargeIDsToDelete")]
-        public List<string>? EffortClassChargeIDsToDelete
+        [JsonProperty("effortClassRateIDsToDelete")]
+        public List<string>? EffortClassRateIDsToDelete
         {
-            get => effortClassChargeIDsToDelete;
-            set => effortClassChargeIDsToDelete = Set("effortClassChargeIDsToDelete", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
+            get => effortClassRateIDsToDelete;
+            set => effortClassRateIDsToDelete = Set("effortClassRateIDsToDelete", value);
         }
     }
 }

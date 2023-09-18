@@ -16,7 +16,6 @@
         private List<AttachmentInput>? customFieldsAttachments;
         private DateTime? assignedAt;
         private TaskCategory? category;
-        private string? workflowId;
         private DateTime? finishedAt;
         private TaskImpact? impact;
         private string? instructions;
@@ -46,6 +45,7 @@
         private List<string>? predecessorIds;
         private List<string>? successorIds;
         private string? clientMutationId;
+        private string? workflowId;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -155,16 +155,6 @@
         {
             get => category;
             set => category = Set("category", value);
-        }
-
-        /// <summary>
-        /// Identifier of the workflow to which the task belongs.
-        /// </summary>
-        [JsonProperty("workflowId")]
-        public string? WorkflowId
-        {
-            get => workflowId;
-            set => workflowId = Set("workflowId", value);
         }
 
         /// <summary>
@@ -455,6 +445,16 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the workflow to which the task belongs.
+        /// </summary>
+        [JsonProperty("workflowId")]
+        public string? WorkflowId
+        {
+            get => workflowId;
+            set => workflowId = Set("workflowId", value);
         }
     }
 }

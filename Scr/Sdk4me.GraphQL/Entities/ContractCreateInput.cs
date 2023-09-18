@@ -11,10 +11,8 @@
         private List<AttachmentInput>? customFieldsAttachments;
         private string? uiExtensionId;
         private ContractCategory? category;
-        private string? customerId;
         private string? customerRepresentativeId;
         private DateOnly? expiryDate;
-        private string? name;
         private DateOnly? noticeDate;
         private string? remarks;
         private List<AttachmentInput>? remarksAttachments;
@@ -25,6 +23,8 @@
         private string? timeZone;
         private List<string>? configurationItemIds;
         private string? clientMutationId;
+        private string? name;
+        private string? customerId;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -87,16 +87,6 @@
         }
 
         /// <summary>
-        /// Identifier of the organization that pays for the contract.
-        /// </summary>
-        [JsonProperty("customerId")]
-        public string? CustomerId
-        {
-            get => customerId;
-            set => customerId = Set("customerId", value);
-        }
-
-        /// <summary>
         /// Identifier of the person who represents the customer of the contract.
         /// </summary>
         [JsonProperty("customerRepresentativeId")]
@@ -117,20 +107,6 @@
         {
             get => expiryDate;
             set => expiryDate = Set("expiryDate", value);
-        }
-
-        /// <summary>
-        /// <br>The name of the contract.</br>
-        /// <br>If a unique ID is given to each contract, then this ID can be added at the start of the name.</br>
-        /// <br></br>
-        /// <br>Example:</br>
-        /// <br>• 2EGXQ2W – Dell 3-Year ProSupport and Next Business Day Onsite Repair for CMP00035</br>
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
         }
 
         /// <summary>
@@ -235,6 +211,30 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// <br>The name of the contract.</br>
+        /// <br>If a unique ID is given to each contract, then this ID can be added at the start of the name.</br>
+        /// <br></br>
+        /// <br>Example:</br>
+        /// <br>• 2EGXQ2W – Dell 3-Year ProSupport and Next Business Day Onsite Repair for CMP00035</br>
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
+        }
+
+        /// <summary>
+        /// Identifier of the organization that pays for the contract.
+        /// </summary>
+        [JsonProperty("customerId")]
+        public string? CustomerId
+        {
+            get => customerId;
+            set => customerId = Set("customerId", value);
         }
     }
 }

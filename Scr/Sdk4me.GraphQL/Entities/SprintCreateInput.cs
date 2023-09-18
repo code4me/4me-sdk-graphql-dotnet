@@ -9,13 +9,13 @@
         private string? sourceID;
         private DateTime? endAt;
         private long? number;
-        private string? scrumWorkspaceId;
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
         private DateTime? startAt;
         private SprintStatus? status;
         private List<SprintBacklogItemInput>? newSprintBacklogItems;
         private string? clientMutationId;
+        private string? scrumWorkspaceId;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -55,16 +55,6 @@
         {
             get => number;
             set => number = Set("number", value);
-        }
-
-        /// <summary>
-        /// Identifier of scrum workspace this sprint belongs to.
-        /// </summary>
-        [JsonProperty("scrumWorkspaceId")]
-        public string? ScrumWorkspaceId
-        {
-            get => scrumWorkspaceId;
-            set => scrumWorkspaceId = Set("scrumWorkspaceId", value);
         }
 
         /// <summary>
@@ -125,6 +115,16 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Identifier of scrum workspace this sprint belongs to.
+        /// </summary>
+        [JsonProperty("scrumWorkspaceId")]
+        public string? ScrumWorkspaceId
+        {
+            get => scrumWorkspaceId;
+            set => scrumWorkspaceId = Set("scrumWorkspaceId", value);
         }
     }
 }

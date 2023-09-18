@@ -14,9 +14,9 @@
         private string? name;
         private string? reference;
         private List<CustomCollectionElementInput>? newCollectionElements;
+        private string? clientMutationId;
         private string? id;
         private List<string>? collectionElementsToDelete;
-        private string? clientMutationId;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -109,6 +109,16 @@
         }
 
         /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
@@ -126,16 +136,6 @@
         {
             get => collectionElementsToDelete;
             set => collectionElementsToDelete = Set("collectionElementsToDelete", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
         }
     }
 }

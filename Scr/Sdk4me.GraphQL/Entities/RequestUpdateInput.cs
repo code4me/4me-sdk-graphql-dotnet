@@ -51,9 +51,9 @@
         private DateTime? waitingUntil;
         private List<WatchInput>? newWatches;
         private List<string>? configurationItemIds;
+        private string? clientMutationId;
         private string? id;
         private List<string>? watchesToDelete;
-        private string? clientMutationId;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -517,6 +517,16 @@
         }
 
         /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
@@ -534,16 +544,6 @@
         {
             get => watchesToDelete;
             set => watchesToDelete = Set("watchesToDelete", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
         }
     }
 }

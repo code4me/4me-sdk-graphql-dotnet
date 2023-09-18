@@ -14,13 +14,13 @@
         private string? managerId;
         private DateOnly? mitigationTargetAt;
         private string? note;
-        private string? severity;
         private RiskStatus? status;
-        private string? subject;
         private List<string>? organizationIds;
         private List<string>? projectIds;
         private List<string>? serviceIds;
         private string? clientMutationId;
+        private string? subject;
+        private string? severity;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -113,16 +113,6 @@
         }
 
         /// <summary>
-        /// The severity of the risk.
-        /// </summary>
-        [JsonProperty("severity")]
-        public string? Severity
-        {
-            get => severity;
-            set => severity = Set("severity", value);
-        }
-
-        /// <summary>
         /// The current status of the risk.
         /// </summary>
         [JsonProperty("status")]
@@ -130,16 +120,6 @@
         {
             get => status;
             set => status = Set("status", value);
-        }
-
-        /// <summary>
-        /// The subject of the risk.
-        /// </summary>
-        [JsonProperty("subject")]
-        public string? Subject
-        {
-            get => subject;
-            set => subject = Set("subject", value);
         }
 
         /// <summary>
@@ -180,6 +160,26 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The subject of the risk.
+        /// </summary>
+        [JsonProperty("subject")]
+        public string? Subject
+        {
+            get => subject;
+            set => subject = Set("subject", value);
+        }
+
+        /// <summary>
+        /// The severity of the risk.
+        /// </summary>
+        [JsonProperty("severity")]
+        public string? Severity
+        {
+            get => severity;
+            set => severity = Set("severity", value);
         }
     }
 }

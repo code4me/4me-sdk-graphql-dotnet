@@ -10,9 +10,9 @@
         private string? pictureUri;
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
-        private string? name;
         private List<string>? serviceIds;
         private string? clientMutationId;
+        private string? name;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -65,16 +65,6 @@
         }
 
         /// <summary>
-        /// The name of the service category.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
-        }
-
-        /// <summary>
         /// Identifiers of the services of the service category.
         /// </summary>
         [JsonProperty("serviceIds")]
@@ -92,6 +82,16 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The name of the service category.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
         }
     }
 }

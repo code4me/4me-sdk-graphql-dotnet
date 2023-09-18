@@ -11,10 +11,10 @@
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
         private bool? disabled;
-        private string? name;
         private string? reference;
         private List<CustomCollectionElementInput>? newCollectionElements;
         private string? clientMutationId;
+        private string? name;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -77,16 +77,6 @@
         }
 
         /// <summary>
-        /// Name of the collection.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
-        }
-
-        /// <summary>
         /// The Reference field defaults to the Name field value, written in lower case characters and with all spaces replaced by the underscore character. This reference can be used to link the collection to an element using the 4me APIs or the 4me Import functionality.
         /// </summary>
         [JsonProperty("reference")]
@@ -114,6 +104,16 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Name of the collection.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
         }
     }
 }

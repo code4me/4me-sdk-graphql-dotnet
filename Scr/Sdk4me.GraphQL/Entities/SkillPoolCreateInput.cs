@@ -10,7 +10,6 @@
         private string? pictureUri;
         private bool? disabled;
         private string? managerId;
-        private string? name;
         private string? remarks;
         private List<AttachmentInput>? remarksAttachments;
         private decimal? costPerHour;
@@ -18,6 +17,7 @@
         private List<string>? memberIds;
         private List<string>? effortClassIds;
         private string? clientMutationId;
+        private string? name;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -67,16 +67,6 @@
         {
             get => managerId;
             set => managerId = Set("managerId", value);
-        }
-
-        /// <summary>
-        /// The name of the skill pool.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
         }
 
         /// <summary>
@@ -148,6 +138,16 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The name of the skill pool.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
         }
     }
 }

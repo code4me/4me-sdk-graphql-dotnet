@@ -46,9 +46,9 @@
         private string? workflowManagerId;
         private string? workflowTemplateId;
         private List<CiRelationInput>? newCiRelations;
+        private string? clientMutationId;
         private string? id;
         private List<string>? ciRelationsToDelete;
-        private string? clientMutationId;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -462,6 +462,16 @@
         }
 
         /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
@@ -479,16 +489,6 @@
         {
             get => ciRelationsToDelete;
             set => ciRelationsToDelete = Set("ciRelationsToDelete", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
         }
     }
 }

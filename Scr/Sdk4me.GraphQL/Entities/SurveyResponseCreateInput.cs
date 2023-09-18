@@ -12,11 +12,11 @@
         private string? personId;
         private string? rating;
         private JToken? ratingCalculation;
-        private string? serviceId;
-        private string? surveyId;
         private List<string>? slaIds;
         private List<SurveyAnswerInput>? newAnswers;
         private string? clientMutationId;
+        private string? surveyId;
+        private string? serviceId;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -89,26 +89,6 @@
         }
 
         /// <summary>
-        /// Identifier of the service this response is about.
-        /// </summary>
-        [JsonProperty("serviceId")]
-        public string? ServiceId
-        {
-            get => serviceId;
-            set => serviceId = Set("serviceId", value);
-        }
-
-        /// <summary>
-        /// Identifier of the survey this response is for.
-        /// </summary>
-        [JsonProperty("surveyId")]
-        public string? SurveyId
-        {
-            get => surveyId;
-            set => surveyId = Set("surveyId", value);
-        }
-
-        /// <summary>
         /// Identifiers of the SLAs this response is for. (Ignored when supplying a personId.)
         /// </summary>
         [JsonProperty("slaIds")]
@@ -136,6 +116,26 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the survey this response is for.
+        /// </summary>
+        [JsonProperty("surveyId")]
+        public string? SurveyId
+        {
+            get => surveyId;
+            set => surveyId = Set("surveyId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the service this response is about.
+        /// </summary>
+        [JsonProperty("serviceId")]
+        public string? ServiceId
+        {
+            get => serviceId;
+            set => serviceId = Set("serviceId", value);
         }
     }
 }

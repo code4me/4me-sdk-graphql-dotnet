@@ -16,7 +16,6 @@
         private bool? disabled;
         private string? financialID;
         private string? managerId;
-        private string? name;
         private string? parentId;
         private string? region;
         private string? remarks;
@@ -26,6 +25,7 @@
         private List<AddressInput>? newAddresses;
         private List<ContactInput>? newContacts;
         private string? clientMutationId;
+        private string? name;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -138,16 +138,6 @@
         }
 
         /// <summary>
-        /// The full name of the organization.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
-        }
-
-        /// <summary>
         /// The organization's parent organization.
         /// </summary>
         [JsonProperty("parentId")]
@@ -240,6 +230,16 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The full name of the organization.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
         }
     }
 }

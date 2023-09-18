@@ -13,7 +13,7 @@
                 .SelectAll()
                 .SelectCustomerRepresentatives(new PersonQuery()
                     .SelectAll())
-                .SelectEffortClassChargeIDs(new EffortClassChargeIDQuery()
+                .SelectEffortClassRateIDs(new EffortClassRateIDQuery()
                     .SelectAll())
                 .SelectInvoices(new InvoiceQuery()
                     .SelectAll())

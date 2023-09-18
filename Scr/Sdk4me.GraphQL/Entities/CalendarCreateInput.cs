@@ -8,10 +8,10 @@
         private string? source;
         private string? sourceID;
         private bool? disabled;
-        private string? name;
         private List<string>? holidayIds;
         private List<CalendarHoursInput>? newCalendarHours;
         private string? clientMutationId;
+        private string? name;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -44,16 +44,6 @@
         }
 
         /// <summary>
-        /// The name of the calendar.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
-        }
-
-        /// <summary>
         /// Identifiers of the holidays of the calendar.
         /// </summary>
         [JsonProperty("holidayIds")]
@@ -81,6 +71,16 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The name of the calendar.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
         }
     }
 }

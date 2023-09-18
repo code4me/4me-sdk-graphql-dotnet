@@ -8,10 +8,10 @@
         private string? source;
         private string? sourceID;
         private bool? disabled;
-        private string? subject;
         private List<ProjectPhaseInput>? newPhases;
         private List<ProjectTemplateTaskTemplateInput>? newTaskTemplateRelations;
         private string? clientMutationId;
+        private string? subject;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -44,16 +44,6 @@
         }
 
         /// <summary>
-        /// A short description that needs to be copied to the Subject field of a new project when it is being created based on the template.
-        /// </summary>
-        [JsonProperty("subject")]
-        public string? Subject
-        {
-            get => subject;
-            set => subject = Set("subject", value);
-        }
-
-        /// <summary>
         /// Phases of the project template.
         /// </summary>
         [JsonProperty("newPhases")]
@@ -81,6 +71,16 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// A short description that needs to be copied to the Subject field of a new project when it is being created based on the template.
+        /// </summary>
+        [JsonProperty("subject")]
+        public string? Subject
+        {
+            get => subject;
+            set => subject = Set("subject", value);
         }
     }
 }

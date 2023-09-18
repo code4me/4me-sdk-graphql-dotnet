@@ -8,12 +8,12 @@
         private string? source;
         private string? sourceID;
         private string? approvalDelegateId;
-        private DateTime? endAt;
-        private string? personId;
         private string? reason;
-        private DateTime? startAt;
         private string? timeAllocationId;
         private string? clientMutationId;
+        private string? personId;
+        private DateTime? startAt;
+        private DateTime? endAt;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -46,26 +46,6 @@
         }
 
         /// <summary>
-        /// End time of the out of office period.
-        /// </summary>
-        [JsonProperty("endAt")]
-        public DateTime? EndAt
-        {
-            get => endAt;
-            set => endAt = Set("endAt", value);
-        }
-
-        /// <summary>
-        /// Identifier of the person who is out of office.
-        /// </summary>
-        [JsonProperty("personId")]
-        public string? PersonId
-        {
-            get => personId;
-            set => personId = Set("personId", value);
-        }
-
-        /// <summary>
         /// The reason of the out of office period. Required when the description category of the time allocation is required.
         /// </summary>
         [JsonProperty("reason")]
@@ -73,16 +53,6 @@
         {
             get => reason;
             set => reason = Set("reason", value);
-        }
-
-        /// <summary>
-        /// Start time of the out of office period.
-        /// </summary>
-        [JsonProperty("startAt")]
-        public DateTime? StartAt
-        {
-            get => startAt;
-            set => startAt = Set("startAt", value);
         }
 
         /// <summary>
@@ -103,6 +73,36 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the person who is out of office.
+        /// </summary>
+        [JsonProperty("personId")]
+        public string? PersonId
+        {
+            get => personId;
+            set => personId = Set("personId", value);
+        }
+
+        /// <summary>
+        /// Start time of the out of office period.
+        /// </summary>
+        [JsonProperty("startAt")]
+        public DateTime? StartAt
+        {
+            get => startAt;
+            set => startAt = Set("startAt", value);
+        }
+
+        /// <summary>
+        /// End time of the out of office period.
+        /// </summary>
+        [JsonProperty("endAt")]
+        public DateTime? EndAt
+        {
+            get => endAt;
+            set => endAt = Set("endAt", value);
         }
     }
 }

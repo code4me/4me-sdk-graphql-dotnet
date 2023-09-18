@@ -8,9 +8,9 @@
         private string? source;
         private string? sourceID;
         private bool? disabled;
-        private string? name;
         private List<SlaNotificationRuleInput>? newSlaNotificationRules;
         private string? clientMutationId;
+        private string? name;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -43,16 +43,6 @@
         }
 
         /// <summary>
-        /// The name of the SLA notification scheme.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
-        }
-
-        /// <summary>
         /// Rules of this SLA notification scheme.
         /// </summary>
         [JsonProperty("newSlaNotificationRules")]
@@ -70,6 +60,16 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The name of the SLA notification scheme.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
         }
     }
 }

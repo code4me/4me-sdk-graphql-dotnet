@@ -24,7 +24,6 @@
         private long? nrOfCores;
         private long? nrOfLicenses;
         private long? nrOfProcessors;
-        private string? productId;
         private decimal? purchaseValue;
         private string? purchaseValueCurrency;
         private RecurrenceInput? recurrence;
@@ -36,7 +35,6 @@
         private List<string>? serviceInstanceIds;
         private string? siteId;
         private bool? siteLicense;
-        private CiStatus? status;
         private string? supplierId;
         private string? supportTeamId;
         private string? systemID;
@@ -47,6 +45,8 @@
         private string? workflowTemplateId;
         private List<CiRelationInput>? newCiRelations;
         private string? clientMutationId;
+        private string? productId;
+        private CiStatus? status;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -239,16 +239,6 @@
         }
 
         /// <summary>
-        /// Identifier of the related product.
-        /// </summary>
-        [JsonProperty("productId")]
-        public string? ProductId
-        {
-            get => productId;
-            set => productId = Set("productId", value);
-        }
-
-        /// <summary>
         /// The amount that was paid for the configuration item (this is normally equal to the invoice amount).
         /// </summary>
         [JsonProperty("purchaseValue")]
@@ -360,16 +350,6 @@
         }
 
         /// <summary>
-        /// The appropriate status for the configuration item (CI).
-        /// </summary>
-        [JsonProperty("status")]
-        public CiStatus? Status
-        {
-            get => status;
-            set => status = Set("status", value);
-        }
-
-        /// <summary>
         /// Identifier of the supplier from which the configuration item (CI) has been obtained. When creating a new CI and a value is not specified for this field, it is set to the supplier of the CI's product.
         /// </summary>
         [JsonProperty("supplierId")]
@@ -467,6 +447,26 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the related product.
+        /// </summary>
+        [JsonProperty("productId")]
+        public string? ProductId
+        {
+            get => productId;
+            set => productId = Set("productId", value);
+        }
+
+        /// <summary>
+        /// The appropriate status for the configuration item (CI).
+        /// </summary>
+        [JsonProperty("status")]
+        public CiStatus? Status
+        {
+            get => status;
+            set => status = Set("status", value);
         }
     }
 }

@@ -13,8 +13,8 @@
         private string? name;
         private long? position;
         private string? trigger;
-        private string? id;
         private string? clientMutationId;
+        private string? id;
 
         /// <summary>
         /// The Actions field is used to define actions that should be executed when the condition of the automation rule is met.
@@ -101,16 +101,6 @@
         }
 
         /// <summary>
-        /// The node ID of the record to update.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
-        }
-
-        /// <summary>
         /// A unique identifier for the client performing the mutation.
         /// </summary>
         [JsonProperty("clientMutationId")]
@@ -118,6 +108,16 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The node ID of the record to update.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
         }
     }
 }

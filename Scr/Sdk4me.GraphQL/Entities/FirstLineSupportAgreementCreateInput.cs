@@ -7,11 +7,8 @@
     {
         private string? source;
         private string? sourceID;
-        private string? name;
         private AgreementStatus? status;
-        private string? customerId;
         private string? customerRepresentativeId;
-        private string? providerId;
         private string? serviceDeskTeamId;
         private DateOnly? startDate;
         private DateOnly? noticeDate;
@@ -30,6 +27,9 @@
         private string? remarks;
         private List<AttachmentInput>? remarksAttachments;
         private string? clientMutationId;
+        private string? name;
+        private string? customerId;
+        private string? providerId;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -52,16 +52,6 @@
         }
 
         /// <summary>
-        /// The name of the first line support agreement.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
-        }
-
-        /// <summary>
         /// The current status of the first line support agreement (FLSA).
         /// </summary>
         [JsonProperty("status")]
@@ -72,16 +62,6 @@
         }
 
         /// <summary>
-        /// Identifier of the organization that pays for the first line support agreement.
-        /// </summary>
-        [JsonProperty("customerId")]
-        public string? CustomerId
-        {
-            get => customerId;
-            set => customerId = Set("customerId", value);
-        }
-
-        /// <summary>
         /// Identifier of the customer representative.
         /// </summary>
         [JsonProperty("customerRepresentativeId")]
@@ -89,16 +69,6 @@
         {
             get => customerRepresentativeId;
             set => customerRepresentativeId = Set("customerRepresentativeId", value);
-        }
-
-        /// <summary>
-        /// Identifier of the organization that provides the first line support agreement.
-        /// </summary>
-        [JsonProperty("providerId")]
-        public string? ProviderId
-        {
-            get => providerId;
-            set => providerId = Set("providerId", value);
         }
 
         /// <summary>
@@ -280,6 +250,36 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The name of the first line support agreement.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
+        }
+
+        /// <summary>
+        /// Identifier of the organization that pays for the first line support agreement.
+        /// </summary>
+        [JsonProperty("customerId")]
+        public string? CustomerId
+        {
+            get => customerId;
+            set => customerId = Set("customerId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the organization that provides the first line support agreement.
+        /// </summary>
+        [JsonProperty("providerId")]
+        public string? ProviderId
+        {
+            get => providerId;
+            set => providerId = Set("providerId", value);
         }
     }
 }

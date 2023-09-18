@@ -32,10 +32,10 @@
         private List<ProjectPhaseInput>? newPhases;
         private List<string>? problemIds;
         private List<string>? requestIds;
+        private string? clientMutationId;
         private string? id;
         private string? templateId;
         private List<string>? phasesToDelete;
-        private string? clientMutationId;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -309,6 +309,16 @@
         }
 
         /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
@@ -336,16 +346,6 @@
         {
             get => phasesToDelete;
             set => phasesToDelete = Set("phasesToDelete", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
         }
     }
 }

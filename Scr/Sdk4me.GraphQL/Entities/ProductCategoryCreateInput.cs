@@ -11,9 +11,9 @@
         private string? uiExtensionId;
         private bool? disabled;
         private string? group;
+        private string? clientMutationId;
         private string? name;
         private ProductCategoryRuleSet? ruleSet;
-        private string? clientMutationId;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -76,6 +76,16 @@
         }
 
         /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
         /// The name of the product category.
         /// </summary>
         [JsonProperty("name")]
@@ -93,16 +103,6 @@
         {
             get => ruleSet;
             set => ruleSet = Set("ruleSet", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
         }
     }
 }

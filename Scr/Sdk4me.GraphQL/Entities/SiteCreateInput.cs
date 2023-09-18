@@ -12,12 +12,12 @@
         private List<AttachmentInput>? customFieldsAttachments;
         private string? uiExtensionId;
         private bool? disabled;
-        private string? name;
         private string? remarks;
         private List<AttachmentInput>? remarksAttachments;
         private string? timeZone;
         private List<AddressInput>? newAddresses;
         private string? clientMutationId;
+        private string? name;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -90,16 +90,6 @@
         }
 
         /// <summary>
-        /// The name of the site or facility.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
-        }
-
-        /// <summary>
         /// Any additional information about the site that might prove useful.
         /// </summary>
         [JsonProperty("remarks")]
@@ -148,6 +138,16 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The name of the site or facility.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
         }
     }
 }

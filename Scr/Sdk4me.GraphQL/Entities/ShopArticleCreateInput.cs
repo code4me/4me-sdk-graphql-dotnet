@@ -10,7 +10,6 @@
         private string? pictureUri;
         private string? uiExtensionId;
         private bool? disabled;
-        private string? name;
         private string? reference;
         private string? productId;
         private string? fulfillmentTemplateId;
@@ -29,6 +28,7 @@
         private string? recurringPriceCurrency;
         private ShopArticleRecurringPeriod? recurringPeriod;
         private string? clientMutationId;
+        private string? name;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -78,16 +78,6 @@
         {
             get => disabled;
             set => disabled = Set("disabled", value);
-        }
-
-        /// <summary>
-        /// The display name of the shop article.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
         }
 
         /// <summary>
@@ -271,6 +261,16 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The display name of the shop article.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
         }
     }
 }

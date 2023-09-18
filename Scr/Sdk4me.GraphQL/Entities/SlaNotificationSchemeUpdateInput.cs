@@ -10,9 +10,9 @@
         private bool? disabled;
         private string? name;
         private List<SlaNotificationRuleInput>? newSlaNotificationRules;
+        private string? clientMutationId;
         private string? id;
         private List<string>? slaNotificationRulesToDelete;
-        private string? clientMutationId;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -65,6 +65,16 @@
         }
 
         /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
@@ -82,16 +92,6 @@
         {
             get => slaNotificationRulesToDelete;
             set => slaNotificationRulesToDelete = Set("slaNotificationRulesToDelete", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
         }
     }
 }

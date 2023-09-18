@@ -51,8 +51,8 @@
         private DateTime? waitingUntil;
         private List<WatchInput>? newWatches;
         private List<string>? configurationItemIds;
-        private string? supportDomain;
         private string? clientMutationId;
+        private string? supportDomain;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -516,16 +516,6 @@
         }
 
         /// <summary>
-        /// Used to specify the support domain account ID in which the request is to be registered. This parameter needs to be specified when the current user's Person record is registered in a directory account. The ID of a 4me account can be found in the 'Account Overview' section of the Settings console.
-        /// </summary>
-        [JsonProperty("supportDomain")]
-        public string? SupportDomain
-        {
-            get => supportDomain;
-            set => supportDomain = Set("supportDomain", value);
-        }
-
-        /// <summary>
         /// A unique identifier for the client performing the mutation.
         /// </summary>
         [JsonProperty("clientMutationId")]
@@ -533,6 +523,16 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Used to specify the support domain account ID in which the request is to be registered. This parameter needs to be specified when the current user's Person record is registered in a directory account. The ID of a 4me account can be found in the 'Account Overview' section of the Settings console.
+        /// </summary>
+        [JsonProperty("supportDomain")]
+        public string? SupportDomain
+        {
+            get => supportDomain;
+            set => supportDomain = Set("supportDomain", value);
         }
     }
 }

@@ -10,9 +10,9 @@
         private string? description;
         private bool? disabled;
         private string? information;
-        private string? name;
         private long? position;
         private string? clientMutationId;
+        private string? name;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -65,16 +65,6 @@
         }
 
         /// <summary>
-        /// The name of the project risk level. Ideally the name of a project risk level consists of a single word, such as "Significant".
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
-        }
-
-        /// <summary>
         /// The position that the project risk level takes when it is displayed in a sorted list.
         /// </summary>
         [JsonProperty("position")]
@@ -92,6 +82,16 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The name of the project risk level. Ideally the name of a project risk level consists of a single word, such as "Significant".
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
         }
     }
 }

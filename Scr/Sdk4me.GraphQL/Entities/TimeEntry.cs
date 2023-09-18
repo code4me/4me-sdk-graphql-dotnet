@@ -18,16 +18,16 @@
         public string? ActivityID { get; internal set; }
 
         /// <summary>
+        /// The Agreement ID is the unique identifier by which all the activities that are performed through the coverage of the SLA are known in the billing system of the service provider. The agreement ID can be used to support integrations between the billing system of the service provider and the 4me account in which the activities are performed.
+        /// </summary>
+        [JsonProperty("agreementID")]
+        public string? AgreementID { get; internal set; }
+
+        /// <summary>
         /// The record in which the Time spent field was filled out to cause the time entry to be generated.
         /// </summary>
         [JsonProperty("assignment")]
         public HasTimeEntries? Assignment { get; internal set; }
-
-        /// <summary>
-        /// The Billing ID is the unique identifier by which all the activities that are performed through the coverage of the SLA are known in the billing system of the service provider. The billing ID can be used to support integrations between the billing system of the service provider and the 4me account in which the activities are performed.
-        /// </summary>
-        [JsonProperty("billingID")]
-        public string? BillingID { get; internal set; }
 
         /// <summary>
         /// For a Time and Materials activity the charge is calculated by multiplying the time spent by the charge rate of the person’s who spent the time based on the selected effort class. For a Fixed Price activity the charge is the amount defined for the fixed price activity in the service offering (of the billable SLA related to the request).
@@ -41,12 +41,6 @@
         /// </summary>
         [JsonProperty("chargeCurrency")]
         public string? ChargeCurrency { get; internal set; }
-
-        /// <summary>
-        /// The Charge ID is the unique identifier by which an effort class that is linked to a time entry when an activity was performed through the coverage of the SLA is known in the billing system of the service provider. The effort class represents the type of effort that was performed when working on an activity. Some examples of effort classes are 'Billable - Normal Hours', 'Billable overtime', 'Non Billable' or 'Senior System Engineer'. The Charge ID can be used to support integrations between the billing system of the service provider and the 4me account in which the activities are performed. In the billing system the Charge IDs will be linked to the rates that have been agreed on in the service contract.
-        /// </summary>
-        [JsonProperty("chargeID")]
-        public string? ChargeID { get; internal set; }
 
         /// <summary>
         /// Shows the charging rate per hour and is defined by the effort class that was selected when the person registered the time entry.
@@ -132,6 +126,12 @@
         /// </summary>
         [JsonProperty("person"), Sdk4meField(true)]
         public Person? Person { get; internal set; }
+
+        /// <summary>
+        /// The Rate ID is the unique identifier by which an effort class that is linked to a time entry when an activity was performed through the coverage of the SLA is known in the billing system of the service provider. The effort class represents the type of effort that was performed when working on an activity. Some examples of effort classes are 'Billable - Normal Hours', 'Billable overtime', 'Non Billable' or 'Senior System Engineer'. The Rate ID can be used to support integrations between the billing system of the service provider and the 4me account in which the activities are performed. In the billing system the Rate IDs will be linked to the rates that have been agreed on in the service contract.
+        /// </summary>
+        [JsonProperty("rateID")]
+        public string? RateID { get; internal set; }
 
         /// <summary>
         /// The service for which the time was spent.

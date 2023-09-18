@@ -12,7 +12,6 @@
         private string? continuity;
         private string? defaultEffortClassId;
         private string? limitations;
-        private string? name;
         private string? penalties;
         private string? performance;
         private string? prerequisites;
@@ -35,7 +34,6 @@
         private long? responseTargetTop;
         private long? responsesWithinTarget;
         private ServiceOfferingReviewFrequency? reviewFrequency;
-        private string? serviceId;
         private string? serviceHoursId;
         private ServiceOfferingStatus? status;
         private string? summary;
@@ -69,6 +67,8 @@
         private List<StandardServiceRequestInput>? newStandardServiceRequests;
         private List<EffortClassRateInput>? newEffortClassRates;
         private string? clientMutationId;
+        private string? name;
+        private string? serviceId;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -138,16 +138,6 @@
         {
             get => limitations;
             set => limitations = Set("limitations", value);
-        }
-
-        /// <summary>
-        /// The name of the service offering.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
         }
 
         /// <summary>
@@ -368,16 +358,6 @@
         {
             get => reviewFrequency;
             set => reviewFrequency = Set("reviewFrequency", value);
-        }
-
-        /// <summary>
-        /// Identifier of the service for which the service offering is being prepared.
-        /// </summary>
-        [JsonProperty("serviceId")]
-        public string? ServiceId
-        {
-            get => serviceId;
-            set => serviceId = Set("serviceId", value);
         }
 
         /// <summary>
@@ -715,6 +695,26 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The name of the service offering.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
+        }
+
+        /// <summary>
+        /// Identifier of the service for which the service offering is being prepared.
+        /// </summary>
+        [JsonProperty("serviceId")]
+        public string? ServiceId
+        {
+            get => serviceId;
+            set => serviceId = Set("serviceId", value);
         }
     }
 }

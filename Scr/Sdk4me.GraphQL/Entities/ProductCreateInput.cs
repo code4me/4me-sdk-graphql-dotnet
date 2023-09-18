@@ -11,13 +11,10 @@
         private string? uiExtensionId;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
-        private string? brand;
-        private string? category;
         private ProductDepreciationMethod? depreciationMethod;
         private bool? disabled;
         private string? financialOwnerId;
         private string? model;
-        private string? name;
         private string? productID;
         private long? rate;
         private RecurrenceInput? recurrence;
@@ -32,6 +29,9 @@
         private string? workflowManagerId;
         private string? workflowTemplateId;
         private string? clientMutationId;
+        private string? brand;
+        private string? category;
+        private string? name;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -94,26 +94,6 @@
         }
 
         /// <summary>
-        /// The brand name is typically the name of the product's manufacturer.
-        /// </summary>
-        [JsonProperty("brand")]
-        public string? Brand
-        {
-            get => brand;
-            set => brand = Set("brand", value);
-        }
-
-        /// <summary>
-        /// The appropriate product category for the product.
-        /// </summary>
-        [JsonProperty("category")]
-        public string? Category
-        {
-            get => category;
-            set => category = Set("category", value);
-        }
-
-        /// <summary>
         /// <br>Used to specify whether or not configuration items that are based on the product are typically depreciated and if so, which depreciation method is normally applied. Valid values are:</br>
         /// <br>• <c>not_depreciated</c>: Not Depreciated</br>
         /// <br>• <c>double_declining_balance</c>: Double Declining Balance</br>
@@ -156,16 +136,6 @@
         {
             get => model;
             set => model = Set("model", value);
-        }
-
-        /// <summary>
-        /// The name of the product. Fill out the Brand, Model, Product ID (optional) and Category fields to automatically generate a name based on the values entered in these fields.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
         }
 
         /// <summary>
@@ -307,6 +277,36 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The brand name is typically the name of the product's manufacturer.
+        /// </summary>
+        [JsonProperty("brand")]
+        public string? Brand
+        {
+            get => brand;
+            set => brand = Set("brand", value);
+        }
+
+        /// <summary>
+        /// The appropriate product category for the product.
+        /// </summary>
+        [JsonProperty("category")]
+        public string? Category
+        {
+            get => category;
+            set => category = Set("category", value);
+        }
+
+        /// <summary>
+        /// The name of the product. Fill out the Brand, Model, Product ID (optional) and Category fields to automatically generate a name based on the values entered in these fields.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
         }
     }
 }

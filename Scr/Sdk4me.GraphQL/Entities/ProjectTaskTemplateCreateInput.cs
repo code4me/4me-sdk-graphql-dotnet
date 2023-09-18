@@ -13,14 +13,12 @@
         private bool? assignToRequesterBusinessUnitManager;
         private bool? assignToRequesterManager;
         private bool? assignToServiceOwner;
-        private ProjectTaskCategory? category;
         private bool? copyNotesToProject;
         private bool? disabled;
         private string? effortClassId;
         private string? instructions;
         private string? note;
         private string? pdfDesignId;
-        private long? plannedDuration;
         private long? plannedEffort;
         private long? plannedEffortProjectManager;
         private long? plannedEffortRequester;
@@ -29,12 +27,14 @@
         private long? plannedEffortServiceOwner;
         private long? requiredApprovals;
         private string? skillPoolId;
-        private string? subject;
         private string? supplierId;
         private string? teamId;
         private bool? workHoursAre24x7;
         private List<ProjectTaskTemplateAssignmentInput>? newAssignments;
         private string? clientMutationId;
+        private ProjectTaskCategory? category;
+        private long? plannedDuration;
+        private string? subject;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -117,16 +117,6 @@
         }
 
         /// <summary>
-        /// The category that needs to be selected in the Category field of a new project task when it is being created based on the template.
-        /// </summary>
-        [JsonProperty("category")]
-        public ProjectTaskCategory? Category
-        {
-            get => category;
-            set => category = Set("category", value);
-        }
-
-        /// <summary>
         /// Whether the Copy note to project box of project tasks that were created based on the template needs to be checked by default. (The Copy notes to project checkbox is called "Copy notes to project by default" when the project task template is in Edit mode.)
         /// </summary>
         [JsonProperty("copyNotesToProject")]
@@ -184,16 +174,6 @@
         {
             get => pdfDesignId;
             set => pdfDesignId = Set("pdfDesignId", value);
-        }
-
-        /// <summary>
-        /// Used to specify the number of minutes that should be entered in the Planned duration field of a new project task when it is being created based on the template.
-        /// </summary>
-        [JsonProperty("plannedDuration")]
-        public long? PlannedDuration
-        {
-            get => plannedDuration;
-            set => plannedDuration = Set("plannedDuration", value);
         }
 
         /// <summary>
@@ -277,16 +257,6 @@
         }
 
         /// <summary>
-        /// A short description that needs to be copied to the Subject field of a new project task when it is being created based on the template.
-        /// </summary>
-        [JsonProperty("subject")]
-        public string? Subject
-        {
-            get => subject;
-            set => subject = Set("subject", value);
-        }
-
-        /// <summary>
         /// Identifier of the supplier organization that should be selected in the Supplier field of a new project task when it is being created based on the template.
         /// </summary>
         [JsonProperty("supplierId")]
@@ -334,6 +304,36 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The category that needs to be selected in the Category field of a new project task when it is being created based on the template.
+        /// </summary>
+        [JsonProperty("category")]
+        public ProjectTaskCategory? Category
+        {
+            get => category;
+            set => category = Set("category", value);
+        }
+
+        /// <summary>
+        /// Used to specify the number of minutes that should be entered in the Planned duration field of a new project task when it is being created based on the template.
+        /// </summary>
+        [JsonProperty("plannedDuration")]
+        public long? PlannedDuration
+        {
+            get => plannedDuration;
+            set => plannedDuration = Set("plannedDuration", value);
+        }
+
+        /// <summary>
+        /// A short description that needs to be copied to the Subject field of a new project task when it is being created based on the template.
+        /// </summary>
+        [JsonProperty("subject")]
+        public string? Subject
+        {
+            get => subject;
+            set => subject = Set("subject", value);
         }
     }
 }

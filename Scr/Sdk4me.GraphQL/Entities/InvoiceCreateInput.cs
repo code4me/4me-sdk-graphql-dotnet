@@ -19,22 +19,22 @@
         private string? currency;
         private ProductDepreciationMethod? depreciationMethod;
         private DateOnly? depreciationStart;
-        private string? description;
-        private DateOnly? invoiceDate;
-        private string? invoiceNr;
         private string? poNr;
         private string? financialID;
-        private decimal? quantity;
         private string? remarks;
         private List<AttachmentInput>? remarksAttachments;
         private string? serviceId;
-        private string? supplierId;
         private long? rate;
         private decimal? salvageValue;
         private string? salvageValueCurrency;
-        private decimal? unitPrice;
         private long? usefulLife;
         private string? clientMutationId;
+        private string? supplierId;
+        private string? description;
+        private DateOnly? invoiceDate;
+        private string? invoiceNr;
+        private decimal? quantity;
+        private decimal? unitPrice;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -184,36 +184,6 @@
         }
 
         /// <summary>
-        /// Short description of what was acquired.
-        /// </summary>
-        [JsonProperty("description")]
-        public string? Description
-        {
-            get => description;
-            set => description = Set("description", value);
-        }
-
-        /// <summary>
-        /// The date on which the invoice was sent out by the supplier.
-        /// </summary>
-        [JsonProperty("invoiceDate")]
-        public DateOnly? InvoiceDate
-        {
-            get => invoiceDate;
-            set => invoiceDate = Set("invoiceDate", value);
-        }
-
-        /// <summary>
-        /// The invoice number that the supplier specified on the invoice.
-        /// </summary>
-        [JsonProperty("invoiceNr")]
-        public string? InvoiceNr
-        {
-            get => invoiceNr;
-            set => invoiceNr = Set("invoiceNr", value);
-        }
-
-        /// <summary>
         /// Number of the purchase order that was used to order the (lease of the) configuration item from the supplier.
         /// </summary>
         [JsonProperty("poNr")]
@@ -231,16 +201,6 @@
         {
             get => financialID;
             set => financialID = Set("financialID", value);
-        }
-
-        /// <summary>
-        /// The number of units that were acquired.
-        /// </summary>
-        [JsonProperty("quantity")]
-        public decimal? Quantity
-        {
-            get => quantity;
-            set => quantity = Set("quantity", value);
         }
 
         /// <summary>
@@ -271,16 +231,6 @@
         {
             get => serviceId;
             set => serviceId = Set("serviceId", value);
-        }
-
-        /// <summary>
-        /// Identifier of the organization from which the invoice was received.
-        /// </summary>
-        [JsonProperty("supplierId")]
-        public string? SupplierId
-        {
-            get => supplierId;
-            set => supplierId = Set("supplierId", value);
         }
 
         /// <summary>
@@ -315,16 +265,6 @@
         }
 
         /// <summary>
-        /// The amount that the supplier has charged per unit that was acquired.
-        /// </summary>
-        [JsonProperty("unitPrice")]
-        public decimal? UnitPrice
-        {
-            get => unitPrice;
-            set => unitPrice = Set("unitPrice", value);
-        }
-
-        /// <summary>
         /// The number of years within which the configuration item is to be depreciated. When creating a new CI and a value is not specified for this field, it is set to the useful life of the CI's product.
         /// </summary>
         [JsonProperty("usefulLife")]
@@ -342,6 +282,66 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the organization from which the invoice was received.
+        /// </summary>
+        [JsonProperty("supplierId")]
+        public string? SupplierId
+        {
+            get => supplierId;
+            set => supplierId = Set("supplierId", value);
+        }
+
+        /// <summary>
+        /// Short description of what was acquired.
+        /// </summary>
+        [JsonProperty("description")]
+        public string? Description
+        {
+            get => description;
+            set => description = Set("description", value);
+        }
+
+        /// <summary>
+        /// The date on which the invoice was sent out by the supplier.
+        /// </summary>
+        [JsonProperty("invoiceDate")]
+        public DateOnly? InvoiceDate
+        {
+            get => invoiceDate;
+            set => invoiceDate = Set("invoiceDate", value);
+        }
+
+        /// <summary>
+        /// The invoice number that the supplier specified on the invoice.
+        /// </summary>
+        [JsonProperty("invoiceNr")]
+        public string? InvoiceNr
+        {
+            get => invoiceNr;
+            set => invoiceNr = Set("invoiceNr", value);
+        }
+
+        /// <summary>
+        /// The number of units that were acquired.
+        /// </summary>
+        [JsonProperty("quantity")]
+        public decimal? Quantity
+        {
+            get => quantity;
+            set => quantity = Set("quantity", value);
+        }
+
+        /// <summary>
+        /// The amount that the supplier has charged per unit that was acquired.
+        /// </summary>
+        [JsonProperty("unitPrice")]
+        public decimal? UnitPrice
+        {
+            get => unitPrice;
+            set => unitPrice = Set("unitPrice", value);
         }
     }
 }

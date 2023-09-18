@@ -13,7 +13,6 @@
         private bool? assignToRequesterBusinessUnitManager;
         private bool? assignToRequesterManager;
         private bool? assignToServiceOwner;
-        private TaskCategory? category;
         private bool? copyNotesToWorkflow;
         private bool? disabled;
         private string? effortClassId;
@@ -22,7 +21,6 @@
         private string? memberId;
         private string? note;
         private string? pdfDesignId;
-        private long? plannedDuration;
         private long? plannedEffort;
         private long? plannedEffortWorkflowManager;
         private long? plannedEffortRequester;
@@ -31,7 +29,6 @@
         private long? plannedEffortServiceOwner;
         private bool? providerNotAccountable;
         private long? requiredApprovals;
-        private string? subject;
         private string? supplierId;
         private string? requestTemplateId;
         private string? requestServiceInstanceId;
@@ -42,6 +39,9 @@
         private List<string>? configurationItemIds;
         private List<string>? serviceInstanceIds;
         private string? clientMutationId;
+        private TaskCategory? category;
+        private long? plannedDuration;
+        private string? subject;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -121,16 +121,6 @@
         {
             get => assignToServiceOwner;
             set => assignToServiceOwner = Set("assignToServiceOwner", value);
-        }
-
-        /// <summary>
-        /// The category that needs to be selected in the Category field of a new task when it is being created based on the template.
-        /// </summary>
-        [JsonProperty("category")]
-        public TaskCategory? Category
-        {
-            get => category;
-            set => category = Set("category", value);
         }
 
         /// <summary>
@@ -214,16 +204,6 @@
         }
 
         /// <summary>
-        /// The number of minutes that should be entered in the Planned duration field of a new task when it is being created based on the template.
-        /// </summary>
-        [JsonProperty("plannedDuration")]
-        public long? PlannedDuration
-        {
-            get => plannedDuration;
-            set => plannedDuration = Set("plannedDuration", value);
-        }
-
-        /// <summary>
         /// The number of minutes the member is expected to spend working on a task that was created based on the template.
         /// </summary>
         [JsonProperty("plannedEffort")]
@@ -301,16 +281,6 @@
         {
             get => requiredApprovals;
             set => requiredApprovals = Set("requiredApprovals", value);
-        }
-
-        /// <summary>
-        /// A short description that needs to be copied to the Subject field of a new task when it is being created based on the template.
-        /// </summary>
-        [JsonProperty("subject")]
-        public string? Subject
-        {
-            get => subject;
-            set => subject = Set("subject", value);
         }
 
         /// <summary>
@@ -411,6 +381,36 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The category that needs to be selected in the Category field of a new task when it is being created based on the template.
+        /// </summary>
+        [JsonProperty("category")]
+        public TaskCategory? Category
+        {
+            get => category;
+            set => category = Set("category", value);
+        }
+
+        /// <summary>
+        /// The number of minutes that should be entered in the Planned duration field of a new task when it is being created based on the template.
+        /// </summary>
+        [JsonProperty("plannedDuration")]
+        public long? PlannedDuration
+        {
+            get => plannedDuration;
+            set => plannedDuration = Set("plannedDuration", value);
+        }
+
+        /// <summary>
+        /// A short description that needs to be copied to the Subject field of a new task when it is being created based on the template.
+        /// </summary>
+        [JsonProperty("subject")]
+        public string? Subject
+        {
+            get => subject;
+            set => subject = Set("subject", value);
         }
     }
 }

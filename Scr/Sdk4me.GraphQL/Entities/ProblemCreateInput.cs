@@ -28,9 +28,7 @@
         private string? memberId;
         private string? note;
         private string? projectId;
-        private string? serviceId;
         private ProblemStatus? status;
-        private string? subject;
         private string? supplierId;
         private string? supplierRequestID;
         private string? teamId;
@@ -41,6 +39,8 @@
         private List<string>? requestIds;
         private List<string>? serviceInstanceIds;
         private string? clientMutationId;
+        private string? subject;
+        private string? serviceId;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -273,16 +273,6 @@
         }
 
         /// <summary>
-        /// Identifier of the service in which instance(s) the problem resides.
-        /// </summary>
-        [JsonProperty("serviceId")]
-        public string? ServiceId
-        {
-            get => serviceId;
-            set => serviceId = Set("serviceId", value);
-        }
-
-        /// <summary>
         /// The current status of the problem.
         /// </summary>
         [JsonProperty("status")]
@@ -290,16 +280,6 @@
         {
             get => status;
             set => status = Set("status", value);
-        }
-
-        /// <summary>
-        /// A short description of the symptoms that the problem causes.
-        /// </summary>
-        [JsonProperty("subject")]
-        public string? Subject
-        {
-            get => subject;
-            set => subject = Set("subject", value);
         }
 
         /// <summary>
@@ -400,6 +380,26 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// A short description of the symptoms that the problem causes.
+        /// </summary>
+        [JsonProperty("subject")]
+        public string? Subject
+        {
+            get => subject;
+            set => subject = Set("subject", value);
+        }
+
+        /// <summary>
+        /// Identifier of the service in which instance(s) the problem resides.
+        /// </summary>
+        [JsonProperty("serviceId")]
+        public string? ServiceId
+        {
+            get => serviceId;
+            set => serviceId = Set("serviceId", value);
         }
     }
 }

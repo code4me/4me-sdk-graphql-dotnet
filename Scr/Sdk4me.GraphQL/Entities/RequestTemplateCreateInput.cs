@@ -29,7 +29,6 @@
         private string? serviceId;
         private bool? specialists;
         private RequestStatus? status;
-        private string? subject;
         private string? supplierId;
         private string? supportHoursId;
         private string? teamId;
@@ -37,6 +36,7 @@
         private bool? urgent;
         private List<string>? reservationOfferingIds;
         private string? clientMutationId;
+        private string? subject;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -279,16 +279,6 @@
         }
 
         /// <summary>
-        /// A short description that needs to be copied to the Subject field of a new request when it is being created based on the template.
-        /// </summary>
-        [JsonProperty("subject")]
-        public string? Subject
-        {
-            get => subject;
-            set => subject = Set("subject", value);
-        }
-
-        /// <summary>
         /// Identifier of the supplier organization that should be selected in the Supplier field of a new request when it is being created based on the template.
         /// </summary>
         [JsonProperty("supplierId")]
@@ -357,6 +347,16 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// A short description that needs to be copied to the Subject field of a new request when it is being created based on the template.
+        /// </summary>
+        [JsonProperty("subject")]
+        public string? Subject
+        {
+            get => subject;
+            set => subject = Set("subject", value);
         }
     }
 }

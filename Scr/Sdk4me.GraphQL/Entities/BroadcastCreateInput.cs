@@ -8,8 +8,6 @@
         private string? source;
         private string? sourceID;
         private bool? disabled;
-        private string? message;
-        private BroadcastMessageType? messageType;
         private DateTime? startAt;
         private DateTime? endAt;
         private string? timeZone;
@@ -18,6 +16,8 @@
         private List<string>? serviceInstanceIds;
         private List<string>? teamIds;
         private string? clientMutationId;
+        private string? message;
+        private BroadcastMessageType? messageType;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -47,26 +47,6 @@
         {
             get => disabled;
             set => disabled = Set("disabled", value);
-        }
-
-        /// <summary>
-        /// Message that is to be broadcasted in the language of the account.
-        /// </summary>
-        [JsonProperty("message")]
-        public string? Message
-        {
-            get => message;
-            set => message = Set("message", value);
-        }
-
-        /// <summary>
-        /// The appropriate icon for the message. The selected icon is displayed alongside the message when the broadcast is presented.
-        /// </summary>
-        [JsonProperty("messageType")]
-        public BroadcastMessageType? MessageType
-        {
-            get => messageType;
-            set => messageType = Set("messageType", value);
         }
 
         /// <summary>
@@ -148,6 +128,26 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Message that is to be broadcasted in the language of the account.
+        /// </summary>
+        [JsonProperty("message")]
+        public string? Message
+        {
+            get => message;
+            set => message = Set("message", value);
+        }
+
+        /// <summary>
+        /// The appropriate icon for the message. The selected icon is displayed alongside the message when the broadcast is presented.
+        /// </summary>
+        [JsonProperty("messageType")]
+        public BroadcastMessageType? MessageType
+        {
+            get => messageType;
+            set => messageType = Set("messageType", value);
         }
     }
 }

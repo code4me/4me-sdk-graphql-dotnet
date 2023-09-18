@@ -15,17 +15,14 @@
         private string? agileBoardColumnId;
         private long? agileBoardColumnPosition;
         private DateTime? assignedAt;
-        private ProjectTaskCategory? category;
         private DateTime? deadline;
         private string? instructions;
         private string? note;
         private string? pdfDesignId;
-        private long? plannedDuration;
         private long? plannedEffort;
         private long? requiredApprovals;
         private DateTime? startAt;
         private ProjectTaskStatus? status;
-        private string? subject;
         private string? skillPoolId;
         private string? supplierId;
         private string? supplierRequestID;
@@ -37,9 +34,12 @@
         private List<string>? predecessorIds;
         private List<string>? successorIds;
         private List<ProjectTaskAssignmentInput>? newAssignments;
+        private string? clientMutationId;
         private string? projectId;
         private string? phaseId;
-        private string? clientMutationId;
+        private ProjectTaskCategory? category;
+        private long? plannedDuration;
+        private string? subject;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -142,16 +142,6 @@
         }
 
         /// <summary>
-        /// The category of the project task. Activity tasks are used to assign project-related work to people. Approval tasks are used to collect approvals for projects. Milestones are used to mark specific points along a project's implementation plan.
-        /// </summary>
-        [JsonProperty("category")]
-        public ProjectTaskCategory? Category
-        {
-            get => category;
-            set => category = Set("category", value);
-        }
-
-        /// <summary>
         /// The date and time at which the milestone needs to have been reached.
         /// </summary>
         [JsonProperty("deadline")]
@@ -192,16 +182,6 @@
         }
 
         /// <summary>
-        /// The number of minutes it is expected to take for the project task to be completed following its assignment, or following its fixed start date and time if the Start no earlier than field is filled out.
-        /// </summary>
-        [JsonProperty("plannedDuration")]
-        public long? PlannedDuration
-        {
-            get => plannedDuration;
-            set => plannedDuration = Set("plannedDuration", value);
-        }
-
-        /// <summary>
         /// The number of minutes the team is expected to spend working on the project task.
         /// </summary>
         [JsonProperty("plannedEffort")]
@@ -239,16 +219,6 @@
         {
             get => status;
             set => status = Set("status", value);
-        }
-
-        /// <summary>
-        /// A short description of the objective of the project task.
-        /// </summary>
-        [JsonProperty("subject")]
-        public string? Subject
-        {
-            get => subject;
-            set => subject = Set("subject", value);
         }
 
         /// <summary>
@@ -362,6 +332,16 @@
         }
 
         /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
         /// Identifier of the project this task belongs to.
         /// </summary>
         [JsonProperty("projectId")]
@@ -382,13 +362,33 @@
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// The category of the project task. Activity tasks are used to assign project-related work to people. Approval tasks are used to collect approvals for projects. Milestones are used to mark specific points along a project's implementation plan.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("category")]
+        public ProjectTaskCategory? Category
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
+            get => category;
+            set => category = Set("category", value);
+        }
+
+        /// <summary>
+        /// The number of minutes it is expected to take for the project task to be completed following its assignment, or following its fixed start date and time if the Start no earlier than field is filled out.
+        /// </summary>
+        [JsonProperty("plannedDuration")]
+        public long? PlannedDuration
+        {
+            get => plannedDuration;
+            set => plannedDuration = Set("plannedDuration", value);
+        }
+
+        /// <summary>
+        /// A short description of the objective of the project task.
+        /// </summary>
+        [JsonProperty("subject")]
+        public string? Subject
+        {
+            get => subject;
+            set => subject = Set("subject", value);
         }
     }
 }

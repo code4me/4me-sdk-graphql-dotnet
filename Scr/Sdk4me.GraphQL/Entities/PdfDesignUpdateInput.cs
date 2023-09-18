@@ -5,13 +5,35 @@
     /// </summary>
     public class PdfDesignUpdateInput : PropertyChangeSet
     {
+        private string? source;
+        private string? sourceID;
         private PdfDesignCategory? category;
         private bool? disabled;
         private string? name;
         private string? html;
         private string? css;
-        private string? id;
         private string? clientMutationId;
+        private string? id;
+
+        /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
 
         /// <summary>
         /// Category of the design.
@@ -64,16 +86,6 @@
         }
 
         /// <summary>
-        /// The node ID of the record to update.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
-        }
-
-        /// <summary>
         /// A unique identifier for the client performing the mutation.
         /// </summary>
         [JsonProperty("clientMutationId")]
@@ -81,6 +93,16 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The node ID of the record to update.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
         }
     }
 }

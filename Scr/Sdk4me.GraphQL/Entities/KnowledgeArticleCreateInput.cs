@@ -16,16 +16,16 @@
         private List<AttachmentInput>? descriptionAttachments;
         private bool? endUsers;
         private bool? @public;
-        private string? instructions;
         private bool? internalSpecialists;
         private bool? keyContacts;
         private string? keywords;
-        private string? serviceId;
         private List<string>? serviceInstanceIds;
         private KnowledgeArticleStatus? status;
-        private string? subject;
         private string? templateId;
         private string? clientMutationId;
+        private string? instructions;
+        private string? serviceId;
+        private string? subject;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -138,16 +138,6 @@
         }
 
         /// <summary>
-        /// Used to enter instructions for the service desk analysts, specialists and/or end users who are likely to look up the knowledge article to help them with their work or to resolve an issue.
-        /// </summary>
-        [JsonProperty("instructions")]
-        public string? Instructions
-        {
-            get => instructions;
-            set => instructions = Set("instructions", value);
-        }
-
-        /// <summary>
         /// Whether the knowledge article needs to be available to the people who have the Specialist role of the account in which the article is registered.
         /// </summary>
         [JsonProperty("internalSpecialists")]
@@ -178,16 +168,6 @@
         }
 
         /// <summary>
-        /// Identifier of the service for which the knowledge article is made available.
-        /// </summary>
-        [JsonProperty("serviceId")]
-        public string? ServiceId
-        {
-            get => serviceId;
-            set => serviceId = Set("serviceId", value);
-        }
-
-        /// <summary>
         /// Identifiers of service instances linked to this knowledge article.
         /// </summary>
         [JsonProperty("serviceInstanceIds")]
@@ -208,16 +188,6 @@
         }
 
         /// <summary>
-        /// A short description of the knowledge article.
-        /// </summary>
-        [JsonProperty("subject")]
-        public string? Subject
-        {
-            get => subject;
-            set => subject = Set("subject", value);
-        }
-
-        /// <summary>
         /// Identifier of the knowledge article template that this knowledge article is based on.
         /// </summary>
         [JsonProperty("templateId")]
@@ -235,6 +205,36 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Used to enter instructions for the service desk analysts, specialists and/or end users who are likely to look up the knowledge article to help them with their work or to resolve an issue.
+        /// </summary>
+        [JsonProperty("instructions")]
+        public string? Instructions
+        {
+            get => instructions;
+            set => instructions = Set("instructions", value);
+        }
+
+        /// <summary>
+        /// Identifier of the service for which the knowledge article is made available.
+        /// </summary>
+        [JsonProperty("serviceId")]
+        public string? ServiceId
+        {
+            get => serviceId;
+            set => serviceId = Set("serviceId", value);
+        }
+
+        /// <summary>
+        /// A short description of the knowledge article.
+        /// </summary>
+        [JsonProperty("subject")]
+        public string? Subject
+        {
+            get => subject;
+            set => subject = Set("subject", value);
         }
     }
 }

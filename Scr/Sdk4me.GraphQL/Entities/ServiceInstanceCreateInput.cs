@@ -11,14 +11,14 @@
         private List<AttachmentInput>? customFieldsAttachments;
         private string? uiExtensionId;
         private string? firstLineTeamId;
-        private string? name;
         private string? remarks;
         private List<AttachmentInput>? remarksAttachments;
-        private string? serviceId;
         private ServiceInstanceStatus? status;
         private string? supportTeamId;
         private List<string>? configurationItemIds;
         private string? clientMutationId;
+        private string? name;
+        private string? serviceId;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -81,16 +81,6 @@
         }
 
         /// <summary>
-        /// The name of the service instance.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
-        }
-
-        /// <summary>
         /// Any additional information about the service instance that might prove useful.
         /// </summary>
         [JsonProperty("remarks")]
@@ -108,16 +98,6 @@
         {
             get => remarksAttachments;
             set => remarksAttachments = Set("remarksAttachments", value);
-        }
-
-        /// <summary>
-        /// Identifier of the service which functionality the service instance provides.
-        /// </summary>
-        [JsonProperty("serviceId")]
-        public string? ServiceId
-        {
-            get => serviceId;
-            set => serviceId = Set("serviceId", value);
         }
 
         /// <summary>
@@ -158,6 +138,26 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The name of the service instance.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
+        }
+
+        /// <summary>
+        /// Identifier of the service which functionality the service instance provides.
+        /// </summary>
+        [JsonProperty("serviceId")]
+        public string? ServiceId
+        {
+            get => serviceId;
+            set => serviceId = Set("serviceId", value);
         }
     }
 }

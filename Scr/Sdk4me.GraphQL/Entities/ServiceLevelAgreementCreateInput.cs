@@ -7,11 +7,8 @@
     {
         private string? source;
         private string? sourceID;
-        private string? name;
         private AgreementStatus? status;
-        private string? customerId;
         private string? serviceLevelManagerId;
-        private string? serviceOfferingId;
         private string? serviceInstanceId;
         private DateOnly? startDate;
         private DateOnly? noticeDate;
@@ -20,17 +17,20 @@
         private List<AttachmentInput>? remarksAttachments;
         private SlaCoverage? coverage;
         private bool? useKnowledgeFromServiceProvider;
-        private string? billingID;
+        private string? agreementID;
         private ActivityIDInput? activityID;
         private List<string>? customerRepresentativeIds;
         private List<string>? organizationIds;
         private List<string>? personIds;
         private List<string>? siteIds;
         private List<string>? skillPoolIds;
-        private List<EffortClassChargeIDInput>? newEffortClassChargeIDs;
+        private List<EffortClassRateIDInput>? newEffortClassRateIDs;
         private List<StandardServiceRequestActivityIDInput>? newStandardServiceRequestActivityIDs;
-        private string? customerAccountId;
         private string? clientMutationId;
+        private string? customerAccountId;
+        private string? customerId;
+        private string? name;
+        private string? serviceOfferingId;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -53,16 +53,6 @@
         }
 
         /// <summary>
-        /// The name of the service level agreement.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
-        }
-
-        /// <summary>
         /// The current status of the service level agreement (SLA).
         /// </summary>
         [JsonProperty("status")]
@@ -73,16 +63,6 @@
         }
 
         /// <summary>
-        /// Identifier of the organization that pays for the service level agreement.
-        /// </summary>
-        [JsonProperty("customerId")]
-        public string? CustomerId
-        {
-            get => customerId;
-            set => customerId = Set("customerId", value);
-        }
-
-        /// <summary>
         /// Identifier of the person of the service provider organization who acts as the service level manager for the customer of the service level agreement.
         /// </summary>
         [JsonProperty("serviceLevelManagerId")]
@@ -90,16 +70,6 @@
         {
             get => serviceLevelManagerId;
             set => serviceLevelManagerId = Set("serviceLevelManagerId", value);
-        }
-
-        /// <summary>
-        /// Identifier of the service offering that specifies the conditions that apply to the service level agreement.
-        /// </summary>
-        [JsonProperty("serviceOfferingId")]
-        public string? ServiceOfferingId
-        {
-            get => serviceOfferingId;
-            set => serviceOfferingId = Set("serviceOfferingId", value);
         }
 
         /// <summary>
@@ -183,13 +153,13 @@
         }
 
         /// <summary>
-        /// The Billing ID is the unique identifier by which all the activities that are performed through the coverage of the SLA are known in the billing system of the service provider.
+        /// The Agreement ID is the unique identifier by which all the activities that are performed through the coverage of the SLA are known in the billing system of the service provider.
         /// </summary>
-        [JsonProperty("billingID")]
-        public string? BillingID
+        [JsonProperty("agreementID")]
+        public string? AgreementID
         {
-            get => billingID;
-            set => billingID = Set("billingID", value);
+            get => agreementID;
+            set => agreementID = Set("agreementID", value);
         }
 
         /// <summary>
@@ -253,13 +223,13 @@
         }
 
         /// <summary>
-        /// The Charge IDs are the unique identifiers by which an effort class that is linked to a time entry when an activity was performed through the coverage of the SLA is known in the billing system of the service provider.
+        /// The Rate IDs are the unique identifiers by which an effort class that is linked to a time entry when an activity was performed through the coverage of the SLA is known in the billing system of the service provider.
         /// </summary>
-        [JsonProperty("newEffortClassChargeIDs")]
-        public List<EffortClassChargeIDInput>? NewEffortClassChargeIDs
+        [JsonProperty("newEffortClassRateIDs")]
+        public List<EffortClassRateIDInput>? NewEffortClassRateIDs
         {
-            get => newEffortClassChargeIDs;
-            set => newEffortClassChargeIDs = Set("newEffortClassChargeIDs", value);
+            get => newEffortClassRateIDs;
+            set => newEffortClassRateIDs = Set("newEffortClassRateIDs", value);
         }
 
         /// <summary>
@@ -273,6 +243,16 @@
         }
 
         /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
         /// Identifier of the account which service level managers are allowed to update the parts of the SLA that are intended to be maintained by the service level managers of the customer. More importantly, this field is used to specify whether specialists of the customer are allowed to see the requests that include this SLA in their Affected SLAs section.
         /// </summary>
         [JsonProperty("customerAccountId")]
@@ -283,13 +263,33 @@
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// Identifier of the organization that pays for the service level agreement.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("customerId")]
+        public string? CustomerId
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
+            get => customerId;
+            set => customerId = Set("customerId", value);
+        }
+
+        /// <summary>
+        /// The name of the service level agreement.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
+        }
+
+        /// <summary>
+        /// Identifier of the service offering that specifies the conditions that apply to the service level agreement.
+        /// </summary>
+        [JsonProperty("serviceOfferingId")]
+        public string? ServiceOfferingId
+        {
+            get => serviceOfferingId;
+            set => serviceOfferingId = Set("serviceOfferingId", value);
         }
     }
 }

@@ -12,7 +12,6 @@
         private bool? allowWorkweekOvertime;
         private bool? assignmentTimeTracking;
         private bool? disabled;
-        private string? name;
         private bool? notifyOnIncomplete;
         private TimesheetSettingPercentageIncrement? percentageIncrement;
         private string? problemEffortClassId;
@@ -22,12 +21,13 @@
         private string? taskEffortClassId;
         private string? timeAllocationEffortClassId;
         private TimesheetSettingTimeIncrement? timeIncrement;
-        private TimesheetSettingUnit? unit;
         private long? workday;
         private long? workweek;
         private List<string>? effortClassIds;
         private List<string>? organizationIds;
         private string? clientMutationId;
+        private string? name;
+        private TimesheetSettingUnit? unit;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -97,16 +97,6 @@
         {
             get => disabled;
             set => disabled = Set("disabled", value);
-        }
-
-        /// <summary>
-        /// The name of the timesheet settings.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
         }
 
         /// <summary>
@@ -200,16 +190,6 @@
         }
 
         /// <summary>
-        /// Whether the people of the organizations to which the timesheet settings are linked need to register their time in hours and minutes, or as a percentage of a workday.
-        /// </summary>
-        [JsonProperty("unit")]
-        public TimesheetSettingUnit? Unit
-        {
-            get => unit;
-            set => unit = Set("unit", value);
-        }
-
-        /// <summary>
         /// The duration of a workday in minutes.
         /// </summary>
         [JsonProperty("workday")]
@@ -257,6 +237,26 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The name of the timesheet settings.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
+        }
+
+        /// <summary>
+        /// Whether the people of the organizations to which the timesheet settings are linked need to register their time in hours and minutes, or as a percentage of a workday.
+        /// </summary>
+        [JsonProperty("unit")]
+        public TimesheetSettingUnit? Unit
+        {
+            get => unit;
+            set => unit = Set("unit", value);
         }
     }
 }

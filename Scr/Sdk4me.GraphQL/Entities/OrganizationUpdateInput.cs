@@ -25,10 +25,10 @@
         private List<string>? timeAllocationIds;
         private List<AddressInput>? newAddresses;
         private List<ContactInput>? newContacts;
+        private string? clientMutationId;
         private string? id;
         private List<string>? addressesToDelete;
         private List<string>? contactsToDelete;
-        private string? clientMutationId;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -236,6 +236,16 @@
         }
 
         /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
@@ -263,16 +273,6 @@
         {
             get => contactsToDelete;
             set => contactsToDelete = Set("contactsToDelete", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
         }
     }
 }

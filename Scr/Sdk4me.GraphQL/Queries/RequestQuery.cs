@@ -141,6 +141,7 @@
         /// <summary>
         /// Automatically set to the latest knowledge article that was applied to the request.
         /// </summary>
+        [Obsolete("Use `knowledgeArticles` instead.")]
         public RequestQuery SelectKnowledgeArticle(KnowledgeArticleQuery query)
         {
             query.FieldName = "knowledgeArticle";

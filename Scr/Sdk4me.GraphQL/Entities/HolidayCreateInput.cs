@@ -8,11 +8,11 @@
         private string? source;
         private string? sourceID;
         private string? pictureUri;
+        private List<string>? calendarIds;
+        private string? clientMutationId;
         private string? name;
         private DateTime? startAt;
         private DateTime? endAt;
-        private List<string>? calendarIds;
-        private string? clientMutationId;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -45,6 +45,26 @@
         }
 
         /// <summary>
+        /// Identifiers of calendars of the holiday.
+        /// </summary>
+        [JsonProperty("calendarIds")]
+        public List<string>? CalendarIds
+        {
+            get => calendarIds;
+            set => calendarIds = Set("calendarIds", value);
+        }
+
+        /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
         /// Name of the holiday.
         /// </summary>
         [JsonProperty("name")]
@@ -72,26 +92,6 @@
         {
             get => endAt;
             set => endAt = Set("endAt", value);
-        }
-
-        /// <summary>
-        /// Identifiers of calendars of the holiday.
-        /// </summary>
-        [JsonProperty("calendarIds")]
-        public List<string>? CalendarIds
-        {
-            get => calendarIds;
-            set => calendarIds = Set("calendarIds", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
         }
     }
 }

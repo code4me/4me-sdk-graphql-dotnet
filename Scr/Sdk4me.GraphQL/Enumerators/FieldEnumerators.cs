@@ -1887,38 +1887,6 @@
     }
 
     /// <summary>
-    /// The <see cref="EffortClassChargeID">EffortClassChargeID</see> fields.
-    /// </summary>
-    public enum EffortClassChargeIDField
-    {
-        /// <summary>
-        /// The charge id field.
-        /// </summary>
-        [EnumMember(Value = "chargeID")]
-        ChargeID,
-        /// <summary>
-        /// The created at field.
-        /// </summary>
-        [EnumMember(Value = "createdAt")]
-        CreatedAt,
-        /// <summary>
-        /// The effort class field.
-        /// </summary>
-        [EnumMember(Value = "effortClass")]
-        EffortClass,
-        /// <summary>
-        /// The id field.
-        /// </summary>
-        [EnumMember(Value = "id")]
-        ID,
-        /// <summary>
-        /// The updated at field.
-        /// </summary>
-        [EnumMember(Value = "updatedAt")]
-        UpdatedAt,
-    }
-
-    /// <summary>
     /// The <see cref="EffortClassRate">EffortClassRate</see> fields.
     /// </summary>
     public enum EffortClassRateField
@@ -1953,6 +1921,38 @@
         /// </summary>
         [EnumMember(Value = "serviceOffering")]
         ServiceOffering,
+        /// <summary>
+        /// The updated at field.
+        /// </summary>
+        [EnumMember(Value = "updatedAt")]
+        UpdatedAt,
+    }
+
+    /// <summary>
+    /// The <see cref="EffortClassRateID">EffortClassRateID</see> fields.
+    /// </summary>
+    public enum EffortClassRateIDField
+    {
+        /// <summary>
+        /// The created at field.
+        /// </summary>
+        [EnumMember(Value = "createdAt")]
+        CreatedAt,
+        /// <summary>
+        /// The effort class field.
+        /// </summary>
+        [EnumMember(Value = "effortClass")]
+        EffortClass,
+        /// <summary>
+        /// The id field.
+        /// </summary>
+        [EnumMember(Value = "id")]
+        ID,
+        /// <summary>
+        /// The rate id field.
+        /// </summary>
+        [EnumMember(Value = "rateID")]
+        RateID,
         /// <summary>
         /// The updated at field.
         /// </summary>
@@ -3017,6 +3017,16 @@
         /// </summary>
         [EnumMember(Value = "name")]
         Name,
+        /// <summary>
+        /// The source field.
+        /// </summary>
+        [EnumMember(Value = "source")]
+        Source,
+        /// <summary>
+        /// The source id field.
+        /// </summary>
+        [EnumMember(Value = "sourceID")]
+        SourceID,
         /// <summary>
         /// The translations field.
         /// </summary>
@@ -5481,8 +5491,8 @@
         Impact,
         /// <summary>
         /// The knowledge article field.
-        /// </summary>
-        [Obsolete("Use `knowledgeArticles` instead.")]
+        /// </summary>        [Obsolete("Use `knowledgeArticles` instead.")]
+
         [EnumMember(Value = "knowledgeArticle")]
         KnowledgeArticle,
         /// <summary>
@@ -6821,10 +6831,10 @@
         [EnumMember(Value = "activityID")]
         ActivityID,
         /// <summary>
-        /// The billing id field.
+        /// The agreement id field.
         /// </summary>
-        [EnumMember(Value = "billingID")]
-        BillingID,
+        [EnumMember(Value = "agreementID")]
+        AgreementID,
         /// <summary>
         /// The coverage field.
         /// </summary>
@@ -6851,10 +6861,10 @@
         [EnumMember(Value = "customerRepresentatives")]
         CustomerRepresentatives,
         /// <summary>
-        /// The effort class charge ids field.
+        /// The effort class rate ids field.
         /// </summary>
-        [EnumMember(Value = "effortClassChargeIDs")]
-        EffortClassChargeIDs,
+        [EnumMember(Value = "effortClassRateIDs")]
+        EffortClassRateIDs,
         /// <summary>
         /// The expiry date field.
         /// </summary>
@@ -9491,10 +9501,10 @@
         [EnumMember(Value = "activityID")]
         ActivityID,
         /// <summary>
-        /// The billing id field.
+        /// The agreement id field.
         /// </summary>
-        [EnumMember(Value = "billingID")]
-        BillingID,
+        [EnumMember(Value = "agreementID")]
+        AgreementID,
         /// <summary>
         /// The charge field.
         /// </summary>
@@ -9505,11 +9515,6 @@
         /// </summary>
         [EnumMember(Value = "chargeCurrency")]
         ChargeCurrency,
-        /// <summary>
-        /// The charge id field.
-        /// </summary>
-        [EnumMember(Value = "chargeID")]
-        ChargeID,
         /// <summary>
         /// The charge rate field.
         /// </summary>
@@ -9585,6 +9590,11 @@
         /// </summary>
         [EnumMember(Value = "person")]
         Person,
+        /// <summary>
+        /// The rate id field.
+        /// </summary>
+        [EnumMember(Value = "rateID")]
+        RateID,
         /// <summary>
         /// The service field.
         /// </summary>

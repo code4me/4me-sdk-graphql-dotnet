@@ -10,11 +10,11 @@
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
         private string? uiExtensionId;
-        private string? managerId;
         private string? note;
-        private string? subject;
         private List<string>? workflowIds;
         private string? clientMutationId;
+        private string? managerId;
+        private string? subject;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -67,16 +67,6 @@
         }
 
         /// <summary>
-        /// Identifier of the person who is responsible for coordinating the implementation of the release. The person must have the release Manager role.
-        /// </summary>
-        [JsonProperty("managerId")]
-        public string? ManagerId
-        {
-            get => managerId;
-            set => managerId = Set("managerId", value);
-        }
-
-        /// <summary>
         /// High-level description of the result that should be accomplished by the implementation of the release's workflows. It is also used to add any information that could prove useful for anyone affected by the release.
         /// </summary>
         [JsonProperty("note")]
@@ -84,16 +74,6 @@
         {
             get => note;
             set => note = Set("note", value);
-        }
-
-        /// <summary>
-        /// A short description of the objective of the release.
-        /// </summary>
-        [JsonProperty("subject")]
-        public string? Subject
-        {
-            get => subject;
-            set => subject = Set("subject", value);
         }
 
         /// <summary>
@@ -114,6 +94,26 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the person who is responsible for coordinating the implementation of the release. The person must have the release Manager role.
+        /// </summary>
+        [JsonProperty("managerId")]
+        public string? ManagerId
+        {
+            get => managerId;
+            set => managerId = Set("managerId", value);
+        }
+
+        /// <summary>
+        /// A short description of the objective of the release.
+        /// </summary>
+        [JsonProperty("subject")]
+        public string? Subject
+        {
+            get => subject;
+            set => subject = Set("subject", value);
         }
     }
 }

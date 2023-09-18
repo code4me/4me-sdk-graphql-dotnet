@@ -24,9 +24,7 @@
         private string? language;
         private string? location;
         private string? managerId;
-        private string? name;
         private string? organizationId;
-        private string? primaryEmail;
         private PersonSendEmailNotifications? sendEmailNotifications;
         private PersonShowNotificationPopup? showNotificationPopup;
         private string? siteId;
@@ -44,6 +42,8 @@
         private List<PermissionInput>? permissions;
         private List<PermissionInput>? newAccountPermissions;
         private string? clientMutationId;
+        private string? name;
+        private string? primaryEmail;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -237,16 +237,6 @@
         }
 
         /// <summary>
-        /// The name of the person.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
-        }
-
-        /// <summary>
         /// The organization for which the person works as an employee or long-term contractor.
         /// </summary>
         [JsonProperty("organizationId")]
@@ -254,16 +244,6 @@
         {
             get => organizationId;
             set => organizationId = Set("organizationId", value);
-        }
-
-        /// <summary>
-        /// The email address to which email notifications are to be sent. This email address acts as the unique identifier for the person within the 4me account. This primary email address also acts as the person's login name if he/she is a user of the 4me service.
-        /// </summary>
-        [JsonProperty("primaryEmail")]
-        public string? PrimaryEmail
-        {
-            get => primaryEmail;
-            set => primaryEmail = Set("primaryEmail", value);
         }
 
         /// <summary>
@@ -435,6 +415,26 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The name of the person.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
+        }
+
+        /// <summary>
+        /// The email address to which email notifications are to be sent. This email address acts as the unique identifier for the person within the 4me account. This primary email address also acts as the person's login name if he/she is a user of the 4me service.
+        /// </summary>
+        [JsonProperty("primaryEmail")]
+        public string? PrimaryEmail
+        {
+            get => primaryEmail;
+            set => primaryEmail = Set("primaryEmail", value);
         }
     }
 }

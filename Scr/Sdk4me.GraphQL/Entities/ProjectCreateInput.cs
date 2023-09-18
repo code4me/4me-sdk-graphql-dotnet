@@ -15,16 +15,11 @@
         private ProjectCompletionReason? completionReason;
         private decimal? costOfEffort;
         private decimal? costOfPurchases;
-        private string? customerId;
         private long? effort;
-        private ProjectJustification? justification;
-        private string? managerId;
         private string? note;
         private string? program;
         private string? riskLevel;
-        private string? serviceId;
         private ProjectStatus? status;
-        private string? subject;
         private string? timeZone;
         private decimal? datavalue;
         private string? workHoursId;
@@ -33,6 +28,11 @@
         private List<string>? problemIds;
         private List<string>? requestIds;
         private string? clientMutationId;
+        private string? customerId;
+        private ProjectJustification? justification;
+        private string? managerId;
+        private string? serviceId;
+        private string? subject;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -135,16 +135,6 @@
         }
 
         /// <summary>
-        /// Identifier of the organization for which the project is to be implemented.
-        /// </summary>
-        [JsonProperty("customerId")]
-        public string? CustomerId
-        {
-            get => customerId;
-            set => customerId = Set("customerId", value);
-        }
-
-        /// <summary>
         /// The estimated number of hours of effort that will be needed from internal employees and/or long-term contractors to implement the project.
         /// </summary>
         [JsonProperty("effort")]
@@ -152,26 +142,6 @@
         {
             get => effort;
             set => effort = Set("effort", value);
-        }
-
-        /// <summary>
-        /// The reason why the project should be considered for implementation.
-        /// </summary>
-        [JsonProperty("justification")]
-        public ProjectJustification? Justification
-        {
-            get => justification;
-            set => justification = Set("justification", value);
-        }
-
-        /// <summary>
-        /// Identifier of the person who is responsible for coordinating the implementation of the project.
-        /// </summary>
-        [JsonProperty("managerId")]
-        public string? ManagerId
-        {
-            get => managerId;
-            set => managerId = Set("managerId", value);
         }
 
         /// <summary>
@@ -205,16 +175,6 @@
         }
 
         /// <summary>
-        /// Identifier of the service for which the project will be implemented.
-        /// </summary>
-        [JsonProperty("serviceId")]
-        public string? ServiceId
-        {
-            get => serviceId;
-            set => serviceId = Set("serviceId", value);
-        }
-
-        /// <summary>
         /// Automatically set based on the status of the project's tasks.
         /// </summary>
         [JsonProperty("status")]
@@ -222,16 +182,6 @@
         {
             get => status;
             set => status = Set("status", value);
-        }
-
-        /// <summary>
-        /// A short description of the objective of the project.
-        /// </summary>
-        [JsonProperty("subject")]
-        public string? Subject
-        {
-            get => subject;
-            set => subject = Set("subject", value);
         }
 
         /// <summary>
@@ -313,6 +263,56 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the organization for which the project is to be implemented.
+        /// </summary>
+        [JsonProperty("customerId")]
+        public string? CustomerId
+        {
+            get => customerId;
+            set => customerId = Set("customerId", value);
+        }
+
+        /// <summary>
+        /// The reason why the project should be considered for implementation.
+        /// </summary>
+        [JsonProperty("justification")]
+        public ProjectJustification? Justification
+        {
+            get => justification;
+            set => justification = Set("justification", value);
+        }
+
+        /// <summary>
+        /// Identifier of the person who is responsible for coordinating the implementation of the project.
+        /// </summary>
+        [JsonProperty("managerId")]
+        public string? ManagerId
+        {
+            get => managerId;
+            set => managerId = Set("managerId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the service for which the project will be implemented.
+        /// </summary>
+        [JsonProperty("serviceId")]
+        public string? ServiceId
+        {
+            get => serviceId;
+            set => serviceId = Set("serviceId", value);
+        }
+
+        /// <summary>
+        /// A short description of the objective of the project.
+        /// </summary>
+        [JsonProperty("subject")]
+        public string? Subject
+        {
+            get => subject;
+            set => subject = Set("subject", value);
         }
     }
 }

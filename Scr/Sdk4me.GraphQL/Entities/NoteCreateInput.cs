@@ -5,12 +5,22 @@
     /// </summary>
     public class NoteCreateInput : PropertyChangeSet
     {
+        private string? clientMutationId;
         private string? text;
         private List<AttachmentInput>? attachments;
         private bool? @event;
         private bool? suppressNoteAddedNotifications;
         private string? ownerId;
-        private string? clientMutationId;
+
+        /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
 
         /// <summary>
         /// Text of the note.
@@ -60,16 +70,6 @@
         {
             get => ownerId;
             set => ownerId = Set("ownerId", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
         }
     }
 }

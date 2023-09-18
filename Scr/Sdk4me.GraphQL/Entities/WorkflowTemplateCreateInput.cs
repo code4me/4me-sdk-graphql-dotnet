@@ -17,9 +17,9 @@
         private string? note;
         private RecurrenceInput? recurrence;
         private string? serviceId;
-        private string? subject;
         private List<WorkflowTemplateTaskTemplateInput>? newTaskTemplateRelations;
         private string? clientMutationId;
+        private string? subject;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -142,16 +142,6 @@
         }
 
         /// <summary>
-        /// Short description that needs to be copied to the Subject field of a new workflow when it is being created based on the template.
-        /// </summary>
-        [JsonProperty("subject")]
-        public string? Subject
-        {
-            get => subject;
-            set => subject = Set("subject", value);
-        }
-
-        /// <summary>
         /// Task template relations of the workflow template.
         /// </summary>
         [JsonProperty("newTaskTemplateRelations")]
@@ -169,6 +159,16 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Short description that needs to be copied to the Subject field of a new workflow when it is being created based on the template.
+        /// </summary>
+        [JsonProperty("subject")]
+        public string? Subject
+        {
+            get => subject;
+            set => subject = Set("subject", value);
         }
     }
 }

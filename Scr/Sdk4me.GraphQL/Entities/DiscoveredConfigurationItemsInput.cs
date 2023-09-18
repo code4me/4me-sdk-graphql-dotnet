@@ -5,12 +5,22 @@
     /// </summary>
     public class DiscoveredConfigurationItemsInput : PropertyChangeSet
     {
+        private string? clientMutationId;
         private string? source;
         private List<string>? alternativeSources;
         private string? supportTeam;
         private List<DiscoveredProductCategoryInput>? physicalAssets;
         private DiscoveredReferenceStrategiesInput? referenceStrategies;
-        private string? clientMutationId;
+
+        /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
 
         /// <summary>
         /// Identifier for the client application submitting the upload.
@@ -60,16 +70,6 @@
         {
             get => referenceStrategies;
             set => referenceStrategies = Set("referenceStrategies", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
         }
     }
 }

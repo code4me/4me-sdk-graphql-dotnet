@@ -13,18 +13,18 @@
         private List<AttachmentInput>? descriptionAttachments;
         private bool? disabled;
         private string? features;
-        private string? name;
         private WebhookPolicyJwtAlg? policyJwtAlg;
         private string? policyJwtAudience;
         private long? policyJwtClaimExpiresIn;
         private string? reference;
-        private string? serviceInstanceId;
         private string? uiExtensionVersionId;
         private string? configurationUriTemplate;
         private string? webhookUriTemplate;
         private bool? requiresEnabledOauthPerson;
         private List<AppOfferingScopeInput>? newScopes;
         private string? clientMutationId;
+        private string? name;
+        private string? serviceInstanceId;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -107,16 +107,6 @@
         }
 
         /// <summary>
-        /// Name of the app offering.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
-        }
-
-        /// <summary>
         /// The algorithm used for generating the policy for the app offering's webhook.
         /// </summary>
         [JsonProperty("policyJwtAlg")]
@@ -154,16 +144,6 @@
         {
             get => reference;
             set => reference = Set("reference", value);
-        }
-
-        /// <summary>
-        /// Identifier of the the service instance this app offering is linked to.
-        /// </summary>
-        [JsonProperty("serviceInstanceId")]
-        public string? ServiceInstanceId
-        {
-            get => serviceInstanceId;
-            set => serviceInstanceId = Set("serviceInstanceId", value);
         }
 
         /// <summary>
@@ -224,6 +204,26 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Name of the app offering.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
+        }
+
+        /// <summary>
+        /// Identifier of the the service instance this app offering is linked to.
+        /// </summary>
+        [JsonProperty("serviceInstanceId")]
+        public string? ServiceInstanceId
+        {
+            get => serviceInstanceId;
+            set => serviceInstanceId = Set("serviceInstanceId", value);
         }
     }
 }

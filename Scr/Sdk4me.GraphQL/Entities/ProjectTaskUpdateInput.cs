@@ -37,9 +37,9 @@
         private List<string>? predecessorIds;
         private List<string>? successorIds;
         private List<ProjectTaskAssignmentInput>? newAssignments;
+        private string? clientMutationId;
         private string? id;
         private List<string>? assignmentsToDelete;
-        private string? clientMutationId;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -362,6 +362,16 @@
         }
 
         /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
@@ -379,16 +389,6 @@
         {
             get => assignmentsToDelete;
             set => assignmentsToDelete = Set("assignmentsToDelete", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
         }
     }
 }

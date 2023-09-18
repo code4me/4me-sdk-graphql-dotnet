@@ -9,11 +9,11 @@
         private string? sourceID;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
+        private List<AddressInput>? newAddresses;
+        private string? clientMutationId;
         private string? requestedForId;
         private string? shopArticleId;
         private long? quantity;
-        private List<AddressInput>? newAddresses;
-        private string? clientMutationId;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -56,6 +56,26 @@
         }
 
         /// <summary>
+        /// New or updated addresses of the shop order line.
+        /// </summary>
+        [JsonProperty("newAddresses")]
+        public List<AddressInput>? NewAddresses
+        {
+            get => newAddresses;
+            set => newAddresses = Set("newAddresses", value);
+        }
+
+        /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
         /// The person for whom the shop order line was submitted.
         /// </summary>
         [JsonProperty("requestedForId")]
@@ -83,26 +103,6 @@
         {
             get => quantity;
             set => quantity = Set("quantity", value);
-        }
-
-        /// <summary>
-        /// New or updated addresses of the shop order line.
-        /// </summary>
-        [JsonProperty("newAddresses")]
-        public List<AddressInput>? NewAddresses
-        {
-            get => newAddresses;
-            set => newAddresses = Set("newAddresses", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
         }
     }
 }

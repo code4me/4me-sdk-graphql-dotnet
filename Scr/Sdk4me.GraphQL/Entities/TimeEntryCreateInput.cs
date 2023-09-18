@@ -20,8 +20,8 @@
         private DateTime? startedAt;
         private string? teamId;
         private string? timeAllocationId;
-        private long? timeSpent;
         private string? clientMutationId;
+        private long? timeSpent;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -174,16 +174,6 @@
         }
 
         /// <summary>
-        /// The number of minutes that was spent on the selected time allocation. The number of minutes is allowed to be negative only when the correction field is set to <c>true</c>.
-        /// </summary>
-        [JsonProperty("timeSpent")]
-        public long? TimeSpent
-        {
-            get => timeSpent;
-            set => timeSpent = Set("timeSpent", value);
-        }
-
-        /// <summary>
         /// A unique identifier for the client performing the mutation.
         /// </summary>
         [JsonProperty("clientMutationId")]
@@ -191,6 +181,16 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The number of minutes that was spent on the selected time allocation. The number of minutes is allowed to be negative only when the correction field is set to <c>true</c>.
+        /// </summary>
+        [JsonProperty("timeSpent")]
+        public long? TimeSpent
+        {
+            get => timeSpent;
+            set => timeSpent = Set("timeSpent", value);
         }
     }
 }

@@ -7,17 +7,17 @@
     {
         private string? source;
         private string? sourceID;
-        private UiExtensionCategory? category;
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
         private bool? disabled;
-        private string? name;
         private string? title;
         private bool? activate;
         private string? css;
         private string? html;
         private string? javascript;
         private string? clientMutationId;
+        private UiExtensionCategory? category;
+        private string? name;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -37,16 +37,6 @@
         {
             get => sourceID;
             set => sourceID = Set("sourceID", value);
-        }
-
-        /// <summary>
-        /// The type of record in which the UI extension can be selected.
-        /// </summary>
-        [JsonProperty("category")]
-        public UiExtensionCategory? Category
-        {
-            get => category;
-            set => category = Set("category", value);
         }
 
         /// <summary>
@@ -77,16 +67,6 @@
         {
             get => disabled;
             set => disabled = Set("disabled", value);
-        }
-
-        /// <summary>
-        /// The name of the UI extension.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
         }
 
         /// <summary>
@@ -147,6 +127,26 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The type of record in which the UI extension can be selected.
+        /// </summary>
+        [JsonProperty("category")]
+        public UiExtensionCategory? Category
+        {
+            get => category;
+            set => category = Set("category", value);
+        }
+
+        /// <summary>
+        /// The name of the UI extension.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
         }
     }
 }

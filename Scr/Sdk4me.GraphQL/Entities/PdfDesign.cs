@@ -47,6 +47,18 @@
         [JsonProperty("name"), Sdk4meField(true)]
         public string? Name { get; internal set; }
 
+        /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source { get; internal set; }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID { get; internal set; }
+
         [JsonProperty("translations")]
         internal NodeCollection<Translation>? TranslationsCollection { get; set; }
 

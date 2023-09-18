@@ -7,21 +7,21 @@
     {
         private string? source;
         private string? sourceID;
-        private string? name;
         private ReservationStatus? status;
-        private string? reservationOfferingId;
         private string? requestId;
         private string? createdById;
-        private string? personId;
-        private string? configurationItemId;
         private DateTime? preparationStartAt;
-        private DateTime? startAt;
         private DateTime? endAt;
         private long? duration;
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
         private ReservationRecurrenceInput? recurrence;
         private string? clientMutationId;
+        private string? name;
+        private string? reservationOfferingId;
+        private DateTime? startAt;
+        private string? configurationItemId;
+        private string? personId;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -44,16 +44,6 @@
         }
 
         /// <summary>
-        /// A short description of the reservation
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
-        }
-
-        /// <summary>
         /// The status of the reservation.
         /// </summary>
         [JsonProperty("status")]
@@ -61,16 +51,6 @@
         {
             get => status;
             set => status = Set("status", value);
-        }
-
-        /// <summary>
-        /// Identifier of the reservation offering that was used to create this reservation.
-        /// </summary>
-        [JsonProperty("reservationOfferingId")]
-        public string? ReservationOfferingId
-        {
-            get => reservationOfferingId;
-            set => reservationOfferingId = Set("reservationOfferingId", value);
         }
 
         /// <summary>
@@ -94,26 +74,6 @@
         }
 
         /// <summary>
-        /// Identifier of the person for whom this reservation was created.
-        /// </summary>
-        [JsonProperty("personId")]
-        public string? PersonId
-        {
-            get => personId;
-            set => personId = Set("personId", value);
-        }
-
-        /// <summary>
-        /// Identifier of the asset that is being reserved.
-        /// </summary>
-        [JsonProperty("configurationItemId")]
-        public string? ConfigurationItemId
-        {
-            get => configurationItemId;
-            set => configurationItemId = Set("configurationItemId", value);
-        }
-
-        /// <summary>
         /// The start date and time of the preparation of the asset for the reservation. Only present in case the reservation offering specifies a preparation duration.
         /// </summary>
         [JsonProperty("preparationStartAt")]
@@ -121,16 +81,6 @@
         {
             get => preparationStartAt;
             set => preparationStartAt = Set("preparationStartAt", value);
-        }
-
-        /// <summary>
-        /// Used to specify the start date and time of the reservation.
-        /// </summary>
-        [JsonProperty("startAt")]
-        public DateTime? StartAt
-        {
-            get => startAt;
-            set => startAt = Set("startAt", value);
         }
 
         /// <summary>
@@ -191,6 +141,56 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// A short description of the reservation
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
+        }
+
+        /// <summary>
+        /// Identifier of the reservation offering that was used to create this reservation.
+        /// </summary>
+        [JsonProperty("reservationOfferingId")]
+        public string? ReservationOfferingId
+        {
+            get => reservationOfferingId;
+            set => reservationOfferingId = Set("reservationOfferingId", value);
+        }
+
+        /// <summary>
+        /// Used to specify the start date and time of the reservation.
+        /// </summary>
+        [JsonProperty("startAt")]
+        public DateTime? StartAt
+        {
+            get => startAt;
+            set => startAt = Set("startAt", value);
+        }
+
+        /// <summary>
+        /// Identifier of the asset that is being reserved.
+        /// </summary>
+        [JsonProperty("configurationItemId")]
+        public string? ConfigurationItemId
+        {
+            get => configurationItemId;
+            set => configurationItemId = Set("configurationItemId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the person for whom this reservation was created.
+        /// </summary>
+        [JsonProperty("personId")]
+        public string? PersonId
+        {
+            get => personId;
+            set => personId = Set("personId", value);
         }
     }
 }

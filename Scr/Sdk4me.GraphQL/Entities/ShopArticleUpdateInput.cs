@@ -28,8 +28,8 @@
         private decimal? recurringPrice;
         private string? recurringPriceCurrency;
         private ShopArticleRecurringPeriod? recurringPeriod;
-        private string? id;
         private string? clientMutationId;
+        private string? id;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -265,16 +265,6 @@
         }
 
         /// <summary>
-        /// The node ID of the record to update.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
-        }
-
-        /// <summary>
         /// A unique identifier for the client performing the mutation.
         /// </summary>
         [JsonProperty("clientMutationId")]
@@ -282,6 +272,16 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The node ID of the record to update.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
         }
     }
 }

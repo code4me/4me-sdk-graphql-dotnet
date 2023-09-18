@@ -9,11 +9,11 @@
         private string? sourceID;
         private string? pictureUri;
         private bool? disabled;
-        private string? name;
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
         private string? productOwnerId;
         private string? clientMutationId;
+        private string? name;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -56,16 +56,6 @@
         }
 
         /// <summary>
-        /// Name of the product backlog.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
-        }
-
-        /// <summary>
         /// Description of the product backlog.
         /// </summary>
         [JsonProperty("description")]
@@ -103,6 +93,16 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Name of the product backlog.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
         }
     }
 }

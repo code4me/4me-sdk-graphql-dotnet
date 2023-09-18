@@ -21,14 +21,14 @@
         private string? firstLineTeamId;
         private string? keywords;
         private string? knowledgeManagerId;
-        private string? name;
         private string? problemManagerId;
-        private string? providerId;
         private string? releaseManagerId;
         private string? serviceOwnerId;
         private string? supportTeamId;
         private string? surveyId;
         private string? clientMutationId;
+        private string? name;
+        private string? providerId;
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
@@ -191,16 +191,6 @@
         }
 
         /// <summary>
-        /// The name of the service. The service name may be followed by the name of its core application placed between brackets.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
-        }
-
-        /// <summary>
         /// Identifier of the person who is responsible for coordinating the problems that directly affect the service.
         /// </summary>
         [JsonProperty("problemManagerId")]
@@ -208,16 +198,6 @@
         {
             get => problemManagerId;
             set => problemManagerId = Set("problemManagerId", value);
-        }
-
-        /// <summary>
-        /// Identifier of the organization who provides the service.
-        /// </summary>
-        [JsonProperty("providerId")]
-        public string? ProviderId
-        {
-            get => providerId;
-            set => providerId = Set("providerId", value);
         }
 
         /// <summary>
@@ -268,6 +248,26 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The name of the service. The service name may be followed by the name of its core application placed between brackets.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
+        }
+
+        /// <summary>
+        /// Identifier of the organization who provides the service.
+        /// </summary>
+        [JsonProperty("providerId")]
+        public string? ProviderId
+        {
+            get => providerId;
+            set => providerId = Set("providerId", value);
         }
     }
 }

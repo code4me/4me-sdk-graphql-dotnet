@@ -18,10 +18,10 @@
         public ActivityID? ActivityID { get; internal set; }
 
         /// <summary>
-        /// The Billing ID is the unique identifier by which all the activities that are performed through the coverage of the SLA are known in the billing system of the service provider.
+        /// The Agreement ID is the unique identifier by which all the activities that are performed through the coverage of the SLA are known in the billing system of the service provider.
         /// </summary>
-        [JsonProperty("billingID")]
-        public string? BillingID { get; internal set; }
+        [JsonProperty("agreementID")]
+        public string? AgreementID { get; internal set; }
 
         /// <summary>
         /// Used to specify how people who are to be covered by the service level agreement are to be selected.
@@ -58,15 +58,15 @@
             get => CustomerRepresentativesCollection?.Data;
         }
 
-        [JsonProperty("effortClassChargeIDs")]
-        internal NodeCollection<EffortClassChargeID>? EffortClassChargeIDsCollection { get; set; }
+        [JsonProperty("effortClassRateIDs")]
+        internal NodeCollection<EffortClassRateID>? EffortClassRateIDsCollection { get; set; }
 
         /// <summary>
-        /// The Charge IDs are the unique identifiers by which an effort class that is linked to a time entry when an activity was performed through the coverage of the SLA is known in the billing system of the service provider.
+        /// The Rate IDs are the unique identifiers by which an effort class that is linked to a time entry when an activity was performed through the coverage of the SLA is known in the billing system of the service provider.
         /// </summary>
-        public DataList<EffortClassChargeID>? EffortClassChargeIDs
+        public DataList<EffortClassRateID>? EffortClassRateIDs
         {
-            get => EffortClassChargeIDsCollection?.Data;
+            get => EffortClassRateIDsCollection?.Data;
         }
 
         /// <summary>
@@ -245,7 +245,7 @@
         {
             HashSet<QueryPageInfo> retval = new();
             retval.AddRange(CustomerRepresentativesCollection?.GetQueryPageInfo("customerRepresentatives", depth + 1));
-            retval.AddRange(EffortClassChargeIDsCollection?.GetQueryPageInfo("effortClassChargeIDs", depth + 1));
+            retval.AddRange(EffortClassRateIDsCollection?.GetQueryPageInfo("effortClassRateIDs", depth + 1));
             retval.AddRange(InvoicesCollection?.GetQueryPageInfo("invoices", depth + 1));
             retval.AddRange(OrganizationsCollection?.GetQueryPageInfo("organizations", depth + 1));
             retval.AddRange(PeopleCollection?.GetQueryPageInfo("people", depth + 1));
@@ -260,7 +260,7 @@
         internal override void AddToCollection(object data)
         {
             CustomerRepresentatives?.AddRange((data as ServiceLevelAgreement)?.CustomerRepresentatives);
-            EffortClassChargeIDs?.AddRange((data as ServiceLevelAgreement)?.EffortClassChargeIDs);
+            EffortClassRateIDs?.AddRange((data as ServiceLevelAgreement)?.EffortClassRateIDs);
             Invoices?.AddRange((data as ServiceLevelAgreement)?.Invoices);
             Organizations?.AddRange((data as ServiceLevelAgreement)?.Organizations);
             People?.AddRange((data as ServiceLevelAgreement)?.People);

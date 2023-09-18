@@ -20,8 +20,8 @@
         private ShortUrlEmailInput? email;
         private ShortUrlGeoInput? geo;
         private ShortUrlSmsInput? sms;
-        private string? id;
         private string? clientMutationId;
+        private string? id;
 
         /// <summary>
         /// The uniform resource identifier (URI) to which the short URL is forwarded.
@@ -174,16 +174,6 @@
         }
 
         /// <summary>
-        /// The node ID of the record to update.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
-        }
-
-        /// <summary>
         /// A unique identifier for the client performing the mutation.
         /// </summary>
         [JsonProperty("clientMutationId")]
@@ -191,6 +181,16 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The node ID of the record to update.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
         }
     }
 }

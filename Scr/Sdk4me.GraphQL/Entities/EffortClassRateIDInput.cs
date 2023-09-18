@@ -1,13 +1,13 @@
 ﻿namespace Sdk4me.GraphQL
 {
     /// <summary>
-    /// The <see href="https://developer.4me.com/graphql/input_object/effortclasschargeidinput/">EffortClassChargeIDInput</see> object.
+    /// The <see href="https://developer.4me.com/graphql/input_object/effortclassrateidinput/">EffortClassRateIDInput</see> object.
     /// </summary>
-    public class EffortClassChargeIDInput : PropertyChangeSet
+    public class EffortClassRateIDInput : PropertyChangeSet
     {
         private string? id;
         private string? effortClassId;
-        private string? chargeID;
+        private string? rateID;
 
         /// <summary>
         /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
@@ -32,11 +32,11 @@
         /// <summary>
         /// The identifier known in the billing system of the service provider.
         /// </summary>
-        [JsonProperty("chargeID")]
-        public string? ChargeID
+        [JsonProperty("rateID")]
+        public string? RateID
         {
-            get => chargeID;
-            set => chargeID = Set("chargeID", value);
+            get => rateID;
+            set => rateID = Set("rateID", value);
         }
     }
 }

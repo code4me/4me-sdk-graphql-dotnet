@@ -1,30 +1,30 @@
 ﻿namespace Sdk4me.GraphQL
 {
     /// <summary>
-    /// The <see href="https://developer.4me.com/graphql/object/effortclasschargeid/">EffortClassChargeID</see> object.
+    /// The <see href="https://developer.4me.com/graphql/object/effortclassrateid/">EffortClassRateID</see> object.
     /// </summary>
-    public class EffortClassChargeID : Node
+    public class EffortClassRateID : Node
     {
         /// <summary>
-        /// The identifier known in the billing system of the service provider.
-        /// </summary>
-        [JsonProperty("chargeID")]
-        public string? ChargeID { get; internal set; }
-
-        /// <summary>
-        /// The date and time at which the chargeID was created.
+        /// The date and time at which the rateID was created.
         /// </summary>
         [JsonProperty("createdAt")]
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
-        /// The effort class for which a chargeID is provided.
+        /// The effort class for which a rateID is provided.
         /// </summary>
         [JsonProperty("effortClass")]
         public EffortClass? EffortClass { get; internal set; }
 
         /// <summary>
-        /// The date and time at which the chargeID was updated.
+        /// The identifier known in the billing system of the service provider.
+        /// </summary>
+        [JsonProperty("rateID")]
+        public string? RateID { get; internal set; }
+
+        /// <summary>
+        /// The date and time at which the rateID was updated.
         /// </summary>
         [JsonProperty("updatedAt")]
         public DateTime? UpdatedAt { get; internal set; }
