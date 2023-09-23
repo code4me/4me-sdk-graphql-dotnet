@@ -1040,6 +1040,11 @@
         [EnumMember(Value = "account")]
         Account,
         /// <summary>
+        /// The body field.
+        /// </summary>
+        [EnumMember(Value = "body")]
+        Body,
+        /// <summary>
         /// The created at field.
         /// </summary>
         [EnumMember(Value = "createdAt")]
@@ -1054,6 +1059,11 @@
         /// </summary>
         [EnumMember(Value = "disabled")]
         Disabled,
+        /// <summary>
+        /// The email template field.
+        /// </summary>
+        [EnumMember(Value = "emailTemplate")]
+        EmailTemplate,
         /// <summary>
         /// The end at field.
         /// </summary>
@@ -1080,6 +1090,11 @@
         [EnumMember(Value = "serviceInstances")]
         ServiceInstances,
         /// <summary>
+        /// The slas field.
+        /// </summary>
+        [EnumMember(Value = "slas")]
+        Slas,
+        /// <summary>
         /// The source field.
         /// </summary>
         [EnumMember(Value = "source")]
@@ -1094,6 +1109,11 @@
         /// </summary>
         [EnumMember(Value = "startAt")]
         StartAt,
+        /// <summary>
+        /// The subject field.
+        /// </summary>
+        [EnumMember(Value = "subject")]
+        Subject,
         /// <summary>
         /// The teams field.
         /// </summary>
@@ -1953,6 +1973,58 @@
         /// </summary>
         [EnumMember(Value = "rateID")]
         RateID,
+        /// <summary>
+        /// The updated at field.
+        /// </summary>
+        [EnumMember(Value = "updatedAt")]
+        UpdatedAt,
+    }
+
+    /// <summary>
+    /// The <see cref="EmailTemplate">EmailTemplate</see> fields.
+    /// </summary>
+    public enum EmailTemplateField
+    {
+        /// <summary>
+        /// The account field.
+        /// </summary>
+        [EnumMember(Value = "account")]
+        Account,
+        /// <summary>
+        /// The body field.
+        /// </summary>
+        [EnumMember(Value = "body")]
+        Body,
+        /// <summary>
+        /// The created at field.
+        /// </summary>
+        [EnumMember(Value = "createdAt")]
+        CreatedAt,
+        /// <summary>
+        /// The default template field.
+        /// </summary>
+        [EnumMember(Value = "defaultTemplate")]
+        DefaultTemplate,
+        /// <summary>
+        /// The id field.
+        /// </summary>
+        [EnumMember(Value = "id")]
+        ID,
+        /// <summary>
+        /// The name field.
+        /// </summary>
+        [EnumMember(Value = "name")]
+        Name,
+        /// <summary>
+        /// The subject field.
+        /// </summary>
+        [EnumMember(Value = "subject")]
+        Subject,
+        /// <summary>
+        /// The translations field.
+        /// </summary>
+        [EnumMember(Value = "translations")]
+        Translations,
         /// <summary>
         /// The updated at field.
         /// </summary>
@@ -7452,6 +7524,11 @@
         /// </summary>
         [EnumMember(Value = "updatedAt")]
         UpdatedAt,
+        /// <summary>
+        /// The waiting for customer follow up field.
+        /// </summary>
+        [EnumMember(Value = "waitingForCustomerFollowUp")]
+        WaitingForCustomerFollowUp,
     }
 
     /// <summary>
@@ -10015,6 +10092,75 @@
         /// </summary>
         [EnumMember(Value = "versionNr")]
         VersionNr,
+    }
+
+    /// <summary>
+    /// The <see cref="WaitingForCustomerFollowUp">WaitingForCustomerFollowUp</see> fields.
+    /// </summary>
+    public enum WaitingForCustomerFollowUpField
+    {
+        /// <summary>
+        /// The account field.
+        /// </summary>
+        [EnumMember(Value = "account")]
+        Account,
+        /// <summary>
+        /// The auto complete field.
+        /// </summary>
+        [EnumMember(Value = "autoComplete")]
+        AutoComplete,
+        /// <summary>
+        /// The created at field.
+        /// </summary>
+        [EnumMember(Value = "createdAt")]
+        CreatedAt,
+        /// <summary>
+        /// The disabled field.
+        /// </summary>
+        [EnumMember(Value = "disabled")]
+        Disabled,
+        /// <summary>
+        /// The id field.
+        /// </summary>
+        [EnumMember(Value = "id")]
+        ID,
+        /// <summary>
+        /// The name field.
+        /// </summary>
+        [EnumMember(Value = "name")]
+        Name,
+        /// <summary>
+        /// The source field.
+        /// </summary>
+        [EnumMember(Value = "source")]
+        Source,
+        /// <summary>
+        /// The source id field.
+        /// </summary>
+        [EnumMember(Value = "sourceID")]
+        SourceID,
+        /// <summary>
+        /// The updated at field.
+        /// </summary>
+        [EnumMember(Value = "updatedAt")]
+        UpdatedAt,
+        /// <summary>
+        /// The waiting for customer rules field.
+        /// </summary>
+        [EnumMember(Value = "waitingForCustomerRules")]
+        WaitingForCustomerRules,
+    }
+
+    /// <summary>
+    /// The <see cref="WaitingForCustomerRule">WaitingForCustomerRule</see> fields.
+    /// </summary>
+    public enum WaitingForCustomerRuleField
+    {
+        /// <summary>
+        /// The nr of business days field.
+        /// </summary>
+        [EnumMember(Value = "nrOfBusinessDays")]
+        NrOfBusinessDays,
     }
 
     /// <summary>

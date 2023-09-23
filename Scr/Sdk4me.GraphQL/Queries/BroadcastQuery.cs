@@ -43,6 +43,16 @@
         }
 
         /// <summary>
+        /// The email template used for the email broadcast. This email template needs to be of the type Send Email from Broadcast.
+        /// </summary>
+        public BroadcastQuery SelectEmailTemplate(EmailTemplateQuery query)
+        {
+            query.FieldName = "emailTemplate";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Grouped request to which customers can add request to indicate they are also affected.
         /// </summary>
         public BroadcastQuery SelectRequest(RequestQuery query)
@@ -58,6 +68,15 @@
         public BroadcastQuery SelectServiceInstances(ServiceInstanceQuery query)
         {
             query.FieldName = "serviceInstances";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Used to select the service level agreements for which the customer representatives will receive the email broadcast. This is only available for broadcasts when the message type "email" is selected.
+        /// </summary>
+        public BroadcastQuery SelectSlas(ServiceLevelAgreementQuery query)
+        {
+            query.FieldName = "slas";
             return Select(query);
         }
 

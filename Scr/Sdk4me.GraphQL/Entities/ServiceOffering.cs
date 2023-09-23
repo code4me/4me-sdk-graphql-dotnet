@@ -629,6 +629,12 @@
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }
 
+        /// <summary>
+        /// The waiting for customer follow-up for a request when it remains in status waiting for customer and has an active SLA that is based on this service offering. Only enabled waiting for customer follow-ups that are linked to the same account as the service offering can be selected.
+        /// </summary>
+        [JsonProperty("waitingForCustomerFollowUp")]
+        public WaitingForCustomerFollowUp? WaitingForCustomerFollowUp { get; internal set; }
+
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)
         {
             HashSet<QueryPageInfo> retval = new();

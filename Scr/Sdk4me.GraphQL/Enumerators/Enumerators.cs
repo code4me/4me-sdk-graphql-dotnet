@@ -168,6 +168,11 @@
         [EnumMember(Value = "available")]
         Available = 1,
         /// <summary>
+        /// Email.
+        /// </summary>
+        [EnumMember(Value = "email")]
+        Email,
+        /// <summary>
         /// Information.
         /// </summary>
         [EnumMember(Value = "info")]
@@ -209,6 +214,11 @@
         /// </summary>
         [EnumMember(Value = "covered_for")]
         CoveredFor,
+        /// <summary>
+        /// Customer representatives of the following service level agreement(s).
+        /// </summary>
+        [EnumMember(Value = "customer_representatives_of_slas")]
+        CustomerRepresentativesOfSlas,
         /// <summary>
         /// Specialists in requests from the following customers.
         /// </summary>

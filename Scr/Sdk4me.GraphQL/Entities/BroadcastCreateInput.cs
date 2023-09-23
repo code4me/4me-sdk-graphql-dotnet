@@ -8,15 +8,19 @@
         private string? source;
         private string? sourceID;
         private bool? disabled;
+        private string? message;
         private DateTime? startAt;
         private DateTime? endAt;
         private string? timeZone;
         private BroadcastVisibility? visibility;
+        private string? subject;
+        private string? body;
+        private string? emailTemplateId;
         private List<string>? customerIds;
         private List<string>? serviceInstanceIds;
         private List<string>? teamIds;
+        private List<string>? slaIds;
         private string? clientMutationId;
-        private string? message;
         private BroadcastMessageType? messageType;
 
         /// <summary>
@@ -47,6 +51,16 @@
         {
             get => disabled;
             set => disabled = Set("disabled", value);
+        }
+
+        /// <summary>
+        /// Message that is to be broadcasted in the language of the account.
+        /// </summary>
+        [JsonProperty("message")]
+        public string? Message
+        {
+            get => message;
+            set => message = Set("message", value);
         }
 
         /// <summary>
@@ -91,6 +105,36 @@
         }
 
         /// <summary>
+        /// The subject for the email broadcast.
+        /// </summary>
+        [JsonProperty("subject")]
+        public string? Subject
+        {
+            get => subject;
+            set => subject = Set("subject", value);
+        }
+
+        /// <summary>
+        /// The body for the email broadcast.
+        /// </summary>
+        [JsonProperty("body")]
+        public string? Body
+        {
+            get => body;
+            set => body = Set("body", value);
+        }
+
+        /// <summary>
+        /// The id of the email template used for the email broadcast. This email template needs to be of the type Send Email from Broadcast.
+        /// </summary>
+        [JsonProperty("emailTemplateId")]
+        public string? EmailTemplateId
+        {
+            get => emailTemplateId;
+            set => emailTemplateId = Set("emailTemplateId", value);
+        }
+
+        /// <summary>
         /// The customer organizations when the broadcast is to be displayed for the specialists of the account in requests that were received from the selected organizations. This is available only when the "Specialists in requests from the following customers" visibility option is selected.
         /// </summary>
         [JsonProperty("customerIds")]
@@ -121,6 +165,16 @@
         }
 
         /// <summary>
+        /// The ids of the service level agreements for which the customer representatives will receive the email broadcast. This is only available for broadcasts when the message type "email" is selected.
+        /// </summary>
+        [JsonProperty("slaIds")]
+        public List<string>? SlaIds
+        {
+            get => slaIds;
+            set => slaIds = Set("slaIds", value);
+        }
+
+        /// <summary>
         /// A unique identifier for the client performing the mutation.
         /// </summary>
         [JsonProperty("clientMutationId")]
@@ -128,16 +182,6 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// Message that is to be broadcasted in the language of the account.
-        /// </summary>
-        [JsonProperty("message")]
-        public string? Message
-        {
-            get => message;
-            set => message = Set("message", value);
         }
 
         /// <summary>

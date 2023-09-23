@@ -12,6 +12,12 @@
         public Account? Account { get; internal set; }
 
         /// <summary>
+        /// The body used in email broadcast.
+        /// </summary>
+        [JsonProperty("body")]
+        public string? Body { get; internal set; }
+
+        /// <summary>
         /// The date and time at which the record was created.
         /// </summary>
         [JsonProperty("createdAt"), Sdk4meField(true)]
@@ -33,6 +39,12 @@
         /// </summary>
         [JsonProperty("disabled")]
         public bool? Disabled { get; internal set; }
+
+        /// <summary>
+        /// The email template used for the email broadcast. This email template needs to be of the type Send Email from Broadcast.
+        /// </summary>
+        [JsonProperty("emailTemplate")]
+        public EmailTemplate? EmailTemplate { get; internal set; }
 
         /// <summary>
         /// Used to select the end date and time of the broadcast. This field is left empty when the message is to be broadcasted until the Disabled box is checked. (If the broadcast should end at midnight at the end of a day, specify 12:00am or 24:00.)
@@ -63,6 +75,17 @@
             get => ServiceInstancesCollection?.Data;
         }
 
+        [JsonProperty("slas")]
+        internal NodeCollection<ServiceLevelAgreement>? SlasCollection { get; set; }
+
+        /// <summary>
+        /// Used to select the service level agreements for which the customer representatives will receive the email broadcast. This is only available for broadcasts when the message type "email" is selected.
+        /// </summary>
+        public DataList<ServiceLevelAgreement>? Slas
+        {
+            get => SlasCollection?.Data;
+        }
+
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
@@ -80,6 +103,12 @@
         /// </summary>
         [JsonProperty("startAt"), Sdk4meField(true)]
         public DateTime? StartAt { get; internal set; }
+
+        /// <summary>
+        /// The subject used in email broadcasts.
+        /// </summary>
+        [JsonProperty("subject")]
+        public string? Subject { get; internal set; }
 
         [JsonProperty("teams")]
         internal NodeCollection<Team>? TeamsCollection { get; set; }
@@ -116,6 +145,7 @@
             HashSet<QueryPageInfo> retval = new();
             retval.AddRange(CustomersCollection?.GetQueryPageInfo("customers", depth + 1));
             retval.AddRange(ServiceInstancesCollection?.GetQueryPageInfo("serviceInstances", depth + 1));
+            retval.AddRange(SlasCollection?.GetQueryPageInfo("slas", depth + 1));
             retval.AddRange(TeamsCollection?.GetQueryPageInfo("teams", depth + 1));
             return retval;
         }
@@ -124,6 +154,7 @@
         {
             Customers?.AddRange((data as Broadcast)?.Customers);
             ServiceInstances?.AddRange((data as Broadcast)?.ServiceInstances);
+            Slas?.AddRange((data as Broadcast)?.Slas);
             Teams?.AddRange((data as Broadcast)?.Teams);
         }
     }

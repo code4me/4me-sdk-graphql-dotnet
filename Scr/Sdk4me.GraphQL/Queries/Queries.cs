@@ -346,6 +346,11 @@
         public static UiExtensionQuery UiExtension => new();
 
         /// <summary>
+        /// Returns a new instance of the <see cref="WaitingForCustomerFollowUp"/> with a default field selection.
+        /// </summary>
+        public static WaitingForCustomerFollowUpQuery WaitingForCustomerFollowUp => new();
+
+        /// <summary>
         /// Returns a new instance of the <see cref="WebhookPolicy"/> with a default field selection.
         /// </summary>
         public static WebhookPolicyQuery WebhookPolicy => new();

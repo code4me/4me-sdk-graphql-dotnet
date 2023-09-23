@@ -279,5 +279,15 @@
             query.FieldName = "terminationAttachments";
             return Select(query);
         }
+
+        /// <summary>
+        /// The waiting for customer follow-up for a request when it remains in status waiting for customer and has an active SLA that is based on this service offering. Only enabled waiting for customer follow-ups that are linked to the same account as the service offering can be selected.
+        /// </summary>
+        public ServiceOfferingQuery SelectWaitingForCustomerFollowUp(WaitingForCustomerFollowUpQuery query)
+        {
+            query.FieldName = "waitingForCustomerFollowUp";
+            query.IsConnection = false;
+            return Select(query);
+        }
     }
 }

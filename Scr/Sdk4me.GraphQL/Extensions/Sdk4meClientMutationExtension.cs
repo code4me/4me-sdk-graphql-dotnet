@@ -3088,6 +3088,56 @@
         }
 
         /// <summary>
+        /// Creates a new waiting for customer follow-up.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="input">The mutation to execute.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<WaitingForCustomerFollowUpCreatePayload> Mutation(this Sdk4meClient client, WaitingForCustomerFollowUpCreateInput input)
+        {
+            return await client.Mutation(new WaitingForCustomerFollowUpCreateMutation(input));
+        }
+
+        /// <summary>
+        /// Creates a new waiting for customer follow-up.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="input">The mutation to execute.</param>
+        /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<WaitingForCustomerFollowUpCreatePayload> Mutation(this Sdk4meClient client, WaitingForCustomerFollowUpCreateInput input, bool throwOnError)
+        {
+            return await client.Mutation(new WaitingForCustomerFollowUpCreateMutation(input), throwOnError);
+        }
+
+        /// <summary>
+        /// Updates an existing waiting for customer follow-up.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="input">The mutation to execute.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<WaitingForCustomerFollowUpUpdatePayload> Mutation(this Sdk4meClient client, WaitingForCustomerFollowUpUpdateInput input)
+        {
+            return await client.Mutation(new WaitingForCustomerFollowUpUpdateMutation(input));
+        }
+
+        /// <summary>
+        /// Updates an existing waiting for customer follow-up.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="input">The mutation to execute.</param>
+        /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<WaitingForCustomerFollowUpUpdatePayload> Mutation(this Sdk4meClient client, WaitingForCustomerFollowUpUpdateInput input, bool throwOnError)
+        {
+            return await client.Mutation(new WaitingForCustomerFollowUpUpdateMutation(input), throwOnError);
+        }
+
+        /// <summary>
         /// Creates a new webhook.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
