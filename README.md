@@ -390,6 +390,6 @@ AuthenticationTokenCollection tokens = new AuthenticationTokenCollection()
     new AuthenticationToken("A personal access token")
 };
 
-Sdk4meClient client = new(token, "account-name", EnvironmentType.Demo, EnvironmentRegion.EU);
+Sdk4meClient client = new(tokens, "account-name", EnvironmentType.Demo, EnvironmentRegion.EU);
 client.AccountID = "new-account-name";
 ```
