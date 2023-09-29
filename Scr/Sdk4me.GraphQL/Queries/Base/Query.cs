@@ -18,7 +18,7 @@
         private readonly Dictionary<string, IQuery> queries = new();
         private readonly HashSet<string> filters = new();
         private readonly HashSet<string> customFilters = new();
-        private readonly string filterByID = string.Empty;
+        private readonly string id = string.Empty;
         private string queryFilter = string.Empty;
         private string fieldName = string.Empty;
         private string view = string.Empty;
@@ -125,7 +125,7 @@
         /// </summary>
         public string FilterByID
         {
-            get => filterByID;
+            get => id;
         }
 
         /// <summary>
@@ -154,14 +154,14 @@
         /// Create a new Query instance.
         /// </summary>
         /// <param name="fieldName">The field name.</param>
-        /// <param name="filterByID">The ID to filter on.</param>
+        /// <param name="id">The ID to filter on.</param>
         /// <param name="dataType">The query data type.</param>
         /// <param name="isConnection">True when the field is a connection, otherwise false.</param>
         /// <exception cref="Sdk4meException"></exception>
-        protected Query(string fieldName, string filterByID, Type dataType, bool isConnection)
+        protected Query(string fieldName, string id, Type dataType, bool isConnection)
         {
             this.fieldName = fieldName;
-            this.filterByID = filterByID;
+            this.id = !string.IsNullOrEmpty(id) ? id : throw new Sdk4meException($"The {nameof(id)} cannot be null or empty");
             this.dataType = typeof(Node).IsAssignableFrom(dataType) ? dataType : throw new Sdk4meException($"{nameof(dataType)} does not implement {nameof(Node)}");
             this.isConnection = isConnection;
         }
