@@ -18,7 +18,7 @@
         public DateTime? CompletedAt { get; internal set; }
 
         /// <summary>
-        /// The date and time at which the async query was created.
+        /// The date and time at which the record was created.
         /// </summary>
         [JsonProperty("createdAt"), Sdk4meField(true)]
         public DateTime? CreatedAt { get; internal set; }
@@ -30,7 +30,7 @@
         public long? ErrorCount { get; internal set; }
 
         /// <summary>
-        /// Unique identifier of the object.
+        /// Unique identifier of the record.
         /// </summary>
         [JsonProperty("id"), Sdk4meField(true)]
         public string? ID { get; internal set; }
@@ -69,7 +69,7 @@
         public AsyncQueryStatus? Status { get; internal set; }
 
         /// <summary>
-        /// The date and time of the last update of the async query. If the async query has no updates it contains the <c>createdAt</c> value.
+        /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }

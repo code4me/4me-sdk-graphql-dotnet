@@ -5161,6 +5161,33 @@
     }
 
     /// <summary>
+    /// The <see cref="Record">Record</see> fields.
+    /// </summary>
+    public enum RecordField
+    {
+        /// <summary>
+        /// The account field.
+        /// </summary>
+        [EnumMember(Value = "account")]
+        Account,
+        /// <summary>
+        /// The created at field.
+        /// </summary>
+        [EnumMember(Value = "createdAt")]
+        CreatedAt,
+        /// <summary>
+        /// The id field.
+        /// </summary>
+        [EnumMember(Value = "id")]
+        ID,
+        /// <summary>
+        /// The updated at field.
+        /// </summary>
+        [EnumMember(Value = "updatedAt")]
+        UpdatedAt,
+    }
+
+    /// <summary>
     /// The <see cref="Recurrence">Recurrence</see> fields.
     /// </summary>
     public enum RecurrenceField
@@ -8748,6 +8775,16 @@
         /// </summary>
         [EnumMember(Value = "name")]
         Name,
+        /// <summary>
+        /// The resolved types field.
+        /// </summary>
+        [EnumMember(Value = "resolvedTypes")]
+        ResolvedTypes,
+        /// <summary>
+        /// The selected records field.
+        /// </summary>
+        [EnumMember(Value = "selectedRecords")]
+        SelectedRecords,
         /// <summary>
         /// The types field.
         /// </summary>

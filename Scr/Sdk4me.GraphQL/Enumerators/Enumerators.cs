@@ -2080,10 +2080,15 @@
     public enum ShortUrlDataType
     {
         /// <summary>
+        /// Change Calendar.
+        /// </summary>
+        [EnumMember(Value = "change_calendar_personal_view")]
+        ChangeCalendarPersonalView = 1,
+        /// <summary>
         /// Configuration Item in Self Service.
         /// </summary>
         [EnumMember(Value = "ci")]
-        Ci = 1,
+        Ci,
         /// <summary>
         /// Dashboard.
         /// </summary>

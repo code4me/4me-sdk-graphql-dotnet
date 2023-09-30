@@ -24,7 +24,7 @@
         public bool? Disabled { get; internal set; }
 
         /// <summary>
-        /// Unique identifier of the object.
+        /// Unique identifier of the record.
         /// </summary>
         [JsonProperty("id"), Sdk4meField(true)]
         public string? ID { get; internal set; }

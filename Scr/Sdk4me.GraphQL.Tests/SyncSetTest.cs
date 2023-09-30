@@ -13,6 +13,10 @@
                 .SelectAll()
                 .SelectDescriptionAttachments(new AttachmentQuery()
                     .SelectAll())
+                .SelectSelectedRecords(new RecordQuery()
+                    .SelectAll())
+                .SelectLastSnapshot(new SnapshotQuery()
+                    .SelectAll())
                 ).Result;
 
             Assert.IsNotNull(syncSets);

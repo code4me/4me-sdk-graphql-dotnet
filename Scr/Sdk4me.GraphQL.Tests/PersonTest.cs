@@ -42,5 +42,13 @@
                 Assert.IsNotNull(people);
             }
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(Sdk4meException), "The id cannot be null or empty")]
+        public void GetException()
+        {
+            DataList<Person> people = client.Get(new PersonQuery("")).Result;
+            Assert.IsNotNull(people);
+        }
     }
 }

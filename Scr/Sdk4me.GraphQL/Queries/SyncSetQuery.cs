@@ -51,5 +51,14 @@
             query.IsConnection = false;
             return Select(query);
         }
+
+        /// <summary>
+        /// Individual records selected to be included in the sync set.
+        /// </summary>
+        public SyncSetQuery SelectSelectedRecords(RecordQuery query)
+        {
+            query.FieldName = "selectedRecords";
+            return Select(query);
+        }
     }
 }

@@ -49,6 +49,23 @@
         /// <summary>
         /// Record types included in the sync set. The types match the values supported for the <see href="https://developer.4me.com/v1/import/#parameters"><c>type</c> parameter of CSV import</see>.
         /// </summary>
+        [JsonProperty("resolvedTypes")]
+        public List<string>? ResolvedTypes { get; internal set; }
+
+        [JsonProperty("selectedRecords")]
+        internal NodeCollection<Record>? SelectedRecordsCollection { get; set; }
+
+        /// <summary>
+        /// Individual records selected to be included in the sync set.
+        /// </summary>
+        public DataList<Record>? SelectedRecords
+        {
+            get => SelectedRecordsCollection?.Data;
+        }
+
+        /// <summary>
+        /// Record types for which all records are included in the sync set. The types match the values supported for the <see href="https://developer.4me.com/v1/import/#parameters"><c>type</c> parameter of CSV import</see>.
+        /// </summary>
         [JsonProperty("types")]
         public List<string>? Types { get; internal set; }
 
@@ -62,12 +79,14 @@
         {
             HashSet<QueryPageInfo> retval = new();
             retval.AddRange(DescriptionAttachmentsCollection?.GetQueryPageInfo("descriptionAttachments", depth + 1));
+            retval.AddRange(SelectedRecordsCollection?.GetQueryPageInfo("selectedRecords", depth + 1));
             return retval;
         }
 
         internal override void AddToCollection(object data)
         {
             DescriptionAttachments?.AddRange((data as SyncSet)?.DescriptionAttachments);
+            SelectedRecords?.AddRange((data as SyncSet)?.SelectedRecords);
         }
     }
 }
