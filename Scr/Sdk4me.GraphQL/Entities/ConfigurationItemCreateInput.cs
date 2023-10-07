@@ -12,10 +12,12 @@
         private List<AttachmentInput>? customFieldsAttachments;
         private List<string>? alternateNames;
         private string? assetID;
+        private DateOnly? endOfSupportDate;
         private List<string>? contractIds;
         private string? financialOwnerId;
         private DateOnly? inUseSince;
         private string? label;
+        private DateTime? lastSeenAt;
         private DateOnly? licenseExpiryDate;
         private CiLicenseType? licenseType;
         private List<string>? licensedSiteIds;
@@ -24,8 +26,10 @@
         private long? nrOfCores;
         private long? nrOfLicenses;
         private long? nrOfProcessors;
+        private string? operatingSystemId;
         private decimal? purchaseValue;
         private string? purchaseValueCurrency;
+        private long? ramAmount;
         private RecurrenceInput? recurrence;
         private string? remarks;
         private List<AttachmentInput>? remarksAttachments;
@@ -119,6 +123,16 @@
         }
 
         /// <summary>
+        /// The date at which the support for this configuration item ends.
+        /// </summary>
+        [JsonProperty("endOfSupportDate")]
+        public DateOnly? EndOfSupportDate
+        {
+            get => endOfSupportDate;
+            set => endOfSupportDate = Set("endOfSupportDate", value);
+        }
+
+        /// <summary>
         /// Identifiers of the contracts of this configuration item.
         /// </summary>
         [JsonProperty("contractIds")]
@@ -156,6 +170,16 @@
         {
             get => label;
             set => label = Set("label", value);
+        }
+
+        /// <summary>
+        /// The date and time at which the configuration item was last seen.
+        /// </summary>
+        [JsonProperty("lastSeenAt")]
+        public DateTime? LastSeenAt
+        {
+            get => lastSeenAt;
+            set => lastSeenAt = Set("lastSeenAt", value);
         }
 
         /// <summary>
@@ -239,6 +263,16 @@
         }
 
         /// <summary>
+        /// Identifier of the (software) configuration item representing the operating system of this configuration item.
+        /// </summary>
+        [JsonProperty("operatingSystemId")]
+        public string? OperatingSystemId
+        {
+            get => operatingSystemId;
+            set => operatingSystemId = Set("operatingSystemId", value);
+        }
+
+        /// <summary>
         /// The amount that was paid for the configuration item (this is normally equal to the invoice amount).
         /// </summary>
         [JsonProperty("purchaseValue")]
@@ -257,6 +291,16 @@
         {
             get => purchaseValueCurrency;
             set => purchaseValueCurrency = Set("purchaseValueCurrency", value);
+        }
+
+        /// <summary>
+        /// The amount of RAM (in GB) of this configuration item.
+        /// </summary>
+        [JsonProperty("ramAmount")]
+        public long? RamAmount
+        {
+            get => ramAmount;
+            set => ramAmount = Set("ramAmount", value);
         }
 
         /// <summary>

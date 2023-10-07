@@ -99,6 +99,16 @@
         }
 
         /// <summary>
+        /// The (software) configuration item representing the operating system of this configuration item.
+        /// </summary>
+        public ConfigurationItemQuery SelectOperatingSystem(ConfigurationItemQuery query)
+        {
+            query.FieldName = "operatingSystem";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// All problems of this configuration item.
         /// </summary>
         public ConfigurationItemQuery SelectProblems(ProblemQuery query)

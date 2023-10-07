@@ -70,6 +70,12 @@
         public RequestCategory? Category { get; internal set; }
 
         /// <summary>
+        /// The names of the checked items from any of the checklists in the instructions.
+        /// </summary>
+        [JsonProperty("checkedItems")]
+        public List<string>? CheckedItems { get; internal set; }
+
+        /// <summary>
         /// Automatically set to the date and time at which the request is saved with the status "Completed". This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
         /// </summary>
         [JsonProperty("completedAt"), Sdk4meField(true)]

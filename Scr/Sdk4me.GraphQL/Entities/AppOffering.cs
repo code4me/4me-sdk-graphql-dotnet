@@ -34,6 +34,12 @@
         }
 
         /// <summary>
+        /// Short description of the app offering to be shown on the card in the App store.
+        /// </summary>
+        [JsonProperty("cardDescription")]
+        public string? CardDescription { get; internal set; }
+
+        /// <summary>
         /// Compliance description of the app offering.
         /// </summary>
         [JsonProperty("compliance")]

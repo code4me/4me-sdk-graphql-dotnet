@@ -12,13 +12,19 @@
         private string? name;
         private DiscoveredCiRelationInput? ciRelations;
         private CiStatus? status;
+        private DateOnly? endOfSupportDate;
         private string? serialNr;
         private string? systemID;
         private DateOnly? inUseSince;
         private string? label;
+        private DateTime? lastSeenAt;
         private string? location;
+        private long? nrOfCores;
+        private long? nrOfProcessors;
         private DateOnly? warrantyExpiryDate;
+        private long? ramAmount;
         private string? remarks;
+        private string? operatingSystemId;
         private decimal? purchaseValue;
         private string? purchaseValueCurrency;
         private List<string>? userIds;
@@ -94,6 +100,16 @@
         }
 
         /// <summary>
+        /// The date at which the support for this configuration item ends.
+        /// </summary>
+        [JsonProperty("endOfSupportDate")]
+        public DateOnly? EndOfSupportDate
+        {
+            get => endOfSupportDate;
+            set => endOfSupportDate = Set("endOfSupportDate", value);
+        }
+
+        /// <summary>
         /// Serial number of the configuration item. The concatenation of <c>product</c>'s' <c>brand</c> and <c>serialNr</c> must be unique within a 4me account.
         /// </summary>
         [JsonProperty("serialNr")]
@@ -134,6 +150,16 @@
         }
 
         /// <summary>
+        /// The date and time at which the configuration item was last seen.
+        /// </summary>
+        [JsonProperty("lastSeenAt")]
+        public DateTime? LastSeenAt
+        {
+            get => lastSeenAt;
+            set => lastSeenAt = Set("lastSeenAt", value);
+        }
+
+        /// <summary>
         /// The name or number of the room in which the CI is located, if it concerns a hardware CI.
         /// </summary>
         [JsonProperty("location")]
@@ -141,6 +167,26 @@
         {
             get => location;
             set => location = Set("location", value);
+        }
+
+        /// <summary>
+        /// The total number of processor cores that are installed in the server.
+        /// </summary>
+        [JsonProperty("nrOfCores")]
+        public long? NrOfCores
+        {
+            get => nrOfCores;
+            set => nrOfCores = Set("nrOfCores", value);
+        }
+
+        /// <summary>
+        /// The number of processors that are installed in the server.
+        /// </summary>
+        [JsonProperty("nrOfProcessors")]
+        public long? NrOfProcessors
+        {
+            get => nrOfProcessors;
+            set => nrOfProcessors = Set("nrOfProcessors", value);
         }
 
         /// <summary>
@@ -154,6 +200,16 @@
         }
 
         /// <summary>
+        /// The amount of RAM (in GB) of this configuration item.
+        /// </summary>
+        [JsonProperty("ramAmount")]
+        public long? RamAmount
+        {
+            get => ramAmount;
+            set => ramAmount = Set("ramAmount", value);
+        }
+
+        /// <summary>
         /// Any additional information about the configuration item that might prove useful. When creating a new CI and a value is not specified for this field, it is set to the remarks of the CI's product.
         /// </summary>
         [JsonProperty("remarks")]
@@ -161,6 +217,16 @@
         {
             get => remarks;
             set => remarks = Set("remarks", value);
+        }
+
+        /// <summary>
+        /// Identifier of the (software) configuration item representing the operating system of this configuration item.
+        /// </summary>
+        [JsonProperty("operatingSystemId")]
+        public string? OperatingSystemId
+        {
+            get => operatingSystemId;
+            set => operatingSystemId = Set("operatingSystemId", value);
         }
 
         /// <summary>

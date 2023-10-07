@@ -69,6 +69,12 @@
         }
 
         /// <summary>
+        /// The date at which the support for this configuration item ends.
+        /// </summary>
+        [JsonProperty("endOfSupportDate")]
+        public DateOnly? EndOfSupportDate { get; internal set; }
+
+        /// <summary>
         /// The internal organization which budget is used to pay for the configuration item. If the CI is leased or rented, the organization that pays the lease or rent is selected in this field. When creating a new CI and a value is not specified for this field, it is set to the financial owner of the CI's product.
         /// </summary>
         [JsonProperty("financialOwner"), Sdk4meField(true)]
@@ -96,6 +102,12 @@
         /// </summary>
         [JsonProperty("label"), Sdk4meField(true)]
         public string? Label { get; internal set; }
+
+        /// <summary>
+        /// The date and time at which the configuration item was last seen.
+        /// </summary>
+        [JsonProperty("lastSeenAt")]
+        public DateTime? LastSeenAt { get; internal set; }
 
         /// <summary>
         /// The date through which the temporary software license certificate is valid. The license certificate expires at the end of this day.
@@ -151,6 +163,12 @@
         public long? NrOfProcessors { get; internal set; }
 
         /// <summary>
+        /// The (software) configuration item representing the operating system of this configuration item.
+        /// </summary>
+        [JsonProperty("operatingSystem")]
+        public ConfigurationItem? OperatingSystem { get; internal set; }
+
+        /// <summary>
         /// The hyperlink to the image file for the record.
         /// </summary>
         [JsonProperty("pictureUri")]
@@ -172,6 +190,12 @@
         /// </summary>
         [JsonProperty("product"), Sdk4meField(true)]
         public Product? Product { get; internal set; }
+
+        /// <summary>
+        /// The amount of RAM (in GB) of this configuration item.
+        /// </summary>
+        [JsonProperty("ramAmount")]
+        public long? RamAmount { get; internal set; }
 
         /// <summary>
         /// Recurrence for maintenance of the configuration item.

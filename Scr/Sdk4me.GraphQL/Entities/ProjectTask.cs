@@ -70,6 +70,12 @@
         public ProjectTaskCategory? Category { get; internal set; }
 
         /// <summary>
+        /// The names of the checked items from any of the checklists in the instructions.
+        /// </summary>
+        [JsonProperty("checkedItems")]
+        public List<string>? CheckedItems { get; internal set; }
+
+        /// <summary>
         /// The date and time at which the project task is expected to be completed.
         /// </summary>
         [JsonProperty("completionTargetAt"), Sdk4meField(true)]

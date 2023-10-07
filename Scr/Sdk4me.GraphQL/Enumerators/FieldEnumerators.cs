@@ -582,6 +582,11 @@
         [EnumMember(Value = "automationRules")]
         AutomationRules,
         /// <summary>
+        /// The card description field.
+        /// </summary>
+        [EnumMember(Value = "cardDescription")]
+        CardDescription,
+        /// <summary>
         /// The compliance field.
         /// </summary>
         [EnumMember(Value = "compliance")]
@@ -1261,6 +1266,11 @@
         [EnumMember(Value = "customFieldsAttachments")]
         CustomFieldsAttachments,
         /// <summary>
+        /// The end of support date field.
+        /// </summary>
+        [EnumMember(Value = "endOfSupportDate")]
+        EndOfSupportDate,
+        /// <summary>
         /// The financial owner field.
         /// </summary>
         [EnumMember(Value = "financialOwner")]
@@ -1285,6 +1295,11 @@
         /// </summary>
         [EnumMember(Value = "label")]
         Label,
+        /// <summary>
+        /// The last seen at field.
+        /// </summary>
+        [EnumMember(Value = "lastSeenAt")]
+        LastSeenAt,
         /// <summary>
         /// The license expiry date field.
         /// </summary>
@@ -1326,6 +1341,11 @@
         [EnumMember(Value = "nrOfProcessors")]
         NrOfProcessors,
         /// <summary>
+        /// The operating system field.
+        /// </summary>
+        [EnumMember(Value = "operatingSystem")]
+        OperatingSystem,
+        /// <summary>
         /// The picture uri field.
         /// </summary>
         [EnumMember(Value = "pictureUri")]
@@ -1340,6 +1360,11 @@
         /// </summary>
         [EnumMember(Value = "product")]
         Product,
+        /// <summary>
+        /// The ram amount field.
+        /// </summary>
+        [EnumMember(Value = "ramAmount")]
+        RamAmount,
         /// <summary>
         /// The recurrence field.
         /// </summary>
@@ -4426,6 +4451,11 @@
         [EnumMember(Value = "category")]
         Category,
         /// <summary>
+        /// The checked items field.
+        /// </summary>
+        [EnumMember(Value = "checkedItems")]
+        CheckedItems,
+        /// <summary>
         /// The completion target at field.
         /// </summary>
         [EnumMember(Value = "completionTargetAt")]
@@ -5508,6 +5538,11 @@
         /// </summary>
         [EnumMember(Value = "category")]
         Category,
+        /// <summary>
+        /// The checked items field.
+        /// </summary>
+        [EnumMember(Value = "checkedItems")]
+        CheckedItems,
         /// <summary>
         /// The completed at field.
         /// </summary>
@@ -8847,6 +8882,11 @@
         /// </summary>
         [EnumMember(Value = "category")]
         Category,
+        /// <summary>
+        /// The checked items field.
+        /// </summary>
+        [EnumMember(Value = "checkedItems")]
+        CheckedItems,
         /// <summary>
         /// The completion target at field.
         /// </summary>
