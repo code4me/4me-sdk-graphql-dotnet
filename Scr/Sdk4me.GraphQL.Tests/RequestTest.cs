@@ -38,8 +38,12 @@
 
             if (requests.Any())
             {
-                requests = client.Get(new RequestQuery(requests.First().ID)).Result;
+                requests = client.Get(new RequestQuery(requests.First().ID)
+                    .Select(RequestField.RequestId)).Result;
                 Assert.IsNotNull(requests);
+                Request request = requests.First();
+                Assert.IsTrue(request.GetIdentifier() > 0);
+                Assert.IsTrue(request.GetIdentifier() == Convert.ToInt64(request.RequestId));
             }
         }
     }

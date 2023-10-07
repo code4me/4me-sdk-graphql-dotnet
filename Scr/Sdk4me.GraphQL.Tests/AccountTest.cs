@@ -10,6 +10,7 @@
         {
             Account account = client.Account().Result;
             Assert.IsNotNull(account);
+            Assert.IsTrue(account.GetIdentifier() == 0);
         }
     }
 }
