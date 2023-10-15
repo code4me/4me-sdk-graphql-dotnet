@@ -217,7 +217,7 @@ DataList<Person> people = client.Get(query).Result;
 
 ### Mutations
 
-#### Create a new person
+#### Create a new person and return the `ID`
 ```csharp
 CustomFieldCollection customFields = new();
 customFields.AddOrUpdate("internal_reference", "an internal reference");
@@ -235,7 +235,7 @@ PersonCreateInput input = new() {
     DoNotTranslateLanguages = new() { "en", "nl" }
 };
 
-PersonCreatePayload result = await client.Mutation(input, false);
+PersonCreatePayload result = await client.Mutation(input, new PersonQuery().Select(PersonField.ID), false);
 if (result.IsError())
 {
     Debug.WriteLine(result.Errors.ToString());
@@ -245,7 +245,7 @@ if (result.IsError())
 Person newPerson = result.Person;
 ```
 
-#### Updating an existing person
+#### Updating an existing person and return the `ID`, `Name` and `Site`
 ```csharp
 try
 {
@@ -254,7 +254,7 @@ try
         ID = "NG1lLnFhL1blcnNvbi8yMjMxSjIx",
         Name = "Jimmy",
         PrimaryEmail = "jimmy@company.com",
-    }, true);
+    }, new PersonQuery().Select(PersonField.ID, PersonField.Name, PersonField.Site), true).Result;
 
     Person updatedPerson = result.Person;
 }
