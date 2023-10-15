@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new NoteCreate mutation instance.
         /// </summary>
-        internal NoteCreateMutation(NoteCreateInput data)
-            : base("noteCreate", "NoteCreateInput!", data, new HashSet<IQuery>() { new NoteQuery() { FieldName = "note", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal NoteCreateMutation(NoteCreateInput data, NoteQuery query)
+            : base("noteCreate", "NoteCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(NoteQuery query)
+        {
+            query.FieldName = "note";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

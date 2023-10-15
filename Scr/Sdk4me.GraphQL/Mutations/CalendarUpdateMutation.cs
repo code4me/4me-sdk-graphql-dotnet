@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new CalendarUpdate mutation instance.
         /// </summary>
-        internal CalendarUpdateMutation(CalendarUpdateInput data)
-            : base("calendarUpdate", "CalendarUpdateInput!", data, new HashSet<IQuery>() { new CalendarQuery() { FieldName = "calendar", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal CalendarUpdateMutation(CalendarUpdateInput data, CalendarQuery query)
+            : base("calendarUpdate", "CalendarUpdateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(CalendarQuery query)
+        {
+            query.FieldName = "calendar";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

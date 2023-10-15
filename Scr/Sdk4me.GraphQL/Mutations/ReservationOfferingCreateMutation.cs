@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new ReservationOfferingCreate mutation instance.
         /// </summary>
-        internal ReservationOfferingCreateMutation(ReservationOfferingCreateInput data)
-            : base("reservationOfferingCreate", "ReservationOfferingCreateInput!", data, new HashSet<IQuery>() { new ReservationOfferingQuery() { FieldName = "reservationOffering", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal ReservationOfferingCreateMutation(ReservationOfferingCreateInput data, ReservationOfferingQuery query)
+            : base("reservationOfferingCreate", "ReservationOfferingCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(ReservationOfferingQuery query)
+        {
+            query.FieldName = "reservationOffering";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

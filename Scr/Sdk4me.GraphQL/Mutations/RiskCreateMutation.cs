@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new RiskCreate mutation instance.
         /// </summary>
-        internal RiskCreateMutation(RiskCreateInput data)
-            : base("riskCreate", "RiskCreateInput!", data, new HashSet<IQuery>() { new RiskQuery() { FieldName = "risk", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal RiskCreateMutation(RiskCreateInput data, RiskQuery query)
+            : base("riskCreate", "RiskCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(RiskQuery query)
+        {
+            query.FieldName = "risk";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

@@ -24,6 +24,15 @@
         }
 
         /// <summary>
+        /// The note reactions belonging to this note.
+        /// </summary>
+        public NoteQuery SelectNoteReactions(NoteReactionQuery query)
+        {
+            query.FieldName = "noteReactions";
+            return Select(query);
+        }
+
+        /// <summary>
         /// Person who added this note.
         /// </summary>
         public NoteQuery SelectPerson(PersonQuery query)

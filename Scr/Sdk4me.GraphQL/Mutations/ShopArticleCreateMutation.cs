@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new ShopArticleCreate mutation instance.
         /// </summary>
-        internal ShopArticleCreateMutation(ShopArticleCreateInput data)
-            : base("shopArticleCreate", "ShopArticleCreateInput!", data, new HashSet<IQuery>() { new ShopArticleQuery() { FieldName = "shopArticle", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal ShopArticleCreateMutation(ShopArticleCreateInput data, ShopArticleQuery query)
+            : base("shopArticleCreate", "ShopArticleCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(ShopArticleQuery query)
+        {
+            query.FieldName = "shopArticle";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

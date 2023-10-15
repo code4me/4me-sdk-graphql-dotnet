@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new HolidayCreate mutation instance.
         /// </summary>
-        internal HolidayCreateMutation(HolidayCreateInput data)
-            : base("holidayCreate", "HolidayCreateInput!", data, new HashSet<IQuery>() { new HolidayQuery() { FieldName = "holiday", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal HolidayCreateMutation(HolidayCreateInput data, HolidayQuery query)
+            : base("holidayCreate", "HolidayCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(HolidayQuery query)
+        {
+            query.FieldName = "holiday";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

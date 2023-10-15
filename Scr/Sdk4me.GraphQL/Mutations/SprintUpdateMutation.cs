@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new SprintUpdate mutation instance.
         /// </summary>
-        internal SprintUpdateMutation(SprintUpdateInput data)
-            : base("sprintUpdate", "SprintUpdateInput!", data, new HashSet<IQuery>() { new SprintQuery() { FieldName = "sprint", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal SprintUpdateMutation(SprintUpdateInput data, SprintQuery query)
+            : base("sprintUpdate", "SprintUpdateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(SprintQuery query)
+        {
+            query.FieldName = "sprint";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

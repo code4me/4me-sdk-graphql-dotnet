@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new ProductCategoryCreate mutation instance.
         /// </summary>
-        internal ProductCategoryCreateMutation(ProductCategoryCreateInput data)
-            : base("productCategoryCreate", "ProductCategoryCreateInput!", data, new HashSet<IQuery>() { new ProductCategoryQuery() { FieldName = "productCategory", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal ProductCategoryCreateMutation(ProductCategoryCreateInput data, ProductCategoryQuery query)
+            : base("productCategoryCreate", "ProductCategoryCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(ProductCategoryQuery query)
+        {
+            query.FieldName = "productCategory";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

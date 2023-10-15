@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new UiExtensionCreate mutation instance.
         /// </summary>
-        internal UiExtensionCreateMutation(UiExtensionCreateInput data)
-            : base("uiExtensionCreate", "UiExtensionCreateInput!", data, new HashSet<IQuery>() { new UiExtensionQuery() { FieldName = "uiExtension", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal UiExtensionCreateMutation(UiExtensionCreateInput data, UiExtensionQuery query)
+            : base("uiExtensionCreate", "UiExtensionCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(UiExtensionQuery query)
+        {
+            query.FieldName = "uiExtension";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

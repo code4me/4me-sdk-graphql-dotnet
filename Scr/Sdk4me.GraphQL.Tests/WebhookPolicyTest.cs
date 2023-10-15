@@ -22,5 +22,17 @@
                 Assert.IsNotNull(webhookPolicies);
             }
         }
+
+        [TestMethod]
+        public void Create()
+        {
+            WebhookPolicyCreatePayload webhookPolicyCreatePayload = client.Mutation(new WebhookPolicyCreateInput() { Disabled = false, JwtAlg = WebhookPolicyJwtAlg.Rs512, ClientMutationId = "CMID" }).Result;
+            Assert.IsNotNull(webhookPolicyCreatePayload);
+            Assert.IsNotNull(webhookPolicyCreatePayload.WebhookPolicy);
+            Assert.IsFalse(string.IsNullOrWhiteSpace(webhookPolicyCreatePayload.WebhookPolicy.PublicKeyPem));
+
+            WebhookPolicyDeleteMutationPayload webhookPolicyDeleteMutationPayload = client.Mutation(new WebhookPolicyDeleteMutationInput() { ID = webhookPolicyCreatePayload.WebhookPolicy.ID }).Result;
+            Assert.IsNotNull(webhookPolicyDeleteMutationPayload);
+        }
     }
 }

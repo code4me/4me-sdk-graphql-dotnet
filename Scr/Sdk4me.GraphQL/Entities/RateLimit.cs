@@ -27,7 +27,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// The point cost for the current call that counts against the rate limit.
+        /// The point cost for the current call that counts against the query cost rate limit.
         /// </summary>
         [JsonProperty("cost"), Sdk4meField(true)]
         public long? Cost { get; internal set; }
@@ -39,13 +39,13 @@ namespace Sdk4me.GraphQL
         public long? Limit { get; internal set; }
 
         /// <summary>
-        /// The number of points remaining in the current rate limit window.
+        /// The number of points remaining in the current query cost rate limit window.
         /// </summary>
         [JsonProperty("remaining"), Sdk4meField(true)]
         public long? Remaining { get; internal set; }
 
         /// <summary>
-        /// The time at which the current rate limit window resets in <see href="https://en.wikipedia.org/wiki/Unix_time">UTC epoch seconds</see>.
+        /// The time at which the current query cost rate limit window resets in <see href="https://en.wikipedia.org/wiki/Unix_time">UTC epoch seconds</see>.
         /// </summary>
         [JsonProperty("resetAt"), Sdk4meField(true)]
         public long? ResetAt { get; internal set; }

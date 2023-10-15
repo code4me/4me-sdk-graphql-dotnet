@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new RequestCreate mutation instance.
         /// </summary>
-        internal RequestCreateMutation(RequestCreateInput data)
-            : base("requestCreate", "RequestCreateInput!", data, new HashSet<IQuery>() { new RequestQuery() { FieldName = "request", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal RequestCreateMutation(RequestCreateInput data, RequestQuery query)
+            : base("requestCreate", "RequestCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(RequestQuery query)
+        {
+            query.FieldName = "request";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

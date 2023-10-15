@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new WebhookPolicyUpdate mutation instance.
         /// </summary>
-        internal WebhookPolicyUpdateMutation(WebhookPolicyUpdateInput data)
-            : base("webhookPolicyUpdate", "WebhookPolicyUpdateInput!", data, new HashSet<IQuery>() { new WebhookPolicyQuery() { FieldName = "webhookPolicy", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal WebhookPolicyUpdateMutation(WebhookPolicyUpdateInput data, WebhookPolicyQuery query)
+            : base("webhookPolicyUpdate", "WebhookPolicyUpdateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(WebhookPolicyQuery query)
+        {
+            query.FieldName = "webhookPolicy";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

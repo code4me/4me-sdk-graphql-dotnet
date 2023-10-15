@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new TeamUpdate mutation instance.
         /// </summary>
-        internal TeamUpdateMutation(TeamUpdateInput data)
-            : base("teamUpdate", "TeamUpdateInput!", data, new HashSet<IQuery>() { new TeamQuery() { FieldName = "team", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal TeamUpdateMutation(TeamUpdateInput data, TeamQuery query)
+            : base("teamUpdate", "TeamUpdateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(TeamQuery query)
+        {
+            query.FieldName = "team";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/asyncquery/">AsyncQuery</see> object.
     /// </summary>
-    public class AsyncQuery
+    public class AsyncQuery : Node
     {
         /// <summary>
         /// The account this record belongs to.
@@ -28,12 +28,6 @@
         /// </summary>
         [JsonProperty("errorCount"), Sdk4meField(true)]
         public long? ErrorCount { get; internal set; }
-
-        /// <summary>
-        /// Unique identifier of the record.
-        /// </summary>
-        [JsonProperty("id"), Sdk4meField(true)]
-        public string? ID { get; internal set; }
 
         /// <summary>
         /// The person or application who created the async query.
@@ -73,5 +67,14 @@
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }
+
+        internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)
+        {
+            return new HashSet<QueryPageInfo>();
+        }
+
+        internal override void AddToCollection(object data)
+        {
+        }
     }
 }

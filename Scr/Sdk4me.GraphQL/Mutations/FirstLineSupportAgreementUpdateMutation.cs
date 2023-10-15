@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new FirstLineSupportAgreementUpdate mutation instance.
         /// </summary>
-        internal FirstLineSupportAgreementUpdateMutation(FirstLineSupportAgreementUpdateInput data)
-            : base("firstLineSupportAgreementUpdate", "FirstLineSupportAgreementUpdateInput!", data, new HashSet<IQuery>() { new FirstLineSupportAgreementQuery() { FieldName = "firstLineSupportAgreement", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal FirstLineSupportAgreementUpdateMutation(FirstLineSupportAgreementUpdateInput data, FirstLineSupportAgreementQuery query)
+            : base("firstLineSupportAgreementUpdate", "FirstLineSupportAgreementUpdateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(FirstLineSupportAgreementQuery query)
+        {
+            query.FieldName = "firstLineSupportAgreement";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

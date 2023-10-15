@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new ReservationCreate mutation instance.
         /// </summary>
-        internal ReservationCreateMutation(ReservationCreateInput data)
-            : base("reservationCreate", "ReservationCreateInput!", data, new HashSet<IQuery>() { new ReservationQuery() { FieldName = "reservation", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal ReservationCreateMutation(ReservationCreateInput data, ReservationQuery query)
+            : base("reservationCreate", "ReservationCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(ReservationQuery query)
+        {
+            query.FieldName = "reservation";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

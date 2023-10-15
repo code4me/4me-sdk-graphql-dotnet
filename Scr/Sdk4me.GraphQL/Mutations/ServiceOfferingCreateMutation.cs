@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new ServiceOfferingCreate mutation instance.
         /// </summary>
-        internal ServiceOfferingCreateMutation(ServiceOfferingCreateInput data)
-            : base("serviceOfferingCreate", "ServiceOfferingCreateInput!", data, new HashSet<IQuery>() { new ServiceOfferingQuery() { FieldName = "serviceOffering", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal ServiceOfferingCreateMutation(ServiceOfferingCreateInput data, ServiceOfferingQuery query)
+            : base("serviceOfferingCreate", "ServiceOfferingCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(ServiceOfferingQuery query)
+        {
+            query.FieldName = "serviceOffering";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

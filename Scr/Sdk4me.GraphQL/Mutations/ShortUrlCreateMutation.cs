@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new ShortUrlCreate mutation instance.
         /// </summary>
-        internal ShortUrlCreateMutation(ShortUrlCreateInput data)
-            : base("shortUrlCreate", "ShortUrlCreateInput!", data, new HashSet<IQuery>() { new ShortUrlQuery() { FieldName = "shortUrl", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal ShortUrlCreateMutation(ShortUrlCreateInput data, ShortUrlQuery query)
+            : base("shortUrlCreate", "ShortUrlCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(ShortUrlQuery query)
+        {
+            query.FieldName = "shortUrl";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

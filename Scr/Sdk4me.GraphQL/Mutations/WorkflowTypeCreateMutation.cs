@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new WorkflowTypeCreate mutation instance.
         /// </summary>
-        internal WorkflowTypeCreateMutation(WorkflowTypeCreateInput data)
-            : base("workflowTypeCreate", "WorkflowTypeCreateInput!", data, new HashSet<IQuery>() { new WorkflowTypeQuery() { FieldName = "workflowType", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal WorkflowTypeCreateMutation(WorkflowTypeCreateInput data, WorkflowTypeQuery query)
+            : base("workflowTypeCreate", "WorkflowTypeCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(WorkflowTypeQuery query)
+        {
+            query.FieldName = "workflowType";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

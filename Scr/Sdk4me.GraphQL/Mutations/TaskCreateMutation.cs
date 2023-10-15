@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new TaskCreate mutation instance.
         /// </summary>
-        internal TaskCreateMutation(TaskCreateInput data)
-            : base("taskCreate", "TaskCreateInput!", data, new HashSet<IQuery>() { new TaskQuery() { FieldName = "task", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal TaskCreateMutation(TaskCreateInput data, TaskQuery query)
+            : base("taskCreate", "TaskCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(TaskQuery query)
+        {
+            query.FieldName = "task";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

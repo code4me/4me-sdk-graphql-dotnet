@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new ContractUpdate mutation instance.
         /// </summary>
-        internal ContractUpdateMutation(ContractUpdateInput data)
-            : base("contractUpdate", "ContractUpdateInput!", data, new HashSet<IQuery>() { new ContractQuery() { FieldName = "contract", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal ContractUpdateMutation(ContractUpdateInput data, ContractQuery query)
+            : base("contractUpdate", "ContractUpdateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(ContractQuery query)
+        {
+            query.FieldName = "contract";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new ProductUpdate mutation instance.
         /// </summary>
-        internal ProductUpdateMutation(ProductUpdateInput data)
-            : base("productUpdate", "ProductUpdateInput!", data, new HashSet<IQuery>() { new ProductQuery() { FieldName = "product", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal ProductUpdateMutation(ProductUpdateInput data, ProductQuery query)
+            : base("productUpdate", "ProductUpdateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(ProductQuery query)
+        {
+            query.FieldName = "product";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

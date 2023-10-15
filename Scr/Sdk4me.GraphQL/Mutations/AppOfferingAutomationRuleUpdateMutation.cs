@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new AppOfferingAutomationRuleUpdate mutation instance.
         /// </summary>
-        internal AppOfferingAutomationRuleUpdateMutation(AppOfferingAutomationRuleUpdateInput data)
-            : base("appOfferingAutomationRuleUpdate", "AppOfferingAutomationRuleUpdateInput!", data, new HashSet<IQuery>() { new AppOfferingAutomationRuleQuery() { FieldName = "appOfferingAutomationRule", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal AppOfferingAutomationRuleUpdateMutation(AppOfferingAutomationRuleUpdateInput data, AppOfferingAutomationRuleQuery query)
+            : base("appOfferingAutomationRuleUpdate", "AppOfferingAutomationRuleUpdateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(AppOfferingAutomationRuleQuery query)
+        {
+            query.FieldName = "appOfferingAutomationRule";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

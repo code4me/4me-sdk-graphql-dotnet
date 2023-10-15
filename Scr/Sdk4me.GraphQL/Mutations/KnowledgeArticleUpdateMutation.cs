@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new KnowledgeArticleUpdate mutation instance.
         /// </summary>
-        internal KnowledgeArticleUpdateMutation(KnowledgeArticleUpdateInput data)
-            : base("knowledgeArticleUpdate", "KnowledgeArticleUpdateInput!", data, new HashSet<IQuery>() { new KnowledgeArticleQuery() { FieldName = "knowledgeArticle", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal KnowledgeArticleUpdateMutation(KnowledgeArticleUpdateInput data, KnowledgeArticleQuery query)
+            : base("knowledgeArticleUpdate", "KnowledgeArticleUpdateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(KnowledgeArticleQuery query)
+        {
+            query.FieldName = "knowledgeArticle";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

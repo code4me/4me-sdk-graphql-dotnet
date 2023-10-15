@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new ServiceCategoryUpdate mutation instance.
         /// </summary>
-        internal ServiceCategoryUpdateMutation(ServiceCategoryUpdateInput data)
-            : base("serviceCategoryUpdate", "ServiceCategoryUpdateInput!", data, new HashSet<IQuery>() { new ServiceCategoryQuery() { FieldName = "serviceCategory", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal ServiceCategoryUpdateMutation(ServiceCategoryUpdateInput data, ServiceCategoryQuery query)
+            : base("serviceCategoryUpdate", "ServiceCategoryUpdateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(ServiceCategoryQuery query)
+        {
+            query.FieldName = "serviceCategory";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

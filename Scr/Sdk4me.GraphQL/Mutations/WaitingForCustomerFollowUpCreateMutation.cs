@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new WaitingForCustomerFollowUpCreate mutation instance.
         /// </summary>
-        internal WaitingForCustomerFollowUpCreateMutation(WaitingForCustomerFollowUpCreateInput data)
-            : base("waitingForCustomerFollowUpCreate", "WaitingForCustomerFollowUpCreateInput!", data, new HashSet<IQuery>() { new WaitingForCustomerFollowUpQuery() { FieldName = "waitingForCustomerFollowUp", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal WaitingForCustomerFollowUpCreateMutation(WaitingForCustomerFollowUpCreateInput data, WaitingForCustomerFollowUpQuery query)
+            : base("waitingForCustomerFollowUpCreate", "WaitingForCustomerFollowUpCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(WaitingForCustomerFollowUpQuery query)
+        {
+            query.FieldName = "waitingForCustomerFollowUp";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

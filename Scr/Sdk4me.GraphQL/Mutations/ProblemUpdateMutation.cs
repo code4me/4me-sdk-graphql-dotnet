@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new ProblemUpdate mutation instance.
         /// </summary>
-        internal ProblemUpdateMutation(ProblemUpdateInput data)
-            : base("problemUpdate", "ProblemUpdateInput!", data, new HashSet<IQuery>() { new ProblemQuery() { FieldName = "problem", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal ProblemUpdateMutation(ProblemUpdateInput data, ProblemQuery query)
+            : base("problemUpdate", "ProblemUpdateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(ProblemQuery query)
+        {
+            query.FieldName = "problem";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

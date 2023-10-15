@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new ProjectCreate mutation instance.
         /// </summary>
-        internal ProjectCreateMutation(ProjectCreateInput data)
-            : base("projectCreate", "ProjectCreateInput!", data, new HashSet<IQuery>() { new ProjectQuery() { FieldName = "project", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal ProjectCreateMutation(ProjectCreateInput data, ProjectQuery query)
+            : base("projectCreate", "ProjectCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(ProjectQuery query)
+        {
+            query.FieldName = "project";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

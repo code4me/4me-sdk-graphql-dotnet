@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new RequestTemplateUpdate mutation instance.
         /// </summary>
-        internal RequestTemplateUpdateMutation(RequestTemplateUpdateInput data)
-            : base("requestTemplateUpdate", "RequestTemplateUpdateInput!", data, new HashSet<IQuery>() { new RequestTemplateQuery() { FieldName = "requestTemplate", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal RequestTemplateUpdateMutation(RequestTemplateUpdateInput data, RequestTemplateQuery query)
+            : base("requestTemplateUpdate", "RequestTemplateUpdateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(RequestTemplateQuery query)
+        {
+            query.FieldName = "requestTemplate";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

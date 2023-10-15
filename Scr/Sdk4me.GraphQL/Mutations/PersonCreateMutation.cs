@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new PersonCreate mutation instance.
         /// </summary>
-        internal PersonCreateMutation(PersonCreateInput data)
-            : base("personCreate", "PersonCreateInput!", data, new HashSet<IQuery>() { new PersonQuery() { FieldName = "person", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal PersonCreateMutation(PersonCreateInput data, PersonQuery query)
+            : base("personCreate", "PersonCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(PersonQuery query)
+        {
+            query.FieldName = "person";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

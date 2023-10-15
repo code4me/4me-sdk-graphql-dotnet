@@ -35,6 +35,17 @@
         [JsonProperty("medium"), Sdk4meField(true)]
         public NoteMedium? Medium { get; internal set; }
 
+        [JsonProperty("noteReactions")]
+        internal NodeCollection<NoteReaction>? NoteReactionsCollection { get; set; }
+
+        /// <summary>
+        /// The note reactions belonging to this note.
+        /// </summary>
+        public DataList<NoteReaction>? NoteReactions
+        {
+            get => NoteReactionsCollection?.Data;
+        }
+
         /// <summary>
         /// Person who added this note.
         /// </summary>
@@ -67,12 +78,14 @@
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)
         {
             HashSet<QueryPageInfo> retval = new();
+            retval.AddRange(NoteReactionsCollection?.GetQueryPageInfo("noteReactions", depth + 1));
             retval.AddRange(TextAttachmentsCollection?.GetQueryPageInfo("textAttachments", depth + 1));
             return retval;
         }
 
         internal override void AddToCollection(object data)
         {
+            NoteReactions?.AddRange((data as Note)?.NoteReactions);
             TextAttachments?.AddRange((data as Note)?.TextAttachments);
         }
     }

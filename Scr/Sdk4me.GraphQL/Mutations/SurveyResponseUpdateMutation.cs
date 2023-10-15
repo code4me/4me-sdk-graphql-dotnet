@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new SurveyResponseUpdate mutation instance.
         /// </summary>
-        internal SurveyResponseUpdateMutation(SurveyResponseUpdateInput data)
-            : base("surveyResponseUpdate", "SurveyResponseUpdateInput!", data, new HashSet<IQuery>() { new SurveyResponseQuery() { FieldName = "surveyResponse", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal SurveyResponseUpdateMutation(SurveyResponseUpdateInput data, SurveyResponseQuery query)
+            : base("surveyResponseUpdate", "SurveyResponseUpdateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(SurveyResponseQuery query)
+        {
+            query.FieldName = "surveyResponse";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

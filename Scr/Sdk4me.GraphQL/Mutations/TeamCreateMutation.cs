@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new TeamCreate mutation instance.
         /// </summary>
-        internal TeamCreateMutation(TeamCreateInput data)
-            : base("teamCreate", "TeamCreateInput!", data, new HashSet<IQuery>() { new TeamQuery() { FieldName = "team", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal TeamCreateMutation(TeamCreateInput data, TeamQuery query)
+            : base("teamCreate", "TeamCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(TeamQuery query)
+        {
+            query.FieldName = "team";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

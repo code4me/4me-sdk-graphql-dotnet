@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new TaskTemplateUpdate mutation instance.
         /// </summary>
-        internal TaskTemplateUpdateMutation(TaskTemplateUpdateInput data)
-            : base("taskTemplateUpdate", "TaskTemplateUpdateInput!", data, new HashSet<IQuery>() { new TaskTemplateQuery() { FieldName = "taskTemplate", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal TaskTemplateUpdateMutation(TaskTemplateUpdateInput data, TaskTemplateQuery query)
+            : base("taskTemplateUpdate", "TaskTemplateUpdateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(TaskTemplateQuery query)
+        {
+            query.FieldName = "taskTemplate";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

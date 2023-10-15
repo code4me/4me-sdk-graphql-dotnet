@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new TimesheetSettingUpdate mutation instance.
         /// </summary>
-        internal TimesheetSettingUpdateMutation(TimesheetSettingUpdateInput data)
-            : base("timesheetSettingUpdate", "TimesheetSettingUpdateInput!", data, new HashSet<IQuery>() { new TimesheetSettingQuery() { FieldName = "timesheetSetting", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal TimesheetSettingUpdateMutation(TimesheetSettingUpdateInput data, TimesheetSettingQuery query)
+            : base("timesheetSettingUpdate", "TimesheetSettingUpdateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(TimesheetSettingQuery query)
+        {
+            query.FieldName = "timesheetSetting";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new TimeAllocationCreate mutation instance.
         /// </summary>
-        internal TimeAllocationCreateMutation(TimeAllocationCreateInput data)
-            : base("timeAllocationCreate", "TimeAllocationCreateInput!", data, new HashSet<IQuery>() { new TimeAllocationQuery() { FieldName = "timeAllocation", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal TimeAllocationCreateMutation(TimeAllocationCreateInput data, TimeAllocationQuery query)
+            : base("timeAllocationCreate", "TimeAllocationCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(TimeAllocationQuery query)
+        {
+            query.FieldName = "timeAllocation";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

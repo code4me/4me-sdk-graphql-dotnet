@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new ProjectRiskLevelCreate mutation instance.
         /// </summary>
-        internal ProjectRiskLevelCreateMutation(ProjectRiskLevelCreateInput data)
-            : base("projectRiskLevelCreate", "ProjectRiskLevelCreateInput!", data, new HashSet<IQuery>() { new ProjectRiskLevelQuery() { FieldName = "projectRiskLevel", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal ProjectRiskLevelCreateMutation(ProjectRiskLevelCreateInput data, ProjectRiskLevelQuery query)
+            : base("projectRiskLevelCreate", "ProjectRiskLevelCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(ProjectRiskLevelQuery query)
+        {
+            query.FieldName = "projectRiskLevel";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

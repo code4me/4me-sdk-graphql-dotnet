@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new ServiceLevelAgreementCreate mutation instance.
         /// </summary>
-        internal ServiceLevelAgreementCreateMutation(ServiceLevelAgreementCreateInput data)
-            : base("serviceLevelAgreementCreate", "ServiceLevelAgreementCreateInput!", data, new HashSet<IQuery>() { new ServiceLevelAgreementQuery() { FieldName = "serviceLevelAgreement", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal ServiceLevelAgreementCreateMutation(ServiceLevelAgreementCreateInput data, ServiceLevelAgreementQuery query)
+            : base("serviceLevelAgreementCreate", "ServiceLevelAgreementCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(ServiceLevelAgreementQuery query)
+        {
+            query.FieldName = "serviceLevelAgreement";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

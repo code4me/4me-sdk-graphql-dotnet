@@ -77,7 +77,7 @@
         /// <summary>
         /// The internal organization which budget is used to pay for the configuration item. If the CI is leased or rented, the organization that pays the lease or rent is selected in this field. When creating a new CI and a value is not specified for this field, it is set to the financial owner of the CI's product.
         /// </summary>
-        [JsonProperty("financialOwner"), Sdk4meField(true)]
+        [JsonProperty("financialOwner")]
         public Organization? FinancialOwner { get; internal set; }
 
         /// <summary>
@@ -263,7 +263,7 @@
         /// <summary>
         /// Where the CI is located, if it concerns a hardware CI.
         /// </summary>
-        [JsonProperty("site"), Sdk4meField(true)]
+        [JsonProperty("site")]
         public Site? Site { get; internal set; }
 
         /// <summary>
@@ -305,7 +305,7 @@
         /// <summary>
         /// The team responsible for supporting the configuration item and maintaining its information in the configuration management database (CMDB). When creating a new CI and a value is not specified for this field, it is set to the support team of the CI's product. Optional when status of CI equals "Removed", required otherwise.
         /// </summary>
-        [JsonProperty("supportTeam"), Sdk4meField(true)]
+        [JsonProperty("supportTeam")]
         public Team? SupportTeam { get; internal set; }
 
         /// <summary>

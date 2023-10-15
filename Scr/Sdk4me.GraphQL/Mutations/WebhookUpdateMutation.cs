@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new WebhookUpdate mutation instance.
         /// </summary>
-        internal WebhookUpdateMutation(WebhookUpdateInput data)
-            : base("webhookUpdate", "WebhookUpdateInput!", data, new HashSet<IQuery>() { new WebhookQuery() { FieldName = "webhook", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal WebhookUpdateMutation(WebhookUpdateInput data, WebhookQuery query)
+            : base("webhookUpdate", "WebhookUpdateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(WebhookQuery query)
+        {
+            query.FieldName = "webhook";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

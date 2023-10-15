@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new TimeEntryCreate mutation instance.
         /// </summary>
-        internal TimeEntryCreateMutation(TimeEntryCreateInput data)
-            : base("timeEntryCreate", "TimeEntryCreateInput!", data, new HashSet<IQuery>() { new TimeEntryQuery() { FieldName = "timeEntry", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal TimeEntryCreateMutation(TimeEntryCreateInput data, TimeEntryQuery query)
+            : base("timeEntryCreate", "TimeEntryCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(TimeEntryQuery query)
+        {
+            query.FieldName = "timeEntry";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

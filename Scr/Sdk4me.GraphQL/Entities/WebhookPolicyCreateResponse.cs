@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/webhookpolicycreateresponse/">WebhookPolicyCreateResponse</see> object.
     /// </summary>
-    public class WebhookPolicyCreateResponse
+    public class WebhookPolicyCreateResponse : Node
     {
         /// <summary>
         /// The account this record belongs to.
@@ -22,12 +22,6 @@
         /// </summary>
         [JsonProperty("disabled"), Sdk4meField(true)]
         public bool? Disabled { get; internal set; }
-
-        /// <summary>
-        /// Unique identifier of the record.
-        /// </summary>
-        [JsonProperty("id"), Sdk4meField(true)]
-        public string? ID { get; internal set; }
 
         /// <summary>
         /// The algorithm to use for cryptographic signing of webhook messages.
@@ -64,5 +58,14 @@
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
         public DateTime? UpdatedAt { get; internal set; }
+
+        internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)
+        {
+            return new HashSet<QueryPageInfo>();
+        }
+
+        internal override void AddToCollection(object data)
+        {
+        }
     }
 }

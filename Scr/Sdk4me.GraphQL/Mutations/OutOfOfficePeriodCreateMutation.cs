@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new OutOfOfficePeriodCreate mutation instance.
         /// </summary>
-        internal OutOfOfficePeriodCreateMutation(OutOfOfficePeriodCreateInput data)
-            : base("outOfOfficePeriodCreate", "OutOfOfficePeriodCreateInput!", data, new HashSet<IQuery>() { new OutOfOfficePeriodQuery() { FieldName = "outOfOfficePeriod", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal OutOfOfficePeriodCreateMutation(OutOfOfficePeriodCreateInput data, OutOfOfficePeriodQuery query)
+            : base("outOfOfficePeriodCreate", "OutOfOfficePeriodCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(OutOfOfficePeriodQuery query)
+        {
+            query.FieldName = "outOfOfficePeriod";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

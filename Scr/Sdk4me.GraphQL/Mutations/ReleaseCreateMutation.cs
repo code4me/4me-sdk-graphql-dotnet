@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new ReleaseCreate mutation instance.
         /// </summary>
-        internal ReleaseCreateMutation(ReleaseCreateInput data)
-            : base("releaseCreate", "ReleaseCreateInput!", data, new HashSet<IQuery>() { new ReleaseQuery() { FieldName = "release", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal ReleaseCreateMutation(ReleaseCreateInput data, ReleaseQuery query)
+            : base("releaseCreate", "ReleaseCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(ReleaseQuery query)
+        {
+            query.FieldName = "release";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

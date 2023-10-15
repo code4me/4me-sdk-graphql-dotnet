@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new SiteUpdate mutation instance.
         /// </summary>
-        internal SiteUpdateMutation(SiteUpdateInput data)
-            : base("siteUpdate", "SiteUpdateInput!", data, new HashSet<IQuery>() { new SiteQuery() { FieldName = "site", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal SiteUpdateMutation(SiteUpdateInput data, SiteQuery query)
+            : base("siteUpdate", "SiteUpdateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(SiteQuery query)
+        {
+            query.FieldName = "site";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

@@ -850,6 +850,68 @@
     }
 
     /// <summary>
+    /// The <see cref="AsyncQuery">AsyncQuery</see> fields.
+    /// </summary>
+    public enum AsyncQueryField
+    {
+        /// <summary>
+        /// The account field.
+        /// </summary>
+        [EnumMember(Value = "account")]
+        Account,
+        /// <summary>
+        /// The completed at field.
+        /// </summary>
+        [EnumMember(Value = "completedAt")]
+        CompletedAt,
+        /// <summary>
+        /// The created at field.
+        /// </summary>
+        [EnumMember(Value = "createdAt")]
+        CreatedAt,
+        /// <summary>
+        /// The error count field.
+        /// </summary>
+        [EnumMember(Value = "errorCount")]
+        ErrorCount,
+        /// <summary>
+        /// The id field.
+        /// </summary>
+        [EnumMember(Value = "id")]
+        ID,
+        /// <summary>
+        /// The person field.
+        /// </summary>
+        [EnumMember(Value = "person")]
+        Person,
+        /// <summary>
+        /// The result count field.
+        /// </summary>
+        [EnumMember(Value = "resultCount")]
+        ResultCount,
+        /// <summary>
+        /// The result url field.
+        /// </summary>
+        [EnumMember(Value = "resultUrl")]
+        ResultUrl,
+        /// <summary>
+        /// The started at field.
+        /// </summary>
+        [EnumMember(Value = "startedAt")]
+        StartedAt,
+        /// <summary>
+        /// The status field.
+        /// </summary>
+        [EnumMember(Value = "status")]
+        Status,
+        /// <summary>
+        /// The updated at field.
+        /// </summary>
+        [EnumMember(Value = "updatedAt")]
+        UpdatedAt,
+    }
+
+    /// <summary>
     /// The <see cref="Attachment">Attachment</see> fields.
     /// </summary>
     public enum AttachmentField
@@ -2797,6 +2859,11 @@
         [EnumMember(Value = "medium")]
         Medium,
         /// <summary>
+        /// The note reactions field.
+        /// </summary>
+        [EnumMember(Value = "noteReactions")]
+        NoteReactions,
+        /// <summary>
         /// The person field.
         /// </summary>
         [EnumMember(Value = "person")]
@@ -2816,6 +2883,38 @@
         /// </summary>
         [EnumMember(Value = "visibility")]
         Visibility,
+    }
+
+    /// <summary>
+    /// The <see cref="NoteReaction">NoteReaction</see> fields.
+    /// </summary>
+    public enum NoteReactionField
+    {
+        /// <summary>
+        /// The created at field.
+        /// </summary>
+        [EnumMember(Value = "createdAt")]
+        CreatedAt,
+        /// <summary>
+        /// The id field.
+        /// </summary>
+        [EnumMember(Value = "id")]
+        ID,
+        /// <summary>
+        /// The note field.
+        /// </summary>
+        [EnumMember(Value = "note")]
+        Note,
+        /// <summary>
+        /// The person field.
+        /// </summary>
+        [EnumMember(Value = "person")]
+        Person,
+        /// <summary>
+        /// The reaction field.
+        /// </summary>
+        [EnumMember(Value = "reaction")]
+        Reaction,
     }
 
     /// <summary>
@@ -10172,6 +10271,23 @@
     }
 
     /// <summary>
+    /// The <see cref="ValidationError">ValidationError</see> fields.
+    /// </summary>
+    public enum ValidationErrorField
+    {
+        /// <summary>
+        /// The message field.
+        /// </summary>
+        [EnumMember(Value = "message")]
+        Message,
+        /// <summary>
+        /// The path field.
+        /// </summary>
+        [EnumMember(Value = "path")]
+        Path,
+    }
+
+    /// <summary>
     /// The <see cref="WaitingForCustomerFollowUp">WaitingForCustomerFollowUp</see> fields.
     /// </summary>
     public enum WaitingForCustomerFollowUpField
@@ -10394,6 +10510,63 @@
         /// </summary>
         [EnumMember(Value = "name")]
         Name,
+        /// <summary>
+        /// The updated at field.
+        /// </summary>
+        [EnumMember(Value = "updatedAt")]
+        UpdatedAt,
+    }
+
+    /// <summary>
+    /// The <see cref="WebhookPolicyCreateResponse">WebhookPolicyCreateResponse</see> fields.
+    /// </summary>
+    public enum WebhookPolicyCreateResponseField
+    {
+        /// <summary>
+        /// The account field.
+        /// </summary>
+        [EnumMember(Value = "account")]
+        Account,
+        /// <summary>
+        /// The created at field.
+        /// </summary>
+        [EnumMember(Value = "createdAt")]
+        CreatedAt,
+        /// <summary>
+        /// The disabled field.
+        /// </summary>
+        [EnumMember(Value = "disabled")]
+        Disabled,
+        /// <summary>
+        /// The id field.
+        /// </summary>
+        [EnumMember(Value = "id")]
+        ID,
+        /// <summary>
+        /// The jwt alg field.
+        /// </summary>
+        [EnumMember(Value = "jwtAlg")]
+        JwtAlg,
+        /// <summary>
+        /// The jwt audience field.
+        /// </summary>
+        [EnumMember(Value = "jwtAudience")]
+        JwtAudience,
+        /// <summary>
+        /// The jwt claim expires in field.
+        /// </summary>
+        [EnumMember(Value = "jwtClaimExpiresIn")]
+        JwtClaimExpiresIn,
+        /// <summary>
+        /// The name field.
+        /// </summary>
+        [EnumMember(Value = "name")]
+        Name,
+        /// <summary>
+        /// The public key pem field.
+        /// </summary>
+        [EnumMember(Value = "publicKeyPem")]
+        PublicKeyPem,
         /// <summary>
         /// The updated at field.
         /// </summary>

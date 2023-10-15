@@ -24,9 +24,23 @@
         /// <summary>
         /// Initialize an new DiscoveredConfigurationItems mutation instance.
         /// </summary>
-        internal DiscoveredConfigurationItemsMutation(DiscoveredConfigurationItemsInput data)
-            : base("discoveredConfigurationItems", "DiscoveredConfigurationItemsInput!", data, new HashSet<IQuery>() { new ConfigurationItemQuery() { FieldName = "configurationItems", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal DiscoveredConfigurationItemsMutation(DiscoveredConfigurationItemsInput data, AsyncQueryQuery query)
+            : base("discoveredConfigurationItems", "DiscoveredConfigurationItemsInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(AsyncQueryQuery query)
+        {
+            query.FieldName = "asyncQuery";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

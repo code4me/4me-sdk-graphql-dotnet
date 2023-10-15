@@ -155,7 +155,7 @@
         /// <summary>
         /// The Service which Service Instances would typically include the product.
         /// </summary>
-        [JsonProperty("service"), Sdk4meField(true)]
+        [JsonProperty("service")]
         public Service? Service { get; internal set; }
 
         /// <summary>
@@ -179,7 +179,7 @@
         /// <summary>
         /// The team responsible for maintaining the product's information in the configuration management database (CMDB).
         /// </summary>
-        [JsonProperty("supportTeam"), Sdk4meField(true)]
+        [JsonProperty("supportTeam")]
         public Team? SupportTeam { get; internal set; }
 
         /// <summary>

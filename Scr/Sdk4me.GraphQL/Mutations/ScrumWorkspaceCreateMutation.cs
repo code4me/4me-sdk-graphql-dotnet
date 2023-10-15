@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new ScrumWorkspaceCreate mutation instance.
         /// </summary>
-        internal ScrumWorkspaceCreateMutation(ScrumWorkspaceCreateInput data)
-            : base("scrumWorkspaceCreate", "ScrumWorkspaceCreateInput!", data, new HashSet<IQuery>() { new ScrumWorkspaceQuery() { FieldName = "scrumWorkspace", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal ScrumWorkspaceCreateMutation(ScrumWorkspaceCreateInput data, ScrumWorkspaceQuery query)
+            : base("scrumWorkspaceCreate", "ScrumWorkspaceCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(ScrumWorkspaceQuery query)
+        {
+            query.FieldName = "scrumWorkspace";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new ProjectCategoryCreate mutation instance.
         /// </summary>
-        internal ProjectCategoryCreateMutation(ProjectCategoryCreateInput data)
-            : base("projectCategoryCreate", "ProjectCategoryCreateInput!", data, new HashSet<IQuery>() { new ProjectCategoryQuery() { FieldName = "projectCategory", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal ProjectCategoryCreateMutation(ProjectCategoryCreateInput data, ProjectCategoryQuery query)
+            : base("projectCategoryCreate", "ProjectCategoryCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(ProjectCategoryQuery query)
+        {
+            query.FieldName = "projectCategory";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

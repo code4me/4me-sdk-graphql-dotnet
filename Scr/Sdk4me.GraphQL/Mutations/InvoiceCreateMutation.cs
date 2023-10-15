@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new InvoiceCreate mutation instance.
         /// </summary>
-        internal InvoiceCreateMutation(InvoiceCreateInput data)
-            : base("invoiceCreate", "InvoiceCreateInput!", data, new HashSet<IQuery>() { new InvoiceQuery() { FieldName = "invoice", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal InvoiceCreateMutation(InvoiceCreateInput data, InvoiceQuery query)
+            : base("invoiceCreate", "InvoiceCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(InvoiceQuery query)
+        {
+            query.FieldName = "invoice";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

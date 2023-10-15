@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new SlaNotificationSchemeCreate mutation instance.
         /// </summary>
-        internal SlaNotificationSchemeCreateMutation(SlaNotificationSchemeCreateInput data)
-            : base("slaNotificationSchemeCreate", "SlaNotificationSchemeCreateInput!", data, new HashSet<IQuery>() { new SlaNotificationSchemeQuery() { FieldName = "slaNotificationScheme", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal SlaNotificationSchemeCreateMutation(SlaNotificationSchemeCreateInput data, SlaNotificationSchemeQuery query)
+            : base("slaNotificationSchemeCreate", "SlaNotificationSchemeCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(SlaNotificationSchemeQuery query)
+        {
+            query.FieldName = "slaNotificationScheme";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

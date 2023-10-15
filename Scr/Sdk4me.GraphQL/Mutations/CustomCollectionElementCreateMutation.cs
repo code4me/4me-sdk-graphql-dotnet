@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new CustomCollectionElementCreate mutation instance.
         /// </summary>
-        internal CustomCollectionElementCreateMutation(CustomCollectionElementCreateInput data)
-            : base("customCollectionElementCreate", "CustomCollectionElementCreateInput!", data, new HashSet<IQuery>() { new CustomCollectionElementQuery() { FieldName = "customCollectionElement", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal CustomCollectionElementCreateMutation(CustomCollectionElementCreateInput data, CustomCollectionElementQuery query)
+            : base("customCollectionElementCreate", "CustomCollectionElementCreateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(CustomCollectionElementQuery query)
+        {
+            query.FieldName = "customCollectionElement";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }

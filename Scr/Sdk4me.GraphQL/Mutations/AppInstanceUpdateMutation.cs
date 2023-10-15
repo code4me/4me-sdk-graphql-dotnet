@@ -8,9 +8,23 @@
         /// <summary>
         /// Initialize an new AppInstanceUpdate mutation instance.
         /// </summary>
-        internal AppInstanceUpdateMutation(AppInstanceUpdateInput data)
-            : base("appInstanceUpdate", "AppInstanceUpdateInput!", data, new HashSet<IQuery>() { new AppInstanceQuery() { FieldName = "appInstance", IsConnection = false }.Select("*") })
+        /// <param name="data">The input data.</param>
+        /// <param name="query">The repsonse query.</param>
+        internal AppInstanceUpdateMutation(AppInstanceUpdateInput data, AppInstanceQuery query)
+            : base("appInstanceUpdate", "AppInstanceUpdateInput!", data, GetQuery(query))
         {
+        }
+
+        /// <summary>
+        /// Generates the response query collection.
+        /// </summary>
+        /// <param name="query">The response query.</param>
+        /// <returns>A query collection.</returns>
+        private static HashSet<IQuery> GetQuery(AppInstanceQuery query)
+        {
+            query.FieldName = "appInstance";
+            query.IsConnection = false;
+            return new HashSet<IQuery>() {query};
         }
     }
 }
