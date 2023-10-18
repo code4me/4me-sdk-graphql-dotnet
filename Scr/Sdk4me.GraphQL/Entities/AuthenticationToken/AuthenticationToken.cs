@@ -13,6 +13,9 @@
         private int requestLimit = int.MaxValue;
         private int requestsRemaining = int.MaxValue;
         private DateTime requestLimitReset = DateTime.MinValue;
+        private int costLimit = int.MaxValue;
+        private int costLimitRemaining = int.MaxValue;
+        private DateTime costLimitReset = DateTime.MinValue;
         private DateTime updatedAt = DateTime.MinValue;
         private DateTime authenticationTokenExpires = DateTime.MinValue;
 
@@ -94,6 +97,33 @@
         {
             get => requestLimitReset;
             internal set => requestLimitReset = value;
+        }
+
+        /// <summary>
+        /// The maximum number of points the client is permitted to consume in a 60-minutes window.
+        /// </summary>
+        public int CostLimit 
+        {
+            get => costLimit;
+            internal set => costLimit = value;
+        }
+
+        /// <summary>
+        /// The number of points remaining in the current query cost rate limit window.
+        /// </summary>
+        public int CostLimitRemaining
+        {
+            get => costLimitRemaining;
+            internal set => costLimitRemaining = value;
+        }
+
+        /// <summary>
+        /// The local time at which the current query cost rate limit window resets.
+        /// </summary>
+        public DateTime CostLimitReset
+        {
+            get => costLimitReset;
+            internal set => costLimitReset = value;
         }
 
         /// <summary>

@@ -18,9 +18,39 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// Returns the 4me authentication token with the highest remaining requests value.
+        /// Gets or sets the weight for prioritizing remaining requests when calculating the token usage prioritization, the default value is 0.6.
+        /// <para>
+        /// <br>Represents the weight assigned to remaining API requests when determining the score for an authentication token.</br>
+        /// <br>By adjusting this weight, you can influence the sorting of tokens to prioritize those with a greater number of remaining API requests.</br>
+        /// <br>A higher <c>RequestsWeight</c> places more emphasis on tokens with more available requests.</br>
+        /// </para>
+        /// <para>To find additional information regarding Service Quotas, please refer to the <see href="https://developer.4me.com/graphql/#service-quotas-1">4me developer documentation</see>.</para>
         /// </summary>
-        /// <returns></returns>
+        public double RequestWeight
+        {
+            get => authenticationTokenSorter.RequestWeight;
+            set => authenticationTokenSorter.RequestWeight = value;
+        }
+
+        /// <summary>
+        /// Gets or sets the weight for prioritizing remaining cost when calculating the token usage prioritization, the default value is 0.4.
+        /// <para>
+        /// <br>Represents the weight assigned to the remaining cost associated with using an authentication token.</br>
+        /// <br>By adjusting this weight, you can influence the sorting of tokens to prioritize those with a higher remaining cost.</br>
+        /// <br>A higher <c>CostWeight</c> places more emphasis on tokens with higher remaining cost.</br>
+        /// </para>
+        /// <para>To find additional information regarding Service Quotas, please refer to the <see href="https://developer.4me.com/graphql/#service-quotas-1">4me developer documentation</see>.</para>
+        /// </summary>
+        public double CostWeight
+        {
+            get => authenticationTokenSorter.CostWeight;
+            set => authenticationTokenSorter.CostWeight = value;
+        }
+
+        /// <summary>
+        /// Returns the 4me authentication token with the highest remaining request and/or cost.
+        /// </summary>
+        /// <returns>A <see cref="AuthenticationToken"/> object.</returns>
         public AuthenticationToken Get()
         {
             if (authenticationTokens.Count.Equals(0))
@@ -31,6 +61,9 @@ namespace Sdk4me.GraphQL
 
             if (authenticationTokens[0].RequestsRemaining < 1 && authenticationTokens[0].RequestLimitReset > DateTime.Now)
                 throw new Sdk4meException("There are no remaining API requests for the provided authentication tokens.");
+
+            if (authenticationTokens[0].CostLimitRemaining < 1 && authenticationTokens[0].CostLimitReset > DateTime.Now)
+                throw new Sdk4meException("There are no remaining cost points for the provided authentication tokens.");
 
             return authenticationTokens[0];
         }

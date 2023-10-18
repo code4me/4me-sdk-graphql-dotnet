@@ -402,6 +402,23 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Configures the weight for prioritizing authentication tokens based on remaining API requests and cost.
+        /// </summary>
+        /// <param name="requestWeight">The weight for prioritizing remaining API requests. Default is 0.6.</param>
+        /// <param name="costWeight">The weight for prioritizing remaining cost. Default is 0.4.</param>
+        /// <remarks>
+        /// Use this method to dynamically adjust the weighting of authentication tokens to influence their sorting and prioritization.
+        /// By specifying new weight values, you can fine-tune the sorting behavior of tokens based on their remaining API requests and cost consumption.
+        /// This flexibility enables you to optimize token selection to meet specific requirements or adhere to service quotas.
+        /// <para>To learn more about GraphQL Service Quotas, refer to the <see href="https://developer.4me.com/graphql/#service-quotas-1">Service Quota</see> section, and for information on Rate Limiting, explore the <see href="https://developer.4me.com/v1/#rate-limiting">Rate Limiting</see> section in the 4me developer documentation.</para>
+        /// </remarks>
+        public void ConfigureAuthenticationTokenWeight(double requestWeight = 0.6, double costWeight = 0.4)
+        {
+            authenticationTokens.RequestWeight = requestWeight;
+            authenticationTokens.CostWeight = costWeight;
+        }
+
+        /// <summary>
         /// Create a new <see cref="HttpRequestMessage"/>.
         /// </summary>
         /// <returns>The <see cref="HttpRequestMessage"/> object.</returns>
@@ -507,6 +524,9 @@ namespace Sdk4me.GraphQL
                 currentToken.RequestLimit = Convert.ToInt32(responseMessage.Headers.GetValues("X-RateLimit-Limit").First());
                 currentToken.RequestsRemaining = Convert.ToInt32(responseMessage.Headers.GetValues("X-RateLimit-Remaining").First());
                 currentToken.RequestLimitReset = DateTime.UnixEpoch.AddSeconds(Convert.ToInt64(responseMessage.Headers.GetValues("X-RateLimit-Reset").First())).ToLocalTime();
+                currentToken.CostLimit = Convert.ToInt32(responseMessage.Headers.GetValues("X-CostLimit-Limit").First());
+                currentToken.CostLimitRemaining = Convert.ToInt32(responseMessage.Headers.GetValues("X-CostLimit-Remaining").First());
+                currentToken.CostLimitReset = DateTime.UnixEpoch.AddSeconds(Convert.ToInt64(responseMessage.Headers.GetValues("X-CostLimit-Reset").First())).ToLocalTime();
             }
         }
 

@@ -382,7 +382,7 @@ catch (Sdk4meException ex)
 ```
 By default the SDK will throw an new exception. The mutation method has one additional argument `throwOnError`, when false the `result` property will contain the error messages.
 
-### Multi-token, accounts, environment usage and environment regions
+### Multi-token, accounts, environment and environment regions usage
 ```csharp
 AuthenticationTokenCollection tokens = new AuthenticationTokenCollection()
 {
@@ -393,3 +393,24 @@ AuthenticationTokenCollection tokens = new AuthenticationTokenCollection()
 Sdk4meClient client = new(tokens, "account-name", EnvironmentType.Demo, EnvironmentRegion.EU);
 client.AccountID = "new-account-name";
 ```
+
+### Multi-token - Request and cost scores
+In the context of multiple 4me authentication tokens, request and cost scores are essential metrics used to determine the priority of tokens when making API requests. These scores help prioritize tokens efficiently by considering two critical factors.
+
+**Request Score:**
+This weight, with a default value of 0.6, controls the significance of remaining API requests in the score calculation.
+Adjusting this weight influences the sorting of tokens to favor those with more available requests.
+A higher `RequestWeight` places more emphasis on tokens with a larger number of remaining API requests.
+
+**Cost score:**
+With a default value of 0.4, the cost weight determines the influence of remaining cost associated with using an authentication token.
+Modifying this weight allows you to give preference to tokens with more remaining cost.
+A higher `CostWeight` makes tokens with more remaining cost significant during the selection process.
+
+These weights are user-configurable and allow for fine-tuning the token sorting process according to specific requirements.
+```csharp
+client.ConfigureAuthenticationTokenWeight(requestWeight: 0.5, costWeight: 0.5);
+```
+
+To learn more about GraphQL Service Quotas, refer to the [Service Quota](https://developer.4me.com/graphql/#service-quotas-1) section, and for information on Rate Limiting, explore the [Rate Limiting](https://developer.4me.com/v1/#rate-limiting) section in the 4me developer documentation.
+
