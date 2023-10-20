@@ -34,6 +34,16 @@
         }
 
         /// <summary>
+        /// Used to select the organization for which the project is to be implemented.
+        /// </summary>
+        public ProjectQuery SelectCustomer(OrganizationQuery query)
+        {
+            query.FieldName = "customer";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Values of custom fields.
         /// </summary>
         public ProjectQuery SelectCustomFields(CustomFieldQuery query)
@@ -49,16 +59,6 @@
         public ProjectQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
-            return Select(query);
-        }
-
-        /// <summary>
-        /// Used to select the organization for which the project is to be implemented.
-        /// </summary>
-        public ProjectQuery SelectCustomer(OrganizationQuery query)
-        {
-            query.FieldName = "customer";
-            query.IsConnection = false;
             return Select(query);
         }
 
@@ -156,21 +156,21 @@
         }
 
         /// <summary>
+        /// Workflows of the project.
+        /// </summary>
+        public ProjectQuery SelectWorkflows(WorkflowQuery query)
+        {
+            query.FieldName = "workflows";
+            return Select(query);
+        }
+
+        /// <summary>
         /// The calendar that defines the work hours that are to be used to calculate the anticipated assignment and completion target for the tasks of the project.
         /// </summary>
         public ProjectQuery SelectWorkHours(CalendarQuery query)
         {
             query.FieldName = "workHours";
             query.IsConnection = false;
-            return Select(query);
-        }
-
-        /// <summary>
-        /// Workflows of the project.
-        /// </summary>
-        public ProjectQuery SelectWorkflows(WorkflowQuery query)
-        {
-            query.FieldName = "workflows";
             return Select(query);
         }
 

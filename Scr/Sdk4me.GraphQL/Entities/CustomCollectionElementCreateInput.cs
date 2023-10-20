@@ -5,37 +5,47 @@
     /// </summary>
     public class CustomCollectionElementCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
+        private string? clientMutationId;
+        private string? customCollection;
+        private string? customCollectionId;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
         private string? description;
         private bool? disabled;
         private string? information;
-        private string? reference;
-        private string? clientMutationId;
-        private string? customCollectionId;
-        private string? customCollection;
         private string? name;
+        private string? reference;
+        private string? source;
+        private string? sourceID;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => source;
-            set => source = Set("source", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
-        /// The unique identifier of the resource in an external system.
+        /// Reference of the collection of this element.
         /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
+        [JsonProperty("customCollection")]
+        public string? CustomCollection
         {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
+            get => customCollection;
+            set => customCollection = Set("customCollection", value);
+        }
+
+        /// <summary>
+        /// Identifier of the collection of this element.
+        /// </summary>
+        [JsonProperty("customCollectionId")]
+        public string? CustomCollectionId
+        {
+            get => customCollectionId;
+            set => customCollectionId = Set("customCollectionId", value);
         }
 
         /// <summary>
@@ -89,6 +99,16 @@
         }
 
         /// <summary>
+        /// Name of the collection element.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
+        }
+
+        /// <summary>
         /// The Reference field defaults to the Name field value, written in lower case characters and with all spaces replaced by the underscore character.
         /// </summary>
         [JsonProperty("reference")]
@@ -99,43 +119,23 @@
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("source")]
+        public string? Source
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
+            get => source;
+            set => source = Set("source", value);
         }
 
         /// <summary>
-        /// Identifier of the collection of this element.
+        /// The unique identifier of the resource in an external system.
         /// </summary>
-        [JsonProperty("customCollectionId")]
-        public string? CustomCollectionId
+        [JsonProperty("sourceID")]
+        public string? SourceID
         {
-            get => customCollectionId;
-            set => customCollectionId = Set("customCollectionId", value);
-        }
-
-        /// <summary>
-        /// Reference of the collection of this element.
-        /// </summary>
-        [JsonProperty("customCollection")]
-        public string? CustomCollection
-        {
-            get => customCollection;
-            set => customCollection = Set("customCollection", value);
-        }
-
-        /// <summary>
-        /// Name of the collection element.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
         }
     }
 }

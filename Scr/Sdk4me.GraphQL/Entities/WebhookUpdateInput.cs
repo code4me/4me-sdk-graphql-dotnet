@@ -5,25 +5,25 @@
     /// </summary>
     public class WebhookUpdateInput : PropertyChangeSet
     {
-        private bool? disabled;
+        private string? clientMutationId;
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
+        private bool? disabled;
         private WebhookEvent? @event;
+        private string? id;
         private string? mailExceptionsTo;
         private string? name;
         private string? uri;
         private string? webhookPolicyId;
-        private string? clientMutationId;
-        private string? id;
 
         /// <summary>
-        /// Whether the webhook will be triggered when the event occurs.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("disabled")]
-        public bool? Disabled
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => disabled;
-            set => disabled = Set("disabled", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -47,6 +47,16 @@
         }
 
         /// <summary>
+        /// Whether the webhook will be triggered when the event occurs.
+        /// </summary>
+        [JsonProperty("disabled")]
+        public bool? Disabled
+        {
+            get => disabled;
+            set => disabled = Set("disabled", value);
+        }
+
+        /// <summary>
         /// Event that will trigger this webhook.
         /// </summary>
         [JsonProperty("event")]
@@ -54,6 +64,16 @@
         {
             get => @event;
             set => @event = Set("event", value);
+        }
+
+        /// <summary>
+        /// The node ID of the record to update.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
         }
 
         /// <summary>
@@ -94,26 +114,6 @@
         {
             get => webhookPolicyId;
             set => webhookPolicyId = Set("webhookPolicyId", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// The node ID of the record to update.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
         }
     }
 }

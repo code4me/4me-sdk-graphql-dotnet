@@ -5,36 +5,26 @@
     /// </summary>
     public class ReleaseUpdateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
+        private string? clientMutationId;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
-        private string? uiExtensionId;
+        private string? id;
         private string? managerId;
         private string? note;
+        private string? source;
+        private string? sourceID;
         private string? subject;
+        private string? uiExtensionId;
         private List<string>? workflowIds;
-        private string? clientMutationId;
-        private string? id;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -58,13 +48,13 @@
         }
 
         /// <summary>
-        /// UI extension that is to be applied to the record.
+        /// The node ID of the record to update.
         /// </summary>
-        [JsonProperty("uiExtensionId")]
-        public string? UiExtensionId
+        [JsonProperty("id")]
+        public string? ID
         {
-            get => uiExtensionId;
-            set => uiExtensionId = Set("uiExtensionId", value);
+            get => id;
+            set => id = Set("id", value);
         }
 
         /// <summary>
@@ -88,6 +78,26 @@
         }
 
         /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
         /// A short description of the objective of the release.
         /// </summary>
         [JsonProperty("subject")]
@@ -98,6 +108,16 @@
         }
 
         /// <summary>
+        /// UI extension that is to be applied to the record.
+        /// </summary>
+        [JsonProperty("uiExtensionId")]
+        public string? UiExtensionId
+        {
+            get => uiExtensionId;
+            set => uiExtensionId = Set("uiExtensionId", value);
+        }
+
+        /// <summary>
         /// Identifiers of the workflows of the release.
         /// </summary>
         [JsonProperty("workflowIds")]
@@ -105,26 +125,6 @@
         {
             get => workflowIds;
             set => workflowIds = Set("workflowIds", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// The node ID of the record to update.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
         }
     }
 }

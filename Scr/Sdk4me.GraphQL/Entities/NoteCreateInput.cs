@@ -5,32 +5,12 @@
     /// </summary>
     public class NoteCreateInput : PropertyChangeSet
     {
-        private string? clientMutationId;
-        private string? text;
         private List<AttachmentInput>? attachments;
+        private string? clientMutationId;
         private bool? @event;
-        private bool? suppressNoteAddedNotifications;
         private string? ownerId;
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// Text of the note.
-        /// </summary>
-        [JsonProperty("text")]
-        public string? Text
-        {
-            get => text;
-            set => text = Set("text", value);
-        }
+        private bool? suppressNoteAddedNotifications;
+        private string? text;
 
         /// <summary>
         /// The attachments used in the <c>note</c> field.
@@ -40,6 +20,16 @@
         {
             get => attachments;
             set => attachments = Set("attachments", value);
+        }
+
+        /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -53,6 +43,16 @@
         }
 
         /// <summary>
+        /// The record that the note should be added to.
+        /// </summary>
+        [JsonProperty("ownerId")]
+        public string? OwnerId
+        {
+            get => ownerId;
+            set => ownerId = Set("ownerId", value);
+        }
+
+        /// <summary>
         /// Whether Note Added notifications for this note should be suppressed.
         /// </summary>
         [JsonProperty("suppressNoteAddedNotifications")]
@@ -63,13 +63,13 @@
         }
 
         /// <summary>
-        /// The record that the note should be added to.
+        /// Text of the note.
         /// </summary>
-        [JsonProperty("ownerId")]
-        public string? OwnerId
+        [JsonProperty("text")]
+        public string? Text
         {
-            get => ownerId;
-            set => ownerId = Set("ownerId", value);
+            get => text;
+            set => text = Set("text", value);
         }
     }
 }

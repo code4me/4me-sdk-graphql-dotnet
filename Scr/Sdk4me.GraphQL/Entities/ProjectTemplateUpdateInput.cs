@@ -5,35 +5,25 @@
     /// </summary>
     public class ProjectTemplateUpdateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
+        private string? clientMutationId;
         private bool? disabled;
-        private string? subject;
+        private string? id;
         private List<ProjectPhaseInput>? newPhases;
         private List<ProjectTemplateTaskTemplateInput>? newTaskTemplateRelations;
-        private string? clientMutationId;
-        private string? id;
         private List<string>? phasesToDelete;
+        private string? source;
+        private string? sourceID;
+        private string? subject;
         private List<string>? taskTemplateRelationsToDelete;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -47,13 +37,13 @@
         }
 
         /// <summary>
-        /// A short description that needs to be copied to the Subject field of a new project when it is being created based on the template.
+        /// The node ID of the record to update.
         /// </summary>
-        [JsonProperty("subject")]
-        public string? Subject
+        [JsonProperty("id")]
+        public string? ID
         {
-            get => subject;
-            set => subject = Set("subject", value);
+            get => id;
+            set => id = Set("id", value);
         }
 
         /// <summary>
@@ -77,26 +67,6 @@
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// The node ID of the record to update.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
-        }
-
-        /// <summary>
         /// Identifiers of phases to remove from the project template.
         /// </summary>
         [JsonProperty("phasesToDelete")]
@@ -104,6 +74,36 @@
         {
             get => phasesToDelete;
             set => phasesToDelete = Set("phasesToDelete", value);
+        }
+
+        /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// A short description that needs to be copied to the Subject field of a new project when it is being created based on the template.
+        /// </summary>
+        [JsonProperty("subject")]
+        public string? Subject
+        {
+            get => subject;
+            set => subject = Set("subject", value);
         }
 
         /// <summary>

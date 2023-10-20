@@ -5,20 +5,10 @@
     /// </summary>
     public class EffortClassRateInput : PropertyChangeSet
     {
-        private string? id;
         private string? effortClassId;
+        private string? id;
         private decimal? rate;
         private string? rateCurrency;
-
-        /// <summary>
-        /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
-        }
 
         /// <summary>
         /// The effort class for which the rate is provided.
@@ -28,6 +18,16 @@
         {
             get => effortClassId;
             set => effortClassId = Set("effortClassId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
         }
 
         /// <summary>

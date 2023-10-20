@@ -5,49 +5,29 @@
     /// </summary>
     public class TimesheetSettingCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
         private bool? allocationTimeTracking;
         private bool? allowWorkdayOvertime;
         private bool? allowWorkweekOvertime;
         private bool? assignmentTimeTracking;
+        private string? clientMutationId;
         private bool? disabled;
+        private List<string>? effortClassIds;
+        private string? name;
         private bool? notifyOnIncomplete;
+        private List<string>? organizationIds;
         private TimesheetSettingPercentageIncrement? percentageIncrement;
         private string? problemEffortClassId;
         private string? projectTaskEffortClassId;
         private string? requestEffortClassId;
         private bool? requireNote;
+        private string? source;
+        private string? sourceID;
         private string? taskEffortClassId;
         private string? timeAllocationEffortClassId;
         private TimesheetSettingTimeIncrement? timeIncrement;
+        private TimesheetSettingUnit? unit;
         private long? workday;
         private long? workweek;
-        private List<string>? effortClassIds;
-        private List<string>? organizationIds;
-        private string? clientMutationId;
-        private string? name;
-        private TimesheetSettingUnit? unit;
-
-        /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
-        /// </summary>
-        [JsonProperty("source")]
-        public string? Source
-        {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
-        }
 
         /// <summary>
         /// Whether people of the related organizations need to be able to register time entries for the time allocations that are linked to their organizations.
@@ -90,6 +70,16 @@
         }
 
         /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
         /// Whether the timesheet settings may no longer be related to any more organizations.
         /// </summary>
         [JsonProperty("disabled")]
@@ -100,6 +90,26 @@
         }
 
         /// <summary>
+        /// Identifiers of effort classes of the timesheet setting.
+        /// </summary>
+        [JsonProperty("effortClassIds")]
+        public List<string>? EffortClassIds
+        {
+            get => effortClassIds;
+            set => effortClassIds = Set("effortClassIds", value);
+        }
+
+        /// <summary>
+        /// The name of the timesheet settings.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
+        }
+
+        /// <summary>
         /// Whether an email notification should be sent to each person who registered fewer hours for the past week than the workweek hours.
         /// </summary>
         [JsonProperty("notifyOnIncomplete")]
@@ -107,6 +117,16 @@
         {
             get => notifyOnIncomplete;
             set => notifyOnIncomplete = Set("notifyOnIncomplete", value);
+        }
+
+        /// <summary>
+        /// Identifiers of organizations of the timesheet setting.
+        /// </summary>
+        [JsonProperty("organizationIds")]
+        public List<string>? OrganizationIds
+        {
+            get => organizationIds;
+            set => organizationIds = Set("organizationIds", value);
         }
 
         /// <summary>
@@ -160,6 +180,26 @@
         }
 
         /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
         /// Identifier of the effort class that is selected by default, when someone in an organization linked to the timesheet settings registers time on a workflow task.
         /// </summary>
         [JsonProperty("taskEffortClassId")]
@@ -190,6 +230,16 @@
         }
 
         /// <summary>
+        /// Whether the people of the organizations to which the timesheet settings are linked need to register their time in hours and minutes, or as a percentage of a workday.
+        /// </summary>
+        [JsonProperty("unit")]
+        public TimesheetSettingUnit? Unit
+        {
+            get => unit;
+            set => unit = Set("unit", value);
+        }
+
+        /// <summary>
         /// The duration of a workday in minutes.
         /// </summary>
         [JsonProperty("workday")]
@@ -207,56 +257,6 @@
         {
             get => workweek;
             set => workweek = Set("workweek", value);
-        }
-
-        /// <summary>
-        /// Identifiers of effort classes of the timesheet setting.
-        /// </summary>
-        [JsonProperty("effortClassIds")]
-        public List<string>? EffortClassIds
-        {
-            get => effortClassIds;
-            set => effortClassIds = Set("effortClassIds", value);
-        }
-
-        /// <summary>
-        /// Identifiers of organizations of the timesheet setting.
-        /// </summary>
-        [JsonProperty("organizationIds")]
-        public List<string>? OrganizationIds
-        {
-            get => organizationIds;
-            set => organizationIds = Set("organizationIds", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// The name of the timesheet settings.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
-        }
-
-        /// <summary>
-        /// Whether the people of the organizations to which the timesheet settings are linked need to register their time in hours and minutes, or as a percentage of a workday.
-        /// </summary>
-        [JsonProperty("unit")]
-        public TimesheetSettingUnit? Unit
-        {
-            get => unit;
-            set => unit = Set("unit", value);
         }
     }
 }

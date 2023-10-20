@@ -5,49 +5,19 @@
     /// </summary>
     public class ScrumWorkspaceUpdateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
-        private string? pictureUri;
         private string? agileBoardId;
+        private string? clientMutationId;
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
         private bool? disabled;
+        private string? id;
         private string? name;
+        private string? pictureUri;
         private string? productBacklogId;
+        private string? source;
+        private string? sourceID;
         private long? sprintLength;
         private string? teamId;
-        private string? clientMutationId;
-        private string? id;
-
-        /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
-        /// </summary>
-        [JsonProperty("source")]
-        public string? Source
-        {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
-        }
-
-        /// <summary>
-        /// The hyperlink to the image file for the record.
-        /// </summary>
-        [JsonProperty("pictureUri")]
-        public string? PictureUri
-        {
-            get => pictureUri;
-            set => pictureUri = Set("pictureUri", value);
-        }
 
         /// <summary>
         /// Identifier of the agile board used to track the progress of this workspace's active sprint.
@@ -57,6 +27,16 @@
         {
             get => agileBoardId;
             set => agileBoardId = Set("agileBoardId", value);
+        }
+
+        /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -90,6 +70,16 @@
         }
 
         /// <summary>
+        /// The node ID of the record to update.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
+        }
+
+        /// <summary>
         /// Name of the scrum workspace.
         /// </summary>
         [JsonProperty("name")]
@@ -100,6 +90,16 @@
         }
 
         /// <summary>
+        /// The hyperlink to the image file for the record.
+        /// </summary>
+        [JsonProperty("pictureUri")]
+        public string? PictureUri
+        {
+            get => pictureUri;
+            set => pictureUri = Set("pictureUri", value);
+        }
+
+        /// <summary>
         /// Identifier of the product backlog used when planning sprints.
         /// </summary>
         [JsonProperty("productBacklogId")]
@@ -107,6 +107,26 @@
         {
             get => productBacklogId;
             set => productBacklogId = Set("productBacklogId", value);
+        }
+
+        /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
         }
 
         /// <summary>
@@ -127,26 +147,6 @@
         {
             get => teamId;
             set => teamId = Set("teamId", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// The node ID of the record to update.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
         }
     }
 }

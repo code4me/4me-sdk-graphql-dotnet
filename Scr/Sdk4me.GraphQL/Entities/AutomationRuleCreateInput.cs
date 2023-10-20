@@ -5,38 +5,48 @@
     /// </summary>
     public class AutomationRuleCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
+        private List<AutomationRuleActionInput>? actions;
+        private string? clientMutationId;
+        private string? condition;
         private string? description;
         private bool? disabled;
+        private List<AutomationRuleExpressionInput>? expressions;
         private string? generic;
+        private string? name;
         private string? ownerId;
         private long? position;
-        private string? clientMutationId;
-        private string? name;
+        private string? source;
+        private string? sourceID;
         private string? trigger;
-        private List<AutomationRuleExpressionInput>? expressions;
-        private string? condition;
-        private List<AutomationRuleActionInput>? actions;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// The Actions field is used to define actions that should be executed when the condition of the automation rule is met.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("actions")]
+        public List<AutomationRuleActionInput>? Actions
         {
-            get => source;
-            set => source = Set("source", value);
+            get => actions;
+            set => actions = Set("actions", value);
         }
 
         /// <summary>
-        /// The unique identifier of the resource in an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The Condition field is used to define the condition that needs to be met in order for the update action(s) of the rule to be performed. For example: <c>is_assigned and !badge</c>.
+        /// </summary>
+        [JsonProperty("condition")]
+        public string? Condition
+        {
+            get => condition;
+            set => condition = Set("condition", value);
         }
 
         /// <summary>
@@ -60,6 +70,16 @@
         }
 
         /// <summary>
+        /// The Expressions field is used to define expressions that can subsequently be used to define the rule's conditions and the update action(s) that the rule is to perform.
+        /// </summary>
+        [JsonProperty("expressions")]
+        public List<AutomationRuleExpressionInput>? Expressions
+        {
+            get => expressions;
+            set => expressions = Set("expressions", value);
+        }
+
+        /// <summary>
         /// <br>When the automation rule is not linked to one specific record but to all records of a type, the Generic field contains the record type. Valid values are:</br>
         /// <br>• <c>request</c></br>
         /// <br>• <c>problem</c></br>
@@ -76,6 +96,16 @@
         {
             get => generic;
             set => generic = Set("generic", value);
+        }
+
+        /// <summary>
+        /// The name of the automation rule.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
         }
 
         /// <summary>
@@ -99,23 +129,23 @@
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("source")]
+        public string? Source
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
+            get => source;
+            set => source = Set("source", value);
         }
 
         /// <summary>
-        /// The name of the automation rule.
+        /// The unique identifier of the resource in an external system.
         /// </summary>
-        [JsonProperty("name")]
-        public string? Name
+        [JsonProperty("sourceID")]
+        public string? SourceID
         {
-            get => name;
-            set => name = Set("name", value);
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
         }
 
         /// <summary>
@@ -126,36 +156,6 @@
         {
             get => trigger;
             set => trigger = Set("trigger", value);
-        }
-
-        /// <summary>
-        /// The Expressions field is used to define expressions that can subsequently be used to define the rule's conditions and the update action(s) that the rule is to perform.
-        /// </summary>
-        [JsonProperty("expressions")]
-        public List<AutomationRuleExpressionInput>? Expressions
-        {
-            get => expressions;
-            set => expressions = Set("expressions", value);
-        }
-
-        /// <summary>
-        /// The Condition field is used to define the condition that needs to be met in order for the update action(s) of the rule to be performed. For example: <c>is_assigned and !badge</c>.
-        /// </summary>
-        [JsonProperty("condition")]
-        public string? Condition
-        {
-            get => condition;
-            set => condition = Set("condition", value);
-        }
-
-        /// <summary>
-        /// The Actions field is used to define actions that should be executed when the condition of the automation rule is met.
-        /// </summary>
-        [JsonProperty("actions")]
-        public List<AutomationRuleActionInput>? Actions
-        {
-            get => actions;
-            set => actions = Set("actions", value);
         }
     }
 }

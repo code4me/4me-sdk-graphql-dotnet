@@ -5,45 +5,75 @@
     /// </summary>
     public class ContractCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
+        private ContractCategory? category;
+        private string? clientMutationId;
+        private List<string>? configurationItemIds;
+        private string? customerId;
+        private string? customerRepresentativeId;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
-        private string? uiExtensionId;
-        private ContractCategory? category;
-        private string? customerRepresentativeId;
         private DateOnly? expiryDate;
+        private string? name;
         private DateOnly? noticeDate;
         private string? remarks;
         private List<AttachmentInput>? remarksAttachments;
+        private string? source;
+        private string? sourceID;
         private DateOnly? startDate;
         private AgreementStatus? status;
-        private string? supplierId;
         private string? supplierContactId;
+        private string? supplierId;
         private string? timeZone;
-        private List<string>? configurationItemIds;
-        private string? clientMutationId;
-        private string? name;
-        private string? customerId;
+        private string? uiExtensionId;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// Used to select the appropriate category for the contract.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("category")]
+        public ContractCategory? Category
         {
-            get => source;
-            set => source = Set("source", value);
+            get => category;
+            set => category = Set("category", value);
         }
 
         /// <summary>
-        /// The unique identifier of the resource in an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Identifiers of the configuration items of the contract.
+        /// </summary>
+        [JsonProperty("configurationItemIds")]
+        public List<string>? ConfigurationItemIds
+        {
+            get => configurationItemIds;
+            set => configurationItemIds = Set("configurationItemIds", value);
+        }
+
+        /// <summary>
+        /// Identifier of the organization that pays for the contract.
+        /// </summary>
+        [JsonProperty("customerId")]
+        public string? CustomerId
+        {
+            get => customerId;
+            set => customerId = Set("customerId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the person who represents the customer of the contract.
+        /// </summary>
+        [JsonProperty("customerRepresentativeId")]
+        public string? CustomerRepresentativeId
+        {
+            get => customerRepresentativeId;
+            set => customerRepresentativeId = Set("customerRepresentativeId", value);
         }
 
         /// <summary>
@@ -67,36 +97,6 @@
         }
 
         /// <summary>
-        /// UI extension that is to be applied to the record.
-        /// </summary>
-        [JsonProperty("uiExtensionId")]
-        public string? UiExtensionId
-        {
-            get => uiExtensionId;
-            set => uiExtensionId = Set("uiExtensionId", value);
-        }
-
-        /// <summary>
-        /// Used to select the appropriate category for the contract.
-        /// </summary>
-        [JsonProperty("category")]
-        public ContractCategory? Category
-        {
-            get => category;
-            set => category = Set("category", value);
-        }
-
-        /// <summary>
-        /// Identifier of the person who represents the customer of the contract.
-        /// </summary>
-        [JsonProperty("customerRepresentativeId")]
-        public string? CustomerRepresentativeId
-        {
-            get => customerRepresentativeId;
-            set => customerRepresentativeId = Set("customerRepresentativeId", value);
-        }
-
-        /// <summary>
         /// <br>The date through which the contract will be active. The contract expires at the end of this day if it is not renewed before then.</br>
         /// <br>When the contract has expired, its status will automatically be set to <c>expired</c>.</br>
         /// <br></br>
@@ -107,6 +107,20 @@
         {
             get => expiryDate;
             set => expiryDate = Set("expiryDate", value);
+        }
+
+        /// <summary>
+        /// <br>The name of the contract.</br>
+        /// <br>If a unique ID is given to each contract, then this ID can be added at the start of the name.</br>
+        /// <br></br>
+        /// <br>Example:</br>
+        /// <br>• 2EGXQ2W – Dell 3-Year ProSupport and Next Business Day Onsite Repair for CMP00035</br>
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
         }
 
         /// <summary>
@@ -143,6 +157,26 @@
         }
 
         /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
         /// The first day during which the contract is active.
         /// </summary>
         [JsonProperty("startDate")]
@@ -163,16 +197,6 @@
         }
 
         /// <summary>
-        /// Identifier of the organization that has provided the contract to the customer.
-        /// </summary>
-        [JsonProperty("supplierId")]
-        public string? SupplierId
-        {
-            get => supplierId;
-            set => supplierId = Set("supplierId", value);
-        }
-
-        /// <summary>
         /// Identifier of the person who represents the supplier of the contract.
         /// </summary>
         [JsonProperty("supplierContactId")]
@@ -180,6 +204,16 @@
         {
             get => supplierContactId;
             set => supplierContactId = Set("supplierContactId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the organization that has provided the contract to the customer.
+        /// </summary>
+        [JsonProperty("supplierId")]
+        public string? SupplierId
+        {
+            get => supplierId;
+            set => supplierId = Set("supplierId", value);
         }
 
         /// <summary>
@@ -194,47 +228,13 @@
         }
 
         /// <summary>
-        /// Identifiers of the configuration items of the contract.
+        /// UI extension that is to be applied to the record.
         /// </summary>
-        [JsonProperty("configurationItemIds")]
-        public List<string>? ConfigurationItemIds
+        [JsonProperty("uiExtensionId")]
+        public string? UiExtensionId
         {
-            get => configurationItemIds;
-            set => configurationItemIds = Set("configurationItemIds", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// <br>The name of the contract.</br>
-        /// <br>If a unique ID is given to each contract, then this ID can be added at the start of the name.</br>
-        /// <br></br>
-        /// <br>Example:</br>
-        /// <br>• 2EGXQ2W – Dell 3-Year ProSupport and Next Business Day Onsite Repair for CMP00035</br>
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
-        }
-
-        /// <summary>
-        /// Identifier of the organization that pays for the contract.
-        /// </summary>
-        [JsonProperty("customerId")]
-        public string? CustomerId
-        {
-            get => customerId;
-            set => customerId = Set("customerId", value);
+            get => uiExtensionId;
+            set => uiExtensionId = Set("uiExtensionId", value);
         }
     }
 }

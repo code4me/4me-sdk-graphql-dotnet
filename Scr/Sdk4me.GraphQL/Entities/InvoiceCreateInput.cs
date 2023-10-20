@@ -5,125 +5,45 @@
     /// </summary>
     public class InvoiceCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
-        private string? workflowId;
-        private string? projectId;
-        private string? slaId;
-        private string? flsaId;
-        private string? contractId;
-        private List<string>? ciIds;
-        private bool? amortize;
-        private DateOnly? amortizationStart;
         private DateOnly? amortizationEnd;
+        private DateOnly? amortizationStart;
+        private bool? amortize;
+        private List<string>? ciIds;
+        private string? clientMutationId;
+        private string? contractId;
         private string? currency;
         private ProductDepreciationMethod? depreciationMethod;
         private DateOnly? depreciationStart;
-        private string? poNr;
-        private string? financialID;
-        private string? remarks;
-        private List<AttachmentInput>? remarksAttachments;
-        private string? serviceId;
-        private long? rate;
-        private decimal? salvageValue;
-        private string? salvageValueCurrency;
-        private long? usefulLife;
-        private string? clientMutationId;
-        private string? supplierId;
         private string? description;
+        private string? financialID;
+        private string? flsaId;
         private DateOnly? invoiceDate;
         private string? invoiceNr;
+        private string? poNr;
+        private string? projectId;
         private decimal? quantity;
+        private long? rate;
+        private string? remarks;
+        private List<AttachmentInput>? remarksAttachments;
+        private decimal? salvageValue;
+        private string? salvageValueCurrency;
+        private string? serviceId;
+        private string? slaId;
+        private string? source;
+        private string? sourceID;
+        private string? supplierId;
         private decimal? unitPrice;
+        private long? usefulLife;
+        private string? workflowId;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// The end date of the period over which the invoice is to be amortized.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("amortizationEnd")]
+        public DateOnly? AmortizationEnd
         {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
-        }
-
-        /// <summary>
-        /// The workflow linked to this invoice.
-        /// </summary>
-        [JsonProperty("workflowId")]
-        public string? WorkflowId
-        {
-            get => workflowId;
-            set => workflowId = Set("workflowId", value);
-        }
-
-        /// <summary>
-        /// The project linked to this invoice.
-        /// </summary>
-        [JsonProperty("projectId")]
-        public string? ProjectId
-        {
-            get => projectId;
-            set => projectId = Set("projectId", value);
-        }
-
-        /// <summary>
-        /// The service level agreement linked to this invoice.
-        /// </summary>
-        [JsonProperty("slaId")]
-        public string? SlaId
-        {
-            get => slaId;
-            set => slaId = Set("slaId", value);
-        }
-
-        /// <summary>
-        /// The first line support agreement linked to this invoice.
-        /// </summary>
-        [JsonProperty("flsaId")]
-        public string? FlsaId
-        {
-            get => flsaId;
-            set => flsaId = Set("flsaId", value);
-        }
-
-        /// <summary>
-        /// The contract linked to this invoice.
-        /// </summary>
-        [JsonProperty("contractId")]
-        public string? ContractId
-        {
-            get => contractId;
-            set => contractId = Set("contractId", value);
-        }
-
-        /// <summary>
-        /// The configuration items linked to this invoice.
-        /// </summary>
-        [JsonProperty("ciIds")]
-        public List<string>? CiIds
-        {
-            get => ciIds;
-            set => ciIds = Set("ciIds", value);
-        }
-
-        /// <summary>
-        /// Whether the invoice amount is to be amortized over time.
-        /// </summary>
-        [JsonProperty("amortize")]
-        public bool? Amortize
-        {
-            get => amortize;
-            set => amortize = Set("amortize", value);
+            get => amortizationEnd;
+            set => amortizationEnd = Set("amortizationEnd", value);
         }
 
         /// <summary>
@@ -137,13 +57,43 @@
         }
 
         /// <summary>
-        /// The end date of the period over which the invoice is to be amortized.
+        /// Whether the invoice amount is to be amortized over time.
         /// </summary>
-        [JsonProperty("amortizationEnd")]
-        public DateOnly? AmortizationEnd
+        [JsonProperty("amortize")]
+        public bool? Amortize
         {
-            get => amortizationEnd;
-            set => amortizationEnd = Set("amortizationEnd", value);
+            get => amortize;
+            set => amortize = Set("amortize", value);
+        }
+
+        /// <summary>
+        /// The configuration items linked to this invoice.
+        /// </summary>
+        [JsonProperty("ciIds")]
+        public List<string>? CiIds
+        {
+            get => ciIds;
+            set => ciIds = Set("ciIds", value);
+        }
+
+        /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The contract linked to this invoice.
+        /// </summary>
+        [JsonProperty("contractId")]
+        public string? ContractId
+        {
+            get => contractId;
+            set => contractId = Set("contractId", value);
         }
 
         /// <summary>
@@ -184,13 +134,13 @@
         }
 
         /// <summary>
-        /// Number of the purchase order that was used to order the (lease of the) configuration item from the supplier.
+        /// Short description of what was acquired.
         /// </summary>
-        [JsonProperty("poNr")]
-        public string? PoNr
+        [JsonProperty("description")]
+        public string? Description
         {
-            get => poNr;
-            set => poNr = Set("poNr", value);
+            get => description;
+            set => description = Set("description", value);
         }
 
         /// <summary>
@@ -201,6 +151,76 @@
         {
             get => financialID;
             set => financialID = Set("financialID", value);
+        }
+
+        /// <summary>
+        /// The first line support agreement linked to this invoice.
+        /// </summary>
+        [JsonProperty("flsaId")]
+        public string? FlsaId
+        {
+            get => flsaId;
+            set => flsaId = Set("flsaId", value);
+        }
+
+        /// <summary>
+        /// The date on which the invoice was sent out by the supplier.
+        /// </summary>
+        [JsonProperty("invoiceDate")]
+        public DateOnly? InvoiceDate
+        {
+            get => invoiceDate;
+            set => invoiceDate = Set("invoiceDate", value);
+        }
+
+        /// <summary>
+        /// The invoice number that the supplier specified on the invoice.
+        /// </summary>
+        [JsonProperty("invoiceNr")]
+        public string? InvoiceNr
+        {
+            get => invoiceNr;
+            set => invoiceNr = Set("invoiceNr", value);
+        }
+
+        /// <summary>
+        /// Number of the purchase order that was used to order the (lease of the) configuration item from the supplier.
+        /// </summary>
+        [JsonProperty("poNr")]
+        public string? PoNr
+        {
+            get => poNr;
+            set => poNr = Set("poNr", value);
+        }
+
+        /// <summary>
+        /// The project linked to this invoice.
+        /// </summary>
+        [JsonProperty("projectId")]
+        public string? ProjectId
+        {
+            get => projectId;
+            set => projectId = Set("projectId", value);
+        }
+
+        /// <summary>
+        /// The number of units that were acquired.
+        /// </summary>
+        [JsonProperty("quantity")]
+        public decimal? Quantity
+        {
+            get => quantity;
+            set => quantity = Set("quantity", value);
+        }
+
+        /// <summary>
+        /// Used to specify the yearly rate that should be applied to calculate the depreciation of the configuration item (CI) using the reducing balance (or diminishing value) method. When creating a new CI and a value is not specified for this field, it is set to the rate of the CI's product.
+        /// </summary>
+        [JsonProperty("rate")]
+        public long? Rate
+        {
+            get => rate;
+            set => rate = Set("rate", value);
         }
 
         /// <summary>
@@ -221,26 +241,6 @@
         {
             get => remarksAttachments;
             set => remarksAttachments = Set("remarksAttachments", value);
-        }
-
-        /// <summary>
-        /// The service that covers this invoice. Can only be set when the invoice is linked to a contract or configuration items.
-        /// </summary>
-        [JsonProperty("serviceId")]
-        public string? ServiceId
-        {
-            get => serviceId;
-            set => serviceId = Set("serviceId", value);
-        }
-
-        /// <summary>
-        /// Used to specify the yearly rate that should be applied to calculate the depreciation of the configuration item (CI) using the reducing balance (or diminishing value) method. When creating a new CI and a value is not specified for this field, it is set to the rate of the CI's product.
-        /// </summary>
-        [JsonProperty("rate")]
-        public long? Rate
-        {
-            get => rate;
-            set => rate = Set("rate", value);
         }
 
         /// <summary>
@@ -265,23 +265,43 @@
         }
 
         /// <summary>
-        /// The number of years within which the configuration item is to be depreciated. When creating a new CI and a value is not specified for this field, it is set to the useful life of the CI's product.
+        /// The service that covers this invoice. Can only be set when the invoice is linked to a contract or configuration items.
         /// </summary>
-        [JsonProperty("usefulLife")]
-        public long? UsefulLife
+        [JsonProperty("serviceId")]
+        public string? ServiceId
         {
-            get => usefulLife;
-            set => usefulLife = Set("usefulLife", value);
+            get => serviceId;
+            set => serviceId = Set("serviceId", value);
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// The service level agreement linked to this invoice.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("slaId")]
+        public string? SlaId
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
+            get => slaId;
+            set => slaId = Set("slaId", value);
+        }
+
+        /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
         }
 
         /// <summary>
@@ -295,46 +315,6 @@
         }
 
         /// <summary>
-        /// Short description of what was acquired.
-        /// </summary>
-        [JsonProperty("description")]
-        public string? Description
-        {
-            get => description;
-            set => description = Set("description", value);
-        }
-
-        /// <summary>
-        /// The date on which the invoice was sent out by the supplier.
-        /// </summary>
-        [JsonProperty("invoiceDate")]
-        public DateOnly? InvoiceDate
-        {
-            get => invoiceDate;
-            set => invoiceDate = Set("invoiceDate", value);
-        }
-
-        /// <summary>
-        /// The invoice number that the supplier specified on the invoice.
-        /// </summary>
-        [JsonProperty("invoiceNr")]
-        public string? InvoiceNr
-        {
-            get => invoiceNr;
-            set => invoiceNr = Set("invoiceNr", value);
-        }
-
-        /// <summary>
-        /// The number of units that were acquired.
-        /// </summary>
-        [JsonProperty("quantity")]
-        public decimal? Quantity
-        {
-            get => quantity;
-            set => quantity = Set("quantity", value);
-        }
-
-        /// <summary>
         /// The amount that the supplier has charged per unit that was acquired.
         /// </summary>
         [JsonProperty("unitPrice")]
@@ -342,6 +322,26 @@
         {
             get => unitPrice;
             set => unitPrice = Set("unitPrice", value);
+        }
+
+        /// <summary>
+        /// The number of years within which the configuration item is to be depreciated. When creating a new CI and a value is not specified for this field, it is set to the useful life of the CI's product.
+        /// </summary>
+        [JsonProperty("usefulLife")]
+        public long? UsefulLife
+        {
+            get => usefulLife;
+            set => usefulLife = Set("usefulLife", value);
+        }
+
+        /// <summary>
+        /// The workflow linked to this invoice.
+        /// </summary>
+        [JsonProperty("workflowId")]
+        public string? WorkflowId
+        {
+            get => workflowId;
+            set => workflowId = Set("workflowId", value);
         }
     }
 }

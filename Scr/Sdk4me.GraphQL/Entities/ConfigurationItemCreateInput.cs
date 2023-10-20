@@ -5,28 +5,29 @@
     /// </summary>
     public class ConfigurationItemCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
-        private string? pictureUri;
-        private CustomFieldCollection? customFields;
-        private List<AttachmentInput>? customFieldsAttachments;
         private List<string>? alternateNames;
         private string? assetID;
-        private DateOnly? endOfSupportDate;
+        private string? clientMutationId;
         private List<string>? contractIds;
+        private CustomFieldCollection? customFields;
+        private List<AttachmentInput>? customFieldsAttachments;
+        private DateOnly? endOfSupportDate;
         private string? financialOwnerId;
         private DateOnly? inUseSince;
         private string? label;
         private DateTime? lastSeenAt;
+        private List<string>? licensedSiteIds;
         private DateOnly? licenseExpiryDate;
         private CiLicenseType? licenseType;
-        private List<string>? licensedSiteIds;
         private string? location;
         private string? name;
+        private List<CiRelationInput>? newCiRelations;
         private long? nrOfCores;
         private long? nrOfLicenses;
         private long? nrOfProcessors;
         private string? operatingSystemId;
+        private string? pictureUri;
+        private string? productId;
         private decimal? purchaseValue;
         private string? purchaseValueCurrency;
         private long? ramAmount;
@@ -39,6 +40,9 @@
         private List<string>? serviceInstanceIds;
         private string? siteId;
         private bool? siteLicense;
+        private string? source;
+        private string? sourceID;
+        private CiStatus? status;
         private string? supplierId;
         private string? supportTeamId;
         private string? systemID;
@@ -47,39 +51,45 @@
         private DateOnly? warrantyExpiryDate;
         private string? workflowManagerId;
         private string? workflowTemplateId;
-        private List<CiRelationInput>? newCiRelations;
-        private string? clientMutationId;
-        private string? productId;
-        private CiStatus? status;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// Alternate names the configuration item is also known by.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("alternateNames")]
+        public List<string>? AlternateNames
         {
-            get => source;
-            set => source = Set("source", value);
+            get => alternateNames;
+            set => alternateNames = Set("alternateNames", value);
         }
 
         /// <summary>
-        /// The unique identifier of the resource in an external system.
+        /// Asset identifier of the configuration item.
         /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
+        [JsonProperty("assetID")]
+        public string? AssetID
         {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
+            get => assetID;
+            set => assetID = Set("assetID", value);
         }
 
         /// <summary>
-        /// The hyperlink to the image file for the record.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("pictureUri")]
-        public string? PictureUri
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => pictureUri;
-            set => pictureUri = Set("pictureUri", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Identifiers of the contracts of this configuration item.
+        /// </summary>
+        [JsonProperty("contractIds")]
+        public List<string>? ContractIds
+        {
+            get => contractIds;
+            set => contractIds = Set("contractIds", value);
         }
 
         /// <summary>
@@ -103,26 +113,6 @@
         }
 
         /// <summary>
-        /// Alternate names the configuration item is also known by.
-        /// </summary>
-        [JsonProperty("alternateNames")]
-        public List<string>? AlternateNames
-        {
-            get => alternateNames;
-            set => alternateNames = Set("alternateNames", value);
-        }
-
-        /// <summary>
-        /// Asset identifier of the configuration item.
-        /// </summary>
-        [JsonProperty("assetID")]
-        public string? AssetID
-        {
-            get => assetID;
-            set => assetID = Set("assetID", value);
-        }
-
-        /// <summary>
         /// The date at which the support for this configuration item ends.
         /// </summary>
         [JsonProperty("endOfSupportDate")]
@@ -130,16 +120,6 @@
         {
             get => endOfSupportDate;
             set => endOfSupportDate = Set("endOfSupportDate", value);
-        }
-
-        /// <summary>
-        /// Identifiers of the contracts of this configuration item.
-        /// </summary>
-        [JsonProperty("contractIds")]
-        public List<string>? ContractIds
-        {
-            get => contractIds;
-            set => contractIds = Set("contractIds", value);
         }
 
         /// <summary>
@@ -183,6 +163,16 @@
         }
 
         /// <summary>
+        /// Identifiers of the sites at which the software that is covered by the license certificate may be used.
+        /// </summary>
+        [JsonProperty("licensedSiteIds")]
+        public List<string>? LicensedSiteIds
+        {
+            get => licensedSiteIds;
+            set => licensedSiteIds = Set("licensedSiteIds", value);
+        }
+
+        /// <summary>
         /// The date through which the temporary software license certificate is valid. The license certificate expires at the end of this day.
         /// </summary>
         [JsonProperty("licenseExpiryDate")]
@@ -203,16 +193,6 @@
         }
 
         /// <summary>
-        /// Identifiers of the sites at which the software that is covered by the license certificate may be used.
-        /// </summary>
-        [JsonProperty("licensedSiteIds")]
-        public List<string>? LicensedSiteIds
-        {
-            get => licensedSiteIds;
-            set => licensedSiteIds = Set("licensedSiteIds", value);
-        }
-
-        /// <summary>
         /// The name or number of the room in which the CI is located, if it concerns a hardware CI.
         /// </summary>
         [JsonProperty("location")]
@@ -230,6 +210,16 @@
         {
             get => name;
             set => name = Set("name", value);
+        }
+
+        /// <summary>
+        /// Relations to other configuration items.
+        /// </summary>
+        [JsonProperty("newCiRelations")]
+        public List<CiRelationInput>? NewCiRelations
+        {
+            get => newCiRelations;
+            set => newCiRelations = Set("newCiRelations", value);
         }
 
         /// <summary>
@@ -270,6 +260,26 @@
         {
             get => operatingSystemId;
             set => operatingSystemId = Set("operatingSystemId", value);
+        }
+
+        /// <summary>
+        /// The hyperlink to the image file for the record.
+        /// </summary>
+        [JsonProperty("pictureUri")]
+        public string? PictureUri
+        {
+            get => pictureUri;
+            set => pictureUri = Set("pictureUri", value);
+        }
+
+        /// <summary>
+        /// Identifier of the related product.
+        /// </summary>
+        [JsonProperty("productId")]
+        public string? ProductId
+        {
+            get => productId;
+            set => productId = Set("productId", value);
         }
 
         /// <summary>
@@ -394,6 +404,36 @@
         }
 
         /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// The appropriate status for the configuration item (CI).
+        /// </summary>
+        [JsonProperty("status")]
+        public CiStatus? Status
+        {
+            get => status;
+            set => status = Set("status", value);
+        }
+
+        /// <summary>
         /// Identifier of the supplier from which the configuration item (CI) has been obtained. When creating a new CI and a value is not specified for this field, it is set to the supplier of the CI's product.
         /// </summary>
         [JsonProperty("supplierId")]
@@ -471,46 +511,6 @@
         {
             get => workflowTemplateId;
             set => workflowTemplateId = Set("workflowTemplateId", value);
-        }
-
-        /// <summary>
-        /// Relations to other configuration items.
-        /// </summary>
-        [JsonProperty("newCiRelations")]
-        public List<CiRelationInput>? NewCiRelations
-        {
-            get => newCiRelations;
-            set => newCiRelations = Set("newCiRelations", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// Identifier of the related product.
-        /// </summary>
-        [JsonProperty("productId")]
-        public string? ProductId
-        {
-            get => productId;
-            set => productId = Set("productId", value);
-        }
-
-        /// <summary>
-        /// The appropriate status for the configuration item (CI).
-        /// </summary>
-        [JsonProperty("status")]
-        public CiStatus? Status
-        {
-            get => status;
-            set => status = Set("status", value);
         }
     }
 }

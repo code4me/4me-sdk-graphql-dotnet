@@ -35,6 +35,18 @@
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
+        /// Account this app instance is for.
+        /// </summary>
+        [JsonProperty("customerAccount")]
+        public Account? CustomerAccount { get; internal set; }
+
+        /// <summary>
+        /// Contact person of customer regarding this app instance.
+        /// </summary>
+        [JsonProperty("customerRepresentative")]
+        public Person? CustomerRepresentative { get; internal set; }
+
+        /// <summary>
         /// Values of custom fields.
         /// </summary>
         [JsonProperty("customFields")]
@@ -50,18 +62,6 @@
         {
             get => CustomFieldsAttachmentsCollection?.Data;
         }
-
-        /// <summary>
-        /// Account this app instance is for.
-        /// </summary>
-        [JsonProperty("customerAccount")]
-        public Account? CustomerAccount { get; internal set; }
-
-        /// <summary>
-        /// Contact person of customer regarding this app instance.
-        /// </summary>
-        [JsonProperty("customerRepresentative")]
-        public Person? CustomerRepresentative { get; internal set; }
 
         /// <summary>
         /// Whether the app instance is currently enabled for this customer.

@@ -6,10 +6,10 @@
     public class DiscoveredProductCategoryInput : PropertyChangeSet
     {
         private DiscoveredItemMetaData? meta;
-        private string? reference;
-        private string? sourceID;
         private string? name;
         private List<DiscoveredProductInput>? products;
+        private string? reference;
+        private string? sourceID;
 
         /// <summary>
         /// Meta data describing how to process the values supplied.
@@ -19,26 +19,6 @@
         {
             get => meta;
             set => meta = Set("meta", value);
-        }
-
-        /// <summary>
-        /// Reference identifying the product category.
-        /// </summary>
-        [JsonProperty("reference")]
-        public string? Reference
-        {
-            get => reference;
-            set => reference = Set("reference", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the product category in an external system
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
         }
 
         /// <summary>
@@ -59,6 +39,26 @@
         {
             get => products;
             set => products = Set("products", value);
+        }
+
+        /// <summary>
+        /// Reference identifying the product category.
+        /// </summary>
+        [JsonProperty("reference")]
+        public string? Reference
+        {
+            get => reference;
+            set => reference = Set("reference", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the product category in an external system
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
         }
     }
 }

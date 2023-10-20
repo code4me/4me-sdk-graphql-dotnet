@@ -304,12 +304,6 @@
         [JsonProperty("urgent")]
         public bool? Urgent { get; internal set; }
 
-        /// <summary>
-        /// Whether the completion target of tasks created based on the template are calculated using a 24x7 calendar rather than normal business hours.
-        /// </summary>
-        [JsonProperty("workHoursAre24x7")]
-        public bool? WorkHoursAre24x7 { get; internal set; }
-
         [JsonProperty("workflowTemplates")]
         internal NodeCollection<WorkflowTemplate>? WorkflowTemplatesCollection { get; set; }
 
@@ -320,6 +314,12 @@
         {
             get => WorkflowTemplatesCollection?.Data;
         }
+
+        /// <summary>
+        /// Whether the completion target of tasks created based on the template are calculated using a 24x7 calendar rather than normal business hours.
+        /// </summary>
+        [JsonProperty("workHoursAre24x7")]
+        public bool? WorkHoursAre24x7 { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)
         {

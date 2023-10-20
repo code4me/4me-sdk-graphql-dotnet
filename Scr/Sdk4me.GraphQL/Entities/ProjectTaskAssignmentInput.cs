@@ -5,21 +5,11 @@
     /// </summary>
     public class ProjectTaskAssignmentInput : PropertyChangeSet
     {
-        private string? id;
         private string? assigneeId;
+        private string? id;
         private long? plannedEffort;
         private ProjectTaskStatus? status;
         private DateTime? waitingUntil;
-
-        /// <summary>
-        /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
-        }
 
         /// <summary>
         /// Identifier of the person who is selected as the assignee for the assignment.
@@ -29,6 +19,16 @@
         {
             get => assigneeId;
             set => assigneeId = Set("assigneeId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
         }
 
         /// <summary>

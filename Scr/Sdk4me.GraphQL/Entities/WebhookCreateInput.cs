@@ -5,24 +5,24 @@
     /// </summary>
     public class WebhookCreateInput : PropertyChangeSet
     {
-        private bool? disabled;
+        private string? clientMutationId;
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
+        private bool? disabled;
+        private WebhookEvent? @event;
         private string? mailExceptionsTo;
         private string? name;
-        private string? webhookPolicyId;
-        private string? clientMutationId;
-        private WebhookEvent? @event;
         private string? uri;
+        private string? webhookPolicyId;
 
         /// <summary>
-        /// Whether the webhook will be triggered when the event occurs.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("disabled")]
-        public bool? Disabled
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => disabled;
-            set => disabled = Set("disabled", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -46,6 +46,26 @@
         }
 
         /// <summary>
+        /// Whether the webhook will be triggered when the event occurs.
+        /// </summary>
+        [JsonProperty("disabled")]
+        public bool? Disabled
+        {
+            get => disabled;
+            set => disabled = Set("disabled", value);
+        }
+
+        /// <summary>
+        /// Event that will trigger this webhook.
+        /// </summary>
+        [JsonProperty("event")]
+        public WebhookEvent? Event
+        {
+            get => @event;
+            set => @event = Set("event", value);
+        }
+
+        /// <summary>
         /// Comma separated list of email addresses who will be informed when the webhook execution fails.
         /// </summary>
         [JsonProperty("mailExceptionsTo")]
@@ -66,36 +86,6 @@
         }
 
         /// <summary>
-        /// The webhook policy to use for cryptographic signing of the messages.
-        /// </summary>
-        [JsonProperty("webhookPolicyId")]
-        public string? WebhookPolicyId
-        {
-            get => webhookPolicyId;
-            set => webhookPolicyId = Set("webhookPolicyId", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// Event that will trigger this webhook.
-        /// </summary>
-        [JsonProperty("event")]
-        public WebhookEvent? Event
-        {
-            get => @event;
-            set => @event = Set("event", value);
-        }
-
-        /// <summary>
         /// Publicly accessible URI that 4me can use to POST http messages to.
         /// </summary>
         [JsonProperty("uri")]
@@ -103,6 +93,16 @@
         {
             get => uri;
             set => uri = Set("uri", value);
+        }
+
+        /// <summary>
+        /// The webhook policy to use for cryptographic signing of the messages.
+        /// </summary>
+        [JsonProperty("webhookPolicyId")]
+        public string? WebhookPolicyId
+        {
+            get => webhookPolicyId;
+            set => webhookPolicyId = Set("webhookPolicyId", value);
         }
     }
 }

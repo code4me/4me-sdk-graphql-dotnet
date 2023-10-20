@@ -5,20 +5,21 @@
     /// </summary>
     public class ProjectTaskTemplateCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
-        private string? uiExtensionId;
         private bool? assignToProjectManager;
         private bool? assignToRequester;
         private bool? assignToRequesterBusinessUnitManager;
         private bool? assignToRequesterManager;
         private bool? assignToServiceOwner;
+        private ProjectTaskCategory? category;
+        private string? clientMutationId;
         private bool? copyNotesToProject;
         private bool? disabled;
         private string? effortClassId;
         private string? instructions;
+        private List<ProjectTaskTemplateAssignmentInput>? newAssignments;
         private string? note;
         private string? pdfDesignId;
+        private long? plannedDuration;
         private long? plannedEffort;
         private long? plannedEffortProjectManager;
         private long? plannedEffortRequester;
@@ -27,44 +28,13 @@
         private long? plannedEffortServiceOwner;
         private long? requiredApprovals;
         private string? skillPoolId;
+        private string? source;
+        private string? sourceID;
+        private string? subject;
         private string? supplierId;
         private string? teamId;
+        private string? uiExtensionId;
         private bool? workHoursAre24x7;
-        private List<ProjectTaskTemplateAssignmentInput>? newAssignments;
-        private string? clientMutationId;
-        private ProjectTaskCategory? category;
-        private long? plannedDuration;
-        private string? subject;
-
-        /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
-        /// </summary>
-        [JsonProperty("source")]
-        public string? Source
-        {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
-        }
-
-        /// <summary>
-        /// UI extension that is to be applied to the record.
-        /// </summary>
-        [JsonProperty("uiExtensionId")]
-        public string? UiExtensionId
-        {
-            get => uiExtensionId;
-            set => uiExtensionId = Set("uiExtensionId", value);
-        }
 
         /// <summary>
         /// Whether the project manager is to be selected in the Assignees field of a new project task when it is being created based on the template.
@@ -117,6 +87,26 @@
         }
 
         /// <summary>
+        /// The category that needs to be selected in the Category field of a new project task when it is being created based on the template.
+        /// </summary>
+        [JsonProperty("category")]
+        public ProjectTaskCategory? Category
+        {
+            get => category;
+            set => category = Set("category", value);
+        }
+
+        /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
         /// Whether the Copy note to project box of project tasks that were created based on the template needs to be checked by default. (The Copy notes to project checkbox is called "Copy notes to project by default" when the project task template is in Edit mode.)
         /// </summary>
         [JsonProperty("copyNotesToProject")]
@@ -157,6 +147,16 @@
         }
 
         /// <summary>
+        /// Assignments of the project task template.
+        /// </summary>
+        [JsonProperty("newAssignments")]
+        public List<ProjectTaskTemplateAssignmentInput>? NewAssignments
+        {
+            get => newAssignments;
+            set => newAssignments = Set("newAssignments", value);
+        }
+
+        /// <summary>
         /// The information that needs to be copied to the Note field of a new project task when it is being created based on the template.
         /// </summary>
         [JsonProperty("note")]
@@ -174,6 +174,16 @@
         {
             get => pdfDesignId;
             set => pdfDesignId = Set("pdfDesignId", value);
+        }
+
+        /// <summary>
+        /// Used to specify the number of minutes that should be entered in the Planned duration field of a new project task when it is being created based on the template.
+        /// </summary>
+        [JsonProperty("plannedDuration")]
+        public long? PlannedDuration
+        {
+            get => plannedDuration;
+            set => plannedDuration = Set("plannedDuration", value);
         }
 
         /// <summary>
@@ -257,6 +267,36 @@
         }
 
         /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// A short description that needs to be copied to the Subject field of a new project task when it is being created based on the template.
+        /// </summary>
+        [JsonProperty("subject")]
+        public string? Subject
+        {
+            get => subject;
+            set => subject = Set("subject", value);
+        }
+
+        /// <summary>
         /// Identifier of the supplier organization that should be selected in the Supplier field of a new project task when it is being created based on the template.
         /// </summary>
         [JsonProperty("supplierId")]
@@ -277,6 +317,16 @@
         }
 
         /// <summary>
+        /// UI extension that is to be applied to the record.
+        /// </summary>
+        [JsonProperty("uiExtensionId")]
+        public string? UiExtensionId
+        {
+            get => uiExtensionId;
+            set => uiExtensionId = Set("uiExtensionId", value);
+        }
+
+        /// <summary>
         /// When set to true, the completion target of project tasks created based on the template are calculated using a 24x7 calendar rather than normal business hours.
         /// </summary>
         [JsonProperty("workHoursAre24x7")]
@@ -284,56 +334,6 @@
         {
             get => workHoursAre24x7;
             set => workHoursAre24x7 = Set("workHoursAre24x7", value);
-        }
-
-        /// <summary>
-        /// Assignments of the project task template.
-        /// </summary>
-        [JsonProperty("newAssignments")]
-        public List<ProjectTaskTemplateAssignmentInput>? NewAssignments
-        {
-            get => newAssignments;
-            set => newAssignments = Set("newAssignments", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// The category that needs to be selected in the Category field of a new project task when it is being created based on the template.
-        /// </summary>
-        [JsonProperty("category")]
-        public ProjectTaskCategory? Category
-        {
-            get => category;
-            set => category = Set("category", value);
-        }
-
-        /// <summary>
-        /// Used to specify the number of minutes that should be entered in the Planned duration field of a new project task when it is being created based on the template.
-        /// </summary>
-        [JsonProperty("plannedDuration")]
-        public long? PlannedDuration
-        {
-            get => plannedDuration;
-            set => plannedDuration = Set("plannedDuration", value);
-        }
-
-        /// <summary>
-        /// A short description that needs to be copied to the Subject field of a new project task when it is being created based on the template.
-        /// </summary>
-        [JsonProperty("subject")]
-        public string? Subject
-        {
-            get => subject;
-            set => subject = Set("subject", value);
         }
     }
 }

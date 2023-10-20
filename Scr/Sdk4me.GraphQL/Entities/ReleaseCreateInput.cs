@@ -5,35 +5,25 @@
     /// </summary>
     public class ReleaseCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
+        private string? clientMutationId;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
-        private string? uiExtensionId;
-        private string? note;
-        private List<string>? workflowIds;
-        private string? clientMutationId;
         private string? managerId;
+        private string? note;
+        private string? source;
+        private string? sourceID;
         private string? subject;
+        private string? uiExtensionId;
+        private List<string>? workflowIds;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -57,13 +47,13 @@
         }
 
         /// <summary>
-        /// UI extension that is to be applied to the record.
+        /// Identifier of the person who is responsible for coordinating the implementation of the release. The person must have the release Manager role.
         /// </summary>
-        [JsonProperty("uiExtensionId")]
-        public string? UiExtensionId
+        [JsonProperty("managerId")]
+        public string? ManagerId
         {
-            get => uiExtensionId;
-            set => uiExtensionId = Set("uiExtensionId", value);
+            get => managerId;
+            set => managerId = Set("managerId", value);
         }
 
         /// <summary>
@@ -77,33 +67,23 @@
         }
 
         /// <summary>
-        /// Identifiers of the workflows of the release.
+        /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("workflowIds")]
-        public List<string>? WorkflowIds
+        [JsonProperty("source")]
+        public string? Source
         {
-            get => workflowIds;
-            set => workflowIds = Set("workflowIds", value);
+            get => source;
+            set => source = Set("source", value);
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// The unique identifier of the resource in an external system.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("sourceID")]
+        public string? SourceID
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// Identifier of the person who is responsible for coordinating the implementation of the release. The person must have the release Manager role.
-        /// </summary>
-        [JsonProperty("managerId")]
-        public string? ManagerId
-        {
-            get => managerId;
-            set => managerId = Set("managerId", value);
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
         }
 
         /// <summary>
@@ -114,6 +94,26 @@
         {
             get => subject;
             set => subject = Set("subject", value);
+        }
+
+        /// <summary>
+        /// UI extension that is to be applied to the record.
+        /// </summary>
+        [JsonProperty("uiExtensionId")]
+        public string? UiExtensionId
+        {
+            get => uiExtensionId;
+            set => uiExtensionId = Set("uiExtensionId", value);
+        }
+
+        /// <summary>
+        /// Identifiers of the workflows of the release.
+        /// </summary>
+        [JsonProperty("workflowIds")]
+        public List<string>? WorkflowIds
+        {
+            get => workflowIds;
+            set => workflowIds = Set("workflowIds", value);
         }
     }
 }

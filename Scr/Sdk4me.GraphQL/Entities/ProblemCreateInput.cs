@@ -5,122 +5,42 @@
     /// </summary>
     public class ProblemCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
-        private CustomFieldCollection? customFields;
-        private List<AttachmentInput>? customFieldsAttachments;
-        private string? uiExtensionId;
-        private long? timeSpent;
-        private string? timeSpentEffortClassId;
-        private string? agileBoardId;
         private string? agileBoardColumnId;
         private long? agileBoardColumnPosition;
-        private string? productBacklogId;
-        private long? productBacklogPosition;
-        private long? productBacklogEstimate;
+        private string? agileBoardId;
         private DateTime? analysisTargetAt;
         private ProblemCategory? category;
-        private string? workflowId;
+        private string? clientMutationId;
+        private List<string>? configurationItemIds;
+        private CustomFieldCollection? customFields;
+        private List<AttachmentInput>? customFieldsAttachments;
         private ProblemImpact? impact;
         private string? knowledgeArticleId;
         private bool? knownError;
         private string? managerId;
         private string? memberId;
         private string? note;
+        private long? productBacklogEstimate;
+        private string? productBacklogId;
+        private long? productBacklogPosition;
         private string? projectId;
+        private List<string>? requestIds;
+        private string? serviceId;
+        private List<string>? serviceInstanceIds;
+        private string? source;
+        private string? sourceID;
         private ProblemStatus? status;
+        private string? subject;
         private string? supplierId;
         private string? supplierRequestID;
         private string? teamId;
+        private long? timeSpent;
+        private string? timeSpentEffortClassId;
+        private string? uiExtensionId;
         private bool? urgent;
         private DateTime? waitingUntil;
         private string? workaround;
-        private List<string>? configurationItemIds;
-        private List<string>? requestIds;
-        private List<string>? serviceInstanceIds;
-        private string? clientMutationId;
-        private string? subject;
-        private string? serviceId;
-
-        /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
-        /// </summary>
-        [JsonProperty("source")]
-        public string? Source
-        {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
-        }
-
-        /// <summary>
-        /// Values for custom fields to be used by the UI Extension that is linked to the record.
-        /// </summary>
-        [JsonProperty("customFields")]
-        public CustomFieldCollection? CustomFields
-        {
-            get => customFields;
-            set => customFields = Set("customFields", value);
-        }
-
-        /// <summary>
-        /// The attachments used in the custom fields' values.
-        /// </summary>
-        [JsonProperty("customFieldsAttachments")]
-        public List<AttachmentInput>? CustomFieldsAttachments
-        {
-            get => customFieldsAttachments;
-            set => customFieldsAttachments = Set("customFieldsAttachments", value);
-        }
-
-        /// <summary>
-        /// UI extension that is to be applied to the record.
-        /// </summary>
-        [JsonProperty("uiExtensionId")]
-        public string? UiExtensionId
-        {
-            get => uiExtensionId;
-            set => uiExtensionId = Set("uiExtensionId", value);
-        }
-
-        /// <summary>
-        /// The time that you have spent working on the request since you started to work on it or, if you already entered some time for this request, since you last added your time spent in it.
-        /// </summary>
-        [JsonProperty("timeSpent")]
-        public long? TimeSpent
-        {
-            get => timeSpent;
-            set => timeSpent = Set("timeSpent", value);
-        }
-
-        /// <summary>
-        /// The effort class that best reflects the type of effort for which time spent is being registered.
-        /// </summary>
-        [JsonProperty("timeSpentEffortClassId")]
-        public string? TimeSpentEffortClassId
-        {
-            get => timeSpentEffortClassId;
-            set => timeSpentEffortClassId = Set("timeSpentEffortClassId", value);
-        }
-
-        /// <summary>
-        /// ID of the board this item is placed on.
-        /// </summary>
-        [JsonProperty("agileBoardId")]
-        public string? AgileBoardId
-        {
-            get => agileBoardId;
-            set => agileBoardId = Set("agileBoardId", value);
-        }
+        private string? workflowId;
 
         /// <summary>
         /// ID of the column this item is placed in.
@@ -143,33 +63,13 @@
         }
 
         /// <summary>
-        /// Identifier of the product backlog this item is placed on.
+        /// ID of the board this item is placed on.
         /// </summary>
-        [JsonProperty("productBacklogId")]
-        public string? ProductBacklogId
+        [JsonProperty("agileBoardId")]
+        public string? AgileBoardId
         {
-            get => productBacklogId;
-            set => productBacklogId = Set("productBacklogId", value);
-        }
-
-        /// <summary>
-        /// The (one based) position of this item on the backlog.
-        /// </summary>
-        [JsonProperty("productBacklogPosition")]
-        public long? ProductBacklogPosition
-        {
-            get => productBacklogPosition;
-            set => productBacklogPosition = Set("productBacklogPosition", value);
-        }
-
-        /// <summary>
-        /// Estimate of the relative size of this item on the product backlog.
-        /// </summary>
-        [JsonProperty("productBacklogEstimate")]
-        public long? ProductBacklogEstimate
-        {
-            get => productBacklogEstimate;
-            set => productBacklogEstimate = Set("productBacklogEstimate", value);
+            get => agileBoardId;
+            set => agileBoardId = Set("agileBoardId", value);
         }
 
         /// <summary>
@@ -193,13 +93,43 @@
         }
 
         /// <summary>
-        /// Identifier of the workflow that will implement the proposed permanent solution for the problem.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("workflowId")]
-        public string? WorkflowId
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => workflowId;
-            set => workflowId = Set("workflowId", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Identifiers of configuration items of this problem.
+        /// </summary>
+        [JsonProperty("configurationItemIds")]
+        public List<string>? ConfigurationItemIds
+        {
+            get => configurationItemIds;
+            set => configurationItemIds = Set("configurationItemIds", value);
+        }
+
+        /// <summary>
+        /// Values for custom fields to be used by the UI Extension that is linked to the record.
+        /// </summary>
+        [JsonProperty("customFields")]
+        public CustomFieldCollection? CustomFields
+        {
+            get => customFields;
+            set => customFields = Set("customFields", value);
+        }
+
+        /// <summary>
+        /// The attachments used in the custom fields' values.
+        /// </summary>
+        [JsonProperty("customFieldsAttachments")]
+        public List<AttachmentInput>? CustomFieldsAttachments
+        {
+            get => customFieldsAttachments;
+            set => customFieldsAttachments = Set("customFieldsAttachments", value);
         }
 
         /// <summary>
@@ -263,6 +193,36 @@
         }
 
         /// <summary>
+        /// Estimate of the relative size of this item on the product backlog.
+        /// </summary>
+        [JsonProperty("productBacklogEstimate")]
+        public long? ProductBacklogEstimate
+        {
+            get => productBacklogEstimate;
+            set => productBacklogEstimate = Set("productBacklogEstimate", value);
+        }
+
+        /// <summary>
+        /// Identifier of the product backlog this item is placed on.
+        /// </summary>
+        [JsonProperty("productBacklogId")]
+        public string? ProductBacklogId
+        {
+            get => productBacklogId;
+            set => productBacklogId = Set("productBacklogId", value);
+        }
+
+        /// <summary>
+        /// The (one based) position of this item on the backlog.
+        /// </summary>
+        [JsonProperty("productBacklogPosition")]
+        public long? ProductBacklogPosition
+        {
+            get => productBacklogPosition;
+            set => productBacklogPosition = Set("productBacklogPosition", value);
+        }
+
+        /// <summary>
         /// Identifier of the project to link the problem to.
         /// </summary>
         [JsonProperty("projectId")]
@@ -273,6 +233,56 @@
         }
 
         /// <summary>
+        /// Identifiers of requests of this problem.
+        /// </summary>
+        [JsonProperty("requestIds")]
+        public List<string>? RequestIds
+        {
+            get => requestIds;
+            set => requestIds = Set("requestIds", value);
+        }
+
+        /// <summary>
+        /// Identifier of the service in which instance(s) the problem resides.
+        /// </summary>
+        [JsonProperty("serviceId")]
+        public string? ServiceId
+        {
+            get => serviceId;
+            set => serviceId = Set("serviceId", value);
+        }
+
+        /// <summary>
+        /// Identifiers of service instances of this problem.
+        /// </summary>
+        [JsonProperty("serviceInstanceIds")]
+        public List<string>? ServiceInstanceIds
+        {
+            get => serviceInstanceIds;
+            set => serviceInstanceIds = Set("serviceInstanceIds", value);
+        }
+
+        /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
         /// The current status of the problem.
         /// </summary>
         [JsonProperty("status")]
@@ -280,6 +290,16 @@
         {
             get => status;
             set => status = Set("status", value);
+        }
+
+        /// <summary>
+        /// A short description of the symptoms that the problem causes.
+        /// </summary>
+        [JsonProperty("subject")]
+        public string? Subject
+        {
+            get => subject;
+            set => subject = Set("subject", value);
         }
 
         /// <summary>
@@ -313,6 +333,36 @@
         }
 
         /// <summary>
+        /// The time that you have spent working on the request since you started to work on it or, if you already entered some time for this request, since you last added your time spent in it.
+        /// </summary>
+        [JsonProperty("timeSpent")]
+        public long? TimeSpent
+        {
+            get => timeSpent;
+            set => timeSpent = Set("timeSpent", value);
+        }
+
+        /// <summary>
+        /// The effort class that best reflects the type of effort for which time spent is being registered.
+        /// </summary>
+        [JsonProperty("timeSpentEffortClassId")]
+        public string? TimeSpentEffortClassId
+        {
+            get => timeSpentEffortClassId;
+            set => timeSpentEffortClassId = Set("timeSpentEffortClassId", value);
+        }
+
+        /// <summary>
+        /// UI extension that is to be applied to the record.
+        /// </summary>
+        [JsonProperty("uiExtensionId")]
+        public string? UiExtensionId
+        {
+            get => uiExtensionId;
+            set => uiExtensionId = Set("uiExtensionId", value);
+        }
+
+        /// <summary>
         /// Whether the problem has been marked as urgent.
         /// </summary>
         [JsonProperty("urgent")]
@@ -343,63 +393,13 @@
         }
 
         /// <summary>
-        /// Identifiers of configuration items of this problem.
+        /// Identifier of the workflow that will implement the proposed permanent solution for the problem.
         /// </summary>
-        [JsonProperty("configurationItemIds")]
-        public List<string>? ConfigurationItemIds
+        [JsonProperty("workflowId")]
+        public string? WorkflowId
         {
-            get => configurationItemIds;
-            set => configurationItemIds = Set("configurationItemIds", value);
-        }
-
-        /// <summary>
-        /// Identifiers of requests of this problem.
-        /// </summary>
-        [JsonProperty("requestIds")]
-        public List<string>? RequestIds
-        {
-            get => requestIds;
-            set => requestIds = Set("requestIds", value);
-        }
-
-        /// <summary>
-        /// Identifiers of service instances of this problem.
-        /// </summary>
-        [JsonProperty("serviceInstanceIds")]
-        public List<string>? ServiceInstanceIds
-        {
-            get => serviceInstanceIds;
-            set => serviceInstanceIds = Set("serviceInstanceIds", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// A short description of the symptoms that the problem causes.
-        /// </summary>
-        [JsonProperty("subject")]
-        public string? Subject
-        {
-            get => subject;
-            set => subject = Set("subject", value);
-        }
-
-        /// <summary>
-        /// Identifier of the service in which instance(s) the problem resides.
-        /// </summary>
-        [JsonProperty("serviceId")]
-        public string? ServiceId
-        {
-            get => serviceId;
-            set => serviceId = Set("serviceId", value);
+            get => workflowId;
+            set => workflowId = Set("workflowId", value);
         }
     }
 }

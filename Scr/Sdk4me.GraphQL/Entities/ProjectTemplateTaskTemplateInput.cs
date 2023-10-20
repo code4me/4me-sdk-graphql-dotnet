@@ -6,8 +6,8 @@
     public class ProjectTemplateTaskTemplateInput : PropertyChangeSet
     {
         private string? id;
-        private string? taskTemplateId;
         private string? phaseName;
+        private string? taskTemplateId;
 
         /// <summary>
         /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
@@ -20,16 +20,6 @@
         }
 
         /// <summary>
-        /// Identifier of the project task template that is related to the project template.
-        /// </summary>
-        [JsonProperty("taskTemplateId")]
-        public string? TaskTemplateId
-        {
-            get => taskTemplateId;
-            set => taskTemplateId = Set("taskTemplateId", value);
-        }
-
-        /// <summary>
         /// Name of the phase of the project template that the project task template is a part of.
         /// </summary>
         [JsonProperty("phaseName")]
@@ -37,6 +27,16 @@
         {
             get => phaseName;
             set => phaseName = Set("phaseName", value);
+        }
+
+        /// <summary>
+        /// Identifier of the project task template that is related to the project template.
+        /// </summary>
+        [JsonProperty("taskTemplateId")]
+        public string? TaskTemplateId
+        {
+            get => taskTemplateId;
+            set => taskTemplateId = Set("taskTemplateId", value);
         }
     }
 }

@@ -5,36 +5,26 @@
     /// </summary>
     public class CustomCollectionElementUpdateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
+        private string? clientMutationId;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
         private string? description;
         private bool? disabled;
+        private string? id;
         private string? information;
         private string? name;
         private string? reference;
-        private string? clientMutationId;
-        private string? id;
+        private string? source;
+        private string? sourceID;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -78,6 +68,16 @@
         }
 
         /// <summary>
+        /// The node ID of the record to update.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
+        }
+
+        /// <summary>
         /// Any additional information about the element that might prove useful.
         /// </summary>
         [JsonProperty("information")]
@@ -108,23 +108,23 @@
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("source")]
+        public string? Source
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
+            get => source;
+            set => source = Set("source", value);
         }
 
         /// <summary>
-        /// The node ID of the record to update.
+        /// The unique identifier of the resource in an external system.
         /// </summary>
-        [JsonProperty("id")]
-        public string? ID
+        [JsonProperty("sourceID")]
+        public string? SourceID
         {
-            get => id;
-            set => id = Set("id", value);
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
         }
     }
 }

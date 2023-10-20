@@ -5,83 +5,43 @@
     /// </summary>
     public class TaskTemplateCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
-        private string? uiExtensionId;
-        private bool? assignToWorkflowManager;
         private bool? assignToRequester;
         private bool? assignToRequesterBusinessUnitManager;
         private bool? assignToRequesterManager;
         private bool? assignToServiceOwner;
+        private bool? assignToWorkflowManager;
+        private TaskCategory? category;
+        private string? clientMutationId;
+        private List<string>? configurationItemIds;
         private bool? copyNotesToWorkflow;
         private bool? disabled;
         private string? effortClassId;
         private TaskImpact? impact;
         private string? instructions;
         private string? memberId;
+        private List<TaskTemplateApprovalInput>? newApprovals;
         private string? note;
         private string? pdfDesignId;
+        private long? plannedDuration;
         private long? plannedEffort;
-        private long? plannedEffortWorkflowManager;
         private long? plannedEffortRequester;
         private long? plannedEffortRequesterBusinessUnitManager;
         private long? plannedEffortRequesterManager;
         private long? plannedEffortServiceOwner;
+        private long? plannedEffortWorkflowManager;
         private bool? providerNotAccountable;
-        private long? requiredApprovals;
-        private string? supplierId;
-        private string? requestTemplateId;
         private string? requestServiceInstanceId;
+        private string? requestTemplateId;
+        private long? requiredApprovals;
+        private List<string>? serviceInstanceIds;
+        private string? source;
+        private string? sourceID;
+        private string? subject;
+        private string? supplierId;
         private string? teamId;
+        private string? uiExtensionId;
         private bool? urgent;
         private bool? workHoursAre24x7;
-        private List<TaskTemplateApprovalInput>? newApprovals;
-        private List<string>? configurationItemIds;
-        private List<string>? serviceInstanceIds;
-        private string? clientMutationId;
-        private TaskCategory? category;
-        private long? plannedDuration;
-        private string? subject;
-
-        /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
-        /// </summary>
-        [JsonProperty("source")]
-        public string? Source
-        {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
-        }
-
-        /// <summary>
-        /// UI extension that is to be applied to the record.
-        /// </summary>
-        [JsonProperty("uiExtensionId")]
-        public string? UiExtensionId
-        {
-            get => uiExtensionId;
-            set => uiExtensionId = Set("uiExtensionId", value);
-        }
-
-        /// <summary>
-        /// Whether a new task that is being created based on the template is to be assigned to the person who is selected in the Manager field of the workflow to which the task belongs.
-        /// </summary>
-        [JsonProperty("assignToWorkflowManager")]
-        public bool? AssignToWorkflowManager
-        {
-            get => assignToWorkflowManager;
-            set => assignToWorkflowManager = Set("assignToWorkflowManager", value);
-        }
 
         /// <summary>
         /// Whether a new task that is being created based on the template is to be assigned to the person who is selected in the Requested for field of the request for which the workflow is being generated.
@@ -121,6 +81,46 @@
         {
             get => assignToServiceOwner;
             set => assignToServiceOwner = Set("assignToServiceOwner", value);
+        }
+
+        /// <summary>
+        /// Whether a new task that is being created based on the template is to be assigned to the person who is selected in the Manager field of the workflow to which the task belongs.
+        /// </summary>
+        [JsonProperty("assignToWorkflowManager")]
+        public bool? AssignToWorkflowManager
+        {
+            get => assignToWorkflowManager;
+            set => assignToWorkflowManager = Set("assignToWorkflowManager", value);
+        }
+
+        /// <summary>
+        /// The category that needs to be selected in the Category field of a new task when it is being created based on the template.
+        /// </summary>
+        [JsonProperty("category")]
+        public TaskCategory? Category
+        {
+            get => category;
+            set => category = Set("category", value);
+        }
+
+        /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Identifiers of the configuration items of the task template.
+        /// </summary>
+        [JsonProperty("configurationItemIds")]
+        public List<string>? ConfigurationItemIds
+        {
+            get => configurationItemIds;
+            set => configurationItemIds = Set("configurationItemIds", value);
         }
 
         /// <summary>
@@ -184,6 +184,16 @@
         }
 
         /// <summary>
+        /// Approvals of the task template.
+        /// </summary>
+        [JsonProperty("newApprovals")]
+        public List<TaskTemplateApprovalInput>? NewApprovals
+        {
+            get => newApprovals;
+            set => newApprovals = Set("newApprovals", value);
+        }
+
+        /// <summary>
         /// The information that needs to be copied to the Note field of a new task when it is being created based on the template.
         /// </summary>
         [JsonProperty("note")]
@@ -204,6 +214,16 @@
         }
 
         /// <summary>
+        /// The number of minutes that should be entered in the Planned duration field of a new task when it is being created based on the template.
+        /// </summary>
+        [JsonProperty("plannedDuration")]
+        public long? PlannedDuration
+        {
+            get => plannedDuration;
+            set => plannedDuration = Set("plannedDuration", value);
+        }
+
+        /// <summary>
         /// The number of minutes the member is expected to spend working on a task that was created based on the template.
         /// </summary>
         [JsonProperty("plannedEffort")]
@@ -211,16 +231,6 @@
         {
             get => plannedEffort;
             set => plannedEffort = Set("plannedEffort", value);
-        }
-
-        /// <summary>
-        /// The number of minutes the workflow manager is expected to spend working on a task that was created based on the template.
-        /// </summary>
-        [JsonProperty("plannedEffortWorkflowManager")]
-        public long? PlannedEffortWorkflowManager
-        {
-            get => plannedEffortWorkflowManager;
-            set => plannedEffortWorkflowManager = Set("plannedEffortWorkflowManager", value);
         }
 
         /// <summary>
@@ -264,6 +274,16 @@
         }
 
         /// <summary>
+        /// The number of minutes the workflow manager is expected to spend working on a task that was created based on the template.
+        /// </summary>
+        [JsonProperty("plannedEffortWorkflowManager")]
+        public long? PlannedEffortWorkflowManager
+        {
+            get => plannedEffortWorkflowManager;
+            set => plannedEffortWorkflowManager = Set("plannedEffortWorkflowManager", value);
+        }
+
+        /// <summary>
         /// Default: <c>false</c> - Whether the provider indicates not to be accountable for the affected SLAs linked to the requests that are linked to the workflow of a task that was created based on the template.
         /// </summary>
         [JsonProperty("providerNotAccountable")]
@@ -271,36 +291,6 @@
         {
             get => providerNotAccountable;
             set => providerNotAccountable = Set("providerNotAccountable", value);
-        }
-
-        /// <summary>
-        /// The number that needs to be specified in the Required approvals field of a new approval task when it is being created based on the template.
-        /// </summary>
-        [JsonProperty("requiredApprovals")]
-        public long? RequiredApprovals
-        {
-            get => requiredApprovals;
-            set => requiredApprovals = Set("requiredApprovals", value);
-        }
-
-        /// <summary>
-        /// Identifier of the supplier organization that should be selected in the Supplier field of a new task when it is being created based on the template.
-        /// </summary>
-        [JsonProperty("supplierId")]
-        public string? SupplierId
-        {
-            get => supplierId;
-            set => supplierId = Set("supplierId", value);
-        }
-
-        /// <summary>
-        /// Identifier of the request template that should be selected in the Request template field of a new task when it is being created based on the template.
-        /// </summary>
-        [JsonProperty("requestTemplateId")]
-        public string? RequestTemplateId
-        {
-            get => requestTemplateId;
-            set => requestTemplateId = Set("requestTemplateId", value);
         }
 
         /// <summary>
@@ -314,6 +304,76 @@
         }
 
         /// <summary>
+        /// Identifier of the request template that should be selected in the Request template field of a new task when it is being created based on the template.
+        /// </summary>
+        [JsonProperty("requestTemplateId")]
+        public string? RequestTemplateId
+        {
+            get => requestTemplateId;
+            set => requestTemplateId = Set("requestTemplateId", value);
+        }
+
+        /// <summary>
+        /// The number that needs to be specified in the Required approvals field of a new approval task when it is being created based on the template.
+        /// </summary>
+        [JsonProperty("requiredApprovals")]
+        public long? RequiredApprovals
+        {
+            get => requiredApprovals;
+            set => requiredApprovals = Set("requiredApprovals", value);
+        }
+
+        /// <summary>
+        /// Identifiers of the service instances of the task template.
+        /// </summary>
+        [JsonProperty("serviceInstanceIds")]
+        public List<string>? ServiceInstanceIds
+        {
+            get => serviceInstanceIds;
+            set => serviceInstanceIds = Set("serviceInstanceIds", value);
+        }
+
+        /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// A short description that needs to be copied to the Subject field of a new task when it is being created based on the template.
+        /// </summary>
+        [JsonProperty("subject")]
+        public string? Subject
+        {
+            get => subject;
+            set => subject = Set("subject", value);
+        }
+
+        /// <summary>
+        /// Identifier of the supplier organization that should be selected in the Supplier field of a new task when it is being created based on the template.
+        /// </summary>
+        [JsonProperty("supplierId")]
+        public string? SupplierId
+        {
+            get => supplierId;
+            set => supplierId = Set("supplierId", value);
+        }
+
+        /// <summary>
         /// Identifier of the team that should be selected in the Team field of a new task when it is being created based on the template.
         /// </summary>
         [JsonProperty("teamId")]
@@ -321,6 +381,16 @@
         {
             get => teamId;
             set => teamId = Set("teamId", value);
+        }
+
+        /// <summary>
+        /// UI extension that is to be applied to the record.
+        /// </summary>
+        [JsonProperty("uiExtensionId")]
+        public string? UiExtensionId
+        {
+            get => uiExtensionId;
+            set => uiExtensionId = Set("uiExtensionId", value);
         }
 
         /// <summary>
@@ -341,76 +411,6 @@
         {
             get => workHoursAre24x7;
             set => workHoursAre24x7 = Set("workHoursAre24x7", value);
-        }
-
-        /// <summary>
-        /// Approvals of the task template.
-        /// </summary>
-        [JsonProperty("newApprovals")]
-        public List<TaskTemplateApprovalInput>? NewApprovals
-        {
-            get => newApprovals;
-            set => newApprovals = Set("newApprovals", value);
-        }
-
-        /// <summary>
-        /// Identifiers of the configuration items of the task template.
-        /// </summary>
-        [JsonProperty("configurationItemIds")]
-        public List<string>? ConfigurationItemIds
-        {
-            get => configurationItemIds;
-            set => configurationItemIds = Set("configurationItemIds", value);
-        }
-
-        /// <summary>
-        /// Identifiers of the service instances of the task template.
-        /// </summary>
-        [JsonProperty("serviceInstanceIds")]
-        public List<string>? ServiceInstanceIds
-        {
-            get => serviceInstanceIds;
-            set => serviceInstanceIds = Set("serviceInstanceIds", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// The category that needs to be selected in the Category field of a new task when it is being created based on the template.
-        /// </summary>
-        [JsonProperty("category")]
-        public TaskCategory? Category
-        {
-            get => category;
-            set => category = Set("category", value);
-        }
-
-        /// <summary>
-        /// The number of minutes that should be entered in the Planned duration field of a new task when it is being created based on the template.
-        /// </summary>
-        [JsonProperty("plannedDuration")]
-        public long? PlannedDuration
-        {
-            get => plannedDuration;
-            set => plannedDuration = Set("plannedDuration", value);
-        }
-
-        /// <summary>
-        /// A short description that needs to be copied to the Subject field of a new task when it is being created based on the template.
-        /// </summary>
-        [JsonProperty("subject")]
-        public string? Subject
-        {
-            get => subject;
-            set => subject = Set("subject", value);
         }
     }
 }

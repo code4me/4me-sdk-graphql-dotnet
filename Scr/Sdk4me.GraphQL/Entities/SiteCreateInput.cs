@@ -5,48 +5,28 @@
     /// </summary>
     public class SiteCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
-        private string? pictureUri;
+        private string? clientMutationId;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
-        private string? uiExtensionId;
         private bool? disabled;
+        private string? name;
+        private List<AddressInput>? newAddresses;
+        private string? pictureUri;
         private string? remarks;
         private List<AttachmentInput>? remarksAttachments;
+        private string? source;
+        private string? sourceID;
         private string? timeZone;
-        private List<AddressInput>? newAddresses;
-        private string? clientMutationId;
-        private string? name;
+        private string? uiExtensionId;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
-        }
-
-        /// <summary>
-        /// The hyperlink to the image file for the record.
-        /// </summary>
-        [JsonProperty("pictureUri")]
-        public string? PictureUri
-        {
-            get => pictureUri;
-            set => pictureUri = Set("pictureUri", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -70,16 +50,6 @@
         }
 
         /// <summary>
-        /// UI extension that is to be applied to the record.
-        /// </summary>
-        [JsonProperty("uiExtensionId")]
-        public string? UiExtensionId
-        {
-            get => uiExtensionId;
-            set => uiExtensionId = Set("uiExtensionId", value);
-        }
-
-        /// <summary>
         /// Default: <c>false</c> - Whether the site may no longer be related to other records.
         /// </summary>
         [JsonProperty("disabled")]
@@ -87,6 +57,36 @@
         {
             get => disabled;
             set => disabled = Set("disabled", value);
+        }
+
+        /// <summary>
+        /// The name of the site or facility.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
+        }
+
+        /// <summary>
+        /// New or updated addresses of the site.
+        /// </summary>
+        [JsonProperty("newAddresses")]
+        public List<AddressInput>? NewAddresses
+        {
+            get => newAddresses;
+            set => newAddresses = Set("newAddresses", value);
+        }
+
+        /// <summary>
+        /// The hyperlink to the image file for the record.
+        /// </summary>
+        [JsonProperty("pictureUri")]
+        public string? PictureUri
+        {
+            get => pictureUri;
+            set => pictureUri = Set("pictureUri", value);
         }
 
         /// <summary>
@@ -110,6 +110,26 @@
         }
 
         /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
         /// <br>The time zone in which the site is located.</br>
         /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
         /// </summary>
@@ -121,33 +141,13 @@
         }
 
         /// <summary>
-        /// New or updated addresses of the site.
+        /// UI extension that is to be applied to the record.
         /// </summary>
-        [JsonProperty("newAddresses")]
-        public List<AddressInput>? NewAddresses
+        [JsonProperty("uiExtensionId")]
+        public string? UiExtensionId
         {
-            get => newAddresses;
-            set => newAddresses = Set("newAddresses", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// The name of the site or facility.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
+            get => uiExtensionId;
+            set => uiExtensionId = Set("uiExtensionId", value);
         }
     }
 }

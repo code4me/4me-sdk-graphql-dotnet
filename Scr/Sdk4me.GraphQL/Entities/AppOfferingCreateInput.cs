@@ -5,55 +5,35 @@
     /// </summary>
     public class AppOfferingCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
-        private string? uiExtensionId;
+        private string? clientMutationId;
         private string? compliance;
+        private string? configurationUriTemplate;
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
         private bool? disabled;
         private string? features;
+        private string? name;
+        private List<AppOfferingScopeInput>? newScopes;
         private WebhookPolicyJwtAlg? policyJwtAlg;
         private string? policyJwtAudience;
         private long? policyJwtClaimExpiresIn;
         private string? reference;
-        private string? uiExtensionVersionId;
-        private string? configurationUriTemplate;
-        private string? webhookUriTemplate;
         private bool? requiresEnabledOauthPerson;
-        private List<AppOfferingScopeInput>? newScopes;
-        private string? clientMutationId;
-        private string? name;
         private string? serviceInstanceId;
+        private string? source;
+        private string? sourceID;
+        private string? uiExtensionId;
+        private string? uiExtensionVersionId;
+        private string? webhookUriTemplate;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
-        }
-
-        /// <summary>
-        /// UI extension that is to be applied to the record.
-        /// </summary>
-        [JsonProperty("uiExtensionId")]
-        public string? UiExtensionId
-        {
-            get => uiExtensionId;
-            set => uiExtensionId = Set("uiExtensionId", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -64,6 +44,16 @@
         {
             get => compliance;
             set => compliance = Set("compliance", value);
+        }
+
+        /// <summary>
+        /// The URI where the app can be configured. The placeholder {account} can be used to include the customer account id in the URI.
+        /// </summary>
+        [JsonProperty("configurationUriTemplate")]
+        public string? ConfigurationUriTemplate
+        {
+            get => configurationUriTemplate;
+            set => configurationUriTemplate = Set("configurationUriTemplate", value);
         }
 
         /// <summary>
@@ -107,6 +97,26 @@
         }
 
         /// <summary>
+        /// Name of the app offering.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
+        }
+
+        /// <summary>
+        /// Scopes of this app offering
+        /// </summary>
+        [JsonProperty("newScopes")]
+        public List<AppOfferingScopeInput>? NewScopes
+        {
+            get => newScopes;
+            set => newScopes = Set("newScopes", value);
+        }
+
+        /// <summary>
         /// The algorithm used for generating the policy for the app offering's webhook.
         /// </summary>
         [JsonProperty("policyJwtAlg")]
@@ -147,36 +157,6 @@
         }
 
         /// <summary>
-        /// Identifier of the UI extension version that is linked to the app offering.
-        /// </summary>
-        [JsonProperty("uiExtensionVersionId")]
-        public string? UiExtensionVersionId
-        {
-            get => uiExtensionVersionId;
-            set => uiExtensionVersionId = Set("uiExtensionVersionId", value);
-        }
-
-        /// <summary>
-        /// The URI where the app can be configured. The placeholder {account} can be used to include the customer account id in the URI.
-        /// </summary>
-        [JsonProperty("configurationUriTemplate")]
-        public string? ConfigurationUriTemplate
-        {
-            get => configurationUriTemplate;
-            set => configurationUriTemplate = Set("configurationUriTemplate", value);
-        }
-
-        /// <summary>
-        /// The URI for the app offering's webhook. The placeholder {account} can be used to include the customer account id in the URI.
-        /// </summary>
-        [JsonProperty("webhookUriTemplate")]
-        public string? WebhookUriTemplate
-        {
-            get => webhookUriTemplate;
-            set => webhookUriTemplate = Set("webhookUriTemplate", value);
-        }
-
-        /// <summary>
         /// This app requires an enabled OAuth person.
         /// </summary>
         [JsonProperty("requiresEnabledOauthPerson")]
@@ -187,36 +167,6 @@
         }
 
         /// <summary>
-        /// Scopes of this app offering
-        /// </summary>
-        [JsonProperty("newScopes")]
-        public List<AppOfferingScopeInput>? NewScopes
-        {
-            get => newScopes;
-            set => newScopes = Set("newScopes", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// Name of the app offering.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
-        }
-
-        /// <summary>
         /// Identifier of the the service instance this app offering is linked to.
         /// </summary>
         [JsonProperty("serviceInstanceId")]
@@ -224,6 +174,56 @@
         {
             get => serviceInstanceId;
             set => serviceInstanceId = Set("serviceInstanceId", value);
+        }
+
+        /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// UI extension that is to be applied to the record.
+        /// </summary>
+        [JsonProperty("uiExtensionId")]
+        public string? UiExtensionId
+        {
+            get => uiExtensionId;
+            set => uiExtensionId = Set("uiExtensionId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the UI extension version that is linked to the app offering.
+        /// </summary>
+        [JsonProperty("uiExtensionVersionId")]
+        public string? UiExtensionVersionId
+        {
+            get => uiExtensionVersionId;
+            set => uiExtensionVersionId = Set("uiExtensionVersionId", value);
+        }
+
+        /// <summary>
+        /// The URI for the app offering's webhook. The placeholder {account} can be used to include the customer account id in the URI.
+        /// </summary>
+        [JsonProperty("webhookUriTemplate")]
+        public string? WebhookUriTemplate
+        {
+            get => webhookUriTemplate;
+            set => webhookUriTemplate = Set("webhookUriTemplate", value);
         }
     }
 }

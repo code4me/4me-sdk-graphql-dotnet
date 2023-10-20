@@ -5,19 +5,9 @@
     /// </summary>
     public class TaskTemplateApprovalInput : PropertyChangeSet
     {
-        private string? id;
         private string? approverId;
+        private string? id;
         private long? plannedEffort;
-
-        /// <summary>
-        /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
-        }
 
         /// <summary>
         /// Identifier of the person who is selected as the approver for the approval.
@@ -27,6 +17,16 @@
         {
             get => approverId;
             set => approverId = Set("approverId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
         }
 
         /// <summary>

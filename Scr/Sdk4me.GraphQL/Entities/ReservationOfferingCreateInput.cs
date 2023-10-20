@@ -5,45 +5,65 @@
     /// </summary>
     public class ReservationOfferingCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
+        private bool? allowRepeat;
+        private string? calendarId;
+        private string? clientMutationId;
+        private List<string>? configurationItemIds;
         private bool? disabled;
-        private string? serviceInstanceId;
         private List<string>? filters;
         private ReservationStatus? initialStatus;
-        private long? preparationDuration;
-        private bool? multiDay;
-        private bool? allowRepeat;
-        private long? minAdvanceDuration;
         private long? maxAdvanceDuration;
-        private bool? privateReservations;
-        private List<string>? configurationItemIds;
-        private string? clientMutationId;
-        private string? name;
-        private string? calendarId;
         private long? maxDuration;
+        private long? minAdvanceDuration;
         private long? minDuration;
+        private bool? multiDay;
+        private string? name;
+        private long? preparationDuration;
+        private bool? privateReservations;
+        private string? serviceInstanceId;
+        private string? source;
+        private string? sourceID;
         private long? stepDuration;
         private string? timeZone;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// Whether it is allowed to create recurrent reservations for this offering.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("allowRepeat")]
+        public bool? AllowRepeat
         {
-            get => source;
-            set => source = Set("source", value);
+            get => allowRepeat;
+            set => allowRepeat = Set("allowRepeat", value);
         }
 
         /// <summary>
-        /// The unique identifier of the resource in an external system.
+        /// Calendar that defines the hours in which reservations may start and end.
         /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
+        [JsonProperty("calendarId")]
+        public string? CalendarId
         {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
+            get => calendarId;
+            set => calendarId = Set("calendarId", value);
+        }
+
+        /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Identifiers of the configuration items that may be reserved using this offering.
+        /// </summary>
+        [JsonProperty("configurationItemIds")]
+        public List<string>? ConfigurationItemIds
+        {
+            get => configurationItemIds;
+            set => configurationItemIds = Set("configurationItemIds", value);
         }
 
         /// <summary>
@@ -54,16 +74,6 @@
         {
             get => disabled;
             set => disabled = Set("disabled", value);
-        }
-
-        /// <summary>
-        /// Identifier of the service instance for which the reservations may be requested.
-        /// </summary>
-        [JsonProperty("serviceInstanceId")]
-        public string? ServiceInstanceId
-        {
-            get => serviceInstanceId;
-            set => serviceInstanceId = Set("serviceInstanceId", value);
         }
 
         /// <summary>
@@ -87,46 +97,6 @@
         }
 
         /// <summary>
-        /// The duration required to prepare the asset before the reservation starts.
-        /// </summary>
-        [JsonProperty("preparationDuration")]
-        public long? PreparationDuration
-        {
-            get => preparationDuration;
-            set => preparationDuration = Set("preparationDuration", value);
-        }
-
-        /// <summary>
-        /// Whether or not the reservation may span over multiple calendar days.
-        /// </summary>
-        [JsonProperty("multiDay")]
-        public bool? MultiDay
-        {
-            get => multiDay;
-            set => multiDay = Set("multiDay", value);
-        }
-
-        /// <summary>
-        /// Whether it is allowed to create recurrent reservations for this offering.
-        /// </summary>
-        [JsonProperty("allowRepeat")]
-        public bool? AllowRepeat
-        {
-            get => allowRepeat;
-            set => allowRepeat = Set("allowRepeat", value);
-        }
-
-        /// <summary>
-        /// The minimum duration between the creation time of a request for reservation and the requested start of the reservation.
-        /// </summary>
-        [JsonProperty("minAdvanceDuration")]
-        public long? MinAdvanceDuration
-        {
-            get => minAdvanceDuration;
-            set => minAdvanceDuration = Set("minAdvanceDuration", value);
-        }
-
-        /// <summary>
         /// The maximum duration between the creation time of a request for reservation and the requested start of the reservation.
         /// </summary>
         [JsonProperty("maxAdvanceDuration")]
@@ -134,56 +104,6 @@
         {
             get => maxAdvanceDuration;
             set => maxAdvanceDuration = Set("maxAdvanceDuration", value);
-        }
-
-        /// <summary>
-        /// Reservations of this reservation offering are private and can not be viewed by other end users.
-        /// </summary>
-        [JsonProperty("privateReservations")]
-        public bool? PrivateReservations
-        {
-            get => privateReservations;
-            set => privateReservations = Set("privateReservations", value);
-        }
-
-        /// <summary>
-        /// Identifiers of the configuration items that may be reserved using this offering.
-        /// </summary>
-        [JsonProperty("configurationItemIds")]
-        public List<string>? ConfigurationItemIds
-        {
-            get => configurationItemIds;
-            set => configurationItemIds = Set("configurationItemIds", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// A short description of the reservation offering
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
-        }
-
-        /// <summary>
-        /// Calendar that defines the hours in which reservations may start and end.
-        /// </summary>
-        [JsonProperty("calendarId")]
-        public string? CalendarId
-        {
-            get => calendarId;
-            set => calendarId = Set("calendarId", value);
         }
 
         /// <summary>
@@ -197,6 +117,16 @@
         }
 
         /// <summary>
+        /// The minimum duration between the creation time of a request for reservation and the requested start of the reservation.
+        /// </summary>
+        [JsonProperty("minAdvanceDuration")]
+        public long? MinAdvanceDuration
+        {
+            get => minAdvanceDuration;
+            set => minAdvanceDuration = Set("minAdvanceDuration", value);
+        }
+
+        /// <summary>
         /// The minimum duration of the reservation within the hours of the calendar.
         /// </summary>
         [JsonProperty("minDuration")]
@@ -204,6 +134,76 @@
         {
             get => minDuration;
             set => minDuration = Set("minDuration", value);
+        }
+
+        /// <summary>
+        /// Whether or not the reservation may span over multiple calendar days.
+        /// </summary>
+        [JsonProperty("multiDay")]
+        public bool? MultiDay
+        {
+            get => multiDay;
+            set => multiDay = Set("multiDay", value);
+        }
+
+        /// <summary>
+        /// A short description of the reservation offering
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
+        }
+
+        /// <summary>
+        /// The duration required to prepare the asset before the reservation starts.
+        /// </summary>
+        [JsonProperty("preparationDuration")]
+        public long? PreparationDuration
+        {
+            get => preparationDuration;
+            set => preparationDuration = Set("preparationDuration", value);
+        }
+
+        /// <summary>
+        /// Reservations of this reservation offering are private and can not be viewed by other end users.
+        /// </summary>
+        [JsonProperty("privateReservations")]
+        public bool? PrivateReservations
+        {
+            get => privateReservations;
+            set => privateReservations = Set("privateReservations", value);
+        }
+
+        /// <summary>
+        /// Identifier of the service instance for which the reservations may be requested.
+        /// </summary>
+        [JsonProperty("serviceInstanceId")]
+        public string? ServiceInstanceId
+        {
+            get => serviceInstanceId;
+            set => serviceInstanceId = Set("serviceInstanceId", value);
+        }
+
+        /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
         }
 
         /// <summary>

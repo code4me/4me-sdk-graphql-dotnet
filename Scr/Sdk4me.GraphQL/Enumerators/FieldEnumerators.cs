@@ -70,11 +70,6 @@
     public enum AddressField
     {
         /// <summary>
-        /// The address field.
-        /// </summary>
-        [EnumMember(Value = "address")]
-        Street,
-        /// <summary>
         /// The city field.
         /// </summary>
         [EnumMember(Value = "city")]
@@ -104,6 +99,11 @@
         /// </summary>
         [EnumMember(Value = "state")]
         State,
+        /// <summary>
+        /// The address field.
+        /// </summary>
+        [EnumMember(Value = "address")]
+        Street,
         /// <summary>
         /// The zip field.
         /// </summary>
@@ -500,16 +500,6 @@
         [EnumMember(Value = "createdAt")]
         CreatedAt,
         /// <summary>
-        /// The custom fields field.
-        /// </summary>
-        [EnumMember(Value = "customFields")]
-        CustomFields,
-        /// <summary>
-        /// The custom fields attachments field.
-        /// </summary>
-        [EnumMember(Value = "customFieldsAttachments")]
-        CustomFieldsAttachments,
-        /// <summary>
         /// The customer account field.
         /// </summary>
         [EnumMember(Value = "customerAccount")]
@@ -519,6 +509,16 @@
         /// </summary>
         [EnumMember(Value = "customerRepresentative")]
         CustomerRepresentative,
+        /// <summary>
+        /// The custom fields field.
+        /// </summary>
+        [EnumMember(Value = "customFields")]
+        CustomFields,
+        /// <summary>
+        /// The custom fields attachments field.
+        /// </summary>
+        [EnumMember(Value = "customFieldsAttachments")]
+        CustomFieldsAttachments,
         /// <summary>
         /// The disabled field.
         /// </summary>
@@ -1363,6 +1363,11 @@
         [EnumMember(Value = "lastSeenAt")]
         LastSeenAt,
         /// <summary>
+        /// The licensed sites field.
+        /// </summary>
+        [EnumMember(Value = "licensedSites")]
+        LicensedSites,
+        /// <summary>
         /// The license expiry date field.
         /// </summary>
         [EnumMember(Value = "licenseExpiryDate")]
@@ -1372,11 +1377,6 @@
         /// </summary>
         [EnumMember(Value = "licenseType")]
         LicenseType,
-        /// <summary>
-        /// The licensed sites field.
-        /// </summary>
-        [EnumMember(Value = "licensedSites")]
-        LicensedSites,
         /// <summary>
         /// The location field.
         /// </summary>
@@ -1629,16 +1629,6 @@
         [EnumMember(Value = "createdAt")]
         CreatedAt,
         /// <summary>
-        /// The custom fields field.
-        /// </summary>
-        [EnumMember(Value = "customFields")]
-        CustomFields,
-        /// <summary>
-        /// The custom fields attachments field.
-        /// </summary>
-        [EnumMember(Value = "customFieldsAttachments")]
-        CustomFieldsAttachments,
-        /// <summary>
         /// The customer field.
         /// </summary>
         [EnumMember(Value = "customer")]
@@ -1653,6 +1643,16 @@
         /// </summary>
         [EnumMember(Value = "customerRepresentative")]
         CustomerRepresentative,
+        /// <summary>
+        /// The custom fields field.
+        /// </summary>
+        [EnumMember(Value = "customFields")]
+        CustomFields,
+        /// <summary>
+        /// The custom fields attachments field.
+        /// </summary>
+        [EnumMember(Value = "customFieldsAttachments")]
+        CustomFieldsAttachments,
         /// <summary>
         /// The expiry date field.
         /// </summary>
@@ -2224,15 +2224,15 @@
         [EnumMember(Value = "noticeDate")]
         NoticeDate,
         /// <summary>
-        /// The pickup target field.
-        /// </summary>
-        [EnumMember(Value = "pickupTarget")]
-        PickupTarget,
-        /// <summary>
         /// The pickups within target field.
         /// </summary>
         [EnumMember(Value = "pickupsWithinTarget")]
         PickupsWithinTarget,
+        /// <summary>
+        /// The pickup target field.
+        /// </summary>
+        [EnumMember(Value = "pickupTarget")]
+        PickupTarget,
         /// <summary>
         /// The provider field.
         /// </summary>
@@ -4142,6 +4142,11 @@
         [EnumMember(Value = "createdAt")]
         CreatedAt,
         /// <summary>
+        /// The customer field.
+        /// </summary>
+        [EnumMember(Value = "customer")]
+        Customer,
+        /// <summary>
         /// The custom fields field.
         /// </summary>
         [EnumMember(Value = "customFields")]
@@ -4151,11 +4156,6 @@
         /// </summary>
         [EnumMember(Value = "customFieldsAttachments")]
         CustomFieldsAttachments,
-        /// <summary>
-        /// The customer field.
-        /// </summary>
-        [EnumMember(Value = "customer")]
-        Customer,
         /// <summary>
         /// The effort field.
         /// </summary>
@@ -4297,15 +4297,15 @@
         [EnumMember(Value = "valueCurrency")]
         ValueCurrency,
         /// <summary>
-        /// The work hours field.
-        /// </summary>
-        [EnumMember(Value = "workHours")]
-        WorkHours,
-        /// <summary>
         /// The workflows field.
         /// </summary>
         [EnumMember(Value = "workflows")]
         Workflows,
+        /// <summary>
+        /// The work hours field.
+        /// </summary>
+        [EnumMember(Value = "workHours")]
+        WorkHours,
     }
 
     /// <summary>
@@ -4804,6 +4804,11 @@
         [EnumMember(Value = "account")]
         Account,
         /// <summary>
+        /// The assignments field.
+        /// </summary>
+        [EnumMember(Value = "assignments")]
+        Assignments,
+        /// <summary>
         /// The assign to project manager field.
         /// </summary>
         [EnumMember(Value = "assignToProjectManager")]
@@ -4828,11 +4833,6 @@
         /// </summary>
         [EnumMember(Value = "assignToServiceOwner")]
         AssignToServiceOwner,
-        /// <summary>
-        /// The assignments field.
-        /// </summary>
-        [EnumMember(Value = "assignments")]
-        Assignments,
         /// <summary>
         /// The automation rules field.
         /// </summary>
@@ -5809,11 +5809,6 @@
         [EnumMember(Value = "reopenCount")]
         ReopenCount,
         /// <summary>
-        /// The request id field.
-        /// </summary>
-        [EnumMember(Value = "requestId")]
-        RequestId,
-        /// <summary>
         /// The requested by field.
         /// </summary>
         [EnumMember(Value = "requestedBy")]
@@ -5828,6 +5823,11 @@
         /// </summary>
         [EnumMember(Value = "requesterResolutionTargetAt")]
         RequesterResolutionTargetAt,
+        /// <summary>
+        /// The request id field.
+        /// </summary>
+        [EnumMember(Value = "requestId")]
+        RequestId,
         /// <summary>
         /// The resolution duration field.
         /// </summary>
@@ -7231,6 +7231,16 @@
         [EnumMember(Value = "availability")]
         Availability,
         /// <summary>
+        /// The charges field.
+        /// </summary>
+        [EnumMember(Value = "charges")]
+        Charges,
+        /// <summary>
+        /// The charges attachments field.
+        /// </summary>
+        [EnumMember(Value = "chargesAttachments")]
+        ChargesAttachments,
+        /// <summary>
         /// The charge type high field.
         /// </summary>
         [EnumMember(Value = "chargeTypeHigh")]
@@ -7261,16 +7271,6 @@
         [EnumMember(Value = "chargeTypeTop")]
         ChargeTypeTop,
         /// <summary>
-        /// The charges field.
-        /// </summary>
-        [EnumMember(Value = "charges")]
-        Charges,
-        /// <summary>
-        /// The charges attachments field.
-        /// </summary>
-        [EnumMember(Value = "chargesAttachments")]
-        ChargesAttachments,
-        /// <summary>
         /// The continuity field.
         /// </summary>
         [EnumMember(Value = "continuity")]
@@ -7291,15 +7291,15 @@
         [EnumMember(Value = "defaultEffortClass")]
         DefaultEffortClass,
         /// <summary>
-        /// The effort class rates field.
-        /// </summary>
-        [EnumMember(Value = "effortClassRates")]
-        EffortClassRates,
-        /// <summary>
         /// The effort classes field.
         /// </summary>
         [EnumMember(Value = "effortClasses")]
         EffortClasses,
+        /// <summary>
+        /// The effort class rates field.
+        /// </summary>
+        [EnumMember(Value = "effortClassRates")]
+        EffortClassRates,
         /// <summary>
         /// The id field.
         /// </summary>
@@ -7431,6 +7431,11 @@
         [EnumMember(Value = "reportFrequency")]
         ReportFrequency,
         /// <summary>
+        /// The resolutions within target field.
+        /// </summary>
+        [EnumMember(Value = "resolutionsWithinTarget")]
+        ResolutionsWithinTarget,
+        /// <summary>
         /// The resolution target high field.
         /// </summary>
         [EnumMember(Value = "resolutionTargetHigh")]
@@ -7491,10 +7496,10 @@
         [EnumMember(Value = "resolutionTargetTopInDays")]
         ResolutionTargetTopInDays,
         /// <summary>
-        /// The resolutions within target field.
+        /// The responses within target field.
         /// </summary>
-        [EnumMember(Value = "resolutionsWithinTarget")]
-        ResolutionsWithinTarget,
+        [EnumMember(Value = "responsesWithinTarget")]
+        ResponsesWithinTarget,
         /// <summary>
         /// The response target high field.
         /// </summary>
@@ -7555,11 +7560,6 @@
         /// </summary>
         [EnumMember(Value = "responseTargetTopInDays")]
         ResponseTargetTopInDays,
-        /// <summary>
-        /// The responses within target field.
-        /// </summary>
-        [EnumMember(Value = "responsesWithinTarget")]
-        ResponsesWithinTarget,
         /// <summary>
         /// The review frequency field.
         /// </summary>
@@ -8022,11 +8022,6 @@
         [EnumMember(Value = "id")]
         ID,
         /// <summary>
-        /// The short url field.
-        /// </summary>
-        [EnumMember(Value = "shortUrl")]
-        URL,
-        /// <summary>
         /// The updated at field.
         /// </summary>
         [EnumMember(Value = "updatedAt")]
@@ -8036,6 +8031,11 @@
         /// </summary>
         [EnumMember(Value = "uri")]
         Uri,
+        /// <summary>
+        /// The short url field.
+        /// </summary>
+        [EnumMember(Value = "shortUrl")]
+        URL,
     }
 
     /// <summary>
@@ -9202,15 +9202,15 @@
         [EnumMember(Value = "waitingUntil")]
         WaitingUntil,
         /// <summary>
-        /// The work hours are 24 x 7 field.
-        /// </summary>
-        [EnumMember(Value = "workHoursAre24x7")]
-        WorkHoursAre24x7,
-        /// <summary>
         /// The workflow field.
         /// </summary>
         [EnumMember(Value = "workflow")]
         Workflow,
+        /// <summary>
+        /// The work hours are 24 x 7 field.
+        /// </summary>
+        [EnumMember(Value = "workHoursAre24x7")]
+        WorkHoursAre24x7,
     }
 
     /// <summary>
@@ -9486,15 +9486,15 @@
         [EnumMember(Value = "urgent")]
         Urgent,
         /// <summary>
-        /// The work hours are 24 x 7 field.
-        /// </summary>
-        [EnumMember(Value = "workHoursAre24x7")]
-        WorkHoursAre24x7,
-        /// <summary>
         /// The workflow templates field.
         /// </summary>
         [EnumMember(Value = "workflowTemplates")]
         WorkflowTemplates,
+        /// <summary>
+        /// The work hours are 24 x 7 field.
+        /// </summary>
+        [EnumMember(Value = "workHoursAre24x7")]
+        WorkHoursAre24x7,
     }
 
     /// <summary>
@@ -10971,15 +10971,15 @@
         [EnumMember(Value = "workflowManager")]
         WorkflowManager,
         /// <summary>
-        /// The workflow type field.
-        /// </summary>
-        [EnumMember(Value = "workflowType")]
-        WorkflowType,
-        /// <summary>
         /// The workflows field.
         /// </summary>
         [EnumMember(Value = "workflows")]
         Workflows,
+        /// <summary>
+        /// The workflow type field.
+        /// </summary>
+        [EnumMember(Value = "workflowType")]
+        WorkflowType,
     }
 
     /// <summary>

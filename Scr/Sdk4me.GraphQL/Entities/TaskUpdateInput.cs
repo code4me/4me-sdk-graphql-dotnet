@@ -5,99 +5,49 @@
     /// </summary>
     public class TaskUpdateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
-        private long? timeSpent;
-        private string? timeSpentEffortClassId;
-        private string? agileBoardId;
         private string? agileBoardColumnId;
         private long? agileBoardColumnPosition;
-        private CustomFieldCollection? customFields;
-        private List<AttachmentInput>? customFieldsAttachments;
+        private string? agileBoardId;
+        private List<string>? approvalsToDelete;
         private DateTime? assignedAt;
         private TaskCategory? category;
-        private string? workflowId;
+        private string? clientMutationId;
+        private List<string>? configurationItemIds;
+        private CustomFieldCollection? customFields;
+        private List<AttachmentInput>? customFieldsAttachments;
         private DateTime? finishedAt;
+        private string? id;
         private TaskImpact? impact;
         private string? instructions;
         private List<AttachmentInput>? instructionsAttachments;
         private string? memberId;
+        private List<TaskApprovalInput>? newApprovals;
         private string? note;
         private List<AttachmentInput>? noteAttachments;
         private string? pdfDesignId;
         private long? plannedDuration;
         private long? plannedEffort;
+        private List<string>? predecessorIds;
+        private string? requestServiceInstanceId;
+        private string? requestTemplateId;
         private long? requiredApprovals;
+        private List<string>? serviceInstanceIds;
+        private string? source;
+        private string? sourceID;
         private DateTime? startAt;
         private TaskStatus? status;
         private string? subject;
+        private List<string>? successorIds;
         private string? supplierId;
         private string? supplierRequestID;
-        private string? requestTemplateId;
-        private string? requestServiceInstanceId;
         private string? teamId;
         private string? templateId;
+        private long? timeSpent;
+        private string? timeSpentEffortClassId;
         private bool? urgent;
         private DateTime? waitingUntil;
+        private string? workflowId;
         private bool? workHoursAre24x7;
-        private List<TaskApprovalInput>? newApprovals;
-        private List<string>? configurationItemIds;
-        private List<string>? serviceInstanceIds;
-        private List<string>? predecessorIds;
-        private List<string>? successorIds;
-        private string? clientMutationId;
-        private string? id;
-        private List<string>? approvalsToDelete;
-
-        /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
-        /// </summary>
-        [JsonProperty("source")]
-        public string? Source
-        {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
-        }
-
-        /// <summary>
-        /// The time that you have spent working on the request since you started to work on it or, if you already entered some time for this request, since you last added your time spent in it.
-        /// </summary>
-        [JsonProperty("timeSpent")]
-        public long? TimeSpent
-        {
-            get => timeSpent;
-            set => timeSpent = Set("timeSpent", value);
-        }
-
-        /// <summary>
-        /// The effort class that best reflects the type of effort for which time spent is being registered.
-        /// </summary>
-        [JsonProperty("timeSpentEffortClassId")]
-        public string? TimeSpentEffortClassId
-        {
-            get => timeSpentEffortClassId;
-            set => timeSpentEffortClassId = Set("timeSpentEffortClassId", value);
-        }
-
-        /// <summary>
-        /// ID of the board this item is placed on.
-        /// </summary>
-        [JsonProperty("agileBoardId")]
-        public string? AgileBoardId
-        {
-            get => agileBoardId;
-            set => agileBoardId = Set("agileBoardId", value);
-        }
 
         /// <summary>
         /// ID of the column this item is placed in.
@@ -120,23 +70,23 @@
         }
 
         /// <summary>
-        /// Values for custom fields to be used by the UI Extension that is linked to the record.
+        /// ID of the board this item is placed on.
         /// </summary>
-        [JsonProperty("customFields")]
-        public CustomFieldCollection? CustomFields
+        [JsonProperty("agileBoardId")]
+        public string? AgileBoardId
         {
-            get => customFields;
-            set => customFields = Set("customFields", value);
+            get => agileBoardId;
+            set => agileBoardId = Set("agileBoardId", value);
         }
 
         /// <summary>
-        /// The attachments used in the custom fields' values.
+        /// Identifiers of approvals to delete.
         /// </summary>
-        [JsonProperty("customFieldsAttachments")]
-        public List<AttachmentInput>? CustomFieldsAttachments
+        [JsonProperty("approvalsToDelete")]
+        public List<string>? ApprovalsToDelete
         {
-            get => customFieldsAttachments;
-            set => customFieldsAttachments = Set("customFieldsAttachments", value);
+            get => approvalsToDelete;
+            set => approvalsToDelete = Set("approvalsToDelete", value);
         }
 
         /// <summary>
@@ -160,13 +110,43 @@
         }
 
         /// <summary>
-        /// Identifier of the workflow to which the task belongs.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("workflowId")]
-        public string? WorkflowId
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => workflowId;
-            set => workflowId = Set("workflowId", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Identifiers of the configuration items of the task.
+        /// </summary>
+        [JsonProperty("configurationItemIds")]
+        public List<string>? ConfigurationItemIds
+        {
+            get => configurationItemIds;
+            set => configurationItemIds = Set("configurationItemIds", value);
+        }
+
+        /// <summary>
+        /// Values for custom fields to be used by the UI Extension that is linked to the record.
+        /// </summary>
+        [JsonProperty("customFields")]
+        public CustomFieldCollection? CustomFields
+        {
+            get => customFields;
+            set => customFields = Set("customFields", value);
+        }
+
+        /// <summary>
+        /// The attachments used in the custom fields' values.
+        /// </summary>
+        [JsonProperty("customFieldsAttachments")]
+        public List<AttachmentInput>? CustomFieldsAttachments
+        {
+            get => customFieldsAttachments;
+            set => customFieldsAttachments = Set("customFieldsAttachments", value);
         }
 
         /// <summary>
@@ -177,6 +157,16 @@
         {
             get => finishedAt;
             set => finishedAt = Set("finishedAt", value);
+        }
+
+        /// <summary>
+        /// The node ID of the record to update.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
         }
 
         /// <summary>
@@ -217,6 +207,16 @@
         {
             get => memberId;
             set => memberId = Set("memberId", value);
+        }
+
+        /// <summary>
+        /// Approvals of the task.
+        /// </summary>
+        [JsonProperty("newApprovals")]
+        public List<TaskApprovalInput>? NewApprovals
+        {
+            get => newApprovals;
+            set => newApprovals = Set("newApprovals", value);
         }
 
         /// <summary>
@@ -270,6 +270,36 @@
         }
 
         /// <summary>
+        /// Identifiers of predecessors of the task.
+        /// </summary>
+        [JsonProperty("predecessorIds")]
+        public List<string>? PredecessorIds
+        {
+            get => predecessorIds;
+            set => predecessorIds = Set("predecessorIds", value);
+        }
+
+        /// <summary>
+        /// The identifier of the service instance that should be used to create the request for this task.
+        /// </summary>
+        [JsonProperty("requestServiceInstanceId")]
+        public string? RequestServiceInstanceId
+        {
+            get => requestServiceInstanceId;
+            set => requestServiceInstanceId = Set("requestServiceInstanceId", value);
+        }
+
+        /// <summary>
+        /// The identifier of the request template that should be used to create the request for this task.
+        /// </summary>
+        [JsonProperty("requestTemplateId")]
+        public string? RequestTemplateId
+        {
+            get => requestTemplateId;
+            set => requestTemplateId = Set("requestTemplateId", value);
+        }
+
+        /// <summary>
         /// The number of approvers who need to have provided their approval before the status of the task gets updated to "Approved".
         /// </summary>
         [JsonProperty("requiredApprovals")]
@@ -277,6 +307,36 @@
         {
             get => requiredApprovals;
             set => requiredApprovals = Set("requiredApprovals", value);
+        }
+
+        /// <summary>
+        /// Identifiers of service instances of the task.
+        /// </summary>
+        [JsonProperty("serviceInstanceIds")]
+        public List<string>? ServiceInstanceIds
+        {
+            get => serviceInstanceIds;
+            set => serviceInstanceIds = Set("serviceInstanceIds", value);
+        }
+
+        /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
         }
 
         /// <summary>
@@ -310,6 +370,16 @@
         }
 
         /// <summary>
+        /// Identifiers of successors of the task.
+        /// </summary>
+        [JsonProperty("successorIds")]
+        public List<string>? SuccessorIds
+        {
+            get => successorIds;
+            set => successorIds = Set("successorIds", value);
+        }
+
+        /// <summary>
         /// Identifier of the supplier organization that has been asked to assist with the completion of the task.
         /// </summary>
         [JsonProperty("supplierId")]
@@ -327,26 +397,6 @@
         {
             get => supplierRequestID;
             set => supplierRequestID = Set("supplierRequestID", value);
-        }
-
-        /// <summary>
-        /// The identifier of the request template that should be used to create the request for this task.
-        /// </summary>
-        [JsonProperty("requestTemplateId")]
-        public string? RequestTemplateId
-        {
-            get => requestTemplateId;
-            set => requestTemplateId = Set("requestTemplateId", value);
-        }
-
-        /// <summary>
-        /// The identifier of the service instance that should be used to create the request for this task.
-        /// </summary>
-        [JsonProperty("requestServiceInstanceId")]
-        public string? RequestServiceInstanceId
-        {
-            get => requestServiceInstanceId;
-            set => requestServiceInstanceId = Set("requestServiceInstanceId", value);
         }
 
         /// <summary>
@@ -370,6 +420,26 @@
         }
 
         /// <summary>
+        /// The time that you have spent working on the request since you started to work on it or, if you already entered some time for this request, since you last added your time spent in it.
+        /// </summary>
+        [JsonProperty("timeSpent")]
+        public long? TimeSpent
+        {
+            get => timeSpent;
+            set => timeSpent = Set("timeSpent", value);
+        }
+
+        /// <summary>
+        /// The effort class that best reflects the type of effort for which time spent is being registered.
+        /// </summary>
+        [JsonProperty("timeSpentEffortClassId")]
+        public string? TimeSpentEffortClassId
+        {
+            get => timeSpentEffortClassId;
+            set => timeSpentEffortClassId = Set("timeSpentEffortClassId", value);
+        }
+
+        /// <summary>
         /// Whether the task has been marked as urgent.
         /// </summary>
         [JsonProperty("urgent")]
@@ -390,6 +460,16 @@
         }
 
         /// <summary>
+        /// Identifier of the workflow to which the task belongs.
+        /// </summary>
+        [JsonProperty("workflowId")]
+        public string? WorkflowId
+        {
+            get => workflowId;
+            set => workflowId = Set("workflowId", value);
+        }
+
+        /// <summary>
         /// When set to true, the completion target of the task is calculated using a 24x7 calendar rather than normal business hours.
         /// </summary>
         [JsonProperty("workHoursAre24x7")]
@@ -397,86 +477,6 @@
         {
             get => workHoursAre24x7;
             set => workHoursAre24x7 = Set("workHoursAre24x7", value);
-        }
-
-        /// <summary>
-        /// Approvals of the task.
-        /// </summary>
-        [JsonProperty("newApprovals")]
-        public List<TaskApprovalInput>? NewApprovals
-        {
-            get => newApprovals;
-            set => newApprovals = Set("newApprovals", value);
-        }
-
-        /// <summary>
-        /// Identifiers of the configuration items of the task.
-        /// </summary>
-        [JsonProperty("configurationItemIds")]
-        public List<string>? ConfigurationItemIds
-        {
-            get => configurationItemIds;
-            set => configurationItemIds = Set("configurationItemIds", value);
-        }
-
-        /// <summary>
-        /// Identifiers of service instances of the task.
-        /// </summary>
-        [JsonProperty("serviceInstanceIds")]
-        public List<string>? ServiceInstanceIds
-        {
-            get => serviceInstanceIds;
-            set => serviceInstanceIds = Set("serviceInstanceIds", value);
-        }
-
-        /// <summary>
-        /// Identifiers of predecessors of the task.
-        /// </summary>
-        [JsonProperty("predecessorIds")]
-        public List<string>? PredecessorIds
-        {
-            get => predecessorIds;
-            set => predecessorIds = Set("predecessorIds", value);
-        }
-
-        /// <summary>
-        /// Identifiers of successors of the task.
-        /// </summary>
-        [JsonProperty("successorIds")]
-        public List<string>? SuccessorIds
-        {
-            get => successorIds;
-            set => successorIds = Set("successorIds", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// The node ID of the record to update.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
-        }
-
-        /// <summary>
-        /// Identifiers of approvals to delete.
-        /// </summary>
-        [JsonProperty("approvalsToDelete")]
-        public List<string>? ApprovalsToDelete
-        {
-            get => approvalsToDelete;
-            set => approvalsToDelete = Set("approvalsToDelete", value);
         }
     }
 }

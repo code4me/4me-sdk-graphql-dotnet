@@ -5,47 +5,37 @@
     /// </summary>
     public class CustomCollectionUpdateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
-        private string? uiExtensionId;
+        private string? clientMutationId;
+        private List<string>? collectionElementsToDelete;
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
         private bool? disabled;
-        private string? name;
-        private string? reference;
-        private List<CustomCollectionElementInput>? newCollectionElements;
-        private string? clientMutationId;
         private string? id;
-        private List<string>? collectionElementsToDelete;
+        private string? name;
+        private List<CustomCollectionElementInput>? newCollectionElements;
+        private string? reference;
+        private string? source;
+        private string? sourceID;
+        private string? uiExtensionId;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => source;
-            set => source = Set("source", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
-        /// The unique identifier of the resource in an external system.
+        /// Identifiers of elements to remove from the collection.
         /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
+        [JsonProperty("collectionElementsToDelete")]
+        public List<string>? CollectionElementsToDelete
         {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
-        }
-
-        /// <summary>
-        /// UI extension that is to be applied to the record.
-        /// </summary>
-        [JsonProperty("uiExtensionId")]
-        public string? UiExtensionId
-        {
-            get => uiExtensionId;
-            set => uiExtensionId = Set("uiExtensionId", value);
+            get => collectionElementsToDelete;
+            set => collectionElementsToDelete = Set("collectionElementsToDelete", value);
         }
 
         /// <summary>
@@ -79,6 +69,16 @@
         }
 
         /// <summary>
+        /// The node ID of the record to update.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
+        }
+
+        /// <summary>
         /// Name of the collection.
         /// </summary>
         [JsonProperty("name")]
@@ -86,16 +86,6 @@
         {
             get => name;
             set => name = Set("name", value);
-        }
-
-        /// <summary>
-        /// The Reference field defaults to the Name field value, written in lower case characters and with all spaces replaced by the underscore character. This reference can be used to link the collection to an element using the 4me APIs or the 4me Import functionality.
-        /// </summary>
-        [JsonProperty("reference")]
-        public string? Reference
-        {
-            get => reference;
-            set => reference = Set("reference", value);
         }
 
         /// <summary>
@@ -109,33 +99,43 @@
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// The Reference field defaults to the Name field value, written in lower case characters and with all spaces replaced by the underscore character. This reference can be used to link the collection to an element using the 4me APIs or the 4me Import functionality.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("reference")]
+        public string? Reference
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
+            get => reference;
+            set => reference = Set("reference", value);
         }
 
         /// <summary>
-        /// The node ID of the record to update.
+        /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("id")]
-        public string? ID
+        [JsonProperty("source")]
+        public string? Source
         {
-            get => id;
-            set => id = Set("id", value);
+            get => source;
+            set => source = Set("source", value);
         }
 
         /// <summary>
-        /// Identifiers of elements to remove from the collection.
+        /// The unique identifier of the resource in an external system.
         /// </summary>
-        [JsonProperty("collectionElementsToDelete")]
-        public List<string>? CollectionElementsToDelete
+        [JsonProperty("sourceID")]
+        public string? SourceID
         {
-            get => collectionElementsToDelete;
-            set => collectionElementsToDelete = Set("collectionElementsToDelete", value);
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// UI extension that is to be applied to the record.
+        /// </summary>
+        [JsonProperty("uiExtensionId")]
+        public string? UiExtensionId
+        {
+            get => uiExtensionId;
+            set => uiExtensionId = Set("uiExtensionId", value);
         }
     }
 }

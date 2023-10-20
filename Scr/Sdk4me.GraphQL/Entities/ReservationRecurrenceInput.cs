@@ -5,79 +5,18 @@
     /// </summary>
     public class ReservationRecurrenceInput : PropertyChangeSet
     {
-        private RecurrenceFrequency? frequency;
-        private TimeSpan? timeOfDay;
-        private string? timeZone;
-        private long? interval;
-        private DateOnly? startDate;
-        private DateOnly? endDate;
         private List<long>? day;
         private List<long>? dayOfMonth;
         private bool? dayOfWeek;
-        private RecurrenceDayOfWeekIndex? dayOfWeekIndex;
         private List<DayNames>? dayOfWeekDay;
+        private RecurrenceDayOfWeekIndex? dayOfWeekIndex;
+        private DateOnly? endDate;
+        private RecurrenceFrequency? frequency;
+        private long? interval;
         private List<long>? monthOfYear;
-
-        /// <summary>
-        /// The frequency of the recurrence.
-        /// </summary>
-        [JsonProperty("frequency")]
-        public RecurrenceFrequency? Frequency
-        {
-            get => frequency;
-            set => frequency = Set("frequency", value);
-        }
-
-        /// <summary>
-        /// The time of day to start the Recurrence.
-        /// </summary>
-        [JsonProperty("timeOfDay")]
-        public TimeSpan? TimeOfDay
-        {
-            get => timeOfDay;
-            set => timeOfDay = Set("timeOfDay", value);
-        }
-
-        /// <summary>
-        /// <br>The time zone for the <c>timeOfDay</c> field.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
-        /// </summary>
-        [JsonProperty("timeZone")]
-        public string? TimeZone
-        {
-            get => timeZone;
-            set => timeZone = Set("timeZone", value);
-        }
-
-        /// <summary>
-        /// The interval of the Frequency, e.g. every 2nd week or every 10th day.
-        /// </summary>
-        [JsonProperty("interval")]
-        public long? Interval
-        {
-            get => interval;
-            set => interval = Set("interval", value);
-        }
-
-        /// <summary>
-        /// The date at which to start the Recurrence.
-        /// </summary>
-        [JsonProperty("startDate")]
-        public DateOnly? StartDate
-        {
-            get => startDate;
-            set => startDate = Set("startDate", value);
-        }
-
-        /// <summary>
-        /// The date at which to end the Recurrence.
-        /// </summary>
-        [JsonProperty("endDate")]
-        public DateOnly? EndDate
-        {
-            get => endDate;
-            set => endDate = Set("endDate", value);
-        }
+        private DateOnly? startDate;
+        private TimeSpan? timeOfDay;
+        private string? timeZone;
 
         /// <summary>
         /// <br><em>Required</em> when <c>frequency</c> is <c>daily</c>, ignored in all other cases. List of days of the week, e.g. <c>1,2,3,4,5</c>.</br>
@@ -124,6 +63,16 @@
         }
 
         /// <summary>
+        /// <em>Required</em> when <c>dayOfWeek</c> is <c>true</c>, ignored in all other cases. list of days of the week.
+        /// </summary>
+        [JsonProperty("dayOfWeekDay")]
+        public List<DayNames>? DayOfWeekDay
+        {
+            get => dayOfWeekDay;
+            set => dayOfWeekDay = Set("dayOfWeekDay", value);
+        }
+
+        /// <summary>
         /// <em>Required</em> when <c>dayOfWeek</c> is <c>true</c>, ignored in all other cases.
         /// </summary>
         [JsonProperty("dayOfWeekIndex")]
@@ -134,13 +83,33 @@
         }
 
         /// <summary>
-        /// <em>Required</em> when <c>dayOfWeek</c> is <c>true</c>, ignored in all other cases. list of days of the week.
+        /// The date at which to end the Recurrence.
         /// </summary>
-        [JsonProperty("dayOfWeekDay")]
-        public List<DayNames>? DayOfWeekDay
+        [JsonProperty("endDate")]
+        public DateOnly? EndDate
         {
-            get => dayOfWeekDay;
-            set => dayOfWeekDay = Set("dayOfWeekDay", value);
+            get => endDate;
+            set => endDate = Set("endDate", value);
+        }
+
+        /// <summary>
+        /// The frequency of the recurrence.
+        /// </summary>
+        [JsonProperty("frequency")]
+        public RecurrenceFrequency? Frequency
+        {
+            get => frequency;
+            set => frequency = Set("frequency", value);
+        }
+
+        /// <summary>
+        /// The interval of the Frequency, e.g. every 2nd week or every 10th day.
+        /// </summary>
+        [JsonProperty("interval")]
+        public long? Interval
+        {
+            get => interval;
+            set => interval = Set("interval", value);
         }
 
         /// <summary>
@@ -163,6 +132,37 @@
         {
             get => monthOfYear;
             set => monthOfYear = Set("monthOfYear", value);
+        }
+
+        /// <summary>
+        /// The date at which to start the Recurrence.
+        /// </summary>
+        [JsonProperty("startDate")]
+        public DateOnly? StartDate
+        {
+            get => startDate;
+            set => startDate = Set("startDate", value);
+        }
+
+        /// <summary>
+        /// The time of day to start the Recurrence.
+        /// </summary>
+        [JsonProperty("timeOfDay")]
+        public TimeSpan? TimeOfDay
+        {
+            get => timeOfDay;
+            set => timeOfDay = Set("timeOfDay", value);
+        }
+
+        /// <summary>
+        /// <br>The time zone for the <c>timeOfDay</c> field.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
+        /// </summary>
+        [JsonProperty("timeZone")]
+        public string? TimeZone
+        {
+            get => timeZone;
+            set => timeZone = Set("timeZone", value);
         }
     }
 }

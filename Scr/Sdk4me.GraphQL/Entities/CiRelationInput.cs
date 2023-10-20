@@ -5,10 +5,20 @@
     /// </summary>
     public class CiRelationInput : PropertyChangeSet
     {
+        private string? configurationItemId;
         private string? id;
         private CiRelationRelationType? relationType;
-        private string? configurationItemId;
         private string? source;
+
+        /// <summary>
+        /// Identifier of related configuration item.
+        /// </summary>
+        [JsonProperty("configurationItemId")]
+        public string? ConfigurationItemId
+        {
+            get => configurationItemId;
+            set => configurationItemId = Set("configurationItemId", value);
+        }
 
         /// <summary>
         /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
@@ -34,16 +44,6 @@
         {
             get => relationType;
             set => relationType = Set("relationType", value);
-        }
-
-        /// <summary>
-        /// Identifier of related configuration item.
-        /// </summary>
-        [JsonProperty("configurationItemId")]
-        public string? ConfigurationItemId
-        {
-            get => configurationItemId;
-            set => configurationItemId = Set("configurationItemId", value);
         }
 
         /// <summary>

@@ -5,36 +5,16 @@
     /// </summary>
     public class OutOfOfficePeriodUpdateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
         private string? approvalDelegateId;
+        private string? clientMutationId;
         private DateTime? endAt;
+        private string? id;
         private string? personId;
         private string? reason;
+        private string? source;
+        private string? sourceID;
         private DateTime? startAt;
         private string? timeAllocationId;
-        private string? clientMutationId;
-        private string? id;
-
-        /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
-        /// </summary>
-        [JsonProperty("source")]
-        public string? Source
-        {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
-        }
 
         /// <summary>
         /// Identifier of the person who is selected as the approval delegate for the out of office period.
@@ -47,6 +27,16 @@
         }
 
         /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
         /// End time of the out of office period.
         /// </summary>
         [JsonProperty("endAt")]
@@ -54,6 +44,16 @@
         {
             get => endAt;
             set => endAt = Set("endAt", value);
+        }
+
+        /// <summary>
+        /// The node ID of the record to update.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
         }
 
         /// <summary>
@@ -77,6 +77,26 @@
         }
 
         /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
         /// Start time of the out of office period.
         /// </summary>
         [JsonProperty("startAt")]
@@ -94,26 +114,6 @@
         {
             get => timeAllocationId;
             set => timeAllocationId = Set("timeAllocationId", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// The node ID of the record to update.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
         }
     }
 }

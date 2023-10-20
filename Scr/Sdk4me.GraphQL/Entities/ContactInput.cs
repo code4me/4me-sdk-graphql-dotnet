@@ -6,10 +6,10 @@
     public class ContactInput : PropertyChangeSet
     {
         private string? id;
+        private bool? integration;
         private ContactLabel? label;
         private ContactProtocol? protocol;
         private string? uri;
-        private bool? integration;
 
         /// <summary>
         /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
@@ -19,6 +19,16 @@
         {
             get => id;
             set => id = Set("id", value);
+        }
+
+        /// <summary>
+        /// Can be set to <c>true</c> using this API or the Import functionality. When checked, the contact is displayed as read-only in the user interface to prevent users from updating it.
+        /// </summary>
+        [JsonProperty("integration")]
+        public bool? Integration
+        {
+            get => integration;
+            set => integration = Set("integration", value);
         }
 
         /// <summary>
@@ -57,16 +67,6 @@
         {
             get => uri;
             set => uri = Set("uri", value);
-        }
-
-        /// <summary>
-        /// Can be set to <c>true</c> using this API or the Import functionality. When checked, the contact is displayed as read-only in the user interface to prevent users from updating it.
-        /// </summary>
-        [JsonProperty("integration")]
-        public bool? Integration
-        {
-            get => integration;
-            set => integration = Set("integration", value);
         }
     }
 }

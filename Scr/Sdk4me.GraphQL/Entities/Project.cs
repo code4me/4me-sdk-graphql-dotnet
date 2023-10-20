@@ -60,6 +60,12 @@
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
+        /// Used to select the organization for which the project is to be implemented.
+        /// </summary>
+        [JsonProperty("customer")]
+        public Organization? Customer { get; internal set; }
+
+        /// <summary>
         /// Values of custom fields.
         /// </summary>
         [JsonProperty("customFields")]
@@ -75,12 +81,6 @@
         {
             get => CustomFieldsAttachmentsCollection?.Data;
         }
-
-        /// <summary>
-        /// Used to select the organization for which the project is to be implemented.
-        /// </summary>
-        [JsonProperty("customer")]
-        public Organization? Customer { get; internal set; }
 
         /// <summary>
         /// The estimated number of hours of effort that will be needed from internal employees and/or long-term contractors to implement the project.
@@ -281,12 +281,6 @@
         [JsonProperty("valueCurrency")]
         public string? ValueCurrency { get; internal set; }
 
-        /// <summary>
-        /// The calendar that defines the work hours that are to be used to calculate the anticipated assignment and completion target for the tasks of the project.
-        /// </summary>
-        [JsonProperty("workHours")]
-        public Calendar? WorkHours { get; internal set; }
-
         [JsonProperty("workflows")]
         internal NodeCollection<Workflow>? WorkflowsCollection { get; set; }
 
@@ -297,6 +291,12 @@
         {
             get => WorkflowsCollection?.Data;
         }
+
+        /// <summary>
+        /// The calendar that defines the work hours that are to be used to calculate the anticipated assignment and completion target for the tasks of the project.
+        /// </summary>
+        [JsonProperty("workHours")]
+        public Calendar? WorkHours { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)
         {

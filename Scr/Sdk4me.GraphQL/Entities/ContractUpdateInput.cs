@@ -5,77 +5,27 @@
     /// </summary>
     public class ContractUpdateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
-        private CustomFieldCollection? customFields;
-        private List<AttachmentInput>? customFieldsAttachments;
-        private string? uiExtensionId;
         private ContractCategory? category;
+        private string? clientMutationId;
+        private List<string>? configurationItemIds;
         private string? customerId;
         private string? customerRepresentativeId;
+        private CustomFieldCollection? customFields;
+        private List<AttachmentInput>? customFieldsAttachments;
         private DateOnly? expiryDate;
+        private string? id;
         private string? name;
         private DateOnly? noticeDate;
         private string? remarks;
         private List<AttachmentInput>? remarksAttachments;
+        private string? source;
+        private string? sourceID;
         private DateOnly? startDate;
         private AgreementStatus? status;
-        private string? supplierId;
         private string? supplierContactId;
+        private string? supplierId;
         private string? timeZone;
-        private List<string>? configurationItemIds;
-        private string? clientMutationId;
-        private string? id;
-
-        /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
-        /// </summary>
-        [JsonProperty("source")]
-        public string? Source
-        {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
-        }
-
-        /// <summary>
-        /// Values for custom fields to be used by the UI Extension that is linked to the record.
-        /// </summary>
-        [JsonProperty("customFields")]
-        public CustomFieldCollection? CustomFields
-        {
-            get => customFields;
-            set => customFields = Set("customFields", value);
-        }
-
-        /// <summary>
-        /// The attachments used in the custom fields' values.
-        /// </summary>
-        [JsonProperty("customFieldsAttachments")]
-        public List<AttachmentInput>? CustomFieldsAttachments
-        {
-            get => customFieldsAttachments;
-            set => customFieldsAttachments = Set("customFieldsAttachments", value);
-        }
-
-        /// <summary>
-        /// UI extension that is to be applied to the record.
-        /// </summary>
-        [JsonProperty("uiExtensionId")]
-        public string? UiExtensionId
-        {
-            get => uiExtensionId;
-            set => uiExtensionId = Set("uiExtensionId", value);
-        }
+        private string? uiExtensionId;
 
         /// <summary>
         /// Used to select the appropriate category for the contract.
@@ -85,6 +35,26 @@
         {
             get => category;
             set => category = Set("category", value);
+        }
+
+        /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Identifiers of the configuration items of the contract.
+        /// </summary>
+        [JsonProperty("configurationItemIds")]
+        public List<string>? ConfigurationItemIds
+        {
+            get => configurationItemIds;
+            set => configurationItemIds = Set("configurationItemIds", value);
         }
 
         /// <summary>
@@ -108,6 +78,26 @@
         }
 
         /// <summary>
+        /// Values for custom fields to be used by the UI Extension that is linked to the record.
+        /// </summary>
+        [JsonProperty("customFields")]
+        public CustomFieldCollection? CustomFields
+        {
+            get => customFields;
+            set => customFields = Set("customFields", value);
+        }
+
+        /// <summary>
+        /// The attachments used in the custom fields' values.
+        /// </summary>
+        [JsonProperty("customFieldsAttachments")]
+        public List<AttachmentInput>? CustomFieldsAttachments
+        {
+            get => customFieldsAttachments;
+            set => customFieldsAttachments = Set("customFieldsAttachments", value);
+        }
+
+        /// <summary>
         /// <br>The date through which the contract will be active. The contract expires at the end of this day if it is not renewed before then.</br>
         /// <br>When the contract has expired, its status will automatically be set to <c>expired</c>.</br>
         /// <br></br>
@@ -118,6 +108,16 @@
         {
             get => expiryDate;
             set => expiryDate = Set("expiryDate", value);
+        }
+
+        /// <summary>
+        /// The node ID of the record to update.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
         }
 
         /// <summary>
@@ -168,6 +168,26 @@
         }
 
         /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
         /// The first day during which the contract is active.
         /// </summary>
         [JsonProperty("startDate")]
@@ -188,16 +208,6 @@
         }
 
         /// <summary>
-        /// Identifier of the organization that has provided the contract to the customer.
-        /// </summary>
-        [JsonProperty("supplierId")]
-        public string? SupplierId
-        {
-            get => supplierId;
-            set => supplierId = Set("supplierId", value);
-        }
-
-        /// <summary>
         /// Identifier of the person who represents the supplier of the contract.
         /// </summary>
         [JsonProperty("supplierContactId")]
@@ -205,6 +215,16 @@
         {
             get => supplierContactId;
             set => supplierContactId = Set("supplierContactId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the organization that has provided the contract to the customer.
+        /// </summary>
+        [JsonProperty("supplierId")]
+        public string? SupplierId
+        {
+            get => supplierId;
+            set => supplierId = Set("supplierId", value);
         }
 
         /// <summary>
@@ -219,33 +239,13 @@
         }
 
         /// <summary>
-        /// Identifiers of the configuration items of the contract.
+        /// UI extension that is to be applied to the record.
         /// </summary>
-        [JsonProperty("configurationItemIds")]
-        public List<string>? ConfigurationItemIds
+        [JsonProperty("uiExtensionId")]
+        public string? UiExtensionId
         {
-            get => configurationItemIds;
-            set => configurationItemIds = Set("configurationItemIds", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// The node ID of the record to update.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
+            get => uiExtensionId;
+            set => uiExtensionId = Set("uiExtensionId", value);
         }
     }
 }

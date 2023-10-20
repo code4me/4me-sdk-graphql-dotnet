@@ -5,12 +5,22 @@
     /// </summary>
     public class ActivityIDInput : PropertyChangeSet
     {
+        private string? high;
         private string? low;
         private string? medium;
-        private string? high;
-        private string? top;
         private string? rfc;
         private string? rfi;
+        private string? top;
+
+        /// <summary>
+        /// Represents the activityID for high incidents. The Activity ID is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider.
+        /// </summary>
+        [JsonProperty("high")]
+        public string? High
+        {
+            get => high;
+            set => high = Set("high", value);
+        }
 
         /// <summary>
         /// Represents the activityID for low incidents. The Activity ID is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider.
@@ -33,26 +43,6 @@
         }
 
         /// <summary>
-        /// Represents the activityID for high incidents. The Activity ID is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider.
-        /// </summary>
-        [JsonProperty("high")]
-        public string? High
-        {
-            get => high;
-            set => high = Set("high", value);
-        }
-
-        /// <summary>
-        /// Represents the activityID for top incidents. The Activity ID is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider.
-        /// </summary>
-        [JsonProperty("top")]
-        public string? Top
-        {
-            get => top;
-            set => top = Set("top", value);
-        }
-
-        /// <summary>
         /// Represents the activityID for RFCs. The Activity ID is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider.
         /// </summary>
         [JsonProperty("rfc")]
@@ -70,6 +60,16 @@
         {
             get => rfi;
             set => rfi = Set("rfi", value);
+        }
+
+        /// <summary>
+        /// Represents the activityID for top incidents. The Activity ID is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider.
+        /// </summary>
+        [JsonProperty("top")]
+        public string? Top
+        {
+            get => top;
+            set => top = Set("top", value);
         }
     }
 }

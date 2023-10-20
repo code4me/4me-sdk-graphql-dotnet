@@ -5,38 +5,38 @@
     /// </summary>
     public class DiscoveredCiInput : PropertyChangeSet
     {
-        private DiscoveredItemMetaData? meta;
+        private DiscoveredCiRelationInput? ciRelations;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
-        private string? sourceID;
-        private string? name;
-        private DiscoveredCiRelationInput? ciRelations;
-        private CiStatus? status;
         private DateOnly? endOfSupportDate;
-        private string? serialNr;
-        private string? systemID;
         private DateOnly? inUseSince;
         private string? label;
         private DateTime? lastSeenAt;
         private string? location;
+        private DiscoveredItemMetaData? meta;
+        private string? name;
         private long? nrOfCores;
         private long? nrOfProcessors;
-        private DateOnly? warrantyExpiryDate;
-        private long? ramAmount;
-        private string? remarks;
         private string? operatingSystemId;
         private decimal? purchaseValue;
         private string? purchaseValueCurrency;
+        private long? ramAmount;
+        private string? remarks;
+        private string? serialNr;
+        private string? sourceID;
+        private CiStatus? status;
+        private string? systemID;
         private List<string>? userIds;
+        private DateOnly? warrantyExpiryDate;
 
         /// <summary>
-        /// Meta data describing how to process the values supplied.
+        /// Relations to other configuration items.
         /// </summary>
-        [JsonProperty("meta")]
-        public DiscoveredItemMetaData? Meta
+        [JsonProperty("ciRelations")]
+        public DiscoveredCiRelationInput? CiRelations
         {
-            get => meta;
-            set => meta = Set("meta", value);
+            get => ciRelations;
+            set => ciRelations = Set("ciRelations", value);
         }
 
         /// <summary>
@@ -60,46 +60,6 @@
         }
 
         /// <summary>
-        /// The unique identifier of the configuration item in an external system
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
-        }
-
-        /// <summary>
-        /// Name of the configuration item.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
-        }
-
-        /// <summary>
-        /// Relations to other configuration items.
-        /// </summary>
-        [JsonProperty("ciRelations")]
-        public DiscoveredCiRelationInput? CiRelations
-        {
-            get => ciRelations;
-            set => ciRelations = Set("ciRelations", value);
-        }
-
-        /// <summary>
-        /// The appropriate status for the configuration item (CI).
-        /// </summary>
-        [JsonProperty("status")]
-        public CiStatus? Status
-        {
-            get => status;
-            set => status = Set("status", value);
-        }
-
-        /// <summary>
         /// The date at which the support for this configuration item ends.
         /// </summary>
         [JsonProperty("endOfSupportDate")]
@@ -107,26 +67,6 @@
         {
             get => endOfSupportDate;
             set => endOfSupportDate = Set("endOfSupportDate", value);
-        }
-
-        /// <summary>
-        /// Serial number of the configuration item. The concatenation of <c>product</c>'s' <c>brand</c> and <c>serialNr</c> must be unique within a 4me account.
-        /// </summary>
-        [JsonProperty("serialNr")]
-        public string? SerialNr
-        {
-            get => serialNr;
-            set => serialNr = Set("serialNr", value);
-        }
-
-        /// <summary>
-        /// System identifier of the configuration item.
-        /// </summary>
-        [JsonProperty("systemID")]
-        public string? SystemID
-        {
-            get => systemID;
-            set => systemID = Set("systemID", value);
         }
 
         /// <summary>
@@ -170,6 +110,26 @@
         }
 
         /// <summary>
+        /// Meta data describing how to process the values supplied.
+        /// </summary>
+        [JsonProperty("meta")]
+        public DiscoveredItemMetaData? Meta
+        {
+            get => meta;
+            set => meta = Set("meta", value);
+        }
+
+        /// <summary>
+        /// Name of the configuration item.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
+        }
+
+        /// <summary>
         /// The total number of processor cores that are installed in the server.
         /// </summary>
         [JsonProperty("nrOfCores")]
@@ -187,36 +147,6 @@
         {
             get => nrOfProcessors;
             set => nrOfProcessors = Set("nrOfProcessors", value);
-        }
-
-        /// <summary>
-        /// The date through which the warranty coverage for the configuration item is valid. The warranty expires at the end of this day.
-        /// </summary>
-        [JsonProperty("warrantyExpiryDate")]
-        public DateOnly? WarrantyExpiryDate
-        {
-            get => warrantyExpiryDate;
-            set => warrantyExpiryDate = Set("warrantyExpiryDate", value);
-        }
-
-        /// <summary>
-        /// The amount of RAM (in GB) of this configuration item.
-        /// </summary>
-        [JsonProperty("ramAmount")]
-        public long? RamAmount
-        {
-            get => ramAmount;
-            set => ramAmount = Set("ramAmount", value);
-        }
-
-        /// <summary>
-        /// Any additional information about the configuration item that might prove useful. When creating a new CI and a value is not specified for this field, it is set to the remarks of the CI's product.
-        /// </summary>
-        [JsonProperty("remarks")]
-        public string? Remarks
-        {
-            get => remarks;
-            set => remarks = Set("remarks", value);
         }
 
         /// <summary>
@@ -251,6 +181,66 @@
         }
 
         /// <summary>
+        /// The amount of RAM (in GB) of this configuration item.
+        /// </summary>
+        [JsonProperty("ramAmount")]
+        public long? RamAmount
+        {
+            get => ramAmount;
+            set => ramAmount = Set("ramAmount", value);
+        }
+
+        /// <summary>
+        /// Any additional information about the configuration item that might prove useful. When creating a new CI and a value is not specified for this field, it is set to the remarks of the CI's product.
+        /// </summary>
+        [JsonProperty("remarks")]
+        public string? Remarks
+        {
+            get => remarks;
+            set => remarks = Set("remarks", value);
+        }
+
+        /// <summary>
+        /// Serial number of the configuration item. The concatenation of <c>product</c>'s' <c>brand</c> and <c>serialNr</c> must be unique within a 4me account.
+        /// </summary>
+        [JsonProperty("serialNr")]
+        public string? SerialNr
+        {
+            get => serialNr;
+            set => serialNr = Set("serialNr", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the configuration item in an external system
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// The appropriate status for the configuration item (CI).
+        /// </summary>
+        [JsonProperty("status")]
+        public CiStatus? Status
+        {
+            get => status;
+            set => status = Set("status", value);
+        }
+
+        /// <summary>
+        /// System identifier of the configuration item.
+        /// </summary>
+        [JsonProperty("systemID")]
+        public string? SystemID
+        {
+            get => systemID;
+            set => systemID = Set("systemID", value);
+        }
+
+        /// <summary>
         /// Identifiers of the users of this configuration item.
         /// </summary>
         [JsonProperty("userIds")]
@@ -258,6 +248,16 @@
         {
             get => userIds;
             set => userIds = Set("userIds", value);
+        }
+
+        /// <summary>
+        /// The date through which the warranty coverage for the configuration item is valid. The warranty expires at the end of this day.
+        /// </summary>
+        [JsonProperty("warrantyExpiryDate")]
+        public DateOnly? WarrantyExpiryDate
+        {
+            get => warrantyExpiryDate;
+            set => warrantyExpiryDate = Set("warrantyExpiryDate", value);
         }
     }
 }

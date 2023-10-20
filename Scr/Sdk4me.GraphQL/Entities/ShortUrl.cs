@@ -30,12 +30,6 @@
         public ShortUrlDataType? DataType { get; internal set; }
 
         /// <summary>
-        /// The automatically generated website address that is forwarded to URI.
-        /// </summary>
-        [JsonProperty("shortUrl"), Sdk4meField(true)]
-        public string? URL { get; internal set; }
-
-        /// <summary>
         /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt"), Sdk4meField(true)]
@@ -46,6 +40,12 @@
         /// </summary>
         [JsonProperty("uri")]
         public string? Uri { get; internal set; }
+
+        /// <summary>
+        /// The automatically generated website address that is forwarded to URI.
+        /// </summary>
+        [JsonProperty("shortUrl"), Sdk4meField(true)]
+        public string? URL { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)
         {

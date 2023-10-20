@@ -294,12 +294,6 @@
         public long? ReopenCount { get; internal set; }
 
         /// <summary>
-        /// The record ID as displayed in the UI
-        /// </summary>
-        [JsonProperty("requestId")]
-        public string? RequestId { get; internal set; }
-
-        /// <summary>
         /// The person who submitted the request.
         /// </summary>
         [JsonProperty("requestedBy")]
@@ -316,6 +310,12 @@
         /// </summary>
         [JsonProperty("requesterResolutionTargetAt")]
         public DateTime? RequesterResolutionTargetAt { get; internal set; }
+
+        /// <summary>
+        /// The record ID as displayed in the UI
+        /// </summary>
+        [JsonProperty("requestId")]
+        public string? RequestId { get; internal set; }
 
         /// <summary>
         /// The number of minutes it took to complete this request, which is calculated as the difference between the <c>createdAt</c> and <c>completedAt</c> values.

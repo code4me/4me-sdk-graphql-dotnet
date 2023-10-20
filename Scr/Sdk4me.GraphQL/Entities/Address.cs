@@ -6,12 +6,6 @@
     public class Address : Node
     {
         /// <summary>
-        /// The address lines.
-        /// </summary>
-        [JsonProperty("address"), Sdk4meField(true)]
-        public string? Street { get; internal set; }
-
-        /// <summary>
         /// The city name.
         /// </summary>
         [JsonProperty("city"), Sdk4meField(true)]
@@ -40,6 +34,12 @@
         /// </summary>
         [JsonProperty("state"), Sdk4meField(true)]
         public string? State { get; internal set; }
+
+        /// <summary>
+        /// The address lines.
+        /// </summary>
+        [JsonProperty("address"), Sdk4meField(true)]
+        public string? Street { get; internal set; }
 
         /// <summary>
         /// The zip code.

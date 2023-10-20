@@ -363,16 +363,16 @@
         public DateTime? WaitingUntil { get; internal set; }
 
         /// <summary>
-        /// When set to true, the completion target of the task is calculated using a 24x7 calendar rather than normal business hours.
-        /// </summary>
-        [JsonProperty("workHoursAre24x7")]
-        public bool? WorkHoursAre24x7 { get; internal set; }
-
-        /// <summary>
         /// The workflow to which the task belongs.
         /// </summary>
         [JsonProperty("workflow")]
         public Workflow? Workflow { get; internal set; }
+
+        /// <summary>
+        /// When set to true, the completion target of the task is calculated using a 24x7 calendar rather than normal business hours.
+        /// </summary>
+        [JsonProperty("workHoursAre24x7")]
+        public bool? WorkHoursAre24x7 { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)
         {

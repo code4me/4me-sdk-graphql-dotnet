@@ -5,45 +5,25 @@
     /// </summary>
     public class CustomCollectionCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
-        private string? uiExtensionId;
+        private string? clientMutationId;
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
         private bool? disabled;
-        private string? reference;
-        private List<CustomCollectionElementInput>? newCollectionElements;
-        private string? clientMutationId;
         private string? name;
+        private List<CustomCollectionElementInput>? newCollectionElements;
+        private string? reference;
+        private string? source;
+        private string? sourceID;
+        private string? uiExtensionId;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
-        }
-
-        /// <summary>
-        /// UI extension that is to be applied to the record.
-        /// </summary>
-        [JsonProperty("uiExtensionId")]
-        public string? UiExtensionId
-        {
-            get => uiExtensionId;
-            set => uiExtensionId = Set("uiExtensionId", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -77,13 +57,13 @@
         }
 
         /// <summary>
-        /// The Reference field defaults to the Name field value, written in lower case characters and with all spaces replaced by the underscore character. This reference can be used to link the collection to an element using the 4me APIs or the 4me Import functionality.
+        /// Name of the collection.
         /// </summary>
-        [JsonProperty("reference")]
-        public string? Reference
+        [JsonProperty("name")]
+        public string? Name
         {
-            get => reference;
-            set => reference = Set("reference", value);
+            get => name;
+            set => name = Set("name", value);
         }
 
         /// <summary>
@@ -97,23 +77,43 @@
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// The Reference field defaults to the Name field value, written in lower case characters and with all spaces replaced by the underscore character. This reference can be used to link the collection to an element using the 4me APIs or the 4me Import functionality.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("reference")]
+        public string? Reference
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
+            get => reference;
+            set => reference = Set("reference", value);
         }
 
         /// <summary>
-        /// Name of the collection.
+        /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("name")]
-        public string? Name
+        [JsonProperty("source")]
+        public string? Source
         {
-            get => name;
-            set => name = Set("name", value);
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// UI extension that is to be applied to the record.
+        /// </summary>
+        [JsonProperty("uiExtensionId")]
+        public string? UiExtensionId
+        {
+            get => uiExtensionId;
+            set => uiExtensionId = Set("uiExtensionId", value);
         }
     }
 }

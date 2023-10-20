@@ -5,39 +5,39 @@
     /// </summary>
     public class SurveyResponseUpdateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
+        private List<string>? answersToDelete;
+        private string? clientMutationId;
         private bool? completed;
-        private DateTime? respondedAt;
+        private string? id;
+        private List<SurveyAnswerInput>? newAnswers;
         private string? personId;
         private string? rating;
         private JToken? ratingCalculation;
+        private DateTime? respondedAt;
         private string? serviceId;
-        private string? surveyId;
         private List<string>? slaIds;
-        private List<SurveyAnswerInput>? newAnswers;
-        private string? clientMutationId;
-        private string? id;
-        private List<string>? answersToDelete;
+        private string? source;
+        private string? sourceID;
+        private string? surveyId;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// Identifiers of answers to remove from the survey.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("answersToDelete")]
+        public List<string>? AnswersToDelete
         {
-            get => source;
-            set => source = Set("source", value);
+            get => answersToDelete;
+            set => answersToDelete = Set("answersToDelete", value);
         }
 
         /// <summary>
-        /// The unique identifier of the resource in an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -51,13 +51,23 @@
         }
 
         /// <summary>
-        /// Time this response was submitted.
+        /// The node ID of the record to update.
         /// </summary>
-        [JsonProperty("respondedAt")]
-        public DateTime? RespondedAt
+        [JsonProperty("id")]
+        public string? ID
         {
-            get => respondedAt;
-            set => respondedAt = Set("respondedAt", value);
+            get => id;
+            set => id = Set("id", value);
+        }
+
+        /// <summary>
+        /// Answers of this survey response.
+        /// </summary>
+        [JsonProperty("newAnswers")]
+        public List<SurveyAnswerInput>? NewAnswers
+        {
+            get => newAnswers;
+            set => newAnswers = Set("newAnswers", value);
         }
 
         /// <summary>
@@ -91,6 +101,16 @@
         }
 
         /// <summary>
+        /// Time this response was submitted.
+        /// </summary>
+        [JsonProperty("respondedAt")]
+        public DateTime? RespondedAt
+        {
+            get => respondedAt;
+            set => respondedAt = Set("respondedAt", value);
+        }
+
+        /// <summary>
         /// Identifier of the service this response is about.
         /// </summary>
         [JsonProperty("serviceId")]
@@ -98,16 +118,6 @@
         {
             get => serviceId;
             set => serviceId = Set("serviceId", value);
-        }
-
-        /// <summary>
-        /// Identifier of the survey this response is for.
-        /// </summary>
-        [JsonProperty("surveyId")]
-        public string? SurveyId
-        {
-            get => surveyId;
-            set => surveyId = Set("surveyId", value);
         }
 
         /// <summary>
@@ -121,43 +131,33 @@
         }
 
         /// <summary>
-        /// Answers of this survey response.
+        /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("newAnswers")]
-        public List<SurveyAnswerInput>? NewAnswers
+        [JsonProperty("source")]
+        public string? Source
         {
-            get => newAnswers;
-            set => newAnswers = Set("newAnswers", value);
+            get => source;
+            set => source = Set("source", value);
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// The unique identifier of the resource in an external system.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("sourceID")]
+        public string? SourceID
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
         }
 
         /// <summary>
-        /// The node ID of the record to update.
+        /// Identifier of the survey this response is for.
         /// </summary>
-        [JsonProperty("id")]
-        public string? ID
+        [JsonProperty("surveyId")]
+        public string? SurveyId
         {
-            get => id;
-            set => id = Set("id", value);
-        }
-
-        /// <summary>
-        /// Identifiers of answers to remove from the survey.
-        /// </summary>
-        [JsonProperty("answersToDelete")]
-        public List<string>? AnswersToDelete
-        {
-            get => answersToDelete;
-            set => answersToDelete = Set("answersToDelete", value);
+            get => surveyId;
+            set => surveyId = Set("surveyId", value);
         }
     }
 }

@@ -5,24 +5,14 @@
     /// </summary>
     public class SurveyQuestionInput : PropertyChangeSet
     {
-        private string? id;
         private bool? disabled;
-        private SurveyQuestionType? type;
-        private string? question;
         private string? guidance;
+        private string? id;
         private long? position;
+        private string? question;
         private bool? required;
+        private SurveyQuestionType? type;
         private long? weight;
-
-        /// <summary>
-        /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
-        }
 
         /// <summary>
         /// Whether the question should not be shown to respondents.
@@ -32,26 +22,6 @@
         {
             get => disabled;
             set => disabled = Set("disabled", value);
-        }
-
-        /// <summary>
-        /// Type of the question.
-        /// </summary>
-        [JsonProperty("type")]
-        public SurveyQuestionType? Type
-        {
-            get => type;
-            set => type = Set("type", value);
-        }
-
-        /// <summary>
-        /// Question to pose.
-        /// </summary>
-        [JsonProperty("question")]
-        public string? Question
-        {
-            get => question;
-            set => question = Set("question", value);
         }
 
         /// <summary>
@@ -65,6 +35,16 @@
         }
 
         /// <summary>
+        /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
+        }
+
+        /// <summary>
         /// Relative position of the question.
         /// </summary>
         [JsonProperty("position")]
@@ -75,6 +55,16 @@
         }
 
         /// <summary>
+        /// Question to pose.
+        /// </summary>
+        [JsonProperty("question")]
+        public string? Question
+        {
+            get => question;
+            set => question = Set("question", value);
+        }
+
+        /// <summary>
         /// Whether an answer to the question is required to completed the survey.
         /// </summary>
         [JsonProperty("required")]
@@ -82,6 +72,16 @@
         {
             get => required;
             set => required = Set("required", value);
+        }
+
+        /// <summary>
+        /// Type of the question.
+        /// </summary>
+        [JsonProperty("type")]
+        public SurveyQuestionType? Type
+        {
+            get => type;
+            set => type = Set("type", value);
         }
 
         /// <summary>

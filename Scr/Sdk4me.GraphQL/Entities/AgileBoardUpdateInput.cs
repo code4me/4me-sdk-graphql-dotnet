@@ -5,47 +5,37 @@
     /// </summary>
     public class AgileBoardUpdateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
-        private string? pictureUri;
+        private string? clientMutationId;
+        private List<string>? columnsToDelete;
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
         private bool? disabled;
-        private string? name;
-        private string? managerId;
-        private List<AgileBoardColumnInput>? newColumns;
-        private string? clientMutationId;
         private string? id;
-        private List<string>? columnsToDelete;
+        private string? managerId;
+        private string? name;
+        private List<AgileBoardColumnInput>? newColumns;
+        private string? pictureUri;
+        private string? source;
+        private string? sourceID;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => source;
-            set => source = Set("source", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
-        /// The unique identifier of the resource in an external system.
+        /// Identifiers of columns to remove from the board.
         /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
+        [JsonProperty("columnsToDelete")]
+        public List<string>? ColumnsToDelete
         {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
-        }
-
-        /// <summary>
-        /// The hyperlink to the image file for the record.
-        /// </summary>
-        [JsonProperty("pictureUri")]
-        public string? PictureUri
-        {
-            get => pictureUri;
-            set => pictureUri = Set("pictureUri", value);
+            get => columnsToDelete;
+            set => columnsToDelete = Set("columnsToDelete", value);
         }
 
         /// <summary>
@@ -79,13 +69,13 @@
         }
 
         /// <summary>
-        /// Name of the agile board.
+        /// The node ID of the record to update.
         /// </summary>
-        [JsonProperty("name")]
-        public string? Name
+        [JsonProperty("id")]
+        public string? ID
         {
-            get => name;
-            set => name = Set("name", value);
+            get => id;
+            set => id = Set("id", value);
         }
 
         /// <summary>
@@ -99,6 +89,16 @@
         }
 
         /// <summary>
+        /// Name of the agile board.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
+        }
+
+        /// <summary>
         /// Columns of this agile board.
         /// </summary>
         [JsonProperty("newColumns")]
@@ -109,33 +109,33 @@
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// The hyperlink to the image file for the record.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("pictureUri")]
+        public string? PictureUri
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
+            get => pictureUri;
+            set => pictureUri = Set("pictureUri", value);
         }
 
         /// <summary>
-        /// The node ID of the record to update.
+        /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("id")]
-        public string? ID
+        [JsonProperty("source")]
+        public string? Source
         {
-            get => id;
-            set => id = Set("id", value);
+            get => source;
+            set => source = Set("source", value);
         }
 
         /// <summary>
-        /// Identifiers of columns to remove from the board.
+        /// The unique identifier of the resource in an external system.
         /// </summary>
-        [JsonProperty("columnsToDelete")]
-        public List<string>? ColumnsToDelete
+        [JsonProperty("sourceID")]
+        public string? SourceID
         {
-            get => columnsToDelete;
-            set => columnsToDelete = Set("columnsToDelete", value);
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
         }
     }
 }

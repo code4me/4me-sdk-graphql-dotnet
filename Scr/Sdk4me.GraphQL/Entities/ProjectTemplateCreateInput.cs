@@ -5,32 +5,22 @@
     /// </summary>
     public class ProjectTemplateCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
+        private string? clientMutationId;
         private bool? disabled;
         private List<ProjectPhaseInput>? newPhases;
         private List<ProjectTemplateTaskTemplateInput>? newTaskTemplateRelations;
-        private string? clientMutationId;
+        private string? source;
+        private string? sourceID;
         private string? subject;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -64,13 +54,23 @@
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("source")]
+        public string? Source
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
         }
 
         /// <summary>

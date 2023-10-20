@@ -5,39 +5,29 @@
     /// </summary>
     public class TimeAllocationUpdateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
+        private string? clientMutationId;
         private TimeAllocationCustomerCategory? customerCategory;
+        private List<string>? customerIds;
         private TimeAllocationDescriptionCategory? descriptionCategory;
         private bool? disabled;
         private string? effortClassId;
         private string? group;
-        private string? name;
-        private TimeAllocationServiceCategory? serviceCategory;
-        private List<string>? customerIds;
-        private List<string>? serviceIds;
-        private List<string>? organizationIds;
-        private string? clientMutationId;
         private string? id;
+        private string? name;
+        private List<string>? organizationIds;
+        private TimeAllocationServiceCategory? serviceCategory;
+        private List<string>? serviceIds;
+        private string? source;
+        private string? sourceID;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -48,6 +38,16 @@
         {
             get => customerCategory;
             set => customerCategory = Set("customerCategory", value);
+        }
+
+        /// <summary>
+        /// Identifiers of the customer organizations of the time allocation.
+        /// </summary>
+        [JsonProperty("customerIds")]
+        public List<string>? CustomerIds
+        {
+            get => customerIds;
+            set => customerIds = Set("customerIds", value);
         }
 
         /// <summary>
@@ -91,6 +91,16 @@
         }
 
         /// <summary>
+        /// The node ID of the record to update.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
+        }
+
+        /// <summary>
         /// The name of the time allocation.
         /// </summary>
         [JsonProperty("name")]
@@ -98,36 +108,6 @@
         {
             get => name;
             set => name = Set("name", value);
-        }
-
-        /// <summary>
-        /// Whether a Person who spent on the time allocation needs to select a service, and if this is the case, whether this person may only select from the services linked to the time allocation or is allowed to select any service.
-        /// </summary>
-        [JsonProperty("serviceCategory")]
-        public TimeAllocationServiceCategory? ServiceCategory
-        {
-            get => serviceCategory;
-            set => serviceCategory = Set("serviceCategory", value);
-        }
-
-        /// <summary>
-        /// Identifiers of the customer organizations of the time allocation.
-        /// </summary>
-        [JsonProperty("customerIds")]
-        public List<string>? CustomerIds
-        {
-            get => customerIds;
-            set => customerIds = Set("customerIds", value);
-        }
-
-        /// <summary>
-        /// Identifiers of the services of the time allocation.
-        /// </summary>
-        [JsonProperty("serviceIds")]
-        public List<string>? ServiceIds
-        {
-            get => serviceIds;
-            set => serviceIds = Set("serviceIds", value);
         }
 
         /// <summary>
@@ -141,23 +121,43 @@
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// Whether a Person who spent on the time allocation needs to select a service, and if this is the case, whether this person may only select from the services linked to the time allocation or is allowed to select any service.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("serviceCategory")]
+        public TimeAllocationServiceCategory? ServiceCategory
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
+            get => serviceCategory;
+            set => serviceCategory = Set("serviceCategory", value);
         }
 
         /// <summary>
-        /// The node ID of the record to update.
+        /// Identifiers of the services of the time allocation.
         /// </summary>
-        [JsonProperty("id")]
-        public string? ID
+        [JsonProperty("serviceIds")]
+        public List<string>? ServiceIds
         {
-            get => id;
-            set => id = Set("id", value);
+            get => serviceIds;
+            set => serviceIds = Set("serviceIds", value);
+        }
+
+        /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
         }
     }
 }

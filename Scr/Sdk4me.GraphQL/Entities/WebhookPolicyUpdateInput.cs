@@ -5,12 +5,22 @@
     /// </summary>
     public class WebhookPolicyUpdateInput : PropertyChangeSet
     {
-        private bool? disabled;
-        private WebhookPolicyJwtAlg? jwtAlg;
-        private long? jwtClaimExpiresIn;
-        private string? jwtAudience;
         private string? clientMutationId;
+        private bool? disabled;
         private string? id;
+        private WebhookPolicyJwtAlg? jwtAlg;
+        private string? jwtAudience;
+        private long? jwtClaimExpiresIn;
+
+        /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
 
         /// <summary>
         /// Whether the webhook policy will be applied.
@@ -20,6 +30,16 @@
         {
             get => disabled;
             set => disabled = Set("disabled", value);
+        }
+
+        /// <summary>
+        /// The node ID of the record to update.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
         }
 
         /// <summary>
@@ -33,16 +53,6 @@
         }
 
         /// <summary>
-        /// The number of minutes within which the claim expires.
-        /// </summary>
-        [JsonProperty("jwtClaimExpiresIn")]
-        public long? JwtClaimExpiresIn
-        {
-            get => jwtClaimExpiresIn;
-            set => jwtClaimExpiresIn = Set("jwtClaimExpiresIn", value);
-        }
-
-        /// <summary>
         /// The audience claim identifies the recipients that the encrypted message is intended for.
         /// </summary>
         [JsonProperty("jwtAudience")]
@@ -53,23 +63,13 @@
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// The number of minutes within which the claim expires.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("jwtClaimExpiresIn")]
+        public long? JwtClaimExpiresIn
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// The node ID of the record to update.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
+            get => jwtClaimExpiresIn;
+            set => jwtClaimExpiresIn = Set("jwtClaimExpiresIn", value);
         }
     }
 }

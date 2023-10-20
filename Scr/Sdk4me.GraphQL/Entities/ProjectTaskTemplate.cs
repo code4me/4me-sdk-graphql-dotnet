@@ -11,6 +11,17 @@
         [JsonProperty("account"), Sdk4meField(true)]
         public Account? Account { get; internal set; }
 
+        [JsonProperty("assignments")]
+        internal NodeCollection<ProjectTaskTemplateAssignment>? AssignmentsCollection { get; set; }
+
+        /// <summary>
+        /// Assignments of the project task template.
+        /// </summary>
+        public DataList<ProjectTaskTemplateAssignment>? Assignments
+        {
+            get => AssignmentsCollection?.Data;
+        }
+
         /// <summary>
         /// Whether the project manager is to be selected in the Assignees field of a new project task when it is being created based on the template.
         /// </summary>
@@ -40,17 +51,6 @@
         /// </summary>
         [JsonProperty("assignToServiceOwner")]
         public bool? AssignToServiceOwner { get; internal set; }
-
-        [JsonProperty("assignments")]
-        internal NodeCollection<ProjectTaskTemplateAssignment>? AssignmentsCollection { get; set; }
-
-        /// <summary>
-        /// Assignments of the project task template.
-        /// </summary>
-        public DataList<ProjectTaskTemplateAssignment>? Assignments
-        {
-            get => AssignmentsCollection?.Data;
-        }
 
         [JsonProperty("automationRules")]
         internal NodeCollection<AutomationRule>? AutomationRulesCollection { get; set; }

@@ -5,36 +5,60 @@
     /// </summary>
     public class ServiceOfferingCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
         private decimal? availability;
         private string? charges;
+        private ServiceOfferingChargeType? chargeTypeHigh;
+        private ServiceOfferingChargeType? chargeTypeLow;
+        private ServiceOfferingChargeType? chargeTypeMedium;
+        private ServiceOfferingChargeType? chargeTypeRfc;
+        private ServiceOfferingChargeType? chargeTypeRfi;
+        private ServiceOfferingChargeType? chargeTypeTop;
+        private string? clientMutationId;
         private string? continuity;
         private string? defaultEffortClassId;
+        private List<string>? effortClassIds;
         private string? limitations;
+        private string? name;
+        private List<EffortClassRateInput>? newEffortClassRates;
+        private List<StandardServiceRequestInput>? newStandardServiceRequests;
         private string? penalties;
         private string? performance;
         private string? prerequisites;
-        private long? recoveryTimeObjective;
+        private decimal? rateHigh;
+        private string? rateHighCurrency;
+        private decimal? rateLow;
+        private string? rateLowCurrency;
+        private decimal? rateMedium;
+        private string? rateMediumCurrency;
+        private decimal? rateRfc;
+        private string? rateRfcCurrency;
+        private decimal? rateRfi;
+        private string? rateRfiCurrency;
+        private decimal? rateTop;
+        private string? rateTopCurrency;
         private long? recoveryPointObjective;
+        private long? recoveryTimeObjective;
         private string? reliability;
         private ServiceOfferingReportFrequency? reportFrequency;
+        private long? resolutionsWithinTarget;
         private long? resolutionTargetHigh;
         private long? resolutionTargetLow;
         private long? resolutionTargetMedium;
         private long? resolutionTargetRfc;
         private long? resolutionTargetRfi;
         private long? resolutionTargetTop;
-        private long? resolutionsWithinTarget;
+        private long? responsesWithinTarget;
         private long? responseTargetHigh;
         private long? responseTargetLow;
         private long? responseTargetMedium;
         private long? responseTargetRfc;
         private long? responseTargetRfi;
         private long? responseTargetTop;
-        private long? responsesWithinTarget;
         private ServiceOfferingReviewFrequency? reviewFrequency;
         private string? serviceHoursId;
+        private string? serviceId;
+        private string? source;
+        private string? sourceID;
         private ServiceOfferingStatus? status;
         private string? summary;
         private string? supportHoursHighId;
@@ -45,50 +69,6 @@
         private string? supportHoursTopId;
         private string? termination;
         private string? timeZone;
-        private List<string>? effortClassIds;
-        private ServiceOfferingChargeType? chargeTypeTop;
-        private decimal? rateTop;
-        private string? rateTopCurrency;
-        private ServiceOfferingChargeType? chargeTypeHigh;
-        private decimal? rateHigh;
-        private string? rateHighCurrency;
-        private ServiceOfferingChargeType? chargeTypeMedium;
-        private decimal? rateMedium;
-        private string? rateMediumCurrency;
-        private ServiceOfferingChargeType? chargeTypeLow;
-        private decimal? rateLow;
-        private string? rateLowCurrency;
-        private ServiceOfferingChargeType? chargeTypeRfc;
-        private decimal? rateRfc;
-        private string? rateRfcCurrency;
-        private ServiceOfferingChargeType? chargeTypeRfi;
-        private decimal? rateRfi;
-        private string? rateRfiCurrency;
-        private List<StandardServiceRequestInput>? newStandardServiceRequests;
-        private List<EffortClassRateInput>? newEffortClassRates;
-        private string? clientMutationId;
-        private string? name;
-        private string? serviceId;
-
-        /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
-        /// </summary>
-        [JsonProperty("source")]
-        public string? Source
-        {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
-        }
 
         /// <summary>
         /// The duration, expressed as percentage of the total number of service hours, during which the service is to be available to customers with an active SLA that is based on the service offering.
@@ -108,6 +88,76 @@
         {
             get => charges;
             set => charges = Set("charges", value);
+        }
+
+        /// <summary>
+        /// Defines how a high incident must be charged: as a Fixed Price or in Time and Materials.
+        /// </summary>
+        [JsonProperty("chargeTypeHigh")]
+        public ServiceOfferingChargeType? ChargeTypeHigh
+        {
+            get => chargeTypeHigh;
+            set => chargeTypeHigh = Set("chargeTypeHigh", value);
+        }
+
+        /// <summary>
+        /// Defines how a low incident must be charged: as a Fixed Price or in Time and Materials.
+        /// </summary>
+        [JsonProperty("chargeTypeLow")]
+        public ServiceOfferingChargeType? ChargeTypeLow
+        {
+            get => chargeTypeLow;
+            set => chargeTypeLow = Set("chargeTypeLow", value);
+        }
+
+        /// <summary>
+        /// Defines how a medium incident must be charged: as a Fixed Price or in Time and Materials.
+        /// </summary>
+        [JsonProperty("chargeTypeMedium")]
+        public ServiceOfferingChargeType? ChargeTypeMedium
+        {
+            get => chargeTypeMedium;
+            set => chargeTypeMedium = Set("chargeTypeMedium", value);
+        }
+
+        /// <summary>
+        /// Defines how a RFC must be charged: as a Fixed Price or in Time and Materials.
+        /// </summary>
+        [JsonProperty("chargeTypeRfc")]
+        public ServiceOfferingChargeType? ChargeTypeRfc
+        {
+            get => chargeTypeRfc;
+            set => chargeTypeRfc = Set("chargeTypeRfc", value);
+        }
+
+        /// <summary>
+        /// Defines how a RFI must be charged: as a Fixed Price or in Time and Materials.
+        /// </summary>
+        [JsonProperty("chargeTypeRfi")]
+        public ServiceOfferingChargeType? ChargeTypeRfi
+        {
+            get => chargeTypeRfi;
+            set => chargeTypeRfi = Set("chargeTypeRfi", value);
+        }
+
+        /// <summary>
+        /// Defines how a top incident must be charged: as a Fixed Price or in Time and Materials.
+        /// </summary>
+        [JsonProperty("chargeTypeTop")]
+        public ServiceOfferingChargeType? ChargeTypeTop
+        {
+            get => chargeTypeTop;
+            set => chargeTypeTop = Set("chargeTypeTop", value);
+        }
+
+        /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -131,6 +181,16 @@
         }
 
         /// <summary>
+        /// Identifiers of effort classes of the service offering.
+        /// </summary>
+        [JsonProperty("effortClassIds")]
+        public List<string>? EffortClassIds
+        {
+            get => effortClassIds;
+            set => effortClassIds = Set("effortClassIds", value);
+        }
+
+        /// <summary>
         /// The limitations that apply to the service level agreements that are based on the service offering.
         /// </summary>
         [JsonProperty("limitations")]
@@ -138,6 +198,36 @@
         {
             get => limitations;
             set => limitations = Set("limitations", value);
+        }
+
+        /// <summary>
+        /// The name of the service offering.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
+        }
+
+        /// <summary>
+        /// Effort class rates of the service offering.
+        /// </summary>
+        [JsonProperty("newEffortClassRates")]
+        public List<EffortClassRateInput>? NewEffortClassRates
+        {
+            get => newEffortClassRates;
+            set => newEffortClassRates = Set("newEffortClassRates", value);
+        }
+
+        /// <summary>
+        /// Standard service requests of the service offering.
+        /// </summary>
+        [JsonProperty("newStandardServiceRequests")]
+        public List<StandardServiceRequestInput>? NewStandardServiceRequests
+        {
+            get => newStandardServiceRequests;
+            set => newStandardServiceRequests = Set("newStandardServiceRequests", value);
         }
 
         /// <summary>
@@ -171,13 +261,129 @@
         }
 
         /// <summary>
-        /// The Recovery Time Objective (RTO) is the maximum targeted duration in minutes in which a business process must be restored after a disaster (or disruption) in order to avoid unacceptable consequences associated with a break in business continuity.
+        /// Defines the fixed price rate for a high incident.
         /// </summary>
-        [JsonProperty("recoveryTimeObjective")]
-        public long? RecoveryTimeObjective
+        [JsonProperty("rateHigh")]
+        public decimal? RateHigh
         {
-            get => recoveryTimeObjective;
-            set => recoveryTimeObjective = Set("recoveryTimeObjective", value);
+            get => rateHigh;
+            set => rateHigh = Set("rateHigh", value);
+        }
+
+        /// <summary>
+        /// <br>Defines the currency for the fixed price rate of a high incident.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
+        /// </summary>
+        [JsonProperty("rateHighCurrency")]
+        public string? RateHighCurrency
+        {
+            get => rateHighCurrency;
+            set => rateHighCurrency = Set("rateHighCurrency", value);
+        }
+
+        /// <summary>
+        /// Defines the fixed price rate for a low incident.
+        /// </summary>
+        [JsonProperty("rateLow")]
+        public decimal? RateLow
+        {
+            get => rateLow;
+            set => rateLow = Set("rateLow", value);
+        }
+
+        /// <summary>
+        /// <br>Defines the currency for the fixed price rate of a low incident.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
+        /// </summary>
+        [JsonProperty("rateLowCurrency")]
+        public string? RateLowCurrency
+        {
+            get => rateLowCurrency;
+            set => rateLowCurrency = Set("rateLowCurrency", value);
+        }
+
+        /// <summary>
+        /// Defines the fixed price rate for a medium incident.
+        /// </summary>
+        [JsonProperty("rateMedium")]
+        public decimal? RateMedium
+        {
+            get => rateMedium;
+            set => rateMedium = Set("rateMedium", value);
+        }
+
+        /// <summary>
+        /// <br>Defines the currency for the fixed price rate of a medium incident.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
+        /// </summary>
+        [JsonProperty("rateMediumCurrency")]
+        public string? RateMediumCurrency
+        {
+            get => rateMediumCurrency;
+            set => rateMediumCurrency = Set("rateMediumCurrency", value);
+        }
+
+        /// <summary>
+        /// Defines the fixed price rate for a RFC.
+        /// </summary>
+        [JsonProperty("rateRfc")]
+        public decimal? RateRfc
+        {
+            get => rateRfc;
+            set => rateRfc = Set("rateRfc", value);
+        }
+
+        /// <summary>
+        /// <br>Defines the currency for the fixed price rate of a RFC.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
+        /// </summary>
+        [JsonProperty("rateRfcCurrency")]
+        public string? RateRfcCurrency
+        {
+            get => rateRfcCurrency;
+            set => rateRfcCurrency = Set("rateRfcCurrency", value);
+        }
+
+        /// <summary>
+        /// Defines the fixed price rate for a RFI.
+        /// </summary>
+        [JsonProperty("rateRfi")]
+        public decimal? RateRfi
+        {
+            get => rateRfi;
+            set => rateRfi = Set("rateRfi", value);
+        }
+
+        /// <summary>
+        /// <br>Defines the currency for the fixed price rate of a RFI.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
+        /// </summary>
+        [JsonProperty("rateRfiCurrency")]
+        public string? RateRfiCurrency
+        {
+            get => rateRfiCurrency;
+            set => rateRfiCurrency = Set("rateRfiCurrency", value);
+        }
+
+        /// <summary>
+        /// Defines the fixed price rate for a top incident.
+        /// </summary>
+        [JsonProperty("rateTop")]
+        public decimal? RateTop
+        {
+            get => rateTop;
+            set => rateTop = Set("rateTop", value);
+        }
+
+        /// <summary>
+        /// <br>Defines the currency for the fixed price rate of a top incident.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
+        /// </summary>
+        [JsonProperty("rateTopCurrency")]
+        public string? RateTopCurrency
+        {
+            get => rateTopCurrency;
+            set => rateTopCurrency = Set("rateTopCurrency", value);
         }
 
         /// <summary>
@@ -188,6 +394,16 @@
         {
             get => recoveryPointObjective;
             set => recoveryPointObjective = Set("recoveryPointObjective", value);
+        }
+
+        /// <summary>
+        /// The Recovery Time Objective (RTO) is the maximum targeted duration in minutes in which a business process must be restored after a disaster (or disruption) in order to avoid unacceptable consequences associated with a break in business continuity.
+        /// </summary>
+        [JsonProperty("recoveryTimeObjective")]
+        public long? RecoveryTimeObjective
+        {
+            get => recoveryTimeObjective;
+            set => recoveryTimeObjective = Set("recoveryTimeObjective", value);
         }
 
         /// <summary>
@@ -208,6 +424,16 @@
         {
             get => reportFrequency;
             set => reportFrequency = Set("reportFrequency", value);
+        }
+
+        /// <summary>
+        /// The minimum percentage of incidents that is to be resolved before their resolution target.
+        /// </summary>
+        [JsonProperty("resolutionsWithinTarget")]
+        public long? ResolutionsWithinTarget
+        {
+            get => resolutionsWithinTarget;
+            set => resolutionsWithinTarget = Set("resolutionsWithinTarget", value);
         }
 
         /// <summary>
@@ -271,13 +497,13 @@
         }
 
         /// <summary>
-        /// The minimum percentage of incidents that is to be resolved before their resolution target.
+        /// The minimum percentage of incidents that is to be responded to before their response target.
         /// </summary>
-        [JsonProperty("resolutionsWithinTarget")]
-        public long? ResolutionsWithinTarget
+        [JsonProperty("responsesWithinTarget")]
+        public long? ResponsesWithinTarget
         {
-            get => resolutionsWithinTarget;
-            set => resolutionsWithinTarget = Set("resolutionsWithinTarget", value);
+            get => responsesWithinTarget;
+            set => responsesWithinTarget = Set("responsesWithinTarget", value);
         }
 
         /// <summary>
@@ -341,16 +567,6 @@
         }
 
         /// <summary>
-        /// The minimum percentage of incidents that is to be responded to before their response target.
-        /// </summary>
-        [JsonProperty("responsesWithinTarget")]
-        public long? ResponsesWithinTarget
-        {
-            get => responsesWithinTarget;
-            set => responsesWithinTarget = Set("responsesWithinTarget", value);
-        }
-
-        /// <summary>
         /// How often an active SLA that is based on the service offering will be reviewed with the representative of its customer.
         /// </summary>
         [JsonProperty("reviewFrequency")]
@@ -368,6 +584,36 @@
         {
             get => serviceHoursId;
             set => serviceHoursId = Set("serviceHoursId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the service for which the service offering is being prepared.
+        /// </summary>
+        [JsonProperty("serviceId")]
+        public string? ServiceId
+        {
+            get => serviceId;
+            set => serviceId = Set("serviceId", value);
+        }
+
+        /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
         }
 
         /// <summary>
@@ -469,252 +715,6 @@
         {
             get => timeZone;
             set => timeZone = Set("timeZone", value);
-        }
-
-        /// <summary>
-        /// Identifiers of effort classes of the service offering.
-        /// </summary>
-        [JsonProperty("effortClassIds")]
-        public List<string>? EffortClassIds
-        {
-            get => effortClassIds;
-            set => effortClassIds = Set("effortClassIds", value);
-        }
-
-        /// <summary>
-        /// Defines how a top incident must be charged: as a Fixed Price or in Time and Materials.
-        /// </summary>
-        [JsonProperty("chargeTypeTop")]
-        public ServiceOfferingChargeType? ChargeTypeTop
-        {
-            get => chargeTypeTop;
-            set => chargeTypeTop = Set("chargeTypeTop", value);
-        }
-
-        /// <summary>
-        /// Defines the fixed price rate for a top incident.
-        /// </summary>
-        [JsonProperty("rateTop")]
-        public decimal? RateTop
-        {
-            get => rateTop;
-            set => rateTop = Set("rateTop", value);
-        }
-
-        /// <summary>
-        /// <br>Defines the currency for the fixed price rate of a top incident.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
-        /// </summary>
-        [JsonProperty("rateTopCurrency")]
-        public string? RateTopCurrency
-        {
-            get => rateTopCurrency;
-            set => rateTopCurrency = Set("rateTopCurrency", value);
-        }
-
-        /// <summary>
-        /// Defines how a high incident must be charged: as a Fixed Price or in Time and Materials.
-        /// </summary>
-        [JsonProperty("chargeTypeHigh")]
-        public ServiceOfferingChargeType? ChargeTypeHigh
-        {
-            get => chargeTypeHigh;
-            set => chargeTypeHigh = Set("chargeTypeHigh", value);
-        }
-
-        /// <summary>
-        /// Defines the fixed price rate for a high incident.
-        /// </summary>
-        [JsonProperty("rateHigh")]
-        public decimal? RateHigh
-        {
-            get => rateHigh;
-            set => rateHigh = Set("rateHigh", value);
-        }
-
-        /// <summary>
-        /// <br>Defines the currency for the fixed price rate of a high incident.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
-        /// </summary>
-        [JsonProperty("rateHighCurrency")]
-        public string? RateHighCurrency
-        {
-            get => rateHighCurrency;
-            set => rateHighCurrency = Set("rateHighCurrency", value);
-        }
-
-        /// <summary>
-        /// Defines how a medium incident must be charged: as a Fixed Price or in Time and Materials.
-        /// </summary>
-        [JsonProperty("chargeTypeMedium")]
-        public ServiceOfferingChargeType? ChargeTypeMedium
-        {
-            get => chargeTypeMedium;
-            set => chargeTypeMedium = Set("chargeTypeMedium", value);
-        }
-
-        /// <summary>
-        /// Defines the fixed price rate for a medium incident.
-        /// </summary>
-        [JsonProperty("rateMedium")]
-        public decimal? RateMedium
-        {
-            get => rateMedium;
-            set => rateMedium = Set("rateMedium", value);
-        }
-
-        /// <summary>
-        /// <br>Defines the currency for the fixed price rate of a medium incident.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
-        /// </summary>
-        [JsonProperty("rateMediumCurrency")]
-        public string? RateMediumCurrency
-        {
-            get => rateMediumCurrency;
-            set => rateMediumCurrency = Set("rateMediumCurrency", value);
-        }
-
-        /// <summary>
-        /// Defines how a low incident must be charged: as a Fixed Price or in Time and Materials.
-        /// </summary>
-        [JsonProperty("chargeTypeLow")]
-        public ServiceOfferingChargeType? ChargeTypeLow
-        {
-            get => chargeTypeLow;
-            set => chargeTypeLow = Set("chargeTypeLow", value);
-        }
-
-        /// <summary>
-        /// Defines the fixed price rate for a low incident.
-        /// </summary>
-        [JsonProperty("rateLow")]
-        public decimal? RateLow
-        {
-            get => rateLow;
-            set => rateLow = Set("rateLow", value);
-        }
-
-        /// <summary>
-        /// <br>Defines the currency for the fixed price rate of a low incident.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
-        /// </summary>
-        [JsonProperty("rateLowCurrency")]
-        public string? RateLowCurrency
-        {
-            get => rateLowCurrency;
-            set => rateLowCurrency = Set("rateLowCurrency", value);
-        }
-
-        /// <summary>
-        /// Defines how a RFC must be charged: as a Fixed Price or in Time and Materials.
-        /// </summary>
-        [JsonProperty("chargeTypeRfc")]
-        public ServiceOfferingChargeType? ChargeTypeRfc
-        {
-            get => chargeTypeRfc;
-            set => chargeTypeRfc = Set("chargeTypeRfc", value);
-        }
-
-        /// <summary>
-        /// Defines the fixed price rate for a RFC.
-        /// </summary>
-        [JsonProperty("rateRfc")]
-        public decimal? RateRfc
-        {
-            get => rateRfc;
-            set => rateRfc = Set("rateRfc", value);
-        }
-
-        /// <summary>
-        /// <br>Defines the currency for the fixed price rate of a RFC.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
-        /// </summary>
-        [JsonProperty("rateRfcCurrency")]
-        public string? RateRfcCurrency
-        {
-            get => rateRfcCurrency;
-            set => rateRfcCurrency = Set("rateRfcCurrency", value);
-        }
-
-        /// <summary>
-        /// Defines how a RFI must be charged: as a Fixed Price or in Time and Materials.
-        /// </summary>
-        [JsonProperty("chargeTypeRfi")]
-        public ServiceOfferingChargeType? ChargeTypeRfi
-        {
-            get => chargeTypeRfi;
-            set => chargeTypeRfi = Set("chargeTypeRfi", value);
-        }
-
-        /// <summary>
-        /// Defines the fixed price rate for a RFI.
-        /// </summary>
-        [JsonProperty("rateRfi")]
-        public decimal? RateRfi
-        {
-            get => rateRfi;
-            set => rateRfi = Set("rateRfi", value);
-        }
-
-        /// <summary>
-        /// <br>Defines the currency for the fixed price rate of a RFI.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
-        /// </summary>
-        [JsonProperty("rateRfiCurrency")]
-        public string? RateRfiCurrency
-        {
-            get => rateRfiCurrency;
-            set => rateRfiCurrency = Set("rateRfiCurrency", value);
-        }
-
-        /// <summary>
-        /// Standard service requests of the service offering.
-        /// </summary>
-        [JsonProperty("newStandardServiceRequests")]
-        public List<StandardServiceRequestInput>? NewStandardServiceRequests
-        {
-            get => newStandardServiceRequests;
-            set => newStandardServiceRequests = Set("newStandardServiceRequests", value);
-        }
-
-        /// <summary>
-        /// Effort class rates of the service offering.
-        /// </summary>
-        [JsonProperty("newEffortClassRates")]
-        public List<EffortClassRateInput>? NewEffortClassRates
-        {
-            get => newEffortClassRates;
-            set => newEffortClassRates = Set("newEffortClassRates", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// The name of the service offering.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
-        }
-
-        /// <summary>
-        /// Identifier of the service for which the service offering is being prepared.
-        /// </summary>
-        [JsonProperty("serviceId")]
-        public string? ServiceId
-        {
-            get => serviceId;
-            set => serviceId = Set("serviceId", value);
         }
     }
 }

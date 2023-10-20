@@ -5,40 +5,40 @@
     /// </summary>
     public class ServiceInstanceUpdateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
+        private string? clientMutationId;
+        private List<string>? configurationItemIds;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
-        private string? uiExtensionId;
         private string? firstLineTeamId;
+        private string? id;
         private string? name;
         private string? remarks;
         private List<AttachmentInput>? remarksAttachments;
         private string? serviceId;
+        private string? source;
+        private string? sourceID;
         private ServiceInstanceStatus? status;
         private string? supportTeamId;
-        private List<string>? configurationItemIds;
-        private string? clientMutationId;
-        private string? id;
+        private string? uiExtensionId;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => source;
-            set => source = Set("source", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
-        /// The unique identifier of the resource in an external system.
+        /// Identifiers of the configuration items of the service instance.
         /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
+        [JsonProperty("configurationItemIds")]
+        public List<string>? ConfigurationItemIds
         {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
+            get => configurationItemIds;
+            set => configurationItemIds = Set("configurationItemIds", value);
         }
 
         /// <summary>
@@ -62,16 +62,6 @@
         }
 
         /// <summary>
-        /// UI extension that is to be applied to the record.
-        /// </summary>
-        [JsonProperty("uiExtensionId")]
-        public string? UiExtensionId
-        {
-            get => uiExtensionId;
-            set => uiExtensionId = Set("uiExtensionId", value);
-        }
-
-        /// <summary>
         /// Idenifier of the team that will automatically be selected in the Team field of requests to which the service instance is linked after they have been submitted using Self Service or when they are generated using the Requests API, Mail API or Events API.
         /// </summary>
         [JsonProperty("firstLineTeamId")]
@@ -79,6 +69,16 @@
         {
             get => firstLineTeamId;
             set => firstLineTeamId = Set("firstLineTeamId", value);
+        }
+
+        /// <summary>
+        /// The node ID of the record to update.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
         }
 
         /// <summary>
@@ -122,6 +122,26 @@
         }
 
         /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
         /// The current status of the service instance.
         /// </summary>
         [JsonProperty("status")]
@@ -142,33 +162,13 @@
         }
 
         /// <summary>
-        /// Identifiers of the configuration items of the service instance.
+        /// UI extension that is to be applied to the record.
         /// </summary>
-        [JsonProperty("configurationItemIds")]
-        public List<string>? ConfigurationItemIds
+        [JsonProperty("uiExtensionId")]
+        public string? UiExtensionId
         {
-            get => configurationItemIds;
-            set => configurationItemIds = Set("configurationItemIds", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// The node ID of the record to update.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
+            get => uiExtensionId;
+            set => uiExtensionId = Set("uiExtensionId", value);
         }
     }
 }

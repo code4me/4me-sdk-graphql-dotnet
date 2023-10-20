@@ -5,88 +5,28 @@
     /// </summary>
     public class SkillPoolCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
-        private string? pictureUri;
-        private bool? disabled;
-        private string? managerId;
-        private string? remarks;
-        private List<AttachmentInput>? remarksAttachments;
+        private string? clientMutationId;
         private decimal? costPerHour;
         private string? costPerHourCurrency;
-        private List<string>? memberIds;
+        private bool? disabled;
         private List<string>? effortClassIds;
-        private string? clientMutationId;
+        private string? managerId;
+        private List<string>? memberIds;
         private string? name;
+        private string? pictureUri;
+        private string? remarks;
+        private List<AttachmentInput>? remarksAttachments;
+        private string? source;
+        private string? sourceID;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
-        }
-
-        /// <summary>
-        /// The hyperlink to the image file for the record.
-        /// </summary>
-        [JsonProperty("pictureUri")]
-        public string? PictureUri
-        {
-            get => pictureUri;
-            set => pictureUri = Set("pictureUri", value);
-        }
-
-        /// <summary>
-        /// Whether the skill pool may no longer be related to other records.
-        /// </summary>
-        [JsonProperty("disabled")]
-        public bool? Disabled
-        {
-            get => disabled;
-            set => disabled = Set("disabled", value);
-        }
-
-        /// <summary>
-        /// The manager or supervisor of the skill pool. This person is able to maintain the information about the skill pool. The manager of a skill pool does not need to be a member of the skill pool.
-        /// </summary>
-        [JsonProperty("managerId")]
-        public string? ManagerId
-        {
-            get => managerId;
-            set => managerId = Set("managerId", value);
-        }
-
-        /// <summary>
-        /// Any additional information about the skill pool that might prove useful.
-        /// </summary>
-        [JsonProperty("remarks")]
-        public string? Remarks
-        {
-            get => remarks;
-            set => remarks = Set("remarks", value);
-        }
-
-        /// <summary>
-        /// The attachments used in the <c>remarks</c> field.
-        /// </summary>
-        [JsonProperty("remarksAttachments")]
-        public List<AttachmentInput>? RemarksAttachments
-        {
-            get => remarksAttachments;
-            set => remarksAttachments = Set("remarksAttachments", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -111,13 +51,13 @@
         }
 
         /// <summary>
-        /// People that are linked as member to the skill pool.
+        /// Whether the skill pool may no longer be related to other records.
         /// </summary>
-        [JsonProperty("memberIds")]
-        public List<string>? MemberIds
+        [JsonProperty("disabled")]
+        public bool? Disabled
         {
-            get => memberIds;
-            set => memberIds = Set("memberIds", value);
+            get => disabled;
+            set => disabled = Set("disabled", value);
         }
 
         /// <summary>
@@ -131,13 +71,23 @@
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// The manager or supervisor of the skill pool. This person is able to maintain the information about the skill pool. The manager of a skill pool does not need to be a member of the skill pool.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("managerId")]
+        public string? ManagerId
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
+            get => managerId;
+            set => managerId = Set("managerId", value);
+        }
+
+        /// <summary>
+        /// People that are linked as member to the skill pool.
+        /// </summary>
+        [JsonProperty("memberIds")]
+        public List<string>? MemberIds
+        {
+            get => memberIds;
+            set => memberIds = Set("memberIds", value);
         }
 
         /// <summary>
@@ -148,6 +98,56 @@
         {
             get => name;
             set => name = Set("name", value);
+        }
+
+        /// <summary>
+        /// The hyperlink to the image file for the record.
+        /// </summary>
+        [JsonProperty("pictureUri")]
+        public string? PictureUri
+        {
+            get => pictureUri;
+            set => pictureUri = Set("pictureUri", value);
+        }
+
+        /// <summary>
+        /// Any additional information about the skill pool that might prove useful.
+        /// </summary>
+        [JsonProperty("remarks")]
+        public string? Remarks
+        {
+            get => remarks;
+            set => remarks = Set("remarks", value);
+        }
+
+        /// <summary>
+        /// The attachments used in the <c>remarks</c> field.
+        /// </summary>
+        [JsonProperty("remarksAttachments")]
+        public List<AttachmentInput>? RemarksAttachments
+        {
+            get => remarksAttachments;
+            set => remarksAttachments = Set("remarksAttachments", value);
+        }
+
+        /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
         }
     }
 }

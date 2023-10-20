@@ -88,16 +88,16 @@
         public DateOnly? NoticeDate { get; internal set; }
 
         /// <summary>
-        /// The number of minutes within which a new or existing request that has been assigned to the service desk team is assigned to a specific member within the service desk team, is assigned to another team, or is set to a status other than <c>assigned</c>.
-        /// </summary>
-        [JsonProperty("pickupTarget")]
-        public long? PickupTarget { get; internal set; }
-
-        /// <summary>
         /// The minimum percentage of requests that are to be picked up by the service desk team within the pickup target.
         /// </summary>
         [JsonProperty("pickupsWithinTarget")]
         public long? PickupsWithinTarget { get; internal set; }
+
+        /// <summary>
+        /// The number of minutes within which a new or existing request that has been assigned to the service desk team is assigned to a specific member within the service desk team, is assigned to another team, or is set to a status other than <c>assigned</c>.
+        /// </summary>
+        [JsonProperty("pickupTarget")]
+        public long? PickupTarget { get; internal set; }
 
         /// <summary>
         /// Organization that provides the first line support agreement.

@@ -5,35 +5,25 @@
     /// </summary>
     public class ShopOrderLineUpdateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
+        private string? clientMutationId;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
+        private string? id;
+        private List<AddressInput>? newAddresses;
+        private long? quantity;
         private string? requestedForId;
         private string? shopArticleId;
-        private long? quantity;
-        private List<AddressInput>? newAddresses;
-        private string? clientMutationId;
-        private string? id;
+        private string? source;
+        private string? sourceID;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -57,6 +47,36 @@
         }
 
         /// <summary>
+        /// The node ID of the record to update.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
+        }
+
+        /// <summary>
+        /// New or updated addresses of the shop order line.
+        /// </summary>
+        [JsonProperty("newAddresses")]
+        public List<AddressInput>? NewAddresses
+        {
+            get => newAddresses;
+            set => newAddresses = Set("newAddresses", value);
+        }
+
+        /// <summary>
+        /// The number units ordered.
+        /// </summary>
+        [JsonProperty("quantity")]
+        public long? Quantity
+        {
+            get => quantity;
+            set => quantity = Set("quantity", value);
+        }
+
+        /// <summary>
         /// The person for whom the shop order line was submitted.
         /// </summary>
         [JsonProperty("requestedForId")]
@@ -77,43 +97,23 @@
         }
 
         /// <summary>
-        /// The number units ordered.
+        /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("quantity")]
-        public long? Quantity
+        [JsonProperty("source")]
+        public string? Source
         {
-            get => quantity;
-            set => quantity = Set("quantity", value);
+            get => source;
+            set => source = Set("source", value);
         }
 
         /// <summary>
-        /// New or updated addresses of the shop order line.
+        /// The unique identifier of the resource in an external system.
         /// </summary>
-        [JsonProperty("newAddresses")]
-        public List<AddressInput>? NewAddresses
+        [JsonProperty("sourceID")]
+        public string? SourceID
         {
-            get => newAddresses;
-            set => newAddresses = Set("newAddresses", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// The node ID of the record to update.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
         }
     }
 }

@@ -5,33 +5,23 @@
     /// </summary>
     public class ShortUrlUpdateInput : PropertyChangeSet
     {
-        private string? uri;
         private string? ciId;
+        private string? clientMutationId;
         private string? dashboardId;
+        private ShortUrlEmailInput? email;
+        private ShortUrlGeoInput? geo;
+        private string? id;
         private string? knowledgeArticleId;
         private string? mapAddress;
         private string? plainText;
         private string? requestTemplateId;
         private string? skypeName;
+        private ShortUrlSmsInput? sms;
         private string? tel;
         private string? tweet;
         private string? twitterName;
+        private string? uri;
         private string? websiteUrl;
-        private ShortUrlEmailInput? email;
-        private ShortUrlGeoInput? geo;
-        private ShortUrlSmsInput? sms;
-        private string? clientMutationId;
-        private string? id;
-
-        /// <summary>
-        /// The uniform resource identifier (URI) to which the short URL is forwarded.
-        /// </summary>
-        [JsonProperty("uri")]
-        public string? Uri
-        {
-            get => uri;
-            set => uri = Set("uri", value);
-        }
 
         /// <summary>
         /// Identifier of the CI for which a request is to be registered in 4me Self Service when the short URL is used.
@@ -44,6 +34,16 @@
         }
 
         /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
         /// Identifier of the dashboard which is to be opened when the short URL is used.
         /// </summary>
         [JsonProperty("dashboardId")]
@@ -51,6 +51,36 @@
         {
             get => dashboardId;
             set => dashboardId = Set("dashboardId", value);
+        }
+
+        /// <summary>
+        /// Values for email that is to be generated when the short URL is used.
+        /// </summary>
+        [JsonProperty("email")]
+        public ShortUrlEmailInput? Email
+        {
+            get => email;
+            set => email = Set("email", value);
+        }
+
+        /// <summary>
+        /// Coordinates of the location for which a map should be opened when the short URL is used.
+        /// </summary>
+        [JsonProperty("geo")]
+        public ShortUrlGeoInput? Geo
+        {
+            get => geo;
+            set => geo = Set("geo", value);
+        }
+
+        /// <summary>
+        /// The node ID of the record to update.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
         }
 
         /// <summary>
@@ -104,6 +134,16 @@
         }
 
         /// <summary>
+        /// Values for the SMS message that is to be generated when the short URL is used.
+        /// </summary>
+        [JsonProperty("sms")]
+        public ShortUrlSmsInput? Sms
+        {
+            get => sms;
+            set => sms = Set("sms", value);
+        }
+
+        /// <summary>
         /// The telephone number that is to be called when the short URL is used.
         /// </summary>
         [JsonProperty("tel")]
@@ -134,6 +174,16 @@
         }
 
         /// <summary>
+        /// The uniform resource identifier (URI) to which the short URL is forwarded.
+        /// </summary>
+        [JsonProperty("uri")]
+        public string? Uri
+        {
+            get => uri;
+            set => uri = Set("uri", value);
+        }
+
+        /// <summary>
         /// The uniform resource locator of a website to which the short URL is to forward when it is used.
         /// </summary>
         [JsonProperty("websiteUrl")]
@@ -141,56 +191,6 @@
         {
             get => websiteUrl;
             set => websiteUrl = Set("websiteUrl", value);
-        }
-
-        /// <summary>
-        /// Values for email that is to be generated when the short URL is used.
-        /// </summary>
-        [JsonProperty("email")]
-        public ShortUrlEmailInput? Email
-        {
-            get => email;
-            set => email = Set("email", value);
-        }
-
-        /// <summary>
-        /// Coordinates of the location for which a map should be opened when the short URL is used.
-        /// </summary>
-        [JsonProperty("geo")]
-        public ShortUrlGeoInput? Geo
-        {
-            get => geo;
-            set => geo = Set("geo", value);
-        }
-
-        /// <summary>
-        /// Values for the SMS message that is to be generated when the short URL is used.
-        /// </summary>
-        [JsonProperty("sms")]
-        public ShortUrlSmsInput? Sms
-        {
-            get => sms;
-            set => sms = Set("sms", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// The node ID of the record to update.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
         }
     }
 }

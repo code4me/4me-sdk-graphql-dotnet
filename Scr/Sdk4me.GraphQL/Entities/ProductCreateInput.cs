@@ -5,16 +5,17 @@
     /// </summary>
     public class ProductCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
-        private string? pictureUri;
-        private string? uiExtensionId;
+        private string? brand;
+        private string? category;
+        private string? clientMutationId;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
         private ProductDepreciationMethod? depreciationMethod;
         private bool? disabled;
         private string? financialOwnerId;
         private string? model;
+        private string? name;
+        private string? pictureUri;
         private string? productID;
         private long? rate;
         private RecurrenceInput? recurrence;
@@ -23,54 +24,43 @@
         private decimal? salvageValue;
         private string? salvageValueCurrency;
         private string? serviceId;
+        private string? source;
+        private string? sourceID;
         private string? supplierId;
         private string? supportTeamId;
+        private string? uiExtensionId;
         private long? usefulLife;
         private string? workflowManagerId;
         private string? workflowTemplateId;
-        private string? clientMutationId;
-        private string? brand;
-        private string? category;
-        private string? name;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// The brand name is typically the name of the product's manufacturer.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("brand")]
+        public string? Brand
         {
-            get => source;
-            set => source = Set("source", value);
+            get => brand;
+            set => brand = Set("brand", value);
         }
 
         /// <summary>
-        /// The unique identifier of the resource in an external system.
+        /// The appropriate product category for the product.
         /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
+        [JsonProperty("category")]
+        public string? Category
         {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
+            get => category;
+            set => category = Set("category", value);
         }
 
         /// <summary>
-        /// The hyperlink to the image file for the record.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("pictureUri")]
-        public string? PictureUri
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => pictureUri;
-            set => pictureUri = Set("pictureUri", value);
-        }
-
-        /// <summary>
-        /// UI extension that is to be applied to the record.
-        /// </summary>
-        [JsonProperty("uiExtensionId")]
-        public string? UiExtensionId
-        {
-            get => uiExtensionId;
-            set => uiExtensionId = Set("uiExtensionId", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -136,6 +126,26 @@
         {
             get => model;
             set => model = Set("model", value);
+        }
+
+        /// <summary>
+        /// The name of the product. Fill out the Brand, Model, Product ID (optional) and Category fields to automatically generate a name based on the values entered in these fields.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
+        }
+
+        /// <summary>
+        /// The hyperlink to the image file for the record.
+        /// </summary>
+        [JsonProperty("pictureUri")]
+        public string? PictureUri
+        {
+            get => pictureUri;
+            set => pictureUri = Set("pictureUri", value);
         }
 
         /// <summary>
@@ -220,6 +230,26 @@
         }
 
         /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
         /// Identifier of the organization from which the product is typically obtained. If the product is developed internally, select the internal organization that develops it. Note that a lease company should be selected in this field if the product is normally leased.
         /// </summary>
         [JsonProperty("supplierId")]
@@ -237,6 +267,16 @@
         {
             get => supportTeamId;
             set => supportTeamId = Set("supportTeamId", value);
+        }
+
+        /// <summary>
+        /// UI extension that is to be applied to the record.
+        /// </summary>
+        [JsonProperty("uiExtensionId")]
+        public string? UiExtensionId
+        {
+            get => uiExtensionId;
+            set => uiExtensionId = Set("uiExtensionId", value);
         }
 
         /// <summary>
@@ -267,46 +307,6 @@
         {
             get => workflowTemplateId;
             set => workflowTemplateId = Set("workflowTemplateId", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// The brand name is typically the name of the product's manufacturer.
-        /// </summary>
-        [JsonProperty("brand")]
-        public string? Brand
-        {
-            get => brand;
-            set => brand = Set("brand", value);
-        }
-
-        /// <summary>
-        /// The appropriate product category for the product.
-        /// </summary>
-        [JsonProperty("category")]
-        public string? Category
-        {
-            get => category;
-            set => category = Set("category", value);
-        }
-
-        /// <summary>
-        /// The name of the product. Fill out the Brand, Model, Product ID (optional) and Category fields to automatically generate a name based on the values entered in these fields.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
         }
     }
 }

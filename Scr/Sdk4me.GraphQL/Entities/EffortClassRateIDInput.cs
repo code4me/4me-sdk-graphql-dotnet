@@ -5,19 +5,9 @@
     /// </summary>
     public class EffortClassRateIDInput : PropertyChangeSet
     {
-        private string? id;
         private string? effortClassId;
+        private string? id;
         private string? rateID;
-
-        /// <summary>
-        /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
-        }
 
         /// <summary>
         /// The effort class ID for which a billing identifier is provided.
@@ -27,6 +17,16 @@
         {
             get => effortClassId;
             set => effortClassId = Set("effortClassId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
         }
 
         /// <summary>

@@ -128,21 +128,21 @@
         }
 
         /// <summary>
+        /// Workflows of the workflow template.
+        /// </summary>
+        public WorkflowTemplateQuery SelectWorkflows(WorkflowQuery query)
+        {
+            query.FieldName = "workflows";
+            return Select(query);
+        }
+
+        /// <summary>
         /// The type that needs to be selected in the Type field of a new workflow when it is being created based on the template.
         /// </summary>
         public WorkflowTemplateQuery SelectWorkflowType(WorkflowTypeQuery query)
         {
             query.FieldName = "workflowType";
             query.IsConnection = false;
-            return Select(query);
-        }
-
-        /// <summary>
-        /// Workflows of the workflow template.
-        /// </summary>
-        public WorkflowTemplateQuery SelectWorkflows(WorkflowQuery query)
-        {
-            query.FieldName = "workflows";
             return Select(query);
         }
     }

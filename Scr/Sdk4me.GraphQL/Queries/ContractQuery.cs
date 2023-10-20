@@ -43,25 +43,6 @@
         }
 
         /// <summary>
-        /// Values of custom fields.
-        /// </summary>
-        public ContractQuery SelectCustomFields(CustomFieldQuery query)
-        {
-            query.FieldName = "customFields";
-            query.IsConnection = false;
-            return Select(query);
-        }
-
-        /// <summary>
-        /// Inline images linked to one of the custom fields.
-        /// </summary>
-        public ContractQuery SelectCustomFieldsAttachments(AttachmentQuery query)
-        {
-            query.FieldName = "customFieldsAttachments";
-            return Select(query);
-        }
-
-        /// <summary>
         /// The organization that pays for the agreement.
         /// </summary>
         public ContractQuery SelectCustomer(OrganizationQuery query)
@@ -88,6 +69,25 @@
         {
             query.FieldName = "customerRepresentative";
             query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Values of custom fields.
+        /// </summary>
+        public ContractQuery SelectCustomFields(CustomFieldQuery query)
+        {
+            query.FieldName = "customFields";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Inline images linked to one of the custom fields.
+        /// </summary>
+        public ContractQuery SelectCustomFieldsAttachments(AttachmentQuery query)
+        {
+            query.FieldName = "customFieldsAttachments";
             return Select(query);
         }
 

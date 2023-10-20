@@ -5,53 +5,23 @@
     /// </summary>
     public class WorkflowTemplateUpdateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
-        private string? uiExtensionId;
         private WorkflowCategory? category;
-        private string? workflowManagerId;
-        private string? workflowTypeId;
+        private string? clientMutationId;
         private bool? disabled;
+        private string? id;
         private string? instructions;
         private WorkflowJustification? justification;
+        private List<WorkflowTemplateTaskTemplateInput>? newTaskTemplateRelations;
         private string? note;
         private RecurrenceInput? recurrence;
         private string? serviceId;
+        private string? source;
+        private string? sourceID;
         private string? subject;
-        private List<WorkflowTemplateTaskTemplateInput>? newTaskTemplateRelations;
-        private string? clientMutationId;
-        private string? id;
         private List<string>? taskTemplateRelationsToDelete;
-
-        /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
-        /// </summary>
-        [JsonProperty("source")]
-        public string? Source
-        {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
-        }
-
-        /// <summary>
-        /// UI extension that is to be applied to the record.
-        /// </summary>
-        [JsonProperty("uiExtensionId")]
-        public string? UiExtensionId
-        {
-            get => uiExtensionId;
-            set => uiExtensionId = Set("uiExtensionId", value);
-        }
+        private string? uiExtensionId;
+        private string? workflowManagerId;
+        private string? workflowTypeId;
 
         /// <summary>
         /// The category that needs to be selected in the Category field of a new workflow when it is being created based on the template.
@@ -64,23 +34,13 @@
         }
 
         /// <summary>
-        /// The person who will be responsible for coordinating the workflows that will be generated automatically in accordance with the recurrence schedule.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("workflowManagerId")]
-        public string? WorkflowManagerId
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => workflowManagerId;
-            set => workflowManagerId = Set("workflowManagerId", value);
-        }
-
-        /// <summary>
-        /// The type that needs to be selected in the Type field of a new workflow when it is being created based on the template.
-        /// </summary>
-        [JsonProperty("workflowTypeId")]
-        public string? WorkflowTypeId
-        {
-            get => workflowTypeId;
-            set => workflowTypeId = Set("workflowTypeId", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -91,6 +51,16 @@
         {
             get => disabled;
             set => disabled = Set("disabled", value);
+        }
+
+        /// <summary>
+        /// The node ID of the record to update.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
         }
 
         /// <summary>
@@ -111,6 +81,16 @@
         {
             get => justification;
             set => justification = Set("justification", value);
+        }
+
+        /// <summary>
+        /// Task template relations of the workflow template.
+        /// </summary>
+        [JsonProperty("newTaskTemplateRelations")]
+        public List<WorkflowTemplateTaskTemplateInput>? NewTaskTemplateRelations
+        {
+            get => newTaskTemplateRelations;
+            set => newTaskTemplateRelations = Set("newTaskTemplateRelations", value);
         }
 
         /// <summary>
@@ -144,6 +124,26 @@
         }
 
         /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
         /// Short description that needs to be copied to the Subject field of a new workflow when it is being created based on the template.
         /// </summary>
         [JsonProperty("subject")]
@@ -154,36 +154,6 @@
         }
 
         /// <summary>
-        /// Task template relations of the workflow template.
-        /// </summary>
-        [JsonProperty("newTaskTemplateRelations")]
-        public List<WorkflowTemplateTaskTemplateInput>? NewTaskTemplateRelations
-        {
-            get => newTaskTemplateRelations;
-            set => newTaskTemplateRelations = Set("newTaskTemplateRelations", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// The node ID of the record to update.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
-        }
-
-        /// <summary>
         /// Identifiers of task template relations to remove from the workflow template.
         /// </summary>
         [JsonProperty("taskTemplateRelationsToDelete")]
@@ -191,6 +161,36 @@
         {
             get => taskTemplateRelationsToDelete;
             set => taskTemplateRelationsToDelete = Set("taskTemplateRelationsToDelete", value);
+        }
+
+        /// <summary>
+        /// UI extension that is to be applied to the record.
+        /// </summary>
+        [JsonProperty("uiExtensionId")]
+        public string? UiExtensionId
+        {
+            get => uiExtensionId;
+            set => uiExtensionId = Set("uiExtensionId", value);
+        }
+
+        /// <summary>
+        /// The person who will be responsible for coordinating the workflows that will be generated automatically in accordance with the recurrence schedule.
+        /// </summary>
+        [JsonProperty("workflowManagerId")]
+        public string? WorkflowManagerId
+        {
+            get => workflowManagerId;
+            set => workflowManagerId = Set("workflowManagerId", value);
+        }
+
+        /// <summary>
+        /// The type that needs to be selected in the Type field of a new workflow when it is being created based on the template.
+        /// </summary>
+        [JsonProperty("workflowTypeId")]
+        public string? WorkflowTypeId
+        {
+            get => workflowTypeId;
+            set => workflowTypeId = Set("workflowTypeId", value);
         }
     }
 }

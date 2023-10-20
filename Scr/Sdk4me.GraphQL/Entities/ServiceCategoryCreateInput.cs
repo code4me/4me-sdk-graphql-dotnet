@@ -5,43 +5,23 @@
     /// </summary>
     public class ServiceCategoryCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
-        private string? pictureUri;
+        private string? clientMutationId;
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
-        private List<string>? serviceIds;
-        private string? clientMutationId;
         private string? name;
+        private string? pictureUri;
+        private List<string>? serviceIds;
+        private string? source;
+        private string? sourceID;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
-        }
-
-        /// <summary>
-        /// The hyperlink to the image file for the record.
-        /// </summary>
-        [JsonProperty("pictureUri")]
-        public string? PictureUri
-        {
-            get => pictureUri;
-            set => pictureUri = Set("pictureUri", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -65,6 +45,26 @@
         }
 
         /// <summary>
+        /// The name of the service category.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
+        }
+
+        /// <summary>
+        /// The hyperlink to the image file for the record.
+        /// </summary>
+        [JsonProperty("pictureUri")]
+        public string? PictureUri
+        {
+            get => pictureUri;
+            set => pictureUri = Set("pictureUri", value);
+        }
+
+        /// <summary>
         /// Identifiers of the services of the service category.
         /// </summary>
         [JsonProperty("serviceIds")]
@@ -75,23 +75,23 @@
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("source")]
+        public string? Source
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
+            get => source;
+            set => source = Set("source", value);
         }
 
         /// <summary>
-        /// The name of the service category.
+        /// The unique identifier of the resource in an external system.
         /// </summary>
-        [JsonProperty("name")]
-        public string? Name
+        [JsonProperty("sourceID")]
+        public string? SourceID
         {
-            get => name;
-            set => name = Set("name", value);
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
         }
     }
 }

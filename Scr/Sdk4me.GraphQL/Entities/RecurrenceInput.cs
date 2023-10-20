@@ -5,80 +5,29 @@
     /// </summary>
     public class RecurrenceInput : PropertyChangeSet
     {
-        private RecurrenceFrequency? frequency;
-        private TimeSpan? timeOfDay;
-        private string? timeZone;
-        private long? interval;
-        private DateOnly? startDate;
-        private DateOnly? endDate;
+        private string? calendarId;
         private List<long>? day;
         private List<long>? dayOfMonth;
         private bool? dayOfWeek;
-        private RecurrenceDayOfWeekIndex? dayOfWeekIndex;
         private List<DayNames>? dayOfWeekDay;
-        private List<long>? monthOfYear;
-        private string? calendarId;
+        private RecurrenceDayOfWeekIndex? dayOfWeekIndex;
         private bool? disabled;
+        private DateOnly? endDate;
+        private RecurrenceFrequency? frequency;
+        private long? interval;
+        private List<long>? monthOfYear;
+        private DateOnly? startDate;
+        private TimeSpan? timeOfDay;
+        private string? timeZone;
 
         /// <summary>
-        /// The frequency of the recurrence.
+        /// Select a calendar to skip occurrences of the recurrence during off-hours and holidays.
         /// </summary>
-        [JsonProperty("frequency")]
-        public RecurrenceFrequency? Frequency
+        [JsonProperty("calendarId")]
+        public string? CalendarId
         {
-            get => frequency;
-            set => frequency = Set("frequency", value);
-        }
-
-        /// <summary>
-        /// The time of day to start the scheduled Workflow.
-        /// </summary>
-        [JsonProperty("timeOfDay")]
-        public TimeSpan? TimeOfDay
-        {
-            get => timeOfDay;
-            set => timeOfDay = Set("timeOfDay", value);
-        }
-
-        /// <summary>
-        /// <br>The time zone for the <c>timeOfDay</c> field.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
-        /// </summary>
-        [JsonProperty("timeZone")]
-        public string? TimeZone
-        {
-            get => timeZone;
-            set => timeZone = Set("timeZone", value);
-        }
-
-        /// <summary>
-        /// The interval of the Frequency, e.g. every 2nd week or every 10th day.
-        /// </summary>
-        [JsonProperty("interval")]
-        public long? Interval
-        {
-            get => interval;
-            set => interval = Set("interval", value);
-        }
-
-        /// <summary>
-        /// The date at which to start the Recurrence.
-        /// </summary>
-        [JsonProperty("startDate")]
-        public DateOnly? StartDate
-        {
-            get => startDate;
-            set => startDate = Set("startDate", value);
-        }
-
-        /// <summary>
-        /// The date at which to end the Recurrence.
-        /// </summary>
-        [JsonProperty("endDate")]
-        public DateOnly? EndDate
-        {
-            get => endDate;
-            set => endDate = Set("endDate", value);
+            get => calendarId;
+            set => calendarId = Set("calendarId", value);
         }
 
         /// <summary>
@@ -126,6 +75,16 @@
         }
 
         /// <summary>
+        /// <em>Required</em> when <c>dayOfWeek</c> is <c>true</c>, ignored in all other cases. list of days of the week.
+        /// </summary>
+        [JsonProperty("dayOfWeekDay")]
+        public List<DayNames>? DayOfWeekDay
+        {
+            get => dayOfWeekDay;
+            set => dayOfWeekDay = Set("dayOfWeekDay", value);
+        }
+
+        /// <summary>
         /// <em>Required</em> when <c>dayOfWeek</c> is <c>true</c>, ignored in all other cases.
         /// </summary>
         [JsonProperty("dayOfWeekIndex")]
@@ -136,13 +95,43 @@
         }
 
         /// <summary>
-        /// <em>Required</em> when <c>dayOfWeek</c> is <c>true</c>, ignored in all other cases. list of days of the week.
+        /// Whether recurrence should be temporarily disabled.
         /// </summary>
-        [JsonProperty("dayOfWeekDay")]
-        public List<DayNames>? DayOfWeekDay
+        [JsonProperty("disabled")]
+        public bool? Disabled
         {
-            get => dayOfWeekDay;
-            set => dayOfWeekDay = Set("dayOfWeekDay", value);
+            get => disabled;
+            set => disabled = Set("disabled", value);
+        }
+
+        /// <summary>
+        /// The date at which to end the Recurrence.
+        /// </summary>
+        [JsonProperty("endDate")]
+        public DateOnly? EndDate
+        {
+            get => endDate;
+            set => endDate = Set("endDate", value);
+        }
+
+        /// <summary>
+        /// The frequency of the recurrence.
+        /// </summary>
+        [JsonProperty("frequency")]
+        public RecurrenceFrequency? Frequency
+        {
+            get => frequency;
+            set => frequency = Set("frequency", value);
+        }
+
+        /// <summary>
+        /// The interval of the Frequency, e.g. every 2nd week or every 10th day.
+        /// </summary>
+        [JsonProperty("interval")]
+        public long? Interval
+        {
+            get => interval;
+            set => interval = Set("interval", value);
         }
 
         /// <summary>
@@ -168,23 +157,34 @@
         }
 
         /// <summary>
-        /// Select a calendar to skip occurrences of the recurrence during off-hours and holidays.
+        /// The date at which to start the Recurrence.
         /// </summary>
-        [JsonProperty("calendarId")]
-        public string? CalendarId
+        [JsonProperty("startDate")]
+        public DateOnly? StartDate
         {
-            get => calendarId;
-            set => calendarId = Set("calendarId", value);
+            get => startDate;
+            set => startDate = Set("startDate", value);
         }
 
         /// <summary>
-        /// Whether recurrence should be temporarily disabled.
+        /// The time of day to start the scheduled Workflow.
         /// </summary>
-        [JsonProperty("disabled")]
-        public bool? Disabled
+        [JsonProperty("timeOfDay")]
+        public TimeSpan? TimeOfDay
         {
-            get => disabled;
-            set => disabled = Set("disabled", value);
+            get => timeOfDay;
+            set => timeOfDay = Set("timeOfDay", value);
+        }
+
+        /// <summary>
+        /// <br>The time zone for the <c>timeOfDay</c> field.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
+        /// </summary>
+        [JsonProperty("timeZone")]
+        public string? TimeZone
+        {
+            get => timeZone;
+            set => timeZone = Set("timeZone", value);
         }
     }
 }

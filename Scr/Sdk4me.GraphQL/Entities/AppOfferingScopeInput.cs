@@ -5,30 +5,10 @@
     /// </summary>
     public class AppOfferingScopeInput : PropertyChangeSet
     {
-        private string? id;
-        private ScopeEffect? effect;
         private List<string>? actions;
         private List<string>? conditions;
-
-        /// <summary>
-        /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
-        }
-
-        /// <summary>
-        /// Whether this scope allows or prevents access.
-        /// </summary>
-        [JsonProperty("effect")]
-        public ScopeEffect? Effect
-        {
-            get => effect;
-            set => effect = Set("effect", value);
-        }
+        private ScopeEffect? effect;
+        private string? id;
 
         /// <summary>
         /// Actions this scope applies to.
@@ -48,6 +28,26 @@
         {
             get => conditions;
             set => conditions = Set("conditions", value);
+        }
+
+        /// <summary>
+        /// Whether this scope allows or prevents access.
+        /// </summary>
+        [JsonProperty("effect")]
+        public ScopeEffect? Effect
+        {
+            get => effect;
+            set => effect = Set("effect", value);
+        }
+
+        /// <summary>
+        /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
         }
     }
 }

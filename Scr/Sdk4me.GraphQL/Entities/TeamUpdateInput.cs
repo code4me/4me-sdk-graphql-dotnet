@@ -5,87 +5,27 @@
     /// </summary>
     public class TeamUpdateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
-        private string? pictureUri;
-        private CustomFieldCollection? customFields;
-        private List<AttachmentInput>? customFieldsAttachments;
-        private string? uiExtensionId;
         private string? agileBoardId;
         private bool? autoAssign;
+        private string? clientMutationId;
         private string? configurationManagerId;
         private string? coordinatorId;
+        private CustomFieldCollection? customFields;
+        private List<AttachmentInput>? customFieldsAttachments;
         private bool? disabled;
+        private string? id;
         private string? inboundEmailLocalPart;
         private string? managerId;
+        private List<string>? memberIds;
         private string? name;
+        private string? pictureUri;
         private string? remarks;
         private List<AttachmentInput>? remarksAttachments;
+        private string? source;
+        private string? sourceID;
         private string? timeZone;
+        private string? uiExtensionId;
         private string? workHoursId;
-        private List<string>? memberIds;
-        private string? clientMutationId;
-        private string? id;
-
-        /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
-        /// </summary>
-        [JsonProperty("source")]
-        public string? Source
-        {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
-        }
-
-        /// <summary>
-        /// The hyperlink to the image file for the record.
-        /// </summary>
-        [JsonProperty("pictureUri")]
-        public string? PictureUri
-        {
-            get => pictureUri;
-            set => pictureUri = Set("pictureUri", value);
-        }
-
-        /// <summary>
-        /// Values for custom fields to be used by the UI Extension that is linked to the record.
-        /// </summary>
-        [JsonProperty("customFields")]
-        public CustomFieldCollection? CustomFields
-        {
-            get => customFields;
-            set => customFields = Set("customFields", value);
-        }
-
-        /// <summary>
-        /// The attachments used in the custom fields' values.
-        /// </summary>
-        [JsonProperty("customFieldsAttachments")]
-        public List<AttachmentInput>? CustomFieldsAttachments
-        {
-            get => customFieldsAttachments;
-            set => customFieldsAttachments = Set("customFieldsAttachments", value);
-        }
-
-        /// <summary>
-        /// UI extension that is to be applied to the record.
-        /// </summary>
-        [JsonProperty("uiExtensionId")]
-        public string? UiExtensionId
-        {
-            get => uiExtensionId;
-            set => uiExtensionId = Set("uiExtensionId", value);
-        }
 
         /// <summary>
         /// Used to automatically link records to the agile board when they are assigned to the team.
@@ -105,6 +45,16 @@
         {
             get => autoAssign;
             set => autoAssign = Set("autoAssign", value);
+        }
+
+        /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -128,6 +78,26 @@
         }
 
         /// <summary>
+        /// Values for custom fields to be used by the UI Extension that is linked to the record.
+        /// </summary>
+        [JsonProperty("customFields")]
+        public CustomFieldCollection? CustomFields
+        {
+            get => customFields;
+            set => customFields = Set("customFields", value);
+        }
+
+        /// <summary>
+        /// The attachments used in the custom fields' values.
+        /// </summary>
+        [JsonProperty("customFieldsAttachments")]
+        public List<AttachmentInput>? CustomFieldsAttachments
+        {
+            get => customFieldsAttachments;
+            set => customFieldsAttachments = Set("customFieldsAttachments", value);
+        }
+
+        /// <summary>
         /// Whether the team may no longer be related to other records.
         /// </summary>
         [JsonProperty("disabled")]
@@ -135,6 +105,16 @@
         {
             get => disabled;
             set => disabled = Set("disabled", value);
+        }
+
+        /// <summary>
+        /// The node ID of the record to update.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
         }
 
         /// <summary>
@@ -158,6 +138,16 @@
         }
 
         /// <summary>
+        /// People that are linked as member to the team.
+        /// </summary>
+        [JsonProperty("memberIds")]
+        public List<string>? MemberIds
+        {
+            get => memberIds;
+            set => memberIds = Set("memberIds", value);
+        }
+
+        /// <summary>
         /// The name of the team.
         /// </summary>
         [JsonProperty("name")]
@@ -165,6 +155,16 @@
         {
             get => name;
             set => name = Set("name", value);
+        }
+
+        /// <summary>
+        /// The hyperlink to the image file for the record.
+        /// </summary>
+        [JsonProperty("pictureUri")]
+        public string? PictureUri
+        {
+            get => pictureUri;
+            set => pictureUri = Set("pictureUri", value);
         }
 
         /// <summary>
@@ -188,6 +188,26 @@
         }
 
         /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
         /// <br>The time zone that applies to the selected work hours.</br>
         /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
         /// </summary>
@@ -199,6 +219,16 @@
         }
 
         /// <summary>
+        /// UI extension that is to be applied to the record.
+        /// </summary>
+        [JsonProperty("uiExtensionId")]
+        public string? UiExtensionId
+        {
+            get => uiExtensionId;
+            set => uiExtensionId = Set("uiExtensionId", value);
+        }
+
+        /// <summary>
         /// The calendar that defines the work hours during which the team is available for work on all types of assignments.
         /// </summary>
         [JsonProperty("workHoursId")]
@@ -206,36 +236,6 @@
         {
             get => workHoursId;
             set => workHoursId = Set("workHoursId", value);
-        }
-
-        /// <summary>
-        /// People that are linked as member to the team.
-        /// </summary>
-        [JsonProperty("memberIds")]
-        public List<string>? MemberIds
-        {
-            get => memberIds;
-            set => memberIds = Set("memberIds", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// The node ID of the record to update.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
         }
     }
 }

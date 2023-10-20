@@ -5,56 +5,56 @@
     /// </summary>
     public class OrganizationCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
-        private string? pictureUri;
-        private CustomFieldCollection? customFields;
-        private List<AttachmentInput>? customFieldsAttachments;
-        private string? uiExtensionId;
         private bool? businessUnit;
         private string? businessUnitOrganizationId;
+        private string? clientMutationId;
+        private CustomFieldCollection? customFields;
+        private List<AttachmentInput>? customFieldsAttachments;
         private bool? disabled;
         private string? financialID;
         private string? managerId;
+        private string? name;
+        private List<AddressInput>? newAddresses;
+        private List<ContactInput>? newContacts;
         private string? parentId;
+        private string? pictureUri;
         private string? region;
         private string? remarks;
         private List<AttachmentInput>? remarksAttachments;
+        private string? source;
+        private string? sourceID;
         private string? substituteId;
         private List<string>? timeAllocationIds;
-        private List<AddressInput>? newAddresses;
-        private List<ContactInput>? newContacts;
-        private string? clientMutationId;
-        private string? name;
+        private string? uiExtensionId;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// Whether the organization needs to be treated as a separate entity from a reporting perspective. This checkbox is only available for internal organizations.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("businessUnit")]
+        public bool? BusinessUnit
         {
-            get => source;
-            set => source = Set("source", value);
+            get => businessUnit;
+            set => businessUnit = Set("businessUnit", value);
         }
 
         /// <summary>
-        /// The unique identifier of the resource in an external system.
+        /// Refers to itself if the organization is a business unit, or refers to the business unit that the organization belongs to.
         /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
+        [JsonProperty("businessUnitOrganizationId")]
+        public string? BusinessUnitOrganizationId
         {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
+            get => businessUnitOrganizationId;
+            set => businessUnitOrganizationId = Set("businessUnitOrganizationId", value);
         }
 
         /// <summary>
-        /// The hyperlink to the image file for the record.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("pictureUri")]
-        public string? PictureUri
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => pictureUri;
-            set => pictureUri = Set("pictureUri", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -75,36 +75,6 @@
         {
             get => customFieldsAttachments;
             set => customFieldsAttachments = Set("customFieldsAttachments", value);
-        }
-
-        /// <summary>
-        /// UI extension that is to be applied to the record.
-        /// </summary>
-        [JsonProperty("uiExtensionId")]
-        public string? UiExtensionId
-        {
-            get => uiExtensionId;
-            set => uiExtensionId = Set("uiExtensionId", value);
-        }
-
-        /// <summary>
-        /// Whether the organization needs to be treated as a separate entity from a reporting perspective. This checkbox is only available for internal organizations.
-        /// </summary>
-        [JsonProperty("businessUnit")]
-        public bool? BusinessUnit
-        {
-            get => businessUnit;
-            set => businessUnit = Set("businessUnit", value);
-        }
-
-        /// <summary>
-        /// Refers to itself if the organization is a business unit, or refers to the business unit that the organization belongs to.
-        /// </summary>
-        [JsonProperty("businessUnitOrganizationId")]
-        public string? BusinessUnitOrganizationId
-        {
-            get => businessUnitOrganizationId;
-            set => businessUnitOrganizationId = Set("businessUnitOrganizationId", value);
         }
 
         /// <summary>
@@ -138,6 +108,36 @@
         }
 
         /// <summary>
+        /// The full name of the organization.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
+        }
+
+        /// <summary>
+        /// New or updated addresses of the organization.
+        /// </summary>
+        [JsonProperty("newAddresses")]
+        public List<AddressInput>? NewAddresses
+        {
+            get => newAddresses;
+            set => newAddresses = Set("newAddresses", value);
+        }
+
+        /// <summary>
+        /// New or updated contacts of the organization.
+        /// </summary>
+        [JsonProperty("newContacts")]
+        public List<ContactInput>? NewContacts
+        {
+            get => newContacts;
+            set => newContacts = Set("newContacts", value);
+        }
+
+        /// <summary>
         /// The organization's parent organization.
         /// </summary>
         [JsonProperty("parentId")]
@@ -145,6 +145,16 @@
         {
             get => parentId;
             set => parentId = Set("parentId", value);
+        }
+
+        /// <summary>
+        /// The hyperlink to the image file for the record.
+        /// </summary>
+        [JsonProperty("pictureUri")]
+        public string? PictureUri
+        {
+            get => pictureUri;
+            set => pictureUri = Set("pictureUri", value);
         }
 
         /// <summary>
@@ -183,6 +193,26 @@
         }
 
         /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
         /// The person who acts as the substitute of the organization's manager.
         /// </summary>
         [JsonProperty("substituteId")]
@@ -203,43 +233,13 @@
         }
 
         /// <summary>
-        /// New or updated addresses of the organization.
+        /// UI extension that is to be applied to the record.
         /// </summary>
-        [JsonProperty("newAddresses")]
-        public List<AddressInput>? NewAddresses
+        [JsonProperty("uiExtensionId")]
+        public string? UiExtensionId
         {
-            get => newAddresses;
-            set => newAddresses = Set("newAddresses", value);
-        }
-
-        /// <summary>
-        /// New or updated contacts of the organization.
-        /// </summary>
-        [JsonProperty("newContacts")]
-        public List<ContactInput>? NewContacts
-        {
-            get => newContacts;
-            set => newContacts = Set("newContacts", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// The full name of the organization.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
+            get => uiExtensionId;
+            set => uiExtensionId = Set("uiExtensionId", value);
         }
     }
 }

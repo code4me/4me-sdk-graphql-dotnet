@@ -5,42 +5,42 @@
     /// </summary>
     public class RiskUpdateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
+        private string? clientMutationId;
+        private RiskClosureReason? closureReason;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
-        private string? uiExtensionId;
-        private RiskClosureReason? closureReason;
+        private string? id;
         private string? managerId;
         private DateOnly? mitigationTargetAt;
         private string? note;
-        private string? severity;
-        private RiskStatus? status;
-        private string? subject;
         private List<string>? organizationIds;
         private List<string>? projectIds;
         private List<string>? serviceIds;
-        private string? clientMutationId;
-        private string? id;
+        private string? severity;
+        private string? source;
+        private string? sourceID;
+        private RiskStatus? status;
+        private string? subject;
+        private string? uiExtensionId;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => source;
-            set => source = Set("source", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
-        /// The unique identifier of the resource in an external system.
+        /// The appropriate closure reason for the risk when it has been closed.
         /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
+        [JsonProperty("closureReason")]
+        public RiskClosureReason? ClosureReason
         {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
+            get => closureReason;
+            set => closureReason = Set("closureReason", value);
         }
 
         /// <summary>
@@ -64,23 +64,13 @@
         }
 
         /// <summary>
-        /// UI extension that is to be applied to the record.
+        /// The node ID of the record to update.
         /// </summary>
-        [JsonProperty("uiExtensionId")]
-        public string? UiExtensionId
+        [JsonProperty("id")]
+        public string? ID
         {
-            get => uiExtensionId;
-            set => uiExtensionId = Set("uiExtensionId", value);
-        }
-
-        /// <summary>
-        /// The appropriate closure reason for the risk when it has been closed.
-        /// </summary>
-        [JsonProperty("closureReason")]
-        public RiskClosureReason? ClosureReason
-        {
-            get => closureReason;
-            set => closureReason = Set("closureReason", value);
+            get => id;
+            set => id = Set("id", value);
         }
 
         /// <summary>
@@ -114,36 +104,6 @@
         }
 
         /// <summary>
-        /// The severity of the risk.
-        /// </summary>
-        [JsonProperty("severity")]
-        public string? Severity
-        {
-            get => severity;
-            set => severity = Set("severity", value);
-        }
-
-        /// <summary>
-        /// The current status of the risk.
-        /// </summary>
-        [JsonProperty("status")]
-        public RiskStatus? Status
-        {
-            get => status;
-            set => status = Set("status", value);
-        }
-
-        /// <summary>
-        /// The subject of the risk.
-        /// </summary>
-        [JsonProperty("subject")]
-        public string? Subject
-        {
-            get => subject;
-            set => subject = Set("subject", value);
-        }
-
-        /// <summary>
         /// Identifiers of organizations linked to the risk.
         /// </summary>
         [JsonProperty("organizationIds")]
@@ -174,23 +134,63 @@
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// The severity of the risk.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("severity")]
+        public string? Severity
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
+            get => severity;
+            set => severity = Set("severity", value);
         }
 
         /// <summary>
-        /// The node ID of the record to update.
+        /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("id")]
-        public string? ID
+        [JsonProperty("source")]
+        public string? Source
         {
-            get => id;
-            set => id = Set("id", value);
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// The current status of the risk.
+        /// </summary>
+        [JsonProperty("status")]
+        public RiskStatus? Status
+        {
+            get => status;
+            set => status = Set("status", value);
+        }
+
+        /// <summary>
+        /// The subject of the risk.
+        /// </summary>
+        [JsonProperty("subject")]
+        public string? Subject
+        {
+            get => subject;
+            set => subject = Set("subject", value);
+        }
+
+        /// <summary>
+        /// UI extension that is to be applied to the record.
+        /// </summary>
+        [JsonProperty("uiExtensionId")]
+        public string? UiExtensionId
+        {
+            get => uiExtensionId;
+            set => uiExtensionId = Set("uiExtensionId", value);
         }
     }
 }

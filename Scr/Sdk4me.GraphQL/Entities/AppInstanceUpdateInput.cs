@@ -5,15 +5,35 @@
     /// </summary>
     public class AppInstanceUpdateInput : PropertyChangeSet
     {
+        private string? clientMutationId;
+        private string? customerRepresentativeId;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
-        private string? customerRepresentativeId;
         private bool? disabled;
         private bool? enabledByCustomer;
+        private string? id;
         private bool? suspended;
         private string? suspensionComment;
-        private string? clientMutationId;
-        private string? id;
+
+        /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the contact person of customer regarding this app instance.
+        /// </summary>
+        [JsonProperty("customerRepresentativeId")]
+        public string? CustomerRepresentativeId
+        {
+            get => customerRepresentativeId;
+            set => customerRepresentativeId = Set("customerRepresentativeId", value);
+        }
 
         /// <summary>
         /// Values for custom fields to be used by the UI Extension that is linked to the record.
@@ -33,16 +53,6 @@
         {
             get => customFieldsAttachments;
             set => customFieldsAttachments = Set("customFieldsAttachments", value);
-        }
-
-        /// <summary>
-        /// Identifier of the contact person of customer regarding this app instance.
-        /// </summary>
-        [JsonProperty("customerRepresentativeId")]
-        public string? CustomerRepresentativeId
-        {
-            get => customerRepresentativeId;
-            set => customerRepresentativeId = Set("customerRepresentativeId", value);
         }
 
         /// <summary>
@@ -66,6 +76,16 @@
         }
 
         /// <summary>
+        /// The node ID of the record to update.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
+        }
+
+        /// <summary>
         /// Whether the app instance is currently suspended for this customer.
         /// </summary>
         [JsonProperty("suspended")]
@@ -83,26 +103,6 @@
         {
             get => suspensionComment;
             set => suspensionComment = Set("suspensionComment", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// The node ID of the record to update.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
         }
     }
 }

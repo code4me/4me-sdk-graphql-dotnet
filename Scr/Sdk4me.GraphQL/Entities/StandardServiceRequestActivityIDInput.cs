@@ -5,9 +5,19 @@
     /// </summary>
     public class StandardServiceRequestActivityIDInput : PropertyChangeSet
     {
+        private string? activityID;
         private string? id;
         private string? standardServiceRequestId;
-        private string? activityID;
+
+        /// <summary>
+        /// The identifier known in the billing system of the service provider.
+        /// </summary>
+        [JsonProperty("activityID")]
+        public string? ActivityID
+        {
+            get => activityID;
+            set => activityID = Set("activityID", value);
+        }
 
         /// <summary>
         /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
@@ -27,16 +37,6 @@
         {
             get => standardServiceRequestId;
             set => standardServiceRequestId = Set("standardServiceRequestId", value);
-        }
-
-        /// <summary>
-        /// The identifier known in the billing system of the service provider.
-        /// </summary>
-        [JsonProperty("activityID")]
-        public string? ActivityID
-        {
-            get => activityID;
-            set => activityID = Set("activityID", value);
         }
     }
 }

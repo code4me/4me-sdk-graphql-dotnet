@@ -5,40 +5,20 @@
     /// </summary>
     public class AutomationRuleUpdateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
         private List<AutomationRuleActionInput>? actions;
+        private string? clientMutationId;
         private string? condition;
         private string? description;
         private bool? disabled;
         private List<AutomationRuleExpressionInput>? expressions;
         private string? generic;
+        private string? id;
         private string? name;
         private string? ownerId;
         private long? position;
+        private string? source;
+        private string? sourceID;
         private string? trigger;
-        private string? clientMutationId;
-        private string? id;
-
-        /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
-        /// </summary>
-        [JsonProperty("source")]
-        public string? Source
-        {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
-        }
 
         /// <summary>
         /// The Actions field is used to define actions that should be executed when the condition of the automation rule is met.
@@ -48,6 +28,16 @@
         {
             get => actions;
             set => actions = Set("actions", value);
+        }
+
+        /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -110,6 +100,16 @@
         }
 
         /// <summary>
+        /// The node ID of the record to update.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
+        }
+
+        /// <summary>
         /// The name of the automation rule.
         /// </summary>
         [JsonProperty("name")]
@@ -140,6 +140,26 @@
         }
 
         /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
         /// The Trigger field is used to specify when the automation rule is to be triggered, for example <c>on status update</c> or <c>on note added</c>.
         /// </summary>
         [JsonProperty("trigger")]
@@ -147,26 +167,6 @@
         {
             get => trigger;
             set => trigger = Set("trigger", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// The node ID of the record to update.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
         }
     }
 }

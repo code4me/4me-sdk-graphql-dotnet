@@ -5,25 +5,15 @@
     /// </summary>
     public class AgileBoardColumnInput : PropertyChangeSet
     {
-        private string? id;
         private AgileBoardColumnActionType? actionType;
         private AgileBoardColumnDialogType? dialogType;
-        private string? name;
+        private string? id;
         private string? memberId;
+        private string? name;
         private long? position;
         private long? removeAfter;
         private string? teamId;
         private long? wipLimit;
-
-        /// <summary>
-        /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
-        }
 
         /// <summary>
         /// Type of action to perform when an item is added to this column.
@@ -46,13 +36,13 @@
         }
 
         /// <summary>
-        /// Name of the column.
+        /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
         /// </summary>
-        [JsonProperty("name")]
-        public string? Name
+        [JsonProperty("id")]
+        public string? ID
         {
-            get => name;
-            set => name = Set("name", value);
+            get => id;
+            set => id = Set("id", value);
         }
 
         /// <summary>
@@ -63,6 +53,16 @@
         {
             get => memberId;
             set => memberId = Set("memberId", value);
+        }
+
+        /// <summary>
+        /// Name of the column.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
         }
 
         /// <summary>

@@ -5,32 +5,12 @@
     /// </summary>
     public class DiscoveredConfigurationItemsInput : PropertyChangeSet
     {
-        private string? clientMutationId;
-        private string? source;
         private List<string>? alternativeSources;
-        private string? supportTeam;
+        private string? clientMutationId;
         private List<DiscoveredProductCategoryInput>? physicalAssets;
         private DiscoveredReferenceStrategiesInput? referenceStrategies;
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// Identifier for the client application submitting the upload.
-        /// </summary>
-        [JsonProperty("source")]
-        public string? Source
-        {
-            get => source;
-            set => source = Set("source", value);
-        }
+        private string? source;
+        private string? supportTeam;
 
         /// <summary>
         /// Alternative identifiers for the client application. When a configuration item or product with the given <c>sourceID</c> is found linked to one of these alternative sources it will be identified as the same. For configuration items the source field in 4me will be updated to the <c>source</c> value supplied.
@@ -43,13 +23,13 @@
         }
 
         /// <summary>
-        /// Name of the support team to use as default for new products and configuration items uploaded.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("supportTeam")]
-        public string? SupportTeam
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => supportTeam;
-            set => supportTeam = Set("supportTeam", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -70,6 +50,26 @@
         {
             get => referenceStrategies;
             set => referenceStrategies = Set("referenceStrategies", value);
+        }
+
+        /// <summary>
+        /// Identifier for the client application submitting the upload.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// Name of the support team to use as default for new products and configuration items uploaded.
+        /// </summary>
+        [JsonProperty("supportTeam")]
+        public string? SupportTeam
+        {
+            get => supportTeam;
+            set => supportTeam = Set("supportTeam", value);
         }
     }
 }

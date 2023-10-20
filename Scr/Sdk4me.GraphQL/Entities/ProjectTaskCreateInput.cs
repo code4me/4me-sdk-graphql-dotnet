@@ -5,80 +5,100 @@
     /// </summary>
     public class ProjectTaskCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
-        private long? timeSpent;
-        private string? timeSpentEffortClassId;
-        private CustomFieldCollection? customFields;
-        private List<AttachmentInput>? customFieldsAttachments;
-        private string? agileBoardId;
         private string? agileBoardColumnId;
         private long? agileBoardColumnPosition;
+        private string? agileBoardId;
         private DateTime? assignedAt;
+        private ProjectTaskCategory? category;
+        private string? clientMutationId;
+        private CustomFieldCollection? customFields;
+        private List<AttachmentInput>? customFieldsAttachments;
         private DateTime? deadline;
         private string? instructions;
+        private List<ProjectTaskAssignmentInput>? newAssignments;
         private string? note;
         private string? pdfDesignId;
+        private string? phaseId;
+        private long? plannedDuration;
         private long? plannedEffort;
+        private List<string>? predecessorIds;
+        private string? projectId;
         private long? requiredApprovals;
+        private string? skillPoolId;
+        private string? source;
+        private string? sourceID;
         private DateTime? startAt;
         private ProjectTaskStatus? status;
-        private string? skillPoolId;
+        private string? subject;
+        private List<string>? successorIds;
         private string? supplierId;
         private string? supplierRequestID;
         private string? teamId;
         private string? templateId;
+        private long? timeSpent;
+        private string? timeSpentEffortClassId;
         private bool? urgent;
         private DateTime? waitingUntil;
         private bool? workHoursAre24x7;
-        private List<string>? predecessorIds;
-        private List<string>? successorIds;
-        private List<ProjectTaskAssignmentInput>? newAssignments;
-        private string? clientMutationId;
-        private string? projectId;
-        private string? phaseId;
-        private ProjectTaskCategory? category;
-        private long? plannedDuration;
-        private string? subject;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// ID of the column this item is placed in.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("agileBoardColumnId")]
+        public string? AgileBoardColumnId
         {
-            get => source;
-            set => source = Set("source", value);
+            get => agileBoardColumnId;
+            set => agileBoardColumnId = Set("agileBoardColumnId", value);
         }
 
         /// <summary>
-        /// The unique identifier of the resource in an external system.
+        /// The (one based) position of this item in its column.
         /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
+        [JsonProperty("agileBoardColumnPosition")]
+        public long? AgileBoardColumnPosition
         {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
+            get => agileBoardColumnPosition;
+            set => agileBoardColumnPosition = Set("agileBoardColumnPosition", value);
         }
 
         /// <summary>
-        /// The time that you have spent working on the request since you started to work on it or, if you already entered some time for this request, since you last added your time spent in it.
+        /// ID of the board this item is placed on.
         /// </summary>
-        [JsonProperty("timeSpent")]
-        public long? TimeSpent
+        [JsonProperty("agileBoardId")]
+        public string? AgileBoardId
         {
-            get => timeSpent;
-            set => timeSpent = Set("timeSpent", value);
+            get => agileBoardId;
+            set => agileBoardId = Set("agileBoardId", value);
         }
 
         /// <summary>
-        /// The effort class that best reflects the type of effort for which time spent is being registered.
+        /// Automatically set to the current date and time when the project task is assigned.
         /// </summary>
-        [JsonProperty("timeSpentEffortClassId")]
-        public string? TimeSpentEffortClassId
+        [JsonProperty("assignedAt")]
+        public DateTime? AssignedAt
         {
-            get => timeSpentEffortClassId;
-            set => timeSpentEffortClassId = Set("timeSpentEffortClassId", value);
+            get => assignedAt;
+            set => assignedAt = Set("assignedAt", value);
+        }
+
+        /// <summary>
+        /// The category of the project task. Activity tasks are used to assign project-related work to people. Approval tasks are used to collect approvals for projects. Milestones are used to mark specific points along a project's implementation plan.
+        /// </summary>
+        [JsonProperty("category")]
+        public ProjectTaskCategory? Category
+        {
+            get => category;
+            set => category = Set("category", value);
+        }
+
+        /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -102,46 +122,6 @@
         }
 
         /// <summary>
-        /// ID of the board this item is placed on.
-        /// </summary>
-        [JsonProperty("agileBoardId")]
-        public string? AgileBoardId
-        {
-            get => agileBoardId;
-            set => agileBoardId = Set("agileBoardId", value);
-        }
-
-        /// <summary>
-        /// ID of the column this item is placed in.
-        /// </summary>
-        [JsonProperty("agileBoardColumnId")]
-        public string? AgileBoardColumnId
-        {
-            get => agileBoardColumnId;
-            set => agileBoardColumnId = Set("agileBoardColumnId", value);
-        }
-
-        /// <summary>
-        /// The (one based) position of this item in its column.
-        /// </summary>
-        [JsonProperty("agileBoardColumnPosition")]
-        public long? AgileBoardColumnPosition
-        {
-            get => agileBoardColumnPosition;
-            set => agileBoardColumnPosition = Set("agileBoardColumnPosition", value);
-        }
-
-        /// <summary>
-        /// Automatically set to the current date and time when the project task is assigned.
-        /// </summary>
-        [JsonProperty("assignedAt")]
-        public DateTime? AssignedAt
-        {
-            get => assignedAt;
-            set => assignedAt = Set("assignedAt", value);
-        }
-
-        /// <summary>
         /// The date and time at which the milestone needs to have been reached.
         /// </summary>
         [JsonProperty("deadline")]
@@ -159,6 +139,16 @@
         {
             get => instructions;
             set => instructions = Set("instructions", value);
+        }
+
+        /// <summary>
+        /// Assignments of the project task.
+        /// </summary>
+        [JsonProperty("newAssignments")]
+        public List<ProjectTaskAssignmentInput>? NewAssignments
+        {
+            get => newAssignments;
+            set => newAssignments = Set("newAssignments", value);
         }
 
         /// <summary>
@@ -182,6 +172,26 @@
         }
 
         /// <summary>
+        /// The identifier of the phase of the project to which the project task belongs.
+        /// </summary>
+        [JsonProperty("phaseId")]
+        public string? PhaseId
+        {
+            get => phaseId;
+            set => phaseId = Set("phaseId", value);
+        }
+
+        /// <summary>
+        /// The number of minutes it is expected to take for the project task to be completed following its assignment, or following its fixed start date and time if the Start no earlier than field is filled out.
+        /// </summary>
+        [JsonProperty("plannedDuration")]
+        public long? PlannedDuration
+        {
+            get => plannedDuration;
+            set => plannedDuration = Set("plannedDuration", value);
+        }
+
+        /// <summary>
         /// The number of minutes the team is expected to spend working on the project task.
         /// </summary>
         [JsonProperty("plannedEffort")]
@@ -192,6 +202,26 @@
         }
 
         /// <summary>
+        /// Identifiers of the predecessors of the project task.
+        /// </summary>
+        [JsonProperty("predecessorIds")]
+        public List<string>? PredecessorIds
+        {
+            get => predecessorIds;
+            set => predecessorIds = Set("predecessorIds", value);
+        }
+
+        /// <summary>
+        /// Identifier of the project this task belongs to.
+        /// </summary>
+        [JsonProperty("projectId")]
+        public string? ProjectId
+        {
+            get => projectId;
+            set => projectId = Set("projectId", value);
+        }
+
+        /// <summary>
         /// The number of assignees who need to have provided their approval before the status of the project task gets updated to "Approved".
         /// </summary>
         [JsonProperty("requiredApprovals")]
@@ -199,6 +229,36 @@
         {
             get => requiredApprovals;
             set => requiredApprovals = Set("requiredApprovals", value);
+        }
+
+        /// <summary>
+        /// Skill pool that represents the specific expertise needed to complete the task.
+        /// </summary>
+        [JsonProperty("skillPoolId")]
+        public string? SkillPoolId
+        {
+            get => skillPoolId;
+            set => skillPoolId = Set("skillPoolId", value);
+        }
+
+        /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
         }
 
         /// <summary>
@@ -222,13 +282,23 @@
         }
 
         /// <summary>
-        /// Skill pool that represents the specific expertise needed to complete the task.
+        /// A short description of the objective of the project task.
         /// </summary>
-        [JsonProperty("skillPoolId")]
-        public string? SkillPoolId
+        [JsonProperty("subject")]
+        public string? Subject
         {
-            get => skillPoolId;
-            set => skillPoolId = Set("skillPoolId", value);
+            get => subject;
+            set => subject = Set("subject", value);
+        }
+
+        /// <summary>
+        /// Identifiers of the successors of the project task.
+        /// </summary>
+        [JsonProperty("successorIds")]
+        public List<string>? SuccessorIds
+        {
+            get => successorIds;
+            set => successorIds = Set("successorIds", value);
         }
 
         /// <summary>
@@ -272,6 +342,26 @@
         }
 
         /// <summary>
+        /// The time that you have spent working on the request since you started to work on it or, if you already entered some time for this request, since you last added your time spent in it.
+        /// </summary>
+        [JsonProperty("timeSpent")]
+        public long? TimeSpent
+        {
+            get => timeSpent;
+            set => timeSpent = Set("timeSpent", value);
+        }
+
+        /// <summary>
+        /// The effort class that best reflects the type of effort for which time spent is being registered.
+        /// </summary>
+        [JsonProperty("timeSpentEffortClassId")]
+        public string? TimeSpentEffortClassId
+        {
+            get => timeSpentEffortClassId;
+            set => timeSpentEffortClassId = Set("timeSpentEffortClassId", value);
+        }
+
+        /// <summary>
         /// Whether the project task is urgent.
         /// </summary>
         [JsonProperty("urgent")]
@@ -299,96 +389,6 @@
         {
             get => workHoursAre24x7;
             set => workHoursAre24x7 = Set("workHoursAre24x7", value);
-        }
-
-        /// <summary>
-        /// Identifiers of the predecessors of the project task.
-        /// </summary>
-        [JsonProperty("predecessorIds")]
-        public List<string>? PredecessorIds
-        {
-            get => predecessorIds;
-            set => predecessorIds = Set("predecessorIds", value);
-        }
-
-        /// <summary>
-        /// Identifiers of the successors of the project task.
-        /// </summary>
-        [JsonProperty("successorIds")]
-        public List<string>? SuccessorIds
-        {
-            get => successorIds;
-            set => successorIds = Set("successorIds", value);
-        }
-
-        /// <summary>
-        /// Assignments of the project task.
-        /// </summary>
-        [JsonProperty("newAssignments")]
-        public List<ProjectTaskAssignmentInput>? NewAssignments
-        {
-            get => newAssignments;
-            set => newAssignments = Set("newAssignments", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// Identifier of the project this task belongs to.
-        /// </summary>
-        [JsonProperty("projectId")]
-        public string? ProjectId
-        {
-            get => projectId;
-            set => projectId = Set("projectId", value);
-        }
-
-        /// <summary>
-        /// The identifier of the phase of the project to which the project task belongs.
-        /// </summary>
-        [JsonProperty("phaseId")]
-        public string? PhaseId
-        {
-            get => phaseId;
-            set => phaseId = Set("phaseId", value);
-        }
-
-        /// <summary>
-        /// The category of the project task. Activity tasks are used to assign project-related work to people. Approval tasks are used to collect approvals for projects. Milestones are used to mark specific points along a project's implementation plan.
-        /// </summary>
-        [JsonProperty("category")]
-        public ProjectTaskCategory? Category
-        {
-            get => category;
-            set => category = Set("category", value);
-        }
-
-        /// <summary>
-        /// The number of minutes it is expected to take for the project task to be completed following its assignment, or following its fixed start date and time if the Start no earlier than field is filled out.
-        /// </summary>
-        [JsonProperty("plannedDuration")]
-        public long? PlannedDuration
-        {
-            get => plannedDuration;
-            set => plannedDuration = Set("plannedDuration", value);
-        }
-
-        /// <summary>
-        /// A short description of the objective of the project task.
-        /// </summary>
-        [JsonProperty("subject")]
-        public string? Subject
-        {
-            get => subject;
-            set => subject = Set("subject", value);
         }
     }
 }

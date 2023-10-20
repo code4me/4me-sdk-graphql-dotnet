@@ -6,13 +6,13 @@
     public class SlaNotificationRuleInput : PropertyChangeSet
     {
         private string? id;
-        private long? thresholdPercentage;
         private bool? notifyCurrentAssignee;
         private bool? notifyFirstLineTeamCoordinator;
         private bool? notifyFirstLineTeamManager;
         private bool? notifyServiceOwner;
         private bool? notifySupportTeamCoordinator;
         private bool? notifySupportTeamManager;
+        private long? thresholdPercentage;
 
         /// <summary>
         /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
@@ -22,16 +22,6 @@
         {
             get => id;
             set => id = Set("id", value);
-        }
-
-        /// <summary>
-        /// The percentage of the resolution target duration when a notification should be generated.
-        /// </summary>
-        [JsonProperty("thresholdPercentage")]
-        public long? ThresholdPercentage
-        {
-            get => thresholdPercentage;
-            set => thresholdPercentage = Set("thresholdPercentage", value);
         }
 
         /// <summary>
@@ -92,6 +82,16 @@
         {
             get => notifySupportTeamManager;
             set => notifySupportTeamManager = Set("notifySupportTeamManager", value);
+        }
+
+        /// <summary>
+        /// The percentage of the resolution target duration when a notification should be generated.
+        /// </summary>
+        [JsonProperty("thresholdPercentage")]
+        public long? ThresholdPercentage
+        {
+            get => thresholdPercentage;
+            set => thresholdPercentage = Set("thresholdPercentage", value);
         }
     }
 }

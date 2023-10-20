@@ -7,8 +7,8 @@
     {
         private string? id;
         private string? questionId;
-        private string? text;
         private string? rating;
+        private string? text;
 
         /// <summary>
         /// Identifier of the object to update using these values. For new objects it should be <c>null</c>.
@@ -31,16 +31,6 @@
         }
 
         /// <summary>
-        /// Content of the answer for text questions.
-        /// </summary>
-        [JsonProperty("text")]
-        public string? Text
-        {
-            get => text;
-            set => text = Set("text", value);
-        }
-
-        /// <summary>
         /// Content of the answer for rating questions.
         /// </summary>
         [JsonProperty("rating")]
@@ -48,6 +38,16 @@
         {
             get => rating;
             set => rating = Set("rating", value);
+        }
+
+        /// <summary>
+        /// Content of the answer for text questions.
+        /// </summary>
+        [JsonProperty("text")]
+        public string? Text
+        {
+            get => text;
+            set => text = Set("text", value);
         }
     }
 }

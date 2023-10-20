@@ -222,18 +222,6 @@
         }
 
         /// <summary>
-        /// Root connection for retrieving KnowledgeArticleTemplate records.
-        /// </summary>
-        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
-        /// <param name="query">The query to execute.</param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <exception cref="Sdk4meException"></exception>
-        public static async Task<DataList<KnowledgeArticleTemplate>> Get(this Sdk4meClient client, KnowledgeArticleTemplateQuery query)
-        {
-            return await client.Get<KnowledgeArticleTemplate>(query);
-        }
-
-        /// <summary>
         /// Root connection for retrieving KnowledgeArticle records.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
@@ -243,6 +231,18 @@
         public static async Task<DataList<KnowledgeArticle>> Get(this Sdk4meClient client, KnowledgeArticleQuery query)
         {
             return await client.Get<KnowledgeArticle>(query);
+        }
+
+        /// <summary>
+        /// Root connection for retrieving KnowledgeArticleTemplate records.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="query">The query to execute.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<DataList<KnowledgeArticleTemplate>> Get(this Sdk4meClient client, KnowledgeArticleTemplateQuery query)
+        {
+            return await client.Get<KnowledgeArticleTemplate>(query);
         }
 
         /// <summary>
@@ -378,15 +378,15 @@
         }
 
         /// <summary>
-        /// Root connection for retrieving ProjectTaskTemplate records.
+        /// Root connection for retrieving Project records.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="query">The query to execute.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
-        public static async Task<DataList<ProjectTaskTemplate>> Get(this Sdk4meClient client, ProjectTaskTemplateQuery query)
+        public static async Task<DataList<Project>> Get(this Sdk4meClient client, ProjectQuery query)
         {
-            return await client.Get<ProjectTaskTemplate>(query);
+            return await client.Get<Project>(query);
         }
 
         /// <summary>
@@ -402,6 +402,18 @@
         }
 
         /// <summary>
+        /// Root connection for retrieving ProjectTaskTemplate records.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="query">The query to execute.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<DataList<ProjectTaskTemplate>> Get(this Sdk4meClient client, ProjectTaskTemplateQuery query)
+        {
+            return await client.Get<ProjectTaskTemplate>(query);
+        }
+
+        /// <summary>
         /// Root connection for retrieving ProjectTemplate records.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
@@ -411,18 +423,6 @@
         public static async Task<DataList<ProjectTemplate>> Get(this Sdk4meClient client, ProjectTemplateQuery query)
         {
             return await client.Get<ProjectTemplate>(query);
-        }
-
-        /// <summary>
-        /// Root connection for retrieving Project records.
-        /// </summary>
-        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
-        /// <param name="query">The query to execute.</param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <exception cref="Sdk4meException"></exception>
-        public static async Task<DataList<Project>> Get(this Sdk4meClient client, ProjectQuery query)
-        {
-            return await client.Get<Project>(query);
         }
 
         /// <summary>
@@ -450,18 +450,6 @@
         }
 
         /// <summary>
-        /// Root connection for retrieving RequestTemplate records.
-        /// </summary>
-        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
-        /// <param name="query">The query to execute.</param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <exception cref="Sdk4meException"></exception>
-        public static async Task<DataList<RequestTemplate>> Get(this Sdk4meClient client, RequestTemplateQuery query)
-        {
-            return await client.Get<RequestTemplate>(query);
-        }
-
-        /// <summary>
         /// Root connection for retrieving Request records.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
@@ -471,6 +459,18 @@
         public static async Task<DataList<Request>> Get(this Sdk4meClient client, RequestQuery query)
         {
             return await client.Get<Request>(query);
+        }
+
+        /// <summary>
+        /// Root connection for retrieving RequestTemplate records.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="query">The query to execute.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<DataList<RequestTemplate>> Get(this Sdk4meClient client, RequestTemplateQuery query)
+        {
+            return await client.Get<RequestTemplate>(query);
         }
 
         /// <summary>
@@ -498,18 +498,6 @@
         }
 
         /// <summary>
-        /// Root connection for retrieving RiskSeverity records.
-        /// </summary>
-        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
-        /// <param name="query">The query to execute.</param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <exception cref="Sdk4meException"></exception>
-        public static async Task<DataList<RiskSeverity>> Get(this Sdk4meClient client, RiskSeverityQuery query)
-        {
-            return await client.Get<RiskSeverity>(query);
-        }
-
-        /// <summary>
         /// Root connection for retrieving Risk records.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
@@ -519,6 +507,18 @@
         public static async Task<DataList<Risk>> Get(this Sdk4meClient client, RiskQuery query)
         {
             return await client.Get<Risk>(query);
+        }
+
+        /// <summary>
+        /// Root connection for retrieving RiskSeverity records.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="query">The query to execute.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<DataList<RiskSeverity>> Get(this Sdk4meClient client, RiskSeverityQuery query)
+        {
+            return await client.Get<RiskSeverity>(query);
         }
 
         /// <summary>
@@ -714,18 +714,6 @@
         }
 
         /// <summary>
-        /// Root connection for retrieving TaskTemplate records.
-        /// </summary>
-        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
-        /// <param name="query">The query to execute.</param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <exception cref="Sdk4meException"></exception>
-        public static async Task<DataList<TaskTemplate>> Get(this Sdk4meClient client, TaskTemplateQuery query)
-        {
-            return await client.Get<TaskTemplate>(query);
-        }
-
-        /// <summary>
         /// Root connection for retrieving Task records.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
@@ -735,6 +723,18 @@
         public static async Task<DataList<Task>> Get(this Sdk4meClient client, TaskQuery query)
         {
             return await client.Get<Task>(query);
+        }
+
+        /// <summary>
+        /// Root connection for retrieving TaskTemplate records.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="query">The query to execute.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<DataList<TaskTemplate>> Get(this Sdk4meClient client, TaskTemplateQuery query)
+        {
+            return await client.Get<TaskTemplate>(query);
         }
 
         /// <summary>
@@ -858,6 +858,18 @@
         }
 
         /// <summary>
+        /// Root connection for retrieving Workflow records.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="query">The query to execute.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<DataList<Workflow>> Get(this Sdk4meClient client, WorkflowQuery query)
+        {
+            return await client.Get<Workflow>(query);
+        }
+
+        /// <summary>
         /// Root connection for retrieving WorkflowTemplate records.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
@@ -879,18 +891,6 @@
         public static async Task<DataList<WorkflowType>> Get(this Sdk4meClient client, WorkflowTypeQuery query)
         {
             return await client.Get<WorkflowType>(query);
-        }
-
-        /// <summary>
-        /// Root connection for retrieving Workflow records.
-        /// </summary>
-        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
-        /// <param name="query">The query to execute.</param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <exception cref="Sdk4meException"></exception>
-        public static async Task<DataList<Workflow>> Get(this Sdk4meClient client, WorkflowQuery query)
-        {
-            return await client.Get<Workflow>(query);
         }
     }
 }

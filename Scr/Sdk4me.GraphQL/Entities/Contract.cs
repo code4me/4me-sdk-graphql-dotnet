@@ -35,23 +35,6 @@
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
-        /// Values of custom fields.
-        /// </summary>
-        [JsonProperty("customFields")]
-        public CustomFieldCollection? CustomFields { get; internal set; }
-
-        [JsonProperty("customFieldsAttachments")]
-        internal NodeCollection<Attachment>? CustomFieldsAttachmentsCollection { get; set; }
-
-        /// <summary>
-        /// Inline images linked to one of the custom fields.
-        /// </summary>
-        public DataList<Attachment>? CustomFieldsAttachments
-        {
-            get => CustomFieldsAttachmentsCollection?.Data;
-        }
-
-        /// <summary>
         /// The organization that pays for the agreement.
         /// </summary>
         [JsonProperty("customer")]
@@ -68,6 +51,23 @@
         /// </summary>
         [JsonProperty("customerRepresentative")]
         public Person? CustomerRepresentative { get; internal set; }
+
+        /// <summary>
+        /// Values of custom fields.
+        /// </summary>
+        [JsonProperty("customFields")]
+        public CustomFieldCollection? CustomFields { get; internal set; }
+
+        [JsonProperty("customFieldsAttachments")]
+        internal NodeCollection<Attachment>? CustomFieldsAttachmentsCollection { get; set; }
+
+        /// <summary>
+        /// Inline images linked to one of the custom fields.
+        /// </summary>
+        public DataList<Attachment>? CustomFieldsAttachments
+        {
+            get => CustomFieldsAttachmentsCollection?.Data;
+        }
 
         /// <summary>
         /// The date through which the agreement will be active. The agreement expires at the end of this day if it is not renewed before then. When the agreement has expired, its status will automatically be set to <c>expired</c>.

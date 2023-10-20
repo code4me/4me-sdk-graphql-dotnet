@@ -5,44 +5,54 @@
     /// </summary>
     public class BroadcastUpdateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
+        private string? body;
+        private string? clientMutationId;
+        private List<string>? customerIds;
         private bool? disabled;
+        private string? emailTemplateId;
+        private DateTime? endAt;
+        private string? id;
         private string? message;
         private BroadcastMessageType? messageType;
-        private DateTime? startAt;
-        private DateTime? endAt;
-        private string? timeZone;
-        private BroadcastVisibility? visibility;
-        private string? subject;
-        private string? body;
-        private string? emailTemplateId;
-        private List<string>? customerIds;
         private List<string>? serviceInstanceIds;
-        private List<string>? teamIds;
         private List<string>? slaIds;
-        private string? clientMutationId;
-        private string? id;
+        private string? source;
+        private string? sourceID;
+        private DateTime? startAt;
+        private string? subject;
+        private List<string>? teamIds;
+        private string? timeZone;
         private List<string>? translationsToDelete;
+        private BroadcastVisibility? visibility;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// The body for the email broadcast.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("body")]
+        public string? Body
         {
-            get => source;
-            set => source = Set("source", value);
+            get => body;
+            set => body = Set("body", value);
         }
 
         /// <summary>
-        /// The unique identifier of the resource in an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The customer organizations when the broadcast is to be displayed for the specialists of the account in requests that were received from the selected organizations. This is available only when the "Specialists in requests from the following customers" visibility option is selected.
+        /// </summary>
+        [JsonProperty("customerIds")]
+        public List<string>? CustomerIds
+        {
+            get => customerIds;
+            set => customerIds = Set("customerIds", value);
         }
 
         /// <summary>
@@ -53,6 +63,36 @@
         {
             get => disabled;
             set => disabled = Set("disabled", value);
+        }
+
+        /// <summary>
+        /// The id of the email template used for the email broadcast. This email template needs to be of the type Send Email from Broadcast.
+        /// </summary>
+        [JsonProperty("emailTemplateId")]
+        public string? EmailTemplateId
+        {
+            get => emailTemplateId;
+            set => emailTemplateId = Set("emailTemplateId", value);
+        }
+
+        /// <summary>
+        /// The end date and time of the broadcast. This field is left empty when the message is to be broadcasted until the Disabled box is checked. (If the broadcast should end at midnight at the end of a day, specify 12:00am or 24:00.)
+        /// </summary>
+        [JsonProperty("endAt")]
+        public DateTime? EndAt
+        {
+            get => endAt;
+            set => endAt = Set("endAt", value);
+        }
+
+        /// <summary>
+        /// The node ID of the record to update.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
         }
 
         /// <summary>
@@ -76,6 +116,46 @@
         }
 
         /// <summary>
+        /// The service instances for which the people, who are covered for them by an active SLA, need to see the broadcast. This is available only when the "People covered for the following service instance(s)" visibility option is selected.
+        /// </summary>
+        [JsonProperty("serviceInstanceIds")]
+        public List<string>? ServiceInstanceIds
+        {
+            get => serviceInstanceIds;
+            set => serviceInstanceIds = Set("serviceInstanceIds", value);
+        }
+
+        /// <summary>
+        /// The ids of the service level agreements for which the customer representatives will receive the email broadcast. This is only available for broadcasts when the message type "email" is selected.
+        /// </summary>
+        [JsonProperty("slaIds")]
+        public List<string>? SlaIds
+        {
+            get => slaIds;
+            set => slaIds = Set("slaIds", value);
+        }
+
+        /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
         /// The start date and time of the broadcast. (If the broadcast should start at midnight at the start of a day, specify 00:00.)
         /// </summary>
         [JsonProperty("startAt")]
@@ -86,13 +166,23 @@
         }
 
         /// <summary>
-        /// The end date and time of the broadcast. This field is left empty when the message is to be broadcasted until the Disabled box is checked. (If the broadcast should end at midnight at the end of a day, specify 12:00am or 24:00.)
+        /// The subject for the email broadcast.
         /// </summary>
-        [JsonProperty("endAt")]
-        public DateTime? EndAt
+        [JsonProperty("subject")]
+        public string? Subject
         {
-            get => endAt;
-            set => endAt = Set("endAt", value);
+            get => subject;
+            set => subject = Set("subject", value);
+        }
+
+        /// <summary>
+        /// The teams which members need to see the broadcast. This is available only when the "Members of the following team(s)" visibility option is selected.
+        /// </summary>
+        [JsonProperty("teamIds")]
+        public List<string>? TeamIds
+        {
+            get => teamIds;
+            set => teamIds = Set("teamIds", value);
         }
 
         /// <summary>
@@ -107,106 +197,6 @@
         }
 
         /// <summary>
-        /// Defines the target audience of the broadcast.
-        /// </summary>
-        [JsonProperty("visibility")]
-        public BroadcastVisibility? Visibility
-        {
-            get => visibility;
-            set => visibility = Set("visibility", value);
-        }
-
-        /// <summary>
-        /// The subject for the email broadcast.
-        /// </summary>
-        [JsonProperty("subject")]
-        public string? Subject
-        {
-            get => subject;
-            set => subject = Set("subject", value);
-        }
-
-        /// <summary>
-        /// The body for the email broadcast.
-        /// </summary>
-        [JsonProperty("body")]
-        public string? Body
-        {
-            get => body;
-            set => body = Set("body", value);
-        }
-
-        /// <summary>
-        /// The id of the email template used for the email broadcast. This email template needs to be of the type Send Email from Broadcast.
-        /// </summary>
-        [JsonProperty("emailTemplateId")]
-        public string? EmailTemplateId
-        {
-            get => emailTemplateId;
-            set => emailTemplateId = Set("emailTemplateId", value);
-        }
-
-        /// <summary>
-        /// The customer organizations when the broadcast is to be displayed for the specialists of the account in requests that were received from the selected organizations. This is available only when the "Specialists in requests from the following customers" visibility option is selected.
-        /// </summary>
-        [JsonProperty("customerIds")]
-        public List<string>? CustomerIds
-        {
-            get => customerIds;
-            set => customerIds = Set("customerIds", value);
-        }
-
-        /// <summary>
-        /// The service instances for which the people, who are covered for them by an active SLA, need to see the broadcast. This is available only when the "People covered for the following service instance(s)" visibility option is selected.
-        /// </summary>
-        [JsonProperty("serviceInstanceIds")]
-        public List<string>? ServiceInstanceIds
-        {
-            get => serviceInstanceIds;
-            set => serviceInstanceIds = Set("serviceInstanceIds", value);
-        }
-
-        /// <summary>
-        /// The teams which members need to see the broadcast. This is available only when the "Members of the following team(s)" visibility option is selected.
-        /// </summary>
-        [JsonProperty("teamIds")]
-        public List<string>? TeamIds
-        {
-            get => teamIds;
-            set => teamIds = Set("teamIds", value);
-        }
-
-        /// <summary>
-        /// The ids of the service level agreements for which the customer representatives will receive the email broadcast. This is only available for broadcasts when the message type "email" is selected.
-        /// </summary>
-        [JsonProperty("slaIds")]
-        public List<string>? SlaIds
-        {
-            get => slaIds;
-            set => slaIds = Set("slaIds", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// The node ID of the record to update.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
-        }
-
-        /// <summary>
         /// Identifiers of translations to remove from this broadcast.
         /// </summary>
         [JsonProperty("translationsToDelete")]
@@ -214,6 +204,16 @@
         {
             get => translationsToDelete;
             set => translationsToDelete = Set("translationsToDelete", value);
+        }
+
+        /// <summary>
+        /// Defines the target audience of the broadcast.
+        /// </summary>
+        [JsonProperty("visibility")]
+        public BroadcastVisibility? Visibility
+        {
+            get => visibility;
+            set => visibility = Set("visibility", value);
         }
     }
 }

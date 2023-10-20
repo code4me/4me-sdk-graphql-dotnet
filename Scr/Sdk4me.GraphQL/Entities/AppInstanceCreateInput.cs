@@ -5,16 +5,56 @@
     /// </summary>
     public class AppInstanceCreateInput : PropertyChangeSet
     {
+        private string? appOfferingId;
+        private string? clientMutationId;
+        private string? customerAccountId;
+        private string? customerRepresentativeId;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
-        private string? customerRepresentativeId;
         private bool? disabled;
         private bool? enabledByCustomer;
         private bool? suspended;
         private string? suspensionComment;
-        private string? clientMutationId;
-        private string? customerAccountId;
-        private string? appOfferingId;
+
+        /// <summary>
+        /// Identifier of the app offering to create an instance of.
+        /// </summary>
+        [JsonProperty("appOfferingId")]
+        public string? AppOfferingId
+        {
+            get => appOfferingId;
+            set => appOfferingId = Set("appOfferingId", value);
+        }
+
+        /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the account this app instance is for.
+        /// </summary>
+        [JsonProperty("customerAccountId")]
+        public string? CustomerAccountId
+        {
+            get => customerAccountId;
+            set => customerAccountId = Set("customerAccountId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the contact person of customer regarding this app instance.
+        /// </summary>
+        [JsonProperty("customerRepresentativeId")]
+        public string? CustomerRepresentativeId
+        {
+            get => customerRepresentativeId;
+            set => customerRepresentativeId = Set("customerRepresentativeId", value);
+        }
 
         /// <summary>
         /// Values for custom fields to be used by the UI Extension that is linked to the record.
@@ -34,16 +74,6 @@
         {
             get => customFieldsAttachments;
             set => customFieldsAttachments = Set("customFieldsAttachments", value);
-        }
-
-        /// <summary>
-        /// Identifier of the contact person of customer regarding this app instance.
-        /// </summary>
-        [JsonProperty("customerRepresentativeId")]
-        public string? CustomerRepresentativeId
-        {
-            get => customerRepresentativeId;
-            set => customerRepresentativeId = Set("customerRepresentativeId", value);
         }
 
         /// <summary>
@@ -84,36 +114,6 @@
         {
             get => suspensionComment;
             set => suspensionComment = Set("suspensionComment", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// Identifier of the account this app instance is for.
-        /// </summary>
-        [JsonProperty("customerAccountId")]
-        public string? CustomerAccountId
-        {
-            get => customerAccountId;
-            set => customerAccountId = Set("customerAccountId", value);
-        }
-
-        /// <summary>
-        /// Identifier of the app offering to create an instance of.
-        /// </summary>
-        [JsonProperty("appOfferingId")]
-        public string? AppOfferingId
-        {
-            get => appOfferingId;
-            set => appOfferingId = Set("appOfferingId", value);
         }
     }
 }

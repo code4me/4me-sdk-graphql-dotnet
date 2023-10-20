@@ -5,120 +5,50 @@
     /// </summary>
     public class ShopArticleUpdateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
-        private string? pictureUri;
-        private string? uiExtensionId;
-        private bool? disabled;
-        private string? name;
-        private string? reference;
-        private string? productId;
-        private string? fulfillmentTemplateId;
-        private long? deliveryDuration;
-        private bool? requiresShipping;
         private string? calendarId;
-        private string? timeZone;
-        private string? shortDescription;
-        private string? fullDescription;
-        private DateTime? startAt;
+        private string? clientMutationId;
+        private long? deliveryDuration;
+        private bool? disabled;
         private DateTime? endAt;
+        private string? fulfillmentTemplateId;
+        private string? fullDescription;
+        private string? id;
         private long? maxQuantity;
+        private string? name;
+        private string? pictureUri;
         private decimal? price;
         private string? priceCurrency;
+        private string? productId;
+        private ShopArticleRecurringPeriod? recurringPeriod;
         private decimal? recurringPrice;
         private string? recurringPriceCurrency;
-        private ShopArticleRecurringPeriod? recurringPeriod;
-        private string? clientMutationId;
-        private string? id;
+        private string? reference;
+        private bool? requiresShipping;
+        private string? shortDescription;
+        private string? source;
+        private string? sourceID;
+        private DateTime? startAt;
+        private string? timeZone;
+        private string? uiExtensionId;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// Calendar that represents the work hours related to the fulfillment/delivery.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("calendarId")]
+        public string? CalendarId
         {
-            get => source;
-            set => source = Set("source", value);
+            get => calendarId;
+            set => calendarId = Set("calendarId", value);
         }
 
         /// <summary>
-        /// The unique identifier of the resource in an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
-        }
-
-        /// <summary>
-        /// The hyperlink to the image file for the record.
-        /// </summary>
-        [JsonProperty("pictureUri")]
-        public string? PictureUri
-        {
-            get => pictureUri;
-            set => pictureUri = Set("pictureUri", value);
-        }
-
-        /// <summary>
-        /// UI extension that is to be applied to the record.
-        /// </summary>
-        [JsonProperty("uiExtensionId")]
-        public string? UiExtensionId
-        {
-            get => uiExtensionId;
-            set => uiExtensionId = Set("uiExtensionId", value);
-        }
-
-        /// <summary>
-        /// Whether the shop article is visible in the shop.
-        /// </summary>
-        [JsonProperty("disabled")]
-        public bool? Disabled
-        {
-            get => disabled;
-            set => disabled = Set("disabled", value);
-        }
-
-        /// <summary>
-        /// The display name of the shop article.
-        /// </summary>
-        [JsonProperty("name")]
-        public string? Name
-        {
-            get => name;
-            set => name = Set("name", value);
-        }
-
-        /// <summary>
-        /// This reference can be used to link the shop article to a shop order line using the 4me APIs or the 4me Import functionality.
-        /// </summary>
-        [JsonProperty("reference")]
-        public string? Reference
-        {
-            get => reference;
-            set => reference = Set("reference", value);
-        }
-
-        /// <summary>
-        /// Related product.
-        /// </summary>
-        [JsonProperty("productId")]
-        public string? ProductId
-        {
-            get => productId;
-            set => productId = Set("productId", value);
-        }
-
-        /// <summary>
-        /// The request template used to order one of more units of this shop article.
-        /// </summary>
-        [JsonProperty("fulfillmentTemplateId")]
-        public string? FulfillmentTemplateId
-        {
-            get => fulfillmentTemplateId;
-            set => fulfillmentTemplateId = Set("fulfillmentTemplateId", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -132,64 +62,13 @@
         }
 
         /// <summary>
-        /// Whether or not this is a physical article that requires shipping.
+        /// Whether the shop article is visible in the shop.
         /// </summary>
-        [JsonProperty("requiresShipping")]
-        public bool? RequiresShipping
+        [JsonProperty("disabled")]
+        public bool? Disabled
         {
-            get => requiresShipping;
-            set => requiresShipping = Set("requiresShipping", value);
-        }
-
-        /// <summary>
-        /// Calendar that represents the work hours related to the fulfillment/delivery.
-        /// </summary>
-        [JsonProperty("calendarId")]
-        public string? CalendarId
-        {
-            get => calendarId;
-            set => calendarId = Set("calendarId", value);
-        }
-
-        /// <summary>
-        /// <br>The Time zone related to the calendar.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
-        /// </summary>
-        [JsonProperty("timeZone")]
-        public string? TimeZone
-        {
-            get => timeZone;
-            set => timeZone = Set("timeZone", value);
-        }
-
-        /// <summary>
-        /// The shop description of the shop article.
-        /// </summary>
-        [JsonProperty("shortDescription")]
-        public string? ShortDescription
-        {
-            get => shortDescription;
-            set => shortDescription = Set("shortDescription", value);
-        }
-
-        /// <summary>
-        /// The full description of the shop article.
-        /// </summary>
-        [JsonProperty("fullDescription")]
-        public string? FullDescription
-        {
-            get => fullDescription;
-            set => fullDescription = Set("fullDescription", value);
-        }
-
-        /// <summary>
-        /// The moment the shop article becomes available in the shop.
-        /// </summary>
-        [JsonProperty("startAt")]
-        public DateTime? StartAt
-        {
-            get => startAt;
-            set => startAt = Set("startAt", value);
+            get => disabled;
+            set => disabled = Set("disabled", value);
         }
 
         /// <summary>
@@ -203,6 +82,36 @@
         }
 
         /// <summary>
+        /// The request template used to order one of more units of this shop article.
+        /// </summary>
+        [JsonProperty("fulfillmentTemplateId")]
+        public string? FulfillmentTemplateId
+        {
+            get => fulfillmentTemplateId;
+            set => fulfillmentTemplateId = Set("fulfillmentTemplateId", value);
+        }
+
+        /// <summary>
+        /// The full description of the shop article.
+        /// </summary>
+        [JsonProperty("fullDescription")]
+        public string? FullDescription
+        {
+            get => fullDescription;
+            set => fullDescription = Set("fullDescription", value);
+        }
+
+        /// <summary>
+        /// The node ID of the record to update.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
+        }
+
+        /// <summary>
         /// The largest number of units that may be bought at once.
         /// </summary>
         [JsonProperty("maxQuantity")]
@@ -210,6 +119,26 @@
         {
             get => maxQuantity;
             set => maxQuantity = Set("maxQuantity", value);
+        }
+
+        /// <summary>
+        /// The display name of the shop article.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
+        }
+
+        /// <summary>
+        /// The hyperlink to the image file for the record.
+        /// </summary>
+        [JsonProperty("pictureUri")]
+        public string? PictureUri
+        {
+            get => pictureUri;
+            set => pictureUri = Set("pictureUri", value);
         }
 
         /// <summary>
@@ -234,6 +163,26 @@
         }
 
         /// <summary>
+        /// Related product.
+        /// </summary>
+        [JsonProperty("productId")]
+        public string? ProductId
+        {
+            get => productId;
+            set => productId = Set("productId", value);
+        }
+
+        /// <summary>
+        /// The frequency in which the recurring price is due.
+        /// </summary>
+        [JsonProperty("recurringPeriod")]
+        public ShopArticleRecurringPeriod? RecurringPeriod
+        {
+            get => recurringPeriod;
+            set => recurringPeriod = Set("recurringPeriod", value);
+        }
+
+        /// <summary>
         /// The recurring price of a single unit.
         /// </summary>
         [JsonProperty("recurringPrice")]
@@ -255,33 +204,84 @@
         }
 
         /// <summary>
-        /// The frequency in which the recurring price is due.
+        /// This reference can be used to link the shop article to a shop order line using the 4me APIs or the 4me Import functionality.
         /// </summary>
-        [JsonProperty("recurringPeriod")]
-        public ShopArticleRecurringPeriod? RecurringPeriod
+        [JsonProperty("reference")]
+        public string? Reference
         {
-            get => recurringPeriod;
-            set => recurringPeriod = Set("recurringPeriod", value);
+            get => reference;
+            set => reference = Set("reference", value);
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// Whether or not this is a physical article that requires shipping.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("requiresShipping")]
+        public bool? RequiresShipping
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
+            get => requiresShipping;
+            set => requiresShipping = Set("requiresShipping", value);
         }
 
         /// <summary>
-        /// The node ID of the record to update.
+        /// The shop description of the shop article.
         /// </summary>
-        [JsonProperty("id")]
-        public string? ID
+        [JsonProperty("shortDescription")]
+        public string? ShortDescription
         {
-            get => id;
-            set => id = Set("id", value);
+            get => shortDescription;
+            set => shortDescription = Set("shortDescription", value);
+        }
+
+        /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// The moment the shop article becomes available in the shop.
+        /// </summary>
+        [JsonProperty("startAt")]
+        public DateTime? StartAt
+        {
+            get => startAt;
+            set => startAt = Set("startAt", value);
+        }
+
+        /// <summary>
+        /// <br>The Time zone related to the calendar.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
+        /// </summary>
+        [JsonProperty("timeZone")]
+        public string? TimeZone
+        {
+            get => timeZone;
+            set => timeZone = Set("timeZone", value);
+        }
+
+        /// <summary>
+        /// UI extension that is to be applied to the record.
+        /// </summary>
+        [JsonProperty("uiExtensionId")]
+        public string? UiExtensionId
+        {
+            get => uiExtensionId;
+            set => uiExtensionId = Set("uiExtensionId", value);
         }
     }
 }

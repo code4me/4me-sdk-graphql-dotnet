@@ -5,67 +5,27 @@
     /// </summary>
     public class KnowledgeArticleCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
-        private CustomFieldCollection? customFields;
-        private List<AttachmentInput>? customFieldsAttachments;
         private DateOnly? archiveDate;
+        private string? clientMutationId;
         private bool? coveredSpecialists;
         private string? createdById;
+        private CustomFieldCollection? customFields;
+        private List<AttachmentInput>? customFieldsAttachments;
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
         private bool? endUsers;
-        private bool? @public;
+        private string? instructions;
         private bool? internalSpecialists;
         private bool? keyContacts;
         private string? keywords;
-        private List<string>? serviceInstanceIds;
-        private KnowledgeArticleStatus? status;
-        private string? templateId;
-        private string? clientMutationId;
-        private string? instructions;
+        private bool? @public;
         private string? serviceId;
+        private List<string>? serviceInstanceIds;
+        private string? source;
+        private string? sourceID;
+        private KnowledgeArticleStatus? status;
         private string? subject;
-
-        /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
-        /// </summary>
-        [JsonProperty("source")]
-        public string? Source
-        {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
-        }
-
-        /// <summary>
-        /// Values for custom fields to be used by the UI Extension that is linked to the record.
-        /// </summary>
-        [JsonProperty("customFields")]
-        public CustomFieldCollection? CustomFields
-        {
-            get => customFields;
-            set => customFields = Set("customFields", value);
-        }
-
-        /// <summary>
-        /// The attachments used in the custom fields' values.
-        /// </summary>
-        [JsonProperty("customFieldsAttachments")]
-        public List<AttachmentInput>? CustomFieldsAttachments
-        {
-            get => customFieldsAttachments;
-            set => customFieldsAttachments = Set("customFieldsAttachments", value);
-        }
+        private string? templateId;
 
         /// <summary>
         /// The date until which the knowledge article will be active. The knowledge article will be archived at the beginning of this day. When the knowledge article is archived, its status will automatically be set to "Archived".
@@ -75,6 +35,16 @@
         {
             get => archiveDate;
             set => archiveDate = Set("archiveDate", value);
+        }
+
+        /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -95,6 +65,26 @@
         {
             get => createdById;
             set => createdById = Set("createdById", value);
+        }
+
+        /// <summary>
+        /// Values for custom fields to be used by the UI Extension that is linked to the record.
+        /// </summary>
+        [JsonProperty("customFields")]
+        public CustomFieldCollection? CustomFields
+        {
+            get => customFields;
+            set => customFields = Set("customFields", value);
+        }
+
+        /// <summary>
+        /// The attachments used in the custom fields' values.
+        /// </summary>
+        [JsonProperty("customFieldsAttachments")]
+        public List<AttachmentInput>? CustomFieldsAttachments
+        {
+            get => customFieldsAttachments;
+            set => customFieldsAttachments = Set("customFieldsAttachments", value);
         }
 
         /// <summary>
@@ -128,13 +118,13 @@
         }
 
         /// <summary>
-        /// Whether the knowledge article needs to be available to anyone, including people without access to 4me.
+        /// Used to enter instructions for the service desk analysts, specialists and/or end users who are likely to look up the knowledge article to help them with their work or to resolve an issue.
         /// </summary>
-        [JsonProperty("public")]
-        public bool? Public
+        [JsonProperty("instructions")]
+        public string? Instructions
         {
-            get => @public;
-            set => @public = Set("public", value);
+            get => instructions;
+            set => instructions = Set("instructions", value);
         }
 
         /// <summary>
@@ -168,53 +158,13 @@
         }
 
         /// <summary>
-        /// Identifiers of service instances linked to this knowledge article.
+        /// Whether the knowledge article needs to be available to anyone, including people without access to 4me.
         /// </summary>
-        [JsonProperty("serviceInstanceIds")]
-        public List<string>? ServiceInstanceIds
+        [JsonProperty("public")]
+        public bool? Public
         {
-            get => serviceInstanceIds;
-            set => serviceInstanceIds = Set("serviceInstanceIds", value);
-        }
-
-        /// <summary>
-        /// The current status of the knowledge article.
-        /// </summary>
-        [JsonProperty("status")]
-        public KnowledgeArticleStatus? Status
-        {
-            get => status;
-            set => status = Set("status", value);
-        }
-
-        /// <summary>
-        /// Identifier of the knowledge article template that this knowledge article is based on.
-        /// </summary>
-        [JsonProperty("templateId")]
-        public string? TemplateId
-        {
-            get => templateId;
-            set => templateId = Set("templateId", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// Used to enter instructions for the service desk analysts, specialists and/or end users who are likely to look up the knowledge article to help them with their work or to resolve an issue.
-        /// </summary>
-        [JsonProperty("instructions")]
-        public string? Instructions
-        {
-            get => instructions;
-            set => instructions = Set("instructions", value);
+            get => @public;
+            set => @public = Set("public", value);
         }
 
         /// <summary>
@@ -228,6 +178,46 @@
         }
 
         /// <summary>
+        /// Identifiers of service instances linked to this knowledge article.
+        /// </summary>
+        [JsonProperty("serviceInstanceIds")]
+        public List<string>? ServiceInstanceIds
+        {
+            get => serviceInstanceIds;
+            set => serviceInstanceIds = Set("serviceInstanceIds", value);
+        }
+
+        /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// The current status of the knowledge article.
+        /// </summary>
+        [JsonProperty("status")]
+        public KnowledgeArticleStatus? Status
+        {
+            get => status;
+            set => status = Set("status", value);
+        }
+
+        /// <summary>
         /// A short description of the knowledge article.
         /// </summary>
         [JsonProperty("subject")]
@@ -235,6 +225,16 @@
         {
             get => subject;
             set => subject = Set("subject", value);
+        }
+
+        /// <summary>
+        /// Identifier of the knowledge article template that this knowledge article is based on.
+        /// </summary>
+        [JsonProperty("templateId")]
+        public string? TemplateId
+        {
+            get => templateId;
+            set => templateId = Set("templateId", value);
         }
     }
 }

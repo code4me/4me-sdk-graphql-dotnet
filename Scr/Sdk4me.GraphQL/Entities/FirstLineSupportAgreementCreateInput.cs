@@ -5,60 +5,60 @@
     /// </summary>
     public class FirstLineSupportAgreementCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
-        private AgreementStatus? status;
-        private string? customerRepresentativeId;
-        private string? serviceDeskTeamId;
-        private DateOnly? startDate;
-        private DateOnly? noticeDate;
-        private DateOnly? expiryDate;
-        private string? supportHoursId;
-        private string? timeZone;
-        private long? pickupTarget;
-        private long? supportChatPickupTarget;
-        private long? pickupsWithinTarget;
-        private long? firstCallResolutions;
-        private long? serviceDeskOnlyResolutions;
-        private long? serviceDeskResolutions;
-        private long? rejectedSolutions;
-        private string? targetDetails;
         private string? charges;
+        private string? clientMutationId;
+        private string? customerId;
+        private string? customerRepresentativeId;
+        private DateOnly? expiryDate;
+        private long? firstCallResolutions;
+        private string? name;
+        private DateOnly? noticeDate;
+        private long? pickupsWithinTarget;
+        private long? pickupTarget;
+        private string? providerId;
+        private long? rejectedSolutions;
         private string? remarks;
         private List<AttachmentInput>? remarksAttachments;
-        private string? clientMutationId;
-        private string? name;
-        private string? customerId;
-        private string? providerId;
+        private long? serviceDeskOnlyResolutions;
+        private long? serviceDeskResolutions;
+        private string? serviceDeskTeamId;
+        private string? source;
+        private string? sourceID;
+        private DateOnly? startDate;
+        private AgreementStatus? status;
+        private long? supportChatPickupTarget;
+        private string? supportHoursId;
+        private string? targetDetails;
+        private string? timeZone;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// The amounts that the customer will be charged for the first line support agreement. These can be recurring as well as one-off charges.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("charges")]
+        public string? Charges
         {
-            get => source;
-            set => source = Set("source", value);
+            get => charges;
+            set => charges = Set("charges", value);
         }
 
         /// <summary>
-        /// The unique identifier of the resource in an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
-        /// The current status of the first line support agreement (FLSA).
+        /// Identifier of the organization that pays for the first line support agreement.
         /// </summary>
-        [JsonProperty("status")]
-        public AgreementStatus? Status
+        [JsonProperty("customerId")]
+        public string? CustomerId
         {
-            get => status;
-            set => status = Set("status", value);
+            get => customerId;
+            set => customerId = Set("customerId", value);
         }
 
         /// <summary>
@@ -72,36 +72,6 @@
         }
 
         /// <summary>
-        /// Identifier of the specific team within the first line support provider organization that provides first line support for the users covered by the first line support agreement.
-        /// </summary>
-        [JsonProperty("serviceDeskTeamId")]
-        public string? ServiceDeskTeamId
-        {
-            get => serviceDeskTeamId;
-            set => serviceDeskTeamId = Set("serviceDeskTeamId", value);
-        }
-
-        /// <summary>
-        /// The first day during which the first line support agreement (FLSA) is active.
-        /// </summary>
-        [JsonProperty("startDate")]
-        public DateOnly? StartDate
-        {
-            get => startDate;
-            set => startDate = Set("startDate", value);
-        }
-
-        /// <summary>
-        /// The last day on which the first line support provider organization can still be contacted to terminate the first line support agreement (FLSA) to ensure that it expires on the intended expiry date. The Notice date field is left empty, and the Expiry date field is filled out, when the FLSA is to expire on a specific date and no notice needs to be given to terminate it.
-        /// </summary>
-        [JsonProperty("noticeDate")]
-        public DateOnly? NoticeDate
-        {
-            get => noticeDate;
-            set => noticeDate = Set("noticeDate", value);
-        }
-
-        /// <summary>
         /// The date through which the first line support agreement (FLSA) will be active. The FLSA expires at the end of this day if it is not renewed before then. When the FLSA has expired, its status will automatically be set to "Expired".
         /// </summary>
         [JsonProperty("expiryDate")]
@@ -109,57 +79,6 @@
         {
             get => expiryDate;
             set => expiryDate = Set("expiryDate", value);
-        }
-
-        /// <summary>
-        /// Identifier of the calendar that defines the support hours during which the service desk team can be contacted for first line support.
-        /// </summary>
-        [JsonProperty("supportHoursId")]
-        public string? SupportHoursId
-        {
-            get => supportHoursId;
-            set => supportHoursId = Set("supportHoursId", value);
-        }
-
-        /// <summary>
-        /// <br>The time zone that applies to the start, notice and expiry dates, and to the support hours.</br>
-        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
-        /// </summary>
-        [JsonProperty("timeZone")]
-        public string? TimeZone
-        {
-            get => timeZone;
-            set => timeZone = Set("timeZone", value);
-        }
-
-        /// <summary>
-        /// The number of minutes within which a new or existing request that has been assigned to the service desk team is assigned to a specific member within the service desk team, is assigned to another team, or is set to a status other than <c>assigned</c>.
-        /// </summary>
-        [JsonProperty("pickupTarget")]
-        public long? PickupTarget
-        {
-            get => pickupTarget;
-            set => pickupTarget = Set("pickupTarget", value);
-        }
-
-        /// <summary>
-        /// The number of minutes within which a new or existing chat request that has been assigned to the service desk team is assigned to a specific member within the service desk team, is assigned to another team, or is set to a status other than <c>assigned</c>.
-        /// </summary>
-        [JsonProperty("supportChatPickupTarget")]
-        public long? SupportChatPickupTarget
-        {
-            get => supportChatPickupTarget;
-            set => supportChatPickupTarget = Set("supportChatPickupTarget", value);
-        }
-
-        /// <summary>
-        /// The minimum percentage of requests that are to be picked up by the service desk team within the pickup target.
-        /// </summary>
-        [JsonProperty("pickupsWithinTarget")]
-        public long? PickupsWithinTarget
-        {
-            get => pickupsWithinTarget;
-            set => pickupsWithinTarget = Set("pickupsWithinTarget", value);
         }
 
         /// <summary>
@@ -173,23 +92,53 @@
         }
 
         /// <summary>
-        /// The minimum percentage of requests that are to be completed by the service desk team without having been assigned to any other team within the account that is covered by the first line support agreement.
+        /// The name of the first line support agreement.
         /// </summary>
-        [JsonProperty("serviceDeskOnlyResolutions")]
-        public long? ServiceDeskOnlyResolutions
+        [JsonProperty("name")]
+        public string? Name
         {
-            get => serviceDeskOnlyResolutions;
-            set => serviceDeskOnlyResolutions = Set("serviceDeskOnlyResolutions", value);
+            get => name;
+            set => name = Set("name", value);
         }
 
         /// <summary>
-        /// The minimum percentage of requests that are to be completed by the service desk team.
+        /// The last day on which the first line support provider organization can still be contacted to terminate the first line support agreement (FLSA) to ensure that it expires on the intended expiry date. The Notice date field is left empty, and the Expiry date field is filled out, when the FLSA is to expire on a specific date and no notice needs to be given to terminate it.
         /// </summary>
-        [JsonProperty("serviceDeskResolutions")]
-        public long? ServiceDeskResolutions
+        [JsonProperty("noticeDate")]
+        public DateOnly? NoticeDate
         {
-            get => serviceDeskResolutions;
-            set => serviceDeskResolutions = Set("serviceDeskResolutions", value);
+            get => noticeDate;
+            set => noticeDate = Set("noticeDate", value);
+        }
+
+        /// <summary>
+        /// The minimum percentage of requests that are to be picked up by the service desk team within the pickup target.
+        /// </summary>
+        [JsonProperty("pickupsWithinTarget")]
+        public long? PickupsWithinTarget
+        {
+            get => pickupsWithinTarget;
+            set => pickupsWithinTarget = Set("pickupsWithinTarget", value);
+        }
+
+        /// <summary>
+        /// The number of minutes within which a new or existing request that has been assigned to the service desk team is assigned to a specific member within the service desk team, is assigned to another team, or is set to a status other than <c>assigned</c>.
+        /// </summary>
+        [JsonProperty("pickupTarget")]
+        public long? PickupTarget
+        {
+            get => pickupTarget;
+            set => pickupTarget = Set("pickupTarget", value);
+        }
+
+        /// <summary>
+        /// Identifier of the organization that provides the first line support agreement.
+        /// </summary>
+        [JsonProperty("providerId")]
+        public string? ProviderId
+        {
+            get => providerId;
+            set => providerId = Set("providerId", value);
         }
 
         /// <summary>
@@ -200,26 +149,6 @@
         {
             get => rejectedSolutions;
             set => rejectedSolutions = Set("rejectedSolutions", value);
-        }
-
-        /// <summary>
-        /// A description of all the targets of the first line support agreement.
-        /// </summary>
-        [JsonProperty("targetDetails")]
-        public string? TargetDetails
-        {
-            get => targetDetails;
-            set => targetDetails = Set("targetDetails", value);
-        }
-
-        /// <summary>
-        /// The amounts that the customer will be charged for the first line support agreement. These can be recurring as well as one-off charges.
-        /// </summary>
-        [JsonProperty("charges")]
-        public string? Charges
-        {
-            get => charges;
-            set => charges = Set("charges", value);
         }
 
         /// <summary>
@@ -243,43 +172,114 @@
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// The minimum percentage of requests that are to be completed by the service desk team without having been assigned to any other team within the account that is covered by the first line support agreement.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("serviceDeskOnlyResolutions")]
+        public long? ServiceDeskOnlyResolutions
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
+            get => serviceDeskOnlyResolutions;
+            set => serviceDeskOnlyResolutions = Set("serviceDeskOnlyResolutions", value);
         }
 
         /// <summary>
-        /// The name of the first line support agreement.
+        /// The minimum percentage of requests that are to be completed by the service desk team.
         /// </summary>
-        [JsonProperty("name")]
-        public string? Name
+        [JsonProperty("serviceDeskResolutions")]
+        public long? ServiceDeskResolutions
         {
-            get => name;
-            set => name = Set("name", value);
+            get => serviceDeskResolutions;
+            set => serviceDeskResolutions = Set("serviceDeskResolutions", value);
         }
 
         /// <summary>
-        /// Identifier of the organization that pays for the first line support agreement.
+        /// Identifier of the specific team within the first line support provider organization that provides first line support for the users covered by the first line support agreement.
         /// </summary>
-        [JsonProperty("customerId")]
-        public string? CustomerId
+        [JsonProperty("serviceDeskTeamId")]
+        public string? ServiceDeskTeamId
         {
-            get => customerId;
-            set => customerId = Set("customerId", value);
+            get => serviceDeskTeamId;
+            set => serviceDeskTeamId = Set("serviceDeskTeamId", value);
         }
 
         /// <summary>
-        /// Identifier of the organization that provides the first line support agreement.
+        /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("providerId")]
-        public string? ProviderId
+        [JsonProperty("source")]
+        public string? Source
         {
-            get => providerId;
-            set => providerId = Set("providerId", value);
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// The first day during which the first line support agreement (FLSA) is active.
+        /// </summary>
+        [JsonProperty("startDate")]
+        public DateOnly? StartDate
+        {
+            get => startDate;
+            set => startDate = Set("startDate", value);
+        }
+
+        /// <summary>
+        /// The current status of the first line support agreement (FLSA).
+        /// </summary>
+        [JsonProperty("status")]
+        public AgreementStatus? Status
+        {
+            get => status;
+            set => status = Set("status", value);
+        }
+
+        /// <summary>
+        /// The number of minutes within which a new or existing chat request that has been assigned to the service desk team is assigned to a specific member within the service desk team, is assigned to another team, or is set to a status other than <c>assigned</c>.
+        /// </summary>
+        [JsonProperty("supportChatPickupTarget")]
+        public long? SupportChatPickupTarget
+        {
+            get => supportChatPickupTarget;
+            set => supportChatPickupTarget = Set("supportChatPickupTarget", value);
+        }
+
+        /// <summary>
+        /// Identifier of the calendar that defines the support hours during which the service desk team can be contacted for first line support.
+        /// </summary>
+        [JsonProperty("supportHoursId")]
+        public string? SupportHoursId
+        {
+            get => supportHoursId;
+            set => supportHoursId = Set("supportHoursId", value);
+        }
+
+        /// <summary>
+        /// A description of all the targets of the first line support agreement.
+        /// </summary>
+        [JsonProperty("targetDetails")]
+        public string? TargetDetails
+        {
+            get => targetDetails;
+            set => targetDetails = Set("targetDetails", value);
+        }
+
+        /// <summary>
+        /// <br>The time zone that applies to the start, notice and expiry dates, and to the support hours.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
+        /// </summary>
+        [JsonProperty("timeZone")]
+        public string? TimeZone
+        {
+            get => timeZone;
+            set => timeZone = Set("timeZone", value);
         }
     }
 }

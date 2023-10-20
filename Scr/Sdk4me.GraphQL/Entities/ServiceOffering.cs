@@ -18,6 +18,23 @@
         public decimal? Availability { get; internal set; }
 
         /// <summary>
+        /// The amount that the service provider will charge the customer for the delivery of the service per charge driver, per charge term.
+        /// </summary>
+        [JsonProperty("charges")]
+        public string? Charges { get; internal set; }
+
+        [JsonProperty("chargesAttachments")]
+        internal NodeCollection<Attachment>? ChargesAttachmentsCollection { get; set; }
+
+        /// <summary>
+        /// Inline images linked to the Charges field.
+        /// </summary>
+        public DataList<Attachment>? ChargesAttachments
+        {
+            get => ChargesAttachmentsCollection?.Data;
+        }
+
+        /// <summary>
         /// Defines how a high incident must be charged: as a Fixed Price or in Time and Materials.
         /// </summary>
         [JsonProperty("chargeTypeHigh")]
@@ -54,23 +71,6 @@
         public ServiceOfferingChargeType? ChargeTypeTop { get; internal set; }
 
         /// <summary>
-        /// The amount that the service provider will charge the customer for the delivery of the service per charge driver, per charge term.
-        /// </summary>
-        [JsonProperty("charges")]
-        public string? Charges { get; internal set; }
-
-        [JsonProperty("chargesAttachments")]
-        internal NodeCollection<Attachment>? ChargesAttachmentsCollection { get; set; }
-
-        /// <summary>
-        /// Inline images linked to the Charges field.
-        /// </summary>
-        public DataList<Attachment>? ChargesAttachments
-        {
-            get => ChargesAttachmentsCollection?.Data;
-        }
-
-        /// <summary>
         /// The continuity measures for the service offering.
         /// </summary>
         [JsonProperty("continuity")]
@@ -99,17 +99,6 @@
         [JsonProperty("defaultEffortClass")]
         public EffortClass? DefaultEffortClass { get; internal set; }
 
-        [JsonProperty("effortClassRates")]
-        internal NodeCollection<EffortClassRate>? EffortClassRatesCollection { get; set; }
-
-        /// <summary>
-        /// Effort class rates of the service offering.
-        /// </summary>
-        public DataList<EffortClassRate>? EffortClassRates
-        {
-            get => EffortClassRatesCollection?.Data;
-        }
-
         [JsonProperty("effortClasses")]
         internal NodeCollection<EffortClass>? EffortClassesCollection { get; set; }
 
@@ -119,6 +108,17 @@
         public DataList<EffortClass>? EffortClasses
         {
             get => EffortClassesCollection?.Data;
+        }
+
+        [JsonProperty("effortClassRates")]
+        internal NodeCollection<EffortClassRate>? EffortClassRatesCollection { get; set; }
+
+        /// <summary>
+        /// Effort class rates of the service offering.
+        /// </summary>
+        public DataList<EffortClassRate>? EffortClassRates
+        {
+            get => EffortClassRatesCollection?.Data;
         }
 
         /// <summary>
@@ -298,6 +298,12 @@
         public ServiceOfferingReportFrequency? ReportFrequency { get; internal set; }
 
         /// <summary>
+        /// The minimum percentage of incidents that is to be resolved before their resolution target.
+        /// </summary>
+        [JsonProperty("resolutionsWithinTarget")]
+        public long? ResolutionsWithinTarget { get; internal set; }
+
+        /// <summary>
         /// The number of minutes within which a request with the impact value "High - Service Degraded for Several Users" is to be resolved when it affects an active SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("resolutionTargetHigh")]
@@ -370,10 +376,10 @@
         public long? ResolutionTargetTopInDays { get; internal set; }
 
         /// <summary>
-        /// The minimum percentage of incidents that is to be resolved before their resolution target.
+        /// The minimum percentage of incidents that is to be responded to before their response target.
         /// </summary>
-        [JsonProperty("resolutionsWithinTarget")]
-        public long? ResolutionsWithinTarget { get; internal set; }
+        [JsonProperty("responsesWithinTarget")]
+        public long? ResponsesWithinTarget { get; internal set; }
 
         /// <summary>
         /// The number of minutes within which a response needs to have been provided for a request with the impact "High - Service Degraded for Several Users" when it affects an active SLA that is based on the service offering.
@@ -446,12 +452,6 @@
         /// </summary>
         [JsonProperty("responseTargetTopInDays")]
         public long? ResponseTargetTopInDays { get; internal set; }
-
-        /// <summary>
-        /// The minimum percentage of incidents that is to be responded to before their response target.
-        /// </summary>
-        [JsonProperty("responsesWithinTarget")]
-        public long? ResponsesWithinTarget { get; internal set; }
 
         /// <summary>
         /// How often an active SLA that is based on the service offering will be reviewed with the representative of its customer.
@@ -640,8 +640,8 @@
             HashSet<QueryPageInfo> retval = new();
             retval.AddRange(ChargesAttachmentsCollection?.GetQueryPageInfo("chargesAttachments", depth + 1));
             retval.AddRange(ContinuityAttachmentsCollection?.GetQueryPageInfo("continuityAttachments", depth + 1));
-            retval.AddRange(EffortClassRatesCollection?.GetQueryPageInfo("effortClassRates", depth + 1));
             retval.AddRange(EffortClassesCollection?.GetQueryPageInfo("effortClasses", depth + 1));
+            retval.AddRange(EffortClassRatesCollection?.GetQueryPageInfo("effortClassRates", depth + 1));
             retval.AddRange(LimitationsAttachmentsCollection?.GetQueryPageInfo("limitationsAttachments", depth + 1));
             retval.AddRange(PenaltiesAttachmentsCollection?.GetQueryPageInfo("penaltiesAttachments", depth + 1));
             retval.AddRange(PerformanceAttachmentsCollection?.GetQueryPageInfo("performanceAttachments", depth + 1));
@@ -658,8 +658,8 @@
         {
             ChargesAttachments?.AddRange((data as ServiceOffering)?.ChargesAttachments);
             ContinuityAttachments?.AddRange((data as ServiceOffering)?.ContinuityAttachments);
-            EffortClassRates?.AddRange((data as ServiceOffering)?.EffortClassRates);
             EffortClasses?.AddRange((data as ServiceOffering)?.EffortClasses);
+            EffortClassRates?.AddRange((data as ServiceOffering)?.EffortClassRates);
             LimitationsAttachments?.AddRange((data as ServiceOffering)?.LimitationsAttachments);
             PenaltiesAttachments?.AddRange((data as ServiceOffering)?.PenaltiesAttachments);
             PerformanceAttachments?.AddRange((data as ServiceOffering)?.PerformanceAttachments);

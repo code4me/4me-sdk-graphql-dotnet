@@ -53,25 +53,6 @@
         }
 
         /// <summary>
-        /// Values of custom fields.
-        /// </summary>
-        public AppInstanceQuery SelectCustomFields(CustomFieldQuery query)
-        {
-            query.FieldName = "customFields";
-            query.IsConnection = false;
-            return Select(query);
-        }
-
-        /// <summary>
-        /// Inline images linked to one of the custom fields.
-        /// </summary>
-        public AppInstanceQuery SelectCustomFieldsAttachments(AttachmentQuery query)
-        {
-            query.FieldName = "customFieldsAttachments";
-            return Select(query);
-        }
-
-        /// <summary>
         /// Account this app instance is for.
         /// </summary>
         public AppInstanceQuery SelectCustomerAccount(AccountQuery query)
@@ -88,6 +69,25 @@
         {
             query.FieldName = "customerRepresentative";
             query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Values of custom fields.
+        /// </summary>
+        public AppInstanceQuery SelectCustomFields(CustomFieldQuery query)
+        {
+            query.FieldName = "customFields";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Inline images linked to one of the custom fields.
+        /// </summary>
+        public AppInstanceQuery SelectCustomFieldsAttachments(AttachmentQuery query)
+        {
+            query.FieldName = "customFieldsAttachments";
             return Select(query);
         }
 

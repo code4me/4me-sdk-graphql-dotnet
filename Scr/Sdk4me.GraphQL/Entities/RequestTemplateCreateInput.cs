@@ -5,16 +5,12 @@
     /// </summary>
     public class RequestTemplateCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
-        private string? uiExtensionId;
         private bool? assetSelection;
         private bool? assignToSelf;
         private RequestCategory? category;
-        private string? workflowManagerId;
-        private string? workflowTemplateId;
-        private string? configurationItemId;
+        private string? clientMutationId;
         private RequestCompletionReason? completionReason;
+        private string? configurationItemId;
         private bool? copySubjectToRequests;
         private long? desiredCompletion;
         private bool? disabled;
@@ -26,47 +22,21 @@
         private string? memberId;
         private string? note;
         private string? registrationHints;
+        private List<string>? reservationOfferingIds;
         private string? serviceId;
+        private string? source;
+        private string? sourceID;
         private bool? specialists;
         private RequestStatus? status;
+        private string? subject;
         private string? supplierId;
         private string? supportHoursId;
         private string? teamId;
         private string? timeZone;
+        private string? uiExtensionId;
         private bool? urgent;
-        private List<string>? reservationOfferingIds;
-        private string? clientMutationId;
-        private string? subject;
-
-        /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
-        /// </summary>
-        [JsonProperty("source")]
-        public string? Source
-        {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
-        }
-
-        /// <summary>
-        /// UI extension that is to be applied to the record.
-        /// </summary>
-        [JsonProperty("uiExtensionId")]
-        public string? UiExtensionId
-        {
-            get => uiExtensionId;
-            set => uiExtensionId = Set("uiExtensionId", value);
-        }
+        private string? workflowManagerId;
+        private string? workflowTemplateId;
 
         /// <summary>
         /// After selecting the request template in Self Service, the user needs to be able to select a configuration item in the Asset field.
@@ -99,33 +69,13 @@
         }
 
         /// <summary>
-        /// Identifier of the Workflow Manager linked to the request template. <em>Required</em> when a Workflow Template is defined, and the Service does not define a Workflow Manager.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("workflowManagerId")]
-        public string? WorkflowManagerId
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => workflowManagerId;
-            set => workflowManagerId = Set("workflowManagerId", value);
-        }
-
-        /// <summary>
-        /// Identifier of the Workflow Template related to the request template. <em>Required</em> when the <em>Status</em> is set to _Workflow Pending_.
-        /// </summary>
-        [JsonProperty("workflowTemplateId")]
-        public string? WorkflowTemplateId
-        {
-            get => workflowTemplateId;
-            set => workflowTemplateId = Set("workflowTemplateId", value);
-        }
-
-        /// <summary>
-        /// Identifier of the CI that needs to be copied to the Configuration item field of a new request when it is being created based on the template.
-        /// </summary>
-        [JsonProperty("configurationItemId")]
-        public string? ConfigurationItemId
-        {
-            get => configurationItemId;
-            set => configurationItemId = Set("configurationItemId", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -136,6 +86,16 @@
         {
             get => completionReason;
             set => completionReason = Set("completionReason", value);
+        }
+
+        /// <summary>
+        /// Identifier of the CI that needs to be copied to the Configuration item field of a new request when it is being created based on the template.
+        /// </summary>
+        [JsonProperty("configurationItemId")]
+        public string? ConfigurationItemId
+        {
+            get => configurationItemId;
+            set => configurationItemId = Set("configurationItemId", value);
         }
 
         /// <summary>
@@ -249,6 +209,16 @@
         }
 
         /// <summary>
+        /// Identifiers of reservation offerings related to the request template.
+        /// </summary>
+        [JsonProperty("reservationOfferingIds")]
+        public List<string>? ReservationOfferingIds
+        {
+            get => reservationOfferingIds;
+            set => reservationOfferingIds = Set("reservationOfferingIds", value);
+        }
+
+        /// <summary>
         /// Identifier of the service for which the request template is made available.
         /// </summary>
         [JsonProperty("serviceId")]
@@ -256,6 +226,26 @@
         {
             get => serviceId;
             set => serviceId = Set("serviceId", value);
+        }
+
+        /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
         }
 
         /// <summary>
@@ -276,6 +266,16 @@
         {
             get => status;
             set => status = Set("status", value);
+        }
+
+        /// <summary>
+        /// A short description that needs to be copied to the Subject field of a new request when it is being created based on the template.
+        /// </summary>
+        [JsonProperty("subject")]
+        public string? Subject
+        {
+            get => subject;
+            set => subject = Set("subject", value);
         }
 
         /// <summary>
@@ -320,6 +320,16 @@
         }
 
         /// <summary>
+        /// UI extension that is to be applied to the record.
+        /// </summary>
+        [JsonProperty("uiExtensionId")]
+        public string? UiExtensionId
+        {
+            get => uiExtensionId;
+            set => uiExtensionId = Set("uiExtensionId", value);
+        }
+
+        /// <summary>
         /// Whether a new request that is created based on the template is to be marked as urgent.
         /// </summary>
         [JsonProperty("urgent")]
@@ -330,33 +340,23 @@
         }
 
         /// <summary>
-        /// Identifiers of reservation offerings related to the request template.
+        /// Identifier of the Workflow Manager linked to the request template. <em>Required</em> when a Workflow Template is defined, and the Service does not define a Workflow Manager.
         /// </summary>
-        [JsonProperty("reservationOfferingIds")]
-        public List<string>? ReservationOfferingIds
+        [JsonProperty("workflowManagerId")]
+        public string? WorkflowManagerId
         {
-            get => reservationOfferingIds;
-            set => reservationOfferingIds = Set("reservationOfferingIds", value);
+            get => workflowManagerId;
+            set => workflowManagerId = Set("workflowManagerId", value);
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// Identifier of the Workflow Template related to the request template. <em>Required</em> when the <em>Status</em> is set to _Workflow Pending_.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("workflowTemplateId")]
+        public string? WorkflowTemplateId
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// A short description that needs to be copied to the Subject field of a new request when it is being created based on the template.
-        /// </summary>
-        [JsonProperty("subject")]
-        public string? Subject
-        {
-            get => subject;
-            set => subject = Set("subject", value);
+            get => workflowTemplateId;
+            set => workflowTemplateId = Set("workflowTemplateId", value);
         }
     }
 }

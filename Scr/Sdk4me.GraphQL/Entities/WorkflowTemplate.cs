@@ -173,12 +173,6 @@
         [JsonProperty("workflowManager")]
         public Person? WorkflowManager { get; internal set; }
 
-        /// <summary>
-        /// The type that needs to be selected in the Type field of a new workflow when it is being created based on the template.
-        /// </summary>
-        [JsonProperty("workflowType")]
-        public WorkflowType? WorkflowType { get; internal set; }
-
         [JsonProperty("workflows")]
         internal NodeCollection<Workflow>? WorkflowsCollection { get; set; }
 
@@ -189,6 +183,12 @@
         {
             get => WorkflowsCollection?.Data;
         }
+
+        /// <summary>
+        /// The type that needs to be selected in the Type field of a new workflow when it is being created based on the template.
+        /// </summary>
+        [JsonProperty("workflowType")]
+        public WorkflowType? WorkflowType { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)
         {

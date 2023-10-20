@@ -5,35 +5,25 @@
     /// </summary>
     public class EffortClassCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
+        private string? clientMutationId;
         private decimal? costMultiplier;
         private bool? disabled;
+        private string? name;
         private long? position;
-        private List<string>? timesheetSettingIds;
         private List<string>? serviceOfferingIds;
         private List<string>? skillPoolIds;
-        private string? clientMutationId;
-        private string? name;
+        private string? source;
+        private string? sourceID;
+        private List<string>? timesheetSettingIds;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -57,6 +47,16 @@
         }
 
         /// <summary>
+        /// The name of the effort class.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
+        }
+
+        /// <summary>
         /// The position that the effort class takes when it is displayed in a sorted list.
         /// </summary>
         [JsonProperty("position")]
@@ -64,16 +64,6 @@
         {
             get => position;
             set => position = Set("position", value);
-        }
-
-        /// <summary>
-        /// IDs of the timesheet settings of this effort class.
-        /// </summary>
-        [JsonProperty("timesheetSettingIds")]
-        public List<string>? TimesheetSettingIds
-        {
-            get => timesheetSettingIds;
-            set => timesheetSettingIds = Set("timesheetSettingIds", value);
         }
 
         /// <summary>
@@ -97,23 +87,33 @@
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("source")]
+        public string? Source
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
+            get => source;
+            set => source = Set("source", value);
         }
 
         /// <summary>
-        /// The name of the effort class.
+        /// The unique identifier of the resource in an external system.
         /// </summary>
-        [JsonProperty("name")]
-        public string? Name
+        [JsonProperty("sourceID")]
+        public string? SourceID
         {
-            get => name;
-            set => name = Set("name", value);
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// IDs of the timesheet settings of this effort class.
+        /// </summary>
+        [JsonProperty("timesheetSettingIds")]
+        public List<string>? TimesheetSettingIds
+        {
+            get => timesheetSettingIds;
+            set => timesheetSettingIds = Set("timesheetSettingIds", value);
         }
     }
 }

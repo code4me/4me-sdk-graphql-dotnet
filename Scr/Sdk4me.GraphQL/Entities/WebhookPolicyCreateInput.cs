@@ -5,11 +5,21 @@
     /// </summary>
     public class WebhookPolicyCreateInput : PropertyChangeSet
     {
-        private bool? disabled;
-        private long? jwtClaimExpiresIn;
-        private string? jwtAudience;
         private string? clientMutationId;
+        private bool? disabled;
         private WebhookPolicyJwtAlg? jwtAlg;
+        private string? jwtAudience;
+        private long? jwtClaimExpiresIn;
+
+        /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
 
         /// <summary>
         /// Whether the webhook policy will be applied.
@@ -22,13 +32,13 @@
         }
 
         /// <summary>
-        /// The number of minutes within which the claim expires.
+        /// The algorithm to use for cryptographic signing of webhook messages.
         /// </summary>
-        [JsonProperty("jwtClaimExpiresIn")]
-        public long? JwtClaimExpiresIn
+        [JsonProperty("jwtAlg")]
+        public WebhookPolicyJwtAlg? JwtAlg
         {
-            get => jwtClaimExpiresIn;
-            set => jwtClaimExpiresIn = Set("jwtClaimExpiresIn", value);
+            get => jwtAlg;
+            set => jwtAlg = Set("jwtAlg", value);
         }
 
         /// <summary>
@@ -42,23 +52,13 @@
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// The number of minutes within which the claim expires.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("jwtClaimExpiresIn")]
+        public long? JwtClaimExpiresIn
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// The algorithm to use for cryptographic signing of webhook messages.
-        /// </summary>
-        [JsonProperty("jwtAlg")]
-        public WebhookPolicyJwtAlg? JwtAlg
-        {
-            get => jwtAlg;
-            set => jwtAlg = Set("jwtAlg", value);
+            get => jwtClaimExpiresIn;
+            set => jwtClaimExpiresIn = Set("jwtClaimExpiresIn", value);
         }
     }
 }

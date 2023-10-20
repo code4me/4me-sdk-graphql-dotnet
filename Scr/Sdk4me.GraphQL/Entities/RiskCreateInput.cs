@@ -5,41 +5,41 @@
     /// </summary>
     public class RiskCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
+        private string? clientMutationId;
+        private RiskClosureReason? closureReason;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
-        private string? uiExtensionId;
-        private RiskClosureReason? closureReason;
         private string? managerId;
         private DateOnly? mitigationTargetAt;
         private string? note;
-        private RiskStatus? status;
         private List<string>? organizationIds;
         private List<string>? projectIds;
         private List<string>? serviceIds;
-        private string? clientMutationId;
-        private string? subject;
         private string? severity;
+        private string? source;
+        private string? sourceID;
+        private RiskStatus? status;
+        private string? subject;
+        private string? uiExtensionId;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => source;
-            set => source = Set("source", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
-        /// The unique identifier of the resource in an external system.
+        /// The appropriate closure reason for the risk when it has been closed.
         /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
+        [JsonProperty("closureReason")]
+        public RiskClosureReason? ClosureReason
         {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
+            get => closureReason;
+            set => closureReason = Set("closureReason", value);
         }
 
         /// <summary>
@@ -60,26 +60,6 @@
         {
             get => customFieldsAttachments;
             set => customFieldsAttachments = Set("customFieldsAttachments", value);
-        }
-
-        /// <summary>
-        /// UI extension that is to be applied to the record.
-        /// </summary>
-        [JsonProperty("uiExtensionId")]
-        public string? UiExtensionId
-        {
-            get => uiExtensionId;
-            set => uiExtensionId = Set("uiExtensionId", value);
-        }
-
-        /// <summary>
-        /// The appropriate closure reason for the risk when it has been closed.
-        /// </summary>
-        [JsonProperty("closureReason")]
-        public RiskClosureReason? ClosureReason
-        {
-            get => closureReason;
-            set => closureReason = Set("closureReason", value);
         }
 
         /// <summary>
@@ -113,16 +93,6 @@
         }
 
         /// <summary>
-        /// The current status of the risk.
-        /// </summary>
-        [JsonProperty("status")]
-        public RiskStatus? Status
-        {
-            get => status;
-            set => status = Set("status", value);
-        }
-
-        /// <summary>
         /// Identifiers of organizations linked to the risk.
         /// </summary>
         [JsonProperty("organizationIds")]
@@ -153,13 +123,43 @@
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// The severity of the risk.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("severity")]
+        public string? Severity
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
+            get => severity;
+            set => severity = Set("severity", value);
+        }
+
+        /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// The current status of the risk.
+        /// </summary>
+        [JsonProperty("status")]
+        public RiskStatus? Status
+        {
+            get => status;
+            set => status = Set("status", value);
         }
 
         /// <summary>
@@ -173,13 +173,13 @@
         }
 
         /// <summary>
-        /// The severity of the risk.
+        /// UI extension that is to be applied to the record.
         /// </summary>
-        [JsonProperty("severity")]
-        public string? Severity
+        [JsonProperty("uiExtensionId")]
+        public string? UiExtensionId
         {
-            get => severity;
-            set => severity = Set("severity", value);
+            get => uiExtensionId;
+            set => uiExtensionId = Set("uiExtensionId", value);
         }
     }
 }

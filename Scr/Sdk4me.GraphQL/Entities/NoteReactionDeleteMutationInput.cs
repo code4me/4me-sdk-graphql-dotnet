@@ -5,18 +5,8 @@
     /// </summary>
     public class NoteReactionDeleteMutationInput : PropertyChangeSet
     {
-        private string? id;
         private string? clientMutationId;
-
-        /// <summary>
-        /// The node ID of the record to delete.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
-        }
+        private string? id;
 
         /// <summary>
         /// A unique identifier for the client performing the mutation.
@@ -26,6 +16,16 @@
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// The node ID of the record to delete.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
         }
     }
 }

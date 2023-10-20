@@ -5,34 +5,24 @@
     /// </summary>
     public class ShopOrderLineCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
+        private string? clientMutationId;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
         private List<AddressInput>? newAddresses;
-        private string? clientMutationId;
+        private long? quantity;
         private string? requestedForId;
         private string? shopArticleId;
-        private long? quantity;
+        private string? source;
+        private string? sourceID;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -66,13 +56,13 @@
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// The number units ordered.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("quantity")]
+        public long? Quantity
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
+            get => quantity;
+            set => quantity = Set("quantity", value);
         }
 
         /// <summary>
@@ -96,13 +86,23 @@
         }
 
         /// <summary>
-        /// The number units ordered.
+        /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("quantity")]
-        public long? Quantity
+        [JsonProperty("source")]
+        public string? Source
         {
-            get => quantity;
-            set => quantity = Set("quantity", value);
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
         }
     }
 }

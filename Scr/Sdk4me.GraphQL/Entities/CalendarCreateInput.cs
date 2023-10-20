@@ -5,32 +5,22 @@
     /// </summary>
     public class CalendarCreateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
+        private string? clientMutationId;
         private bool? disabled;
         private List<string>? holidayIds;
-        private List<CalendarHoursInput>? newCalendarHours;
-        private string? clientMutationId;
         private string? name;
+        private List<CalendarHoursInput>? newCalendarHours;
+        private string? source;
+        private string? sourceID;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
         {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
         }
 
         /// <summary>
@@ -54,6 +44,16 @@
         }
 
         /// <summary>
+        /// The name of the calendar.
+        /// </summary>
+        [JsonProperty("name")]
+        public string? Name
+        {
+            get => name;
+            set => name = Set("name", value);
+        }
+
+        /// <summary>
         /// Calendar hours of the calendar.
         /// </summary>
         [JsonProperty("newCalendarHours")]
@@ -64,23 +64,23 @@
         }
 
         /// <summary>
-        /// A unique identifier for the client performing the mutation.
+        /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
+        [JsonProperty("source")]
+        public string? Source
         {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
+            get => source;
+            set => source = Set("source", value);
         }
 
         /// <summary>
-        /// The name of the calendar.
+        /// The unique identifier of the resource in an external system.
         /// </summary>
-        [JsonProperty("name")]
-        public string? Name
+        [JsonProperty("sourceID")]
+        public string? SourceID
         {
-            get => name;
-            set => name = Set("name", value);
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
         }
     }
 }

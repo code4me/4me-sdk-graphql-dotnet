@@ -109,6 +109,17 @@
         [JsonProperty("lastSeenAt")]
         public DateTime? LastSeenAt { get; internal set; }
 
+        [JsonProperty("licensedSites")]
+        internal NodeCollection<Site>? LicensedSitesCollection { get; set; }
+
+        /// <summary>
+        /// Sites at which the software that is covered by the license certificate may be used.
+        /// </summary>
+        public DataList<Site>? LicensedSites
+        {
+            get => LicensedSitesCollection?.Data;
+        }
+
         /// <summary>
         /// The date through which the temporary software license certificate is valid. The license certificate expires at the end of this day.
         /// </summary>
@@ -120,17 +131,6 @@
         /// </summary>
         [JsonProperty("licenseType")]
         public CiLicenseType? LicenseType { get; internal set; }
-
-        [JsonProperty("licensedSites")]
-        internal NodeCollection<Site>? LicensedSitesCollection { get; set; }
-
-        /// <summary>
-        /// Sites at which the software that is covered by the license certificate may be used.
-        /// </summary>
-        public DataList<Site>? LicensedSites
-        {
-            get => LicensedSitesCollection?.Data;
-        }
 
         /// <summary>
         /// The name or number of the room in which the CI is located, if it concerns a hardware CI.

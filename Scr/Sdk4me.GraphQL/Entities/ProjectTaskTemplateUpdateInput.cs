@@ -5,19 +5,20 @@
     /// </summary>
     public class ProjectTaskTemplateUpdateInput : PropertyChangeSet
     {
-        private string? source;
-        private string? sourceID;
-        private string? uiExtensionId;
+        private List<string>? assignmentsToDelete;
         private bool? assignToProjectManager;
         private bool? assignToRequester;
         private bool? assignToRequesterBusinessUnitManager;
         private bool? assignToRequesterManager;
         private bool? assignToServiceOwner;
         private ProjectTaskCategory? category;
+        private string? clientMutationId;
         private bool? copyNotesToProject;
         private bool? disabled;
         private string? effortClassId;
+        private string? id;
         private string? instructions;
+        private List<ProjectTaskTemplateAssignmentInput>? newAssignments;
         private string? note;
         private string? pdfDesignId;
         private long? plannedDuration;
@@ -29,43 +30,22 @@
         private long? plannedEffortServiceOwner;
         private long? requiredApprovals;
         private string? skillPoolId;
+        private string? source;
+        private string? sourceID;
         private string? subject;
         private string? supplierId;
         private string? teamId;
+        private string? uiExtensionId;
         private bool? workHoursAre24x7;
-        private List<ProjectTaskTemplateAssignmentInput>? newAssignments;
-        private string? clientMutationId;
-        private string? id;
-        private List<string>? assignmentsToDelete;
 
         /// <summary>
-        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// Identifiers of assignments to remove from the project task template.
         /// </summary>
-        [JsonProperty("source")]
-        public string? Source
+        [JsonProperty("assignmentsToDelete")]
+        public List<string>? AssignmentsToDelete
         {
-            get => source;
-            set => source = Set("source", value);
-        }
-
-        /// <summary>
-        /// The unique identifier of the resource in an external system.
-        /// </summary>
-        [JsonProperty("sourceID")]
-        public string? SourceID
-        {
-            get => sourceID;
-            set => sourceID = Set("sourceID", value);
-        }
-
-        /// <summary>
-        /// UI extension that is to be applied to the record.
-        /// </summary>
-        [JsonProperty("uiExtensionId")]
-        public string? UiExtensionId
-        {
-            get => uiExtensionId;
-            set => uiExtensionId = Set("uiExtensionId", value);
+            get => assignmentsToDelete;
+            set => assignmentsToDelete = Set("assignmentsToDelete", value);
         }
 
         /// <summary>
@@ -129,6 +109,16 @@
         }
 
         /// <summary>
+        /// A unique identifier for the client performing the mutation.
+        /// </summary>
+        [JsonProperty("clientMutationId")]
+        public string? ClientMutationId
+        {
+            get => clientMutationId;
+            set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
         /// Whether the Copy note to project box of project tasks that were created based on the template needs to be checked by default. (The Copy notes to project checkbox is called "Copy notes to project by default" when the project task template is in Edit mode.)
         /// </summary>
         [JsonProperty("copyNotesToProject")]
@@ -159,6 +149,16 @@
         }
 
         /// <summary>
+        /// The node ID of the record to update.
+        /// </summary>
+        [JsonProperty("id")]
+        public string? ID
+        {
+            get => id;
+            set => id = Set("id", value);
+        }
+
+        /// <summary>
         /// The information that needs to be copied to the Instructions field of a new project task when it is being created based on the template.
         /// </summary>
         [JsonProperty("instructions")]
@@ -166,6 +166,16 @@
         {
             get => instructions;
             set => instructions = Set("instructions", value);
+        }
+
+        /// <summary>
+        /// Assignments of the project task template.
+        /// </summary>
+        [JsonProperty("newAssignments")]
+        public List<ProjectTaskTemplateAssignmentInput>? NewAssignments
+        {
+            get => newAssignments;
+            set => newAssignments = Set("newAssignments", value);
         }
 
         /// <summary>
@@ -279,6 +289,26 @@
         }
 
         /// <summary>
+        /// An identifier for the client application submitting the resource or the name of an external system.
+        /// </summary>
+        [JsonProperty("source")]
+        public string? Source
+        {
+            get => source;
+            set => source = Set("source", value);
+        }
+
+        /// <summary>
+        /// The unique identifier of the resource in an external system.
+        /// </summary>
+        [JsonProperty("sourceID")]
+        public string? SourceID
+        {
+            get => sourceID;
+            set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
         /// A short description that needs to be copied to the Subject field of a new project task when it is being created based on the template.
         /// </summary>
         [JsonProperty("subject")]
@@ -309,6 +339,16 @@
         }
 
         /// <summary>
+        /// UI extension that is to be applied to the record.
+        /// </summary>
+        [JsonProperty("uiExtensionId")]
+        public string? UiExtensionId
+        {
+            get => uiExtensionId;
+            set => uiExtensionId = Set("uiExtensionId", value);
+        }
+
+        /// <summary>
         /// When set to true, the completion target of project tasks created based on the template are calculated using a 24x7 calendar rather than normal business hours.
         /// </summary>
         [JsonProperty("workHoursAre24x7")]
@@ -316,46 +356,6 @@
         {
             get => workHoursAre24x7;
             set => workHoursAre24x7 = Set("workHoursAre24x7", value);
-        }
-
-        /// <summary>
-        /// Assignments of the project task template.
-        /// </summary>
-        [JsonProperty("newAssignments")]
-        public List<ProjectTaskTemplateAssignmentInput>? NewAssignments
-        {
-            get => newAssignments;
-            set => newAssignments = Set("newAssignments", value);
-        }
-
-        /// <summary>
-        /// A unique identifier for the client performing the mutation.
-        /// </summary>
-        [JsonProperty("clientMutationId")]
-        public string? ClientMutationId
-        {
-            get => clientMutationId;
-            set => clientMutationId = Set("clientMutationId", value);
-        }
-
-        /// <summary>
-        /// The node ID of the record to update.
-        /// </summary>
-        [JsonProperty("id")]
-        public string? ID
-        {
-            get => id;
-            set => id = Set("id", value);
-        }
-
-        /// <summary>
-        /// Identifiers of assignments to remove from the project task template.
-        /// </summary>
-        [JsonProperty("assignmentsToDelete")]
-        public List<string>? AssignmentsToDelete
-        {
-            get => assignmentsToDelete;
-            set => assignmentsToDelete = Set("assignmentsToDelete", value);
         }
     }
 }

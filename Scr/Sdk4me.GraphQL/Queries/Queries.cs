@@ -96,14 +96,14 @@
         public static InvoiceQuery Invoice => new();
 
         /// <summary>
-        /// Returns a new instance of the <see cref="KnowledgeArticleTemplate"/> with a default field selection.
-        /// </summary>
-        public static KnowledgeArticleTemplateQuery KnowledgeArticleTemplate => new();
-
-        /// <summary>
         /// Returns a new instance of the <see cref="KnowledgeArticle"/> with a default field selection.
         /// </summary>
         public static KnowledgeArticleQuery KnowledgeArticle => new();
+
+        /// <summary>
+        /// Returns a new instance of the <see cref="KnowledgeArticleTemplate"/> with a default field selection.
+        /// </summary>
+        public static KnowledgeArticleTemplateQuery KnowledgeArticleTemplate => new();
 
         /// <summary>
         /// Returns a new instance of the <see cref="Me"/> with a default field selection.
@@ -161,9 +161,9 @@
         public static ProjectRiskLevelQuery ProjectRiskLevel => new();
 
         /// <summary>
-        /// Returns a new instance of the <see cref="ProjectTaskTemplate"/> with a default field selection.
+        /// Returns a new instance of the <see cref="Project"/> with a default field selection.
         /// </summary>
-        public static ProjectTaskTemplateQuery ProjectTaskTemplate => new();
+        public static ProjectQuery Project => new();
 
         /// <summary>
         /// Returns a new instance of the <see cref="ProjectTask"/> with a default field selection.
@@ -171,14 +171,14 @@
         public static ProjectTaskQuery ProjectTask => new();
 
         /// <summary>
+        /// Returns a new instance of the <see cref="ProjectTaskTemplate"/> with a default field selection.
+        /// </summary>
+        public static ProjectTaskTemplateQuery ProjectTaskTemplate => new();
+
+        /// <summary>
         /// Returns a new instance of the <see cref="ProjectTemplate"/> with a default field selection.
         /// </summary>
         public static ProjectTemplateQuery ProjectTemplate => new();
-
-        /// <summary>
-        /// Returns a new instance of the <see cref="Project"/> with a default field selection.
-        /// </summary>
-        public static ProjectQuery Project => new();
 
         /// <summary>
         /// Returns a new instance of the <see cref="RateLimit"/> with a default field selection.
@@ -191,14 +191,14 @@
         public static ReleaseQuery Release => new();
 
         /// <summary>
-        /// Returns a new instance of the <see cref="RequestTemplate"/> with a default field selection.
-        /// </summary>
-        public static RequestTemplateQuery RequestTemplate => new();
-
-        /// <summary>
         /// Returns a new instance of the <see cref="Request"/> with a default field selection.
         /// </summary>
         public static RequestQuery Request => new();
+
+        /// <summary>
+        /// Returns a new instance of the <see cref="RequestTemplate"/> with a default field selection.
+        /// </summary>
+        public static RequestTemplateQuery RequestTemplate => new();
 
         /// <summary>
         /// Returns a new instance of the <see cref="ReservationOffering"/> with a default field selection.
@@ -211,14 +211,14 @@
         public static ReservationQuery Reservation => new();
 
         /// <summary>
-        /// Returns a new instance of the <see cref="RiskSeverity"/> with a default field selection.
-        /// </summary>
-        public static RiskSeverityQuery RiskSeverity => new();
-
-        /// <summary>
         /// Returns a new instance of the <see cref="Risk"/> with a default field selection.
         /// </summary>
         public static RiskQuery Risk => new();
+
+        /// <summary>
+        /// Returns a new instance of the <see cref="RiskSeverity"/> with a default field selection.
+        /// </summary>
+        public static RiskSeverityQuery RiskSeverity => new();
 
         /// <summary>
         /// Returns a new instance of the <see cref="ScrumWorkspace"/> with a default field selection.
@@ -301,14 +301,14 @@
         public static SyncSetQuery SyncSet => new();
 
         /// <summary>
-        /// Returns a new instance of the <see cref="TaskTemplate"/> with a default field selection.
-        /// </summary>
-        public static TaskTemplateQuery TaskTemplate => new();
-
-        /// <summary>
         /// Returns a new instance of the <see cref="Task"/> with a default field selection.
         /// </summary>
         public static TaskQuery Task => new();
+
+        /// <summary>
+        /// Returns a new instance of the <see cref="TaskTemplate"/> with a default field selection.
+        /// </summary>
+        public static TaskTemplateQuery TaskTemplate => new();
 
         /// <summary>
         /// Returns a new instance of the <see cref="Team"/> with a default field selection.
@@ -361,6 +361,11 @@
         public static WebhookQuery Webhook => new();
 
         /// <summary>
+        /// Returns a new instance of the <see cref="Workflow"/> with a default field selection.
+        /// </summary>
+        public static WorkflowQuery Workflow => new();
+
+        /// <summary>
         /// Returns a new instance of the <see cref="WorkflowTemplate"/> with a default field selection.
         /// </summary>
         public static WorkflowTemplateQuery WorkflowTemplate => new();
@@ -369,10 +374,5 @@
         /// Returns a new instance of the <see cref="WorkflowType"/> with a default field selection.
         /// </summary>
         public static WorkflowTypeQuery WorkflowType => new();
-
-        /// <summary>
-        /// Returns a new instance of the <see cref="Workflow"/> with a default field selection.
-        /// </summary>
-        public static WorkflowQuery Workflow => new();
     }
 }
