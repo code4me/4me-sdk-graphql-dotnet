@@ -59,8 +59,9 @@
         /// <returns>The calculated score for the AuthenticationToken.</returns>
         private double CalculateTokenScore(AuthenticationToken token)
         {
-            return (double)token.RequestsRemaining / token.RequestLimit * RequestWeight
-                 + (double)token.CostLimitRemaining / token.CostLimit * CostWeight;
+            if (token.RequestsRemaining > 0 && token.CostLimitRemaining > 0)
+                return (double)((double)token.RequestsRemaining / token.RequestLimit * RequestWeight + (double)token.CostLimitRemaining / token.CostLimit * CostWeight);
+            return 0;
         }
     }
 }
