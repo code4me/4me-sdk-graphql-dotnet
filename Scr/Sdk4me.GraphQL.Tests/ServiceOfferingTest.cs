@@ -37,6 +37,8 @@
                     .SelectAll())
                 .SelectTerminationAttachments(new AttachmentQuery()
                     .SelectAll())
+                .SelectSupportHoursCase(new CalendarQuery()
+                    .SelectAll())
                 ).Result;
 
             Assert.IsNotNull(serviceOfferings);

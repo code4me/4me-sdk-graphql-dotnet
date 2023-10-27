@@ -17,6 +17,8 @@
                     .SelectOwner(new HasTranslationsQuery()
                         .ItemsPerRequest(1)
                         .SelectTranslations(new TranslationQuery())))
+                    .SelectDescriptionAttachments(new AttachmentQuery()
+                    .SelectAll())
                 ).Result;
 
             Assert.IsNotNull(pdfDesigns);

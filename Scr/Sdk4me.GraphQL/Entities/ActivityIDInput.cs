@@ -5,12 +5,23 @@
     /// </summary>
     public class ActivityIDInput : PropertyChangeSet
     {
+        private string? @case;
         private string? high;
         private string? low;
         private string? medium;
         private string? rfc;
         private string? rfi;
         private string? top;
+
+        /// <summary>
+        /// Represents the activityID for cases. The Activity ID is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider.
+        /// </summary>
+        [JsonProperty("case")]
+        public string? Case
+        {
+            get => @case;
+            set => @case = Set("case", value);
+        }
 
         /// <summary>
         /// Represents the activityID for high incidents. The Activity ID is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider.

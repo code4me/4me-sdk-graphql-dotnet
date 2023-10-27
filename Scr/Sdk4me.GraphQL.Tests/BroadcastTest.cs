@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace Sdk4me.GraphQL.Tests
+﻿namespace Sdk4me.GraphQL.Tests
 {
     [TestClass]
     public class BroadcastTest
@@ -28,6 +26,11 @@ namespace Sdk4me.GraphQL.Tests
                     .SelectCustomFieldsAttachments(new AttachmentQuery()
                         .ItemsPerRequest(10)
                         .SelectAll()))
+                    .SelectRemarksAttachments(new AttachmentQuery()
+                        .ItemsPerRequest(10)
+                        .SelectAll())
+                    .SelectTranslations(new BroadcastTranslationQuery()
+                        .ItemsPerRequest(1))
                 ).Result;
 
             Assert.IsNotNull(broadcasts);

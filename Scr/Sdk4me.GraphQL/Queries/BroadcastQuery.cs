@@ -53,6 +53,15 @@
         }
 
         /// <summary>
+        /// Files and inline images linked to the Remarks field.
+        /// </summary>
+        public BroadcastQuery SelectRemarksAttachments(AttachmentQuery query)
+        {
+            query.FieldName = "remarksAttachments";
+            return Select(query);
+        }
+
+        /// <summary>
         /// Grouped request to which customers can add request to indicate they are also affected.
         /// </summary>
         public BroadcastQuery SelectRequest(RequestQuery query)
@@ -86,6 +95,15 @@
         public BroadcastQuery SelectTeams(TeamQuery query)
         {
             query.FieldName = "teams";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Broadcast's message in different languages.
+        /// </summary>
+        public BroadcastQuery SelectTranslations(BroadcastTranslationQuery query)
+        {
+            query.FieldName = "translations";
             return Select(query);
         }
     }

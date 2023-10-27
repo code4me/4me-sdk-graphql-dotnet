@@ -33,6 +33,11 @@
     public enum ActivityIDField
     {
         /// <summary>
+        /// The case field.
+        /// </summary>
+        [EnumMember(Value = "case")]
+        Case,
+        /// <summary>
         /// The high field.
         /// </summary>
         [EnumMember(Value = "high")]
@@ -1147,6 +1152,16 @@
         [EnumMember(Value = "messageType")]
         MessageType,
         /// <summary>
+        /// The remarks field.
+        /// </summary>
+        [EnumMember(Value = "remarks")]
+        Remarks,
+        /// <summary>
+        /// The remarks attachments field.
+        /// </summary>
+        [EnumMember(Value = "remarksAttachments")]
+        RemarksAttachments,
+        /// <summary>
         /// The request field.
         /// </summary>
         [EnumMember(Value = "request")]
@@ -1192,6 +1207,11 @@
         [EnumMember(Value = "timeZone")]
         TimeZone,
         /// <summary>
+        /// The translations field.
+        /// </summary>
+        [EnumMember(Value = "translations")]
+        Translations,
+        /// <summary>
         /// The updated at field.
         /// </summary>
         [EnumMember(Value = "updatedAt")]
@@ -1201,6 +1221,43 @@
         /// </summary>
         [EnumMember(Value = "visibility")]
         Visibility,
+    }
+
+    /// <summary>
+    /// The <see cref="BroadcastTranslation">BroadcastTranslation</see> fields.
+    /// </summary>
+    public enum BroadcastTranslationField
+    {
+        /// <summary>
+        /// The created at field.
+        /// </summary>
+        [EnumMember(Value = "createdAt")]
+        CreatedAt,
+        /// <summary>
+        /// The id field.
+        /// </summary>
+        [EnumMember(Value = "id")]
+        ID,
+        /// <summary>
+        /// The language field.
+        /// </summary>
+        [EnumMember(Value = "language")]
+        Language,
+        /// <summary>
+        /// The message field.
+        /// </summary>
+        [EnumMember(Value = "message")]
+        Message,
+        /// <summary>
+        /// The message attachments field.
+        /// </summary>
+        [EnumMember(Value = "messageAttachments")]
+        MessageAttachments,
+        /// <summary>
+        /// The updated at field.
+        /// </summary>
+        [EnumMember(Value = "updatedAt")]
+        UpdatedAt,
     }
 
     /// <summary>
@@ -3193,6 +3250,16 @@
         /// </summary>
         [EnumMember(Value = "css")]
         Css,
+        /// <summary>
+        /// The description field.
+        /// </summary>
+        [EnumMember(Value = "description")]
+        Description,
+        /// <summary>
+        /// The description attachments field.
+        /// </summary>
+        [EnumMember(Value = "descriptionAttachments")]
+        DescriptionAttachments,
         /// <summary>
         /// The disabled field.
         /// </summary>
@@ -7241,6 +7308,11 @@
         [EnumMember(Value = "chargesAttachments")]
         ChargesAttachments,
         /// <summary>
+        /// The charge type case field.
+        /// </summary>
+        [EnumMember(Value = "chargeTypeCase")]
+        ChargeTypeCase,
+        /// <summary>
         /// The charge type high field.
         /// </summary>
         [EnumMember(Value = "chargeTypeHigh")]
@@ -7351,6 +7423,16 @@
         [EnumMember(Value = "prerequisitesAttachments")]
         PrerequisitesAttachments,
         /// <summary>
+        /// The rate case field.
+        /// </summary>
+        [EnumMember(Value = "rateCase")]
+        RateCase,
+        /// <summary>
+        /// The rate case currency field.
+        /// </summary>
+        [EnumMember(Value = "rateCaseCurrency")]
+        RateCaseCurrency,
+        /// <summary>
         /// The rate high field.
         /// </summary>
         [EnumMember(Value = "rateHigh")]
@@ -7436,6 +7518,16 @@
         [EnumMember(Value = "resolutionsWithinTarget")]
         ResolutionsWithinTarget,
         /// <summary>
+        /// The resolution target case field.
+        /// </summary>
+        [EnumMember(Value = "resolutionTargetCase")]
+        ResolutionTargetCase,
+        /// <summary>
+        /// The resolution target case in days field.
+        /// </summary>
+        [EnumMember(Value = "resolutionTargetCaseInDays")]
+        ResolutionTargetCaseInDays,
+        /// <summary>
         /// The resolution target high field.
         /// </summary>
         [EnumMember(Value = "resolutionTargetHigh")]
@@ -7500,6 +7592,16 @@
         /// </summary>
         [EnumMember(Value = "responsesWithinTarget")]
         ResponsesWithinTarget,
+        /// <summary>
+        /// The response target case field.
+        /// </summary>
+        [EnumMember(Value = "responseTargetCase")]
+        ResponseTargetCase,
+        /// <summary>
+        /// The response target case in days field.
+        /// </summary>
+        [EnumMember(Value = "responseTargetCaseInDays")]
+        ResponseTargetCaseInDays,
         /// <summary>
         /// The response target high field.
         /// </summary>
@@ -7635,6 +7737,11 @@
         /// </summary>
         [EnumMember(Value = "summaryAttachments")]
         SummaryAttachments,
+        /// <summary>
+        /// The support hours case field.
+        /// </summary>
+        [EnumMember(Value = "supportHoursCase")]
+        SupportHoursCase,
         /// <summary>
         /// The support hours high field.
         /// </summary>
@@ -8647,6 +8754,11 @@
         [EnumMember(Value = "sourceID")]
         SourceID,
         /// <summary>
+        /// The translations field.
+        /// </summary>
+        [EnumMember(Value = "translations")]
+        Translations,
+        /// <summary>
         /// The updated at field.
         /// </summary>
         [EnumMember(Value = "updatedAt")]
@@ -8775,6 +8887,11 @@
         /// </summary>
         [EnumMember(Value = "survey")]
         Survey,
+        /// <summary>
+        /// The translations field.
+        /// </summary>
+        [EnumMember(Value = "translations")]
+        Translations,
         /// <summary>
         /// The type field.
         /// </summary>

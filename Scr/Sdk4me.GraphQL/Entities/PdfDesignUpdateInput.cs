@@ -8,6 +8,8 @@
         private PdfDesignCategory? category;
         private string? clientMutationId;
         private string? css;
+        private string? description;
+        private List<AttachmentInput>? descriptionAttachments;
         private bool? disabled;
         private string? html;
         private string? id;
@@ -43,6 +45,26 @@
         {
             get => css;
             set => css = Set("css", value);
+        }
+
+        /// <summary>
+        /// Description of the design.
+        /// </summary>
+        [JsonProperty("description")]
+        public string? Description
+        {
+            get => description;
+            set => description = Set("description", value);
+        }
+
+        /// <summary>
+        /// Files and inline images linked to the description field.
+        /// </summary>
+        [JsonProperty("descriptionAttachments")]
+        public List<AttachmentInput>? DescriptionAttachments
+        {
+            get => descriptionAttachments;
+            set => descriptionAttachments = Set("descriptionAttachments", value);
         }
 
         /// <summary>

@@ -1471,10 +1471,15 @@
     public enum RequestCategory
     {
         /// <summary>
+        /// Case.
+        /// </summary>
+        [EnumMember(Value = "case")]
+        Case = 1,
+        /// <summary>
         /// Complaint - Request for Support Improvement.
         /// </summary>
         [EnumMember(Value = "complaint")]
-        Complaint = 1,
+        Complaint,
         /// <summary>
         /// Compliment - Request for Bestowal of Praise.
         /// </summary>

@@ -212,6 +212,16 @@
         }
 
         /// <summary>
+        /// The calendar that defines the support hours for a request with the category "Case" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        public ServiceOfferingQuery SelectSupportHoursCase(CalendarQuery query)
+        {
+            query.FieldName = "supportHoursCase";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// The calendar that defines the support hours for a request with the impact "High - Service Degraded for Several Users" when it affects an active SLA that is based on the service offering.
         /// </summary>
         public ServiceOfferingQuery SelectSupportHoursHigh(CalendarQuery query)

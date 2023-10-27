@@ -35,6 +35,12 @@
         }
 
         /// <summary>
+        /// Defines how a Case must be charged: as a Fixed Price or in Time and Materials.
+        /// </summary>
+        [JsonProperty("chargeTypeCase")]
+        public ServiceOfferingChargeType? ChargeTypeCase { get; internal set; }
+
+        /// <summary>
         /// Defines how a high incident must be charged: as a Fixed Price or in Time and Materials.
         /// </summary>
         [JsonProperty("chargeTypeHigh")]
@@ -196,6 +202,19 @@
         }
 
         /// <summary>
+        /// Defines the fixed price rate for a Case.
+        /// </summary>
+        [JsonProperty("rateCase")]
+        public decimal? RateCase { get; internal set; }
+
+        /// <summary>
+        /// <br>Defines the currency for the fixed price rate of a Case.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
+        /// </summary>
+        [JsonProperty("rateCaseCurrency")]
+        public string? RateCaseCurrency { get; internal set; }
+
+        /// <summary>
         /// Defines the fixed price rate for a high incident.
         /// </summary>
         [JsonProperty("rateHigh")]
@@ -304,6 +323,18 @@
         public long? ResolutionsWithinTarget { get; internal set; }
 
         /// <summary>
+        /// The number of minutes within which a request with the category "Case" is to be resolved when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        [JsonProperty("resolutionTargetCase")]
+        public long? ResolutionTargetCase { get; internal set; }
+
+        /// <summary>
+        /// The number of business days within which a request with the category "Case" is to be resolved when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        [JsonProperty("resolutionTargetCaseInDays")]
+        public long? ResolutionTargetCaseInDays { get; internal set; }
+
+        /// <summary>
         /// The number of minutes within which a request with the impact value "High - Service Degraded for Several Users" is to be resolved when it affects an active SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("resolutionTargetHigh")]
@@ -380,6 +411,18 @@
         /// </summary>
         [JsonProperty("responsesWithinTarget")]
         public long? ResponsesWithinTarget { get; internal set; }
+
+        /// <summary>
+        /// The number of minutes within which a response needs to have been provided for a request with the category "Case" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        [JsonProperty("responseTargetCase")]
+        public long? ResponseTargetCase { get; internal set; }
+
+        /// <summary>
+        /// The number of business days within which a response needs to have been provided for a request with the category "Case" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        [JsonProperty("responseTargetCaseInDays")]
+        public long? ResponseTargetCaseInDays { get; internal set; }
 
         /// <summary>
         /// The number of minutes within which a response needs to have been provided for a request with the impact "High - Service Degraded for Several Users" when it affects an active SLA that is based on the service offering.
@@ -562,6 +605,12 @@
         {
             get => SummaryAttachmentsCollection?.Data;
         }
+
+        /// <summary>
+        /// The calendar that defines the support hours for a request with the category "Case" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        [JsonProperty("supportHoursCase")]
+        public Calendar? SupportHoursCase { get; internal set; }
 
         /// <summary>
         /// The calendar that defines the support hours for a request with the impact "High - Service Degraded for Several Users" when it affects an active SLA that is based on the service offering.

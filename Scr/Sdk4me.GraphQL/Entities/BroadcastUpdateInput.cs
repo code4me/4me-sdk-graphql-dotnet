@@ -14,6 +14,8 @@
         private string? id;
         private string? message;
         private BroadcastMessageType? messageType;
+        private string? remarks;
+        private List<AttachmentInput>? remarksAttachments;
         private List<string>? serviceInstanceIds;
         private List<string>? slaIds;
         private string? source;
@@ -113,6 +115,26 @@
         {
             get => messageType;
             set => messageType = Set("messageType", value);
+        }
+
+        /// <summary>
+        /// Any additional information about the broadcast that might prove useful.
+        /// </summary>
+        [JsonProperty("remarks")]
+        public string? Remarks
+        {
+            get => remarks;
+            set => remarks = Set("remarks", value);
+        }
+
+        /// <summary>
+        /// Files and inline images linked to the Remarks field.
+        /// </summary>
+        [JsonProperty("remarksAttachments")]
+        public List<AttachmentInput>? RemarksAttachments
+        {
+            get => remarksAttachments;
+            set => remarksAttachments = Set("remarksAttachments", value);
         }
 
         /// <summary>

@@ -34,6 +34,15 @@
         }
 
         /// <summary>
+        /// Files and inline images linked to the description field.
+        /// </summary>
+        public PdfDesignQuery SelectDescriptionAttachments(AttachmentQuery query)
+        {
+            query.FieldName = "descriptionAttachments";
+            return Select(query);
+        }
+
+        /// <summary>
         /// Translations associated with this object.
         /// </summary>
         public PdfDesignQuery SelectTranslations(TranslationQuery query)

@@ -92,6 +92,17 @@
         [JsonProperty("sourceID"), Sdk4meField(true)]
         public string? SourceID { get; internal set; }
 
+        [JsonProperty("translations")]
+        internal NodeCollection<Translation>? TranslationsCollection { get; set; }
+
+        /// <summary>
+        /// Translations associated with this object.
+        /// </summary>
+        public DataList<Translation>? Translations
+        {
+            get => TranslationsCollection?.Data;
+        }
+
         /// <summary>
         /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
@@ -104,6 +115,7 @@
             retval.AddRange(CompletionAttachmentsCollection?.GetQueryPageInfo("completionAttachments", depth + 1));
             retval.AddRange(IntroductionAttachmentsCollection?.GetQueryPageInfo("introductionAttachments", depth + 1));
             retval.AddRange(QuestionsCollection?.GetQueryPageInfo("questions", depth + 1));
+            retval.AddRange(TranslationsCollection?.GetQueryPageInfo("translations", depth + 1));
             return retval;
         }
 
@@ -112,6 +124,7 @@
             CompletionAttachments?.AddRange((data as Survey)?.CompletionAttachments);
             IntroductionAttachments?.AddRange((data as Survey)?.IntroductionAttachments);
             Questions?.AddRange((data as Survey)?.Questions);
+            Translations?.AddRange((data as Survey)?.Translations);
         }
     }
 }

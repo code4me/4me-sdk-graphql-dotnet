@@ -30,6 +30,23 @@
         public string? Css { get; internal set; }
 
         /// <summary>
+        /// Description of the design.
+        /// </summary>
+        [JsonProperty("description")]
+        public string? Description { get; internal set; }
+
+        [JsonProperty("descriptionAttachments")]
+        internal NodeCollection<Attachment>? DescriptionAttachmentsCollection { get; set; }
+
+        /// <summary>
+        /// Files and inline images linked to the description field.
+        /// </summary>
+        public DataList<Attachment>? DescriptionAttachments
+        {
+            get => DescriptionAttachmentsCollection?.Data;
+        }
+
+        /// <summary>
         /// Whether the design is to be used.
         /// </summary>
         [JsonProperty("disabled")]
@@ -79,12 +96,14 @@
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)
         {
             HashSet<QueryPageInfo> retval = new();
+            retval.AddRange(DescriptionAttachmentsCollection?.GetQueryPageInfo("descriptionAttachments", depth + 1));
             retval.AddRange(TranslationsCollection?.GetQueryPageInfo("translations", depth + 1));
             return retval;
         }
 
         internal override void AddToCollection(object data)
         {
+            DescriptionAttachments?.AddRange((data as PdfDesign)?.DescriptionAttachments);
             Translations?.AddRange((data as PdfDesign)?.Translations);
         }
     }

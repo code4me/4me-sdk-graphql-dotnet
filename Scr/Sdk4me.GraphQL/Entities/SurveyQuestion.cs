@@ -70,6 +70,17 @@
         [JsonProperty("survey")]
         public Survey? Survey { get; internal set; }
 
+        [JsonProperty("translations")]
+        internal NodeCollection<Translation>? TranslationsCollection { get; set; }
+
+        /// <summary>
+        /// Translations associated with this object.
+        /// </summary>
+        public DataList<Translation>? Translations
+        {
+            get => TranslationsCollection?.Data;
+        }
+
         /// <summary>
         /// Type of question.
         /// </summary>
@@ -92,12 +103,14 @@
         {
             HashSet<QueryPageInfo> retval = new();
             retval.AddRange(GuidanceAttachmentsCollection?.GetQueryPageInfo("guidanceAttachments", depth + 1));
+            retval.AddRange(TranslationsCollection?.GetQueryPageInfo("translations", depth + 1));
             return retval;
         }
 
         internal override void AddToCollection(object data)
         {
             GuidanceAttachments?.AddRange((data as SurveyQuestion)?.GuidanceAttachments);
+            Translations?.AddRange((data as SurveyQuestion)?.Translations);
         }
     }
 }

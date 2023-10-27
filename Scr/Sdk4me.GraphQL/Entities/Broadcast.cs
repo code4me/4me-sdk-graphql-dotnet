@@ -59,6 +59,23 @@
         public BroadcastMessageType? MessageType { get; internal set; }
 
         /// <summary>
+        /// Any additional information about the broadcast that might prove useful.
+        /// </summary>
+        [JsonProperty("remarks")]
+        public string? Remarks { get; internal set; }
+
+        [JsonProperty("remarksAttachments")]
+        internal NodeCollection<Attachment>? RemarksAttachmentsCollection { get; set; }
+
+        /// <summary>
+        /// Files and inline images linked to the Remarks field.
+        /// </summary>
+        public DataList<Attachment>? RemarksAttachments
+        {
+            get => RemarksAttachmentsCollection?.Data;
+        }
+
+        /// <summary>
         /// Grouped request to which customers can add request to indicate they are also affected.
         /// </summary>
         [JsonProperty("request")]
@@ -128,6 +145,17 @@
         [JsonProperty("timeZone")]
         public string? TimeZone { get; internal set; }
 
+        [JsonProperty("translations")]
+        internal NodeCollection<BroadcastTranslation>? TranslationsCollection { get; set; }
+
+        /// <summary>
+        /// Broadcast's message in different languages.
+        /// </summary>
+        public DataList<BroadcastTranslation>? Translations
+        {
+            get => TranslationsCollection?.Data;
+        }
+
         /// <summary>
         /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
@@ -144,18 +172,22 @@
         {
             HashSet<QueryPageInfo> retval = new();
             retval.AddRange(CustomersCollection?.GetQueryPageInfo("customers", depth + 1));
+            retval.AddRange(RemarksAttachmentsCollection?.GetQueryPageInfo("remarksAttachments", depth + 1));
             retval.AddRange(ServiceInstancesCollection?.GetQueryPageInfo("serviceInstances", depth + 1));
             retval.AddRange(SlasCollection?.GetQueryPageInfo("slas", depth + 1));
             retval.AddRange(TeamsCollection?.GetQueryPageInfo("teams", depth + 1));
+            retval.AddRange(TranslationsCollection?.GetQueryPageInfo("translations", depth + 1));
             return retval;
         }
 
         internal override void AddToCollection(object data)
         {
             Customers?.AddRange((data as Broadcast)?.Customers);
+            RemarksAttachments?.AddRange((data as Broadcast)?.RemarksAttachments);
             ServiceInstances?.AddRange((data as Broadcast)?.ServiceInstances);
             Slas?.AddRange((data as Broadcast)?.Slas);
             Teams?.AddRange((data as Broadcast)?.Teams);
+            Translations?.AddRange((data as Broadcast)?.Translations);
         }
     }
 }

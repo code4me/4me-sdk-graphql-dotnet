@@ -59,5 +59,14 @@
             query.FieldName = "questions";
             return Select(query);
         }
+
+        /// <summary>
+        /// Translations associated with this object.
+        /// </summary>
+        public SurveyQuery SelectTranslations(TranslationQuery query)
+        {
+            query.FieldName = "translations";
+            return Select(query);
+        }
     }
 }

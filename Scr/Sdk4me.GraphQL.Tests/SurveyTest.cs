@@ -18,6 +18,13 @@
                 .SelectIntroductionAttachments(new AttachmentQuery()
                     .SelectAll())
                 .SelectQuestions(new SurveyQuestionQuery()
+                    .ItemsPerRequest(10)
+                    .SelectTranslations(new TranslationQuery()
+                        .ItemsPerRequest(1)
+                        .SelectAll())
+                    .SelectAll())
+                .SelectTranslations(new TranslationQuery()
+                    .ItemsPerRequest(1)
                     .SelectAll())
                 ).Result;
 

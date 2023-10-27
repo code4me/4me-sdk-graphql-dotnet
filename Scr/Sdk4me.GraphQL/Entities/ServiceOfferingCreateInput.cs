@@ -7,6 +7,7 @@
     {
         private decimal? availability;
         private string? charges;
+        private ServiceOfferingChargeType? chargeTypeCase;
         private ServiceOfferingChargeType? chargeTypeHigh;
         private ServiceOfferingChargeType? chargeTypeLow;
         private ServiceOfferingChargeType? chargeTypeMedium;
@@ -24,6 +25,8 @@
         private string? penalties;
         private string? performance;
         private string? prerequisites;
+        private decimal? rateCase;
+        private string? rateCaseCurrency;
         private decimal? rateHigh;
         private string? rateHighCurrency;
         private decimal? rateLow;
@@ -41,6 +44,7 @@
         private string? reliability;
         private ServiceOfferingReportFrequency? reportFrequency;
         private long? resolutionsWithinTarget;
+        private long? resolutionTargetCase;
         private long? resolutionTargetHigh;
         private long? resolutionTargetLow;
         private long? resolutionTargetMedium;
@@ -48,6 +52,7 @@
         private long? resolutionTargetRfi;
         private long? resolutionTargetTop;
         private long? responsesWithinTarget;
+        private long? responseTargetCase;
         private long? responseTargetHigh;
         private long? responseTargetLow;
         private long? responseTargetMedium;
@@ -61,6 +66,7 @@
         private string? sourceID;
         private ServiceOfferingStatus? status;
         private string? summary;
+        private string? supportHoursCaseId;
         private string? supportHoursHighId;
         private string? supportHoursLowId;
         private string? supportHoursMediumId;
@@ -88,6 +94,16 @@
         {
             get => charges;
             set => charges = Set("charges", value);
+        }
+
+        /// <summary>
+        /// Defines how a Case must be charged: as a Fixed Price or in Time and Materials.
+        /// </summary>
+        [JsonProperty("chargeTypeCase")]
+        public ServiceOfferingChargeType? ChargeTypeCase
+        {
+            get => chargeTypeCase;
+            set => chargeTypeCase = Set("chargeTypeCase", value);
         }
 
         /// <summary>
@@ -258,6 +274,27 @@
         {
             get => prerequisites;
             set => prerequisites = Set("prerequisites", value);
+        }
+
+        /// <summary>
+        /// Defines the fixed price rate for a Case.
+        /// </summary>
+        [JsonProperty("rateCase")]
+        public decimal? RateCase
+        {
+            get => rateCase;
+            set => rateCase = Set("rateCase", value);
+        }
+
+        /// <summary>
+        /// <br>Defines the currency for the fixed price rate of a Case.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
+        /// </summary>
+        [JsonProperty("rateCaseCurrency")]
+        public string? RateCaseCurrency
+        {
+            get => rateCaseCurrency;
+            set => rateCaseCurrency = Set("rateCaseCurrency", value);
         }
 
         /// <summary>
@@ -437,6 +474,16 @@
         }
 
         /// <summary>
+        /// The number of minutes within which a request with the category "Case" is to be resolved when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        [JsonProperty("resolutionTargetCase")]
+        public long? ResolutionTargetCase
+        {
+            get => resolutionTargetCase;
+            set => resolutionTargetCase = Set("resolutionTargetCase", value);
+        }
+
+        /// <summary>
         /// The number of minutes within which a request with the impact value "High - Service Degraded for Several Users" is to be resolved when it affects an active SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("resolutionTargetHigh")]
@@ -504,6 +551,16 @@
         {
             get => responsesWithinTarget;
             set => responsesWithinTarget = Set("responsesWithinTarget", value);
+        }
+
+        /// <summary>
+        /// The number of minutes within which a response needs to have been provided for a request with the category "Case" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        [JsonProperty("responseTargetCase")]
+        public long? ResponseTargetCase
+        {
+            get => responseTargetCase;
+            set => responseTargetCase = Set("responseTargetCase", value);
         }
 
         /// <summary>
@@ -634,6 +691,16 @@
         {
             get => summary;
             set => summary = Set("summary", value);
+        }
+
+        /// <summary>
+        /// Identifier of the calendar that defines the support hours for a request with the category "Case" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        [JsonProperty("supportHoursCaseId")]
+        public string? SupportHoursCaseId
+        {
+            get => supportHoursCaseId;
+            set => supportHoursCaseId = Set("supportHoursCaseId", value);
         }
 
         /// <summary>
