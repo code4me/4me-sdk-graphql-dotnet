@@ -2182,6 +2182,11 @@
         [EnumMember(Value = "cis_of_service_instance")]
         CisOfServiceInstance = 1,
         /// <summary>
+        /// People of the Following Coverage Group(s).
+        /// </summary>
+        [EnumMember(Value = "coverage_groups")]
+        CoverageGroups,
+        /// <summary>
         /// All People of Customer Account.
         /// </summary>
         [EnumMember(Value = "customer_account")]

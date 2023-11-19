@@ -29,6 +29,8 @@
                     .SelectAll())
                 .SelectSkillPools(new SkillPoolQuery()
                     .SelectAll())
+                .SelectCoverageGroups(new SlaCoverageGroupQuery()
+                    .SelectAll())
                 .SelectStandardServiceRequestActivityIDs(new StandardServiceRequestActivityIDQuery()
                     .SelectAll())
                 ).Result;

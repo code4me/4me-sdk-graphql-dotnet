@@ -44,6 +44,15 @@
         }
 
         /// <summary>
+        /// Coverage groups of the service level agreement. Only available for service level agreements where the <c>coverage</c> field is set to <c>coverage_groups</c>.
+        /// </summary>
+        public ServiceLevelAgreementQuery SelectCoverageGroups(SlaCoverageGroupQuery query)
+        {
+            query.FieldName = "coverageGroups";
+            return Select(query);
+        }
+
+        /// <summary>
         /// The organization that pays for the agreement.
         /// </summary>
         public ServiceLevelAgreementQuery SelectCustomer(OrganizationQuery query)

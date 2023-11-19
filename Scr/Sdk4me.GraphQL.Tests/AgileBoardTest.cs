@@ -15,6 +15,8 @@
                     .SelectAll())
                 .SelectDescriptionAttachments(new AttachmentQuery()
                     .SelectAll())
+                .SelectCustomerRepresentativeSlas(new ServiceLevelAgreementQuery() 
+                    .SelectAll())
                 ).Result;
 
             Assert.IsNotNull(agileBoards);

@@ -329,6 +329,11 @@
         [EnumMember(Value = "currentSprint")]
         CurrentSprint,
         /// <summary>
+        /// The customer representative slas field.
+        /// </summary>
+        [EnumMember(Value = "customerRepresentativeSlas")]
+        CustomerRepresentativeSlas,
+        /// <summary>
         /// The description field.
         /// </summary>
         [EnumMember(Value = "description")]
@@ -7141,6 +7146,11 @@
         [EnumMember(Value = "coverage")]
         Coverage,
         /// <summary>
+        /// The coverage groups field.
+        /// </summary>
+        [EnumMember(Value = "coverageGroups")]
+        CoverageGroups,
+        /// <summary>
         /// The created at field.
         /// </summary>
         [EnumMember(Value = "createdAt")]
@@ -8307,6 +8317,78 @@
         /// </summary>
         [EnumMember(Value = "remarksAttachments")]
         RemarksAttachments,
+        /// <summary>
+        /// The source field.
+        /// </summary>
+        [EnumMember(Value = "source")]
+        Source,
+        /// <summary>
+        /// The source id field.
+        /// </summary>
+        [EnumMember(Value = "sourceID")]
+        SourceID,
+        /// <summary>
+        /// The updated at field.
+        /// </summary>
+        [EnumMember(Value = "updatedAt")]
+        UpdatedAt,
+    }
+
+    /// <summary>
+    /// The <see cref="SlaCoverageGroup">SlaCoverageGroup</see> fields.
+    /// </summary>
+    public enum SlaCoverageGroupField
+    {
+        /// <summary>
+        /// The account field.
+        /// </summary>
+        [EnumMember(Value = "account")]
+        Account,
+        /// <summary>
+        /// The created at field.
+        /// </summary>
+        [EnumMember(Value = "createdAt")]
+        CreatedAt,
+        /// <summary>
+        /// The description field.
+        /// </summary>
+        [EnumMember(Value = "description")]
+        Description,
+        /// <summary>
+        /// The description attachments field.
+        /// </summary>
+        [EnumMember(Value = "descriptionAttachments")]
+        DescriptionAttachments,
+        /// <summary>
+        /// The disabled field.
+        /// </summary>
+        [EnumMember(Value = "disabled")]
+        Disabled,
+        /// <summary>
+        /// The id field.
+        /// </summary>
+        [EnumMember(Value = "id")]
+        ID,
+        /// <summary>
+        /// The name field.
+        /// </summary>
+        [EnumMember(Value = "name")]
+        Name,
+        /// <summary>
+        /// The people field.
+        /// </summary>
+        [EnumMember(Value = "people")]
+        People,
+        /// <summary>
+        /// The search phrase field.
+        /// </summary>
+        [EnumMember(Value = "searchPhrase")]
+        SearchPhrase,
+        /// <summary>
+        /// The slas field.
+        /// </summary>
+        [EnumMember(Value = "slas")]
+        Slas,
         /// <summary>
         /// The source field.
         /// </summary>

@@ -2724,6 +2724,60 @@
         }
 
         /// <summary>
+        /// Creates a new SLA coverage group.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="input">The mutation to execute.</param>
+        /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<SlaCoverageGroupCreatePayload> Mutation(this Sdk4meClient client, SlaCoverageGroupCreateInput input, bool throwOnError = true)
+        {
+            return await client.Mutation(new SlaCoverageGroupCreateMutation(input, new SlaCoverageGroupQuery()), throwOnError);
+        }
+
+        /// <summary>
+        /// Creates a new SLA coverage group.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="input">The mutation to execute.</param>
+        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<SlaCoverageGroupCreatePayload> Mutation(this Sdk4meClient client, SlaCoverageGroupCreateInput input, SlaCoverageGroupQuery query, bool throwOnError = true)
+        {
+            return await client.Mutation(new SlaCoverageGroupCreateMutation(input, query), throwOnError);
+        }
+
+        /// <summary>
+        /// Updates an existing SLA coverage group.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="input">The mutation to execute.</param>
+        /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<SlaCoverageGroupUpdatePayload> Mutation(this Sdk4meClient client, SlaCoverageGroupUpdateInput input, bool throwOnError = true)
+        {
+            return await client.Mutation(new SlaCoverageGroupUpdateMutation(input, new SlaCoverageGroupQuery()), throwOnError);
+        }
+
+        /// <summary>
+        /// Updates an existing SLA coverage group.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="input">The mutation to execute.</param>
+        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<SlaCoverageGroupUpdatePayload> Mutation(this Sdk4meClient client, SlaCoverageGroupUpdateInput input, SlaCoverageGroupQuery query, bool throwOnError = true)
+        {
+            return await client.Mutation(new SlaCoverageGroupUpdateMutation(input, query), throwOnError);
+        }
+
+        /// <summary>
         /// Creates a new SLA notification scheme.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>

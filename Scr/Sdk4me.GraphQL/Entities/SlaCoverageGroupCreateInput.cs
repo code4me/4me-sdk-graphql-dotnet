@@ -1,19 +1,16 @@
 ﻿namespace Sdk4me.GraphQL
 {
     /// <summary>
-    /// The <see href="https://developer.4me.com/graphql/input_object/agileboardcreateinput/">AgileBoardCreateInput</see> object.
+    /// The <see href="https://developer.4me.com/graphql/input_object/slacoveragegroupcreateinput/">SlaCoverageGroupCreateInput</see> object.
     /// </summary>
-    public class AgileBoardCreateInput : PropertyChangeSet
+    public class SlaCoverageGroupCreateInput : PropertyChangeSet
     {
         private string? clientMutationId;
-        private List<string>? customerRepresentativeSlaIds;
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
         private bool? disabled;
-        private string? managerId;
         private string? name;
-        private List<AgileBoardColumnInput>? newColumns;
-        private string? pictureUri;
+        private string? searchPhrase;
         private string? source;
         private string? sourceID;
 
@@ -28,17 +25,7 @@
         }
 
         /// <summary>
-        /// Identifiers of the service level agreements of which the customer representatives can view this board in Self Service.
-        /// </summary>
-        [JsonProperty("customerRepresentativeSlaIds")]
-        public List<string>? CustomerRepresentativeSlaIds
-        {
-            get => customerRepresentativeSlaIds;
-            set => customerRepresentativeSlaIds = Set("customerRepresentativeSlaIds", value);
-        }
-
-        /// <summary>
-        /// Description of the agile board.
+        /// Any additional information about the SLA coverage group.
         /// </summary>
         [JsonProperty("description")]
         public string? Description
@@ -58,7 +45,7 @@
         }
 
         /// <summary>
-        /// Whether the board may not be used to place items on.
+        /// Whether the SLA coverage group may no longer be related to other records.
         /// </summary>
         [JsonProperty("disabled")]
         public bool? Disabled
@@ -68,17 +55,7 @@
         }
 
         /// <summary>
-        /// Identifier of the manager of the agile board.
-        /// </summary>
-        [JsonProperty("managerId")]
-        public string? ManagerId
-        {
-            get => managerId;
-            set => managerId = Set("managerId", value);
-        }
-
-        /// <summary>
-        /// Name of the agile board.
+        /// The name of the SLA coverage group.
         /// </summary>
         [JsonProperty("name")]
         public string? Name
@@ -88,23 +65,13 @@
         }
 
         /// <summary>
-        /// Columns of this agile board.
+        /// The phrase used to filter the people.
         /// </summary>
-        [JsonProperty("newColumns")]
-        public List<AgileBoardColumnInput>? NewColumns
+        [JsonProperty("searchPhrase")]
+        public string? SearchPhrase
         {
-            get => newColumns;
-            set => newColumns = Set("newColumns", value);
-        }
-
-        /// <summary>
-        /// The hyperlink to the image file for the record.
-        /// </summary>
-        [JsonProperty("pictureUri")]
-        public string? PictureUri
-        {
-            get => pictureUri;
-            set => pictureUri = Set("pictureUri", value);
+            get => searchPhrase;
+            set => searchPhrase = Set("searchPhrase", value);
         }
 
         /// <summary>

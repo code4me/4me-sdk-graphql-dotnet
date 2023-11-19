@@ -29,6 +29,17 @@
         [JsonProperty("coverage")]
         public SlaCoverage? Coverage { get; internal set; }
 
+        [JsonProperty("coverageGroups")]
+        internal NodeCollection<SlaCoverageGroup>? CoverageGroupsCollection { get; set; }
+
+        /// <summary>
+        /// Coverage groups of the service level agreement. Only available for service level agreements where the <c>coverage</c> field is set to <c>coverage_groups</c>.
+        /// </summary>
+        public DataList<SlaCoverageGroup>? CoverageGroups
+        {
+            get => CoverageGroupsCollection?.Data;
+        }
+
         /// <summary>
         /// The date and time at which the record was created.
         /// </summary>
@@ -244,6 +255,7 @@
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)
         {
             HashSet<QueryPageInfo> retval = new();
+            retval.AddRange(CoverageGroupsCollection?.GetQueryPageInfo("coverageGroups", depth + 1));
             retval.AddRange(CustomerRepresentativesCollection?.GetQueryPageInfo("customerRepresentatives", depth + 1));
             retval.AddRange(EffortClassRateIDsCollection?.GetQueryPageInfo("effortClassRateIDs", depth + 1));
             retval.AddRange(InvoicesCollection?.GetQueryPageInfo("invoices", depth + 1));
@@ -259,6 +271,7 @@
 
         internal override void AddToCollection(object data)
         {
+            CoverageGroups?.AddRange((data as ServiceLevelAgreement)?.CoverageGroups);
             CustomerRepresentatives?.AddRange((data as ServiceLevelAgreement)?.CustomerRepresentatives);
             EffortClassRateIDs?.AddRange((data as ServiceLevelAgreement)?.EffortClassRateIDs);
             Invoices?.AddRange((data as ServiceLevelAgreement)?.Invoices);

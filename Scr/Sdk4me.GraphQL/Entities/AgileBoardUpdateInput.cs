@@ -7,6 +7,7 @@
     {
         private string? clientMutationId;
         private List<string>? columnsToDelete;
+        private List<string>? customerRepresentativeSlaIds;
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
         private bool? disabled;
@@ -36,6 +37,16 @@
         {
             get => columnsToDelete;
             set => columnsToDelete = Set("columnsToDelete", value);
+        }
+
+        /// <summary>
+        /// Identifiers of the service level agreements of which the customer representatives can view this board in Self Service.
+        /// </summary>
+        [JsonProperty("customerRepresentativeSlaIds")]
+        public List<string>? CustomerRepresentativeSlaIds
+        {
+            get => customerRepresentativeSlaIds;
+            set => customerRepresentativeSlaIds = Set("customerRepresentativeSlaIds", value);
         }
 
         /// <summary>

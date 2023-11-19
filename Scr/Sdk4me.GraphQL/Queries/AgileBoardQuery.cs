@@ -53,6 +53,15 @@
         }
 
         /// <summary>
+        /// Customer representatives of these service level agreements can view this board in Self Service.
+        /// </summary>
+        public AgileBoardQuery SelectCustomerRepresentativeSlas(ServiceLevelAgreementQuery query)
+        {
+            query.FieldName = "customerRepresentativeSlas";
+            return Select(query);
+        }
+
+        /// <summary>
         /// Files and inline images linked to the Description field.
         /// </summary>
         public AgileBoardQuery SelectDescriptionAttachments(AttachmentQuery query)

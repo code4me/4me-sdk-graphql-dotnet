@@ -34,6 +34,17 @@
         [JsonProperty("currentSprint")]
         public Sprint? CurrentSprint { get; internal set; }
 
+        [JsonProperty("customerRepresentativeSlas")]
+        internal NodeCollection<ServiceLevelAgreement>? CustomerRepresentativeSlasCollection { get; set; }
+
+        /// <summary>
+        /// Customer representatives of these service level agreements can view this board in Self Service.
+        /// </summary>
+        public DataList<ServiceLevelAgreement>? CustomerRepresentativeSlas
+        {
+            get => CustomerRepresentativeSlasCollection?.Data;
+        }
+
         /// <summary>
         /// Description of the agile board.
         /// </summary>
@@ -97,6 +108,7 @@
         {
             HashSet<QueryPageInfo> retval = new();
             retval.AddRange(ColumnsCollection?.GetQueryPageInfo("columns", depth + 1));
+            retval.AddRange(CustomerRepresentativeSlasCollection?.GetQueryPageInfo("customerRepresentativeSlas", depth + 1));
             retval.AddRange(DescriptionAttachmentsCollection?.GetQueryPageInfo("descriptionAttachments", depth + 1));
             return retval;
         }
@@ -104,6 +116,7 @@
         internal override void AddToCollection(object data)
         {
             Columns?.AddRange((data as AgileBoard)?.Columns);
+            CustomerRepresentativeSlas?.AddRange((data as AgileBoard)?.CustomerRepresentativeSlas);
             DescriptionAttachments?.AddRange((data as AgileBoard)?.DescriptionAttachments);
         }
     }
