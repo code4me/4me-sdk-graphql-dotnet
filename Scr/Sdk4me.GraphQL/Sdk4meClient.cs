@@ -346,7 +346,7 @@ namespace Sdk4me.GraphQL
             if (attachmentStorages.FirstOrDefault() is AttachmentStorage attachmentStorage)
             {
                 string fileExtension = Path.GetExtension(fileName).TrimStart('.');
-                if (attachmentStorage.AllowedExtensions != null && attachmentStorage.AllowedExtensions.Contains(fileExtension, StringComparer.InvariantCultureIgnoreCase))
+                if (attachmentStorage.AllowedExtensions != null && (!attachmentStorage.AllowedExtensions.Any() || attachmentStorage.AllowedExtensions.Contains(fileExtension, StringComparer.InvariantCultureIgnoreCase)))
                 {
                     if (stream.Length >= attachmentStorage.SizeLimit)
                         throw new Sdk4meException($"File size exceeded, the maximum size is {attachmentStorage.SizeLimit} byte");
