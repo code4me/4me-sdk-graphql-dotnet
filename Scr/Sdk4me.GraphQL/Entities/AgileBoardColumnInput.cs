@@ -6,6 +6,7 @@
     public class AgileBoardColumnInput : PropertyChangeSet
     {
         private AgileBoardColumnActionType? actionType;
+        private bool? clearMember;
         private AgileBoardColumnDialogType? dialogType;
         private string? id;
         private string? memberId;
@@ -23,6 +24,16 @@
         {
             get => actionType;
             set => actionType = Set("actionType", value);
+        }
+
+        /// <summary>
+        /// Should the assigned person field of an item be cleared when the action type is <c>assign</c> and the item is added to this column?
+        /// </summary>
+        [JsonProperty("clearMember")]
+        public bool? ClearMember
+        {
+            get => clearMember;
+            set => clearMember = Set("clearMember", value);
         }
 
         /// <summary>

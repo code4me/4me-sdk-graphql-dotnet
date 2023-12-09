@@ -406,6 +406,11 @@
         [EnumMember(Value = "agileBoard")]
         AgileBoard,
         /// <summary>
+        /// The clear member field.
+        /// </summary>
+        [EnumMember(Value = "clearMember")]
+        ClearMember,
+        /// <summary>
         /// The created at field.
         /// </summary>
         [EnumMember(Value = "createdAt")]

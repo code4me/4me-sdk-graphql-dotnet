@@ -24,6 +24,12 @@
         public AgileBoard? AgileBoard { get; internal set; }
 
         /// <summary>
+        /// Will the assigned person field of the item be cleared when the action type is <c>assign</c> and an item is added to this column?
+        /// </summary>
+        [JsonProperty("clearMember")]
+        public bool? ClearMember { get; internal set; }
+
+        /// <summary>
         /// The date and time at which the record was created.
         /// </summary>
         [JsonProperty("createdAt"), Sdk4meField(true)]
