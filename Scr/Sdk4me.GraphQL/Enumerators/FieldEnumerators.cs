@@ -11075,11 +11075,6 @@
         [EnumMember(Value = "category")]
         Category,
         /// <summary>
-        /// The changes field.
-        /// </summary>
-        [EnumMember(Value = "changes")]
-        Changes,
-        /// <summary>
         /// The created at field.
         /// </summary>
         [EnumMember(Value = "createdAt")]

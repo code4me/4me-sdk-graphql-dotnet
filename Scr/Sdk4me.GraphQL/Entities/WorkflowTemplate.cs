@@ -34,17 +34,6 @@
         [JsonProperty("category")]
         public WorkflowCategory? Category { get; internal set; }
 
-        [JsonProperty("changes")]
-        internal NodeCollection<Workflow>? ChangesCollection { get; set; }
-
-        /// <summary>
-        /// DEPRECATE: use "workflows" instead.
-        /// </summary>
-        public DataList<Workflow>? Changes
-        {
-            get => ChangesCollection?.Data;
-        }
-
         /// <summary>
         /// The date and time at which the record was created.
         /// </summary>
@@ -194,7 +183,6 @@
         {
             HashSet<QueryPageInfo> retval = new();
             retval.AddRange(AutomationRulesCollection?.GetQueryPageInfo("automationRules", depth + 1));
-            retval.AddRange(ChangesCollection?.GetQueryPageInfo("changes", depth + 1));
             retval.AddRange(InstructionsAttachmentsCollection?.GetQueryPageInfo("instructionsAttachments", depth + 1));
             retval.AddRange(NoteAttachmentsCollection?.GetQueryPageInfo("noteAttachments", depth + 1));
             retval.AddRange(PhasesCollection?.GetQueryPageInfo("phases", depth + 1));
@@ -206,7 +194,6 @@
         internal override void AddToCollection(object data)
         {
             AutomationRules?.AddRange((data as WorkflowTemplate)?.AutomationRules);
-            Changes?.AddRange((data as WorkflowTemplate)?.Changes);
             InstructionsAttachments?.AddRange((data as WorkflowTemplate)?.InstructionsAttachments);
             NoteAttachments?.AddRange((data as WorkflowTemplate)?.NoteAttachments);
             Phases?.AddRange((data as WorkflowTemplate)?.Phases);

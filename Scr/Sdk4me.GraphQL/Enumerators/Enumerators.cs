@@ -2767,31 +2767,6 @@
         [EnumMember(Value = "broadcast.update")]
         BroadcastUpdate,
         /// <summary>
-        /// Change.create.
-        /// </summary>
-        [EnumMember(Value = "change.create")]
-        ChangeCreate,
-        /// <summary>
-        /// Change.manager-changed.
-        /// </summary>
-        [EnumMember(Value = "change.manager-changed")]
-        ChangeManagerChanged,
-        /// <summary>
-        /// Change.note-added.
-        /// </summary>
-        [EnumMember(Value = "change.note-added")]
-        ChangeNoteAdded,
-        /// <summary>
-        /// Change.status-changed.
-        /// </summary>
-        [EnumMember(Value = "change.status-changed")]
-        ChangeStatusChanged,
-        /// <summary>
-        /// Change.update.
-        /// </summary>
-        [EnumMember(Value = "change.update")]
-        ChangeUpdate,
-        /// <summary>
         /// Ci.create.
         /// </summary>
         [EnumMember(Value = "ci.create")]

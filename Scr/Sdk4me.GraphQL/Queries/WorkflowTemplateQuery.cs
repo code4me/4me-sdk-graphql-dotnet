@@ -43,15 +43,6 @@
         }
 
         /// <summary>
-        /// DEPRECATE: use "workflows" instead.
-        /// </summary>
-        public WorkflowTemplateQuery SelectChanges(WorkflowQuery query)
-        {
-            query.FieldName = "changes";
-            return Select(query);
-        }
-
-        /// <summary>
         /// Inline images linked to the Instructions field.
         /// </summary>
         public WorkflowTemplateQuery SelectInstructionsAttachments(AttachmentQuery query)

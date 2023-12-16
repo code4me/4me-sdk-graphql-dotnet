@@ -660,11 +660,6 @@
         [EnumMember(Value = "category")]
         Category,
         /// <summary>
-        /// Order by change id.
-        /// </summary>
-        [EnumMember(Value = "changeId")]
-        ChangeId,
-        /// <summary>
         /// Order by created at.
         /// </summary>
         [EnumMember(Value = "createdAt")]
@@ -1045,11 +1040,6 @@
         /// </summary>
         [EnumMember(Value = "category")]
         Category,
-        /// <summary>
-        /// Order by change id.
-        /// </summary>
-        [EnumMember(Value = "changeId")]
-        ChangeId,
         /// <summary>
         /// Order by completed at.
         /// </summary>
@@ -2177,11 +2167,6 @@
         /// </summary>
         [EnumMember(Value = "category")]
         Category,
-        /// <summary>
-        /// Order by change id.
-        /// </summary>
-        [EnumMember(Value = "changeId")]
-        ChangeId,
         /// <summary>
         /// Order by completed at.
         /// </summary>
