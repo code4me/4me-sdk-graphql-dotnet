@@ -594,6 +594,18 @@
         }
 
         /// <summary>
+        /// Root connection for retrieving ShopArticleCategory records.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="query">The query to execute.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<DataList<ShopArticleCategory>> Get(this Sdk4meClient client, ShopArticleCategoryQuery query)
+        {
+            return await client.Get<ShopArticleCategory>(query);
+        }
+
+        /// <summary>
         /// Root connection for retrieving ShopArticle records.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>

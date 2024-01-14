@@ -817,6 +817,23 @@
     }
 
     /// <summary>
+    /// The shop article category view.
+    /// </summary>
+    public enum ShopArticleCategoryView
+    {
+        /// <summary>
+        /// All shop article categories which account equals the value supplied via the `x-4me-account` header.
+        /// </summary>
+        [EnumMember(Value = "current_account")]
+        CurrentAccount,
+        /// <summary>
+        /// Shop article categories.
+        /// </summary>
+        [EnumMember(Value = "all")]
+        All,
+    }
+
+    /// <summary>
     /// The shop article view.
     /// </summary>
     public enum ShopArticleView

@@ -1546,6 +1546,28 @@
     }
 
     /// <summary>
+    /// The shop article category order.
+    /// </summary>
+    public enum ShopArticleCategoryOrderField
+    {
+        /// <summary>
+        /// Order by created at.
+        /// </summary>
+        [EnumMember(Value = "createdAt")]
+        CreatedAt,
+        /// <summary>
+        /// Order by name.
+        /// </summary>
+        [EnumMember(Value = "name")]
+        Name,
+        /// <summary>
+        /// Order by updated at.
+        /// </summary>
+        [EnumMember(Value = "updatedAt")]
+        UpdatedAt,
+    }
+
+    /// <summary>
     /// The shop article order.
     /// </summary>
     public enum ShopArticleOrderField

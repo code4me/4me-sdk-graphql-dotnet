@@ -251,6 +251,11 @@
         public static ServiceQuery Service => new();
 
         /// <summary>
+        /// Returns a new instance of the <see cref="ShopArticleCategory"/> with a default field selection.
+        /// </summary>
+        public static ShopArticleCategoryQuery ShopArticleCategory => new();
+
+        /// <summary>
         /// Returns a new instance of the <see cref="ShopArticle"/> with a default field selection.
         /// </summary>
         public static ShopArticleQuery ShopArticle => new();

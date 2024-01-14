@@ -2454,6 +2454,60 @@
         }
 
         /// <summary>
+        /// Creates a new shop article category.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="input">The mutation to execute.</param>
+        /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<ShopArticleCategoryCreatePayload> Mutation(this Sdk4meClient client, ShopArticleCategoryCreateInput input, bool throwOnError = true)
+        {
+            return await client.Mutation(new ShopArticleCategoryCreateMutation(input, new ShopArticleCategoryQuery()), throwOnError);
+        }
+
+        /// <summary>
+        /// Creates a new shop article category.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="input">The mutation to execute.</param>
+        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<ShopArticleCategoryCreatePayload> Mutation(this Sdk4meClient client, ShopArticleCategoryCreateInput input, ShopArticleCategoryQuery query, bool throwOnError = true)
+        {
+            return await client.Mutation(new ShopArticleCategoryCreateMutation(input, query), throwOnError);
+        }
+
+        /// <summary>
+        /// Updates an existing shop article category.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="input">The mutation to execute.</param>
+        /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<ShopArticleCategoryUpdatePayload> Mutation(this Sdk4meClient client, ShopArticleCategoryUpdateInput input, bool throwOnError = true)
+        {
+            return await client.Mutation(new ShopArticleCategoryUpdateMutation(input, new ShopArticleCategoryQuery()), throwOnError);
+        }
+
+        /// <summary>
+        /// Updates an existing shop article category.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="input">The mutation to execute.</param>
+        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<ShopArticleCategoryUpdatePayload> Mutation(this Sdk4meClient client, ShopArticleCategoryUpdateInput input, ShopArticleCategoryQuery query, bool throwOnError = true)
+        {
+            return await client.Mutation(new ShopArticleCategoryUpdateMutation(input, query), throwOnError);
+        }
+
+        /// <summary>
         /// Creates a new shop article.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>

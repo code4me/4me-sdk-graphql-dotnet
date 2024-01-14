@@ -7962,6 +7962,73 @@
     }
 
     /// <summary>
+    /// The <see cref="ShopArticleCategory">ShopArticleCategory</see> fields.
+    /// </summary>
+    public enum ShopArticleCategoryField
+    {
+        /// <summary>
+        /// The account field.
+        /// </summary>
+        [EnumMember(Value = "account")]
+        Account,
+        /// <summary>
+        /// The created at field.
+        /// </summary>
+        [EnumMember(Value = "createdAt")]
+        CreatedAt,
+        /// <summary>
+        /// The full description field.
+        /// </summary>
+        [EnumMember(Value = "fullDescription")]
+        FullDescription,
+        /// <summary>
+        /// The full description attachments field.
+        /// </summary>
+        [EnumMember(Value = "fullDescriptionAttachments")]
+        FullDescriptionAttachments,
+        /// <summary>
+        /// The id field.
+        /// </summary>
+        [EnumMember(Value = "id")]
+        ID,
+        /// <summary>
+        /// The name field.
+        /// </summary>
+        [EnumMember(Value = "name")]
+        Name,
+        /// <summary>
+        /// The parent field.
+        /// </summary>
+        [EnumMember(Value = "parent")]
+        Parent,
+        /// <summary>
+        /// The picture uri field.
+        /// </summary>
+        [EnumMember(Value = "pictureUri")]
+        PictureUri,
+        /// <summary>
+        /// The short description field.
+        /// </summary>
+        [EnumMember(Value = "shortDescription")]
+        ShortDescription,
+        /// <summary>
+        /// The source field.
+        /// </summary>
+        [EnumMember(Value = "source")]
+        Source,
+        /// <summary>
+        /// The source id field.
+        /// </summary>
+        [EnumMember(Value = "sourceID")]
+        SourceID,
+        /// <summary>
+        /// The updated at field.
+        /// </summary>
+        [EnumMember(Value = "updatedAt")]
+        UpdatedAt,
+    }
+
+    /// <summary>
     /// The <see cref="ShopOrderLine">ShopOrderLine</see> fields.
     /// </summary>
     public enum ShopOrderLineField
