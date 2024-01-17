@@ -74,7 +74,7 @@ namespace Sdk4me.GraphQL
                 
                 string fields = string.Join(" ", executionQuery.Fields.Where(x => x.IsSelected).Select(x => x.Name));
                 builder.Append(fields);
-                builder.Append(fields != string.Empty && executionQuery.Queries.Any() ? " " : "");
+                builder.Append(fields != string.Empty && executionQuery.Queries.Count > 0 ? " " : "");
 
                 HashSet<string> subQueries = new();
                 foreach (ExecutionQuery query in executionQuery.Queries)
@@ -147,7 +147,7 @@ namespace Sdk4me.GraphQL
                 {
                     string fields = string.Join(" ", executionQuery.Fields.Where(x => x.IsSelected).Select(x => x.Name));
                     builder.Append(fields);
-                    builder.Append(fields != string.Empty && executionQuery.Queries.Any() ? " " : "");
+                    builder.Append(fields != string.Empty && executionQuery.Queries.Count > 0 ? " " : "");
                 }
 
                 HashSet<string> subQueries = new();
@@ -167,7 +167,7 @@ namespace Sdk4me.GraphQL
 
                     string fields = string.Join(" ", executionQuery.Fields.Where(x => x.IsSelected).Select(x => x.Name));
                     builder.Append(fields);
-                    builder.Append(fields != string.Empty && executionQuery.Queries.Any() ? " " : "");
+                    builder.Append(fields != string.Empty && executionQuery.Queries.Count > 0 ? " " : "");
 
                     HashSet<string> subQueries = new();
                     foreach (ExecutionQuery query in executionQuery.Queries)

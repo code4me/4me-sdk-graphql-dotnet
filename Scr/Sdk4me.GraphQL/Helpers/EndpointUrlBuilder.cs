@@ -6,12 +6,12 @@
     internal static class EndpointUrlBuilder
     {
         /// <summary>
-        /// Returns the API endpoint URL for a specific environment.
+        /// Returns the domain name for a specific environment.
         /// </summary>
         /// <param name="environment">The environment type.</param>
         /// <param name="environmentRegion">The environment region.</param>
         /// <returns>The API endpoint URL for the specified environment.</returns>
-        internal static string Get(EnvironmentRegion environmentRegion, EnvironmentType environment)
+        internal static string GetDomainName(EnvironmentRegion environmentRegion, EnvironmentType environment)
         {
             return environmentRegion switch
             {
@@ -59,6 +59,16 @@
         }
 
         /// <summary>
+        /// Returns the REST API endpoint for a custom domain.
+        /// </summary>
+        /// <param name="domainName">The custom domain name.</param>
+        /// <returns>The REST API endpoint URL for the specified custom domain.</returns>
+        internal static string GetRest(string domainName)
+        {
+            return $"https://api.{domainName}/v1";
+        }
+
+        /// <summary>
         /// Returns the OAuth 2.0 authentication URL for a custom domain.
         /// </summary>
         /// <param name="domainName">The custom domain name.</param>
@@ -66,7 +76,6 @@
         internal static string GetOAuth2(string domainName)
         {
             return $"https://oauth.{domainName}/token";
-
         }
     }
 }

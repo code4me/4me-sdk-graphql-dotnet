@@ -44,8 +44,7 @@ namespace Sdk4me.GraphQL
             {
                 if (reader.Value != null && reader.Value.ToString() is string value)
                 {
-                    object? retval = fromList[enumType].ContainsKey(value) ? fromList[enumType][value] : null;
-                    if (retval != null)
+                    if (fromList[enumType].TryGetValue(value, out object? retval) && retval != null)
                         return retval;
                 }
             }
@@ -73,7 +72,7 @@ namespace Sdk4me.GraphQL
             {
                 Type enumType = value.GetType();
                 AddMapping(enumType);
-                writer.WriteValue(toList.ContainsKey(enumType) && toList[enumType].ContainsKey(value) ? toList[enumType][value] : null);
+                writer.WriteValue(toList.TryGetValue(enumType, out Dictionary<object, string>? list) && list.TryGetValue(value, out string? retval) ? retval : null);
             }
         }
 

@@ -14,6 +14,7 @@ namespace Sdk4me.GraphQL
         private readonly AuthenticationTokenCollection authenticationTokens;
         private readonly JsonSerializer jsonSerializer;
         private readonly string url;
+        private readonly string restUrl;
         private readonly string oauth2Url;
         private readonly HttpClient client;
         private readonly bool traceEnabled = Trace.Listeners != null && Trace.Listeners.Count > 0;
@@ -108,7 +109,7 @@ namespace Sdk4me.GraphQL
         /// <exception cref="ArgumentException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
         public Sdk4meClient(AuthenticationToken authenticationToken, string accountID, EnvironmentType environment, EnvironmentRegion environmentRegion, int maximumRecursiveRequests = 10)
-            : this(new AuthenticationTokenCollection(authenticationToken), accountID, EndpointUrlBuilder.Get(environmentRegion, environment), maximumRecursiveRequests)
+            : this(new AuthenticationTokenCollection(authenticationToken), accountID, EndpointUrlBuilder.GetDomainName(environmentRegion, environment), maximumRecursiveRequests)
         {
         }
 
@@ -137,7 +138,7 @@ namespace Sdk4me.GraphQL
         /// <exception cref="ArgumentException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
         public Sdk4meClient(AuthenticationTokenCollection authenticationTokens, string accountID, EnvironmentType environment, EnvironmentRegion environmentRegion, int maximumRecursiveRequests = 10)
-            : this(authenticationTokens, accountID, EndpointUrlBuilder.Get(environmentRegion, environment), maximumRecursiveRequests)
+            : this(authenticationTokens, accountID, EndpointUrlBuilder.GetDomainName(environmentRegion, environment), maximumRecursiveRequests)
         {
         }
 
@@ -156,12 +157,13 @@ namespace Sdk4me.GraphQL
                 throw new ArgumentException($"'{nameof(accountID)}' cannot be null or empty.", nameof(accountID));
 
             if (authenticationTokens is null)
-                throw new ArgumentNullException(nameof(authenticationTokens));
+                ArgumentNullException.ThrowIfNull(authenticationTokens);
 
             if (!authenticationTokens.Any())
                 throw new ArgumentException($"'{nameof(authenticationTokens)}' cannot be empty.", nameof(authenticationTokens));
 
             url = EndpointUrlBuilder.Get(domainName);
+            restUrl = EndpointUrlBuilder.GetRest(domainName);
             oauth2Url = EndpointUrlBuilder.GetOAuth2(domainName);
             this.authenticationTokens = authenticationTokens;
             this.accountID = accountID;
@@ -210,7 +212,7 @@ namespace Sdk4me.GraphQL
             using (HttpRequestMessage requestMessage = CreateHttpRequest())
             {
                 string query = $"{{\"query\":{JsonConvert.SerializeObject($"query{{{ExecutionQueryBuilder.GetGraphQLQuery(executionQuery)}}}")}}}";
-                JToken responseData = await SendHttpRequest(requestMessage, query);
+                JToken responseData = await SendHttpRequest(requestMessage, query, true);
 
                 NodeCollection<TEntity> nodes = new();
                 if (responseData[executionQuery.GetResponseObjectName()] is JToken responseObject)
@@ -277,8 +279,8 @@ namespace Sdk4me.GraphQL
                 settings.Converters.Add(new ISO8601TimestampJsonConverter());
 
                 string query = $"{{\"query\":{JsonConvert.SerializeObject(ExecutionQueryBuilder.GetGraphQLQuery(input))},\"variables\":{{\"input\":{JsonConvert.SerializeObject(input.Data, settings)}}}}}";
-                JToken responseData = await SendHttpRequest(requestMessage, query);
-                TOutEntity retval = responseData?[input.FieldName]?.ToObject<TOutEntity>() ?? throw new Sdk4meException("Unprocessable response entity");
+                JToken responseData = await SendHttpRequest(requestMessage, query, true);
+                TOutEntity retval = responseData?[input.FieldName]?.ToObject<TOutEntity>() ?? throw new Sdk4meException("Unprocessable response entity.");
                 if (throwOnError && retval is Payload payload && payload.Errors?.First() is ValidationError error)
                     throw new Sdk4meException(error.Message);
                 return retval;
@@ -346,10 +348,10 @@ namespace Sdk4me.GraphQL
             if (attachmentStorages.FirstOrDefault() is AttachmentStorage attachmentStorage)
             {
                 string fileExtension = Path.GetExtension(fileName).TrimStart('.');
-                if (attachmentStorage.AllowedExtensions != null && (!attachmentStorage.AllowedExtensions.Any() || attachmentStorage.AllowedExtensions.Contains(fileExtension, StringComparer.InvariantCultureIgnoreCase)))
+                if (attachmentStorage.AllowedExtensions != null && (attachmentStorage.AllowedExtensions.Count == 0 || attachmentStorage.AllowedExtensions.Contains(fileExtension, StringComparer.InvariantCultureIgnoreCase)))
                 {
                     if (stream.Length >= attachmentStorage.SizeLimit)
-                        throw new Sdk4meException($"File size exceeded, the maximum size is {attachmentStorage.SizeLimit} byte");
+                        throw new Sdk4meException($"File size exceeded, the maximum size is {attachmentStorage.SizeLimit} byte.");
 
                     Dictionary<string, string> storageFacility = attachmentStorage?.ProviderParameters?.ToObject<Dictionary<string, string>>() ?? throw new Sdk4meException("File upload failed, invalid AttachmentStorage.ProviderParameters value.");
                     MultipartFormDataContent multipartContent = new()
@@ -402,6 +404,31 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// <para>Create a new event using the <see href="https://developer.4me.com/v1/requests/events/">events API</see>.</para>
+        /// <b>Important</b>: there might be missing values in the repsonse as the REST API <c>request</c> response is coverted to a <see cref="Request">request</see> object.
+        /// </summary>
+        /// <param name="requestEventCreateInput">The event's data.</param>
+        /// <returns>The newly created request or already existing request.</returns>
+        public async Task<Request> CreateEvent(RequestEventCreateInput requestEventCreateInput)
+        {
+            using (HttpRequestMessage requestMessage = CreateHttpRequest($"{restUrl}/events?{requestEventCreateInput.HttpRequestParameters}"))
+            {
+                JToken responseData = await SendHttpRequest(requestMessage, null, false);
+                int? requestID = responseData.Value<int>("id");
+                if (requestID != null)
+                {
+                    responseData = responseData.ToCamelCaseJToken();
+                    responseData["requestId"] = requestID;
+                    return responseData.ToObject<Request>() ?? throw new Sdk4meException("Unprocessable response entity.");
+                }
+                else
+                {
+                    throw new Sdk4meException("The response does not contain an id object.");
+                }
+            }
+        }
+
+        /// <summary>
         /// Configures the weight for prioritizing authentication tokens based on remaining API requests and cost.
         /// </summary>
         /// <param name="requestWeight">The weight for prioritizing remaining API requests. Default is 0.6.</param>
@@ -422,9 +449,9 @@ namespace Sdk4me.GraphQL
         /// Create a new <see cref="HttpRequestMessage"/>.
         /// </summary>
         /// <returns>The <see cref="HttpRequestMessage"/> object.</returns>
-        private HttpRequestMessage CreateHttpRequest()
+        private HttpRequestMessage CreateHttpRequest(string? url = null)
         {
-            HttpRequestMessage retval = new(HttpMethod.Post, url);
+            HttpRequestMessage retval = new(HttpMethod.Post, url ?? this.url);
             currentToken = authenticationTokens.Get();
             GetAuthenticationToken();
             retval.Headers.Authorization = new AuthenticationHeaderValue(currentToken.TokenType, currentToken.Token);
@@ -446,7 +473,7 @@ namespace Sdk4me.GraphQL
                     {
                         responseMessage.EnsureSuccessStatusCode();
                         string content = responseMessage.Content.ReadAsStringAsync().Result;
-                        AuthenticationOAuth2Reponse response = JsonConvert.DeserializeObject<AuthenticationOAuth2Reponse>(content) ?? throw new Sdk4meException("Invalid authentication response");
+                        AuthenticationOAuth2Reponse response = JsonConvert.DeserializeObject<AuthenticationOAuth2Reponse>(content) ?? throw new Sdk4meException("Invalid authentication response.");
                         currentToken.Token = response.AccessToken;
                         currentToken.TokenType = response.TokenType;
                         currentToken.AuthenticationTokenExpires = DateTime.Now.AddSeconds(response.ExpiresIn);
@@ -460,9 +487,10 @@ namespace Sdk4me.GraphQL
         /// </summary>
         /// <param name="requestMessage">The http request message.</param>
         /// <param name="content">The data to send as http request content.</param>
+        /// <param name="isGraphQLResponse">The response is a GraphQL query response.</param>
         /// <returns>The <see cref="JToken"/> response object.</returns>
         /// <exception cref="Sdk4meException"></exception>
-        private async Task<JToken> SendHttpRequest(HttpRequestMessage requestMessage, string content)
+        private async Task<JToken> SendHttpRequest(HttpRequestMessage requestMessage, string? content, bool isGraphQLResponse)
         {
             WriteDebug(requestMessage);
 
@@ -478,6 +506,8 @@ namespace Sdk4me.GraphQL
                 if (responseMessage.IsSuccessStatusCode && responseMessage.Content.Headers.ContentType?.MediaType == applicationJsonMediaType)
                 {
                     JObject data = JObject.Parse(await responseMessage.Content.ReadAsStringAsync());
+                    UpdateAccountRateLimits(responseMessage);
+                    Sleep.SleepRemainingTime();
 
                     if (data.ContainsKey("errors"))
                     {
@@ -487,15 +517,17 @@ namespace Sdk4me.GraphQL
                     {
                         if (data["data"] is JToken retval)
                         {
-                            UpdateAccountRateLimits(responseMessage);
-                            Sleep.SleepRemainingTime();
                             return retval;
                         }
-                        throw new Sdk4meException("The response does not contain a data object");
+                        throw new Sdk4meException("The response does not contain a data object.");
+                    }
+                    else if (!isGraphQLResponse)
+                    {
+                        return data;
                     }
                     else
                     {
-                        throw new Sdk4meException(data.ToString(Formatting.Indented));
+                        throw new Sdk4meException($"The response could not be processed.\r\n{data.ToString(Formatting.Indented)}");
                     }
                 }
                 else
@@ -521,12 +553,19 @@ namespace Sdk4me.GraphQL
         {
             if (responseMessage != null && currentToken != null)
             {
-                currentToken.RequestLimit = Convert.ToInt32(responseMessage.Headers.GetValues("X-RateLimit-Limit").First());
-                currentToken.RequestsRemaining = Convert.ToInt32(responseMessage.Headers.GetValues("X-RateLimit-Remaining").First());
-                currentToken.RequestLimitReset = DateTime.UnixEpoch.AddSeconds(Convert.ToInt64(responseMessage.Headers.GetValues("X-RateLimit-Reset").First())).ToLocalTime();
-                currentToken.CostLimit = Convert.ToInt32(responseMessage.Headers.GetValues("X-CostLimit-Limit").First());
-                currentToken.CostLimitRemaining = Convert.ToInt32(responseMessage.Headers.GetValues("X-CostLimit-Remaining").First());
-                currentToken.CostLimitReset = DateTime.UnixEpoch.AddSeconds(Convert.ToInt64(responseMessage.Headers.GetValues("X-CostLimit-Reset").First())).ToLocalTime();
+                if (responseMessage.Headers.TryGetValues("X-RateLimit-Limit", out IEnumerable<string>? values) && values != null && int.TryParse(values.FirstOrDefault(), out int result))
+                    currentToken.RequestLimit = Convert.ToInt32(result);
+                if (responseMessage.Headers.TryGetValues("X-RateLimit-Remaining", out values) && values != null && int.TryParse(values.FirstOrDefault(), out result))
+                    currentToken.RequestsRemaining = Convert.ToInt32(result);
+                if (responseMessage.Headers.TryGetValues("X-RateLimit-Reset", out values) && values != null && long.TryParse(values.FirstOrDefault(), out long dateResult))
+                    currentToken.RequestLimitReset = DateTime.UnixEpoch.AddSeconds(dateResult).ToLocalTime();
+                
+                if (responseMessage.Headers.TryGetValues("X-CostLimit-Limit", out values) && values != null && int.TryParse(values.FirstOrDefault(), out result))
+                    currentToken.CostLimit = result;
+                if (responseMessage.Headers.TryGetValues("X-CostLimit-Remaining", out values) && values != null && int.TryParse(values.FirstOrDefault(), out result))
+                    currentToken.CostLimitRemaining = result;
+                if (responseMessage.Headers.TryGetValues("X-CostLimit-Reset", out values) && values != null && long.TryParse(values.FirstOrDefault(), out dateResult))
+                    currentToken.CostLimitReset = DateTime.UnixEpoch.AddSeconds(dateResult).ToLocalTime();
             }
         }
 

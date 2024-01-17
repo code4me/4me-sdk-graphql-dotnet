@@ -5,6 +5,12 @@ namespace Sdk4me.GraphQL.Tests
     internal class Client
     {
         private static Sdk4meClient? client;
+        private static readonly AuthenticationTokenCollection authenticationTokens = new();
+
+        public static AuthenticationTokenCollection AuthenticationTokens 
+        {
+            get => authenticationTokens;
+        }
 
         public static Sdk4meClient Get() 
         {
@@ -30,14 +36,16 @@ namespace Sdk4me.GraphQL.Tests
 
             if (!string.IsNullOrEmpty(clientID) && !string.IsNullOrWhiteSpace(clientSecret))
             {
-                client = new(new AuthenticationToken(clientID, clientSecret), account, EnvironmentType.Demo, EnvironmentRegion.EU, 5)
+                authenticationTokens.Add(clientID, clientSecret);
+                client = new(authenticationTokens, account, EnvironmentType.Demo, EnvironmentRegion.EU, 5)
                 {
                     MaximumQueryDepthLevelConnections = 3
                 };
             }
             else if (!string.IsNullOrEmpty(token))
             {
-                client = new(new AuthenticationToken(token), account, EnvironmentType.Demo, EnvironmentRegion.EU, 5)
+                authenticationTokens.Add(token);
+                client = new(authenticationTokens, account, EnvironmentType.Demo, EnvironmentRegion.EU, 5)
                 {
                     MaximumQueryDepthLevelConnections = 3
                 };

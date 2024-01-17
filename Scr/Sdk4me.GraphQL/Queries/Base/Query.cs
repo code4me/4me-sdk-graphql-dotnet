@@ -194,7 +194,7 @@
         /// <exception cref="NullReferenceException"></exception>
         public TEntity OrderBy(TOrderBy value, OrderBySortOrder orderBySortOrder)
         {
-            return OrderBy(GetEnumStringValue(value), orderBySortOrder);
+            return OrderBy(value.GetEnumMemberValue(), orderBySortOrder);
         }
 
         /// <summary>
@@ -217,7 +217,7 @@
         /// <exception cref="NullReferenceException"></exception>
         public TEntity View(TView value)
         {
-            return View(GetEnumStringValue(value));
+            return View(value.GetEnumMemberValue());
         }
 
         /// <summary>
@@ -259,7 +259,7 @@
         public TEntity Select(params TFields[] fields)
         {
             foreach (TFields field in fields)
-                this.fields.Add(GetEnumStringValue(field));
+                this.fields.Add(field.GetEnumMemberValue());
             return this as TEntity ?? throw new NullReferenceException(nameof(TEntity));
         }
 
@@ -282,10 +282,8 @@
         /// <exception cref="NullReferenceException"></exception>
         internal protected TEntity Select(IQuery query)
         {
-            if (queries.ContainsKey(query.FieldName))
+            if (!queries.TryAdd(query.FieldName, query))
                 queries[query.FieldName] = query;
-            else
-                queries.Add(query.FieldName, query);
             return this as TEntity ?? throw new NullReferenceException(nameof(TEntity));
         }
 
@@ -313,7 +311,7 @@
         /// <exception cref="NullReferenceException"></exception>
         public TEntity Filter(TFields field, FilterOperator filterOperator, params string?[] values)
         {
-            return Filter(GetEnumStringValue(field), filterOperator, values);
+            return Filter(field.GetEnumMemberValue(), filterOperator, values);
         }
 
         /// <summary>
@@ -338,7 +336,7 @@
         /// <exception cref="NullReferenceException"></exception>
         public TEntity Filter(TFields field, FilterOperator filterOperator)
         {
-            return Filter(GetEnumStringValue(field), filterOperator);
+            return Filter(field.GetEnumMemberValue(), filterOperator);
         }
 
         /// <summary>
@@ -365,7 +363,7 @@
         /// <exception cref="NullReferenceException"></exception>
         public TEntity Filter(TFields field, FilterOperator filterOperator, params DateTime?[] values)
         {
-            return Filter(GetEnumStringValue(field), filterOperator, values);
+            return Filter(field.GetEnumMemberValue(), filterOperator, values);
         }
 
         /// <summary>
@@ -392,7 +390,7 @@
         /// <exception cref="NullReferenceException"></exception>
         public TEntity Filter(TFields field, FilterOperator filterOperator, bool value)
         {
-            return Filter(GetEnumStringValue(field), filterOperator, value);
+            return Filter(field.GetEnumMemberValue(), filterOperator, value);
         }
 
         /// <summary>
@@ -419,11 +417,6 @@
         {
             customFilters.Add(ExecutionQueryBuilder.BuildCustomFilter(name, filterOperator, values));
             return this as TEntity ?? throw new NullReferenceException(nameof(TEntity));
-        }
-
-        private static string GetEnumStringValue(Enum value)
-        {
-            return value.GetType().GetMember(value.ToString()).FirstOrDefault()?.GetCustomAttributes(false).OfType<EnumMemberAttribute>().FirstOrDefault()?.Value ?? value.ToString();
         }
     }
 }

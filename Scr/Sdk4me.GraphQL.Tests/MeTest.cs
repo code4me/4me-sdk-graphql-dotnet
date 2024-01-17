@@ -37,5 +37,30 @@
             Console.WriteLine($"Count: {me.Count}");
             Assert.IsTrue(me.Count == 1);
         }
+
+        [TestMethod]
+        public void RateLimit()
+        {
+            DataList<Person> me = client.Get(Query.Me
+                .View(DefaultView.None)
+                .SelectAll()).Result;
+            Assert.IsNotNull(me);
+
+            AuthenticationToken token = Client.AuthenticationTokens.First();
+            int requestLimit = token.RequestLimit;
+            int requestRemaining = token.RequestsRemaining;
+            int costLimit = token.CostLimit;
+            int costRemaining = token.CostLimitRemaining;
+
+            me = client.Get(Query.Me
+                .View(DefaultView.None)
+                .SelectAll()).Result;
+            Assert.IsNotNull(me);
+
+            Assert.IsTrue(token.RequestLimit == requestLimit);
+            Assert.IsTrue(token.RequestsRemaining == requestRemaining - 1);
+            Assert.IsTrue(token.CostLimit == costLimit);
+            Assert.IsTrue(token.CostLimitRemaining == costRemaining - 1);
+        }
     }
 }

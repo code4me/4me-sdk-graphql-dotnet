@@ -186,7 +186,7 @@ IQuery query = Query.Person.OrderBy(PersonOrderField.Name, OrderBySortOrder.Asce
 ```
 Sorting can only be used on the top level query.
 
-### Example
+#### Example
 
 ```csharp
 PersonQuery query = new PersonQuery()
@@ -362,6 +362,26 @@ var updatedRequest = client.Mutation(new RequestUpdateInput()
     }
 }).Result;
 ```
+
+### Events API
+The .NET SDK provides access to the 4me Events API as well. For more information check out the [4me developer pages](https://developer.4me.com/v1/requests/events/).
+
+#### Create a new event request
+```csharp
+RequestEventCreateInput requestCreate = new RequestEventCreateInput()
+    .Category(RequestCategory.Incident)
+    .Note("The first note")
+    .Subject("Sdk4me.GraphQL Test")
+    .Source("Sdk4me.GraphQL")
+    .SourceID("1")
+    .ServiceInstance(416)
+    .Impact(RequestImpact.Medium)
+    .ConfigurationItem(1998)
+    .Team(12);
+
+Request request = client.CreateEvent(requestCreate).Result;
+```
+Note that the 4me Events API operates as a REST API, not GraphQL. The response is transformed into the GraphQL `Request` object.
 
 ### Exception handling
 ```csharp

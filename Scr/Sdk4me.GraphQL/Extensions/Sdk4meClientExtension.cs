@@ -28,7 +28,7 @@
         /// <summary>
         /// Query the 4me web service as an asynchronous operation using the <see cref="RateLimitQuery"/> query.
         /// <br>This returns the cost rate limit, not the request rate limit.</br>
-        /// <br>More information about the different types of rate limits can be found on the <see href="https://developer.4me.com/graphql/#rate-limits"/>4me developer pages.</br>
+        /// <br>More information about the different types of rate limits can be found on the <see href="https://developer.4me.com/graphql/#rate-limits">4me developer pages</see>.</br>
         /// </summary>
         /// <returns>The task object representing the asynchronous operation.</returns>
         public static async Task<RateLimit> RateLimit(this Sdk4meClient client)

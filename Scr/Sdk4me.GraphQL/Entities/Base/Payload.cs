@@ -23,7 +23,7 @@
         /// <returns>True if the response contains an error; otherwise false.</returns>
         public bool IsError()
         {
-            return Errors != null && Errors.Any();
+            return Errors != null && Errors.Count > 0;
         }
     }
 }
