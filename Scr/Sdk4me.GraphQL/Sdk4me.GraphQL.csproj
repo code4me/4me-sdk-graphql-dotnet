@@ -25,6 +25,14 @@
     <Version>1.1.2</Version>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0|AnyCPU'">
+    <WarningLevel>6</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0|AnyCPU'">
+    <WarningLevel>6</WarningLevel>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Include="..\..\Local\NuGet\LogoDark128x218.png">
       <Pack>True</Pack>
