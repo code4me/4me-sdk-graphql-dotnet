@@ -7830,6 +7830,11 @@
         [EnumMember(Value = "calendar")]
         Calendar,
         /// <summary>
+        /// The category field.
+        /// </summary>
+        [EnumMember(Value = "category")]
+        Category,
+        /// <summary>
         /// The created at field.
         /// </summary>
         [EnumMember(Value = "createdAt")]

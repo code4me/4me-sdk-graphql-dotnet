@@ -45,5 +45,27 @@ namespace Sdk4me.GraphQL.Tests
                 Assert.IsNotNull(configurationItems);
             }
         }
+
+        [TestMethod]
+        public void GetUsingLevel2Pagination()
+        {
+            ConfigurationItem? configurationItem = client.Get(new ConfigurationItemQuery("NG1lMjQuMjMwNDEwMDAyODU3QDRtZS1kZW1vLmNvbS9DaS8xOTk4")
+                .Select(ConfigurationItemField.ID, ConfigurationItemField.Label, ConfigurationItemField.Name)
+                .SelectCiRelations(new ConfigurationItemRelationQuery()
+                    .ItemsPerRequest(5)
+                    .SelectAll())
+                ).Result.FirstOrDefault();
+
+            Assert.IsNotNull(configurationItem);
+            Assert.IsTrue(configurationItem.CiRelations?.Count == 37);
+
+            ConfigurationItemRelation first = configurationItem.CiRelations.First();
+            Assert.IsTrue(first.ID == "NG1lMjQuMjMwNDEwMDAyODU3QDRtZS1kZW1vLmNvbS9DaVJlbGF0aW9uLzk4Mg");
+            Assert.IsTrue(first.ConfigurationItem?.ID == "NG1lMjQuMjMwNDEwMDAyODU3QDRtZS1kZW1vLmNvbS9DaS8zMA");
+            
+            ConfigurationItemRelation last = configurationItem.CiRelations.Last();
+            Assert.IsTrue(last.ID == "NG1lMjQuMjMwNDEwMDAyODU3QDRtZS1kZW1vLmNvbS9DaVJlbGF0aW9uLzEwNTQ");
+            Assert.IsTrue(last.ConfigurationItem?.ID == "NG1lMjQuMjMwNDEwMDAyODU3QDRtZS1kZW1vLmNvbS9DaS8xODM");
+        }
     }
 }

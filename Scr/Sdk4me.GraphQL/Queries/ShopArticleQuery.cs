@@ -44,6 +44,16 @@
         }
 
         /// <summary>
+        /// Related category.
+        /// </summary>
+        public ShopArticleQuery SelectCategory(ShopArticleCategoryQuery query)
+        {
+            query.FieldName = "category";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// The request template used to order one of more units of this shop article.
         /// </summary>
         public ShopArticleQuery SelectFulfillmentTemplate(RequestTemplateQuery query)

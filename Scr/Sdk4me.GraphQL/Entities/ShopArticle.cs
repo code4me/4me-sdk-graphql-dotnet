@@ -18,6 +18,12 @@
         public Calendar? Calendar { get; internal set; }
 
         /// <summary>
+        /// Related category.
+        /// </summary>
+        [JsonProperty("category")]
+        public ShopArticleCategory? Category { get; internal set; }
+
+        /// <summary>
         /// The date and time at which the record was created.
         /// </summary>
         [JsonProperty("createdAt"), Sdk4meField(true)]
