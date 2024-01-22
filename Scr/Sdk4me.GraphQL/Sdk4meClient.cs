@@ -451,9 +451,8 @@ namespace Sdk4me.GraphQL
         /// <returns>The <see cref="HttpRequestMessage"/> object.</returns>
         private HttpRequestMessage CreateHttpRequest(string? url = null)
         {
+            SetAuthenticationToken();
             HttpRequestMessage retval = new(HttpMethod.Post, url ?? this.url);
-            currentToken = authenticationTokens.Get();
-            GetAuthenticationToken();
             retval.Headers.Authorization = new AuthenticationHeaderValue(currentToken.TokenType, currentToken.Token);
             retval.Headers.Add("x-4me-Account", accountID);
             return retval;
@@ -462,12 +461,14 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Sets the authentication method, which can be a Personal Access Token or a OAuth 2.0 Client Credential Grant.
         /// </summary>
-        private void GetAuthenticationToken()
+        private void SetAuthenticationToken()
         {
+            currentToken = authenticationTokens.Get();
             if (currentToken.IsTokenExpired())
             {
                 using (HttpRequestMessage requestMessage = new(HttpMethod.Post, oauth2Url))
                 {
+                    WriteDebug(requestMessage);
                     requestMessage.Content = new FormUrlEncodedContent(new Dictionary<string, string>() { { "grant_type", "client_credentials" }, { "client_id", currentToken.ClientID }, { "client_secret", currentToken.ClientSecret } });
                     using (HttpResponseMessage responseMessage = client.Send(requestMessage))
                     {

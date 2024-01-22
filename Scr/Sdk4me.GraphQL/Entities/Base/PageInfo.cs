@@ -9,7 +9,7 @@
         /// Gets or sets the response end cursor of this page.
         /// </summary>
         [JsonProperty("endCursor")]
-        internal string EndCursor { get; set; } = "";
+        internal string EndCursor { get; set; } = string.Empty;
 
         /// <summary>
         /// Gets or sets if the response has a next page.

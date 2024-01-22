@@ -25,8 +25,8 @@ namespace Sdk4me.GraphQL
         /// <param name="item">The object to add.</param>
         public new void Add(T item)
         {
-            if (Contains(item.UniqueIdentifier))
-                this[item.UniqueIdentifier].AddToCollection(item);
+            if (TryGetValue(item.UniqueIdentifier, out T? result))
+                result.AddToCollection(item);
             else
                 base.Add(item);
         }
@@ -39,8 +39,8 @@ namespace Sdk4me.GraphQL
         /// <param name="item">The object to insert. The value cannot be null.</param>
         protected override void InsertItem(int index, T item)
         {
-            if (Contains(item.UniqueIdentifier))
-                this[item.UniqueIdentifier].AddToCollection(item);
+            if (TryGetValue(item.UniqueIdentifier, out T? result))
+                result.AddToCollection(item);
             else
                 base.InsertItem(index, item);
         }

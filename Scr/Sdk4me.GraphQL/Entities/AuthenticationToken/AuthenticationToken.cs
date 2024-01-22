@@ -138,7 +138,7 @@
         /// <summary>
         /// Check if the current token is expired.
         /// </summary>
-        /// <returns>True if the current token is expired; otherwise false</returns>
+        /// <returns>True if the current token is expired or will expire in less than a minute; otherwise false.</returns>
         internal bool IsTokenExpired()
         {
             return authenticationTokenExpires < DateTime.Now.AddMinutes(+1);

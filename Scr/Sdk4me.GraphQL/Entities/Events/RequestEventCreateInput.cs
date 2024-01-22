@@ -625,10 +625,8 @@ namespace Sdk4me.GraphQL
 
         private void AddToEventRequestFields(string name, string value) 
         {
-            if (eventRequestFields.ContainsKey(name))
+            if (!eventRequestFields.TryAdd(name, value))
                 eventRequestFields[name] = HttpUtility.UrlEncode(value);
-            else
-                eventRequestFields.Add(name, HttpUtility.UrlEncode(value));
         }
     }
 }

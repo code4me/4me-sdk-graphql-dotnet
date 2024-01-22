@@ -29,8 +29,7 @@ namespace Sdk4me.GraphQL
         /// </param>
         public void Add(string ID, JToken? value)
         {
-            if (!Contains(ID))
-                Add(new CustomField() { ID = ID, Value = value });
+            Add(new CustomField() { ID = ID, Value = value });
         }
 
         /// <summary>
@@ -45,10 +44,10 @@ namespace Sdk4me.GraphQL
         /// </param>
         public void AddOrUpdate(string ID, JToken? value)
         {
-            if (!Contains(ID))
-                Add(new CustomField() { ID = ID, Value = value });
+            if (TryGetValue(ID, out CustomField? item))
+                item.Value = value;
             else
-                this[ID].Value = value;
+                Add(new CustomField() { ID = ID, Value = value });
         }
     }
 }
