@@ -66,8 +66,8 @@ When there are multiple tokens in use, the client will always select the token w
 The 4me GraphQL API limits the number of requests to 20 per 2 seconds. The SDK will keep track of the response time and lock the process to make sure it takes at least 100 milliseconds per request.
 
 ## Trace capabilities
-The [Trace class](https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.trace) is used to produce detailed information about the GraphQL query or mutation.
-The detailed information includes the HTTP verb, the URL and the content. [Trace Listeners](https://learn.microsoft.com/en-us/dotnet/framework/debug-trace-profile/trace-listeners) can be used to gather detailed information that can be helpful for debugging during release or for auditing purposes.
+The [Trace class](https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.trace) is used to produce detailed information about the GraphQL query or mutation. [Trace Listeners](https://learn.microsoft.com/en-us/dotnet/framework/debug-trace-profile/trace-listeners) can be used to gather detailed information that can be helpful for debugging during release or for auditing purposes.
+Each request produces two entries with identical identifiers — the initial one containing the account ID, the HTTP verb, the URL, and the content, while the second includes the API response time in milliseconds.
 
 # Examples
 
@@ -361,6 +361,13 @@ var updatedRequest = client.Mutation(new RequestUpdateInput()
         } 
     }
 }).Result;
+```
+
+### Trace output
+A trace output providing details of a GraphQL query request and response time.
+```json
+{"id":"b1685ff0-6356-49eb-ab58-6ef32b9b4a61","method":"POST","uri":"https://graphql.4me.qa/","content":"{\"query\":\"query{node(id: \\\"KG1jIx\\\") {... on Person {id}}}\"}","account_id":"account-name"}
+{"id":"b1685ff0-6356-49eb-ab58-6ef32b9b4a61","response_time_in_ms":44}
 ```
 
 ### Events API

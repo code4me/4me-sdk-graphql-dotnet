@@ -371,9 +371,15 @@ namespace Sdk4me.GraphQL
 
                     using (HttpRequestMessage requestMessage = new(HttpMethod.Post, attachmentStorage.UploadUri) { Content = multipartContent })
                     {
-                        WriteDebug(requestMessage);
+                        Guid logId = Guid.NewGuid();
+                        WriteDebug(logId, requestMessage, "***");
+                        Sleep.RegisterStartTime();
+
                         using (HttpResponseMessage responseMessage = await client.SendAsync(requestMessage))
                         {
+                            WriteDebug(logId, requestMessage, "***", true);
+                            Sleep.SleepRemainingTime(0);
+
                             using (StreamReader reader = new(responseMessage.Content.ReadAsStream()))
                             {
                                 string data = reader.ReadToEnd();
@@ -468,10 +474,17 @@ namespace Sdk4me.GraphQL
             {
                 using (HttpRequestMessage requestMessage = new(HttpMethod.Post, oauth2Url))
                 {
-                    WriteDebug(requestMessage);
                     requestMessage.Content = new FormUrlEncodedContent(new Dictionary<string, string>() { { "grant_type", "client_credentials" }, { "client_id", currentToken.ClientID }, { "client_secret", currentToken.ClientSecret } });
+
+                    Guid logId = Guid.NewGuid();
+                    WriteDebug(logId, requestMessage, "***");
+                    Sleep.RegisterStartTime();
+
                     using (HttpResponseMessage responseMessage = client.Send(requestMessage))
                     {
+                        WriteDebug(logId, requestMessage, "***", true);
+                        Sleep.SleepRemainingTime(0);
+
                         responseMessage.EnsureSuccessStatusCode();
                         string content = responseMessage.Content.ReadAsStringAsync().Result;
                         AuthenticationOAuth2Reponse response = JsonConvert.DeserializeObject<AuthenticationOAuth2Reponse>(content) ?? throw new Sdk4meException("Invalid authentication response.");
@@ -493,22 +506,21 @@ namespace Sdk4me.GraphQL
         /// <exception cref="Sdk4meException"></exception>
         private async Task<JToken> SendHttpRequest(HttpRequestMessage requestMessage, string? content, bool isGraphQLResponse)
         {
-            WriteDebug(requestMessage);
-
             if (!string.IsNullOrEmpty(content))
-            {
                 requestMessage.Content = new StringContent(content, Encoding.UTF8, applicationJsonMediaType);
-                WriteDebug(content);
-            }
 
+            Guid logId = Guid.NewGuid();
+            WriteDebug(logId, requestMessage, content);
             Sleep.RegisterStartTime();
             using (HttpResponseMessage responseMessage = await client.SendAsync(requestMessage))
             {
+                WriteDebug(logId, requestMessage, content, true);
+                Sleep.SleepRemainingTime();
+
                 if (responseMessage.IsSuccessStatusCode && responseMessage.Content.Headers.ContentType?.MediaType == applicationJsonMediaType)
                 {
                     JObject data = JObject.Parse(await responseMessage.Content.ReadAsStringAsync());
                     UpdateAccountRateLimits(responseMessage);
-                    Sleep.SleepRemainingTime();
 
                     if (data.ContainsKey("errors"))
                     {
@@ -575,34 +587,27 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Writes a message to the trace listeners in the System.Diagnostics.Trace.Listeners collection.
         /// </summary>
-        /// <param name="requestMessage">The http request message.</param>
-        private void WriteDebug(HttpRequestMessage requestMessage)
+        /// <param name="logIdentifier">The unique log group identifier.</param>
+        /// <param name="requestMessage">The HTTP request message.</param>
+        /// <param name="content">The HTTP request message content.</param>
+        /// <param name="isResponse">Is the HTTP request been executed.</param>
+        private void WriteDebug(Guid logIdentifier, HttpRequestMessage requestMessage, string? content = null, bool isResponse = false)
         {
             try
             {
                 if (traceEnabled)
                 {
-                    Trace.WriteLine($"{requestMessage.Method} \"{requestMessage.RequestUri?.AbsoluteUri}\"");
-                    Trace.WriteLine($"x-4me-Account: {accountID}");
+                    Trace.WriteLine(new TraceMessage()
+                    {
+                        ID = logIdentifier,
+                        AccountID = isResponse ? null : accountID,
+                        Method = isResponse ? null : requestMessage.Method.ToString(),
+                        URI = isResponse ? null : requestMessage.RequestUri?.AbsoluteUri,
+                        Content = isResponse ? null : content,
+                        ResponseTimeInMilliseconds = isResponse ? Sleep.ResponseTimeInMilliseconds : null
+                    });
+                    Trace.Flush();
                 }
-                Trace.Flush();
-            }
-            catch
-            {
-            }
-        }
-
-        /// <summary>
-        /// Writes a message to the trace listeners in the System.Diagnostics.Trace.Listeners collection.
-        /// </summary>
-        /// <param name="message">The message.</param>
-        private void WriteDebug(string message)
-        {
-            try
-            {
-                if (traceEnabled && !string.IsNullOrWhiteSpace(message))
-                    Trace.WriteLine(message);
-                Trace.Flush();
             }
             catch
             {

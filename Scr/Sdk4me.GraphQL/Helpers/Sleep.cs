@@ -1,38 +1,38 @@
-﻿namespace Sdk4me.GraphQL
+﻿using System.Diagnostics;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
-    /// A class to force a 100 milliseconds sleep.
+    /// A class to force a 100 milliseconds sleep minus the request processing time.
     /// </summary>
     internal static class Sleep
     {
-        private const int minimumDurationPerRequestInMiliseconds = 100;
-        private static int startTickCount = 0;
+        private static readonly Stopwatch stopwatch = new();
+
+        /// <summary>
+        /// Returns the last HTTP request response time.
+        /// </summary>
+        internal static long ResponseTimeInMilliseconds
+        {
+            get => stopwatch.ElapsedMilliseconds;
+        }
 
         /// <summary>
         /// Stores the current Environment.TickCount value. This value will be used by the <see cref="SleepRemainingTime"/> method.
         /// </summary>
         internal static void RegisterStartTime()
         {
-            startTickCount = Environment.TickCount;
+            stopwatch.Restart();
         }
 
         /// <summary>
         /// Puts the current thread in sleep for 100 milliseconds minus the elapsed milliseconds between now an the value stored via the <see cref="RegisterStartTime"/> method.
         /// </summary>
-        internal static void SleepRemainingTime()
+        internal static void SleepRemainingTime(int minimumDurationPerRequestInMiliseconds = 100)
         {
-            int endTickCount = Environment.TickCount;
-
-            if (endTickCount <= startTickCount)
-            {
-                Thread.Sleep(minimumDurationPerRequestInMiliseconds);
-            }
-            else
-            {
-                long sleepTime = minimumDurationPerRequestInMiliseconds - ((endTickCount - startTickCount) / TimeSpan.TicksPerSecond);
-                if (sleepTime > 0 && sleepTime <= minimumDurationPerRequestInMiliseconds)
-                    Thread.Sleep(Convert.ToInt32(sleepTime));
-            }
+            stopwatch.Stop();
+            if (stopwatch.ElapsedMilliseconds <  minimumDurationPerRequestInMiliseconds)
+                Thread.Sleep(stopwatch.ElapsedMilliseconds <= int.MaxValue ? minimumDurationPerRequestInMiliseconds - (int)stopwatch.ElapsedMilliseconds : minimumDurationPerRequestInMiliseconds);
         }
     }
 }
