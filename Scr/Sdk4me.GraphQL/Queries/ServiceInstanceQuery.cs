@@ -81,6 +81,16 @@
         }
 
         /// <summary>
+        /// The maintenance window defines the periods in which workflow tasks with an impact related to this service instance may be implemented.
+        /// </summary>
+        public ServiceInstanceQuery SelectMaintenanceWindow(CalendarQuery query)
+        {
+            query.FieldName = "maintenanceWindow";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Parents of the service instance.
         /// </summary>
         public ServiceInstanceQuery SelectParentServiceInstances(ServiceInstanceQuery query)

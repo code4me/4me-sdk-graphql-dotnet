@@ -63,6 +63,12 @@
         public Team? FirstLineTeam { get; internal set; }
 
         /// <summary>
+        /// The maintenance window defines the periods in which workflow tasks with an impact related to this service instance may be implemented.
+        /// </summary>
+        [JsonProperty("maintenanceWindow")]
+        public Calendar? MaintenanceWindow { get; internal set; }
+
+        /// <summary>
         /// The name of the service instance.
         /// </summary>
         [JsonProperty("name"), Sdk4meField(true)]
@@ -142,6 +148,13 @@
         /// </summary>
         [JsonProperty("supportTeam"), Sdk4meField(true)]
         public Team? SupportTeam { get; internal set; }
+
+        /// <summary>
+        /// <br>The time zone that applies to the selected maintenance window.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
+        /// </summary>
+        [JsonProperty("timeZone")]
+        public string? TimeZone { get; internal set; }
 
         [JsonProperty("translations")]
         internal NodeCollection<Translation>? TranslationsCollection { get; set; }

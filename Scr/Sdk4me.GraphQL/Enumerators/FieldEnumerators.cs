@@ -7054,6 +7054,11 @@
         [EnumMember(Value = "id")]
         ID,
         /// <summary>
+        /// The maintenance window field.
+        /// </summary>
+        [EnumMember(Value = "maintenanceWindow")]
+        MaintenanceWindow,
+        /// <summary>
         /// The name field.
         /// </summary>
         [EnumMember(Value = "name")]
@@ -7108,6 +7113,11 @@
         /// </summary>
         [EnumMember(Value = "supportTeam")]
         SupportTeam,
+        /// <summary>
+        /// The time zone field.
+        /// </summary>
+        [EnumMember(Value = "timeZone")]
+        TimeZone,
         /// <summary>
         /// The translations field.
         /// </summary>
