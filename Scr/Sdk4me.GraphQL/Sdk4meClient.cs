@@ -9,7 +9,7 @@ namespace Sdk4me.GraphQL
     /// <summary>
     /// The 4me GraphQL client.
     /// </summary>
-    public sealed class Sdk4meClient
+    public sealed class Sdk4meClient : IDisposable
     {
         private readonly AuthenticationTokenCollection authenticationTokens;
         private readonly JsonSerializer jsonSerializer;
@@ -24,6 +24,7 @@ namespace Sdk4me.GraphQL
         private int maximumRecursiveRequests = 10;
         private int maximumQueryDepthLevelConnections = 2;
         private int itemsPerRequest = 100;
+        private bool disposedValue;
 
         /// <summary>
         /// <br>Get or set the number of recursive requests.</br>
@@ -612,6 +613,27 @@ namespace Sdk4me.GraphQL
             catch
             {
             }
+        }
+
+        private void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
+                if (disposing)
+                {
+                    client?.Dispose();
+                }
+                disposedValue = true;
+            }
+        }
+
+        /// <summary>
+        /// Release the unmanaged resources and disposes the <see cref="HttpClient"/> used by the <see cref="Sdk4meClient"/>.
+        /// </summary>
+        public void Dispose()
+        {
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
         }
 
         #endregion
