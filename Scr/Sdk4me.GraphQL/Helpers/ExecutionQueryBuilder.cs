@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Collections.ObjectModel;
+using System.Reflection;
 using System.Text;
 
 namespace Sdk4me.GraphQL
@@ -140,7 +141,7 @@ namespace Sdk4me.GraphQL
                 if (executionQuery.OnlyQueryIdentifier)
                 {
                     if (!executionQuery.HasIdentifier)
-                        throw new Sdk4meException($"Pagination not possible, {executionQuery.FieldName} has no identifier");
+                        throw new Sdk4meException($"Pagination not possible, {executionQuery.FieldName} has no identifier.");
                     builder.Append("id ");
                 }
                 else
@@ -267,7 +268,7 @@ namespace Sdk4me.GraphQL
                         }
                         else
                         {
-                            throw new ApplicationException($"{field.Name} did not implement KeyedCollection<string, CustomField>");
+                            throw new ApplicationException($"{field.Name} did not implement {nameof(KeyedCollection<string, CustomField>)}.");
                         }
                         field.IsSelected = false;
                     }
@@ -346,7 +347,7 @@ namespace Sdk4me.GraphQL
                     FilterOperator.LessThanOrEqualsTo => $"{field}:{{lessThanOrEqualTo:{serializedValue[0]}}}",
                     FilterOperator.GreaterThan => $"{field}:{{greaterThan:{serializedValue[0]}}}",
                     FilterOperator.GreaterThanOrEqualsTo => $"{field}:{{greaterThanOrEqualTo:{serializedValue[0]}}}",
-                    _ => throw new Sdk4meFilterException("Invalid DateTime filter operator"),
+                    _ => throw new Sdk4meFilterException($"Invalid {nameof(DateTime)} filter operator."),
                 };
             }
             else if (serializedValue.Length.Equals(2))
@@ -355,12 +356,12 @@ namespace Sdk4me.GraphQL
                 {
                     FilterOperator.GreaterThanAndLessThan => $"{field}:{{greaterThan:{serializedValue[0]} lessThan:{serializedValue[1]}}}",
                     FilterOperator.GreaterThanOrEqualToAndLessThanOrEqualTo => $"{field}:{{greaterThanOrEqualTo:{serializedValue[0]} lessThanOrEqualTo:{serializedValue[1]}}}",
-                    _ => throw new Sdk4meFilterException("Invalid DateTime filter operator"),
+                    _ => throw new Sdk4meFilterException($"Invalid {nameof(DateTime)} filter operator"),
                 };
             }
             else
             {
-                throw new Sdk4meFilterException("Unsupported DateTime filter operator");
+                throw new Sdk4meFilterException($"Unsupported {nameof(DateTime)} filter operator.");
             }
         }
 
@@ -371,7 +372,7 @@ namespace Sdk4me.GraphQL
             else if (filterOperator == FilterOperator.NotEquals || filterOperator == FilterOperator.NotIn)
                 return $"{field}:{JsonConvert.SerializeObject(!value)}";
             else
-                throw new Sdk4meFilterException("Invalid boolean filter operator");
+                throw new Sdk4meFilterException($"Invalid {nameof(Boolean)} filter operator.");
         }
 
         internal static string BuildQueryFilter(string? value)
@@ -410,7 +411,7 @@ namespace Sdk4me.GraphQL
             }
             else
             {
-                throw new Sdk4meFilterException("Invalid custom filter operator");
+                throw new Sdk4meFilterException("Invalid custom filter operator.");
             }
         }
 
@@ -419,7 +420,7 @@ namespace Sdk4me.GraphQL
             if (filterOperator == FilterOperator.Present || filterOperator == FilterOperator.Empty)
                 return BuildStringFilter(field, filterOperator, Array.Empty<string>());
             else
-                throw new Sdk4meFilterException("Invalid filter operator");
+                throw new Sdk4meFilterException("Invalid filter operator.");
         }
 
         internal static string BuildStringFilter(string field, FilterOperator filterOperator, params string?[] values)
@@ -453,7 +454,7 @@ namespace Sdk4me.GraphQL
             }
             else
             {
-                throw new Sdk4meFilterException("Invalid filter operator");
+                throw new Sdk4meFilterException("Invalid filter operator.");
             }
         }
 
