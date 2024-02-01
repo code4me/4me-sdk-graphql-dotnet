@@ -34,10 +34,10 @@
                 }
                 else
                 {
-                    TimeSpan.Parse(value);
+                    return TimeSpan.Parse(value);
                 }
             }
-            return null;
+            return reader.Value;
         }
 
         /// <summary>
@@ -51,7 +51,8 @@
         {
             if (value is TimeSpan timeSpan)
                 writer.WriteValue($"{Math.Floor(timeSpan.TotalHours):00}:{timeSpan.Minutes:00}");
-            writer.WriteValue(value);
+            else
+                writer.WriteValue(value);
         }
     }
 }

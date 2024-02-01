@@ -42,7 +42,7 @@
                     };
                 }
             }
-            return null;
+            return reader.Value;
         }
 
         /// <summary>
@@ -62,8 +62,13 @@
                     writer.WriteValue(DateTimeValue.NoTargetText);
                 else if (dateTime.IsClockStopped())
                     writer.WriteValue(DateTimeValue.ClockStoppedText);
+                else
+                    writer.WriteValue(value);
             }
-            writer.WriteValue(value);
+            else 
+            {
+                writer.WriteValue(value);
+            }
         }
     }
 }

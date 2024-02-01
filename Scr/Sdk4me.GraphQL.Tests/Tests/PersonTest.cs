@@ -41,6 +41,9 @@
                 people = client.Get(new PersonQuery(people.First().ID)).Result;
                 Assert.IsNotNull(people);
                 Assert.IsTrue(people.First().GetIdentifier() > 0);
+                Assert.IsNotNull(people.First());
+                Assert.IsNotNull(people.First()?.CreatedAt);
+                Assert.IsNotNull(people.First()?.UpdatedAt);
             }
         }
 
