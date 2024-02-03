@@ -14,7 +14,7 @@ namespace Sdk4me.GraphQL
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         internal override string? DebuggerValue
         {
-            get => ToString();
+            get => (Weekday is not null && TimeFrom is not null && TimeUntil is not null) ? $"{Weekday?.ToString()}, {Math.Floor(TimeFrom?.TotalHours ?? 0):00}:{TimeFrom?.Minutes:00} - {Math.Floor(TimeUntil?.TotalHours ?? 0):00}:{TimeUntil?.Minutes:00}" : ToString();
         }
 
         /// <summary>

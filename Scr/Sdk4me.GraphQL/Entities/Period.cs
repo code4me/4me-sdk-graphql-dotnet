@@ -14,7 +14,7 @@ namespace Sdk4me.GraphQL
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         internal override string? DebuggerValue
         {
-            get => ToString();
+            get => (From is not null && To is not null) ? $"{From:yyyy=MM-dd HH:mm:ss} - {To:yyyy=MM-dd HH:mm:ss}" : ToString();
         }
 
         /// <summary>

@@ -14,7 +14,7 @@ namespace Sdk4me.GraphQL
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         internal override string? DebuggerValue
         {
-            get => ToString();
+            get => (Remaining is not null && Limit is not null) ? $"{Remaining}/{Limit}" : ToString();
         }
 
         /// <summary>

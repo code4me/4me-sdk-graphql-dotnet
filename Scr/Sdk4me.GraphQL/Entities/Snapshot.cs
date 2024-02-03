@@ -14,7 +14,7 @@ namespace Sdk4me.GraphQL
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         internal override string? DebuggerValue
         {
-            get => ToString();
+            get => DownloadUrl ?? ToString();
         }
 
         /// <summary>
