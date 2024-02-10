@@ -20,6 +20,7 @@
         private List<ProjectTaskAssignmentInput>? newAssignments;
         private string? note;
         private string? pdfDesignId;
+        private string? phaseId;
         private long? plannedDuration;
         private long? plannedEffort;
         private List<string>? predecessorIds;
@@ -189,6 +190,16 @@
         {
             get => pdfDesignId;
             set => pdfDesignId = Set("pdfDesignId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the phase of the project to which the project task belongs.
+        /// </summary>
+        [JsonProperty("phaseId")]
+        public string? PhaseId
+        {
+            get => phaseId;
+            set => phaseId = Set("phaseId", value);
         }
 
         /// <summary>

@@ -25,6 +25,7 @@
         private string? note;
         private List<AttachmentInput>? noteAttachments;
         private string? pdfDesignId;
+        private string? phaseId;
         private long? plannedDuration;
         private long? plannedEffort;
         private List<string>? predecessorIds;
@@ -247,6 +248,16 @@
         {
             get => pdfDesignId;
             set => pdfDesignId = Set("pdfDesignId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the phase of the workflow to which the task belongs.
+        /// </summary>
+        [JsonProperty("phaseId")]
+        public string? PhaseId
+        {
+            get => phaseId;
+            set => phaseId = Set("phaseId", value);
         }
 
         /// <summary>
