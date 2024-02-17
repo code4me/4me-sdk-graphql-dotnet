@@ -1,4 +1,4 @@
-﻿using System.Web;
+﻿using Newtonsoft.Json.Converters;
 
 namespace Sdk4me.GraphQL
 {
@@ -7,14 +7,14 @@ namespace Sdk4me.GraphQL
     /// </summary>
     public class RequestEventCreateInput
     {
-        private readonly Dictionary<string, string> eventRequestFields = new();
+        private readonly Dictionary<string, object> eventRequestProperties = new();
 
         /// <summary>
-        /// Get the HTTP event API request parameters.
+        /// Get the HTTP event API request body.
         /// </summary>
-        public string HttpRequestParameters
+        public string HttpRequestBody
         {
-            get => string.Join("&", eventRequestFields.Select(x => x.Key + "=" + x.Value).ToArray());
+            get => JsonConvert.SerializeObject(eventRequestProperties, new StringEnumConverter());
         }
 
         /// <summary>
@@ -24,7 +24,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput Category(RequestCategory requestCategory) 
         {
-            AddToEventRequestFields("category", requestCategory.GetEnumMemberValue());
+            AddToRequest("category", requestCategory);
             return this;
         }
 
@@ -36,7 +36,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput ConfigurationItem(string labelOrName)
         {
-            AddToEventRequestFields("ci", labelOrName);
+            AddToRequest("ci", labelOrName);
             return this;
         }
 
@@ -48,7 +48,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput ConfigurationItem(long ID)
         {
-            AddToEventRequestFields("ci_id", ID.ToString());
+            AddToRequest("ci_id", ID);
             return this;
         }
 
@@ -61,8 +61,8 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput ConfigurationItem(string source, string sourceID)
         {
-            AddToEventRequestFields("ci_source", source);
-            AddToEventRequestFields("ci_sourceID", sourceID);
+            AddToRequest("ci_source", source);
+            AddToRequest("ci_sourceID", sourceID);
             return this;
         }
 
@@ -77,12 +77,12 @@ namespace Sdk4me.GraphQL
         {
             if (string.IsNullOrEmpty(configurationItem.ID))
             {
-                AddToEventRequestFields("ci_id", configurationItem.GetIdentifier().ToString());
+                AddToRequest("ci_id", configurationItem.GetIdentifier());
             }
             else if (!string.IsNullOrEmpty(configurationItem.Source) && !string.IsNullOrEmpty(configurationItem.SourceID))
             {
-                AddToEventRequestFields("ci_source", configurationItem.Source);
-                AddToEventRequestFields("ci_sourceID", configurationItem.SourceID);
+                AddToRequest("ci_source", configurationItem.Source);
+                AddToRequest("ci_sourceID", configurationItem.SourceID);
             }
             else
             {
@@ -99,7 +99,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput CompletionReason(RequestCompletionReason reason) 
         {
-            AddToEventRequestFields("completion_reason", reason.GetEnumMemberValue());
+            AddToRequest("completion_reason", reason);
             return this;
         }
 
@@ -112,7 +112,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput DesiredCompletionAt(DateTime desiredCompletionAt)
         {
-            AddToEventRequestFields("desired_completion_at", desiredCompletionAt.ToString("o"));
+            AddToRequest("desired_completion_at", desiredCompletionAt);
             return this;
         }
 
@@ -123,7 +123,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput DownTimeEndAt(DateTime downtimeEndAt)
         {
-            AddToEventRequestFields("downtime_end_at", downtimeEndAt.ToString("o"));
+            AddToRequest("downtime_end_at", downtimeEndAt);
             return this;
         }
 
@@ -134,7 +134,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput DownTimeStartAt(DateTime downtimeStartAt)
         {
-            AddToEventRequestFields("downtime_start_at", downtimeStartAt.ToString("o"));
+            AddToRequest("downtime_start_at", downtimeStartAt);
             return this;
         }
 
@@ -145,7 +145,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput Impact(RequestImpact requestImpact)
         {
-            AddToEventRequestFields("impact", requestImpact.GetEnumMemberValue());
+            AddToRequest("impact", requestImpact);
             return this;
         }
 
@@ -156,7 +156,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput InternalNote(string text)
         {
-            AddToEventRequestFields("internal_note", text);
+            AddToRequest("internal_note", text);
             return this;
         }
 
@@ -167,7 +167,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput Member(string primaryEmailAddress)
         {
-            AddToEventRequestFields("member", primaryEmailAddress);
+            AddToRequest("member", primaryEmailAddress);
             return this;
         }
 
@@ -178,7 +178,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput Member(long ID)
         {
-            AddToEventRequestFields("member_id", ID.ToString());
+            AddToRequest("member_id", ID);
             return this;
         }
 
@@ -193,11 +193,11 @@ namespace Sdk4me.GraphQL
         {
             if (string.IsNullOrEmpty(person.ID))
             {
-                AddToEventRequestFields("member_id", person.GetIdentifier().ToString());
+                AddToRequest("member_id", person.GetIdentifier());
             }
             else if (!string.IsNullOrEmpty(person.PrimaryEmail))
             {
-                AddToEventRequestFields("member", person.PrimaryEmail);
+                AddToRequest("member", person.PrimaryEmail);
             }
             else
             {
@@ -213,7 +213,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput Note(string text)
         {
-            AddToEventRequestFields("note", text);
+            AddToRequest("note", text);
             return this;
         }
 
@@ -224,7 +224,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput Problem(long ID)
         {
-            AddToEventRequestFields("problem_id", ID.ToString());
+            AddToRequest("problem_id", ID);
             return this;
         }
 
@@ -239,7 +239,7 @@ namespace Sdk4me.GraphQL
         {
             if (string.IsNullOrEmpty(problem.ID))
             {
-                AddToEventRequestFields("problem_id", problem.GetIdentifier().ToString());
+                AddToRequest("problem_id", problem.GetIdentifier());
             }
             else
             {
@@ -255,7 +255,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput RequestedBy(string primaryEmailAddress)
         {
-            AddToEventRequestFields("requested_by", primaryEmailAddress);
+            AddToRequest("requested_by", primaryEmailAddress);
             return this;
         }
 
@@ -266,7 +266,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput RequestedBy(long ID)
         {
-            AddToEventRequestFields("requested_by_id", ID.ToString());
+            AddToRequest("requested_by_id", ID);
             return this;
         }
 
@@ -281,11 +281,11 @@ namespace Sdk4me.GraphQL
         {
             if (string.IsNullOrEmpty(person.ID))
             {
-                AddToEventRequestFields("requested_by_id", person.GetIdentifier().ToString());
+                AddToRequest("requested_by_id", person.GetIdentifier());
             }
             else if (!string.IsNullOrEmpty(person.PrimaryEmail))
             {
-                AddToEventRequestFields("requested_by", person.PrimaryEmail);
+                AddToRequest("requested_by", person.PrimaryEmail);
             }
             else
             {
@@ -301,7 +301,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput RequestedFor(string primaryEmailAddress)
         {
-            AddToEventRequestFields("requested_for", primaryEmailAddress);
+            AddToRequest("requested_for", primaryEmailAddress);
             return this;
         }
 
@@ -312,7 +312,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput RequestedFor(long ID)
         {
-            AddToEventRequestFields("requested_for_id", ID.ToString());
+            AddToRequest("requested_for_id", ID);
             return this;
         }
 
@@ -327,11 +327,11 @@ namespace Sdk4me.GraphQL
         {
             if (string.IsNullOrEmpty(person.ID))
             {
-                AddToEventRequestFields("requested_for_id", person.GetIdentifier().ToString());
+                AddToRequest("requested_for_id", person.GetIdentifier());
             }
             else if (!string.IsNullOrEmpty(person.PrimaryEmail))
             {
-                AddToEventRequestFields("requested_for", person.PrimaryEmail);
+                AddToRequest("requested_for", person.PrimaryEmail);
             }
             else
             {
@@ -347,7 +347,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput ServiceInstance(string name)
         {
-            AddToEventRequestFields("service_instance", name);
+            AddToRequest("service_instance", name);
             return this;
         }
 
@@ -358,7 +358,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput ServiceInstance(long ID)
         {
-            AddToEventRequestFields("service_instance_id", ID.ToString());
+            AddToRequest("service_instance_id", ID);
             return this;
         }
 
@@ -373,11 +373,11 @@ namespace Sdk4me.GraphQL
         {
             if (string.IsNullOrEmpty(serviceInstance.ID))
             {
-                AddToEventRequestFields("service_instance_id", serviceInstance.GetIdentifier().ToString());
+                AddToRequest("service_instance_id", serviceInstance.GetIdentifier());
             }
             else if (!string.IsNullOrEmpty(serviceInstance.Name))
             {
-                AddToEventRequestFields("service_instance", serviceInstance.Name);
+                AddToRequest("service_instance", serviceInstance.Name);
             }
             else
             {
@@ -394,7 +394,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput Source(string source) 
         {
-            AddToEventRequestFields("source", source);
+            AddToRequest("source", source);
             return this;
         }
 
@@ -406,7 +406,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput SourceID(string sourceID)
         {
-            AddToEventRequestFields("source_id", sourceID);
+            AddToRequest("source_id", sourceID);
             return this;
         }
 
@@ -417,7 +417,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput Status(RequestStatus status)
         {
-            AddToEventRequestFields("status", status.GetEnumMemberValue());
+            AddToRequest("status", status);
             return this;
         }
 
@@ -428,7 +428,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput Subject(string subject)
         {
-            AddToEventRequestFields("subject", subject);
+            AddToRequest("subject", subject);
             return this;
         }
 
@@ -439,7 +439,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput Supplier(string supplier)
         {
-            AddToEventRequestFields("supplier", supplier);
+            AddToRequest("supplier", supplier);
             return this;
         }
 
@@ -450,7 +450,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput Supplier(long ID)
         {
-            AddToEventRequestFields("supplier_id", ID.ToString());
+            AddToRequest("supplier_id", ID);
             return this;
         }
 
@@ -465,11 +465,11 @@ namespace Sdk4me.GraphQL
         {
             if (string.IsNullOrEmpty(supplier.ID))
             {
-                AddToEventRequestFields("supplier_id", supplier.GetIdentifier().ToString());
+                AddToRequest("supplier_id", supplier.GetIdentifier());
             }
             else if (!string.IsNullOrEmpty(supplier.Name))
             {
-                AddToEventRequestFields("supplier", supplier.Name);
+                AddToRequest("supplier", supplier.Name);
             }
             else
             {
@@ -487,7 +487,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput SupportDomain(string supportDomain)
         {
-            AddToEventRequestFields("support_domain", supportDomain);
+            AddToRequest("support_domain", supportDomain);
             return this;
         }
 
@@ -499,7 +499,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput SupportDomain(Account supportDomain)
         {
-            AddToEventRequestFields("support_domain", supportDomain.ID);
+            AddToRequest("support_domain", supportDomain.ID);
             return this;
         }
 
@@ -510,7 +510,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput Team(string name)
         {
-            AddToEventRequestFields("team", name);
+            AddToRequest("team", name);
             return this;
         }
 
@@ -521,7 +521,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput Team(long ID)
         {
-            AddToEventRequestFields("team_id", ID.ToString());
+            AddToRequest("team_id", ID);
             return this;
         }
 
@@ -536,11 +536,11 @@ namespace Sdk4me.GraphQL
         {
             if (string.IsNullOrEmpty(team.ID))
             {
-                AddToEventRequestFields("team_id", team.GetIdentifier().ToString());
+                AddToRequest("team_id", team.GetIdentifier());
             }
             else if (!string.IsNullOrEmpty(team.Name))
             {
-                AddToEventRequestFields("team", team.Name);
+                AddToRequest("team", team.Name);
             }
             else
             {
@@ -556,7 +556,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput RequestTemplate(long ID)
         {
-            AddToEventRequestFields("template_id", ID.ToString());
+            AddToRequest("template_id", ID);
             return this;
         }
 
@@ -572,7 +572,7 @@ namespace Sdk4me.GraphQL
         {
             if (string.IsNullOrEmpty(requestTemplate.ID))
             {
-                AddToEventRequestFields("template_id", requestTemplate.GetIdentifier().ToString());
+                AddToRequest("template_id", requestTemplate.GetIdentifier());
             }
             else
             {
@@ -588,7 +588,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput WaitingUntil(DateTime waitingUntil)
         {
-            AddToEventRequestFields("waiting_until", waitingUntil.ToString("o"));
+            AddToRequest("waiting_until", waitingUntil);
             return this;
         }
 
@@ -599,7 +599,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput Workflow(long ID)
         {
-            AddToEventRequestFields("workflow_id", ID.ToString());
+            AddToRequest("workflow_id", ID);
             return this;
         }
 
@@ -614,7 +614,7 @@ namespace Sdk4me.GraphQL
         {
             if (string.IsNullOrEmpty(workflow.ID))
             {
-                AddToEventRequestFields("workflow_id", workflow.GetIdentifier().ToString());
+                AddToRequest("workflow_id", workflow.GetIdentifier());
             }
             else
             {
@@ -623,10 +623,15 @@ namespace Sdk4me.GraphQL
             return this;
         }
 
-        private void AddToEventRequestFields(string name, string value) 
+        /// <summary>
+        /// Add a property to the HTTP request object.
+        /// </summary>
+        /// <param name="name">The property name.</param>
+        /// <param name="value">The property value.</param>
+        private void AddToRequest(string name, object value)
         {
-            if (!eventRequestFields.TryAdd(name, value))
-                eventRequestFields[name] = HttpUtility.UrlEncode(value);
+            if (!eventRequestProperties.TryAdd(name, value))
+                eventRequestProperties[name] = value;
         }
     }
 }

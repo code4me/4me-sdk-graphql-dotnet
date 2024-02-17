@@ -418,9 +418,9 @@ namespace Sdk4me.GraphQL
         /// <returns>The newly created request or already existing request.</returns>
         public async Task<Request> CreateEvent(RequestEventCreateInput requestEventCreateInput)
         {
-            using (HttpRequestMessage requestMessage = CreateHttpRequest($"{restUrl}/events?{requestEventCreateInput.HttpRequestParameters}"))
+            using (HttpRequestMessage requestMessage = CreateHttpRequest($"{restUrl}/events"))
             {
-                JToken responseData = await SendHttpRequest(requestMessage, null, false);
+                JToken responseData = await SendHttpRequest(requestMessage, requestEventCreateInput.HttpRequestBody, false);
                 int? requestID = responseData.Value<int>("id");
                 if (requestID != null)
                 {
