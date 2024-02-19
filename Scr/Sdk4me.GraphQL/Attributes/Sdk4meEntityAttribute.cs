@@ -11,10 +11,6 @@
         /// </summary>
         public bool IgnoreIdentifier { get; set; } = false;
 
-        /// <summary>
-        /// Returns the entity response payload field name.
-        /// </summary>
-        public string? PayloadFieldName { get; set; }
 
         /// <summary>
         /// Create a new instance of the <see cref="Sdk4meFieldAttribute"/> class.

@@ -3,10 +3,10 @@
     /// <summary>
     /// A 4me GraphQL mutation.
     /// </summary>
-    /// <typeparam name="TOutEntity">Any type being a class.</typeparam>
+    /// <typeparam name="TOutEntity">Any type implementing <see cref="Payload"/>.</typeparam>
     /// <typeparam name="TInEntity">Any type implementing <see cref="PropertyChangeSet"/>.</typeparam>
     public abstract class Mutation<TOutEntity, TInEntity>
-        where TOutEntity : class
+        where TOutEntity : Payload
         where TInEntity : PropertyChangeSet
     {
         private readonly string fieldName = string.Empty;

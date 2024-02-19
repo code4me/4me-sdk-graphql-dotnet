@@ -12,12 +12,12 @@ namespace Sdk4me.GraphQL
         /// </summary>
         /// <param name="token">The <see cref="JToken"/> object.</param>
         /// <returns>A new instance of the <see cref="JToken"/> with new camel case property names.</returns>
-        public static JToken ToCamelCaseJToken(this JToken token)
+        public static JToken ToCamelCase(this JToken token)
         {
             return token.Type switch
             {
-                JTokenType.Object => ((JObject)token).ToCamelCaseJObject(),
-                JTokenType.Array => new JArray(((JArray)token).Select(x => x.ToCamelCaseJToken())),
+                JTokenType.Object => ((JObject)token).ToCamelCase(),
+                JTokenType.Array => new JArray(((JArray)token).Select(x => x.ToCamelCase())),
                 _ => token.DeepClone(),
             };
         }
@@ -27,25 +27,18 @@ namespace Sdk4me.GraphQL
         /// </summary>
         /// <param name="token">The <see cref="JObject"/> object.</param>
         /// <returns>A new instance of the <see cref="JObject"/> with new camel case property names.</returns>
-        public static JObject ToCamelCaseJObject(this JObject token)
+        private static JObject ToCamelCase(this JObject token)
         {
             JObject retval = new();
-
             foreach (JProperty property in token.Properties())
             {
-                if (property.Name == "id" && property.Value.Type == JTokenType.String)
+                if (property.Name.Equals("nodeID") || (property.Name.Equals("id") && property.Value.Type == JTokenType.String))
                 {
                     retval["id"] = property.Value;
                 }
-                else
+                else if (!property.Name.Equals("id"))
                 {
-                    if (!property.Name.Equals("id"))
-                    {
-                        if (property.Name.Equals("nodeID"))
-                            retval["id"] = property.Value.ToCamelCaseJToken();
-                        else
-                            retval[ConvertSnakeCaseToCamelCase(property.Name)] = property.Value.ToCamelCaseJToken();
-                    }
+                    retval[ConvertSnakeCaseToCamelCase(property.Name)] = property.Value.ToCamelCase();
                 }
             }
             return retval;

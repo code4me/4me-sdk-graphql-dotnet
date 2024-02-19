@@ -27,13 +27,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Get the GraphQL mutation query.
         /// </summary>
-        /// <typeparam name="TOutEntity">Any type being class.</typeparam>
-        /// <typeparam name="TInEntity">Any type implementing <see cref="PropertyChangeSet"/> and implemented the <see cref="Sdk4meEntityAttribute.PayloadFieldName"/>.</typeparam>
+        /// <typeparam name="TOutEntity">Any type implementing <see cref="Payload"/>.</typeparam>
+        /// <typeparam name="TInEntity">Any type implementing <see cref="PropertyChangeSet"/>.</typeparam>
         /// <param name="input">The input data.</param>
         /// <returns>An <see cref="ExecutionQuery"/> based on the GraphQL query.</returns>
         /// <exception cref="Sdk4meInvalidFieldNameException"></exception>
         internal static string GetGraphQLQuery<TOutEntity, TInEntity>(Mutation<TOutEntity, TInEntity> input)
-            where TOutEntity : class
+            where TOutEntity : Payload
             where TInEntity : PropertyChangeSet
         {
             ExecutionQuery query;

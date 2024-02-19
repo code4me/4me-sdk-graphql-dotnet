@@ -244,13 +244,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Execute a mutation on 4me web service as an asynchronous operation.
         /// </summary>
-        /// <typeparam name="TOutEntity">Any type being a class.</typeparam>
-        /// <typeparam name="TInEntity">Any type implementing <see cref="PropertyChangeSet"/> and implemented the <see cref="Sdk4meEntityAttribute.PayloadFieldName"/>.</typeparam>
+        /// <typeparam name="TOutEntity">Any type implementing <see cref="Payload"/>.</typeparam>
+        /// <typeparam name="TInEntity">Any type implementing <see cref="PropertyChangeSet"/>.</typeparam>
         /// <param name="input">The mutation input data.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
         internal async Task<TOutEntity> Mutation<TOutEntity, TInEntity>(Mutation<TOutEntity, TInEntity> input)
-            where TOutEntity : class
+            where TOutEntity : Payload
             where TInEntity : PropertyChangeSet
         {
             return await Mutation(input, true);
@@ -259,14 +259,14 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Execute a mutation on 4me web service as an asynchronous operation.
         /// </summary>
-        /// <typeparam name="TOutEntity">Any type being a class.</typeparam>
-        /// <typeparam name="TInEntity">Any type implementing <see cref="PropertyChangeSet"/> and implemented the <see cref="Sdk4meEntityAttribute.PayloadFieldName"/>.</typeparam>
+        /// <typeparam name="TOutEntity">Any type implementing <see cref="Payload"/>.</typeparam>
+        /// <typeparam name="TInEntity">Any type implementing <see cref="PropertyChangeSet"/>.</typeparam>
         /// <param name="input">The mutation input data.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
         internal async Task<TOutEntity> Mutation<TOutEntity, TInEntity>(Mutation<TOutEntity, TInEntity> input, bool throwOnError)
-            where TOutEntity : class
+            where TOutEntity : Payload
             where TInEntity : PropertyChangeSet
         {
             using (HttpRequestMessage requestMessage = CreateHttpRequest())
@@ -424,7 +424,7 @@ namespace Sdk4me.GraphQL
                 int? requestID = responseData.Value<int>("id");
                 if (requestID != null)
                 {
-                    responseData = responseData.ToCamelCaseJToken();
+                    responseData = responseData.ToCamelCase();
                     responseData["requestId"] = requestID;
                     return responseData.ToObject<Request>() ?? throw new Sdk4meException("Unprocessable response entity.");
                 }
