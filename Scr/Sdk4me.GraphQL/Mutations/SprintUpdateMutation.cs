@@ -9,7 +9,7 @@
         /// Initialize an new SprintUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal SprintUpdateMutation(SprintUpdateInput data, SprintQuery query)
             : base("sprintUpdate", "SprintUpdateInput!", data, GetQuery(query))
         {

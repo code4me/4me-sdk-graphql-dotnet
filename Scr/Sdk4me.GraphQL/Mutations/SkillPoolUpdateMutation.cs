@@ -9,7 +9,7 @@
         /// Initialize an new SkillPoolUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal SkillPoolUpdateMutation(SkillPoolUpdateInput data, SkillPoolQuery query)
             : base("skillPoolUpdate", "SkillPoolUpdateInput!", data, GetQuery(query))
         {

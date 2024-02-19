@@ -9,7 +9,7 @@
         /// Initialize an new ReservationOfferingUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal ReservationOfferingUpdateMutation(ReservationOfferingUpdateInput data, ReservationOfferingQuery query)
             : base("reservationOfferingUpdate", "ReservationOfferingUpdateInput!", data, GetQuery(query))
         {

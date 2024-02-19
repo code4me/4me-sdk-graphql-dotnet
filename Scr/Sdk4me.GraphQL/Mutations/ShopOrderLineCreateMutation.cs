@@ -9,7 +9,7 @@
         /// Initialize an new ShopOrderLineCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal ShopOrderLineCreateMutation(ShopOrderLineCreateInput data, ShopOrderLineQuery query)
             : base("shopOrderLineCreate", "ShopOrderLineCreateInput!", data, GetQuery(query))
         {

@@ -9,7 +9,7 @@
         /// Initialize an new OrganizationCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal OrganizationCreateMutation(OrganizationCreateInput data, OrganizationQuery query)
             : base("organizationCreate", "OrganizationCreateInput!", data, GetQuery(query))
         {

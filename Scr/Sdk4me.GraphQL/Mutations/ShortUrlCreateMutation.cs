@@ -9,7 +9,7 @@
         /// Initialize an new ShortUrlCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal ShortUrlCreateMutation(ShortUrlCreateInput data, ShortUrlQuery query)
             : base("shortUrlCreate", "ShortUrlCreateInput!", data, GetQuery(query))
         {

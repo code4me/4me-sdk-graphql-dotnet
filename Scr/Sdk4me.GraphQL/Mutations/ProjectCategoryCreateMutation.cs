@@ -9,7 +9,7 @@
         /// Initialize an new ProjectCategoryCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal ProjectCategoryCreateMutation(ProjectCategoryCreateInput data, ProjectCategoryQuery query)
             : base("projectCategoryCreate", "ProjectCategoryCreateInput!", data, GetQuery(query))
         {

@@ -9,7 +9,7 @@
         /// Initialize an new ProblemUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal ProblemUpdateMutation(ProblemUpdateInput data, ProblemQuery query)
             : base("problemUpdate", "ProblemUpdateInput!", data, GetQuery(query))
         {

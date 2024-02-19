@@ -25,7 +25,7 @@
         /// Initialize an new DiscoveredConfigurationItems mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal DiscoveredConfigurationItemsMutation(DiscoveredConfigurationItemsInput data, AsyncQueryQuery query)
             : base("discoveredConfigurationItems", "DiscoveredConfigurationItemsInput!", data, GetQuery(query))
         {

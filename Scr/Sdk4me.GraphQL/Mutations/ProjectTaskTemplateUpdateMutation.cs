@@ -9,7 +9,7 @@
         /// Initialize an new ProjectTaskTemplateUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal ProjectTaskTemplateUpdateMutation(ProjectTaskTemplateUpdateInput data, ProjectTaskTemplateQuery query)
             : base("projectTaskTemplateUpdate", "ProjectTaskTemplateUpdateInput!", data, GetQuery(query))
         {

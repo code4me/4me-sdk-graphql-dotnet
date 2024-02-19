@@ -9,7 +9,7 @@
         /// Initialize an new SurveyUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal SurveyUpdateMutation(SurveyUpdateInput data, SurveyQuery query)
             : base("surveyUpdate", "SurveyUpdateInput!", data, GetQuery(query))
         {

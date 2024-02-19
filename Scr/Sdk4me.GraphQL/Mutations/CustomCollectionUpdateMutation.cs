@@ -9,7 +9,7 @@
         /// Initialize an new CustomCollectionUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal CustomCollectionUpdateMutation(CustomCollectionUpdateInput data, CustomCollectionQuery query)
             : base("customCollectionUpdate", "CustomCollectionUpdateInput!", data, GetQuery(query))
         {

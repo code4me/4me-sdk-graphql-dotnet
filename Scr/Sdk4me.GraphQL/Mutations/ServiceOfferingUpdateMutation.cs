@@ -9,7 +9,7 @@
         /// Initialize an new ServiceOfferingUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal ServiceOfferingUpdateMutation(ServiceOfferingUpdateInput data, ServiceOfferingQuery query)
             : base("serviceOfferingUpdate", "ServiceOfferingUpdateInput!", data, GetQuery(query))
         {

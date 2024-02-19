@@ -9,7 +9,7 @@
         /// Initialize an new ServiceCategoryCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal ServiceCategoryCreateMutation(ServiceCategoryCreateInput data, ServiceCategoryQuery query)
             : base("serviceCategoryCreate", "ServiceCategoryCreateInput!", data, GetQuery(query))
         {

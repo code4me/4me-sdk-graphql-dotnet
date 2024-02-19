@@ -9,7 +9,7 @@
         /// Initialize an new SurveyCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal SurveyCreateMutation(SurveyCreateInput data, SurveyQuery query)
             : base("surveyCreate", "SurveyCreateInput!", data, GetQuery(query))
         {

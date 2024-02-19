@@ -9,7 +9,7 @@
         /// Initialize an new AppInstanceCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal AppInstanceCreateMutation(AppInstanceCreateInput data, AppInstanceQuery query)
             : base("appInstanceCreate", "AppInstanceCreateInput!", data, GetQuery(query))
         {

@@ -9,7 +9,7 @@
         /// Initialize an new ServiceInstanceCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal ServiceInstanceCreateMutation(ServiceInstanceCreateInput data, ServiceInstanceQuery query)
             : base("serviceInstanceCreate", "ServiceInstanceCreateInput!", data, GetQuery(query))
         {

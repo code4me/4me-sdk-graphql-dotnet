@@ -9,7 +9,7 @@
         /// Initialize an new ScrumWorkspaceUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal ScrumWorkspaceUpdateMutation(ScrumWorkspaceUpdateInput data, ScrumWorkspaceQuery query)
             : base("scrumWorkspaceUpdate", "ScrumWorkspaceUpdateInput!", data, GetQuery(query))
         {

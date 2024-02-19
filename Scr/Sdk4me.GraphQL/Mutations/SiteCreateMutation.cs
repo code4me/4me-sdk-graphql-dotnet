@@ -9,7 +9,7 @@
         /// Initialize an new SiteCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal SiteCreateMutation(SiteCreateInput data, SiteQuery query)
             : base("siteCreate", "SiteCreateInput!", data, GetQuery(query))
         {

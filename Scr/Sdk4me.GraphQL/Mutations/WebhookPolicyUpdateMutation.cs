@@ -9,7 +9,7 @@
         /// Initialize an new WebhookPolicyUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal WebhookPolicyUpdateMutation(WebhookPolicyUpdateInput data, WebhookPolicyQuery query)
             : base("webhookPolicyUpdate", "WebhookPolicyUpdateInput!", data, GetQuery(query))
         {

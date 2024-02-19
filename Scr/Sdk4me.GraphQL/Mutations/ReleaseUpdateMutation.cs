@@ -9,7 +9,7 @@
         /// Initialize an new ReleaseUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal ReleaseUpdateMutation(ReleaseUpdateInput data, ReleaseQuery query)
             : base("releaseUpdate", "ReleaseUpdateInput!", data, GetQuery(query))
         {

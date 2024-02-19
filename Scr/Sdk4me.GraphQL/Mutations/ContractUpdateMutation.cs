@@ -9,7 +9,7 @@
         /// Initialize an new ContractUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal ContractUpdateMutation(ContractUpdateInput data, ContractQuery query)
             : base("contractUpdate", "ContractUpdateInput!", data, GetQuery(query))
         {

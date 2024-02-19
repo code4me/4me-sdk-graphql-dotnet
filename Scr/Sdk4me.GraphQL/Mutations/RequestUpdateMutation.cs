@@ -9,7 +9,7 @@
         /// Initialize an new RequestUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal RequestUpdateMutation(RequestUpdateInput data, RequestQuery query)
             : base("requestUpdate", "RequestUpdateInput!", data, GetQuery(query))
         {

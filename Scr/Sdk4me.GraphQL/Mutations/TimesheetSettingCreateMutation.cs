@@ -9,7 +9,7 @@
         /// Initialize an new TimesheetSettingCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal TimesheetSettingCreateMutation(TimesheetSettingCreateInput data, TimesheetSettingQuery query)
             : base("timesheetSettingCreate", "TimesheetSettingCreateInput!", data, GetQuery(query))
         {

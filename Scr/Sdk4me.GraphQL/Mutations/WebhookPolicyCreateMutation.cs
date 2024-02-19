@@ -9,7 +9,7 @@
         /// Initialize an new WebhookPolicyCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal WebhookPolicyCreateMutation(WebhookPolicyCreateInput data, WebhookPolicyCreateResponseQuery query)
             : base("webhookPolicyCreate", "WebhookPolicyCreateInput!", data, GetQuery(query))
         {

@@ -9,7 +9,7 @@
         /// Initialize an new ShopArticleCategoryCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal ShopArticleCategoryCreateMutation(ShopArticleCategoryCreateInput data, ShopArticleCategoryQuery query)
             : base("shopArticleCategoryCreate", "ShopArticleCategoryCreateInput!", data, GetQuery(query))
         {

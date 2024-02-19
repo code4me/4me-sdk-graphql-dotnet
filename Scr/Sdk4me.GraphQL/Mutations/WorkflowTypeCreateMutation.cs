@@ -9,7 +9,7 @@
         /// Initialize an new WorkflowTypeCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal WorkflowTypeCreateMutation(WorkflowTypeCreateInput data, WorkflowTypeQuery query)
             : base("workflowTypeCreate", "WorkflowTypeCreateInput!", data, GetQuery(query))
         {

@@ -9,7 +9,7 @@
         /// Initialize an new OutOfOfficePeriodCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal OutOfOfficePeriodCreateMutation(OutOfOfficePeriodCreateInput data, OutOfOfficePeriodQuery query)
             : base("outOfOfficePeriodCreate", "OutOfOfficePeriodCreateInput!", data, GetQuery(query))
         {

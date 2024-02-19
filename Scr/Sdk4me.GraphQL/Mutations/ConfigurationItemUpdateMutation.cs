@@ -9,7 +9,7 @@
         /// Initialize an new ConfigurationItemUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal ConfigurationItemUpdateMutation(ConfigurationItemUpdateInput data, ConfigurationItemQuery query)
             : base("configurationItemUpdate", "ConfigurationItemUpdateInput!", data, GetQuery(query))
         {

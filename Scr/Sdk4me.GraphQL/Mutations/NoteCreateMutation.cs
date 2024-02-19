@@ -9,7 +9,7 @@
         /// Initialize an new NoteCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal NoteCreateMutation(NoteCreateInput data, NoteQuery query)
             : base("noteCreate", "NoteCreateInput!", data, GetQuery(query))
         {

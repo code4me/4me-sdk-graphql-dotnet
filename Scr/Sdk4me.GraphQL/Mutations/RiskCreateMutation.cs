@@ -9,7 +9,7 @@
         /// Initialize an new RiskCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal RiskCreateMutation(RiskCreateInput data, RiskQuery query)
             : base("riskCreate", "RiskCreateInput!", data, GetQuery(query))
         {

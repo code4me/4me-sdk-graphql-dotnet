@@ -9,7 +9,7 @@
         /// Initialize an new ProjectTemplateCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal ProjectTemplateCreateMutation(ProjectTemplateCreateInput data, ProjectTemplateQuery query)
             : base("projectTemplateCreate", "ProjectTemplateCreateInput!", data, GetQuery(query))
         {

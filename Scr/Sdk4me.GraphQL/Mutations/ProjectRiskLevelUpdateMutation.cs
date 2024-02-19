@@ -9,7 +9,7 @@
         /// Initialize an new ProjectRiskLevelUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal ProjectRiskLevelUpdateMutation(ProjectRiskLevelUpdateInput data, ProjectRiskLevelQuery query)
             : base("projectRiskLevelUpdate", "ProjectRiskLevelUpdateInput!", data, GetQuery(query))
         {

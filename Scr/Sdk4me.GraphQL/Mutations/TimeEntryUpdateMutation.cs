@@ -9,7 +9,7 @@
         /// Initialize an new TimeEntryUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal TimeEntryUpdateMutation(TimeEntryUpdateInput data, TimeEntryQuery query)
             : base("timeEntryUpdate", "TimeEntryUpdateInput!", data, GetQuery(query))
         {

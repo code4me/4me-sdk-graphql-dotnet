@@ -9,7 +9,7 @@
         /// Initialize an new HolidayUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal HolidayUpdateMutation(HolidayUpdateInput data, HolidayQuery query)
             : base("holidayUpdate", "HolidayUpdateInput!", data, GetQuery(query))
         {

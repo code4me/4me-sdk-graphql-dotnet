@@ -9,7 +9,7 @@
         /// Initialize an new ServiceCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal ServiceCreateMutation(ServiceCreateInput data, ServiceQuery query)
             : base("serviceCreate", "ServiceCreateInput!", data, GetQuery(query))
         {

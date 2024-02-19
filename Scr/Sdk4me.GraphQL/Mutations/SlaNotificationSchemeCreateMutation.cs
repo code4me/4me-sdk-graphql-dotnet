@@ -9,7 +9,7 @@
         /// Initialize an new SlaNotificationSchemeCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal SlaNotificationSchemeCreateMutation(SlaNotificationSchemeCreateInput data, SlaNotificationSchemeQuery query)
             : base("slaNotificationSchemeCreate", "SlaNotificationSchemeCreateInput!", data, GetQuery(query))
         {

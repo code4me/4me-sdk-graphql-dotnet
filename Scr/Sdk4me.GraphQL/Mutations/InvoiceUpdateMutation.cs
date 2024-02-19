@@ -9,7 +9,7 @@
         /// Initialize an new InvoiceUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal InvoiceUpdateMutation(InvoiceUpdateInput data, InvoiceQuery query)
             : base("invoiceUpdate", "InvoiceUpdateInput!", data, GetQuery(query))
         {

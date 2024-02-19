@@ -9,7 +9,7 @@
         /// Initialize an new FirstLineSupportAgreementUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal FirstLineSupportAgreementUpdateMutation(FirstLineSupportAgreementUpdateInput data, FirstLineSupportAgreementQuery query)
             : base("firstLineSupportAgreementUpdate", "FirstLineSupportAgreementUpdateInput!", data, GetQuery(query))
         {

@@ -9,7 +9,7 @@
         /// Initialize an new BroadcastUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal BroadcastUpdateMutation(BroadcastUpdateInput data, BroadcastQuery query)
             : base("broadcastUpdate", "BroadcastUpdateInput!", data, GetQuery(query))
         {

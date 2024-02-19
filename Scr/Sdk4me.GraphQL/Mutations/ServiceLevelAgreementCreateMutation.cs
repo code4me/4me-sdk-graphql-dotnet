@@ -9,7 +9,7 @@
         /// Initialize an new ServiceLevelAgreementCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal ServiceLevelAgreementCreateMutation(ServiceLevelAgreementCreateInput data, ServiceLevelAgreementQuery query)
             : base("serviceLevelAgreementCreate", "ServiceLevelAgreementCreateInput!", data, GetQuery(query))
         {

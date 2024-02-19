@@ -9,7 +9,7 @@
         /// Initialize an new WebhookCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal WebhookCreateMutation(WebhookCreateInput data, WebhookQuery query)
             : base("webhookCreate", "WebhookCreateInput!", data, GetQuery(query))
         {

@@ -9,7 +9,7 @@
         /// Initialize an new ProjectTaskCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal ProjectTaskCreateMutation(ProjectTaskCreateInput data, ProjectTaskQuery query)
             : base("projectTaskCreate", "ProjectTaskCreateInput!", data, GetQuery(query))
         {

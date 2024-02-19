@@ -9,7 +9,7 @@
         /// Initialize an new ReleaseCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal ReleaseCreateMutation(ReleaseCreateInput data, ReleaseQuery query)
             : base("releaseCreate", "ReleaseCreateInput!", data, GetQuery(query))
         {

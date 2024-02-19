@@ -9,7 +9,7 @@
         /// Initialize an new CustomCollectionElementCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal CustomCollectionElementCreateMutation(CustomCollectionElementCreateInput data, CustomCollectionElementQuery query)
             : base("customCollectionElementCreate", "CustomCollectionElementCreateInput!", data, GetQuery(query))
         {

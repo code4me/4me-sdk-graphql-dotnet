@@ -9,7 +9,7 @@
         /// Initialize an new AppOfferingAutomationRuleUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal AppOfferingAutomationRuleUpdateMutation(AppOfferingAutomationRuleUpdateInput data, AppOfferingAutomationRuleQuery query)
             : base("appOfferingAutomationRuleUpdate", "AppOfferingAutomationRuleUpdateInput!", data, GetQuery(query))
         {

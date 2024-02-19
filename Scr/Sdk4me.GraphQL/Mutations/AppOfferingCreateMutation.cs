@@ -9,7 +9,7 @@
         /// Initialize an new AppOfferingCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal AppOfferingCreateMutation(AppOfferingCreateInput data, AppOfferingQuery query)
             : base("appOfferingCreate", "AppOfferingCreateInput!", data, GetQuery(query))
         {

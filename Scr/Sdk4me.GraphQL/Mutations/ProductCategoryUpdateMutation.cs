@@ -9,7 +9,7 @@
         /// Initialize an new ProductCategoryUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal ProductCategoryUpdateMutation(ProductCategoryUpdateInput data, ProductCategoryQuery query)
             : base("productCategoryUpdate", "ProductCategoryUpdateInput!", data, GetQuery(query))
         {

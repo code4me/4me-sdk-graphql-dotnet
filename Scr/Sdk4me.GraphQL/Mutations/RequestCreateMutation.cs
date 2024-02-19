@@ -9,7 +9,7 @@
         /// Initialize an new RequestCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal RequestCreateMutation(RequestCreateInput data, RequestQuery query)
             : base("requestCreate", "RequestCreateInput!", data, GetQuery(query))
         {

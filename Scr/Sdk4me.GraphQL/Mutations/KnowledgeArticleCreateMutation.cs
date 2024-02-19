@@ -9,7 +9,7 @@
         /// Initialize an new KnowledgeArticleCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal KnowledgeArticleCreateMutation(KnowledgeArticleCreateInput data, KnowledgeArticleQuery query)
             : base("knowledgeArticleCreate", "KnowledgeArticleCreateInput!", data, GetQuery(query))
         {

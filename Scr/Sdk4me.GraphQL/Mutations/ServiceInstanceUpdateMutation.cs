@@ -9,7 +9,7 @@
         /// Initialize an new ServiceInstanceUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal ServiceInstanceUpdateMutation(ServiceInstanceUpdateInput data, ServiceInstanceQuery query)
             : base("serviceInstanceUpdate", "ServiceInstanceUpdateInput!", data, GetQuery(query))
         {

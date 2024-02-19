@@ -9,7 +9,7 @@
         /// Initialize an new UiExtensionUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal UiExtensionUpdateMutation(UiExtensionUpdateInput data, UiExtensionQuery query)
             : base("uiExtensionUpdate", "UiExtensionUpdateInput!", data, GetQuery(query))
         {

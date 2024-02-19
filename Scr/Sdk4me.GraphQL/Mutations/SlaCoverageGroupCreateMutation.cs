@@ -9,7 +9,7 @@
         /// Initialize an new SlaCoverageGroupCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The repsonse query.</param>
+        /// <param name="query">The response query.</param>
         internal SlaCoverageGroupCreateMutation(SlaCoverageGroupCreateInput data, SlaCoverageGroupQuery query)
             : base("slaCoverageGroupCreate", "SlaCoverageGroupCreateInput!", data, GetQuery(query))
         {
