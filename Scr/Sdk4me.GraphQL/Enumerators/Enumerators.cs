@@ -443,6 +443,11 @@
         [EnumMember(Value = "chat_workchat")]
         ChatWorkchat,
         /// <summary>
+        /// Emergency.
+        /// </summary>
+        [EnumMember(Value = "emergency")]
+        Emergency,
+        /// <summary>
         /// Fax.
         /// </summary>
         [EnumMember(Value = "fax")]

@@ -15,6 +15,7 @@
         private BroadcastMessageType? messageType;
         private string? remarks;
         private List<AttachmentInput>? remarksAttachments;
+        private string? requestId;
         private List<string>? serviceInstanceIds;
         private List<string>? slaIds;
         private string? source;
@@ -123,6 +124,16 @@
         {
             get => remarksAttachments;
             set => remarksAttachments = Set("remarksAttachments", value);
+        }
+
+        /// <summary>
+        /// The request group to which end users can subscribe when they are also affected by the issue for which the broadcast was created.
+        /// </summary>
+        [JsonProperty("requestId")]
+        public string? RequestId
+        {
+            get => requestId;
+            set => requestId = Set("requestId", value);
         }
 
         /// <summary>
