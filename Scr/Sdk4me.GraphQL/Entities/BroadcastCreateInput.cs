@@ -13,10 +13,13 @@
         private DateTime? endAt;
         private string? message;
         private BroadcastMessageType? messageType;
+        private List<string>? organizationIds;
         private string? remarks;
         private List<AttachmentInput>? remarksAttachments;
         private string? requestId;
         private List<string>? serviceInstanceIds;
+        private List<string>? siteIds;
+        private List<string>? skillPoolIds;
         private List<string>? slaIds;
         private string? source;
         private string? sourceID;
@@ -107,6 +110,16 @@
         }
 
         /// <summary>
+        /// The ids of the organizations, to which people belong, that need to see the broadcast.
+        /// </summary>
+        [JsonProperty("organizationIds")]
+        public List<string>? OrganizationIds
+        {
+            get => organizationIds;
+            set => organizationIds = Set("organizationIds", value);
+        }
+
+        /// <summary>
         /// Any additional information about the broadcast that might prove useful.
         /// </summary>
         [JsonProperty("remarks")]
@@ -144,6 +157,26 @@
         {
             get => serviceInstanceIds;
             set => serviceInstanceIds = Set("serviceInstanceIds", value);
+        }
+
+        /// <summary>
+        /// The ids of the sites to which people belong and that need to see the broadcast.
+        /// </summary>
+        [JsonProperty("siteIds")]
+        public List<string>? SiteIds
+        {
+            get => siteIds;
+            set => siteIds = Set("siteIds", value);
+        }
+
+        /// <summary>
+        /// The ids of the skill pools to which people belong and that need to see the broadcast.
+        /// </summary>
+        [JsonProperty("skillPoolIds")]
+        public List<string>? SkillPoolIds
+        {
+            get => skillPoolIds;
+            set => skillPoolIds = Set("skillPoolIds", value);
         }
 
         /// <summary>

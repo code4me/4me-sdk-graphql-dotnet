@@ -53,6 +53,15 @@
         }
 
         /// <summary>
+        /// Used to select the organizations, to which people belong, that need to see the broadcast.
+        /// </summary>
+        public BroadcastQuery SelectOrganizations(OrganizationQuery query)
+        {
+            query.FieldName = "organizations";
+            return Select(query);
+        }
+
+        /// <summary>
         /// Files and inline images linked to the Remarks field.
         /// </summary>
         public BroadcastQuery SelectRemarksAttachments(AttachmentQuery query)
@@ -77,6 +86,24 @@
         public BroadcastQuery SelectServiceInstances(ServiceInstanceQuery query)
         {
             query.FieldName = "serviceInstances";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Used to select the sites for which people need to see the broadcast.
+        /// </summary>
+        public BroadcastQuery SelectSites(SiteQuery query)
+        {
+            query.FieldName = "sites";
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Used to select the skill pools, to which people belong, that need to see the broadcast.
+        /// </summary>
+        public BroadcastQuery SelectSkillPools(SkillPoolQuery query)
+        {
+            query.FieldName = "skillPools";
             return Select(query);
         }
 

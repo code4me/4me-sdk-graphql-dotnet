@@ -1162,6 +1162,11 @@
         [EnumMember(Value = "messageType")]
         MessageType,
         /// <summary>
+        /// The organizations field.
+        /// </summary>
+        [EnumMember(Value = "organizations")]
+        Organizations,
+        /// <summary>
         /// The remarks field.
         /// </summary>
         [EnumMember(Value = "remarks")]
@@ -1181,6 +1186,16 @@
         /// </summary>
         [EnumMember(Value = "serviceInstances")]
         ServiceInstances,
+        /// <summary>
+        /// The sites field.
+        /// </summary>
+        [EnumMember(Value = "sites")]
+        Sites,
+        /// <summary>
+        /// The skill pools field.
+        /// </summary>
+        [EnumMember(Value = "skillPools")]
+        SkillPools,
         /// <summary>
         /// The slas field.
         /// </summary>

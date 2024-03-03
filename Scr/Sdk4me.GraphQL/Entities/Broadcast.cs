@@ -58,6 +58,17 @@
         [JsonProperty("messageType"), Sdk4meField(true)]
         public BroadcastMessageType? MessageType { get; internal set; }
 
+        [JsonProperty("organizations")]
+        internal NodeCollection<Organization>? OrganizationsCollection { get; set; }
+
+        /// <summary>
+        /// Used to select the organizations, to which people belong, that need to see the broadcast.
+        /// </summary>
+        public DataList<Organization>? Organizations
+        {
+            get => OrganizationsCollection?.Data;
+        }
+
         /// <summary>
         /// Any additional information about the broadcast that might prove useful.
         /// </summary>
@@ -90,6 +101,28 @@
         public DataList<ServiceInstance>? ServiceInstances
         {
             get => ServiceInstancesCollection?.Data;
+        }
+
+        [JsonProperty("sites")]
+        internal NodeCollection<Site>? SitesCollection { get; set; }
+
+        /// <summary>
+        /// Used to select the sites for which people need to see the broadcast.
+        /// </summary>
+        public DataList<Site>? Sites
+        {
+            get => SitesCollection?.Data;
+        }
+
+        [JsonProperty("skillPools")]
+        internal NodeCollection<SkillPool>? SkillPoolsCollection { get; set; }
+
+        /// <summary>
+        /// Used to select the skill pools, to which people belong, that need to see the broadcast.
+        /// </summary>
+        public DataList<SkillPool>? SkillPools
+        {
+            get => SkillPoolsCollection?.Data;
         }
 
         [JsonProperty("slas")]
@@ -172,8 +205,11 @@
         {
             HashSet<QueryPageInfo> retval = new();
             retval.AddRange(CustomersCollection?.GetQueryPageInfo("customers", depth + 1));
+            retval.AddRange(OrganizationsCollection?.GetQueryPageInfo("organizations", depth + 1));
             retval.AddRange(RemarksAttachmentsCollection?.GetQueryPageInfo("remarksAttachments", depth + 1));
             retval.AddRange(ServiceInstancesCollection?.GetQueryPageInfo("serviceInstances", depth + 1));
+            retval.AddRange(SitesCollection?.GetQueryPageInfo("sites", depth + 1));
+            retval.AddRange(SkillPoolsCollection?.GetQueryPageInfo("skillPools", depth + 1));
             retval.AddRange(SlasCollection?.GetQueryPageInfo("slas", depth + 1));
             retval.AddRange(TeamsCollection?.GetQueryPageInfo("teams", depth + 1));
             retval.AddRange(TranslationsCollection?.GetQueryPageInfo("translations", depth + 1));
@@ -183,8 +219,11 @@
         internal override void AddToCollection(object data)
         {
             Customers?.AddRange((data as Broadcast)?.Customers);
+            Organizations?.AddRange((data as Broadcast)?.Organizations);
             RemarksAttachments?.AddRange((data as Broadcast)?.RemarksAttachments);
             ServiceInstances?.AddRange((data as Broadcast)?.ServiceInstances);
+            Sites?.AddRange((data as Broadcast)?.Sites);
+            SkillPools?.AddRange((data as Broadcast)?.SkillPools);
             Slas?.AddRange((data as Broadcast)?.Slas);
             Teams?.AddRange((data as Broadcast)?.Teams);
             Translations?.AddRange((data as Broadcast)?.Translations);
