@@ -18,6 +18,12 @@
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
+        /// The inbound email from which the note was created.
+        /// </summary>
+        [JsonProperty("inboundEmail")]
+        public InboundEmail? InboundEmail { get; internal set; }
+
+        /// <summary>
         /// Whether the notes is internal or not.
         /// </summary>
         [JsonProperty("internal"), Sdk4meField(true)]

@@ -149,6 +149,16 @@
         /// </summary>
         [EnumMember(Value = "spare_cis")]
         SpareCis,
+        /// <summary>
+        /// Archived cis.
+        /// </summary>
+        [EnumMember(Value = "archive")]
+        Archive,
+        /// <summary>
+        /// Trashed cis.
+        /// </summary>
+        [EnumMember(Value = "trash")]
+        Trash,
     }
 
     /// <summary>

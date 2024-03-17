@@ -27,6 +27,7 @@
         private List<string>? knowledgeArticleIds;
         private RequestMajorIncidentStatus? majorIncidentStatus;
         private string? memberId;
+        private List<TagInput>? newTags;
         private List<WatchInput>? newWatches;
         private string? note;
         private List<AttachmentInput>? noteAttachments;
@@ -46,6 +47,7 @@
         private string? subject;
         private string? supplierId;
         private string? supplierRequestID;
+        private List<string>? tagsToDelete;
         private string? teamId;
         private string? templateId;
         private long? timeSpent;
@@ -277,6 +279,16 @@
         }
 
         /// <summary>
+        /// Tags to be added to the request.
+        /// </summary>
+        [JsonProperty("newTags")]
+        public List<TagInput>? NewTags
+        {
+            get => newTags;
+            set => newTags = Set("newTags", value);
+        }
+
+        /// <summary>
         /// New or updated watches.
         /// </summary>
         [JsonProperty("newWatches")]
@@ -464,6 +476,16 @@
         {
             get => supplierRequestID;
             set => supplierRequestID = Set("supplierRequestID", value);
+        }
+
+        /// <summary>
+        /// Identifiers of tags to delete.
+        /// </summary>
+        [JsonProperty("tagsToDelete")]
+        public List<string>? TagsToDelete
+        {
+            get => tagsToDelete;
+            set => tagsToDelete = Set("tagsToDelete", value);
         }
 
         /// <summary>

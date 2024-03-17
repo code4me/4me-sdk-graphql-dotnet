@@ -407,6 +407,17 @@
         [JsonProperty("supplierRequestID")]
         public string? SupplierRequestID { get; internal set; }
 
+        [JsonProperty("tags")]
+        internal NodeCollection<Tag>? TagsCollection { get; set; }
+
+        /// <summary>
+        /// Tags applied to the current request account.
+        /// </summary>
+        public DataList<Tag>? Tags
+        {
+            get => TagsCollection?.Data;
+        }
+
         /// <summary>
         /// The task that caused the request to be automatically generated.
         /// </summary>
@@ -482,6 +493,7 @@
             retval.AddRange(KnowledgeArticlesCollection?.GetQueryPageInfo("knowledgeArticles", depth + 1));
             retval.AddRange(NotesCollection?.GetQueryPageInfo("notes", depth + 1));
             retval.AddRange(SprintBacklogItemsCollection?.GetQueryPageInfo("sprintBacklogItems", depth + 1));
+            retval.AddRange(TagsCollection?.GetQueryPageInfo("tags", depth + 1));
             retval.AddRange(TimeEntriesCollection?.GetQueryPageInfo("timeEntries", depth + 1));
             retval.AddRange(WatchesCollection?.GetQueryPageInfo("watches", depth + 1));
             return retval;
@@ -497,6 +509,7 @@
             KnowledgeArticles?.AddRange((data as Request)?.KnowledgeArticles);
             Notes?.AddRange((data as Request)?.Notes);
             SprintBacklogItems?.AddRange((data as Request)?.SprintBacklogItems);
+            Tags?.AddRange((data as Request)?.Tags);
             TimeEntries?.AddRange((data as Request)?.TimeEntries);
             Watches?.AddRange((data as Request)?.Watches);
         }

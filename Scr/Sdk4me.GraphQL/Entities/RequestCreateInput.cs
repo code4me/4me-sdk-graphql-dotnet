@@ -26,6 +26,7 @@
         private List<string>? knowledgeArticleIds;
         private RequestMajorIncidentStatus? majorIncidentStatus;
         private string? memberId;
+        private List<TagInput>? newTags;
         private List<WatchInput>? newWatches;
         private string? note;
         private List<AttachmentInput>? noteAttachments;
@@ -263,6 +264,16 @@
         {
             get => memberId;
             set => memberId = Set("memberId", value);
+        }
+
+        /// <summary>
+        /// Tags to be added to the request.
+        /// </summary>
+        [JsonProperty("newTags")]
+        public List<TagInput>? NewTags
+        {
+            get => newTags;
+            set => newTags = Set("newTags", value);
         }
 
         /// <summary>

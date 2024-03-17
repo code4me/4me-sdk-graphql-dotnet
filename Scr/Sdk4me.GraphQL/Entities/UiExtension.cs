@@ -65,6 +65,12 @@
         public string? Name { get; internal set; }
 
         /// <summary>
+        /// Whether the UI extension is shown on completion of the related record.
+        /// </summary>
+        [JsonProperty("showOnComplete")]
+        public bool? ShowOnComplete { get; internal set; }
+
+        /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
         [JsonProperty("source"), Sdk4meField(true)]

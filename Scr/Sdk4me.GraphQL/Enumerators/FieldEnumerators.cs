@@ -2427,6 +2427,18 @@
     }
 
     /// <summary>
+    /// The <see cref="HasNotes">HasNotes</see> fields.
+    /// </summary>
+    public enum HasNotesField
+    {
+        /// <summary>
+        /// The notes field.
+        /// </summary>
+        [EnumMember(Value = "notes")]
+        Notes,
+    }
+
+    /// <summary>
     /// The <see cref="HasSprintBacklogItems">HasSprintBacklogItems</see> fields.
     /// </summary>
     public enum HasSprintBacklogItemsField
@@ -2522,6 +2534,73 @@
         /// </summary>
         [EnumMember(Value = "updatedAt")]
         UpdatedAt,
+    }
+
+    /// <summary>
+    /// The <see cref="InboundEmail">InboundEmail</see> fields.
+    /// </summary>
+    public enum InboundEmailField
+    {
+        /// <summary>
+        /// The account field.
+        /// </summary>
+        [EnumMember(Value = "account")]
+        Account,
+        /// <summary>
+        /// The body start field.
+        /// </summary>
+        [EnumMember(Value = "bodyStart")]
+        BodyStart,
+        /// <summary>
+        /// The cc field.
+        /// </summary>
+        [EnumMember(Value = "cc")]
+        Cc,
+        /// <summary>
+        /// The created at field.
+        /// </summary>
+        [EnumMember(Value = "createdAt")]
+        CreatedAt,
+        /// <summary>
+        /// The failure reason field.
+        /// </summary>
+        [EnumMember(Value = "failureReason")]
+        FailureReason,
+        /// <summary>
+        /// The from field.
+        /// </summary>
+        [EnumMember(Value = "from")]
+        From,
+        /// <summary>
+        /// The id field.
+        /// </summary>
+        [EnumMember(Value = "id")]
+        ID,
+        /// <summary>
+        /// The message id field.
+        /// </summary>
+        [EnumMember(Value = "messageId")]
+        MessageId,
+        /// <summary>
+        /// The note field.
+        /// </summary>
+        [EnumMember(Value = "note")]
+        Note,
+        /// <summary>
+        /// The source uri field.
+        /// </summary>
+        [EnumMember(Value = "sourceUri")]
+        SourceUri,
+        /// <summary>
+        /// The subject field.
+        /// </summary>
+        [EnumMember(Value = "subject")]
+        Subject,
+        /// <summary>
+        /// The to field.
+        /// </summary>
+        [EnumMember(Value = "to")]
+        To,
     }
 
     /// <summary>
@@ -2930,6 +3009,11 @@
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
+        /// <summary>
+        /// The inbound email field.
+        /// </summary>
+        [EnumMember(Value = "inboundEmail")]
+        InboundEmail,
         /// <summary>
         /// The internal field.
         /// </summary>
@@ -5990,6 +6074,11 @@
         /// </summary>
         [EnumMember(Value = "supplierRequestID")]
         SupplierRequestID,
+        /// <summary>
+        /// The tags field.
+        /// </summary>
+        [EnumMember(Value = "tags")]
+        Tags,
         /// <summary>
         /// The task field.
         /// </summary>
@@ -9233,6 +9322,38 @@
     }
 
     /// <summary>
+    /// The <see cref="Tag">Tag</see> fields.
+    /// </summary>
+    public enum TagField
+    {
+        /// <summary>
+        /// The account field.
+        /// </summary>
+        [EnumMember(Value = "account")]
+        Account,
+        /// <summary>
+        /// The created at field.
+        /// </summary>
+        [EnumMember(Value = "createdAt")]
+        CreatedAt,
+        /// <summary>
+        /// The id field.
+        /// </summary>
+        [EnumMember(Value = "id")]
+        ID,
+        /// <summary>
+        /// The name field.
+        /// </summary>
+        [EnumMember(Value = "name")]
+        Name,
+        /// <summary>
+        /// The updated at field.
+        /// </summary>
+        [EnumMember(Value = "updatedAt")]
+        UpdatedAt,
+    }
+
+    /// <summary>
     /// The <see cref="Task">Task</see> fields.
     /// </summary>
     public enum TaskField
@@ -10472,6 +10593,11 @@
         /// </summary>
         [EnumMember(Value = "name")]
         Name,
+        /// <summary>
+        /// The show on complete field.
+        /// </summary>
+        [EnumMember(Value = "showOnComplete")]
+        ShowOnComplete,
         /// <summary>
         /// The source field.
         /// </summary>

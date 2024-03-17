@@ -267,6 +267,15 @@
         }
 
         /// <summary>
+        /// Tags applied to the current request account.
+        /// </summary>
+        public RequestQuery SelectTags(TagQuery query)
+        {
+            query.FieldName = "tags";
+            return Select(query);
+        }
+
+        /// <summary>
         /// The task that caused the request to be automatically generated.
         /// </summary>
         public RequestQuery SelectTask(TaskQuery query)

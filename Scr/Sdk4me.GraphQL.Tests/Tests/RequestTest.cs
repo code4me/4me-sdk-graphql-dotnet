@@ -10,6 +10,7 @@
         {
             DataList<Request> requests = client.Get(Query.Request
                 .View(RequestView.All)
+                .ItemsPerRequest(1)
                 .SelectAll()
                 .SelectAffectedSlas(new AffectedSlaQuery()
                     .SelectAll())
@@ -33,6 +34,9 @@
                 .SelectTimeEntries(new TimeEntryQuery()
                     .SelectAll())
                 .SelectWatches(new WatchQuery()
+                    .SelectAll())
+                .SelectTags(new TagQuery()
+                    .ItemsPerRequest(5)
                     .SelectAll())
                 ).Result;
 

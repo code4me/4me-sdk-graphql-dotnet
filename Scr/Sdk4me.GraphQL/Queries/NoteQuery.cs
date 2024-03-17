@@ -24,6 +24,16 @@
         }
 
         /// <summary>
+        /// The inbound email from which the note was created.
+        /// </summary>
+        public NoteQuery SelectInboundEmail(InboundEmailQuery query)
+        {
+            query.FieldName = "inboundEmail";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// The note reactions belonging to this note.
         /// </summary>
         public NoteQuery SelectNoteReactions(NoteReactionQuery query)

@@ -412,7 +412,7 @@ namespace Sdk4me.GraphQL
 
         /// <summary>
         /// <para>Create a new event using the <see href="https://developer.4me.com/v1/requests/events/">events API</see>.</para>
-        /// <b>Important</b>: there might be missing values in the repsonse as the REST API <c>request</c> response is coverted to a <see cref="Request">request</see> object.
+        /// <b>Important</b>: there might be missing values in the response as the REST API <c>request</c> response is coverted to a <see cref="Request">request</see> object.
         /// </summary>
         /// <param name="requestEventCreateInput">The event's data.</param>
         /// <returns>The newly created request or already existing request.</returns>
@@ -426,6 +426,7 @@ namespace Sdk4me.GraphQL
                 {
                     responseData = responseData.ToCamelCase();
                     responseData["requestId"] = requestID;
+                    responseData["tags"] = null;
                     return responseData.ToObject<Request>() ?? throw new Sdk4meException("Unprocessable response entity.");
                 }
                 else
