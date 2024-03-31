@@ -22,7 +22,7 @@ namespace Sdk4me.GraphQL
         /// </summary>
         /// <param name="requestCategory">The request category.</param>
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
-        public RequestEventCreateInput Category(RequestCategory requestCategory) 
+        public RequestEventCreateInput Category(RequestCategory requestCategory)
         {
             AddToRequest("category", requestCategory);
             return this;
@@ -73,7 +73,7 @@ namespace Sdk4me.GraphQL
         /// <param name="configurationItem">The configuration item.</param>
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         /// <exception cref="Sdk4meException"></exception>
-        public RequestEventCreateInput ConfigurationItem(ConfigurationItem configurationItem) 
+        public RequestEventCreateInput ConfigurationItem(ConfigurationItem configurationItem)
         {
             if (string.IsNullOrEmpty(configurationItem.ID))
             {
@@ -97,7 +97,7 @@ namespace Sdk4me.GraphQL
         /// </summary>
         /// <param name="reason">The completion reason.</param>
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
-        public RequestEventCreateInput CompletionReason(RequestCompletionReason reason) 
+        public RequestEventCreateInput CompletionReason(RequestCompletionReason reason)
         {
             AddToRequest("completion_reason", reason);
             return this;
@@ -392,7 +392,7 @@ namespace Sdk4me.GraphQL
         /// </summary>
         /// <param name="source">The source identifier.</param>
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
-        public RequestEventCreateInput Source(string source) 
+        public RequestEventCreateInput Source(string source)
         {
             AddToRequest("source", source);
             return this;

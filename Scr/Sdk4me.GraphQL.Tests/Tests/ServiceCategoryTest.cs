@@ -17,7 +17,7 @@
                     .SelectAll())
                 .SelectTranslations(new TranslationQuery()
                     .SelectAll()
-                    .SelectOwner(new HasTranslationsQuery()
+                    .SelectOwner(new ServiceCategoryQuery()
                         .ItemsPerRequest(1)
                         .SelectAll()))
                 ).Result;

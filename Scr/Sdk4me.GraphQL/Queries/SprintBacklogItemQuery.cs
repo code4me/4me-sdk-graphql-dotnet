@@ -26,9 +26,44 @@
         /// <summary>
         /// Record on the sprint backlog.
         /// </summary>
-        public SprintBacklogItemQuery SelectRecord(HasSprintBacklogItemsQuery query)
+        public SprintBacklogItemQuery SelectRecord(ProblemQuery query)
         {
             query.FieldName = "record";
+            query.OnType = "Problem";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Record on the sprint backlog.
+        /// </summary>
+        public SprintBacklogItemQuery SelectRecord(ProjectTaskQuery query)
+        {
+            query.FieldName = "record";
+            query.OnType = "ProjectTask";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Record on the sprint backlog.
+        /// </summary>
+        public SprintBacklogItemQuery SelectRecord(RequestQuery query)
+        {
+            query.FieldName = "record";
+            query.OnType = "Request";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Record on the sprint backlog.
+        /// </summary>
+        public SprintBacklogItemQuery SelectRecord(TaskQuery query)
+        {
+            query.FieldName = "record";
+            query.OnType = "Task";
+            query.IsConnection = false;
             return Select(query);
         }
 

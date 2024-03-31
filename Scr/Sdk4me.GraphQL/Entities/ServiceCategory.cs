@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/servicecategory/">ServiceCategory</see> object.
     /// </summary>
-    public class ServiceCategory : Node
+    public class ServiceCategory : Node, IHasTranslations
     {
         /// <summary>
         /// The account this record belongs to.

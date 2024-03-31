@@ -14,7 +14,7 @@
                 .SelectTranslations(new TranslationQuery()
                     .SelectAll()
                     .ItemsPerRequest(10)
-                    .SelectOwner(new HasTranslationsQuery()
+                    .SelectOwner(new PdfDesignQuery()
                         .ItemsPerRequest(1)
                         .SelectTranslations(new TranslationQuery())))
                     .SelectDescriptionAttachments(new AttachmentQuery()

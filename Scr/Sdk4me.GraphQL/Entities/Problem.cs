@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/problem/">Problem</see> object.
     /// </summary>
-    public class Problem : Node
+    public class Problem : Node, IHasLifeCycleState, IHasNotes, IHasSprintBacklogItems, IHasTimeEntries
     {
         /// <summary>
         /// The account this record belongs to.

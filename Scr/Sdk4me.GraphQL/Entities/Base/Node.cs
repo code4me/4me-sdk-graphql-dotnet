@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using System.Text;
 
 namespace Sdk4me.GraphQL
 {
@@ -37,30 +36,10 @@ namespace Sdk4me.GraphQL
         /// Get the REST API numerical identifier.
         /// </summary>
         /// <returns>Returns the REST API numerical identifier; or 0 if the <see cref="ID"/> is null or empty.</returns>
-        public virtual long GetIdentifier()
+        /// <exception cref="Sdk4meException"></exception>
+        public long GetIdentifier()
         {
-            if (string.IsNullOrWhiteSpace(ID))
-                return 0;
-
-            string value = ID.Replace('-', '+').Replace('_', '/').Replace(',', '=');
-            switch (value.Length % 4)
-            {
-                case 0:
-                    value = Encoding.UTF8.GetString(Convert.FromBase64String(value));
-                    break;
-                case 2:
-                    value = Encoding.UTF8.GetString(Convert.FromBase64String(value + "=="));
-                    break;
-                case 3:
-                    value = Encoding.UTF8.GetString(Convert.FromBase64String(value + "="));
-                    break;
-                default:
-                    return 0;
-            }
-
-            if (long.TryParse(value.Split('/')[^1], out long result))
-                return result;
-            return 0;
+            return ID.Get4meIdentifier();
         }
 
         /// <summary>

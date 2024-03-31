@@ -57,7 +57,7 @@
         /// The record that was created or updated from the inbound email.
         /// </summary>
         [JsonProperty("record")]
-        public HasNotes? Record { get; internal set; }
+        public IHasNotes? Record { get; internal set; }
 
         /// <summary>
         /// Expiring URL to download the source of the inbound email.

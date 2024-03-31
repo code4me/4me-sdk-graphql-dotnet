@@ -11,7 +11,7 @@
             DataList<TimeEntry> timeEntries = client.Get(Query.TimeEntry
                 .View(TimeEntryView.All)
                 .SelectAll()
-                .SelectAssignment(new HasTimeEntriesQuery()
+                .SelectAssignment(new RequestQuery()
                     .SelectAll())
                 ).Result;
 

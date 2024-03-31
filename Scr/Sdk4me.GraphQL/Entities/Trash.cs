@@ -21,7 +21,7 @@
         /// The trashed record, e.g. Request.
         /// </summary>
         [JsonProperty("trashed"), Sdk4meField(true)]
-        public HasLifeCycleState? Trashed { get; internal set; }
+        public IHasLifeCycleState? Trashed { get; internal set; }
 
         /// <summary>
         /// The person who trashed the record.

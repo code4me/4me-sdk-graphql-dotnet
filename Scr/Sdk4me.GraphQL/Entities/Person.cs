@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/person/">Person</see> object.
     /// </summary>
-    public class Person : Node
+    public class Person : Node, IHasLifeCycleState
     {
         /// <summary>
         /// The account this record belongs to.

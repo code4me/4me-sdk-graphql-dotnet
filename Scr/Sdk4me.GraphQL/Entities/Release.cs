@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/release/">Release</see> object.
     /// </summary>
-    public class Release : Node
+    public class Release : Node, IHasLifeCycleState, IHasNotes
     {
         /// <summary>
         /// The account this record belongs to.

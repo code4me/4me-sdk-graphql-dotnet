@@ -102,7 +102,7 @@
         /// <summary>
         /// The maximum number of points the client is permitted to consume in a 60-minutes window.
         /// </summary>
-        public int CostLimit 
+        public int CostLimit
         {
             get => costLimit;
             internal set => costLimit = value;

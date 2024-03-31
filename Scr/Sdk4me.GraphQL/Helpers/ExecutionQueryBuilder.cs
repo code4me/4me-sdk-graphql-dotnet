@@ -72,7 +72,7 @@ namespace Sdk4me.GraphQL
             if (!string.IsNullOrEmpty(executionQuery.FilterByID))
             {
                 builder.Append($"node(id: {SerializeObject(executionQuery.FilterByID)}) {{... on {executionQuery.DataType.Name} {{");
-                
+
                 string fields = string.Join(" ", executionQuery.Fields.Where(x => x.IsSelected).Select(x => x.Name));
                 builder.Append(fields);
                 builder.Append(fields != string.Empty && executionQuery.Queries.Count > 0 ? " " : "");
@@ -163,8 +163,11 @@ namespace Sdk4me.GraphQL
             {
                 if (executionQuery.Queries.Count > 0 || executionQuery.Fields.Any(x => x.IsSelected))
                 {
+                    bool isOnType = !string.IsNullOrEmpty(executionQuery.OnType);
                     builder.Append(executionQuery.FieldName);
                     builder.Append('{');
+                    if (isOnType)
+                        builder.Append($"... on {executionQuery.OnType} {{");
 
                     string fields = string.Join(" ", executionQuery.Fields.Where(x => x.IsSelected).Select(x => x.Name));
                     builder.Append(fields);
@@ -176,6 +179,8 @@ namespace Sdk4me.GraphQL
                     subQueries.RemoveWhere(x => string.IsNullOrWhiteSpace(x));
                     builder.Append(string.Join(" ", subQueries));
 
+                    if (isOnType)
+                        builder.Append('}');
                     builder.Append('}');
                 }
             }
@@ -197,6 +202,7 @@ namespace Sdk4me.GraphQL
                 CustomFilters = query.CustomFilters.ToHashSet(),
                 Fields = GetExecutionQueryFields(query.DataType, query.SelectedFields),
                 IsConnection = query.IsConnection,
+                OnType = query.OnType,
                 Depth = depth
             };
 
@@ -285,7 +291,7 @@ namespace Sdk4me.GraphQL
         {
             List<ExecutionQueryField> retval = new();
 
-            PropertyInfo[] allProperties = dataType.GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+            PropertyInfo[] allProperties = dataType.GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance).Where(x => !x.PropertyType.IsInterface).ToArray();
             foreach (PropertyInfo propertyInfo in allProperties)
             {
                 if (propertyInfo.GetCustomAttribute(typeof(JsonPropertyAttribute)) is JsonPropertyAttribute jsonProperty && jsonProperty.PropertyName is string jsonPropertyName)
@@ -484,7 +490,7 @@ namespace Sdk4me.GraphQL
                 else
                     retval.Add(JsonConvert.SerializeObject(value));
             }
-                
+
             return retval.ToArray();
         }
     }

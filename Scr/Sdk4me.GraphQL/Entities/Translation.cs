@@ -40,7 +40,7 @@
         /// The record from which the translation is obtained.
         /// </summary>
         [JsonProperty("owner")]
-        public HasTranslations? Owner { get; internal set; }
+        public IHasTranslations? Owner { get; internal set; }
 
         /// <summary>
         /// The text of the translation.

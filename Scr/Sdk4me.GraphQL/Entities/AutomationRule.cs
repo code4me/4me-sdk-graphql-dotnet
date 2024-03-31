@@ -73,7 +73,7 @@
         /// The record that the automation rule is linked to.
         /// </summary>
         [JsonProperty("owner")]
-        public HasAutomationRules? Owner { get; internal set; }
+        public IHasAutomationRules? Owner { get; internal set; }
 
         /// <summary>
         /// The Position field dictates the order in which the automation rule is executed.

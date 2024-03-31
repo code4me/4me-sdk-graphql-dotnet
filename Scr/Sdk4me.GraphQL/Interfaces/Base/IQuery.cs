@@ -49,6 +49,11 @@
         public bool IsConnection { get; }
 
         /// <summary>
+        /// Returns the type on interface exposed properties.
+        /// </summary>
+        public string OnType { get; }
+
+        /// <summary>
         /// Get all selected non-primitive data type fields.
         /// </summary>
         public ImmutableHashSet<IQuery> Queries { get; }

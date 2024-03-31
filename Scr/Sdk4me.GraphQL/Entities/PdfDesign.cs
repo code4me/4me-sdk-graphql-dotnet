@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/pdfdesign/">PdfDesign</see> object.
     /// </summary>
-    public class PdfDesign : Node
+    public class PdfDesign : Node, IHasTranslations
     {
         /// <summary>
         /// The account this record belongs to.

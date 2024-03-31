@@ -27,7 +27,7 @@
         /// The record in which the Time spent field was filled out to cause the time entry to be generated.
         /// </summary>
         [JsonProperty("assignment")]
-        public HasTimeEntries? Assignment { get; internal set; }
+        public IHasTimeEntries? Assignment { get; internal set; }
 
         /// <summary>
         /// For a Time and Materials activity the charge is calculated by multiplying the time spent by the charge rate of the person’s who spent the time based on the selected effort class. For a Fixed Price activity the charge is the amount defined for the fixed price activity in the service offering (of the billable SLA related to the request).

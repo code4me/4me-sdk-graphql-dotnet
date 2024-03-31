@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/knowledgearticle/">KnowledgeArticle</see> object.
     /// </summary>
-    public class KnowledgeArticle : Node
+    public class KnowledgeArticle : Node, IHasTranslations
     {
         /// <summary>
         /// The account this record belongs to.

@@ -31,7 +31,7 @@ namespace Sdk4me.GraphQL
         internal static void SleepRemainingTime(int minimumDurationPerRequestInMiliseconds = 100)
         {
             stopwatch.Stop();
-            if (stopwatch.ElapsedMilliseconds <  minimumDurationPerRequestInMiliseconds)
+            if (stopwatch.ElapsedMilliseconds < minimumDurationPerRequestInMiliseconds)
                 Thread.Sleep(stopwatch.ElapsedMilliseconds <= int.MaxValue ? minimumDurationPerRequestInMiliseconds - (int)stopwatch.ElapsedMilliseconds : minimumDurationPerRequestInMiliseconds);
         }
     }

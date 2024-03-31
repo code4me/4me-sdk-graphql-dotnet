@@ -13,6 +13,7 @@ namespace Sdk4me.GraphQL
     {
         private readonly AuthenticationTokenCollection authenticationTokens;
         private readonly JsonSerializer jsonSerializer;
+        private readonly InterfaceConverter interfaceConverter;
         private readonly string url;
         private readonly string restUrl;
         private readonly string oauth2Url;
@@ -175,6 +176,10 @@ namespace Sdk4me.GraphQL
             jsonSerializer.Converters.Add(new ISO8601TimestampJsonConverter());
             jsonSerializer.Converters.Add(new JsonEnumConverter());
 
+            interfaceConverter = new();
+            jsonSerializer.Converters.Add(interfaceConverter);
+
+
             client = new();
             client.SetUserAgent("Sdk4me.GraphQL");
             currentToken = authenticationTokens.Get();
@@ -218,6 +223,8 @@ namespace Sdk4me.GraphQL
                 NodeCollection<TEntity> nodes = new();
                 if (responseData[executionQuery.GetResponseObjectName()] is JToken responseObject)
                 {
+                    interfaceConverter.OnTypeQueries = executionQuery.GetOnTypeQueries();
+
                     if (responseObject["nodes"] != null && responseObject.ToObject<NodeCollection<TEntity>>(jsonSerializer) is NodeCollection<TEntity> collection)
                         nodes = collection;
                     else if (responseObject.ToObject<TEntity>(jsonSerializer) is TEntity data)
@@ -574,7 +581,7 @@ namespace Sdk4me.GraphQL
                     currentToken.RequestsRemaining = Convert.ToInt32(result);
                 if (responseMessage.Headers.TryGetValues("X-RateLimit-Reset", out values) && values != null && long.TryParse(values.FirstOrDefault(), out long dateResult))
                     currentToken.RequestLimitReset = DateTime.UnixEpoch.AddSeconds(dateResult).ToLocalTime();
-                
+
                 if (responseMessage.Headers.TryGetValues("X-CostLimit-Limit", out values) && values != null && int.TryParse(values.FirstOrDefault(), out result))
                     currentToken.CostLimit = result;
                 if (responseMessage.Headers.TryGetValues("X-CostLimit-Remaining", out values) && values != null && int.TryParse(values.FirstOrDefault(), out result))

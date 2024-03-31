@@ -15,7 +15,7 @@
         /// The archived record.
         /// </summary>
         [JsonProperty("archived"), Sdk4meField(true)]
-        public HasLifeCycleState? Archived { get; internal set; }
+        public IHasLifeCycleState? Archived { get; internal set; }
 
         /// <summary>
         /// The person who archived the record.

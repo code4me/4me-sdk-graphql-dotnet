@@ -36,9 +36,98 @@
         /// <summary>
         /// The archived record.
         /// </summary>
-        public ArchiveQuery SelectArchived(HasLifeCycleStateQuery query)
+        public ArchiveQuery SelectArchived(PersonQuery query)
         {
             query.FieldName = "archived";
+            query.OnType = "Person";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The archived record.
+        /// </summary>
+        public ArchiveQuery SelectArchived(ProblemQuery query)
+        {
+            query.FieldName = "archived";
+            query.OnType = "Problem";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The archived record.
+        /// </summary>
+        public ArchiveQuery SelectArchived(ProjectQuery query)
+        {
+            query.FieldName = "archived";
+            query.OnType = "Project";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The archived record.
+        /// </summary>
+        public ArchiveQuery SelectArchived(ProjectTaskQuery query)
+        {
+            query.FieldName = "archived";
+            query.OnType = "ProjectTask";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The archived record.
+        /// </summary>
+        public ArchiveQuery SelectArchived(ReleaseQuery query)
+        {
+            query.FieldName = "archived";
+            query.OnType = "Release";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The archived record.
+        /// </summary>
+        public ArchiveQuery SelectArchived(RequestQuery query)
+        {
+            query.FieldName = "archived";
+            query.OnType = "Request";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The archived record.
+        /// </summary>
+        public ArchiveQuery SelectArchived(RiskQuery query)
+        {
+            query.FieldName = "archived";
+            query.OnType = "Risk";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The archived record.
+        /// </summary>
+        public ArchiveQuery SelectArchived(TaskQuery query)
+        {
+            query.FieldName = "archived";
+            query.OnType = "Task";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The archived record.
+        /// </summary>
+        public ArchiveQuery SelectArchived(WorkflowQuery query)
+        {
+            query.FieldName = "archived";
+            query.OnType = "Workflow";
             query.IsConnection = false;
             return Select(query);
         }

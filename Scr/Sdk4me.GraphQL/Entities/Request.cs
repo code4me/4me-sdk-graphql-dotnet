@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/request/">Request</see> object.
     /// </summary>
-    public class Request : Node
+    public class Request : Node, IHasAutomationRules, IHasLifeCycleState, IHasNotes, IHasSprintBacklogItems, IHasTimeEntries
     {
         /// <summary>
         /// The account this record belongs to.

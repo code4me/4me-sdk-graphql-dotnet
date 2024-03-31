@@ -11,7 +11,7 @@
             DataList<Translation> translations = client.Get(Query.Translation
                 .View(TranslationView.CurrentAccount)
                 .SelectAll()
-                .SelectOwner(new HasTranslationsQuery()
+                .SelectOwner(new ServiceQuery()
                     .ItemsPerRequest(1)
                     .SelectAll())
                 ).Result;

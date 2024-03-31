@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/productcategory/">ProductCategory</see> object.
     /// </summary>
-    public class ProductCategory : Node
+    public class ProductCategory : Node, IHasTranslations
     {
         /// <summary>
         /// The account this record belongs to.

@@ -9,6 +9,7 @@
         private string fieldName;
         private List<ExecutionQueryField> fields = new();
         private bool isConnection;
+        private string onType = string.Empty;
         private string view = string.Empty;
         private string orderByOrder = string.Empty;
         private string orderByField = string.Empty;
@@ -95,6 +96,15 @@
         {
             get => isConnection;
             set => isConnection = value;
+        }
+
+        /// <summary>
+        /// Gets or sets the interface type of the exposed properties.
+        /// </summary>
+        internal string OnType
+        {
+            get => onType;
+            set => onType = value;
         }
 
         /// <summary>
@@ -210,6 +220,22 @@
         internal string GetResponseObjectName()
         {
             return !string.IsNullOrWhiteSpace(filterByID) ? "node" : fieldName;
+        }
+
+        /// <summary>
+        /// Return a list of interface properties.
+        /// </summary>
+        /// <returns></returns>
+        internal List<ExecutionQuery> GetOnTypeQueries()
+        {
+            List<ExecutionQuery> retval = new();
+            foreach (ExecutionQuery query in queries)
+            {
+                if (!string.IsNullOrEmpty(query.OnType))
+                    retval.Add(query);
+                retval.AddRange(query.GetOnTypeQueries());
+            }
+            return retval;
         }
 
         /// <summary>

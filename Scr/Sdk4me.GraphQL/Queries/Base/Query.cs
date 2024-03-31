@@ -21,6 +21,7 @@
         private readonly string id = string.Empty;
         private string queryFilter = string.Empty;
         private string fieldName = string.Empty;
+        private string onType = string.Empty;
         private string view = string.Empty;
         private string orderByOrder = string.Empty;
         private string orderByField = string.Empty;
@@ -94,6 +95,15 @@
         {
             get => isConnection;
             internal set => isConnection = value;
+        }
+
+        /// <summary>
+        /// Returns the type on interface exposed properties.
+        /// </summary>
+        public string OnType
+        {
+            get => onType;
+            internal set => onType = value;
         }
 
         /// <summary>

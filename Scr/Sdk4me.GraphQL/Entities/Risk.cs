@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/risk/">Risk</see> object.
     /// </summary>
-    public class Risk : Node
+    public class Risk : Node, IHasLifeCycleState, IHasNotes
     {
         /// <summary>
         /// The account this record belongs to.

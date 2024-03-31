@@ -65,7 +65,7 @@
                 else
                     writer.WriteValue(value);
             }
-            else 
+            else
             {
                 writer.WriteValue(value);
             }

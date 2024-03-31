@@ -37,7 +37,7 @@
             get => costWeight;
             set => costWeight = value;
         }
-        
+
         /// <summary>
         /// Compares two 4me authentication and returns sort them by remaining API requests and limit values.
         /// </summary>

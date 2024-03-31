@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/workflowtemplate/">WorkflowTemplate</see> object.
     /// </summary>
-    public class WorkflowTemplate : Node
+    public class WorkflowTemplate : Node, IHasAutomationRules
     {
         /// <summary>
         /// The account this record belongs to.

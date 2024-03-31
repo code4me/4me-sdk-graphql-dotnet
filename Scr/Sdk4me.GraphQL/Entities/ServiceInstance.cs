@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/serviceinstance/">ServiceInstance</see> object.
     /// </summary>
-    public class ServiceInstance : Node
+    public class ServiceInstance : Node, IHasTranslations
     {
         /// <summary>
         /// The account this record belongs to.

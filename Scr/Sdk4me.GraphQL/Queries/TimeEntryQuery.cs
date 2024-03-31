@@ -36,9 +36,44 @@
         /// <summary>
         /// The record in which the Time spent field was filled out to cause the time entry to be generated.
         /// </summary>
-        public TimeEntryQuery SelectAssignment(HasTimeEntriesQuery query)
+        public TimeEntryQuery SelectAssignment(ProblemQuery query)
         {
             query.FieldName = "assignment";
+            query.OnType = "Problem";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The record in which the Time spent field was filled out to cause the time entry to be generated.
+        /// </summary>
+        public TimeEntryQuery SelectAssignment(ProjectTaskQuery query)
+        {
+            query.FieldName = "assignment";
+            query.OnType = "ProjectTask";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The record in which the Time spent field was filled out to cause the time entry to be generated.
+        /// </summary>
+        public TimeEntryQuery SelectAssignment(RequestQuery query)
+        {
+            query.FieldName = "assignment";
+            query.OnType = "Request";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The record in which the Time spent field was filled out to cause the time entry to be generated.
+        /// </summary>
+        public TimeEntryQuery SelectAssignment(TaskQuery query)
+        {
+            query.FieldName = "assignment";
+            query.OnType = "Task";
+            query.IsConnection = false;
             return Select(query);
         }
 

@@ -45,7 +45,7 @@
         /// Record on the sprint backlog.
         /// </summary>
         [JsonProperty("record")]
-        public HasSprintBacklogItems? Record { get; internal set; }
+        public IHasSprintBacklogItems? Record { get; internal set; }
 
         /// <summary>
         /// Sprint this record is part of.

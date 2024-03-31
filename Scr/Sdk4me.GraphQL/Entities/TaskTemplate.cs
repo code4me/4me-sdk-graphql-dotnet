@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/tasktemplate/">TaskTemplate</see> object.
     /// </summary>
-    public class TaskTemplate : Node
+    public class TaskTemplate : Node, IHasAutomationRules
     {
         /// <summary>
         /// The account this record belongs to.

@@ -24,7 +24,7 @@
         {
             query.FieldName = "projectCategory";
             query.IsConnection = false;
-            return new HashSet<IQuery>() {query};
+            return new HashSet<IQuery>() { query };
         }
     }
 }

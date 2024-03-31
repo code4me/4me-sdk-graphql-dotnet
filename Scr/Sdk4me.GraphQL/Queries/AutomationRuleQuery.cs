@@ -56,9 +56,110 @@
         /// <summary>
         /// The record that the automation rule is linked to.
         /// </summary>
-        public AutomationRuleQuery SelectOwner(HasAutomationRulesQuery query)
+        public AutomationRuleQuery SelectOwner(ProjectTaskQuery query)
         {
             query.FieldName = "owner";
+            query.OnType = "ProjectTask";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The record that the automation rule is linked to.
+        /// </summary>
+        public AutomationRuleQuery SelectOwner(ProjectTaskTemplateQuery query)
+        {
+            query.FieldName = "owner";
+            query.OnType = "ProjectTaskTemplate";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The record that the automation rule is linked to.
+        /// </summary>
+        public AutomationRuleQuery SelectOwner(ProjectTaskTemplateRelationQuery query)
+        {
+            query.FieldName = "owner";
+            query.OnType = "ProjectTaskTemplateRelation";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The record that the automation rule is linked to.
+        /// </summary>
+        public AutomationRuleQuery SelectOwner(RequestQuery query)
+        {
+            query.FieldName = "owner";
+            query.OnType = "Request";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The record that the automation rule is linked to.
+        /// </summary>
+        public AutomationRuleQuery SelectOwner(RequestTemplateQuery query)
+        {
+            query.FieldName = "owner";
+            query.OnType = "RequestTemplate";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The record that the automation rule is linked to.
+        /// </summary>
+        public AutomationRuleQuery SelectOwner(TaskQuery query)
+        {
+            query.FieldName = "owner";
+            query.OnType = "Task";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The record that the automation rule is linked to.
+        /// </summary>
+        public AutomationRuleQuery SelectOwner(TaskTemplateQuery query)
+        {
+            query.FieldName = "owner";
+            query.OnType = "TaskTemplate";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The record that the automation rule is linked to.
+        /// </summary>
+        public AutomationRuleQuery SelectOwner(WorkflowQuery query)
+        {
+            query.FieldName = "owner";
+            query.OnType = "Workflow";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The record that the automation rule is linked to.
+        /// </summary>
+        public AutomationRuleQuery SelectOwner(WorkflowTaskTemplateRelationQuery query)
+        {
+            query.FieldName = "owner";
+            query.OnType = "WorkflowTaskTemplateRelation";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The record that the automation rule is linked to.
+        /// </summary>
+        public AutomationRuleQuery SelectOwner(WorkflowTemplateQuery query)
+        {
+            query.FieldName = "owner";
+            query.OnType = "WorkflowTemplate";
+            query.IsConnection = false;
             return Select(query);
         }
     }

@@ -11,6 +11,9 @@
             DataList<Trash> trashes = client.Get(Query.Trash
                 .View(TrashView.All)
                 .SelectAll()
+                .SelectTrashed(new PersonQuery()
+                    .Select(PersonField.ID)
+                    )
                 ).Result;
 
             Assert.IsNotNull(trashes);
@@ -18,8 +21,10 @@
 
             if (trashes.Any())
             {
-                trashes = client.Get(new TrashQuery(trashes.First().ID)).Result;
-                Assert.IsNotNull(trashes);
+                Trash? trash = client.Get(new TrashQuery(trashes.First().ID)).Result.FirstOrDefault();
+                Assert.IsNotNull(trash);
+                Assert.IsNotNull(trash.ID);
+                Assert.IsNotNull(trash.CreatedAt);
             }
         }
     }

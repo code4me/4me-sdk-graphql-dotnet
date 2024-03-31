@@ -11,7 +11,7 @@
             DataList<AutomationRule> automationRules = client.Get(Query.AutomationRule
                 .View(AutomationRuleView.All)
                 .SelectAll()
-                .SelectOwner(new HasAutomationRulesQuery()
+                .SelectOwner(new RequestQuery()
                     .SelectAll()
                     .ItemsPerRequest(1)
                     .SelectAutomationRules(new AutomationRuleQuery()

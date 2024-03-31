@@ -23,7 +23,7 @@
                     .SelectAll())
                 .SelectTranslations(new TranslationQuery()
                     .SelectAll()
-                    .SelectOwner(new HasTranslationsQuery()
+                    .SelectOwner(new KnowledgeArticleQuery()
                         .ItemsPerRequest(1)
                         .SelectAll()))
                 ).Result;

@@ -36,9 +36,98 @@
         /// <summary>
         /// The trashed record, e.g. Request.
         /// </summary>
-        public TrashQuery SelectTrashed(HasLifeCycleStateQuery query)
+        public TrashQuery SelectTrashed(PersonQuery query)
         {
             query.FieldName = "trashed";
+            query.OnType = "Person";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The trashed record, e.g. Request.
+        /// </summary>
+        public TrashQuery SelectTrashed(ProblemQuery query)
+        {
+            query.FieldName = "trashed";
+            query.OnType = "Problem";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The trashed record, e.g. Request.
+        /// </summary>
+        public TrashQuery SelectTrashed(ProjectQuery query)
+        {
+            query.FieldName = "trashed";
+            query.OnType = "Project";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The trashed record, e.g. Request.
+        /// </summary>
+        public TrashQuery SelectTrashed(ProjectTaskQuery query)
+        {
+            query.FieldName = "trashed";
+            query.OnType = "ProjectTask";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The trashed record, e.g. Request.
+        /// </summary>
+        public TrashQuery SelectTrashed(ReleaseQuery query)
+        {
+            query.FieldName = "trashed";
+            query.OnType = "Release";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The trashed record, e.g. Request.
+        /// </summary>
+        public TrashQuery SelectTrashed(RequestQuery query)
+        {
+            query.FieldName = "trashed";
+            query.OnType = "Request";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The trashed record, e.g. Request.
+        /// </summary>
+        public TrashQuery SelectTrashed(RiskQuery query)
+        {
+            query.FieldName = "trashed";
+            query.OnType = "Risk";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The trashed record, e.g. Request.
+        /// </summary>
+        public TrashQuery SelectTrashed(TaskQuery query)
+        {
+            query.FieldName = "trashed";
+            query.OnType = "Task";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The trashed record, e.g. Request.
+        /// </summary>
+        public TrashQuery SelectTrashed(WorkflowQuery query)
+        {
+            query.FieldName = "trashed";
+            query.OnType = "Workflow";
             query.IsConnection = false;
             return Select(query);
         }

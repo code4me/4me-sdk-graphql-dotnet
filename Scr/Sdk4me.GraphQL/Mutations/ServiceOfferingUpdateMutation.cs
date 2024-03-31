@@ -24,7 +24,7 @@
         {
             query.FieldName = "serviceOffering";
             query.IsConnection = false;
-            return new HashSet<IQuery>() {query};
+            return new HashSet<IQuery>() { query };
         }
     }
 }

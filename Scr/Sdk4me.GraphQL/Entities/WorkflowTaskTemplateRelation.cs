@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/workflowtasktemplaterelation/">WorkflowTaskTemplateRelation</see> object.
     /// </summary>
-    public class WorkflowTaskTemplateRelation : Node
+    public class WorkflowTaskTemplateRelation : Node, IHasAutomationRules
     {
         [JsonProperty("automationRules")]
         internal NodeCollection<AutomationRule>? AutomationRulesCollection { get; set; }

@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/projecttasktemplaterelation/">ProjectTaskTemplateRelation</see> object.
     /// </summary>
-    public class ProjectTaskTemplateRelation : Node
+    public class ProjectTaskTemplateRelation : Node, IHasAutomationRules
     {
         [JsonProperty("automationRules")]
         internal NodeCollection<AutomationRule>? AutomationRulesCollection { get; set; }

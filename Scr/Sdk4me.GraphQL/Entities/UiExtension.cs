@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/uiextension/">UiExtension</see> object.
     /// </summary>
-    public class UiExtension : Node
+    public class UiExtension : Node, IHasTranslations
     {
         /// <summary>
         /// The account this record belongs to.

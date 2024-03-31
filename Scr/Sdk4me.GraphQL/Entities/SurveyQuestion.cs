@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/surveyquestion/">SurveyQuestion</see> object.
     /// </summary>
-    public class SurveyQuestion : Node
+    public class SurveyQuestion : Node, IHasTranslations
     {
         /// <summary>
         /// The account this record belongs to.

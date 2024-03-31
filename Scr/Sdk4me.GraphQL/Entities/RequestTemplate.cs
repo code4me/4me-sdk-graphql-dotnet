@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/requesttemplate/">RequestTemplate</see> object.
     /// </summary>
-    public class RequestTemplate : Node
+    public class RequestTemplate : Node, IHasAutomationRules, IHasTranslations
     {
         /// <summary>
         /// The account this record belongs to.
