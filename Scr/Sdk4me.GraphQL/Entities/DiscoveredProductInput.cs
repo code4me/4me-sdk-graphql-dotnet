@@ -11,6 +11,7 @@
         private string? model;
         private string? name;
         private string? productID;
+        private string? service;
         private string? sourceID;
         private string? uiExtensionId;
 
@@ -72,6 +73,16 @@
         {
             get => productID;
             set => productID = Set("productID", value);
+        }
+
+        /// <summary>
+        /// The name of the service this product's configuration items are, or will be, a part of.
+        /// </summary>
+        [JsonProperty("service")]
+        public string? Service
+        {
+            get => service;
+            set => service = Set("service", value);
         }
 
         /// <summary>

@@ -23,6 +23,7 @@
         private long? ramAmount;
         private string? remarks;
         private string? serialNr;
+        private string? service;
         private string? sourceID;
         private CiStatus? status;
         private string? systemID;
@@ -208,6 +209,16 @@
         {
             get => serialNr;
             set => serialNr = Set("serialNr", value);
+        }
+
+        /// <summary>
+        /// The name of the service the configuration item is, or will be, a part of. When no value is specified for this field, it is set to the service of the CI's product.
+        /// </summary>
+        [JsonProperty("service")]
+        public string? Service
+        {
+            get => service;
+            set => service = Set("service", value);
         }
 
         /// <summary>
