@@ -163,24 +163,39 @@ namespace Sdk4me.GraphQL
             {
                 if (executionQuery.Queries.Count > 0 || executionQuery.Fields.Any(x => x.IsSelected))
                 {
-                    bool isOnType = !string.IsNullOrEmpty(executionQuery.OnType);
                     builder.Append(executionQuery.FieldName);
                     builder.Append('{');
-                    if (isOnType)
-                        builder.Append($"... on {executionQuery.OnType} {{");
 
-                    string fields = string.Join(" ", executionQuery.Fields.Where(x => x.IsSelected).Select(x => x.Name));
-                    builder.Append(fields);
-                    builder.Append(fields != string.Empty && executionQuery.Queries.Count > 0 ? " " : "");
+                    if (executionQuery.OnTypeQueries.Count != 0)
+                    {
+                        builder.Append("__typename");
+                        foreach (KeyValuePair<string, ExecutionQuery> onTypeQuery in executionQuery.OnTypeQueries)
+                        {
+                            builder.Append($" ... on {onTypeQuery.Key} {{");
+                            string fields = string.Join(" ", onTypeQuery.Value.Fields.Where(x => x.IsSelected).Select(x => x.Name));
+                            builder.Append(fields);
+                            builder.Append(fields != string.Empty && onTypeQuery.Value.Queries.Count > 0 ? " " : "");
 
-                    HashSet<string> subQueries = new();
-                    foreach (ExecutionQuery query in executionQuery.Queries)
-                        subQueries.Add(GetGraphQLQuery(query));
-                    subQueries.RemoveWhere(x => string.IsNullOrWhiteSpace(x));
-                    builder.Append(string.Join(" ", subQueries));
+                            HashSet<string> subQueries = new();
+                            foreach (ExecutionQuery query in onTypeQuery.Value.Queries)
+                                subQueries.Add(GetGraphQLQuery(query));
+                            subQueries.RemoveWhere(x => string.IsNullOrWhiteSpace(x));
+                            builder.Append(string.Join(" ", subQueries));
+                            builder.Append('}');
+                        }
+                    }
+                    else
+                    {
+                        string fields = string.Join(" ", executionQuery.Fields.Where(x => x.IsSelected).Select(x => x.Name));
+                        builder.Append(fields);
+                        builder.Append(fields != string.Empty && executionQuery.Queries.Count > 0 ? " " : "");
 
-                    if (isOnType)
-                        builder.Append('}');
+                        HashSet<string> subQueries = new();
+                        foreach (ExecutionQuery query in executionQuery.Queries)
+                            subQueries.Add(GetGraphQLQuery(query));
+                        subQueries.RemoveWhere(x => string.IsNullOrWhiteSpace(x));
+                        builder.Append(string.Join(" ", subQueries));
+                    }
                     builder.Append('}');
                 }
             }
@@ -202,9 +217,11 @@ namespace Sdk4me.GraphQL
                 CustomFilters = query.CustomFilters.ToHashSet(),
                 Fields = GetExecutionQueryFields(query.DataType, query.SelectedFields),
                 IsConnection = query.IsConnection,
-                OnType = query.OnType,
                 Depth = depth
             };
+            
+            foreach (KeyValuePair<string, IQuery> item in query.OnTypesQueries)
+                retval.OnTypeQueries.Add(item.Key, BuildQuery(item.Value, depth + 1, defaultItemsPerRequest));
 
             foreach (IQuery subQuery in query.Queries)
                 retval.Queries.Add(BuildQuery(subQuery, depth + 1, defaultItemsPerRequest));

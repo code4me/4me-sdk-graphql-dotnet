@@ -35,99 +35,108 @@
 
         /// <summary>
         /// The trashed record, e.g. Request.
+        /// <br>Use this method along with other <c>SelectTrashed(IQuery)</c> calls to cast different object types supporting <see cref="IHasLifeCycleState"></see>.</br>
         /// </summary>
         public TrashQuery SelectTrashed(PersonQuery query)
         {
             query.FieldName = "trashed";
-            query.OnType = "Person";
+            query.OnTypesQueries.Add("Person", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The trashed record, e.g. Request.
+        /// <br>Use this method along with other <c>SelectTrashed(IQuery)</c> calls to cast different object types supporting <see cref="IHasLifeCycleState"></see>.</br>
         /// </summary>
         public TrashQuery SelectTrashed(ProblemQuery query)
         {
             query.FieldName = "trashed";
-            query.OnType = "Problem";
+            query.OnTypesQueries.Add("Problem", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The trashed record, e.g. Request.
+        /// <br>Use this method along with other <c>SelectTrashed(IQuery)</c> calls to cast different object types supporting <see cref="IHasLifeCycleState"></see>.</br>
         /// </summary>
         public TrashQuery SelectTrashed(ProjectQuery query)
         {
             query.FieldName = "trashed";
-            query.OnType = "Project";
+            query.OnTypesQueries.Add("Project", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The trashed record, e.g. Request.
+        /// <br>Use this method along with other <c>SelectTrashed(IQuery)</c> calls to cast different object types supporting <see cref="IHasLifeCycleState"></see>.</br>
         /// </summary>
         public TrashQuery SelectTrashed(ProjectTaskQuery query)
         {
             query.FieldName = "trashed";
-            query.OnType = "ProjectTask";
+            query.OnTypesQueries.Add("ProjectTask", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The trashed record, e.g. Request.
+        /// <br>Use this method along with other <c>SelectTrashed(IQuery)</c> calls to cast different object types supporting <see cref="IHasLifeCycleState"></see>.</br>
         /// </summary>
         public TrashQuery SelectTrashed(ReleaseQuery query)
         {
             query.FieldName = "trashed";
-            query.OnType = "Release";
+            query.OnTypesQueries.Add("Release", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The trashed record, e.g. Request.
+        /// <br>Use this method along with other <c>SelectTrashed(IQuery)</c> calls to cast different object types supporting <see cref="IHasLifeCycleState"></see>.</br>
         /// </summary>
         public TrashQuery SelectTrashed(RequestQuery query)
         {
             query.FieldName = "trashed";
-            query.OnType = "Request";
+            query.OnTypesQueries.Add("Request", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The trashed record, e.g. Request.
+        /// <br>Use this method along with other <c>SelectTrashed(IQuery)</c> calls to cast different object types supporting <see cref="IHasLifeCycleState"></see>.</br>
         /// </summary>
         public TrashQuery SelectTrashed(RiskQuery query)
         {
             query.FieldName = "trashed";
-            query.OnType = "Risk";
+            query.OnTypesQueries.Add("Risk", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The trashed record, e.g. Request.
+        /// <br>Use this method along with other <c>SelectTrashed(IQuery)</c> calls to cast different object types supporting <see cref="IHasLifeCycleState"></see>.</br>
         /// </summary>
         public TrashQuery SelectTrashed(TaskQuery query)
         {
             query.FieldName = "trashed";
-            query.OnType = "Task";
+            query.OnTypesQueries.Add("Task", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The trashed record, e.g. Request.
+        /// <br>Use this method along with other <c>SelectTrashed(IQuery)</c> calls to cast different object types supporting <see cref="IHasLifeCycleState"></see>.</br>
         /// </summary>
         public TrashQuery SelectTrashed(WorkflowQuery query)
         {
             query.FieldName = "trashed";
-            query.OnType = "Workflow";
+            query.OnTypesQueries.Add("Workflow", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }

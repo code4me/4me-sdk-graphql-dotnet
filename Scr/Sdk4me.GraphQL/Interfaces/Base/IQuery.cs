@@ -49,9 +49,9 @@
         public bool IsConnection { get; }
 
         /// <summary>
-        /// Returns the type on interface exposed properties.
+        /// Returns the interface exposed property types, and their queries.
         /// </summary>
-        public string OnType { get; }
+        public SortedDictionary<string, IQuery> OnTypesQueries { get; }
 
         /// <summary>
         /// Get all selected non-primitive data type fields.

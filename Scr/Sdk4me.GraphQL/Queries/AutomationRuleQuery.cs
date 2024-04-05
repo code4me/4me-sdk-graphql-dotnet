@@ -55,110 +55,120 @@
 
         /// <summary>
         /// The record that the automation rule is linked to.
+        /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasAutomationRules"></see>.</br>
         /// </summary>
         public AutomationRuleQuery SelectOwner(ProjectTaskQuery query)
         {
             query.FieldName = "owner";
-            query.OnType = "ProjectTask";
+            query.OnTypesQueries.Add("ProjectTask", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record that the automation rule is linked to.
+        /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasAutomationRules"></see>.</br>
         /// </summary>
         public AutomationRuleQuery SelectOwner(ProjectTaskTemplateQuery query)
         {
             query.FieldName = "owner";
-            query.OnType = "ProjectTaskTemplate";
+            query.OnTypesQueries.Add("ProjectTaskTemplate", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record that the automation rule is linked to.
+        /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasAutomationRules"></see>.</br>
         /// </summary>
         public AutomationRuleQuery SelectOwner(ProjectTaskTemplateRelationQuery query)
         {
             query.FieldName = "owner";
-            query.OnType = "ProjectTaskTemplateRelation";
+            query.OnTypesQueries.Add("ProjectTaskTemplateRelation", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record that the automation rule is linked to.
+        /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasAutomationRules"></see>.</br>
         /// </summary>
         public AutomationRuleQuery SelectOwner(RequestQuery query)
         {
             query.FieldName = "owner";
-            query.OnType = "Request";
+            query.OnTypesQueries.Add("Request", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record that the automation rule is linked to.
+        /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasAutomationRules"></see>.</br>
         /// </summary>
         public AutomationRuleQuery SelectOwner(RequestTemplateQuery query)
         {
             query.FieldName = "owner";
-            query.OnType = "RequestTemplate";
+            query.OnTypesQueries.Add("RequestTemplate", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record that the automation rule is linked to.
+        /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasAutomationRules"></see>.</br>
         /// </summary>
         public AutomationRuleQuery SelectOwner(TaskQuery query)
         {
             query.FieldName = "owner";
-            query.OnType = "Task";
+            query.OnTypesQueries.Add("Task", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record that the automation rule is linked to.
+        /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasAutomationRules"></see>.</br>
         /// </summary>
         public AutomationRuleQuery SelectOwner(TaskTemplateQuery query)
         {
             query.FieldName = "owner";
-            query.OnType = "TaskTemplate";
+            query.OnTypesQueries.Add("TaskTemplate", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record that the automation rule is linked to.
+        /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasAutomationRules"></see>.</br>
         /// </summary>
         public AutomationRuleQuery SelectOwner(WorkflowQuery query)
         {
             query.FieldName = "owner";
-            query.OnType = "Workflow";
+            query.OnTypesQueries.Add("Workflow", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record that the automation rule is linked to.
+        /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasAutomationRules"></see>.</br>
         /// </summary>
         public AutomationRuleQuery SelectOwner(WorkflowTaskTemplateRelationQuery query)
         {
             query.FieldName = "owner";
-            query.OnType = "WorkflowTaskTemplateRelation";
+            query.OnTypesQueries.Add("WorkflowTaskTemplateRelation", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record that the automation rule is linked to.
+        /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasAutomationRules"></see>.</br>
         /// </summary>
         public AutomationRuleQuery SelectOwner(WorkflowTemplateQuery query)
         {
             query.FieldName = "owner";
-            query.OnType = "WorkflowTemplate";
+            query.OnTypesQueries.Add("WorkflowTemplate", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }

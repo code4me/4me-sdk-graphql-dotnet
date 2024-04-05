@@ -13,15 +13,15 @@
     where TView : Enum
     where TOrderBy : Enum
     {
-        private readonly HashSet<string> fields = new();
+        private HashSet<string> fields = new();
         private readonly Type dataType = typeof(TEntity);
-        private readonly Dictionary<string, IQuery> queries = new();
-        private readonly HashSet<string> filters = new();
-        private readonly HashSet<string> customFilters = new();
+        private Dictionary<string, IQuery> queries = new();
+        private SortedDictionary<string, IQuery> onTypeQueries = new();
+        private HashSet<string> filters = new();
+        private HashSet<string> customFilters = new();
         private readonly string id = string.Empty;
         private string queryFilter = string.Empty;
         private string fieldName = string.Empty;
-        private string onType = string.Empty;
         private string view = string.Empty;
         private string orderByOrder = string.Empty;
         private string orderByField = string.Empty;
@@ -37,7 +37,7 @@
         }
 
         /// <summary>
-        /// Gets the field name.
+        /// Get the field name.
         /// </summary>
         public string FieldName
         {
@@ -98,12 +98,11 @@
         }
 
         /// <summary>
-        /// Returns the type on interface exposed properties.
+        /// Get the interface exposed property types, and their queries.
         /// </summary>
-        public string OnType
+        public SortedDictionary<string, IQuery> OnTypesQueries 
         {
-            get => onType;
-            internal set => onType = value;
+            get => onTypeQueries;
         }
 
         /// <summary>
@@ -156,7 +155,7 @@
         protected Query(string fieldName, Type dataType, bool isConnection)
         {
             this.fieldName = fieldName;
-            this.dataType = typeof(Node).IsAssignableFrom(dataType) ? dataType : throw new Sdk4meException($"{nameof(dataType)} does not implement {nameof(Node)}");
+            this.dataType = typeof(Node).IsAssignableFrom(dataType) ? dataType : throw new Sdk4meException($"{nameof(dataType)} does not implement {nameof(Node)}.");
             this.isConnection = isConnection;
         }
 
@@ -171,8 +170,8 @@
         protected Query(string fieldName, string id, Type dataType, bool isConnection)
         {
             this.fieldName = fieldName;
-            this.id = !string.IsNullOrEmpty(id) ? id : throw new Sdk4meException($"The {nameof(id)} cannot be null or empty");
-            this.dataType = typeof(Node).IsAssignableFrom(dataType) ? dataType : throw new Sdk4meException($"{nameof(dataType)} does not implement {nameof(Node)}");
+            this.id = !string.IsNullOrEmpty(id) ? id : throw new Sdk4meException($"The {nameof(id)} cannot be null or empty.");
+            this.dataType = typeof(Node).IsAssignableFrom(dataType) ? dataType : throw new Sdk4meException($"{nameof(dataType)} does not implement {nameof(Node)}.");
             this.isConnection = isConnection;
         }
 
@@ -292,8 +291,25 @@
         /// <exception cref="NullReferenceException"></exception>
         internal protected TEntity Select(IQuery query)
         {
-            if (!queries.TryAdd(query.FieldName, query))
-                queries[query.FieldName] = query;
+            if (queries.TryGetValue(query.FieldName, out IQuery? existingQuery) && existingQuery != null)
+            {
+                if (existingQuery.OnTypesQueries.Count != 0 && query.OnTypesQueries.Count != 0)
+                {
+                    foreach (KeyValuePair<string, IQuery> onType in query.OnTypesQueries)
+                    {
+                        if (!existingQuery.OnTypesQueries.TryAdd(onType.Key, onType.Value))
+                            existingQuery.OnTypesQueries[onType.Key] = onType.Value;
+                    }
+                }
+                else
+                {
+                    queries[query.FieldName] = query;
+                }
+            }
+            else
+            {
+                queries.Add(query.FieldName, query);
+            }
             return this as TEntity ?? throw new NullReferenceException(nameof(TEntity));
         }
 
@@ -427,6 +443,21 @@
         {
             customFilters.Add(ExecutionQueryBuilder.BuildCustomFilter(name, filterOperator, values));
             return this as TEntity ?? throw new NullReferenceException(nameof(TEntity));
+        }
+
+        /// <summary>
+        ///  Clone the Query object excluding OnTypeQueries.
+        /// </summary>
+        /// <returns>A new instance of the Query object with the OnType query values.</returns>
+        internal protected Query<TEntity, TFields, TView, TOrderBy> Clone()
+        {
+            Query<TEntity, TFields, TView, TOrderBy> clone = (Query<TEntity, TFields, TView, TOrderBy>)MemberwiseClone();
+            clone.fields = new(fields);
+            clone.queries = new(queries);
+            clone.filters = new(filters);
+            clone.customFilters = new(customFilters);
+            clone.onTypeQueries = new();
+            return clone;
         }
     }
 }

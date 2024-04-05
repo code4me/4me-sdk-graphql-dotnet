@@ -35,165 +35,180 @@
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
         /// </summary>
         public TranslationQuery SelectOwner(CustomCollectionElementQuery query)
         {
             query.FieldName = "owner";
-            query.OnType = "CustomCollectionElement";
+            query.OnTypesQueries.Add("CustomCollectionElement", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
         /// </summary>
         public TranslationQuery SelectOwner(EmailTemplateQuery query)
         {
             query.FieldName = "owner";
-            query.OnType = "EmailTemplate";
+            query.OnTypesQueries.Add("EmailTemplate", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
         /// </summary>
         public TranslationQuery SelectOwner(KnowledgeArticleQuery query)
         {
             query.FieldName = "owner";
-            query.OnType = "KnowledgeArticle";
+            query.OnTypesQueries.Add("KnowledgeArticle", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
         /// </summary>
         public TranslationQuery SelectOwner(PdfDesignQuery query)
         {
             query.FieldName = "owner";
-            query.OnType = "PdfDesign";
+            query.OnTypesQueries.Add("PdfDesign", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
         /// </summary>
         public TranslationQuery SelectOwner(ProductCategoryQuery query)
         {
             query.FieldName = "owner";
-            query.OnType = "ProductCategory";
+            query.OnTypesQueries.Add("ProductCategory", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
         /// </summary>
         public TranslationQuery SelectOwner(RequestTemplateQuery query)
         {
             query.FieldName = "owner";
-            query.OnType = "RequestTemplate";
+            query.OnTypesQueries.Add("RequestTemplate", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
         /// </summary>
         public TranslationQuery SelectOwner(RiskSeverityQuery query)
         {
             query.FieldName = "owner";
-            query.OnType = "RiskSeverity";
+            query.OnTypesQueries.Add("RiskSeverity", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
         /// </summary>
         public TranslationQuery SelectOwner(ServiceQuery query)
         {
             query.FieldName = "owner";
-            query.OnType = "Service";
+            query.OnTypesQueries.Add("Service", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
         /// </summary>
         public TranslationQuery SelectOwner(ServiceCategoryQuery query)
         {
             query.FieldName = "owner";
-            query.OnType = "ServiceCategory";
+            query.OnTypesQueries.Add("ServiceCategory", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
         /// </summary>
         public TranslationQuery SelectOwner(ServiceInstanceQuery query)
         {
             query.FieldName = "owner";
-            query.OnType = "ServiceInstance";
+            query.OnTypesQueries.Add("ServiceInstance", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
         /// </summary>
         public TranslationQuery SelectOwner(SurveyQuery query)
         {
             query.FieldName = "owner";
-            query.OnType = "Survey";
+            query.OnTypesQueries.Add("Survey", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
         /// </summary>
         public TranslationQuery SelectOwner(SurveyQuestionQuery query)
         {
             query.FieldName = "owner";
-            query.OnType = "SurveyQuestion";
+            query.OnTypesQueries.Add("SurveyQuestion", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
         /// </summary>
         public TranslationQuery SelectOwner(TimeAllocationQuery query)
         {
             query.FieldName = "owner";
-            query.OnType = "TimeAllocation";
+            query.OnTypesQueries.Add("TimeAllocation", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
         /// </summary>
         public TranslationQuery SelectOwner(UiExtensionQuery query)
         {
             query.FieldName = "owner";
-            query.OnType = "UiExtension";
+            query.OnTypesQueries.Add("UiExtension", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
         /// </summary>
         public TranslationQuery SelectOwner(WorkflowTypeQuery query)
         {
             query.FieldName = "owner";
-            query.OnType = "WorkflowType";
+            query.OnTypesQueries.Add("WorkflowType", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }

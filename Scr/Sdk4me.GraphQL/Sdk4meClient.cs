@@ -179,7 +179,6 @@ namespace Sdk4me.GraphQL
             interfaceConverter = new();
             jsonSerializer.Converters.Add(interfaceConverter);
 
-
             client = new();
             client.SetUserAgent("Sdk4me.GraphQL");
             currentToken = authenticationTokens.Get();
@@ -223,7 +222,7 @@ namespace Sdk4me.GraphQL
                 NodeCollection<TEntity> nodes = new();
                 if (responseData[executionQuery.GetResponseObjectName()] is JToken responseObject)
                 {
-                    interfaceConverter.OnTypeQueries = executionQuery.GetOnTypeQueries();
+                    interfaceConverter.InterfaceTypeMappings = executionQuery.GetOnTypeQueries();
 
                     if (responseObject["nodes"] != null && responseObject.ToObject<NodeCollection<TEntity>>(jsonSerializer) is NodeCollection<TEntity> collection)
                         nodes = collection;

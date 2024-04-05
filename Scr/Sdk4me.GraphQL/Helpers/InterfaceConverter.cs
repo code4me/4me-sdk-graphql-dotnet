@@ -1,21 +1,19 @@
-﻿using System.Text.RegularExpressions;
-
-namespace Sdk4me.GraphQL
+﻿namespace Sdk4me.GraphQL
 {
     /// <summary>
-    /// An <see cref="IHasTranslations"/> JSON converter.
+    /// An 4me GraphQL JSON interface converter.
     /// </summary>
     internal class InterfaceConverter : JsonConverter
     {
-        private List<ExecutionQuery> onTypeQueries = new();
+        private Dictionary<string, Type> interfaceTypeMappings = new();
 
         /// <summary>
-        /// Get or set the OnType queries values to properly initialize a new instance of interface compatible type.
+        /// A collection of GraphQL types to Sdk4me data types to convert interface properties.
         /// </summary>
-        public List<ExecutionQuery> OnTypeQueries
+        public Dictionary<string, Type> InterfaceTypeMappings
         {
-            get => onTypeQueries;
-            set => onTypeQueries = value;
+            get => interfaceTypeMappings;
+            set => interfaceTypeMappings = value;
         }
 
         /// <summary>
@@ -25,12 +23,7 @@ namespace Sdk4me.GraphQL
         /// <returns>True if this instance can convert the specified object type; otherwise, false.</returns>
         public override bool CanConvert(Type objectType)
         {
-            return objectType == typeof(IHasAutomationRules)
-                || objectType == typeof(IHasLifeCycleState)
-                || objectType == typeof(IHasNotes)
-                || objectType == typeof(IHasSprintBacklogItems)
-                || objectType == typeof(IHasTimeEntries)
-                || objectType == typeof(IHasTranslations);
+            return objectType.IsInterface;
         }
 
         /// <summary>
@@ -44,22 +37,21 @@ namespace Sdk4me.GraphQL
         public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
         {
             if (reader.TokenType == JsonToken.Null)
-            {
                 return null;
-            }
-            else 
-            {
-                JObject jsonObject = JObject.Load(reader);
-                if (jsonObject.HasValues)
-                {
-                    string[] type = reader.Path.Split(".").Skip(2).ToArray().Where(item => !Regex.IsMatch(item, @"nodes\[\d+\]")).ToArray();
 
-                    if (type.Length > 0 && onTypeQueries.Where(x => x.Depth == type.Length && x.FieldName == type[^1]).FirstOrDefault() is ExecutionQuery query && query != null)
-                        return jsonObject.HasValues ? jsonObject.ToObject(query.DataType, serializer) : null;
-                    throw new Sdk4meException($"The type, {objectType.Name}, is an interface or abstract class and cannot be instantiated.");
+            JObject jsonObject = JObject.Load(reader);
+            if (jsonObject.TryGetValue("__typename", out JToken? typeJtoken) && typeJtoken.Value<string>() is string typeName && !string.IsNullOrEmpty(typeName))
+            {
+                if (interfaceTypeMappings.TryGetValue(typeName, out Type? type) && type != null)
+                {
+                    return jsonObject.ToObject(type, serializer);
                 }
-                return null;
             }
+            else
+            {
+                throw new Sdk4meException($"The GraphQL __typename value for property of the type {objectType.Name} is null and cannot be casted to a known data type.");
+            }
+            return null;
         }
 
         /// <summary>

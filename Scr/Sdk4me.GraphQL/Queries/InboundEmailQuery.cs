@@ -35,88 +35,96 @@
 
         /// <summary>
         /// The record that was created or updated from the inbound email.
+        /// <br>Use this method along with other <c>SelectRecord(IQuery)</c> calls to cast different object types supporting <see cref="IHasNotes"></see>.</br>
         /// </summary>
         public InboundEmailQuery SelectRecord(ProblemQuery query)
         {
             query.FieldName = "record";
-            query.OnType = "Problem";
+            query.OnTypesQueries.Add("Problem", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record that was created or updated from the inbound email.
+        /// <br>Use this method along with other <c>SelectRecord(IQuery)</c> calls to cast different object types supporting <see cref="IHasNotes"></see>.</br>
         /// </summary>
         public InboundEmailQuery SelectRecord(ProjectQuery query)
         {
             query.FieldName = "record";
-            query.OnType = "Project";
+            query.OnTypesQueries.Add("Project", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record that was created or updated from the inbound email.
+        /// <br>Use this method along with other <c>SelectRecord(IQuery)</c> calls to cast different object types supporting <see cref="IHasNotes"></see>.</br>
         /// </summary>
         public InboundEmailQuery SelectRecord(ProjectTaskQuery query)
         {
             query.FieldName = "record";
-            query.OnType = "ProjectTask";
+            query.OnTypesQueries.Add("ProjectTask", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record that was created or updated from the inbound email.
+        /// <br>Use this method along with other <c>SelectRecord(IQuery)</c> calls to cast different object types supporting <see cref="IHasNotes"></see>.</br>
         /// </summary>
         public InboundEmailQuery SelectRecord(ReleaseQuery query)
         {
             query.FieldName = "record";
-            query.OnType = "Release";
+            query.OnTypesQueries.Add("Release", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record that was created or updated from the inbound email.
+        /// <br>Use this method along with other <c>SelectRecord(IQuery)</c> calls to cast different object types supporting <see cref="IHasNotes"></see>.</br>
         /// </summary>
         public InboundEmailQuery SelectRecord(RequestQuery query)
         {
             query.FieldName = "record";
-            query.OnType = "Request";
+            query.OnTypesQueries.Add("Request", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record that was created or updated from the inbound email.
+        /// <br>Use this method along with other <c>SelectRecord(IQuery)</c> calls to cast different object types supporting <see cref="IHasNotes"></see>.</br>
         /// </summary>
         public InboundEmailQuery SelectRecord(RiskQuery query)
         {
             query.FieldName = "record";
-            query.OnType = "Risk";
+            query.OnTypesQueries.Add("Risk", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record that was created or updated from the inbound email.
+        /// <br>Use this method along with other <c>SelectRecord(IQuery)</c> calls to cast different object types supporting <see cref="IHasNotes"></see>.</br>
         /// </summary>
         public InboundEmailQuery SelectRecord(TaskQuery query)
         {
             query.FieldName = "record";
-            query.OnType = "Task";
+            query.OnTypesQueries.Add("Task", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record that was created or updated from the inbound email.
+        /// <br>Use this method along with other <c>SelectRecord(IQuery)</c> calls to cast different object types supporting <see cref="IHasNotes"></see>.</br>
         /// </summary>
         public InboundEmailQuery SelectRecord(WorkflowQuery query)
         {
             query.FieldName = "record";
-            query.OnType = "Workflow";
+            query.OnTypesQueries.Add("Workflow", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }

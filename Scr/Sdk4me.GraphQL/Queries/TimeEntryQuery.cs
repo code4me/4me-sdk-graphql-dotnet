@@ -35,44 +35,48 @@
 
         /// <summary>
         /// The record in which the Time spent field was filled out to cause the time entry to be generated.
+        /// <br>Use this method along with other <c>SelectAssignment(IQuery)</c> calls to cast different object types supporting <see cref="IHasTimeEntries"></see>.</br>
         /// </summary>
         public TimeEntryQuery SelectAssignment(ProblemQuery query)
         {
             query.FieldName = "assignment";
-            query.OnType = "Problem";
+            query.OnTypesQueries.Add("Problem", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record in which the Time spent field was filled out to cause the time entry to be generated.
+        /// <br>Use this method along with other <c>SelectAssignment(IQuery)</c> calls to cast different object types supporting <see cref="IHasTimeEntries"></see>.</br>
         /// </summary>
         public TimeEntryQuery SelectAssignment(ProjectTaskQuery query)
         {
             query.FieldName = "assignment";
-            query.OnType = "ProjectTask";
+            query.OnTypesQueries.Add("ProjectTask", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record in which the Time spent field was filled out to cause the time entry to be generated.
+        /// <br>Use this method along with other <c>SelectAssignment(IQuery)</c> calls to cast different object types supporting <see cref="IHasTimeEntries"></see>.</br>
         /// </summary>
         public TimeEntryQuery SelectAssignment(RequestQuery query)
         {
             query.FieldName = "assignment";
-            query.OnType = "Request";
+            query.OnTypesQueries.Add("Request", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }
 
         /// <summary>
         /// The record in which the Time spent field was filled out to cause the time entry to be generated.
+        /// <br>Use this method along with other <c>SelectAssignment(IQuery)</c> calls to cast different object types supporting <see cref="IHasTimeEntries"></see>.</br>
         /// </summary>
         public TimeEntryQuery SelectAssignment(TaskQuery query)
         {
             query.FieldName = "assignment";
-            query.OnType = "Task";
+            query.OnTypesQueries.Add("Task", query.Clone());
             query.IsConnection = false;
             return Select(query);
         }

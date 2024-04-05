@@ -9,7 +9,7 @@
         private string fieldName;
         private List<ExecutionQueryField> fields = new();
         private bool isConnection;
-        private string onType = string.Empty;
+        private Dictionary<string, ExecutionQuery> onTypeQueries = new();
         private string view = string.Empty;
         private string orderByOrder = string.Empty;
         private string orderByField = string.Empty;
@@ -101,10 +101,10 @@
         /// <summary>
         /// Gets or sets the interface type of the exposed properties.
         /// </summary>
-        internal string OnType
+        internal Dictionary<string, ExecutionQuery> OnTypeQueries
         {
-            get => onType;
-            set => onType = value;
+            get => onTypeQueries;
+            set => onTypeQueries = value;
         }
 
         /// <summary>
@@ -223,17 +223,20 @@
         }
 
         /// <summary>
-        /// Return a list of interface properties.
+        /// Return a list of interface property types.
         /// </summary>
         /// <returns></returns>
-        internal List<ExecutionQuery> GetOnTypeQueries()
+        internal Dictionary<string, Type> GetOnTypeQueries()
         {
-            List<ExecutionQuery> retval = new();
+            Dictionary<string, Type> retval = new();
             foreach (ExecutionQuery query in queries)
             {
-                if (!string.IsNullOrEmpty(query.OnType))
-                    retval.Add(query);
-                retval.AddRange(query.GetOnTypeQueries());
+                foreach (string key in query.OnTypeQueries.Keys)
+                    retval[key] = query.OnTypeQueries[key].dataType;
+
+                Dictionary<string, Type> subQueries = query.GetOnTypeQueries();
+                foreach (KeyValuePair<string, Type> item in subQueries)
+                    retval.TryAdd(item.Key, item.Value);
             }
             return retval;
         }
