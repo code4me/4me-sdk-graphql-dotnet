@@ -193,18 +193,19 @@ namespace Sdk4me.GraphQL
         /// <exception cref="Sdk4meException"></exception>
         public async Task<DataList<TEntity>> Get<TEntity>(IQuery query) where TEntity : Node
         {
-            return await Get<TEntity>(ExecutionQueryBuilder.BuildQuery(query, itemsPerRequest), maximumRecursiveRequests);
+            return await Get<TEntity>(accountID, ExecutionQueryBuilder.BuildQuery(query, itemsPerRequest), maximumRecursiveRequests);
         }
 
         /// <summary>
         /// Query the 4me web service as an asynchronous operation.
         /// </summary>
         /// <typeparam name="TEntity">Any type implementing <see cref="Node"/>.</typeparam>
+        /// <param name="accountID">The account identifier.</param>
         /// <param name="executionQuery">The execution query to execute.</param>
         /// <param name="recursiveRequest">The number of recursive requests.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
-        private async Task<DataList<TEntity>> Get<TEntity>(ExecutionQuery executionQuery, int recursiveRequest) where TEntity : Node
+        private async Task<DataList<TEntity>> Get<TEntity>(string accountID, ExecutionQuery executionQuery, int recursiveRequest) where TEntity : Node
         {
             if (recursiveRequest <= 0)
                 return new();
@@ -214,7 +215,7 @@ namespace Sdk4me.GraphQL
                 throw new Sdk4meException($"The query exceeds the maximum allowed depth level connections value. The maximum value is set to {maximumQueryDepthLevelConnections}, and the query contains {highestDepthValue} depth level connections.");
 
             DataList<TEntity> retval = new();
-            using (HttpRequestMessage requestMessage = CreateHttpRequest())
+            using (HttpRequestMessage requestMessage = CreateHttpRequest(accountID))
             {
                 string query = $"{{\"query\":{JsonConvert.SerializeObject($"query{{{ExecutionQueryBuilder.GetGraphQLQuery(executionQuery)}}}")}}}";
                 JToken responseData = await SendHttpRequest(requestMessage, query, true);
@@ -235,31 +236,16 @@ namespace Sdk4me.GraphQL
                     switch (executionQuery.UpdateCursors(queryPagesInfo))
                     {
                         case 0:
-                            retval.AddRange(await Get<TEntity>(executionQuery, recursiveRequest - 1));
+                            retval.AddRange(await Get<TEntity>(accountID, executionQuery, recursiveRequest - 1));
                             break;
 
                         case > 0:
-                            retval.AddRange(await Get<TEntity>(executionQuery, recursiveRequest));
+                            retval.AddRange(await Get<TEntity>(accountID, executionQuery, recursiveRequest));
                             break;
                     }
                 }
             }
             return retval;
-        }
-
-        /// <summary>
-        /// Execute a mutation on 4me web service as an asynchronous operation.
-        /// </summary>
-        /// <typeparam name="TOutEntity">Any type implementing <see cref="Payload"/>.</typeparam>
-        /// <typeparam name="TInEntity">Any type implementing <see cref="PropertyChangeSet"/>.</typeparam>
-        /// <param name="input">The mutation input data.</param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <exception cref="Sdk4meException"></exception>
-        internal async Task<TOutEntity> Mutation<TOutEntity, TInEntity>(Mutation<TOutEntity, TInEntity> input)
-            where TOutEntity : Payload
-            where TInEntity : PropertyChangeSet
-        {
-            return await Mutation(input, true);
         }
 
         /// <summary>
@@ -275,7 +261,7 @@ namespace Sdk4me.GraphQL
             where TOutEntity : Payload
             where TInEntity : PropertyChangeSet
         {
-            using (HttpRequestMessage requestMessage = CreateHttpRequest())
+            using (HttpRequestMessage requestMessage = CreateHttpRequest(accountID))
             {
                 JsonSerializerSettings settings = new()
                 {
@@ -424,7 +410,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The newly created request or already existing request.</returns>
         public async Task<Request> CreateEvent(RequestEventCreateInput requestEventCreateInput)
         {
-            using (HttpRequestMessage requestMessage = CreateHttpRequest($"{restUrl}/events"))
+            using (HttpRequestMessage requestMessage = CreateHttpRequest(accountID, $"{restUrl}/events"))
             {
                 JToken responseData = await SendHttpRequest(requestMessage, requestEventCreateInput.HttpRequestBody, false);
                 int? requestID = responseData.Value<int>("id");
@@ -462,8 +448,10 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Create a new <see cref="HttpRequestMessage"/>.
         /// </summary>
+        /// <param name="accountID">The account identifier.</param>
+        /// <param name="url">Overwrite the default URL when while creating the <see cref="HttpRequestMessage"/>.</param>
         /// <returns>The <see cref="HttpRequestMessage"/> object.</returns>
-        private HttpRequestMessage CreateHttpRequest(string? url = null)
+        private HttpRequestMessage CreateHttpRequest(string accountID, string? url = null)
         {
             SetAuthenticationToken();
             HttpRequestMessage retval = new(HttpMethod.Post, url ?? this.url);
@@ -608,7 +596,7 @@ namespace Sdk4me.GraphQL
                     Trace.WriteLine(new TraceMessage()
                     {
                         ID = logIdentifier,
-                        AccountID = isResponse ? null : accountID,
+                        AccountID = isResponse ? null : requestMessage.Headers.TryGetValues("x-4me-Account", out IEnumerable<string>? headerValues) ? headerValues.FirstOrDefault() : null,
                         Method = isResponse ? null : requestMessage.Method.ToString(),
                         URI = isResponse ? null : requestMessage.RequestUri?.AbsoluteUri,
                         Content = isResponse ? null : content,
