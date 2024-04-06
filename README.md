@@ -441,3 +441,18 @@ client.ConfigureAuthenticationTokenWeight(requestWeight: 0.5, costWeight: 0.5);
 
 To learn more about GraphQL Service Quotas, refer to the [Service Quota](https://developer.4me.com/graphql/#service-quotas-1) section, and for information on Rate Limiting, explore the [Rate Limiting](https://developer.4me.com/v1/#rate-limiting) section in the 4me developer documentation.
 
+### Multiple accounts
+When connecting to multiple accounts within a single application, it is recommended to use multiple `Sdk4meClient` instances.
+While the `AccountID` can be set via the `Sdk4meClient.AccountID`, using the same client instance to execute multiple requests simultaneously across different accounts can lead to potential issues and unexpected behavior.
+To ensure effective management of multiple accounts, it's advisable to utilize a dictionary structure. This allows you to map each account to its respective `Sdk4meClient` instance.
+
+```csharp
+Dictionary<string, Sdk4meClient> clients = new()
+{
+    { "account-1", new Sdk4meClient(new AuthenticationTokenCollection() { ... }, "account-1", EnvironmentType.Production, EnvironmentRegion.EU) },
+    { "account-2", new Sdk4meClient(new AuthenticationTokenCollection() { ... }, "account-2", EnvironmentType.Production, EnvironmentRegion.EU) },
+    { "account-3", new Sdk4meClient(new AuthenticationTokenCollection() { ... }, "account-3", EnvironmentType.Production, EnvironmentRegion.EU) }
+};
+
+clients["account-1"].Get(new AccountQuery().Select(AccountField.ID)).Result;
+```
