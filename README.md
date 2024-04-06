@@ -439,7 +439,7 @@ client.AccountID = "new-account-name";
 ```
 
 ### Multiple accounts usage
-To ensure effective management of multiple accounts, it's recommended to employ a dictionary structure. This structure facilitates mapping each account to its corresponding `Sdk4meClient instance.
+To ensure effective management of multiple accounts, it's recommended to employ a dictionary structure. This structure facilitates mapping each account to its corresponding `Sdk4meClient` instance.
 
 ```csharp
 Dictionary<string, Sdk4meClient> clients = new()
