@@ -9275,6 +9275,11 @@
         [EnumMember(Value = "name")]
         Name,
         /// <summary>
+        /// The request count field.
+        /// </summary>
+        [EnumMember(Value = "requestCount")]
+        RequestCount,
+        /// <summary>
         /// The updated at field.
         /// </summary>
         [EnumMember(Value = "updatedAt")]

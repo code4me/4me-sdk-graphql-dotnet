@@ -24,6 +24,12 @@
         public string? Name { get; internal set; }
 
         /// <summary>
+        /// Number of requests the tag is applied to.
+        /// </summary>
+        [JsonProperty("requestCount")]
+        public long? RequestCount { get; internal set; }
+
+        /// <summary>
         /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
         [JsonProperty("updatedAt")]

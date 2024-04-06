@@ -51,6 +51,11 @@ The 4me GraphQL API has a data type called `ISO8601Timestamp` which includes thr
 
 These specific values can be accessed through the `DateTimeValue` class.
 
+### Interface-based properties
+Certain properties return objects that conform to an interface, providing flexibility in the variety of objects they can provide.
+To obtain a specific object type from an interface-based property, it's crucial to indicate the desired type in the select statement of the query. Without specifying a type in the select statement, the property will return null.
+The .NET SDK facilitates querying such properties by allowing multiple select statements. This feature enables the retrieval of diverse sets of values for each object.
+
 ## Mutations
 Mutations are used to create, update, or delete data. Like queries, the SDK provides a simple and intuitive way to perform mutations.
 
@@ -58,9 +63,17 @@ Mutations are used to create, update, or delete data. Like queries, the SDK prov
 The SDK features an `UploadAttachment` method for easily uploading attachments, which can later be associated with any create or update mutation.
 The response from this request includes information necessary for linking these attachments.
 
-## Multi-token support
+## Events API
+The .NET SDK provides access to the 4me Events API as well. For more information check out the [4me developer pages](https://developer.4me.com/v1/requests/events/).
+
+## Multiple tokens
 The client allows for the use of multiple authentication tokens. A single token is limited to 3600 API requests per hour or 5000 points per hour for Query Cost. In some situations, this may not be sufficient.
 When there are multiple tokens in use, the client will always select the token with the most remaining requests to use. More information about [Rate Limiting](https://developer.4me.com/graphql/#request-rate-limits) and [Query Cost Limits](https://developer.4me.com/graphql/#query-cost-limit) can be found on the [4me developer website](https://developer.4me.com/graphql).
+
+## Multiple accounts
+When connecting to multiple accounts within a single application, it is recommended to use multiple `Sdk4meClient` instances.
+While the `AccountID` can be set via the `Sdk4meClient.AccountID`, using the same client instance to execute multiple requests simultaneously across different accounts can lead to potential issues and unexpected behavior.
+To ensure effective management of multiple accounts, it's advisable to utilize a dictionary structure. For further information, please refer to the [example](#multiple-accounts-usage).
 
 ## Response timing
 The 4me GraphQL API limits the number of requests to 20 per 2 seconds. The SDK will keep track of the response time and lock the process to make sure it takes at least 100 milliseconds per request.
@@ -186,8 +199,7 @@ IQuery query = Query.Person.OrderBy(PersonOrderField.Name, OrderBySortOrder.Asce
 ```
 Sorting can only be used on the top level query.
 
-#### Example
-
+#### Nested query with filtering and sorting
 ```csharp
 PersonQuery query = new PersonQuery()
     .View(PersonView.All)
@@ -213,6 +225,21 @@ PersonQuery query = new PersonQuery()
             .Select(RequestField.Subject, RequestField.Supplier)));
 
 DataList<Person> people = client.Get(query).Result;
+```
+
+#### Interface-based properties
+Retrieve all archived properties and cast only those belonging to `Person`, `Request`, or `Task` types, each with their unique properties.
+```csharp
+DataList<Archive> archives = client.Get(Query.Archive
+    .SelectArchived(new PersonQuery()
+        .Select(PersonField.ID, PersonField.Name, PersonField.PrimaryEmail))
+    .SelectArchived(new RequestQuery()
+        .Select(RequestField.ID, RequestField.RequestId))
+    .SelectArchived(new TaskQuery()
+        .Select(TaskField.ID, TaskField.Subject)
+            .SelectWorkflow(new WorkflowQuery()
+                .Select(WorkflowField.ID, WorkflowField.Subject)))
+    ).Result;
 ```
 
 ### Mutations
@@ -363,17 +390,7 @@ var updatedRequest = client.Mutation(new RequestUpdateInput()
 }).Result;
 ```
 
-### Trace output
-A trace output providing details of a GraphQL query request and response time.
-```json
-{"id":"b1685ff0-6356-49eb-ab58-6ef32b9b4a61","method":"POST","uri":"https://graphql.4me.qa/","content":"{\"query\":\"query{node(id: \\\"KG1jIx\\\") {... on Person {id}}}\"}","account_id":"account-name"}
-{"id":"b1685ff0-6356-49eb-ab58-6ef32b9b4a61","response_time_in_ms":44}
-```
-
-### Events API
-The .NET SDK provides access to the 4me Events API as well. For more information check out the [4me developer pages](https://developer.4me.com/v1/requests/events/).
-
-#### Create a new event request
+### Create a new event via the events API
 ```csharp
 RequestEventCreateInput requestCreate = new RequestEventCreateInput()
     .Category(RequestCategory.Incident)
@@ -409,7 +426,7 @@ catch (Sdk4meException ex)
 ```
 By default the SDK will throw an new exception. The mutation method has one additional argument `throwOnError`, when false the `result` property will contain the error messages.
 
-### Multi-token, accounts, environment and environment regions usage
+### Authentication tokens, account, environment and environment regions usage
 ```csharp
 AuthenticationTokenCollection tokens = new AuthenticationTokenCollection()
 {
@@ -421,7 +438,21 @@ Sdk4meClient client = new(tokens, "account-name", EnvironmentType.Demo, Environm
 client.AccountID = "new-account-name";
 ```
 
-### Multi-token - Request and cost scores
+### Multiple accounts usage
+To ensure effective management of multiple accounts, it's recommended to employ a dictionary structure. This structure facilitates mapping each account to its corresponding `Sdk4meClient instance.
+
+```csharp
+Dictionary<string, Sdk4meClient> clients = new()
+{
+    { "account-1", new Sdk4meClient(new AuthenticationTokenCollection() { ... }, "account-1", EnvironmentType.Production, EnvironmentRegion.EU) },
+    { "account-2", new Sdk4meClient(new AuthenticationTokenCollection() { ... }, "account-2", EnvironmentType.Production, EnvironmentRegion.EU) },
+    { "account-3", new Sdk4meClient(new AuthenticationTokenCollection() { ... }, "account-3", EnvironmentType.Production, EnvironmentRegion.EU) }
+};
+
+clients["account-1"].Get(new AccountQuery().Select(AccountField.ID)).Result;
+```
+
+### Multiple tokens - Request and cost scores
 In the context of multiple 4me authentication tokens, request and cost scores are essential metrics used to determine the priority of tokens when making API requests. These scores help prioritize tokens efficiently by considering two critical factors.
 
 **Request Score:**
@@ -441,18 +472,9 @@ client.ConfigureAuthenticationTokenWeight(requestWeight: 0.5, costWeight: 0.5);
 
 To learn more about GraphQL Service Quotas, refer to the [Service Quota](https://developer.4me.com/graphql/#service-quotas-1) section, and for information on Rate Limiting, explore the [Rate Limiting](https://developer.4me.com/v1/#rate-limiting) section in the 4me developer documentation.
 
-### Multiple accounts
-When connecting to multiple accounts within a single application, it is recommended to use multiple `Sdk4meClient` instances.
-While the `AccountID` can be set via the `Sdk4meClient.AccountID`, using the same client instance to execute multiple requests simultaneously across different accounts can lead to potential issues and unexpected behavior.
-To ensure effective management of multiple accounts, it's advisable to utilize a dictionary structure. This allows you to map each account to its respective `Sdk4meClient` instance.
-
-```csharp
-Dictionary<string, Sdk4meClient> clients = new()
-{
-    { "account-1", new Sdk4meClient(new AuthenticationTokenCollection() { ... }, "account-1", EnvironmentType.Production, EnvironmentRegion.EU) },
-    { "account-2", new Sdk4meClient(new AuthenticationTokenCollection() { ... }, "account-2", EnvironmentType.Production, EnvironmentRegion.EU) },
-    { "account-3", new Sdk4meClient(new AuthenticationTokenCollection() { ... }, "account-3", EnvironmentType.Production, EnvironmentRegion.EU) }
-};
-
-clients["account-1"].Get(new AccountQuery().Select(AccountField.ID)).Result;
+### Trace output
+A trace output providing details of a GraphQL query request and response time.
+```json
+{"id":"b1685ff0-6356-49eb-ab58-6ef32b9b4a61","method":"POST","uri":"https://graphql.4me.qa/","content":"{\"query\":\"query{node(id: \\\"KG1jIx\\\") {... on Person {id}}}\"}","account_id":"account-name"}
+{"id":"b1685ff0-6356-49eb-ab58-6ef32b9b4a61","response_time_in_ms":44}
 ```

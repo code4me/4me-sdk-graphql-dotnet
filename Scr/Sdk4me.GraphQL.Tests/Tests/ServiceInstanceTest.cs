@@ -18,7 +18,11 @@
                 .SelectParentServiceInstances(new ServiceInstanceQuery())
                 .SelectRemarksAttachments(new AttachmentQuery())
                 .SelectServiceLevelAgreements(new ServiceLevelAgreementQuery())
-                .SelectTranslations(new TranslationQuery())
+                .SelectTranslations(new TranslationQuery()
+                    .SelectOwner(new ServiceQuery()
+                        .Select(ServiceField.ID))
+                    .SelectOwner(new ServiceInstanceQuery()
+                        .Select(ServiceInstanceField.ID)))
                 ).Result;
 
             Assert.IsNotNull(serviceInstances);
