@@ -11,8 +11,10 @@
             DataList<Trash> trashes = client.Get(Query.Trash
                 .View(TrashView.All)
                 .SelectAll()
+                .SelectTrashed(personQuery: new PersonQuery()
+                    .Select(PersonField.ID))
                 .SelectTrashed(new PersonQuery()
-                    .Select(PersonField.ID)
+                    .Select(PersonField.ID, PersonField.Name, PersonField.PrimaryEmail)
                     )
                 ).Result;
 

@@ -14,7 +14,8 @@
                 .SelectDescriptionAttachments(new AttachmentQuery()
                     .SelectAll())
                 .SelectSprintBacklogItems(new SprintBacklogItemQuery()
-                    .SelectAll())
+                    .SelectAll()
+                    .SelectRecord())
                 ).Result;
 
             Assert.IsNotNull(sprints);

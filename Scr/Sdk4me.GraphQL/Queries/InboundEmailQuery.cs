@@ -35,7 +35,62 @@
 
         /// <summary>
         /// The record that was created or updated from the inbound email.
+        /// <para>
+        /// <br>Use this method to cast different object types supporting <see cref="IHasNotes"></see>.</br>
+        /// <br>If any query parameter is not provided (defaults to null), a new instance of the respective query type is created with the <c>ID</c> field selected.</br>
+        /// </para>
+        /// </summary>
+        public InboundEmailQuery SelectRecord(
+            ProblemQuery? problemQuery = null,
+            ProjectQuery? projectQuery = null,
+            ProjectTaskQuery? projectTaskQuery = null,
+            ReleaseQuery? releaseQuery = null,
+            RequestQuery? requestQuery = null,
+            RiskQuery? riskQuery = null,
+            TaskQuery? taskQuery = null,
+            WorkflowQuery? workflowQuery = null)
+        {
+            problemQuery ??= new ProblemQuery().Select(ProblemField.ID);
+            InboundEmailQuery query = SelectRecord(problemQuery);
+            query.OnTypesQueries.Add("Problem", problemQuery.Clone());
+
+            projectQuery ??= new ProjectQuery().Select(ProjectField.ID);
+            query = SelectRecord(projectQuery);
+            query.OnTypesQueries.Add("Project", projectQuery.Clone());
+
+            projectTaskQuery ??= new ProjectTaskQuery().Select(ProjectTaskField.ID);
+            query = SelectRecord(projectTaskQuery);
+            query.OnTypesQueries.Add("ProjectTask", projectTaskQuery.Clone());
+
+            releaseQuery ??= new ReleaseQuery().Select(ReleaseField.ID);
+            query = SelectRecord(releaseQuery);
+            query.OnTypesQueries.Add("Release", releaseQuery.Clone());
+
+            requestQuery ??= new RequestQuery().Select(RequestField.ID);
+            query = SelectRecord(requestQuery);
+            query.OnTypesQueries.Add("Request", requestQuery.Clone());
+
+            riskQuery ??= new RiskQuery().Select(RiskField.ID);
+            query = SelectRecord(riskQuery);
+            query.OnTypesQueries.Add("Risk", riskQuery.Clone());
+
+            taskQuery ??= new TaskQuery().Select(TaskField.ID);
+            query = SelectRecord(taskQuery);
+            query.OnTypesQueries.Add("Task", taskQuery.Clone());
+
+            workflowQuery ??= new WorkflowQuery().Select(WorkflowField.ID);
+            query = SelectRecord(workflowQuery);
+            query.OnTypesQueries.Add("Workflow", workflowQuery.Clone());
+
+            return query;
+        }
+
+        /// <summary>
+        /// The record that was created or updated from the inbound email.
+        /// <para>
         /// <br>Use this method along with other <c>SelectRecord(IQuery)</c> calls to cast different object types supporting <see cref="IHasNotes"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public InboundEmailQuery SelectRecord(ProblemQuery query)
         {
@@ -47,7 +102,10 @@
 
         /// <summary>
         /// The record that was created or updated from the inbound email.
+        /// <para>
         /// <br>Use this method along with other <c>SelectRecord(IQuery)</c> calls to cast different object types supporting <see cref="IHasNotes"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public InboundEmailQuery SelectRecord(ProjectQuery query)
         {
@@ -59,7 +117,10 @@
 
         /// <summary>
         /// The record that was created or updated from the inbound email.
+        /// <para>
         /// <br>Use this method along with other <c>SelectRecord(IQuery)</c> calls to cast different object types supporting <see cref="IHasNotes"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public InboundEmailQuery SelectRecord(ProjectTaskQuery query)
         {
@@ -71,7 +132,10 @@
 
         /// <summary>
         /// The record that was created or updated from the inbound email.
+        /// <para>
         /// <br>Use this method along with other <c>SelectRecord(IQuery)</c> calls to cast different object types supporting <see cref="IHasNotes"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public InboundEmailQuery SelectRecord(ReleaseQuery query)
         {
@@ -83,7 +147,10 @@
 
         /// <summary>
         /// The record that was created or updated from the inbound email.
+        /// <para>
         /// <br>Use this method along with other <c>SelectRecord(IQuery)</c> calls to cast different object types supporting <see cref="IHasNotes"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public InboundEmailQuery SelectRecord(RequestQuery query)
         {
@@ -95,7 +162,10 @@
 
         /// <summary>
         /// The record that was created or updated from the inbound email.
+        /// <para>
         /// <br>Use this method along with other <c>SelectRecord(IQuery)</c> calls to cast different object types supporting <see cref="IHasNotes"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public InboundEmailQuery SelectRecord(RiskQuery query)
         {
@@ -107,7 +177,10 @@
 
         /// <summary>
         /// The record that was created or updated from the inbound email.
+        /// <para>
         /// <br>Use this method along with other <c>SelectRecord(IQuery)</c> calls to cast different object types supporting <see cref="IHasNotes"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public InboundEmailQuery SelectRecord(TaskQuery query)
         {
@@ -119,7 +192,10 @@
 
         /// <summary>
         /// The record that was created or updated from the inbound email.
+        /// <para>
         /// <br>Use this method along with other <c>SelectRecord(IQuery)</c> calls to cast different object types supporting <see cref="IHasNotes"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public InboundEmailQuery SelectRecord(WorkflowQuery query)
         {

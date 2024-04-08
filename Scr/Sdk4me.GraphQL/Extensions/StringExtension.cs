@@ -37,23 +37,17 @@ namespace Sdk4me.GraphQL
             if (string.IsNullOrWhiteSpace(id))
                 return 0;
 
-            switch (id.Length % 4)
+            id = (id.Length % 4) switch
             {
-                case 0:
-                    id = Encoding.UTF8.GetString(Convert.FromBase64String(id));
-                    break;
-                case 2:
-                    id = Encoding.UTF8.GetString(Convert.FromBase64String(id + "=="));
-                    break;
-                case 3:
-                    id = Encoding.UTF8.GetString(Convert.FromBase64String(id + "="));
-                    break;
-                default:
-                    throw new Sdk4meException("Unsupported identifier value.");
-            }
+                0 => Encoding.UTF8.GetString(Convert.FromBase64String(id)),
+                2 => Encoding.UTF8.GetString(Convert.FromBase64String(id + "==")),
+                3 => Encoding.UTF8.GetString(Convert.FromBase64String(id + "=")),
+                _ => throw new Sdk4meException("Unsupported identifier value."),
+            };
 
             if (long.TryParse(id.Split('/')[^1], out long result))
                 return result;
+
             return 0;
         }
     }

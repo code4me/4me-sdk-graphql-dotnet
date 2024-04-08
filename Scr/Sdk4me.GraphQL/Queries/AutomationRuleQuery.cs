@@ -55,7 +55,72 @@
 
         /// <summary>
         /// The record that the automation rule is linked to.
+        /// <para>
+        /// <br>Use this method to cast different object types supporting <see cref="IHasAutomationRules"></see>.</br>
+        /// <br>If any query parameter is not provided (defaults to null), a new instance of the respective query type is created with the <c>ID</c> field selected.</br>
+        /// </para>
+        /// </summary>
+        public AutomationRuleQuery SelectOwner(
+            ProjectTaskQuery? projectTaskQuery = null,
+            ProjectTaskTemplateQuery? projectTaskTemplateQuery = null,
+            ProjectTaskTemplateRelationQuery? projectTaskTemplateRelationQuery = null,
+            RequestQuery? requestQuery = null,
+            RequestTemplateQuery? requestTemplateQuery = null,
+            TaskQuery? taskQuery = null,
+            TaskTemplateQuery? taskTemplateQuery = null,
+            WorkflowQuery? workflowQuery = null,
+            WorkflowTaskTemplateRelationQuery? workflowTaskTemplateRelationQuery = null,
+            WorkflowTemplateQuery? workflowTemplateQuery = null)
+        {
+            projectTaskQuery ??= new ProjectTaskQuery().Select(ProjectTaskField.ID);
+            AutomationRuleQuery query = SelectOwner(projectTaskQuery);
+            query.OnTypesQueries.Add("ProjectTask", projectTaskQuery.Clone());
+
+            projectTaskTemplateQuery ??= new ProjectTaskTemplateQuery().Select(ProjectTaskTemplateField.ID);
+            query = SelectOwner(projectTaskTemplateQuery);
+            query.OnTypesQueries.Add("ProjectTaskTemplate", projectTaskTemplateQuery.Clone());
+
+            projectTaskTemplateRelationQuery ??= new ProjectTaskTemplateRelationQuery().Select(ProjectTaskTemplateRelationField.ID);
+            query = SelectOwner(projectTaskTemplateRelationQuery);
+            query.OnTypesQueries.Add("ProjectTaskTemplateRelation", projectTaskTemplateRelationQuery.Clone());
+
+            requestQuery ??= new RequestQuery().Select(RequestField.ID);
+            query = SelectOwner(requestQuery);
+            query.OnTypesQueries.Add("Request", requestQuery.Clone());
+
+            requestTemplateQuery ??= new RequestTemplateQuery().Select(RequestTemplateField.ID);
+            query = SelectOwner(requestTemplateQuery);
+            query.OnTypesQueries.Add("RequestTemplate", requestTemplateQuery.Clone());
+
+            taskQuery ??= new TaskQuery().Select(TaskField.ID);
+            query = SelectOwner(taskQuery);
+            query.OnTypesQueries.Add("Task", taskQuery.Clone());
+
+            taskTemplateQuery ??= new TaskTemplateQuery().Select(TaskTemplateField.ID);
+            query = SelectOwner(taskTemplateQuery);
+            query.OnTypesQueries.Add("TaskTemplate", taskTemplateQuery.Clone());
+
+            workflowQuery ??= new WorkflowQuery().Select(WorkflowField.ID);
+            query = SelectOwner(workflowQuery);
+            query.OnTypesQueries.Add("Workflow", workflowQuery.Clone());
+
+            workflowTaskTemplateRelationQuery ??= new WorkflowTaskTemplateRelationQuery().Select(WorkflowTaskTemplateRelationField.ID);
+            query = SelectOwner(workflowTaskTemplateRelationQuery);
+            query.OnTypesQueries.Add("WorkflowTaskTemplateRelation", workflowTaskTemplateRelationQuery.Clone());
+
+            workflowTemplateQuery ??= new WorkflowTemplateQuery().Select(WorkflowTemplateField.ID);
+            query = SelectOwner(workflowTemplateQuery);
+            query.OnTypesQueries.Add("WorkflowTemplate", workflowTemplateQuery.Clone());
+
+            return query;
+        }
+
+        /// <summary>
+        /// The record that the automation rule is linked to.
+        /// <para>
         /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasAutomationRules"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public AutomationRuleQuery SelectOwner(ProjectTaskQuery query)
         {
@@ -67,7 +132,10 @@
 
         /// <summary>
         /// The record that the automation rule is linked to.
+        /// <para>
         /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasAutomationRules"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public AutomationRuleQuery SelectOwner(ProjectTaskTemplateQuery query)
         {
@@ -79,7 +147,10 @@
 
         /// <summary>
         /// The record that the automation rule is linked to.
+        /// <para>
         /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasAutomationRules"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public AutomationRuleQuery SelectOwner(ProjectTaskTemplateRelationQuery query)
         {
@@ -91,7 +162,10 @@
 
         /// <summary>
         /// The record that the automation rule is linked to.
+        /// <para>
         /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasAutomationRules"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public AutomationRuleQuery SelectOwner(RequestQuery query)
         {
@@ -103,7 +177,10 @@
 
         /// <summary>
         /// The record that the automation rule is linked to.
+        /// <para>
         /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasAutomationRules"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public AutomationRuleQuery SelectOwner(RequestTemplateQuery query)
         {
@@ -115,7 +192,10 @@
 
         /// <summary>
         /// The record that the automation rule is linked to.
+        /// <para>
         /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasAutomationRules"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public AutomationRuleQuery SelectOwner(TaskQuery query)
         {
@@ -127,7 +207,10 @@
 
         /// <summary>
         /// The record that the automation rule is linked to.
+        /// <para>
         /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasAutomationRules"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public AutomationRuleQuery SelectOwner(TaskTemplateQuery query)
         {
@@ -139,7 +222,10 @@
 
         /// <summary>
         /// The record that the automation rule is linked to.
+        /// <para>
         /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasAutomationRules"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public AutomationRuleQuery SelectOwner(WorkflowQuery query)
         {
@@ -151,7 +237,10 @@
 
         /// <summary>
         /// The record that the automation rule is linked to.
+        /// <para>
         /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasAutomationRules"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public AutomationRuleQuery SelectOwner(WorkflowTaskTemplateRelationQuery query)
         {
@@ -163,7 +252,10 @@
 
         /// <summary>
         /// The record that the automation rule is linked to.
+        /// <para>
         /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasAutomationRules"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public AutomationRuleQuery SelectOwner(WorkflowTemplateQuery query)
         {

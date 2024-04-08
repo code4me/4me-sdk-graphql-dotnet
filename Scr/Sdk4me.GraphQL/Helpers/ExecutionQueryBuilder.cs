@@ -166,7 +166,7 @@ namespace Sdk4me.GraphQL
                     builder.Append(executionQuery.FieldName);
                     builder.Append('{');
 
-                    if (executionQuery.OnTypeQueries.Count != 0)
+                    if (executionQuery.OnTypeQueries.Count > 0)
                     {
                         builder.Append("__typename");
                         foreach (KeyValuePair<string, ExecutionQuery> onTypeQuery in executionQuery.OnTypeQueries)

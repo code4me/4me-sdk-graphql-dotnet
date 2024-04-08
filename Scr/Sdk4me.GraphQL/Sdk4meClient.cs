@@ -528,16 +528,15 @@ namespace Sdk4me.GraphQL
                         {
                             return retval;
                         }
+
                         throw new Sdk4meException("The response does not contain a data object.");
                     }
                     else if (!isGraphQLResponse)
                     {
                         return data;
                     }
-                    else
-                    {
-                        throw new Sdk4meException($"The response could not be processed.\r\n{data.ToString(Formatting.Indented)}");
-                    }
+
+                    throw new Sdk4meException($"The response could not be processed.\r\n{data.ToString(Formatting.Indented)}");
                 }
                 else
                 {
@@ -546,10 +545,8 @@ namespace Sdk4me.GraphQL
                         using (StreamReader streamReader = new(responseMessage.Content.ReadAsStream()))
                             throw new Sdk4meException(streamReader.ReadToEnd());
                     }
-                    else
-                    {
-                        throw new Sdk4meException(responseMessage.StatusCode.ToString());
-                    }
+
+                    throw new Sdk4meException(responseMessage.StatusCode.ToString());
                 }
             }
         }
@@ -562,18 +559,18 @@ namespace Sdk4me.GraphQL
         {
             if (responseMessage != null && currentToken != null)
             {
-                if (responseMessage.Headers.TryGetValues("X-RateLimit-Limit", out IEnumerable<string>? values) && values != null && int.TryParse(values.FirstOrDefault(), out int result))
+                if (responseMessage.Headers.TryGetValues("X-RateLimit-Limit", out IEnumerable<string>? values) && int.TryParse(values?.FirstOrDefault(), out int result))
                     currentToken.RequestLimit = Convert.ToInt32(result);
-                if (responseMessage.Headers.TryGetValues("X-RateLimit-Remaining", out values) && values != null && int.TryParse(values.FirstOrDefault(), out result))
+                if (responseMessage.Headers.TryGetValues("X-RateLimit-Remaining", out values) && int.TryParse(values?.FirstOrDefault(), out result))
                     currentToken.RequestsRemaining = Convert.ToInt32(result);
-                if (responseMessage.Headers.TryGetValues("X-RateLimit-Reset", out values) && values != null && long.TryParse(values.FirstOrDefault(), out long dateResult))
+                if (responseMessage.Headers.TryGetValues("X-RateLimit-Reset", out values) && long.TryParse(values?.FirstOrDefault(), out long dateResult))
                     currentToken.RequestLimitReset = DateTime.UnixEpoch.AddSeconds(dateResult).ToLocalTime();
 
-                if (responseMessage.Headers.TryGetValues("X-CostLimit-Limit", out values) && values != null && int.TryParse(values.FirstOrDefault(), out result))
+                if (responseMessage.Headers.TryGetValues("X-CostLimit-Limit", out values) && int.TryParse(values?.FirstOrDefault(), out result))
                     currentToken.CostLimit = result;
-                if (responseMessage.Headers.TryGetValues("X-CostLimit-Remaining", out values) && values != null && int.TryParse(values.FirstOrDefault(), out result))
+                if (responseMessage.Headers.TryGetValues("X-CostLimit-Remaining", out values) && int.TryParse(values?.FirstOrDefault(), out result))
                     currentToken.CostLimitRemaining = result;
-                if (responseMessage.Headers.TryGetValues("X-CostLimit-Reset", out values) && values != null && long.TryParse(values.FirstOrDefault(), out dateResult))
+                if (responseMessage.Headers.TryGetValues("X-CostLimit-Reset", out values) && long.TryParse(values?.FirstOrDefault(), out dateResult))
                     currentToken.CostLimitReset = DateTime.UnixEpoch.AddSeconds(dateResult).ToLocalTime();
             }
         }

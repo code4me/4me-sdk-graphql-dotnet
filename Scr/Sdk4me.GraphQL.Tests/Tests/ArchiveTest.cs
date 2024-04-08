@@ -11,7 +11,7 @@
             DataList<Archive> archives = client.Get(Query.Archive
                 .View(ArchiveView.All)
                 .SelectAll()
-                .SelectArchived(new PersonQuery().Select(PersonField.ID))
+                .SelectArchived(personQuery: new PersonQuery().Select(PersonField.ID, PersonField.PrimaryEmail, PersonField.Name))
                 ).Result;
 
             Assert.IsNotNull(archives);

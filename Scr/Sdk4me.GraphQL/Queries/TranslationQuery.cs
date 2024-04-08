@@ -35,7 +35,97 @@
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <para>
+        /// <br>Use this method to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
+        /// <br>If any query parameter is not provided (defaults to null), a new instance of the respective query type is created with the <c>ID</c> field selected.</br>
+        /// </para>
+        /// </summary>
+        public TranslationQuery SelectOwner(
+            CustomCollectionElementQuery? customCollectionElementQuery = null,
+            EmailTemplateQuery? emailTemplateQuery = null,
+            KnowledgeArticleQuery? knowledgeArticleQuery = null,
+            PdfDesignQuery? pdfDesignQuery = null,
+            ProductCategoryQuery? productCategoryQuery = null,
+            RequestTemplateQuery? requestTemplateQuery = null,
+            RiskSeverityQuery? riskSeverityQuery = null,
+            ServiceQuery? serviceQuery = null,
+            ServiceCategoryQuery? serviceCategoryQuery = null,
+            ServiceInstanceQuery? serviceInstanceQuery = null,
+            SurveyQuery? surveyQuery = null,
+            SurveyQuestionQuery? surveyQuestionQuery = null,
+            TimeAllocationQuery? timeAllocationQuery = null,
+            UiExtensionQuery? uiExtensionQuery = null,
+            WorkflowTypeQuery? workflowTypeQuery = null)
+        {
+            customCollectionElementQuery ??= new CustomCollectionElementQuery().Select(CustomCollectionElementField.ID);
+            TranslationQuery query = SelectOwner(customCollectionElementQuery);
+            query.OnTypesQueries.Add("CustomCollectionElement", customCollectionElementQuery.Clone());
+
+            emailTemplateQuery ??= new EmailTemplateQuery().Select(EmailTemplateField.ID);
+            query = SelectOwner(emailTemplateQuery);
+            query.OnTypesQueries.Add("EmailTemplate", emailTemplateQuery.Clone());
+
+            knowledgeArticleQuery ??= new KnowledgeArticleQuery().Select(KnowledgeArticleField.ID);
+            query = SelectOwner(knowledgeArticleQuery);
+            query.OnTypesQueries.Add("KnowledgeArticle", knowledgeArticleQuery.Clone());
+
+            pdfDesignQuery ??= new PdfDesignQuery().Select(PdfDesignField.ID);
+            query = SelectOwner(pdfDesignQuery);
+            query.OnTypesQueries.Add("PdfDesign", pdfDesignQuery.Clone());
+
+            productCategoryQuery ??= new ProductCategoryQuery().Select(ProductCategoryField.ID);
+            query = SelectOwner(productCategoryQuery);
+            query.OnTypesQueries.Add("ProductCategory", productCategoryQuery.Clone());
+
+            requestTemplateQuery ??= new RequestTemplateQuery().Select(RequestTemplateField.ID);
+            query = SelectOwner(requestTemplateQuery);
+            query.OnTypesQueries.Add("RequestTemplate", requestTemplateQuery.Clone());
+
+            riskSeverityQuery ??= new RiskSeverityQuery().Select(RiskSeverityField.ID);
+            query = SelectOwner(riskSeverityQuery);
+            query.OnTypesQueries.Add("RiskSeverity", riskSeverityQuery.Clone());
+
+            serviceQuery ??= new ServiceQuery().Select(ServiceField.ID);
+            query = SelectOwner(serviceQuery);
+            query.OnTypesQueries.Add("Service", serviceQuery.Clone());
+
+            serviceCategoryQuery ??= new ServiceCategoryQuery().Select(ServiceCategoryField.ID);
+            query = SelectOwner(serviceCategoryQuery);
+            query.OnTypesQueries.Add("ServiceCategory", serviceCategoryQuery.Clone());
+
+            serviceInstanceQuery ??= new ServiceInstanceQuery().Select(ServiceInstanceField.ID);
+            query = SelectOwner(serviceInstanceQuery);
+            query.OnTypesQueries.Add("ServiceInstance", serviceInstanceQuery.Clone());
+
+            surveyQuery ??= new SurveyQuery().Select(SurveyField.ID);
+            query = SelectOwner(surveyQuery);
+            query.OnTypesQueries.Add("Survey", surveyQuery.Clone());
+
+            surveyQuestionQuery ??= new SurveyQuestionQuery().Select(SurveyQuestionField.ID);
+            query = SelectOwner(surveyQuestionQuery);
+            query.OnTypesQueries.Add("SurveyQuestion", surveyQuestionQuery.Clone());
+
+            timeAllocationQuery ??= new TimeAllocationQuery().Select(TimeAllocationField.ID);
+            query = SelectOwner(timeAllocationQuery);
+            query.OnTypesQueries.Add("TimeAllocation", timeAllocationQuery.Clone());
+
+            uiExtensionQuery ??= new UiExtensionQuery().Select(UiExtensionField.ID);
+            query = SelectOwner(uiExtensionQuery);
+            query.OnTypesQueries.Add("UiExtension", uiExtensionQuery.Clone());
+
+            workflowTypeQuery ??= new WorkflowTypeQuery().Select(WorkflowTypeField.ID);
+            query = SelectOwner(workflowTypeQuery);
+            query.OnTypesQueries.Add("WorkflowType", workflowTypeQuery.Clone());
+
+            return query;
+        }
+
+        /// <summary>
+        /// The record from which the translation is obtained.
+        /// <para>
         /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public TranslationQuery SelectOwner(CustomCollectionElementQuery query)
         {
@@ -47,7 +137,10 @@
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <para>
         /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public TranslationQuery SelectOwner(EmailTemplateQuery query)
         {
@@ -59,7 +152,10 @@
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <para>
         /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public TranslationQuery SelectOwner(KnowledgeArticleQuery query)
         {
@@ -71,7 +167,10 @@
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <para>
         /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public TranslationQuery SelectOwner(PdfDesignQuery query)
         {
@@ -83,7 +182,10 @@
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <para>
         /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public TranslationQuery SelectOwner(ProductCategoryQuery query)
         {
@@ -95,7 +197,10 @@
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <para>
         /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public TranslationQuery SelectOwner(RequestTemplateQuery query)
         {
@@ -107,7 +212,10 @@
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <para>
         /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public TranslationQuery SelectOwner(RiskSeverityQuery query)
         {
@@ -119,7 +227,10 @@
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <para>
         /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public TranslationQuery SelectOwner(ServiceQuery query)
         {
@@ -131,7 +242,10 @@
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <para>
         /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public TranslationQuery SelectOwner(ServiceCategoryQuery query)
         {
@@ -143,7 +257,10 @@
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <para>
         /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public TranslationQuery SelectOwner(ServiceInstanceQuery query)
         {
@@ -155,7 +272,10 @@
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <para>
         /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public TranslationQuery SelectOwner(SurveyQuery query)
         {
@@ -167,7 +287,10 @@
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <para>
         /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public TranslationQuery SelectOwner(SurveyQuestionQuery query)
         {
@@ -179,7 +302,10 @@
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <para>
         /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public TranslationQuery SelectOwner(TimeAllocationQuery query)
         {
@@ -191,7 +317,10 @@
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <para>
         /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public TranslationQuery SelectOwner(UiExtensionQuery query)
         {
@@ -203,7 +332,10 @@
 
         /// <summary>
         /// The record from which the translation is obtained.
+        /// <para>
         /// <br>Use this method along with other <c>SelectOwner(IQuery)</c> calls to cast different object types supporting <see cref="IHasTranslations"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public TranslationQuery SelectOwner(WorkflowTypeQuery query)
         {

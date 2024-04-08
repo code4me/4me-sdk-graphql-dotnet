@@ -35,7 +35,42 @@
 
         /// <summary>
         /// The record in which the Time spent field was filled out to cause the time entry to be generated.
+        /// <para>
+        /// <br>Use this method to cast different object types supporting <see cref="IHasTimeEntries"></see>.</br>
+        /// <br>If any query parameter is not provided (defaults to null), a new instance of the respective query type is created with the <c>ID</c> field selected.</br>
+        /// </para>
+        /// </summary>
+        public TimeEntryQuery SelectAssignment(
+            ProblemQuery? problemQuery = null,
+            ProjectTaskQuery? projectTaskQuery = null,
+            RequestQuery? requestQuery = null,
+            TaskQuery? taskQuery = null)
+        {
+            problemQuery ??= new ProblemQuery().Select(ProblemField.ID);
+            TimeEntryQuery query = SelectAssignment(problemQuery);
+            query.OnTypesQueries.Add("Problem", problemQuery.Clone());
+
+            projectTaskQuery ??= new ProjectTaskQuery().Select(ProjectTaskField.ID);
+            query = SelectAssignment(projectTaskQuery);
+            query.OnTypesQueries.Add("ProjectTask", projectTaskQuery.Clone());
+
+            requestQuery ??= new RequestQuery().Select(RequestField.ID);
+            query = SelectAssignment(requestQuery);
+            query.OnTypesQueries.Add("Request", requestQuery.Clone());
+
+            taskQuery ??= new TaskQuery().Select(TaskField.ID);
+            query = SelectAssignment(taskQuery);
+            query.OnTypesQueries.Add("Task", taskQuery.Clone());
+
+            return query;
+        }
+
+        /// <summary>
+        /// The record in which the Time spent field was filled out to cause the time entry to be generated.
+        /// <para>
         /// <br>Use this method along with other <c>SelectAssignment(IQuery)</c> calls to cast different object types supporting <see cref="IHasTimeEntries"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public TimeEntryQuery SelectAssignment(ProblemQuery query)
         {
@@ -47,7 +82,10 @@
 
         /// <summary>
         /// The record in which the Time spent field was filled out to cause the time entry to be generated.
+        /// <para>
         /// <br>Use this method along with other <c>SelectAssignment(IQuery)</c> calls to cast different object types supporting <see cref="IHasTimeEntries"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public TimeEntryQuery SelectAssignment(ProjectTaskQuery query)
         {
@@ -59,7 +97,10 @@
 
         /// <summary>
         /// The record in which the Time spent field was filled out to cause the time entry to be generated.
+        /// <para>
         /// <br>Use this method along with other <c>SelectAssignment(IQuery)</c> calls to cast different object types supporting <see cref="IHasTimeEntries"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public TimeEntryQuery SelectAssignment(RequestQuery query)
         {
@@ -71,7 +112,10 @@
 
         /// <summary>
         /// The record in which the Time spent field was filled out to cause the time entry to be generated.
+        /// <para>
         /// <br>Use this method along with other <c>SelectAssignment(IQuery)</c> calls to cast different object types supporting <see cref="IHasTimeEntries"></see>.</br>
+        /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
+        /// </para>
         /// </summary>
         public TimeEntryQuery SelectAssignment(TaskQuery query)
         {
