@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public PdfDesignQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Files and inline images linked to the description field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public PdfDesignQuery SelectDescriptionAttachments(AttachmentQuery query)
         {
             query.FieldName = "descriptionAttachments";
@@ -45,6 +49,8 @@
         /// <summary>
         /// Translations associated with this object.
         /// </summary>
+        /// <param name="query">The translation query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public PdfDesignQuery SelectTranslations(TranslationQuery query)
         {
             query.FieldName = "translations";

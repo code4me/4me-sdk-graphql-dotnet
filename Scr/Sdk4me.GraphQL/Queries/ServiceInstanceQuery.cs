@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceInstanceQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Children of the service instance.
         /// </summary>
+        /// <param name="query">The service instance query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceInstanceQuery SelectChildServiceInstances(ServiceInstanceQuery query)
         {
             query.FieldName = "childServiceInstances";
@@ -45,6 +49,8 @@
         /// <summary>
         /// Configuration items of the service instance.
         /// </summary>
+        /// <param name="query">The configuration item query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceInstanceQuery SelectConfigurationItems(ConfigurationItemQuery query)
         {
             query.FieldName = "configurationItems";
@@ -54,6 +60,8 @@
         /// <summary>
         /// Values of custom fields.
         /// </summary>
+        /// <param name="query">The custom field query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceInstanceQuery SelectCustomFields(CustomFieldQuery query)
         {
             query.FieldName = "customFields";
@@ -64,6 +72,8 @@
         /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceInstanceQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
@@ -73,6 +83,8 @@
         /// <summary>
         /// Used to select the team that will automatically be selected in the Team field of requests to which the service instance is linked after they have been submitted using Self Service or when they are generated using the Requests API, Mail API or Events API.
         /// </summary>
+        /// <param name="query">The team query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceInstanceQuery SelectFirstLineTeam(TeamQuery query)
         {
             query.FieldName = "firstLineTeam";
@@ -83,6 +95,8 @@
         /// <summary>
         /// The maintenance window defines the periods in which workflow tasks with an impact related to this service instance may be implemented.
         /// </summary>
+        /// <param name="query">The calendar query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceInstanceQuery SelectMaintenanceWindow(CalendarQuery query)
         {
             query.FieldName = "maintenanceWindow";
@@ -93,6 +107,8 @@
         /// <summary>
         /// Parents of the service instance.
         /// </summary>
+        /// <param name="query">The service instance query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceInstanceQuery SelectParentServiceInstances(ServiceInstanceQuery query)
         {
             query.FieldName = "parentServiceInstances";
@@ -102,6 +118,8 @@
         /// <summary>
         /// Files and inline images linked to the Remarks field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceInstanceQuery SelectRemarksAttachments(AttachmentQuery query)
         {
             query.FieldName = "remarksAttachments";
@@ -111,6 +129,8 @@
         /// <summary>
         /// The service which functionality the service instance provides.
         /// </summary>
+        /// <param name="query">The service query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceInstanceQuery SelectService(ServiceQuery query)
         {
             query.FieldName = "service";
@@ -121,6 +141,8 @@
         /// <summary>
         /// Service level agreements of the service instance.
         /// </summary>
+        /// <param name="query">The service level agreement query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceInstanceQuery SelectServiceLevelAgreements(ServiceLevelAgreementQuery query)
         {
             query.FieldName = "serviceLevelAgreements";
@@ -130,6 +152,8 @@
         /// <summary>
         /// The team that will, by default, be selected in the Team field of a request when the service instance is manually selected in the Service instance field of the request, or when the service instance is applied from the Service Hierarchy Browser.
         /// </summary>
+        /// <param name="query">The team query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceInstanceQuery SelectSupportTeam(TeamQuery query)
         {
             query.FieldName = "supportTeam";
@@ -140,6 +164,8 @@
         /// <summary>
         /// Translations associated with this object.
         /// </summary>
+        /// <param name="query">The translation query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceInstanceQuery SelectTranslations(TranslationQuery query)
         {
             query.FieldName = "translations";
@@ -149,6 +175,8 @@
         /// <summary>
         /// UI extension that is linked to the record.
         /// </summary>
+        /// <param name="query">The ui extension query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceInstanceQuery SelectUiExtension(UiExtensionQuery query)
         {
             query.FieldName = "uiExtension";

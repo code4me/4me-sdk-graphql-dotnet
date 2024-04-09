@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public CustomCollectionElementQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Collection of this element.
         /// </summary>
+        /// <param name="query">The custom collection query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public CustomCollectionElementQuery SelectCustomCollection(CustomCollectionQuery query)
         {
             query.FieldName = "customCollection";
@@ -46,6 +50,8 @@
         /// <summary>
         /// Values of custom fields.
         /// </summary>
+        /// <param name="query">The custom field query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public CustomCollectionElementQuery SelectCustomFields(CustomFieldQuery query)
         {
             query.FieldName = "customFields";
@@ -56,6 +62,8 @@
         /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public CustomCollectionElementQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
@@ -65,6 +73,8 @@
         /// <summary>
         /// Files and inline images linked to the Information field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public CustomCollectionElementQuery SelectInformationAttachments(AttachmentQuery query)
         {
             query.FieldName = "informationAttachments";
@@ -74,6 +84,8 @@
         /// <summary>
         /// Translations associated with this object.
         /// </summary>
+        /// <param name="query">The translation query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public CustomCollectionElementQuery SelectTranslations(TranslationQuery query)
         {
             query.FieldName = "translations";

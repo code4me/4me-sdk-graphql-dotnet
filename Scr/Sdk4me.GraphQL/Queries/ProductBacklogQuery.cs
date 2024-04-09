@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProductBacklogQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Files and inline images linked to the description field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProductBacklogQuery SelectDescriptionAttachments(AttachmentQuery query)
         {
             query.FieldName = "descriptionAttachments";
@@ -45,6 +49,8 @@
         /// <summary>
         /// Items on this backlog.
         /// </summary>
+        /// <param name="query">The product backlog item query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProductBacklogQuery SelectItems(ProductBacklogItemQuery query)
         {
             query.FieldName = "items";
@@ -54,6 +60,8 @@
         /// <summary>
         /// Person responsible for maximizing the value of the work done based on this product backlog.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProductBacklogQuery SelectProductOwner(PersonQuery query)
         {
             query.FieldName = "productOwner";
@@ -64,6 +72,8 @@
         /// <summary>
         /// Scrum workspaces taking items from this backlog when planning their sprints.
         /// </summary>
+        /// <param name="query">The scrum workspace query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProductBacklogQuery SelectScrumWorkspaces(ScrumWorkspaceQuery query)
         {
             query.FieldName = "scrumWorkspaces";

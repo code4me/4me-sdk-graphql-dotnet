@@ -25,7 +25,7 @@
         /// Initialize an new DiscoveredConfigurationItems mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The async query response query.</param>
         internal DiscoveredConfigurationItemsMutation(DiscoveredConfigurationItemsInput data, AsyncQueryQuery query)
             : base("discoveredConfigurationItems", "DiscoveredConfigurationItemsInput!", data, GetQuery(query))
         {
@@ -34,7 +34,7 @@
         /// <summary>
         /// Generates the response query collection.
         /// </summary>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The async query response query.</param>
         /// <returns>A query collection.</returns>
         private static HashSet<IQuery> GetQuery(AsyncQueryQuery query)
         {

@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public WaitingForCustomerFollowUpQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Rules of the waiting for customer follow-up.
         /// </summary>
+        /// <param name="query">The waiting for customer rule query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public WaitingForCustomerFollowUpQuery SelectWaitingForCustomerRules(WaitingForCustomerRuleQuery query)
         {
             query.FieldName = "waitingForCustomerRules";

@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ConfigurationItemQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Relations to other configuration items.
         /// </summary>
+        /// <param name="query">The configuration item relation query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ConfigurationItemQuery SelectCiRelations(ConfigurationItemRelationQuery query)
         {
             query.FieldName = "ciRelations";
@@ -45,6 +49,8 @@
         /// <summary>
         /// All contracts of this configuration item.
         /// </summary>
+        /// <param name="query">The contract query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ConfigurationItemQuery SelectContracts(ContractQuery query)
         {
             query.FieldName = "contracts";
@@ -54,6 +60,8 @@
         /// <summary>
         /// Values of custom fields.
         /// </summary>
+        /// <param name="query">The custom field query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ConfigurationItemQuery SelectCustomFields(CustomFieldQuery query)
         {
             query.FieldName = "customFields";
@@ -64,6 +72,8 @@
         /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ConfigurationItemQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
@@ -73,6 +83,8 @@
         /// <summary>
         /// The internal organization which budget is used to pay for the configuration item. If the CI is leased or rented, the organization that pays the lease or rent is selected in this field. When creating a new CI and a value is not specified for this field, it is set to the financial owner of the CI's product.
         /// </summary>
+        /// <param name="query">The organization query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ConfigurationItemQuery SelectFinancialOwner(OrganizationQuery query)
         {
             query.FieldName = "financialOwner";
@@ -83,6 +95,8 @@
         /// <summary>
         /// Invoices associated with this object.
         /// </summary>
+        /// <param name="query">The invoice query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ConfigurationItemQuery SelectInvoices(InvoiceQuery query)
         {
             query.FieldName = "invoices";
@@ -92,6 +106,8 @@
         /// <summary>
         /// Sites at which the software that is covered by the license certificate may be used.
         /// </summary>
+        /// <param name="query">The site query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ConfigurationItemQuery SelectLicensedSites(SiteQuery query)
         {
             query.FieldName = "licensedSites";
@@ -101,6 +117,8 @@
         /// <summary>
         /// The (software) configuration item representing the operating system of this configuration item.
         /// </summary>
+        /// <param name="query">The configuration item query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ConfigurationItemQuery SelectOperatingSystem(ConfigurationItemQuery query)
         {
             query.FieldName = "operatingSystem";
@@ -111,6 +129,8 @@
         /// <summary>
         /// All problems of this configuration item.
         /// </summary>
+        /// <param name="query">The problem query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ConfigurationItemQuery SelectProblems(ProblemQuery query)
         {
             query.FieldName = "problems";
@@ -120,6 +140,8 @@
         /// <summary>
         /// Related product.
         /// </summary>
+        /// <param name="query">The product query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ConfigurationItemQuery SelectProduct(ProductQuery query)
         {
             query.FieldName = "product";
@@ -130,6 +152,8 @@
         /// <summary>
         /// Recurrence for maintenance of the configuration item.
         /// </summary>
+        /// <param name="query">The recurrence query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ConfigurationItemQuery SelectRecurrence(RecurrenceQuery query)
         {
             query.FieldName = "recurrence";
@@ -140,6 +164,8 @@
         /// <summary>
         /// Files and inline images linked to the Remarks field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ConfigurationItemQuery SelectRemarksAttachments(AttachmentQuery query)
         {
             query.FieldName = "remarksAttachments";
@@ -149,6 +175,8 @@
         /// <summary>
         /// All requests of this configuration item.
         /// </summary>
+        /// <param name="query">The request query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ConfigurationItemQuery SelectRequests(RequestQuery query)
         {
             query.FieldName = "requests";
@@ -158,6 +186,8 @@
         /// <summary>
         /// Which service instance(s) the configuration item is, or will be, a part of. When creating a new CI and a value is not specified for this field, it is set to the service of the CI's product.
         /// </summary>
+        /// <param name="query">The service query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ConfigurationItemQuery SelectService(ServiceQuery query)
         {
             query.FieldName = "service";
@@ -168,6 +198,8 @@
         /// <summary>
         /// All service instances of this configuration item.
         /// </summary>
+        /// <param name="query">The service instance query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ConfigurationItemQuery SelectServiceInstances(ServiceInstanceQuery query)
         {
             query.FieldName = "serviceInstances";
@@ -177,6 +209,8 @@
         /// <summary>
         /// Where the CI is located, if it concerns a hardware CI.
         /// </summary>
+        /// <param name="query">The site query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ConfigurationItemQuery SelectSite(SiteQuery query)
         {
             query.FieldName = "site";
@@ -187,6 +221,8 @@
         /// <summary>
         /// The supplier from which the configuration item (CI) has been obtained. When creating a new CI and a value is not specified for this field, it is set to the supplier of the CI's product.
         /// </summary>
+        /// <param name="query">The organization query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ConfigurationItemQuery SelectSupplier(OrganizationQuery query)
         {
             query.FieldName = "supplier";
@@ -197,6 +233,8 @@
         /// <summary>
         /// The account of the team that supports this configuration item.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ConfigurationItemQuery SelectSupportAccount(AccountQuery query)
         {
             query.FieldName = "supportAccount";
@@ -207,6 +245,8 @@
         /// <summary>
         /// The team responsible for supporting the configuration item and maintaining its information in the configuration management database (CMDB). When creating a new CI and a value is not specified for this field, it is set to the support team of the CI's product. Optional when status of CI equals "Removed", required otherwise.
         /// </summary>
+        /// <param name="query">The team query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ConfigurationItemQuery SelectSupportTeam(TeamQuery query)
         {
             query.FieldName = "supportTeam";
@@ -217,6 +257,8 @@
         /// <summary>
         /// All users of this configuration item.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ConfigurationItemQuery SelectUsers(PersonQuery query)
         {
             query.FieldName = "users";
@@ -226,6 +268,8 @@
         /// <summary>
         /// The person who will be responsible for coordinating the workflows that will be generated automatically in accordance with the recurrence schedule.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ConfigurationItemQuery SelectWorkflowManager(PersonQuery query)
         {
             query.FieldName = "workflowManager";
@@ -236,6 +280,8 @@
         /// <summary>
         /// The workflow template that is used to periodically maintain the configuration item.
         /// </summary>
+        /// <param name="query">The workflow template query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ConfigurationItemQuery SelectWorkflowTemplate(WorkflowTemplateQuery query)
         {
             query.FieldName = "workflowTemplate";

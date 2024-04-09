@@ -9,7 +9,7 @@
         /// Initialize an new SlaNotificationSchemeUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The sla notification scheme response query.</param>
         internal SlaNotificationSchemeUpdateMutation(SlaNotificationSchemeUpdateInput data, SlaNotificationSchemeQuery query)
             : base("slaNotificationSchemeUpdate", "SlaNotificationSchemeUpdateInput!", data, GetQuery(query))
         {
@@ -18,7 +18,7 @@
         /// <summary>
         /// Generates the response query collection.
         /// </summary>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The sla notification scheme response query.</param>
         /// <returns>A query collection.</returns>
         private static HashSet<IQuery> GetQuery(SlaNotificationSchemeQuery query)
         {

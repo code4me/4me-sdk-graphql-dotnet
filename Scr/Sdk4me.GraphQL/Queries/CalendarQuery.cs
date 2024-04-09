@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public CalendarQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Calendar hours of the calendar.
         /// </summary>
+        /// <param name="query">The calendar hour query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public CalendarQuery SelectCalendarHours(CalendarHourQuery query)
         {
             query.FieldName = "calendarHours";
@@ -45,6 +49,8 @@
         /// <summary>
         /// Holidays of the calendar.
         /// </summary>
+        /// <param name="query">The holiday query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public CalendarQuery SelectHolidays(HolidayQuery query)
         {
             query.FieldName = "holidays";

@@ -16,6 +16,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AsyncQueryQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -26,6 +28,8 @@
         /// <summary>
         /// The person or application who created the async query.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AsyncQueryQuery SelectPerson(PersonQuery query)
         {
             query.FieldName = "person";

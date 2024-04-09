@@ -16,6 +16,8 @@
         /// <summary>
         /// Note this note reaction belongs to.
         /// </summary>
+        /// <param name="query">The note query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public NoteReactionQuery SelectNote(NoteQuery query)
         {
             query.FieldName = "note";
@@ -26,6 +28,8 @@
         /// <summary>
         /// Person who added this note reaction.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public NoteReactionQuery SelectPerson(PersonQuery query)
         {
             query.FieldName = "person";

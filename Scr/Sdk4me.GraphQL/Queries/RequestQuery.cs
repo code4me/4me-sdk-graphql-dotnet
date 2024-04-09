@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Affected SLAs of the request.
         /// </summary>
+        /// <param name="query">The affected sla query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectAffectedSlas(AffectedSlaQuery query)
         {
             query.FieldName = "affectedSlas";
@@ -45,6 +49,8 @@
         /// <summary>
         /// Board this item is placed on.
         /// </summary>
+        /// <param name="query">The agile board query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectAgileBoard(AgileBoardQuery query)
         {
             query.FieldName = "agileBoard";
@@ -55,6 +61,8 @@
         /// <summary>
         /// Column this item is placed in.
         /// </summary>
+        /// <param name="query">The agile board column query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectAgileBoardColumn(AgileBoardColumnQuery query)
         {
             query.FieldName = "agileBoardColumn";
@@ -65,6 +73,8 @@
         /// <summary>
         /// Automation rules associated with this record.
         /// </summary>
+        /// <param name="query">The automation rule query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectAutomationRules(AutomationRuleQuery query)
         {
             query.FieldName = "automationRules";
@@ -74,6 +84,8 @@
         /// <summary>
         /// Configuration items of the request. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
         /// </summary>
+        /// <param name="query">The configuration item query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectConfigurationItems(ConfigurationItemQuery query)
         {
             query.FieldName = "configurationItems";
@@ -83,6 +95,8 @@
         /// <summary>
         /// Automatically set to the person who submitted the request.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectCreatedBy(PersonQuery query)
         {
             query.FieldName = "createdBy";
@@ -93,6 +107,8 @@
         /// <summary>
         /// Values of custom fields.
         /// </summary>
+        /// <param name="query">The custom field query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectCustomFields(CustomFieldQuery query)
         {
             query.FieldName = "customFields";
@@ -103,6 +119,8 @@
         /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
@@ -112,6 +130,8 @@
         /// <summary>
         /// The <c>satisfiedUrl</c> and the <c>dissatisfiedUrl</c> of the <c>requestedFor</c>. In case the <c>requestedBy</c> is different form the <c>requestedFor</c>, the satisfaction link of the <c>requestedBy</c> are also included. Feedback is <c>null</c> in case no feedback for the request can be provided at this time.
         /// </summary>
+        /// <param name="query">The feedback query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectFeedback(FeedbackQuery query)
         {
             query.FieldName = "feedback";
@@ -122,6 +142,8 @@
         /// <summary>
         /// The request group that is used to group the requests that have been submitted for the resolution of exactly the same incident, for the implementation of exactly the same change, for the provision of exactly the same information, etc.
         /// </summary>
+        /// <param name="query">The request query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectGroupedInto(RequestQuery query)
         {
             query.FieldName = "groupedInto";
@@ -132,6 +154,8 @@
         /// <summary>
         /// Requests that are grouped into this request group.
         /// </summary>
+        /// <param name="query">The request query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectGroupedRequests(RequestQuery query)
         {
             query.FieldName = "groupedRequests";
@@ -141,6 +165,8 @@
         /// <summary>
         /// Automatically set to the latest knowledge article that was applied to the request.
         /// </summary>
+        /// <param name="query">The knowledge article query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         [Obsolete("Use `knowledgeArticles` instead.")]
         public RequestQuery SelectKnowledgeArticle(KnowledgeArticleQuery query)
         {
@@ -152,6 +178,8 @@
         /// <summary>
         /// Knowledge articles of the current request account.
         /// </summary>
+        /// <param name="query">The knowledge article query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectKnowledgeArticles(KnowledgeArticleQuery query)
         {
             query.FieldName = "knowledgeArticles";
@@ -161,6 +189,8 @@
         /// <summary>
         /// The person to whom the request is to be assigned. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectMember(PersonQuery query)
         {
             query.FieldName = "member";
@@ -171,6 +201,8 @@
         /// <summary>
         /// Notes of the record.
         /// </summary>
+        /// <param name="query">The note query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectNotes(NoteQuery query)
         {
             query.FieldName = "notes";
@@ -180,6 +212,8 @@
         /// <summary>
         /// Automatically set when the request is saved for the first time to the organization that the person, who is selected in the Requested for field, belongs.
         /// </summary>
+        /// <param name="query">The organization query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectOrganization(OrganizationQuery query)
         {
             query.FieldName = "organization";
@@ -190,6 +224,8 @@
         /// <summary>
         /// Used to link the request to a problem.
         /// </summary>
+        /// <param name="query">The problem query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectProblem(ProblemQuery query)
         {
             query.FieldName = "problem";
@@ -200,6 +236,8 @@
         /// <summary>
         /// Product backlog this item is placed on.
         /// </summary>
+        /// <param name="query">The product backlog query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectProductBacklog(ProductBacklogQuery query)
         {
             query.FieldName = "productBacklog";
@@ -210,6 +248,8 @@
         /// <summary>
         /// Used to link the request to a project.
         /// </summary>
+        /// <param name="query">The project query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectProject(ProjectQuery query)
         {
             query.FieldName = "project";
@@ -220,6 +260,8 @@
         /// <summary>
         /// The person who submitted the request.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectRequestedBy(PersonQuery query)
         {
             query.FieldName = "requestedBy";
@@ -230,6 +272,8 @@
         /// <summary>
         /// The person for whom the request was submitted. The person selected in the Requested by field is automatically selected in this field, but another person can be selected if the request is submitted for another person.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectRequestedFor(PersonQuery query)
         {
             query.FieldName = "requestedFor";
@@ -240,6 +284,8 @@
         /// <summary>
         /// The service instance in which the cause of the incident resides, for which the change is requested, or about which information is needed.
         /// </summary>
+        /// <param name="query">The service instance query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectServiceInstance(ServiceInstanceQuery query)
         {
             query.FieldName = "serviceInstance";
@@ -250,6 +296,8 @@
         /// <summary>
         /// Sprint backlog items associated with this object.
         /// </summary>
+        /// <param name="query">The sprint backlog item query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectSprintBacklogItems(SprintBacklogItemQuery query)
         {
             query.FieldName = "sprintBacklogItems";
@@ -259,6 +307,8 @@
         /// <summary>
         /// The supplier organization that has been asked to assist with the request. The supplier organization is automatically selected in this field after a service instance has been selected that is provided by an external service provider organization. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
         /// </summary>
+        /// <param name="query">The organization query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectSupplier(OrganizationQuery query)
         {
             query.FieldName = "supplier";
@@ -269,6 +319,8 @@
         /// <summary>
         /// Tags applied to the current request account.
         /// </summary>
+        /// <param name="query">The tag query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectTags(TagQuery query)
         {
             query.FieldName = "tags";
@@ -278,6 +330,8 @@
         /// <summary>
         /// The task that caused the request to be automatically generated.
         /// </summary>
+        /// <param name="query">The task query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectTask(TaskQuery query)
         {
             query.FieldName = "task";
@@ -288,6 +342,8 @@
         /// <summary>
         /// The team to which the request is to be assigned. By default, the first line team of the service instance that is related to the request will be selected. If a first line team has not been specified for the service instance, the support team of the service instance will be selected instead. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
         /// </summary>
+        /// <param name="query">The team query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectTeam(TeamQuery query)
         {
             query.FieldName = "team";
@@ -298,6 +354,8 @@
         /// <summary>
         /// The link to the request template that was last applied to the request.
         /// </summary>
+        /// <param name="query">The request template query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectTemplate(RequestTemplateQuery query)
         {
             query.FieldName = "template";
@@ -308,6 +366,8 @@
         /// <summary>
         /// Time entries for this record.
         /// </summary>
+        /// <param name="query">The time entry query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectTimeEntries(TimeEntryQuery query)
         {
             query.FieldName = "timeEntries";
@@ -317,6 +377,8 @@
         /// <summary>
         /// List of all people watching the request.
         /// </summary>
+        /// <param name="query">The watch query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectWatches(WatchQuery query)
         {
             query.FieldName = "watches";
@@ -326,6 +388,8 @@
         /// <summary>
         /// Used to link the request to a workflow.
         /// </summary>
+        /// <param name="query">The workflow query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RequestQuery SelectWorkflow(WorkflowQuery query)
         {
             query.FieldName = "workflow";

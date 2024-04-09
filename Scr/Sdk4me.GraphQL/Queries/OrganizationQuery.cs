@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public OrganizationQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Addresses of the record.
         /// </summary>
+        /// <param name="query">The address query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public OrganizationQuery SelectAddresses(AddressQuery query)
         {
             query.FieldName = "addresses";
@@ -45,6 +49,8 @@
         /// <summary>
         /// Refers to itself if the organization is a business unit, or refers to the business unit that the organization belongs to.
         /// </summary>
+        /// <param name="query">The organization query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public OrganizationQuery SelectBusinessUnitOrganization(OrganizationQuery query)
         {
             query.FieldName = "businessUnitOrganization";
@@ -55,6 +61,8 @@
         /// <summary>
         /// Child organizations of this organization, i.e. organizations that have this organization as their parent.
         /// </summary>
+        /// <param name="query">The organization query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public OrganizationQuery SelectChildOrganizations(OrganizationQuery query)
         {
             query.FieldName = "childOrganizations";
@@ -64,6 +72,8 @@
         /// <summary>
         /// Contact details for this entity.
         /// </summary>
+        /// <param name="query">The contact query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public OrganizationQuery SelectContacts(ContactQuery query)
         {
             query.FieldName = "contacts";
@@ -73,6 +83,8 @@
         /// <summary>
         /// Contracts of this organization.
         /// </summary>
+        /// <param name="query">The contract query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public OrganizationQuery SelectContracts(ContractQuery query)
         {
             query.FieldName = "contracts";
@@ -82,6 +94,8 @@
         /// <summary>
         /// Values of custom fields.
         /// </summary>
+        /// <param name="query">The custom field query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public OrganizationQuery SelectCustomFields(CustomFieldQuery query)
         {
             query.FieldName = "customFields";
@@ -92,6 +106,8 @@
         /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public OrganizationQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
@@ -101,6 +117,8 @@
         /// <summary>
         /// The manager of the organization.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public OrganizationQuery SelectManager(PersonQuery query)
         {
             query.FieldName = "manager";
@@ -111,6 +129,8 @@
         /// <summary>
         /// Refers to the order template that is used for purchases of people defined in this organization or its descendants.
         /// </summary>
+        /// <param name="query">The request template query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public OrganizationQuery SelectOrderTemplate(RequestTemplateQuery query)
         {
             query.FieldName = "orderTemplate";
@@ -121,6 +141,8 @@
         /// <summary>
         /// The organization's parent organization.
         /// </summary>
+        /// <param name="query">The organization query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public OrganizationQuery SelectParent(OrganizationQuery query)
         {
             query.FieldName = "parent";
@@ -131,6 +153,8 @@
         /// <summary>
         /// People of this organization.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public OrganizationQuery SelectPeople(PersonQuery query)
         {
             query.FieldName = "people";
@@ -140,6 +164,8 @@
         /// <summary>
         /// Files and inline images linked to the Remarks field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public OrganizationQuery SelectRemarksAttachments(AttachmentQuery query)
         {
             query.FieldName = "remarksAttachments";
@@ -149,6 +175,8 @@
         /// <summary>
         /// Risks of this organization.
         /// </summary>
+        /// <param name="query">The risk query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public OrganizationQuery SelectRisks(RiskQuery query)
         {
             query.FieldName = "risks";
@@ -158,6 +186,8 @@
         /// <summary>
         /// Service level agreements which coverage field is set to <c>organizations</c> and which cover the organization.
         /// </summary>
+        /// <param name="query">The service level agreement query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public OrganizationQuery SelectServiceLevelAgreements(ServiceLevelAgreementQuery query)
         {
             query.FieldName = "serviceLevelAgreements";
@@ -167,6 +197,8 @@
         /// <summary>
         /// The person who acts as the substitute of the organization's manager.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public OrganizationQuery SelectSubstitute(PersonQuery query)
         {
             query.FieldName = "substitute";
@@ -177,6 +209,8 @@
         /// <summary>
         /// Time allocations of this organization.
         /// </summary>
+        /// <param name="query">The time allocation query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public OrganizationQuery SelectTimeAllocations(TimeAllocationQuery query)
         {
             query.FieldName = "timeAllocations";
@@ -186,6 +220,8 @@
         /// <summary>
         /// UI extension that is linked to the record.
         /// </summary>
+        /// <param name="query">The ui extension query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public OrganizationQuery SelectUiExtension(UiExtensionQuery query)
         {
             query.FieldName = "uiExtension";

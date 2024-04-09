@@ -9,7 +9,7 @@
         /// Initialize an new ProblemUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The problem response query.</param>
         internal ProblemUpdateMutation(ProblemUpdateInput data, ProblemQuery query)
             : base("problemUpdate", "ProblemUpdateInput!", data, GetQuery(query))
         {
@@ -18,7 +18,7 @@
         /// <summary>
         /// Generates the response query collection.
         /// </summary>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The problem response query.</param>
         /// <returns>A query collection.</returns>
         private static HashSet<IQuery> GetQuery(ProblemQuery query)
         {

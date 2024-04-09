@@ -16,6 +16,8 @@
         /// <summary>
         /// Board this item is placed on.
         /// </summary>
+        /// <param name="query">The agile board query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AgileBoardItemQuery SelectAgileBoard(AgileBoardQuery query)
         {
             query.FieldName = "agileBoard";
@@ -26,6 +28,8 @@
         /// <summary>
         /// Column this item is placed in.
         /// </summary>
+        /// <param name="query">The agile board column query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AgileBoardItemQuery SelectAgileBoardColumn(AgileBoardColumnQuery query)
         {
             query.FieldName = "agileBoardColumn";

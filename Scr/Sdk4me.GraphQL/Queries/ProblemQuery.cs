@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProblemQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Board this item is placed on.
         /// </summary>
+        /// <param name="query">The agile board query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProblemQuery SelectAgileBoard(AgileBoardQuery query)
         {
             query.FieldName = "agileBoard";
@@ -46,6 +50,8 @@
         /// <summary>
         /// Column this item is placed in.
         /// </summary>
+        /// <param name="query">The agile board column query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProblemQuery SelectAgileBoardColumn(AgileBoardColumnQuery query)
         {
             query.FieldName = "agileBoardColumn";
@@ -56,6 +62,8 @@
         /// <summary>
         /// Configuration items of this problem.
         /// </summary>
+        /// <param name="query">The configuration item query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProblemQuery SelectConfigurationItems(ConfigurationItemQuery query)
         {
             query.FieldName = "configurationItems";
@@ -65,6 +73,8 @@
         /// <summary>
         /// Values of custom fields.
         /// </summary>
+        /// <param name="query">The custom field query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProblemQuery SelectCustomFields(CustomFieldQuery query)
         {
             query.FieldName = "customFields";
@@ -75,6 +85,8 @@
         /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProblemQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
@@ -84,6 +96,8 @@
         /// <summary>
         /// The knowledge article which instructions should be followed to resolve incidents caused by this problem until a structural solution has been implemented.
         /// </summary>
+        /// <param name="query">The knowledge article query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProblemQuery SelectKnowledgeArticle(KnowledgeArticleQuery query)
         {
             query.FieldName = "knowledgeArticle";
@@ -94,6 +108,8 @@
         /// <summary>
         /// Person who is responsible for coordinating the problem through root cause analysis, the proposal of a structural solution and ultimately its closure.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProblemQuery SelectManager(PersonQuery query)
         {
             query.FieldName = "manager";
@@ -104,6 +120,8 @@
         /// <summary>
         /// The person to whom the problem is to be assigned.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProblemQuery SelectMember(PersonQuery query)
         {
             query.FieldName = "member";
@@ -114,6 +132,8 @@
         /// <summary>
         /// Notes of the record.
         /// </summary>
+        /// <param name="query">The note query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProblemQuery SelectNotes(NoteQuery query)
         {
             query.FieldName = "notes";
@@ -123,6 +143,8 @@
         /// <summary>
         /// Product backlog this item is placed on.
         /// </summary>
+        /// <param name="query">The product backlog query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProblemQuery SelectProductBacklog(ProductBacklogQuery query)
         {
             query.FieldName = "productBacklog";
@@ -133,6 +155,8 @@
         /// <summary>
         /// Used to link the problem to a project.
         /// </summary>
+        /// <param name="query">The project query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProblemQuery SelectProject(ProjectQuery query)
         {
             query.FieldName = "project";
@@ -143,6 +167,8 @@
         /// <summary>
         /// Requests of this problem.
         /// </summary>
+        /// <param name="query">The request query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProblemQuery SelectRequests(RequestQuery query)
         {
             query.FieldName = "requests";
@@ -152,6 +178,8 @@
         /// <summary>
         /// The service in which instance(s) the problem resides.
         /// </summary>
+        /// <param name="query">The service query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProblemQuery SelectService(ServiceQuery query)
         {
             query.FieldName = "service";
@@ -162,6 +190,8 @@
         /// <summary>
         /// Service instances of this problem.
         /// </summary>
+        /// <param name="query">The service instance query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProblemQuery SelectServiceInstances(ServiceInstanceQuery query)
         {
             query.FieldName = "serviceInstances";
@@ -171,6 +201,8 @@
         /// <summary>
         /// Sprint backlog items associated with this object.
         /// </summary>
+        /// <param name="query">The sprint backlog item query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProblemQuery SelectSprintBacklogItems(SprintBacklogItemQuery query)
         {
             query.FieldName = "sprintBacklogItems";
@@ -180,6 +212,8 @@
         /// <summary>
         /// The supplier organization that has been asked for a solution to the problem.
         /// </summary>
+        /// <param name="query">The organization query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProblemQuery SelectSupplier(OrganizationQuery query)
         {
             query.FieldName = "supplier";
@@ -190,6 +224,8 @@
         /// <summary>
         /// The team to which the problem is to be assigned. After a service has been selected in the Service field, the support team of the service is automatically selected in this field.
         /// </summary>
+        /// <param name="query">The team query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProblemQuery SelectTeam(TeamQuery query)
         {
             query.FieldName = "team";
@@ -200,6 +236,8 @@
         /// <summary>
         /// Time entries for this record.
         /// </summary>
+        /// <param name="query">The time entry query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProblemQuery SelectTimeEntries(TimeEntryQuery query)
         {
             query.FieldName = "timeEntries";
@@ -209,6 +247,8 @@
         /// <summary>
         /// UI extension that is linked to the record.
         /// </summary>
+        /// <param name="query">The ui extension query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProblemQuery SelectUiExtension(UiExtensionQuery query)
         {
             query.FieldName = "uiExtension";
@@ -219,6 +259,8 @@
         /// <summary>
         /// Inline images linked to the Workaround field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProblemQuery SelectWorkaroundAttachments(AttachmentQuery query)
         {
             query.FieldName = "workaroundAttachments";
@@ -228,6 +270,8 @@
         /// <summary>
         /// The workflow that will implement the proposed permanent solution for the problem.
         /// </summary>
+        /// <param name="query">The workflow query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProblemQuery SelectWorkflow(WorkflowQuery query)
         {
             query.FieldName = "workflow";

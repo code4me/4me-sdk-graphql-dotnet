@@ -9,7 +9,7 @@
         /// Initialize an new ShortUrlCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The short url response query.</param>
         internal ShortUrlCreateMutation(ShortUrlCreateInput data, ShortUrlQuery query)
             : base("shortUrlCreate", "ShortUrlCreateInput!", data, GetQuery(query))
         {
@@ -18,7 +18,7 @@
         /// <summary>
         /// Generates the response query collection.
         /// </summary>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The short url response query.</param>
         /// <returns>A query collection.</returns>
         private static HashSet<IQuery> GetQuery(ShortUrlQuery query)
         {

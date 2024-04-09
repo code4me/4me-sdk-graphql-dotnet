@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SkillPoolQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Effort classes linked to the skill pool.
         /// </summary>
+        /// <param name="query">The effort class query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SkillPoolQuery SelectEffortClasses(EffortClassQuery query)
         {
             query.FieldName = "effortClasses";
@@ -45,6 +49,8 @@
         /// <summary>
         /// The manager or supervisor of the skill pool. This person is able to maintain the information about the skill pool. The manager of a skill pool does not need to be a member of the skill pool.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SkillPoolQuery SelectManager(PersonQuery query)
         {
             query.FieldName = "manager";
@@ -55,6 +61,8 @@
         /// <summary>
         /// People linked as a member to the skill pool.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SkillPoolQuery SelectMembers(PersonQuery query)
         {
             query.FieldName = "members";
@@ -64,6 +72,8 @@
         /// <summary>
         /// Inline images linked to the Remarks field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SkillPoolQuery SelectRemarksAttachments(AttachmentQuery query)
         {
             query.FieldName = "remarksAttachments";

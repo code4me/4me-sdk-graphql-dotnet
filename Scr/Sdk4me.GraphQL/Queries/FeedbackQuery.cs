@@ -16,6 +16,8 @@
         /// <summary>
         /// URLs to capture feedback from the person who submitted the request.
         /// </summary>
+        /// <param name="query">The feedback urls query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public FeedbackQuery SelectRequestedBy(FeedbackUrlsQuery query)
         {
             query.FieldName = "requestedBy";
@@ -26,6 +28,8 @@
         /// <summary>
         /// URLs to capture feedback from the person for whom the request was submitted, if that was not the submitter of the request.
         /// </summary>
+        /// <param name="query">The feedback urls query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public FeedbackQuery SelectRequestedFor(FeedbackUrlsQuery query)
         {
             query.FieldName = "requestedFor";

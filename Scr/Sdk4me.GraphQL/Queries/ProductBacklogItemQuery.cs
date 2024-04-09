@@ -16,6 +16,8 @@
         /// <summary>
         /// Product backlog this item is placed on.
         /// </summary>
+        /// <param name="query">The product backlog query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProductBacklogItemQuery SelectProductBacklog(ProductBacklogQuery query)
         {
             query.FieldName = "productBacklog";

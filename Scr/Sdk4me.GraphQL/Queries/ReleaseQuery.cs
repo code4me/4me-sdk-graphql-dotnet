@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ReleaseQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Values of custom fields.
         /// </summary>
+        /// <param name="query">The custom field query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ReleaseQuery SelectCustomFields(CustomFieldQuery query)
         {
             query.FieldName = "customFields";
@@ -46,6 +50,8 @@
         /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ReleaseQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
@@ -55,6 +61,8 @@
         /// <summary>
         /// The person who is responsible for coordinating the implementation of the release. The person must have the release Manager role.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ReleaseQuery SelectManager(PersonQuery query)
         {
             query.FieldName = "manager";
@@ -65,6 +73,8 @@
         /// <summary>
         /// Notes of the record.
         /// </summary>
+        /// <param name="query">The note query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ReleaseQuery SelectNotes(NoteQuery query)
         {
             query.FieldName = "notes";
@@ -74,6 +84,8 @@
         /// <summary>
         /// UI extension that is linked to the record.
         /// </summary>
+        /// <param name="query">The ui extension query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ReleaseQuery SelectUiExtension(UiExtensionQuery query)
         {
             query.FieldName = "uiExtension";
@@ -84,6 +96,8 @@
         /// <summary>
         /// Workflows of the release.
         /// </summary>
+        /// <param name="query">The workflow query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ReleaseQuery SelectWorkflows(WorkflowQuery query)
         {
             query.FieldName = "workflows";

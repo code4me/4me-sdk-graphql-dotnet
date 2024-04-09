@@ -9,7 +9,7 @@
         /// Initialize an new TeamUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The team response query.</param>
         internal TeamUpdateMutation(TeamUpdateInput data, TeamQuery query)
             : base("teamUpdate", "TeamUpdateInput!", data, GetQuery(query))
         {
@@ -18,7 +18,7 @@
         /// <summary>
         /// Generates the response query collection.
         /// </summary>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The team response query.</param>
         /// <returns>A query collection.</returns>
         private static HashSet<IQuery> GetQuery(TeamQuery query)
         {

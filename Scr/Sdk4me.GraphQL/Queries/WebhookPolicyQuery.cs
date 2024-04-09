@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public WebhookPolicyQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";

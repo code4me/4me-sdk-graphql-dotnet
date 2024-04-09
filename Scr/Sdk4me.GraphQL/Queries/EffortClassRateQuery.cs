@@ -16,6 +16,8 @@
         /// <summary>
         /// The effort class of the effort class rate.
         /// </summary>
+        /// <param name="query">The effort class query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public EffortClassRateQuery SelectEffortClass(EffortClassQuery query)
         {
             query.FieldName = "effortClass";
@@ -26,6 +28,8 @@
         /// <summary>
         /// The service offering of the effort class rate.
         /// </summary>
+        /// <param name="query">The service offering query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public EffortClassRateQuery SelectServiceOffering(ServiceOfferingQuery query)
         {
             query.FieldName = "serviceOffering";

@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RiskQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Values of custom fields.
         /// </summary>
+        /// <param name="query">The custom field query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RiskQuery SelectCustomFields(CustomFieldQuery query)
         {
             query.FieldName = "customFields";
@@ -46,6 +50,8 @@
         /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RiskQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
@@ -55,6 +61,8 @@
         /// <summary>
         /// The manager of the risk. This person is able to maintain the information about the risk.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RiskQuery SelectManager(PersonQuery query)
         {
             query.FieldName = "manager";
@@ -65,6 +73,8 @@
         /// <summary>
         /// Notes of the record.
         /// </summary>
+        /// <param name="query">The note query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RiskQuery SelectNotes(NoteQuery query)
         {
             query.FieldName = "notes";
@@ -74,6 +84,8 @@
         /// <summary>
         /// Organizations linked to the risk.
         /// </summary>
+        /// <param name="query">The organization query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RiskQuery SelectOrganizations(OrganizationQuery query)
         {
             query.FieldName = "organizations";
@@ -83,6 +95,8 @@
         /// <summary>
         /// Projects linked to the risk.
         /// </summary>
+        /// <param name="query">The project query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RiskQuery SelectProjects(ProjectQuery query)
         {
             query.FieldName = "projects";
@@ -92,6 +106,8 @@
         /// <summary>
         /// Services linked to the risk.
         /// </summary>
+        /// <param name="query">The service query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RiskQuery SelectServices(ServiceQuery query)
         {
             query.FieldName = "services";
@@ -101,6 +117,8 @@
         /// <summary>
         /// UI extension that is linked to the record.
         /// </summary>
+        /// <param name="query">The ui extension query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RiskQuery SelectUiExtension(UiExtensionQuery query)
         {
             query.FieldName = "uiExtension";

@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TimesheetSettingQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Effort classes of the timesheet setting.
         /// </summary>
+        /// <param name="query">The effort class query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TimesheetSettingQuery SelectEffortClasses(EffortClassQuery query)
         {
             query.FieldName = "effortClasses";
@@ -45,6 +49,8 @@
         /// <summary>
         /// Organizations of the timesheet setting.
         /// </summary>
+        /// <param name="query">The organization query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TimesheetSettingQuery SelectOrganizations(OrganizationQuery query)
         {
             query.FieldName = "organizations";
@@ -54,6 +60,8 @@
         /// <summary>
         /// The effort class that is selected by default, when someone in an organization linked to the timesheet settings registers time on a problem.
         /// </summary>
+        /// <param name="query">The effort class query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TimesheetSettingQuery SelectProblemEffortClass(EffortClassQuery query)
         {
             query.FieldName = "problemEffortClass";
@@ -64,6 +72,8 @@
         /// <summary>
         /// The effort class that is selected by default, when someone in an organization linked to the timesheet settings registers time on a project task.
         /// </summary>
+        /// <param name="query">The effort class query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TimesheetSettingQuery SelectProjectTaskEffortClass(EffortClassQuery query)
         {
             query.FieldName = "projectTaskEffortClass";
@@ -74,6 +84,8 @@
         /// <summary>
         /// The effort class that is selected by default, when someone in an organization linked to the timesheet settings registers time on a request.
         /// </summary>
+        /// <param name="query">The effort class query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TimesheetSettingQuery SelectRequestEffortClass(EffortClassQuery query)
         {
             query.FieldName = "requestEffortClass";
@@ -84,6 +96,8 @@
         /// <summary>
         /// The effort class that is selected by default, when someone in an organization linked to the timesheet settings registers time on a workflow task.
         /// </summary>
+        /// <param name="query">The effort class query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TimesheetSettingQuery SelectTaskEffortClass(EffortClassQuery query)
         {
             query.FieldName = "taskEffortClass";
@@ -94,6 +108,8 @@
         /// <summary>
         /// The effort class that is selected by default, when someone in an organization linked to the timesheet settings registers time on a time allocation.
         /// </summary>
+        /// <param name="query">The effort class query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TimesheetSettingQuery SelectTimeAllocationEffortClass(EffortClassQuery query)
         {
             query.FieldName = "timeAllocationEffortClass";

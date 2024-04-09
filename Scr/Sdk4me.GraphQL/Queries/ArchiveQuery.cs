@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ArchiveQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -40,6 +42,15 @@
         /// <br>If any query parameter is not provided (defaults to null), a new instance of the respective query type is created with the <c>ID</c> field selected.</br>
         /// </para>
         /// </summary>
+        /// <param name="personQuery">The person query.</param>
+        /// <param name="problemQuery">The problem query.</param>
+        /// <param name="projectQuery">The project query.</param>
+        /// <param name="projectTaskQuery">The project task query.</param>
+        /// <param name="releaseQuery">The release query.</param>
+        /// <param name="requestQuery">The request query.</param>
+        /// <param name="riskQuery">The risk query.</param>
+        /// <param name="taskQuery">The task query.</param>
+        /// <param name="workflowQuery">The workflow query.</param>
         public ArchiveQuery SelectArchived(
             PersonQuery? personQuery = null,
             ProblemQuery? problemQuery = null,
@@ -97,6 +108,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ArchiveQuery SelectArchived(PersonQuery query)
         {
             query.FieldName = "archived";
@@ -112,6 +125,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The problem query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ArchiveQuery SelectArchived(ProblemQuery query)
         {
             query.FieldName = "archived";
@@ -127,6 +142,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The project query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ArchiveQuery SelectArchived(ProjectQuery query)
         {
             query.FieldName = "archived";
@@ -142,6 +159,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The project task query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ArchiveQuery SelectArchived(ProjectTaskQuery query)
         {
             query.FieldName = "archived";
@@ -157,6 +176,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The release query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ArchiveQuery SelectArchived(ReleaseQuery query)
         {
             query.FieldName = "archived";
@@ -172,6 +193,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The request query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ArchiveQuery SelectArchived(RequestQuery query)
         {
             query.FieldName = "archived";
@@ -187,6 +210,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The risk query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ArchiveQuery SelectArchived(RiskQuery query)
         {
             query.FieldName = "archived";
@@ -202,6 +227,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The task query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ArchiveQuery SelectArchived(TaskQuery query)
         {
             query.FieldName = "archived";
@@ -217,6 +244,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The workflow query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ArchiveQuery SelectArchived(WorkflowQuery query)
         {
             query.FieldName = "archived";
@@ -228,6 +257,8 @@
         /// <summary>
         /// The person who archived the record.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ArchiveQuery SelectArchivedBy(PersonQuery query)
         {
             query.FieldName = "archivedBy";

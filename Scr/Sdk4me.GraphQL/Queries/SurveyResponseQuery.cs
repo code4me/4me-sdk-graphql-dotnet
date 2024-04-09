@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SurveyResponseQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Answers of this survey response.
         /// </summary>
+        /// <param name="query">The survey answer query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SurveyResponseQuery SelectAnswers(SurveyAnswerQuery query)
         {
             query.FieldName = "answers";
@@ -45,6 +49,8 @@
         /// <summary>
         /// Service this response is about.
         /// </summary>
+        /// <param name="query">The service query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SurveyResponseQuery SelectService(ServiceQuery query)
         {
             query.FieldName = "service";
@@ -55,6 +61,8 @@
         /// <summary>
         /// SLAs of this survey response.
         /// </summary>
+        /// <param name="query">The service level agreement query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SurveyResponseQuery SelectSlas(ServiceLevelAgreementQuery query)
         {
             query.FieldName = "slas";
@@ -64,6 +72,8 @@
         /// <summary>
         /// Survey this response is for.
         /// </summary>
+        /// <param name="query">The survey query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SurveyResponseQuery SelectSurvey(SurveyQuery query)
         {
             query.FieldName = "survey";

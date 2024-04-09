@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AppOfferingQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Instances of this app.
         /// </summary>
+        /// <param name="query">The app instance query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AppOfferingQuery SelectAppInstances(AppInstanceQuery query)
         {
             query.FieldName = "appInstances";
@@ -45,6 +49,8 @@
         /// <summary>
         /// Automation rules of this app offering.
         /// </summary>
+        /// <param name="query">The app offering automation rule query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AppOfferingQuery SelectAutomationRules(AppOfferingAutomationRuleQuery query)
         {
             query.FieldName = "automationRules";
@@ -54,6 +60,8 @@
         /// <summary>
         /// Files and inline images linked to the Compliance field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AppOfferingQuery SelectComplianceAttachments(AttachmentQuery query)
         {
             query.FieldName = "complianceAttachments";
@@ -63,6 +71,8 @@
         /// <summary>
         /// Files and inline images linked to the Description field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AppOfferingQuery SelectDescriptionAttachments(AttachmentQuery query)
         {
             query.FieldName = "descriptionAttachments";
@@ -72,6 +82,8 @@
         /// <summary>
         /// Files and inline images linked to the Features field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AppOfferingQuery SelectFeaturesAttachments(AttachmentQuery query)
         {
             query.FieldName = "featuresAttachments";
@@ -81,6 +93,8 @@
         /// <summary>
         /// Scopes of this app offering.
         /// </summary>
+        /// <param name="query">The app offering scope query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AppOfferingQuery SelectScopes(AppOfferingScopeQuery query)
         {
             query.FieldName = "scopes";
@@ -91,6 +105,8 @@
         /// <summary>
         /// Service instance that is linked to the app offering.
         /// </summary>
+        /// <param name="query">The service instance query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AppOfferingQuery SelectServiceInstance(ServiceInstanceQuery query)
         {
             query.FieldName = "serviceInstance";
@@ -101,6 +117,8 @@
         /// <summary>
         /// UI extension version that is linked to the app offering.
         /// </summary>
+        /// <param name="query">The ui extension version query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AppOfferingQuery SelectUiExtensionVersion(UiExtensionVersionQuery query)
         {
             query.FieldName = "uiExtensionVersion";

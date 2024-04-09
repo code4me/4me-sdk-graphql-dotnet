@@ -16,6 +16,8 @@
         /// <summary>
         /// The person who is selected as the approver for the task template approval.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskTemplateApprovalQuery SelectApprover(PersonQuery query)
         {
             query.FieldName = "approver";

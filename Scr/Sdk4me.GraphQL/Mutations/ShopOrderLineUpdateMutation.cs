@@ -9,7 +9,7 @@
         /// Initialize an new ShopOrderLineUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The shop order line response query.</param>
         internal ShopOrderLineUpdateMutation(ShopOrderLineUpdateInput data, ShopOrderLineQuery query)
             : base("shopOrderLineUpdate", "ShopOrderLineUpdateInput!", data, GetQuery(query))
         {
@@ -18,7 +18,7 @@
         /// <summary>
         /// Generates the response query collection.
         /// </summary>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The shop order line response query.</param>
         /// <returns>A query collection.</returns>
         private static HashSet<IQuery> GetQuery(ShopOrderLineQuery query)
         {

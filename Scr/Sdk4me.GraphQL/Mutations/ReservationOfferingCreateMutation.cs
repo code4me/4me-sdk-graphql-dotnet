@@ -9,7 +9,7 @@
         /// Initialize an new ReservationOfferingCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The reservation offering response query.</param>
         internal ReservationOfferingCreateMutation(ReservationOfferingCreateInput data, ReservationOfferingQuery query)
             : base("reservationOfferingCreate", "ReservationOfferingCreateInput!", data, GetQuery(query))
         {
@@ -18,7 +18,7 @@
         /// <summary>
         /// Generates the response query collection.
         /// </summary>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The reservation offering response query.</param>
         /// <returns>A query collection.</returns>
         private static HashSet<IQuery> GetQuery(ReservationOfferingQuery query)
         {

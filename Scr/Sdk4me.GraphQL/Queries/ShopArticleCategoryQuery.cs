@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ShopArticleCategoryQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// The attachments used in the <c>fullDescription</c> field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ShopArticleCategoryQuery SelectFullDescriptionAttachments(AttachmentQuery query)
         {
             query.FieldName = "fullDescriptionAttachments";
@@ -45,6 +49,8 @@
         /// <summary>
         /// The category's parent category.
         /// </summary>
+        /// <param name="query">The shop article category query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ShopArticleCategoryQuery SelectParent(ShopArticleCategoryQuery query)
         {
             query.FieldName = "parent";

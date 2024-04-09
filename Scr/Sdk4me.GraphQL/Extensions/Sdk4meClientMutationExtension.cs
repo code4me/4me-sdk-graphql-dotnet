@@ -23,7 +23,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The agile board response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -50,7 +50,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The agile board response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -77,7 +77,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The app instance response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -104,7 +104,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The app instance response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -131,7 +131,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The app offering automation rule response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -158,7 +158,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The app offering automation rule response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -185,7 +185,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The app offering response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -212,7 +212,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The app offering response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -239,7 +239,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The automation rule response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -266,7 +266,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The automation rule response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -293,7 +293,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The broadcast response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -320,7 +320,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The broadcast response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -347,7 +347,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The calendar response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -374,7 +374,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The calendar response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -401,7 +401,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The configuration item response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -428,7 +428,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The configuration item response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -455,7 +455,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The contract response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -482,7 +482,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The contract response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -509,7 +509,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The custom collection response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -536,7 +536,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The custom collection element response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -563,7 +563,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The custom collection element response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -590,7 +590,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The custom collection response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -649,7 +649,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The async query response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -676,7 +676,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The effort class response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -703,7 +703,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The effort class response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -730,7 +730,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The first line support agreement response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -757,7 +757,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The first line support agreement response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -784,7 +784,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The holiday response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -811,7 +811,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The holiday response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -838,7 +838,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The invoice response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -865,7 +865,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The invoice response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -892,7 +892,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The knowledge article response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -919,7 +919,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The knowledge article response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -946,7 +946,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The note response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -973,7 +973,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The note reaction response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1013,7 +1013,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The organization response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1040,7 +1040,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The organization response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1067,7 +1067,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The out of office period response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1094,7 +1094,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The out of office period response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1121,7 +1121,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The pdf design response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1148,7 +1148,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The pdf design response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1175,7 +1175,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The person response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1202,7 +1202,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The person response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1229,7 +1229,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The problem response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1256,7 +1256,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The problem response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1283,7 +1283,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The product backlog response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1310,7 +1310,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The product backlog response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1337,7 +1337,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The product category response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1364,7 +1364,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The product category response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1391,7 +1391,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The product response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1418,7 +1418,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The product response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1445,7 +1445,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The project category response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1472,7 +1472,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The project category response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1499,7 +1499,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The project response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1526,7 +1526,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The project risk level response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1553,7 +1553,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The project risk level response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1580,7 +1580,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The project task response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1607,7 +1607,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The project task template response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1634,7 +1634,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The project task template response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1661,7 +1661,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The project task response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1688,7 +1688,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The project template response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1715,7 +1715,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The project template response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1742,7 +1742,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The project response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1769,7 +1769,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The release response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1796,7 +1796,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The release response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1823,7 +1823,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The request response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1850,7 +1850,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The request template response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1877,7 +1877,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The request template response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1904,7 +1904,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The request response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1931,7 +1931,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The reservation response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1958,7 +1958,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The reservation offering response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -1985,7 +1985,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The reservation offering response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2012,7 +2012,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The reservation response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2039,7 +2039,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The risk response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2066,7 +2066,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The risk severity response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2093,7 +2093,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The risk severity response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2120,7 +2120,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The risk response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2147,7 +2147,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The scrum workspace response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2174,7 +2174,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The scrum workspace response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2201,7 +2201,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The service category response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2228,7 +2228,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The service category response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2255,7 +2255,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The service response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2282,7 +2282,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The service instance response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2309,7 +2309,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The service instance response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2336,7 +2336,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The service level agreement response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2363,7 +2363,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The service level agreement response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2390,7 +2390,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The service offering response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2417,7 +2417,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The service offering response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2444,7 +2444,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The service response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2471,7 +2471,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The shop article category response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2498,7 +2498,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The shop article category response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2525,7 +2525,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The shop article response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2552,7 +2552,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The shop article response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2579,7 +2579,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The shop order line response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2606,7 +2606,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The shop order line response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2633,7 +2633,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The short url response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2660,7 +2660,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The short url response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2687,7 +2687,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The site response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2714,7 +2714,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The site response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2741,7 +2741,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The skill pool response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2768,7 +2768,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The skill pool response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2795,7 +2795,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The sla coverage group response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2822,7 +2822,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The sla coverage group response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2849,7 +2849,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The sla notification scheme response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2876,7 +2876,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The sla notification scheme response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2903,7 +2903,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The sprint response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2930,7 +2930,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The sprint response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2957,7 +2957,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The survey response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -2984,7 +2984,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The survey response response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3011,7 +3011,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The survey response response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3038,7 +3038,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The survey response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3065,7 +3065,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The task response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3092,7 +3092,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The task template response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3119,7 +3119,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The task template response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3146,7 +3146,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The task response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3173,7 +3173,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The team response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3200,7 +3200,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The team response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3227,7 +3227,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The time allocation response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3254,7 +3254,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The time allocation response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3281,7 +3281,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The time entry response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3308,7 +3308,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The time entry response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3335,7 +3335,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The timesheet setting response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3362,7 +3362,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The timesheet setting response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3389,7 +3389,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The translation response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3416,7 +3416,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The translation response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3443,7 +3443,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The ui extension response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3470,7 +3470,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The ui extension response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3497,7 +3497,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The waiting for customer follow up response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3524,7 +3524,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The waiting for customer follow up response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3551,7 +3551,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The webhook response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3591,7 +3591,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The webhook policy create response response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3631,7 +3631,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The webhook policy response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3658,7 +3658,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The webhook response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3685,7 +3685,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The workflow response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3712,7 +3712,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The workflow template response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3739,7 +3739,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The workflow template response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3766,7 +3766,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The workflow type response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3793,7 +3793,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The workflow type response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
@@ -3820,7 +3820,7 @@
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
         /// <param name="input">The mutation to execute.</param>
-        /// <param name="query">The response query. Pagination is not supported on connections.</param>
+        /// <param name="query">The workflow response query. Pagination is not supported on connections.</param>
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>

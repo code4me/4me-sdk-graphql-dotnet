@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Used to select the organization for which the project is to be implemented.
         /// </summary>
+        /// <param name="query">The organization query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectQuery SelectCustomer(OrganizationQuery query)
         {
             query.FieldName = "customer";
@@ -46,6 +50,8 @@
         /// <summary>
         /// Values of custom fields.
         /// </summary>
+        /// <param name="query">The custom field query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectQuery SelectCustomFields(CustomFieldQuery query)
         {
             query.FieldName = "customFields";
@@ -56,6 +62,8 @@
         /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
@@ -65,6 +73,8 @@
         /// <summary>
         /// Invoices associated with this object.
         /// </summary>
+        /// <param name="query">The invoice query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectQuery SelectInvoices(InvoiceQuery query)
         {
             query.FieldName = "invoices";
@@ -74,6 +84,8 @@
         /// <summary>
         /// The person who is responsible for coordinating the implementation of the project.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectQuery SelectManager(PersonQuery query)
         {
             query.FieldName = "manager";
@@ -84,6 +96,8 @@
         /// <summary>
         /// Notes of the record.
         /// </summary>
+        /// <param name="query">The note query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectQuery SelectNotes(NoteQuery query)
         {
             query.FieldName = "notes";
@@ -93,6 +107,8 @@
         /// <summary>
         /// Phases of the project.
         /// </summary>
+        /// <param name="query">The project phase query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectQuery SelectPhases(ProjectPhaseQuery query)
         {
             query.FieldName = "phases";
@@ -102,6 +118,8 @@
         /// <summary>
         /// Problems of the project.
         /// </summary>
+        /// <param name="query">The problem query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectQuery SelectProblems(ProblemQuery query)
         {
             query.FieldName = "problems";
@@ -111,6 +129,8 @@
         /// <summary>
         /// Requests of the project.
         /// </summary>
+        /// <param name="query">The request query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectQuery SelectRequests(RequestQuery query)
         {
             query.FieldName = "requests";
@@ -120,6 +140,8 @@
         /// <summary>
         /// Risks of the project.
         /// </summary>
+        /// <param name="query">The risk query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectQuery SelectRisks(RiskQuery query)
         {
             query.FieldName = "risks";
@@ -129,6 +151,8 @@
         /// <summary>
         /// The service for which the project will be implemented.
         /// </summary>
+        /// <param name="query">The service query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectQuery SelectService(ServiceQuery query)
         {
             query.FieldName = "service";
@@ -139,6 +163,8 @@
         /// <summary>
         /// Tasks of the project.
         /// </summary>
+        /// <param name="query">The project task query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectQuery SelectTasks(ProjectTaskQuery query)
         {
             query.FieldName = "tasks";
@@ -148,6 +174,8 @@
         /// <summary>
         /// UI extension that is linked to the record.
         /// </summary>
+        /// <param name="query">The ui extension query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectQuery SelectUiExtension(UiExtensionQuery query)
         {
             query.FieldName = "uiExtension";
@@ -158,6 +186,8 @@
         /// <summary>
         /// Workflows of the project.
         /// </summary>
+        /// <param name="query">The workflow query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectQuery SelectWorkflows(WorkflowQuery query)
         {
             query.FieldName = "workflows";
@@ -167,6 +197,8 @@
         /// <summary>
         /// The calendar that defines the work hours that are to be used to calculate the anticipated assignment and completion target for the tasks of the project.
         /// </summary>
+        /// <param name="query">The calendar query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectQuery SelectWorkHours(CalendarQuery query)
         {
             query.FieldName = "workHours";

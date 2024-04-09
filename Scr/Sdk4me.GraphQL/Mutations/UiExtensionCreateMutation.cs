@@ -9,7 +9,7 @@
         /// Initialize an new UiExtensionCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The ui extension response query.</param>
         internal UiExtensionCreateMutation(UiExtensionCreateInput data, UiExtensionQuery query)
             : base("uiExtensionCreate", "UiExtensionCreateInput!", data, GetQuery(query))
         {
@@ -18,7 +18,7 @@
         /// <summary>
         /// Generates the response query collection.
         /// </summary>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The ui extension response query.</param>
         /// <returns>A query collection.</returns>
         private static HashSet<IQuery> GetQuery(UiExtensionQuery query)
         {

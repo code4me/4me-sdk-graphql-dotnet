@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProductCategoryQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Products in this category.
         /// </summary>
+        /// <param name="query">The product query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProductCategoryQuery SelectProducts(ProductQuery query)
         {
             query.FieldName = "products";
@@ -45,6 +49,8 @@
         /// <summary>
         /// Translations associated with this object.
         /// </summary>
+        /// <param name="query">The translation query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProductCategoryQuery SelectTranslations(TranslationQuery query)
         {
             query.FieldName = "translations";
@@ -54,6 +60,8 @@
         /// <summary>
         /// UI extension that is linked to the product category.
         /// </summary>
+        /// <param name="query">The ui extension query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProductCategoryQuery SelectUiExtension(UiExtensionQuery query)
         {
             query.FieldName = "uiExtension";

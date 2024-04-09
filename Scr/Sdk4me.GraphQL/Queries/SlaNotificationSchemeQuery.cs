@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SlaNotificationSchemeQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Rules of the SLA notification scheme.
         /// </summary>
+        /// <param name="query">The sla notification rule query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SlaNotificationSchemeQuery SelectSlaNotificationRules(SlaNotificationRuleQuery query)
         {
             query.FieldName = "slaNotificationRules";

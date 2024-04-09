@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AppInstanceQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// App offering (version) this instance is at.
         /// </summary>
+        /// <param name="query">The app offering query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AppInstanceQuery SelectAppOffering(AppOfferingQuery query)
         {
             query.FieldName = "appOffering";
@@ -46,6 +50,8 @@
         /// <summary>
         /// Automation rules of this instance.
         /// </summary>
+        /// <param name="query">The automation rule query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AppInstanceQuery SelectAutomationRules(AutomationRuleQuery query)
         {
             query.FieldName = "automationRules";
@@ -55,6 +61,8 @@
         /// <summary>
         /// Account this app instance is for.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AppInstanceQuery SelectCustomerAccount(AccountQuery query)
         {
             query.FieldName = "customerAccount";
@@ -65,6 +73,8 @@
         /// <summary>
         /// Contact person of customer regarding this app instance.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AppInstanceQuery SelectCustomerRepresentative(PersonQuery query)
         {
             query.FieldName = "customerRepresentative";
@@ -75,6 +85,8 @@
         /// <summary>
         /// Values of custom fields.
         /// </summary>
+        /// <param name="query">The custom field query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AppInstanceQuery SelectCustomFields(CustomFieldQuery query)
         {
             query.FieldName = "customFields";
@@ -85,6 +97,8 @@
         /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AppInstanceQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
@@ -94,6 +108,8 @@
         /// <summary>
         /// Webhook of this app instance.
         /// </summary>
+        /// <param name="query">The webhook query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AppInstanceQuery SelectWebhook(WebhookQuery query)
         {
             query.FieldName = "webhook";
@@ -104,6 +120,8 @@
         /// <summary>
         /// The current policy used for the instance's webhook.
         /// </summary>
+        /// <param name="query">The webhook policy query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AppInstanceQuery SelectWebhookPolicy(WebhookPolicyQuery query)
         {
             query.FieldName = "webhookPolicy";

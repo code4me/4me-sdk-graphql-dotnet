@@ -16,6 +16,8 @@
         /// <summary>
         /// The standard service request for which an activityID is provided.
         /// </summary>
+        /// <param name="query">The standard service request query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public StandardServiceRequestActivityIDQuery SelectStandardServiceRequest(StandardServiceRequestQuery query)
         {
             query.FieldName = "standardServiceRequest";

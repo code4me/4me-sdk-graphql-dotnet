@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SyncSetQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Files and inline images linked to the <c>description</c> field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SyncSetQuery SelectDescriptionAttachments(AttachmentQuery query)
         {
             query.FieldName = "descriptionAttachments";
@@ -45,6 +49,8 @@
         /// <summary>
         /// The latest completed snapshot of this sync set.
         /// </summary>
+        /// <param name="query">The snapshot query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SyncSetQuery SelectLastSnapshot(SnapshotQuery query)
         {
             query.FieldName = "lastSnapshot";
@@ -55,6 +61,8 @@
         /// <summary>
         /// Individual records selected to be included in the sync set.
         /// </summary>
+        /// <param name="query">The record query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SyncSetQuery SelectSelectedRecords(RecordQuery query)
         {
             query.FieldName = "selectedRecords";

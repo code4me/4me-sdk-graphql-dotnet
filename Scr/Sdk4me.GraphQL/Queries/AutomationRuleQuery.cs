@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AutomationRuleQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// The Actions field is used to define actions that should be executed when the condition of the automation rule is met.
         /// </summary>
+        /// <param name="query">The automation rule action query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AutomationRuleQuery SelectActions(AutomationRuleActionQuery query)
         {
             query.FieldName = "actions";
@@ -46,6 +50,8 @@
         /// <summary>
         /// The Expressions field is used to define expressions that can subsequently be used to define the rule's conditions and the update action(s) that the rule is to perform.
         /// </summary>
+        /// <param name="query">The automation rule expression query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AutomationRuleQuery SelectExpressions(AutomationRuleExpressionQuery query)
         {
             query.FieldName = "expressions";
@@ -60,6 +66,16 @@
         /// <br>If any query parameter is not provided (defaults to null), a new instance of the respective query type is created with the <c>ID</c> field selected.</br>
         /// </para>
         /// </summary>
+        /// <param name="projectTaskQuery">The project task query.</param>
+        /// <param name="projectTaskTemplateQuery">The project task template query.</param>
+        /// <param name="projectTaskTemplateRelationQuery">The project task template relation query.</param>
+        /// <param name="requestQuery">The request query.</param>
+        /// <param name="requestTemplateQuery">The request template query.</param>
+        /// <param name="taskQuery">The task query.</param>
+        /// <param name="taskTemplateQuery">The task template query.</param>
+        /// <param name="workflowQuery">The workflow query.</param>
+        /// <param name="workflowTaskTemplateRelationQuery">The workflow task template relation query.</param>
+        /// <param name="workflowTemplateQuery">The workflow template query.</param>
         public AutomationRuleQuery SelectOwner(
             ProjectTaskQuery? projectTaskQuery = null,
             ProjectTaskTemplateQuery? projectTaskTemplateQuery = null,
@@ -122,6 +138,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The project task query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AutomationRuleQuery SelectOwner(ProjectTaskQuery query)
         {
             query.FieldName = "owner";
@@ -137,6 +155,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The project task template query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AutomationRuleQuery SelectOwner(ProjectTaskTemplateQuery query)
         {
             query.FieldName = "owner";
@@ -152,6 +172,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The project task template relation query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AutomationRuleQuery SelectOwner(ProjectTaskTemplateRelationQuery query)
         {
             query.FieldName = "owner";
@@ -167,6 +189,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The request query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AutomationRuleQuery SelectOwner(RequestQuery query)
         {
             query.FieldName = "owner";
@@ -182,6 +206,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The request template query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AutomationRuleQuery SelectOwner(RequestTemplateQuery query)
         {
             query.FieldName = "owner";
@@ -197,6 +223,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The task query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AutomationRuleQuery SelectOwner(TaskQuery query)
         {
             query.FieldName = "owner";
@@ -212,6 +240,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The task template query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AutomationRuleQuery SelectOwner(TaskTemplateQuery query)
         {
             query.FieldName = "owner";
@@ -227,6 +257,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The workflow query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AutomationRuleQuery SelectOwner(WorkflowQuery query)
         {
             query.FieldName = "owner";
@@ -242,6 +274,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The workflow task template relation query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AutomationRuleQuery SelectOwner(WorkflowTaskTemplateRelationQuery query)
         {
             query.FieldName = "owner";
@@ -257,6 +291,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The workflow template query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AutomationRuleQuery SelectOwner(WorkflowTemplateQuery query)
         {
             query.FieldName = "owner";

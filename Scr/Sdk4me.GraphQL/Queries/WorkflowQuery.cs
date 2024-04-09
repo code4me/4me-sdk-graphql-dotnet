@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public WorkflowQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Automation rules associated with this record.
         /// </summary>
+        /// <param name="query">The automation rule query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public WorkflowQuery SelectAutomationRules(AutomationRuleQuery query)
         {
             query.FieldName = "automationRules";
@@ -45,6 +49,8 @@
         /// <summary>
         /// Values of custom fields.
         /// </summary>
+        /// <param name="query">The custom field query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public WorkflowQuery SelectCustomFields(CustomFieldQuery query)
         {
             query.FieldName = "customFields";
@@ -55,6 +61,8 @@
         /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public WorkflowQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
@@ -64,6 +72,8 @@
         /// <summary>
         /// Invoices associated with this object.
         /// </summary>
+        /// <param name="query">The invoice query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public WorkflowQuery SelectInvoices(InvoiceQuery query)
         {
             query.FieldName = "invoices";
@@ -73,6 +83,8 @@
         /// <summary>
         /// Who is responsible for coordinating the implementation of the workflow. If a manager is not specified for a new workflow, the API user is selected in the Manager field by default.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public WorkflowQuery SelectManager(PersonQuery query)
         {
             query.FieldName = "manager";
@@ -83,6 +95,8 @@
         /// <summary>
         /// Notes of the record.
         /// </summary>
+        /// <param name="query">The note query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public WorkflowQuery SelectNotes(NoteQuery query)
         {
             query.FieldName = "notes";
@@ -92,6 +106,8 @@
         /// <summary>
         /// Phases of the workflow.
         /// </summary>
+        /// <param name="query">The workflow phase query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public WorkflowQuery SelectPhases(WorkflowPhaseQuery query)
         {
             query.FieldName = "phases";
@@ -101,6 +117,8 @@
         /// <summary>
         /// All problems of this workflow.
         /// </summary>
+        /// <param name="query">The problem query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public WorkflowQuery SelectProblems(ProblemQuery query)
         {
             query.FieldName = "problems";
@@ -110,6 +128,8 @@
         /// <summary>
         /// Linked project
         /// </summary>
+        /// <param name="query">The project query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public WorkflowQuery SelectProject(ProjectQuery query)
         {
             query.FieldName = "project";
@@ -120,6 +140,8 @@
         /// <summary>
         /// The release that the workflow is a part of.
         /// </summary>
+        /// <param name="query">The release query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public WorkflowQuery SelectRelease(ReleaseQuery query)
         {
             query.FieldName = "release";
@@ -130,6 +152,8 @@
         /// <summary>
         /// All requests of this workflow.
         /// </summary>
+        /// <param name="query">The request query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public WorkflowQuery SelectRequests(RequestQuery query)
         {
             query.FieldName = "requests";
@@ -139,6 +163,8 @@
         /// <summary>
         /// The service that will directly be affected by the workflow implementation, or in case of an emergency change, the service that was directly affected by the workflow implementation.
         /// </summary>
+        /// <param name="query">The service query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public WorkflowQuery SelectService(ServiceQuery query)
         {
             query.FieldName = "service";
@@ -149,6 +175,8 @@
         /// <summary>
         /// All tasks of this workflow.
         /// </summary>
+        /// <param name="query">The task query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public WorkflowQuery SelectTasks(TaskQuery query)
         {
             query.FieldName = "tasks";
@@ -158,6 +186,8 @@
         /// <summary>
         /// The workflow template that was used to register the workflow.
         /// </summary>
+        /// <param name="query">The workflow template query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public WorkflowQuery SelectTemplate(WorkflowTemplateQuery query)
         {
             query.FieldName = "template";

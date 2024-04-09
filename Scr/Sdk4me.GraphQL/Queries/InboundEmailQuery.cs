@@ -16,6 +16,8 @@
         /// <summary>
         /// The account that received the inbound email.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public InboundEmailQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -26,6 +28,8 @@
         /// <summary>
         /// The note that was created from the inbound email.
         /// </summary>
+        /// <param name="query">The note query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public InboundEmailQuery SelectNote(NoteQuery query)
         {
             query.FieldName = "note";
@@ -40,6 +44,14 @@
         /// <br>If any query parameter is not provided (defaults to null), a new instance of the respective query type is created with the <c>ID</c> field selected.</br>
         /// </para>
         /// </summary>
+        /// <param name="problemQuery">The problem query.</param>
+        /// <param name="projectQuery">The project query.</param>
+        /// <param name="projectTaskQuery">The project task query.</param>
+        /// <param name="releaseQuery">The release query.</param>
+        /// <param name="requestQuery">The request query.</param>
+        /// <param name="riskQuery">The risk query.</param>
+        /// <param name="taskQuery">The task query.</param>
+        /// <param name="workflowQuery">The workflow query.</param>
         public InboundEmailQuery SelectRecord(
             ProblemQuery? problemQuery = null,
             ProjectQuery? projectQuery = null,
@@ -92,6 +104,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The problem query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public InboundEmailQuery SelectRecord(ProblemQuery query)
         {
             query.FieldName = "record";
@@ -107,6 +121,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The project query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public InboundEmailQuery SelectRecord(ProjectQuery query)
         {
             query.FieldName = "record";
@@ -122,6 +138,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The project task query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public InboundEmailQuery SelectRecord(ProjectTaskQuery query)
         {
             query.FieldName = "record";
@@ -137,6 +155,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The release query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public InboundEmailQuery SelectRecord(ReleaseQuery query)
         {
             query.FieldName = "record";
@@ -152,6 +172,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The request query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public InboundEmailQuery SelectRecord(RequestQuery query)
         {
             query.FieldName = "record";
@@ -167,6 +189,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The risk query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public InboundEmailQuery SelectRecord(RiskQuery query)
         {
             query.FieldName = "record";
@@ -182,6 +206,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The task query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public InboundEmailQuery SelectRecord(TaskQuery query)
         {
             query.FieldName = "record";
@@ -197,6 +223,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The workflow query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public InboundEmailQuery SelectRecord(WorkflowQuery query)
         {
             query.FieldName = "record";

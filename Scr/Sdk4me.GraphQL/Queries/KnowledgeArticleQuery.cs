@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public KnowledgeArticleQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// The person who created the knowledge article.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public KnowledgeArticleQuery SelectCreatedBy(PersonQuery query)
         {
             query.FieldName = "createdBy";
@@ -46,6 +50,8 @@
         /// <summary>
         /// Values of custom fields.
         /// </summary>
+        /// <param name="query">The custom field query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public KnowledgeArticleQuery SelectCustomFields(CustomFieldQuery query)
         {
             query.FieldName = "customFields";
@@ -56,6 +62,8 @@
         /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public KnowledgeArticleQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
@@ -65,6 +73,8 @@
         /// <summary>
         /// Inline images linked to the Description field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public KnowledgeArticleQuery SelectDescriptionAttachments(AttachmentQuery query)
         {
             query.FieldName = "descriptionAttachments";
@@ -74,6 +84,8 @@
         /// <summary>
         /// Inline images linked to the Instructions field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public KnowledgeArticleQuery SelectInstructionsAttachments(AttachmentQuery query)
         {
             query.FieldName = "instructionsAttachments";
@@ -83,6 +95,8 @@
         /// <summary>
         /// Requests linked to this knowledge article.
         /// </summary>
+        /// <param name="query">The request query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public KnowledgeArticleQuery SelectRequests(RequestQuery query)
         {
             query.FieldName = "requests";
@@ -92,6 +106,8 @@
         /// <summary>
         /// Service for which the knowledge article is made available.
         /// </summary>
+        /// <param name="query">The service query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public KnowledgeArticleQuery SelectService(ServiceQuery query)
         {
             query.FieldName = "service";
@@ -102,6 +118,8 @@
         /// <summary>
         /// Service instances linked to this knowledge article.
         /// </summary>
+        /// <param name="query">The service instance query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public KnowledgeArticleQuery SelectServiceInstances(ServiceInstanceQuery query)
         {
             query.FieldName = "serviceInstances";
@@ -111,6 +129,8 @@
         /// <summary>
         /// The knowledge article template that this knowledge article is based on.
         /// </summary>
+        /// <param name="query">The knowledge article template query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public KnowledgeArticleQuery SelectTemplate(KnowledgeArticleTemplateQuery query)
         {
             query.FieldName = "template";
@@ -121,6 +141,8 @@
         /// <summary>
         /// Translations associated with this object.
         /// </summary>
+        /// <param name="query">The translation query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public KnowledgeArticleQuery SelectTranslations(TranslationQuery query)
         {
             query.FieldName = "translations";
@@ -130,6 +152,8 @@
         /// <summary>
         /// The person who last updated the knowledge article.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public KnowledgeArticleQuery SelectUpdatedBy(PersonQuery query)
         {
             query.FieldName = "updatedBy";

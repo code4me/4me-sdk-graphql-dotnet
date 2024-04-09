@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// The person who is responsible for ensuring that the availability targets specified in the active SLAs for the service are met.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceQuery SelectAvailabilityManager(PersonQuery query)
         {
             query.FieldName = "availabilityManager";
@@ -46,6 +50,8 @@
         /// <summary>
         /// The person who is responsible for ensuring that the service is not affected by incidents that are caused by capacity shortages.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceQuery SelectCapacityManager(PersonQuery query)
         {
             query.FieldName = "capacityManager";
@@ -56,6 +62,8 @@
         /// <summary>
         /// The person who is responsible for coordinating the changes of the service.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceQuery SelectChangeManager(PersonQuery query)
         {
             query.FieldName = "changeManager";
@@ -66,6 +74,8 @@
         /// <summary>
         /// The person who is responsible for creating and maintaining the continuity plans for the service's instances that have an active SLA with a continuity target.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceQuery SelectContinuityManager(PersonQuery query)
         {
             query.FieldName = "continuityManager";
@@ -76,6 +86,8 @@
         /// <summary>
         /// Values of custom fields.
         /// </summary>
+        /// <param name="query">The custom field query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceQuery SelectCustomFields(CustomFieldQuery query)
         {
             query.FieldName = "customFields";
@@ -86,6 +98,8 @@
         /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
@@ -95,6 +109,8 @@
         /// <summary>
         /// Inline images linked to the Description field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceQuery SelectDescriptionAttachments(AttachmentQuery query)
         {
             query.FieldName = "descriptionAttachments";
@@ -104,6 +120,8 @@
         /// <summary>
         /// The team that will, by default, be selected in the First line team field of a new service instance when it is being registered for the service.
         /// </summary>
+        /// <param name="query">The team query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceQuery SelectFirstLineTeam(TeamQuery query)
         {
             query.FieldName = "firstLineTeam";
@@ -114,6 +132,8 @@
         /// <summary>
         /// The person who is responsible for the quality of the knowledge articles for the service.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceQuery SelectKnowledgeManager(PersonQuery query)
         {
             query.FieldName = "knowledgeManager";
@@ -124,6 +144,8 @@
         /// <summary>
         /// The person who is responsible for coordinating the problems that directly affect the service.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceQuery SelectProblemManager(PersonQuery query)
         {
             query.FieldName = "problemManager";
@@ -134,6 +156,8 @@
         /// <summary>
         /// The person who is responsible for coordinating the releases of the service.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceQuery SelectReleaseManager(PersonQuery query)
         {
             query.FieldName = "releaseManager";
@@ -144,6 +168,8 @@
         /// <summary>
         /// Service instances related to this service.
         /// </summary>
+        /// <param name="query">The service instance query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceQuery SelectServiceInstances(ServiceInstanceQuery query)
         {
             query.FieldName = "serviceInstances";
@@ -153,6 +179,8 @@
         /// <summary>
         /// Service level agreements related to this service through the service offering.
         /// </summary>
+        /// <param name="query">The service level agreement query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceQuery SelectServiceLevelAgreements(ServiceLevelAgreementQuery query)
         {
             query.FieldName = "serviceLevelAgreements";
@@ -162,6 +190,8 @@
         /// <summary>
         /// Service offerings related to this service.
         /// </summary>
+        /// <param name="query">The service offering query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceQuery SelectServiceOfferings(ServiceOfferingQuery query)
         {
             query.FieldName = "serviceOfferings";
@@ -171,6 +201,8 @@
         /// <summary>
         /// The person who is responsible for ensuring that the service level targets specified in the SLAs for the service are met.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceQuery SelectServiceOwner(PersonQuery query)
         {
             query.FieldName = "serviceOwner";
@@ -181,6 +213,8 @@
         /// <summary>
         /// The organization that provides the service.
         /// </summary>
+        /// <param name="query">The organization query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceQuery SelectServiceProvider(OrganizationQuery query)
         {
             query.FieldName = "serviceProvider";
@@ -191,6 +225,8 @@
         /// <summary>
         /// The team  that will, by default, be selected in the Support team field of a service instance when one is registered for the service. Similarly, this team will be selected in the Team field of a problem when the service is related to it.
         /// </summary>
+        /// <param name="query">The team query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceQuery SelectSupportTeam(TeamQuery query)
         {
             query.FieldName = "supportTeam";
@@ -201,6 +237,8 @@
         /// <summary>
         /// Survey used to measure customer rating of this service.
         /// </summary>
+        /// <param name="query">The survey query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceQuery SelectSurvey(SurveyQuery query)
         {
             query.FieldName = "survey";
@@ -211,6 +249,8 @@
         /// <summary>
         /// Translations associated with this object.
         /// </summary>
+        /// <param name="query">The translation query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceQuery SelectTranslations(TranslationQuery query)
         {
             query.FieldName = "translations";
@@ -220,6 +260,8 @@
         /// <summary>
         /// UI extension that is linked to the record.
         /// </summary>
+        /// <param name="query">The ui extension query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceQuery SelectUiExtension(UiExtensionQuery query)
         {
             query.FieldName = "uiExtension";

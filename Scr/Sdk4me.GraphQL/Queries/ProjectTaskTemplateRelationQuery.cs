@@ -16,6 +16,8 @@
         /// <summary>
         /// Automation rules associated with this record.
         /// </summary>
+        /// <param name="query">The automation rule query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskTemplateRelationQuery SelectAutomationRules(AutomationRuleQuery query)
         {
             query.FieldName = "automationRules";
@@ -25,6 +27,8 @@
         /// <summary>
         /// The phase of the project template that the project task template is a part of.
         /// </summary>
+        /// <param name="query">The project template phase query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskTemplateRelationQuery SelectPhase(ProjectTemplatePhaseQuery query)
         {
             query.FieldName = "phase";
@@ -35,6 +39,8 @@
         /// <summary>
         /// The project task template that is related to the project template.
         /// </summary>
+        /// <param name="query">The project task template query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskTemplateRelationQuery SelectTaskTemplate(ProjectTaskTemplateQuery query)
         {
             query.FieldName = "taskTemplate";

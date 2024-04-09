@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public FirstLineSupportAgreementQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Inline images linked to the Charges field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public FirstLineSupportAgreementQuery SelectChargesAttachments(AttachmentQuery query)
         {
             query.FieldName = "chargesAttachments";
@@ -45,6 +49,8 @@
         /// <summary>
         /// The organization that pays for the agreement.
         /// </summary>
+        /// <param name="query">The organization query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public FirstLineSupportAgreementQuery SelectCustomer(OrganizationQuery query)
         {
             query.FieldName = "customer";
@@ -55,6 +61,8 @@
         /// <summary>
         /// The customer account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public FirstLineSupportAgreementQuery SelectCustomerAccount(AccountQuery query)
         {
             query.FieldName = "customerAccount";
@@ -65,6 +73,8 @@
         /// <summary>
         /// The person who represents the customer organization for the first line support agreement.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public FirstLineSupportAgreementQuery SelectCustomerRepresentative(PersonQuery query)
         {
             query.FieldName = "customerRepresentative";
@@ -75,6 +85,8 @@
         /// <summary>
         /// Invoices associated with this object.
         /// </summary>
+        /// <param name="query">The invoice query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public FirstLineSupportAgreementQuery SelectInvoices(InvoiceQuery query)
         {
             query.FieldName = "invoices";
@@ -84,6 +96,8 @@
         /// <summary>
         /// Organization that provides the first line support agreement.
         /// </summary>
+        /// <param name="query">The organization query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public FirstLineSupportAgreementQuery SelectProvider(OrganizationQuery query)
         {
             query.FieldName = "provider";
@@ -94,6 +108,8 @@
         /// <summary>
         /// Files and inline images linked to the Remarks field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public FirstLineSupportAgreementQuery SelectRemarksAttachments(AttachmentQuery query)
         {
             query.FieldName = "remarksAttachments";
@@ -103,6 +119,8 @@
         /// <summary>
         /// The specific team within the first line support provider organization that provides first line support for the users covered by the first line support agreement.
         /// </summary>
+        /// <param name="query">The team query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public FirstLineSupportAgreementQuery SelectServiceDeskTeam(TeamQuery query)
         {
             query.FieldName = "serviceDeskTeam";
@@ -113,6 +131,8 @@
         /// <summary>
         /// Calendar that defines the support hours during which the service desk team can be contacted for first line support.
         /// </summary>
+        /// <param name="query">The calendar query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public FirstLineSupportAgreementQuery SelectSupportHours(CalendarQuery query)
         {
             query.FieldName = "supportHours";
@@ -123,6 +143,8 @@
         /// <summary>
         /// Inline images linked to the Target details field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public FirstLineSupportAgreementQuery SelectTargetDetailsAttachments(AttachmentQuery query)
         {
             query.FieldName = "targetDetailsAttachments";

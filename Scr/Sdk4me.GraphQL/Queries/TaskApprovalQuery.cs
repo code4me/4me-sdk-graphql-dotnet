@@ -16,6 +16,8 @@
         /// <summary>
         /// The person who is selected as the approver for the approval.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskApprovalQuery SelectApprover(PersonQuery query)
         {
             query.FieldName = "approver";
@@ -26,6 +28,8 @@
         /// <summary>
         /// The summary PDF file that was generated for the approver when the approval was last set to the status <c>assigned</c>.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskApprovalQuery SelectAttachment(AttachmentQuery query)
         {
             query.FieldName = "attachment";

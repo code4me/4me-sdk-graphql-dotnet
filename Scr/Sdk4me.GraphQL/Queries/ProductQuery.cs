@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProductQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Configuration items of the product.
         /// </summary>
+        /// <param name="query">The configuration item query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProductQuery SelectConfigurationItems(ConfigurationItemQuery query)
         {
             query.FieldName = "configurationItems";
@@ -45,6 +49,8 @@
         /// <summary>
         /// Values of custom fields.
         /// </summary>
+        /// <param name="query">The custom field query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProductQuery SelectCustomFields(CustomFieldQuery query)
         {
             query.FieldName = "customFields";
@@ -55,6 +61,8 @@
         /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProductQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
@@ -64,6 +72,8 @@
         /// <summary>
         /// The internal organization which budget is normally used to obtain the product.
         /// </summary>
+        /// <param name="query">The organization query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProductQuery SelectFinancialOwner(OrganizationQuery query)
         {
             query.FieldName = "financialOwner";
@@ -74,6 +84,8 @@
         /// <summary>
         /// The appropriate product category for the product.
         /// </summary>
+        /// <param name="query">The product category query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProductQuery SelectProductCategory(ProductCategoryQuery query)
         {
             query.FieldName = "productCategory";
@@ -84,6 +96,8 @@
         /// <summary>
         /// Recurrence for maintenance of configuration items created from the product.
         /// </summary>
+        /// <param name="query">The recurrence template query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProductQuery SelectRecurrence(RecurrenceTemplateQuery query)
         {
             query.FieldName = "recurrence";
@@ -94,6 +108,8 @@
         /// <summary>
         /// Inline images linked to the Remarks field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProductQuery SelectRemarksAttachments(AttachmentQuery query)
         {
             query.FieldName = "remarksAttachments";
@@ -103,6 +119,8 @@
         /// <summary>
         /// The Service which Service Instances would typically include the product.
         /// </summary>
+        /// <param name="query">The service query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProductQuery SelectService(ServiceQuery query)
         {
             query.FieldName = "service";
@@ -113,6 +131,8 @@
         /// <summary>
         /// The organization from which the product is typically obtained. If the product is developed internally, select the internal organization that develops it. Note that a lease company should be selected in this field if the product is normally leased.
         /// </summary>
+        /// <param name="query">The organization query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProductQuery SelectSupplier(OrganizationQuery query)
         {
             query.FieldName = "supplier";
@@ -123,6 +143,8 @@
         /// <summary>
         /// The team responsible for maintaining the product's information in the configuration management database (CMDB).
         /// </summary>
+        /// <param name="query">The team query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProductQuery SelectSupportTeam(TeamQuery query)
         {
             query.FieldName = "supportTeam";
@@ -133,6 +155,8 @@
         /// <summary>
         /// UI extension that is to be added to the configuration items that are based on the product.
         /// </summary>
+        /// <param name="query">The ui extension query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProductQuery SelectUiExtension(UiExtensionQuery query)
         {
             query.FieldName = "uiExtension";
@@ -143,6 +167,8 @@
         /// <summary>
         /// The person who will be responsible for coordinating the workflows that will be generated automatically in accordance with the recurrence schedule.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProductQuery SelectWorkflowManager(PersonQuery query)
         {
             query.FieldName = "workflowManager";
@@ -153,6 +179,8 @@
         /// <summary>
         /// The workflow template that is used to periodically maintain configuration items created from the product.
         /// </summary>
+        /// <param name="query">The workflow template query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProductQuery SelectWorkflowTemplate(WorkflowTemplateQuery query)
         {
             query.FieldName = "workflowTemplate";

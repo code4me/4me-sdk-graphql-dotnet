@@ -9,7 +9,7 @@
         /// Initialize an new ReleaseUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The release response query.</param>
         internal ReleaseUpdateMutation(ReleaseUpdateInput data, ReleaseQuery query)
             : base("releaseUpdate", "ReleaseUpdateInput!", data, GetQuery(query))
         {
@@ -18,7 +18,7 @@
         /// <summary>
         /// Generates the response query collection.
         /// </summary>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The release response query.</param>
         /// <returns>A query collection.</returns>
         private static HashSet<IQuery> GetQuery(ReleaseQuery query)
         {

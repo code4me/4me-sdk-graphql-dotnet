@@ -9,7 +9,7 @@
         /// Initialize an new ScrumWorkspaceCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The scrum workspace response query.</param>
         internal ScrumWorkspaceCreateMutation(ScrumWorkspaceCreateInput data, ScrumWorkspaceQuery query)
             : base("scrumWorkspaceCreate", "ScrumWorkspaceCreateInput!", data, GetQuery(query))
         {
@@ -18,7 +18,7 @@
         /// <summary>
         /// Generates the response query collection.
         /// </summary>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The scrum workspace response query.</param>
         /// <returns>A query collection.</returns>
         private static HashSet<IQuery> GetQuery(ScrumWorkspaceQuery query)
         {

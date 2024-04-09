@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTemplateQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Phases of the project template.
         /// </summary>
+        /// <param name="query">The project template phase query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTemplateQuery SelectPhases(ProjectTemplatePhaseQuery query)
         {
             query.FieldName = "phases";
@@ -45,6 +49,8 @@
         /// <summary>
         /// Task template relations of the project template.
         /// </summary>
+        /// <param name="query">The project task template relation query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTemplateQuery SelectTaskTemplateRelations(ProjectTaskTemplateRelationQuery query)
         {
             query.FieldName = "taskTemplateRelations";

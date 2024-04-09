@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SprintQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Files and inline images linked to the description field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SprintQuery SelectDescriptionAttachments(AttachmentQuery query)
         {
             query.FieldName = "descriptionAttachments";
@@ -45,6 +49,8 @@
         /// <summary>
         /// Scrum workspace this sprint belongs to.
         /// </summary>
+        /// <param name="query">The scrum workspace query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SprintQuery SelectScrumWorkspace(ScrumWorkspaceQuery query)
         {
             query.FieldName = "scrumWorkspace";
@@ -55,6 +61,8 @@
         /// <summary>
         /// Items in this sprint.
         /// </summary>
+        /// <param name="query">The sprint backlog item query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SprintQuery SelectSprintBacklogItems(SprintBacklogItemQuery query)
         {
             query.FieldName = "sprintBacklogItems";

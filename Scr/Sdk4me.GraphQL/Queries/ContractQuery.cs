@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ContractQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// All configuration items of the contract.
         /// </summary>
+        /// <param name="query">The configuration item query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ContractQuery SelectConfigurationItems(ConfigurationItemQuery query)
         {
             query.FieldName = "configurationItems";
@@ -45,6 +49,8 @@
         /// <summary>
         /// The organization that pays for the agreement.
         /// </summary>
+        /// <param name="query">The organization query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ContractQuery SelectCustomer(OrganizationQuery query)
         {
             query.FieldName = "customer";
@@ -55,6 +61,8 @@
         /// <summary>
         /// The customer account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ContractQuery SelectCustomerAccount(AccountQuery query)
         {
             query.FieldName = "customerAccount";
@@ -65,6 +73,8 @@
         /// <summary>
         /// The person who represents the customer organization for the contract.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ContractQuery SelectCustomerRepresentative(PersonQuery query)
         {
             query.FieldName = "customerRepresentative";
@@ -75,6 +85,8 @@
         /// <summary>
         /// Values of custom fields.
         /// </summary>
+        /// <param name="query">The custom field query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ContractQuery SelectCustomFields(CustomFieldQuery query)
         {
             query.FieldName = "customFields";
@@ -85,6 +97,8 @@
         /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ContractQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
@@ -94,6 +108,8 @@
         /// <summary>
         /// Invoices associated with this object.
         /// </summary>
+        /// <param name="query">The invoice query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ContractQuery SelectInvoices(InvoiceQuery query)
         {
             query.FieldName = "invoices";
@@ -103,6 +119,8 @@
         /// <summary>
         /// Files and inline images linked to the Remarks field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ContractQuery SelectRemarksAttachments(AttachmentQuery query)
         {
             query.FieldName = "remarksAttachments";
@@ -112,6 +130,8 @@
         /// <summary>
         /// The organization that has provided the contract to the customer.
         /// </summary>
+        /// <param name="query">The organization query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ContractQuery SelectSupplier(OrganizationQuery query)
         {
             query.FieldName = "supplier";
@@ -122,6 +142,8 @@
         /// <summary>
         /// The person who represents the supplier of the contract.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ContractQuery SelectSupplierContact(PersonQuery query)
         {
             query.FieldName = "supplierContact";
@@ -132,6 +154,8 @@
         /// <summary>
         /// UI extension that is linked to the record.
         /// </summary>
+        /// <param name="query">The ui extension query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ContractQuery SelectUiExtension(UiExtensionQuery query)
         {
             query.FieldName = "uiExtension";

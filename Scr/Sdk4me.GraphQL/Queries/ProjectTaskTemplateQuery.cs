@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskTemplateQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Assignments of the project task template.
         /// </summary>
+        /// <param name="query">The project task template assignment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskTemplateQuery SelectAssignments(ProjectTaskTemplateAssignmentQuery query)
         {
             query.FieldName = "assignments";
@@ -45,6 +49,8 @@
         /// <summary>
         /// Automation rules associated with this record.
         /// </summary>
+        /// <param name="query">The automation rule query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskTemplateQuery SelectAutomationRules(AutomationRuleQuery query)
         {
             query.FieldName = "automationRules";
@@ -54,6 +60,8 @@
         /// <summary>
         /// The effort class that is selected by default, when someone registers time on a project task created based on the template.
         /// </summary>
+        /// <param name="query">The effort class query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskTemplateQuery SelectEffortClass(EffortClassQuery query)
         {
             query.FieldName = "effortClass";
@@ -64,6 +72,8 @@
         /// <summary>
         /// Inline images linked to the Instructions field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskTemplateQuery SelectInstructionsAttachments(AttachmentQuery query)
         {
             query.FieldName = "instructionsAttachments";
@@ -73,6 +83,8 @@
         /// <summary>
         /// Inline images linked to the Note field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskTemplateQuery SelectNoteAttachments(AttachmentQuery query)
         {
             query.FieldName = "noteAttachments";
@@ -82,6 +94,8 @@
         /// <summary>
         /// The PDF design that needs to be copied to the PDF design field of a new project task when it is being created based on the template.
         /// </summary>
+        /// <param name="query">The pdf design query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskTemplateQuery SelectPdfDesign(PdfDesignQuery query)
         {
             query.FieldName = "pdfDesign";
@@ -92,6 +106,8 @@
         /// <summary>
         /// Project templates that include the project task template.
         /// </summary>
+        /// <param name="query">The project template query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskTemplateQuery SelectProjectTemplates(ProjectTemplateQuery query)
         {
             query.FieldName = "projectTemplates";
@@ -101,6 +117,8 @@
         /// <summary>
         /// The skill pool that should be selected in the Skill pool field of a new project task when it is being created based on the template.
         /// </summary>
+        /// <param name="query">The skill pool query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskTemplateQuery SelectSkillPool(SkillPoolQuery query)
         {
             query.FieldName = "skillPool";
@@ -111,6 +129,8 @@
         /// <summary>
         /// The supplier organization that should be selected in the Supplier field of a new project task when it is being created based on the template.
         /// </summary>
+        /// <param name="query">The organization query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskTemplateQuery SelectSupplier(OrganizationQuery query)
         {
             query.FieldName = "supplier";
@@ -121,6 +141,8 @@
         /// <summary>
         /// Project tasks created using the project task template.
         /// </summary>
+        /// <param name="query">The project task query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskTemplateQuery SelectTasks(ProjectTaskQuery query)
         {
             query.FieldName = "tasks";
@@ -130,6 +152,8 @@
         /// <summary>
         /// The Team that should be selected in the Team field of a new project task when it is being created based on the template.
         /// </summary>
+        /// <param name="query">The team query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskTemplateQuery SelectTeam(TeamQuery query)
         {
             query.FieldName = "team";
@@ -140,6 +164,8 @@
         /// <summary>
         /// UI extension that is to be added to a new project task when it is being created based on the template.
         /// </summary>
+        /// <param name="query">The ui extension query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskTemplateQuery SelectUiExtension(UiExtensionQuery query)
         {
             query.FieldName = "uiExtension";

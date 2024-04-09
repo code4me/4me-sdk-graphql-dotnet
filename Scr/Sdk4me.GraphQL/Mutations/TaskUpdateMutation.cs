@@ -9,7 +9,7 @@
         /// Initialize an new TaskUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The task response query.</param>
         internal TaskUpdateMutation(TaskUpdateInput data, TaskQuery query)
             : base("taskUpdate", "TaskUpdateInput!", data, GetQuery(query))
         {
@@ -18,7 +18,7 @@
         /// <summary>
         /// Generates the response query collection.
         /// </summary>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The task response query.</param>
         /// <returns>A query collection.</returns>
         private static HashSet<IQuery> GetQuery(TaskQuery query)
         {

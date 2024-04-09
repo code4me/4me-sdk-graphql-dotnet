@@ -16,6 +16,8 @@
         /// <summary>
         /// Related configuration item.
         /// </summary>
+        /// <param name="query">The configuration item query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ConfigurationItemRelationQuery SelectConfigurationItem(ConfigurationItemQuery query)
         {
             query.FieldName = "configurationItem";

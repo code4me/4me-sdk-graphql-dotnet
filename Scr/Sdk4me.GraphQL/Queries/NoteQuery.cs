@@ -16,6 +16,8 @@
         /// <summary>
         /// The account.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public NoteQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -26,6 +28,8 @@
         /// <summary>
         /// The inbound email from which the note was created.
         /// </summary>
+        /// <param name="query">The inbound email query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public NoteQuery SelectInboundEmail(InboundEmailQuery query)
         {
             query.FieldName = "inboundEmail";
@@ -36,6 +40,8 @@
         /// <summary>
         /// The note reactions belonging to this note.
         /// </summary>
+        /// <param name="query">The note reaction query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public NoteQuery SelectNoteReactions(NoteReactionQuery query)
         {
             query.FieldName = "noteReactions";
@@ -45,6 +51,8 @@
         /// <summary>
         /// Person who added this note.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public NoteQuery SelectPerson(PersonQuery query)
         {
             query.FieldName = "person";
@@ -55,6 +63,8 @@
         /// <summary>
         /// Files and inline images linked to the Text field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public NoteQuery SelectTextAttachments(AttachmentQuery query)
         {
             query.FieldName = "textAttachments";

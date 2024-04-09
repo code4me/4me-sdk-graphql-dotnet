@@ -9,7 +9,7 @@
         /// Initialize an new OrganizationUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The organization response query.</param>
         internal OrganizationUpdateMutation(OrganizationUpdateInput data, OrganizationQuery query)
             : base("organizationUpdate", "OrganizationUpdateInput!", data, GetQuery(query))
         {
@@ -18,7 +18,7 @@
         /// <summary>
         /// Generates the response query collection.
         /// </summary>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The organization response query.</param>
         /// <returns>A query collection.</returns>
         private static HashSet<IQuery> GetQuery(OrganizationQuery query)
         {

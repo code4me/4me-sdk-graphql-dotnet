@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public KnowledgeArticleTemplateQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Service that is applied to knowledge articles using this template.
         /// </summary>
+        /// <param name="query">The service query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public KnowledgeArticleTemplateQuery SelectService(ServiceQuery query)
         {
             query.FieldName = "service";
@@ -46,6 +50,8 @@
         /// <summary>
         /// Service instances that are applied to knowledge articles using this template.
         /// </summary>
+        /// <param name="query">The service instance query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public KnowledgeArticleTemplateQuery SelectServiceInstances(ServiceInstanceQuery query)
         {
             query.FieldName = "serviceInstances";
@@ -55,6 +61,8 @@
         /// <summary>
         /// The UI extension that is applied to knowledge articles using this template.
         /// </summary>
+        /// <param name="query">The ui extension query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public KnowledgeArticleTemplateQuery SelectUiExtension(UiExtensionQuery query)
         {
             query.FieldName = "uiExtension";

@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SurveyQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Files and inline images linked to the Completion field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SurveyQuery SelectCompletionAttachments(AttachmentQuery query)
         {
             query.FieldName = "completionAttachments";
@@ -45,6 +49,8 @@
         /// <summary>
         /// Files and inline images linked to the Introduction field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SurveyQuery SelectIntroductionAttachments(AttachmentQuery query)
         {
             query.FieldName = "introductionAttachments";
@@ -54,6 +60,8 @@
         /// <summary>
         /// Questions of this survey.
         /// </summary>
+        /// <param name="query">The survey question query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SurveyQuery SelectQuestions(SurveyQuestionQuery query)
         {
             query.FieldName = "questions";
@@ -63,6 +71,8 @@
         /// <summary>
         /// Translations associated with this object.
         /// </summary>
+        /// <param name="query">The translation query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SurveyQuery SelectTranslations(TranslationQuery query)
         {
             query.FieldName = "translations";

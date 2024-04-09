@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AgileBoardQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Columns of this agile board.
         /// </summary>
+        /// <param name="query">The agile board column query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AgileBoardQuery SelectColumns(AgileBoardColumnQuery query)
         {
             query.FieldName = "columns";
@@ -45,6 +49,8 @@
         /// <summary>
         /// Scrum sprint the agile board is currently linked to.
         /// </summary>
+        /// <param name="query">The sprint query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AgileBoardQuery SelectCurrentSprint(SprintQuery query)
         {
             query.FieldName = "currentSprint";
@@ -55,6 +61,8 @@
         /// <summary>
         /// Customer representatives of these service level agreements can view this board in Self Service.
         /// </summary>
+        /// <param name="query">The service level agreement query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AgileBoardQuery SelectCustomerRepresentativeSlas(ServiceLevelAgreementQuery query)
         {
             query.FieldName = "customerRepresentativeSlas";
@@ -64,6 +72,8 @@
         /// <summary>
         /// Files and inline images linked to the Description field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AgileBoardQuery SelectDescriptionAttachments(AttachmentQuery query)
         {
             query.FieldName = "descriptionAttachments";
@@ -73,6 +83,8 @@
         /// <summary>
         /// Manager of the agile board.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public AgileBoardQuery SelectManager(PersonQuery query)
         {
             query.FieldName = "manager";

@@ -9,7 +9,7 @@
         /// Initialize an new ProductCategoryUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The product category response query.</param>
         internal ProductCategoryUpdateMutation(ProductCategoryUpdateInput data, ProductCategoryQuery query)
             : base("productCategoryUpdate", "ProductCategoryUpdateInput!", data, GetQuery(query))
         {
@@ -18,7 +18,7 @@
         /// <summary>
         /// Generates the response query collection.
         /// </summary>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The product category response query.</param>
         /// <returns>A query collection.</returns>
         private static HashSet<IQuery> GetQuery(ProductCategoryQuery query)
         {

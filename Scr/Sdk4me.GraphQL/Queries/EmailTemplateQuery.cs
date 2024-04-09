@@ -16,6 +16,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public EmailTemplateQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -26,6 +28,8 @@
         /// <summary>
         /// Translations associated with this object.
         /// </summary>
+        /// <param name="query">The translation query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public EmailTemplateQuery SelectTranslations(TranslationQuery query)
         {
             query.FieldName = "translations";

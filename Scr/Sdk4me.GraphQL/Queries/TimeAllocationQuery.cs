@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TimeAllocationQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Customer organizations of the time allocation.
         /// </summary>
+        /// <param name="query">The organization query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TimeAllocationQuery SelectCustomers(OrganizationQuery query)
         {
             query.FieldName = "customers";
@@ -45,6 +49,8 @@
         /// <summary>
         /// The effort class that is selected by default, when someone registers time on this time allocation.
         /// </summary>
+        /// <param name="query">The effort class query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TimeAllocationQuery SelectEffortClass(EffortClassQuery query)
         {
             query.FieldName = "effortClass";
@@ -55,6 +61,8 @@
         /// <summary>
         /// Organizations of the time allocation.
         /// </summary>
+        /// <param name="query">The organization query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TimeAllocationQuery SelectOrganizations(OrganizationQuery query)
         {
             query.FieldName = "organizations";
@@ -64,6 +72,8 @@
         /// <summary>
         /// Services of the time allocation.
         /// </summary>
+        /// <param name="query">The service query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TimeAllocationQuery SelectServices(ServiceQuery query)
         {
             query.FieldName = "services";
@@ -73,6 +83,8 @@
         /// <summary>
         /// Translations associated with this object.
         /// </summary>
+        /// <param name="query">The translation query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TimeAllocationQuery SelectTranslations(TranslationQuery query)
         {
             query.FieldName = "translations";

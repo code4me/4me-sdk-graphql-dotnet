@@ -9,7 +9,7 @@
         /// Initialize an new SurveyUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The survey response query.</param>
         internal SurveyUpdateMutation(SurveyUpdateInput data, SurveyQuery query)
             : base("surveyUpdate", "SurveyUpdateInput!", data, GetQuery(query))
         {
@@ -18,7 +18,7 @@
         /// <summary>
         /// Generates the response query collection.
         /// </summary>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The survey response query.</param>
         /// <returns>A query collection.</returns>
         private static HashSet<IQuery> GetQuery(SurveyQuery query)
         {

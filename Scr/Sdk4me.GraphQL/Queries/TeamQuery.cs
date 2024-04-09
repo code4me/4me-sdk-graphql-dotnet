@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TeamQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Used to automatically link records to the agile board when they are assigned to the team.
         /// </summary>
+        /// <param name="query">The agile board query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TeamQuery SelectAgileBoard(AgileBoardQuery query)
         {
             query.FieldName = "agileBoard";
@@ -46,6 +50,8 @@
         /// <summary>
         /// The person who maintains the information about the configuration items that the team supports.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TeamQuery SelectConfigurationManager(PersonQuery query)
         {
             query.FieldName = "configurationManager";
@@ -56,6 +62,8 @@
         /// <summary>
         /// The current team coordinator for the team. Only members of the team can be selected in this field.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TeamQuery SelectCoordinator(PersonQuery query)
         {
             query.FieldName = "coordinator";
@@ -66,6 +74,8 @@
         /// <summary>
         /// Values of custom fields.
         /// </summary>
+        /// <param name="query">The custom field query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TeamQuery SelectCustomFields(CustomFieldQuery query)
         {
             query.FieldName = "customFields";
@@ -76,6 +86,8 @@
         /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TeamQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
@@ -85,6 +97,8 @@
         /// <summary>
         /// The manager or supervisor of the team. This person is able to maintain the information about the team. The manager of a team does not need to be a member of the team.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TeamQuery SelectManager(PersonQuery query)
         {
             query.FieldName = "manager";
@@ -95,6 +109,8 @@
         /// <summary>
         /// People linked as a member to the team.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TeamQuery SelectMembers(PersonQuery query)
         {
             query.FieldName = "members";
@@ -104,6 +120,8 @@
         /// <summary>
         /// Inline images linked to the Remarks field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TeamQuery SelectRemarksAttachments(AttachmentQuery query)
         {
             query.FieldName = "remarksAttachments";
@@ -113,6 +131,8 @@
         /// <summary>
         /// Scrum workspace used by this team to plan their work.
         /// </summary>
+        /// <param name="query">The scrum workspace query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TeamQuery SelectScrumWorkspace(ScrumWorkspaceQuery query)
         {
             query.FieldName = "scrumWorkspace";
@@ -123,6 +143,8 @@
         /// <summary>
         /// UI extension that is linked to the record.
         /// </summary>
+        /// <param name="query">The ui extension query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TeamQuery SelectUiExtension(UiExtensionQuery query)
         {
             query.FieldName = "uiExtension";
@@ -133,6 +155,8 @@
         /// <summary>
         /// The calendar that defines the work hours during which the team is available for work on all types of assignments.
         /// </summary>
+        /// <param name="query">The calendar query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TeamQuery SelectWorkHours(CalendarQuery query)
         {
             query.FieldName = "workHours";

@@ -16,6 +16,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SlaCoverageGroupQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -26,6 +28,8 @@
         /// <summary>
         /// The attachments used in the <c>description</c> field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SlaCoverageGroupQuery SelectDescriptionAttachments(AttachmentQuery query)
         {
             query.FieldName = "descriptionAttachments";
@@ -35,6 +39,8 @@
         /// <summary>
         /// People of the SLA coverage group.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SlaCoverageGroupQuery SelectPeople(PersonQuery query)
         {
             query.FieldName = "people";
@@ -44,6 +50,8 @@
         /// <summary>
         /// Service level agreements linked to the SLA coverage group.
         /// </summary>
+        /// <param name="query">The service level agreement query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SlaCoverageGroupQuery SelectSlas(ServiceLevelAgreementQuery query)
         {
             query.FieldName = "slas";

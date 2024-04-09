@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ShopOrderLineQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Addresses of the record.
         /// </summary>
+        /// <param name="query">The address query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ShopOrderLineQuery SelectAddresses(AddressQuery query)
         {
             query.FieldName = "addresses";
@@ -45,6 +49,8 @@
         /// <summary>
         /// Values of custom fields.
         /// </summary>
+        /// <param name="query">The custom field query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ShopOrderLineQuery SelectCustomFields(CustomFieldQuery query)
         {
             query.FieldName = "customFields";
@@ -55,6 +61,8 @@
         /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ShopOrderLineQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
@@ -64,6 +72,8 @@
         /// <summary>
         /// The fulfillment request that is assigned to the provider to fulfil this shop order line.
         /// </summary>
+        /// <param name="query">The request query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ShopOrderLineQuery SelectFulfillmentRequest(RequestQuery query)
         {
             query.FieldName = "fulfillmentRequest";
@@ -74,6 +84,8 @@
         /// <summary>
         /// The fulfillment task of the purchase workflow generated to fulfil this shop order line.
         /// </summary>
+        /// <param name="query">The request query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ShopOrderLineQuery SelectFulfillmentTask(RequestQuery query)
         {
             query.FieldName = "fulfillmentTask";
@@ -84,6 +96,8 @@
         /// <summary>
         /// The request template used to order one of more units of this shop article.
         /// </summary>
+        /// <param name="query">The request template query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ShopOrderLineQuery SelectFulfillmentTemplate(RequestTemplateQuery query)
         {
             query.FieldName = "fulfillmentTemplate";
@@ -94,6 +108,8 @@
         /// <summary>
         /// The request for purchase that includes this shop order line.
         /// </summary>
+        /// <param name="query">The request query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ShopOrderLineQuery SelectOrder(RequestQuery query)
         {
             query.FieldName = "order";
@@ -104,6 +120,8 @@
         /// <summary>
         /// Information from the provider.
         /// </summary>
+        /// <param name="query">The provider shop order line query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ShopOrderLineQuery SelectProviderOrderLine(ProviderShopOrderLineQuery query)
         {
             query.FieldName = "providerOrderLine";
@@ -114,6 +132,8 @@
         /// <summary>
         /// The person creating the shop order line.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ShopOrderLineQuery SelectRequestedBy(PersonQuery query)
         {
             query.FieldName = "requestedBy";
@@ -124,6 +144,8 @@
         /// <summary>
         /// The person for whom the shop order line was submitted.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ShopOrderLineQuery SelectRequestedFor(PersonQuery query)
         {
             query.FieldName = "requestedFor";
@@ -134,6 +156,8 @@
         /// <summary>
         /// The shop article that is ordered.
         /// </summary>
+        /// <param name="query">The shop article query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ShopOrderLineQuery SelectShopArticle(ShopArticleQuery query)
         {
             query.FieldName = "shopArticle";

@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public WebhookQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Inline images linked to the Description field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public WebhookQuery SelectDescriptionAttachments(AttachmentQuery query)
         {
             query.FieldName = "descriptionAttachments";
@@ -45,6 +49,8 @@
         /// <summary>
         /// The webhook policy to use for cryptographic signing of the messages.
         /// </summary>
+        /// <param name="query">The webhook policy query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public WebhookQuery SelectWebhookPolicy(WebhookPolicyQuery query)
         {
             query.FieldName = "webhookPolicy";

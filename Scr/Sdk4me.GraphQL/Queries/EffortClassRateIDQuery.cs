@@ -16,6 +16,8 @@
         /// <summary>
         /// The effort class for which a rateID is provided.
         /// </summary>
+        /// <param name="query">The effort class query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public EffortClassRateIDQuery SelectEffortClass(EffortClassQuery query)
         {
             query.FieldName = "effortClass";

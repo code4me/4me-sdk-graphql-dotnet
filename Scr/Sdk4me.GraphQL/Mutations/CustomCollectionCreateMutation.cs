@@ -9,7 +9,7 @@
         /// Initialize an new CustomCollectionCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The custom collection response query.</param>
         internal CustomCollectionCreateMutation(CustomCollectionCreateInput data, CustomCollectionQuery query)
             : base("customCollectionCreate", "CustomCollectionCreateInput!", data, GetQuery(query))
         {
@@ -18,7 +18,7 @@
         /// <summary>
         /// Generates the response query collection.
         /// </summary>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The custom collection response query.</param>
         /// <returns>A query collection.</returns>
         private static HashSet<IQuery> GetQuery(CustomCollectionQuery query)
         {

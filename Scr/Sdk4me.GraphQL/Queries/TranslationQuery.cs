@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TranslationQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -40,6 +42,21 @@
         /// <br>If any query parameter is not provided (defaults to null), a new instance of the respective query type is created with the <c>ID</c> field selected.</br>
         /// </para>
         /// </summary>
+        /// <param name="customCollectionElementQuery">The custom collection element query.</param>
+        /// <param name="emailTemplateQuery">The email template query.</param>
+        /// <param name="knowledgeArticleQuery">The knowledge article query.</param>
+        /// <param name="pdfDesignQuery">The pdf design query.</param>
+        /// <param name="productCategoryQuery">The product category query.</param>
+        /// <param name="requestTemplateQuery">The request template query.</param>
+        /// <param name="riskSeverityQuery">The risk severity query.</param>
+        /// <param name="serviceQuery">The service query.</param>
+        /// <param name="serviceCategoryQuery">The service category query.</param>
+        /// <param name="serviceInstanceQuery">The service instance query.</param>
+        /// <param name="surveyQuery">The survey query.</param>
+        /// <param name="surveyQuestionQuery">The survey question query.</param>
+        /// <param name="timeAllocationQuery">The time allocation query.</param>
+        /// <param name="uiExtensionQuery">The ui extension query.</param>
+        /// <param name="workflowTypeQuery">The workflow type query.</param>
         public TranslationQuery SelectOwner(
             CustomCollectionElementQuery? customCollectionElementQuery = null,
             EmailTemplateQuery? emailTemplateQuery = null,
@@ -127,6 +144,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The custom collection element query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TranslationQuery SelectOwner(CustomCollectionElementQuery query)
         {
             query.FieldName = "owner";
@@ -142,6 +161,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The email template query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TranslationQuery SelectOwner(EmailTemplateQuery query)
         {
             query.FieldName = "owner";
@@ -157,6 +178,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The knowledge article query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TranslationQuery SelectOwner(KnowledgeArticleQuery query)
         {
             query.FieldName = "owner";
@@ -172,6 +195,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The pdf design query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TranslationQuery SelectOwner(PdfDesignQuery query)
         {
             query.FieldName = "owner";
@@ -187,6 +212,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The product category query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TranslationQuery SelectOwner(ProductCategoryQuery query)
         {
             query.FieldName = "owner";
@@ -202,6 +229,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The request template query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TranslationQuery SelectOwner(RequestTemplateQuery query)
         {
             query.FieldName = "owner";
@@ -217,6 +246,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The risk severity query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TranslationQuery SelectOwner(RiskSeverityQuery query)
         {
             query.FieldName = "owner";
@@ -232,6 +263,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The service query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TranslationQuery SelectOwner(ServiceQuery query)
         {
             query.FieldName = "owner";
@@ -247,6 +280,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The service category query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TranslationQuery SelectOwner(ServiceCategoryQuery query)
         {
             query.FieldName = "owner";
@@ -262,6 +297,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The service instance query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TranslationQuery SelectOwner(ServiceInstanceQuery query)
         {
             query.FieldName = "owner";
@@ -277,6 +314,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The survey query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TranslationQuery SelectOwner(SurveyQuery query)
         {
             query.FieldName = "owner";
@@ -292,6 +331,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The survey question query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TranslationQuery SelectOwner(SurveyQuestionQuery query)
         {
             query.FieldName = "owner";
@@ -307,6 +348,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The time allocation query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TranslationQuery SelectOwner(TimeAllocationQuery query)
         {
             query.FieldName = "owner";
@@ -322,6 +365,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The ui extension query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TranslationQuery SelectOwner(UiExtensionQuery query)
         {
             query.FieldName = "owner";
@@ -337,6 +382,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The workflow type query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TranslationQuery SelectOwner(WorkflowTypeQuery query)
         {
             query.FieldName = "owner";

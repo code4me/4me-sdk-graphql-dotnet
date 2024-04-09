@@ -9,7 +9,7 @@
         /// Initialize an new ConfigurationItemCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The configuration item response query.</param>
         internal ConfigurationItemCreateMutation(ConfigurationItemCreateInput data, ConfigurationItemQuery query)
             : base("configurationItemCreate", "ConfigurationItemCreateInput!", data, GetQuery(query))
         {
@@ -18,7 +18,7 @@
         /// <summary>
         /// Generates the response query collection.
         /// </summary>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The configuration item response query.</param>
         /// <returns>A query collection.</returns>
         private static HashSet<IQuery> GetQuery(ConfigurationItemQuery query)
         {

@@ -9,7 +9,7 @@
         /// Initialize an new ProjectRiskLevelUpdate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The project risk level response query.</param>
         internal ProjectRiskLevelUpdateMutation(ProjectRiskLevelUpdateInput data, ProjectRiskLevelQuery query)
             : base("projectRiskLevelUpdate", "ProjectRiskLevelUpdateInput!", data, GetQuery(query))
         {
@@ -18,7 +18,7 @@
         /// <summary>
         /// Generates the response query collection.
         /// </summary>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The project risk level response query.</param>
         /// <returns>A query collection.</returns>
         private static HashSet<IQuery> GetQuery(ProjectRiskLevelQuery query)
         {

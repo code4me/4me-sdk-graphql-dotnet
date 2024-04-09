@@ -16,6 +16,8 @@
         /// <summary>
         /// The person who is selected as the assignee for the project task template assignment.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskTemplateAssignmentQuery SelectAssignee(PersonQuery query)
         {
             query.FieldName = "assignee";

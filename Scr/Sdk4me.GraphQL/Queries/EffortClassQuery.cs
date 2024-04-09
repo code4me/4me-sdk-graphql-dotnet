@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public EffortClassQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Service offerings of this effort class.
         /// </summary>
+        /// <param name="query">The service offering query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public EffortClassQuery SelectServiceOfferings(ServiceOfferingQuery query)
         {
             query.FieldName = "serviceOfferings";
@@ -45,6 +49,8 @@
         /// <summary>
         /// Skill pools of this effort class.
         /// </summary>
+        /// <param name="query">The skill pool query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public EffortClassQuery SelectSkillPools(SkillPoolQuery query)
         {
             query.FieldName = "skillPools";
@@ -54,6 +60,8 @@
         /// <summary>
         /// Timesheet settings of this effort class.
         /// </summary>
+        /// <param name="query">The timesheet setting query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public EffortClassQuery SelectTimesheetSettings(TimesheetSettingQuery query)
         {
             query.FieldName = "timesheetSettings";

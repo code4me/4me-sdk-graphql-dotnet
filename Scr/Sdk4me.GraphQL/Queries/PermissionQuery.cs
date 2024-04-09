@@ -16,6 +16,8 @@
         /// <summary>
         /// Account for which the person has permissions.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public PermissionQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";

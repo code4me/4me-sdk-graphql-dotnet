@@ -16,6 +16,8 @@
         /// <summary>
         /// UI extension this version belongs to.
         /// </summary>
+        /// <param name="query">The ui extension query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public UiExtensionVersionQuery SelectUiExtension(UiExtensionQuery query)
         {
             query.FieldName = "uiExtension";

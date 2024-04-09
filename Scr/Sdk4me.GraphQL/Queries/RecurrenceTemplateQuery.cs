@@ -16,6 +16,8 @@
         /// <summary>
         /// Select a calendar to skip occurrences of the recurrence during off-hours and holidays.
         /// </summary>
+        /// <param name="query">The calendar query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public RecurrenceTemplateQuery SelectCalendar(CalendarQuery query)
         {
             query.FieldName = "calendar";

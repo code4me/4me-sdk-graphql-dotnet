@@ -9,7 +9,7 @@
         /// Initialize an new TimeEntryCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The time entry response query.</param>
         internal TimeEntryCreateMutation(TimeEntryCreateInput data, TimeEntryQuery query)
             : base("timeEntryCreate", "TimeEntryCreateInput!", data, GetQuery(query))
         {
@@ -18,7 +18,7 @@
         /// <summary>
         /// Generates the response query collection.
         /// </summary>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The time entry response query.</param>
         /// <returns>A query collection.</returns>
         private static HashSet<IQuery> GetQuery(TimeEntryQuery query)
         {

@@ -16,6 +16,8 @@
         /// <summary>
         /// The person who added this watch.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public WatchQuery SelectAddedBy(PersonQuery query)
         {
             query.FieldName = "addedBy";
@@ -26,6 +28,8 @@
         /// <summary>
         /// The person who is watching the record.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public WatchQuery SelectPerson(PersonQuery query)
         {
             query.FieldName = "person";

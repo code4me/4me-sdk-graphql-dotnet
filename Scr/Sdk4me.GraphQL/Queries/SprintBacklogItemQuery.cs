@@ -16,6 +16,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SprintBacklogItemQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -30,6 +32,10 @@
         /// <br>If any query parameter is not provided (defaults to null), a new instance of the respective query type is created with the <c>ID</c> field selected.</br>
         /// </para>
         /// </summary>
+        /// <param name="problemQuery">The problem query.</param>
+        /// <param name="projectTaskQuery">The project task query.</param>
+        /// <param name="requestQuery">The request query.</param>
+        /// <param name="taskQuery">The task query.</param>
         public SprintBacklogItemQuery SelectRecord(
             ProblemQuery? problemQuery = null,
             ProjectTaskQuery? projectTaskQuery = null,
@@ -62,6 +68,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The problem query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SprintBacklogItemQuery SelectRecord(ProblemQuery query)
         {
             query.FieldName = "record";
@@ -77,6 +85,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The project task query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SprintBacklogItemQuery SelectRecord(ProjectTaskQuery query)
         {
             query.FieldName = "record";
@@ -92,6 +102,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The request query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SprintBacklogItemQuery SelectRecord(RequestQuery query)
         {
             query.FieldName = "record";
@@ -107,6 +119,8 @@
         /// <br>If a specific type is not queried via <c>SelectRecord(IQuery)</c>, it defaults to a null object.</br>
         /// </para>
         /// </summary>
+        /// <param name="query">The task query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SprintBacklogItemQuery SelectRecord(TaskQuery query)
         {
             query.FieldName = "record";
@@ -118,6 +132,8 @@
         /// <summary>
         /// Sprint this record is part of.
         /// </summary>
+        /// <param name="query">The sprint query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SprintBacklogItemQuery SelectSprint(SprintQuery query)
         {
             query.FieldName = "sprint";

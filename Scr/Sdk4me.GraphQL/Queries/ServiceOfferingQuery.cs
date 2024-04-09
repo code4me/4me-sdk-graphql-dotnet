@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Inline images linked to the Charges field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectChargesAttachments(AttachmentQuery query)
         {
             query.FieldName = "chargesAttachments";
@@ -45,6 +49,8 @@
         /// <summary>
         /// Inline images linked to the Continuity field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectContinuityAttachments(AttachmentQuery query)
         {
             query.FieldName = "continuityAttachments";
@@ -54,6 +60,8 @@
         /// <summary>
         /// The effort class that is selected by default, when someone registers time on a request with an active affected SLA based on the service offering.
         /// </summary>
+        /// <param name="query">The effort class query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectDefaultEffortClass(EffortClassQuery query)
         {
             query.FieldName = "defaultEffortClass";
@@ -64,6 +72,8 @@
         /// <summary>
         /// Effort classes of the service offering.
         /// </summary>
+        /// <param name="query">The effort class query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectEffortClasses(EffortClassQuery query)
         {
             query.FieldName = "effortClasses";
@@ -73,6 +83,8 @@
         /// <summary>
         /// Effort class rates of the service offering.
         /// </summary>
+        /// <param name="query">The effort class rate query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectEffortClassRates(EffortClassRateQuery query)
         {
             query.FieldName = "effortClassRates";
@@ -82,6 +94,8 @@
         /// <summary>
         /// Inline images linked to the Limitations field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectLimitationsAttachments(AttachmentQuery query)
         {
             query.FieldName = "limitationsAttachments";
@@ -91,6 +105,8 @@
         /// <summary>
         /// Inline images linked to the Penalties field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectPenaltiesAttachments(AttachmentQuery query)
         {
             query.FieldName = "penaltiesAttachments";
@@ -100,6 +116,8 @@
         /// <summary>
         /// Inline images linked to the Performance field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectPerformanceAttachments(AttachmentQuery query)
         {
             query.FieldName = "performanceAttachments";
@@ -109,6 +127,8 @@
         /// <summary>
         /// Inline images linked to the Prerequisites field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectPrerequisitesAttachments(AttachmentQuery query)
         {
             query.FieldName = "prerequisitesAttachments";
@@ -118,6 +138,8 @@
         /// <summary>
         /// The service for which the service offering is being prepared.
         /// </summary>
+        /// <param name="query">The service query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectService(ServiceQuery query)
         {
             query.FieldName = "service";
@@ -128,6 +150,8 @@
         /// <summary>
         /// Calendar that defines the hours during which the service is supposed to be available.
         /// </summary>
+        /// <param name="query">The calendar query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectServiceHours(CalendarQuery query)
         {
             query.FieldName = "serviceHours";
@@ -138,6 +162,8 @@
         /// <summary>
         /// Service level agreements of the service offering.
         /// </summary>
+        /// <param name="query">The service level agreement query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectServiceLevelAgreements(ServiceLevelAgreementQuery query)
         {
             query.FieldName = "serviceLevelAgreements";
@@ -147,6 +173,8 @@
         /// <summary>
         /// Shop articles related to the service offering.
         /// </summary>
+        /// <param name="query">The shop article query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectShopArticles(ShopArticleQuery query)
         {
             query.FieldName = "shopArticles";
@@ -156,6 +184,8 @@
         /// <summary>
         /// The SLA notification scheme for a request with the impact "High - Service Degraded for Several Users" when it affects an active SLA that is based on the service offering.
         /// </summary>
+        /// <param name="query">The sla notification scheme query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectSlaNotificationSchemeHigh(SlaNotificationSchemeQuery query)
         {
             query.FieldName = "slaNotificationSchemeHigh";
@@ -166,6 +196,8 @@
         /// <summary>
         /// The SLA notification scheme for a request with the impact "Low - Service Degraded for One User" when it affects an active SLA that is based on the service offering.
         /// </summary>
+        /// <param name="query">The sla notification scheme query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectSlaNotificationSchemeLow(SlaNotificationSchemeQuery query)
         {
             query.FieldName = "slaNotificationSchemeLow";
@@ -176,6 +208,8 @@
         /// <summary>
         /// The SLA notification scheme for a request with the impact "Medium - Service Down for One User" when it affects an active SLA that is based on the service offering.
         /// </summary>
+        /// <param name="query">The sla notification scheme query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectSlaNotificationSchemeMedium(SlaNotificationSchemeQuery query)
         {
             query.FieldName = "slaNotificationSchemeMedium";
@@ -186,6 +220,8 @@
         /// <summary>
         /// The SLA notification scheme for a request with the impact "Top - Service Down for Several Users" when it affects an active SLA that is based on the service offering.
         /// </summary>
+        /// <param name="query">The sla notification scheme query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectSlaNotificationSchemeTop(SlaNotificationSchemeQuery query)
         {
             query.FieldName = "slaNotificationSchemeTop";
@@ -196,6 +232,8 @@
         /// <summary>
         /// Standard service requests of the service offering.
         /// </summary>
+        /// <param name="query">The standard service request query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectStandardServiceRequests(StandardServiceRequestQuery query)
         {
             query.FieldName = "standardServiceRequests";
@@ -205,6 +243,8 @@
         /// <summary>
         /// Files and inline images linked to the Summary field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectSummaryAttachments(AttachmentQuery query)
         {
             query.FieldName = "summaryAttachments";
@@ -214,6 +254,8 @@
         /// <summary>
         /// The calendar that defines the support hours for a request with the category "Case" when it affects an active SLA that is based on the service offering.
         /// </summary>
+        /// <param name="query">The calendar query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectSupportHoursCase(CalendarQuery query)
         {
             query.FieldName = "supportHoursCase";
@@ -224,6 +266,8 @@
         /// <summary>
         /// The calendar that defines the support hours for a request with the impact "High - Service Degraded for Several Users" when it affects an active SLA that is based on the service offering.
         /// </summary>
+        /// <param name="query">The calendar query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectSupportHoursHigh(CalendarQuery query)
         {
             query.FieldName = "supportHoursHigh";
@@ -234,6 +278,8 @@
         /// <summary>
         /// The calendar that defines the support hours for a request with the impact "Low - Service Degraded for One User" when it affects an active SLA that is based on the service offering.
         /// </summary>
+        /// <param name="query">The calendar query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectSupportHoursLow(CalendarQuery query)
         {
             query.FieldName = "supportHoursLow";
@@ -244,6 +290,8 @@
         /// <summary>
         /// The calendar that defines the support hours for a request with the impact "Medium - Service Down for One User" when it affects an active SLA that is based on the service offering.
         /// </summary>
+        /// <param name="query">The calendar query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectSupportHoursMedium(CalendarQuery query)
         {
             query.FieldName = "supportHoursMedium";
@@ -254,6 +302,8 @@
         /// <summary>
         /// The calendar that defines the support hours for a request with the category "RFC - Request for Change" when it affects an active SLA that is based on the service offering.
         /// </summary>
+        /// <param name="query">The calendar query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectSupportHoursRfc(CalendarQuery query)
         {
             query.FieldName = "supportHoursRfc";
@@ -264,6 +314,8 @@
         /// <summary>
         /// The calendar that defines the support hours for a request with the category "RFI - Request for Information" when it affects an active SLA that is based on the service offering.
         /// </summary>
+        /// <param name="query">The calendar query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectSupportHoursRfi(CalendarQuery query)
         {
             query.FieldName = "supportHoursRfi";
@@ -274,6 +326,8 @@
         /// <summary>
         /// The calendar that defines the support hours for a request with the impact "Top - Service Down for Several Users" when it affects an active SLA that is based on the service offering.
         /// </summary>
+        /// <param name="query">The calendar query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectSupportHoursTop(CalendarQuery query)
         {
             query.FieldName = "supportHoursTop";
@@ -284,6 +338,8 @@
         /// <summary>
         /// Inline images linked to the Termination field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectTerminationAttachments(AttachmentQuery query)
         {
             query.FieldName = "terminationAttachments";
@@ -293,6 +349,8 @@
         /// <summary>
         /// The waiting for customer follow-up for a request when it remains in status waiting for customer and has an active SLA that is based on this service offering. Only enabled waiting for customer follow-ups that are linked to the same account as the service offering can be selected.
         /// </summary>
+        /// <param name="query">The waiting for customer follow up query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ServiceOfferingQuery SelectWaitingForCustomerFollowUp(WaitingForCustomerFollowUpQuery query)
         {
             query.FieldName = "waitingForCustomerFollowUp";

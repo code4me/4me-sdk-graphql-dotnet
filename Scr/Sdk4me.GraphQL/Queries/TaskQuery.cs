@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Board this item is placed on.
         /// </summary>
+        /// <param name="query">The agile board query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskQuery SelectAgileBoard(AgileBoardQuery query)
         {
             query.FieldName = "agileBoard";
@@ -46,6 +50,8 @@
         /// <summary>
         /// Column this item is placed in.
         /// </summary>
+        /// <param name="query">The agile board column query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskQuery SelectAgileBoardColumn(AgileBoardColumnQuery query)
         {
             query.FieldName = "agileBoardColumn";
@@ -56,6 +62,8 @@
         /// <summary>
         /// Approvals of the task.
         /// </summary>
+        /// <param name="query">The task approval query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskQuery SelectApprovals(TaskApprovalQuery query)
         {
             query.FieldName = "approvals";
@@ -65,6 +73,8 @@
         /// <summary>
         /// Automation rules associated with this record.
         /// </summary>
+        /// <param name="query">The automation rule query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskQuery SelectAutomationRules(AutomationRuleQuery query)
         {
             query.FieldName = "automationRules";
@@ -74,6 +84,8 @@
         /// <summary>
         /// Configuration items of the task.
         /// </summary>
+        /// <param name="query">The configuration item query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskQuery SelectConfigurationItems(ConfigurationItemQuery query)
         {
             query.FieldName = "configurationItems";
@@ -83,6 +95,8 @@
         /// <summary>
         /// Values of custom fields.
         /// </summary>
+        /// <param name="query">The custom field query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskQuery SelectCustomFields(CustomFieldQuery query)
         {
             query.FieldName = "customFields";
@@ -93,6 +107,8 @@
         /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
@@ -102,6 +118,8 @@
         /// <summary>
         /// The task that will be assigned in case this task is failed or rejected.
         /// </summary>
+        /// <param name="query">The task query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskQuery SelectFailureTask(TaskQuery query)
         {
             query.FieldName = "failureTask";
@@ -112,6 +130,8 @@
         /// <summary>
         /// Inline images linked to the Instructions field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskQuery SelectInstructionsAttachments(AttachmentQuery query)
         {
             query.FieldName = "instructionsAttachments";
@@ -121,6 +141,8 @@
         /// <summary>
         /// The person to whom the task is to be assigned. This field's value is <c>null</c> in case of an approval task with multiple approvers.
         /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskQuery SelectMember(PersonQuery query)
         {
             query.FieldName = "member";
@@ -131,6 +153,8 @@
         /// <summary>
         /// Notes of the record.
         /// </summary>
+        /// <param name="query">The note query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskQuery SelectNotes(NoteQuery query)
         {
             query.FieldName = "notes";
@@ -140,6 +164,8 @@
         /// <summary>
         /// The order line related to the fulfillment task.
         /// </summary>
+        /// <param name="query">The shop order line query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskQuery SelectOrderLine(ShopOrderLineQuery query)
         {
             query.FieldName = "orderLine";
@@ -150,6 +176,8 @@
         /// <summary>
         /// The PDF design associated with the task.
         /// </summary>
+        /// <param name="query">The pdf design query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskQuery SelectPdfDesign(PdfDesignQuery query)
         {
             query.FieldName = "pdfDesign";
@@ -160,6 +188,8 @@
         /// <summary>
         /// The phase of the workflow to which the task belongs.
         /// </summary>
+        /// <param name="query">The workflow phase query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskQuery SelectPhase(WorkflowPhaseQuery query)
         {
             query.FieldName = "phase";
@@ -170,6 +200,8 @@
         /// <summary>
         /// The request related to this task. When this request is solved the task will be completed.
         /// </summary>
+        /// <param name="query">The request query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskQuery SelectRequest(RequestQuery query)
         {
             query.FieldName = "request";
@@ -180,6 +212,8 @@
         /// <summary>
         /// The service instance that should be used to create the request for this task.
         /// </summary>
+        /// <param name="query">The service instance query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskQuery SelectRequestServiceInstance(ServiceInstanceQuery query)
         {
             query.FieldName = "requestServiceInstance";
@@ -190,6 +224,8 @@
         /// <summary>
         /// The request template that should be used to create the request for this task.
         /// </summary>
+        /// <param name="query">The request template query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskQuery SelectRequestTemplate(RequestTemplateQuery query)
         {
             query.FieldName = "requestTemplate";
@@ -200,6 +236,8 @@
         /// <summary>
         /// Service instances of the task.
         /// </summary>
+        /// <param name="query">The service instance query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskQuery SelectServiceInstances(ServiceInstanceQuery query)
         {
             query.FieldName = "serviceInstances";
@@ -209,6 +247,8 @@
         /// <summary>
         /// Sprint backlog items associated with this object.
         /// </summary>
+        /// <param name="query">The sprint backlog item query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskQuery SelectSprintBacklogItems(SprintBacklogItemQuery query)
         {
             query.FieldName = "sprintBacklogItems";
@@ -218,6 +258,8 @@
         /// <summary>
         /// The supplier organization that has been asked to assist with the completion of the task.
         /// </summary>
+        /// <param name="query">The organization query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskQuery SelectSupplier(OrganizationQuery query)
         {
             query.FieldName = "supplier";
@@ -228,6 +270,8 @@
         /// <summary>
         /// The team to which the task is to be assigned.
         /// </summary>
+        /// <param name="query">The team query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskQuery SelectTeam(TeamQuery query)
         {
             query.FieldName = "team";
@@ -238,6 +282,8 @@
         /// <summary>
         /// The task template that was used to register the task.
         /// </summary>
+        /// <param name="query">The task template query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskQuery SelectTemplate(TaskTemplateQuery query)
         {
             query.FieldName = "template";
@@ -248,6 +294,8 @@
         /// <summary>
         /// Time entries for this record.
         /// </summary>
+        /// <param name="query">The time entry query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskQuery SelectTimeEntries(TimeEntryQuery query)
         {
             query.FieldName = "timeEntries";
@@ -257,6 +305,8 @@
         /// <summary>
         /// The workflow to which the task belongs.
         /// </summary>
+        /// <param name="query">The workflow query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public TaskQuery SelectWorkflow(WorkflowQuery query)
         {
             query.FieldName = "workflow";

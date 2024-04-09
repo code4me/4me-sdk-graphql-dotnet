@@ -16,6 +16,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SurveyAnswerQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -26,6 +28,8 @@
         /// <summary>
         /// Question this answer is for.
         /// </summary>
+        /// <param name="query">The survey question query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SurveyAnswerQuery SelectQuestion(SurveyQuestionQuery query)
         {
             query.FieldName = "question";
@@ -36,6 +40,8 @@
         /// <summary>
         /// Survey response the answer is part of.
         /// </summary>
+        /// <param name="query">The survey response query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SurveyAnswerQuery SelectSurveyResponse(SurveyResponseQuery query)
         {
             query.FieldName = "surveyResponse";
@@ -46,6 +52,8 @@
         /// <summary>
         /// Files and inline images linked to the Text field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public SurveyAnswerQuery SelectTextAttachments(AttachmentQuery query)
         {
             query.FieldName = "textAttachments";

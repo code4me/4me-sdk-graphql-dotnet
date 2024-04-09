@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public CustomCollectionQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Elements of this custom collection.
         /// </summary>
+        /// <param name="query">The custom collection element query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public CustomCollectionQuery SelectCollectionElements(CustomCollectionElementQuery query)
         {
             query.FieldName = "collectionElements";
@@ -45,6 +49,8 @@
         /// <summary>
         /// Files and inline images linked to the Description field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public CustomCollectionQuery SelectDescriptionAttachments(AttachmentQuery query)
         {
             query.FieldName = "descriptionAttachments";
@@ -54,6 +60,8 @@
         /// <summary>
         /// UI extension that is linked to the collection.
         /// </summary>
+        /// <param name="query">The ui extension query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public CustomCollectionQuery SelectUiExtension(UiExtensionQuery query)
         {
             query.FieldName = "uiExtension";

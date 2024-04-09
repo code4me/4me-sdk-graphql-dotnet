@@ -9,7 +9,7 @@
         /// Initialize an new OutOfOfficePeriodCreate mutation instance.
         /// </summary>
         /// <param name="data">The input data.</param>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The out of office period response query.</param>
         internal OutOfOfficePeriodCreateMutation(OutOfOfficePeriodCreateInput data, OutOfOfficePeriodQuery query)
             : base("outOfOfficePeriodCreate", "OutOfOfficePeriodCreateInput!", data, GetQuery(query))
         {
@@ -18,7 +18,7 @@
         /// <summary>
         /// Generates the response query collection.
         /// </summary>
-        /// <param name="query">The response query.</param>
+        /// <param name="query">The out of office period response query.</param>
         /// <returns>A query collection.</returns>
         private static HashSet<IQuery> GetQuery(OutOfOfficePeriodQuery query)
         {

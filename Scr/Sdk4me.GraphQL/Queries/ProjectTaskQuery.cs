@@ -26,6 +26,8 @@
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
+        /// <param name="query">The account query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskQuery SelectAccount(AccountQuery query)
         {
             query.FieldName = "account";
@@ -36,6 +38,8 @@
         /// <summary>
         /// Board this item is placed on.
         /// </summary>
+        /// <param name="query">The agile board query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskQuery SelectAgileBoard(AgileBoardQuery query)
         {
             query.FieldName = "agileBoard";
@@ -46,6 +50,8 @@
         /// <summary>
         /// Column this item is placed in.
         /// </summary>
+        /// <param name="query">The agile board column query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskQuery SelectAgileBoardColumn(AgileBoardColumnQuery query)
         {
             query.FieldName = "agileBoardColumn";
@@ -56,6 +62,8 @@
         /// <summary>
         /// Assignments of the project task.
         /// </summary>
+        /// <param name="query">The project task assignment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskQuery SelectAssignments(ProjectTaskAssignmentQuery query)
         {
             query.FieldName = "assignments";
@@ -65,6 +73,8 @@
         /// <summary>
         /// Automation rules associated with this record.
         /// </summary>
+        /// <param name="query">The automation rule query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskQuery SelectAutomationRules(AutomationRuleQuery query)
         {
             query.FieldName = "automationRules";
@@ -74,6 +84,8 @@
         /// <summary>
         /// Values of custom fields.
         /// </summary>
+        /// <param name="query">The custom field query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskQuery SelectCustomFields(CustomFieldQuery query)
         {
             query.FieldName = "customFields";
@@ -84,6 +96,8 @@
         /// <summary>
         /// Inline images linked to one of the custom fields.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskQuery SelectCustomFieldsAttachments(AttachmentQuery query)
         {
             query.FieldName = "customFieldsAttachments";
@@ -93,6 +107,8 @@
         /// <summary>
         /// Inline images linked to the Instructions field.
         /// </summary>
+        /// <param name="query">The attachment query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskQuery SelectInstructionsAttachments(AttachmentQuery query)
         {
             query.FieldName = "instructionsAttachments";
@@ -102,6 +118,8 @@
         /// <summary>
         /// Notes of the record.
         /// </summary>
+        /// <param name="query">The note query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskQuery SelectNotes(NoteQuery query)
         {
             query.FieldName = "notes";
@@ -111,6 +129,8 @@
         /// <summary>
         /// The PDF design associated with the task.
         /// </summary>
+        /// <param name="query">The pdf design query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskQuery SelectPdfDesign(PdfDesignQuery query)
         {
             query.FieldName = "pdfDesign";
@@ -121,6 +141,8 @@
         /// <summary>
         /// The phase of the project to which the project task belongs.
         /// </summary>
+        /// <param name="query">The project phase query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskQuery SelectPhase(ProjectPhaseQuery query)
         {
             query.FieldName = "phase";
@@ -131,6 +153,8 @@
         /// <summary>
         /// Predecessors of the project task.
         /// </summary>
+        /// <param name="query">The project task query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskQuery SelectPredecessors(ProjectTaskQuery query)
         {
             query.FieldName = "predecessors";
@@ -140,6 +164,8 @@
         /// <summary>
         /// The project to which the project task belongs.
         /// </summary>
+        /// <param name="query">The project query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskQuery SelectProject(ProjectQuery query)
         {
             query.FieldName = "project";
@@ -150,6 +176,8 @@
         /// <summary>
         /// Skill pool that represents the specific expertise needed to complete the task.
         /// </summary>
+        /// <param name="query">The skill pool query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskQuery SelectSkillPool(SkillPoolQuery query)
         {
             query.FieldName = "skillPool";
@@ -160,6 +188,8 @@
         /// <summary>
         /// Sprint backlog items associated with this object.
         /// </summary>
+        /// <param name="query">The sprint backlog item query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskQuery SelectSprintBacklogItems(SprintBacklogItemQuery query)
         {
             query.FieldName = "sprintBacklogItems";
@@ -169,6 +199,8 @@
         /// <summary>
         /// Successors of the project task.
         /// </summary>
+        /// <param name="query">The project task query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskQuery SelectSuccessors(ProjectTaskQuery query)
         {
             query.FieldName = "successors";
@@ -178,6 +210,8 @@
         /// <summary>
         /// The supplier organization that has been asked to assist with the completion of the project task.
         /// </summary>
+        /// <param name="query">The organization query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskQuery SelectSupplier(OrganizationQuery query)
         {
             query.FieldName = "supplier";
@@ -188,6 +222,8 @@
         /// <summary>
         /// The team to which the project task is to be assigned.
         /// </summary>
+        /// <param name="query">The team query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskQuery SelectTeam(TeamQuery query)
         {
             query.FieldName = "team";
@@ -198,6 +234,8 @@
         /// <summary>
         /// The project task template that was used to register the project task.
         /// </summary>
+        /// <param name="query">The project task template query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskQuery SelectTemplate(ProjectTaskTemplateQuery query)
         {
             query.FieldName = "template";
@@ -208,6 +246,8 @@
         /// <summary>
         /// Time entries for this record.
         /// </summary>
+        /// <param name="query">The time entry query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
         public ProjectTaskQuery SelectTimeEntries(TimeEntryQuery query)
         {
             query.FieldName = "timeEntries";
