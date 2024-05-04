@@ -9,7 +9,6 @@ namespace Sdk4me.GraphQL
     public class UiExtensionUpdateInput : PropertyChangeSet
     {
         private bool? activate;
-        private UiExtensionCategory? category;
         private string? clientMutationId;
         private string? css;
         private string? description;
@@ -31,16 +30,6 @@ namespace Sdk4me.GraphQL
         {
             get => activate;
             set => activate = Set("activate", value);
-        }
-
-        /// <summary>
-        /// The type of record in which the UI extension can be selected.
-        /// </summary>
-        [JsonProperty("category")]
-        public UiExtensionCategory? Category
-        {
-            get => category;
-            set => category = Set("category", value);
         }
 
         /// <summary>
