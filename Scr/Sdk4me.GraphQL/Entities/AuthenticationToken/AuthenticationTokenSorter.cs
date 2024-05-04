@@ -1,4 +1,6 @@
-﻿namespace Sdk4me.GraphQL
+﻿using System.Collections.Generic;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// Compares two 4me authentication tokens and sort them by remaining API requests.

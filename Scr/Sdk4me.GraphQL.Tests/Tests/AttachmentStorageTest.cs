@@ -1,4 +1,6 @@
-﻿namespace Sdk4me.GraphQL.Tests
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace Sdk4me.GraphQL.Tests
 {
     [TestClass]
     public class AttachmentStorageTest

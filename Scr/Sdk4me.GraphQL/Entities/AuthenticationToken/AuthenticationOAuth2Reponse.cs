@@ -1,4 +1,6 @@
-﻿namespace Sdk4me.GraphQL
+﻿using Newtonsoft.Json;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// The OAuth 2.0 authentication response.

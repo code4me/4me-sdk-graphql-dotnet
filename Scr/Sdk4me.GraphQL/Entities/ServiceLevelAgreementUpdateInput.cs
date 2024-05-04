@@ -1,4 +1,8 @@
-﻿namespace Sdk4me.GraphQL
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/input_object/servicelevelagreementupdateinput/">ServiceLevelAgreementUpdateInput</see> object.
@@ -12,12 +16,20 @@
         private string? customerId;
         private List<string>? customerRepresentativeIds;
         private List<string>? effortClassRateIDsToDelete;
+#if NET6_0_OR_GREATER
         private DateOnly? expiryDate;
+#else
+        private DateTime? expiryDate;
+#endif
         private string? id;
         private string? name;
         private List<EffortClassRateIDInput>? newEffortClassRateIDs;
         private List<StandardServiceRequestActivityIDInput>? newStandardServiceRequestActivityIDs;
+#if NET6_0_OR_GREATER
         private DateOnly? noticeDate;
+#else
+        private DateTime? noticeDate;
+#endif
         private List<string>? organizationIds;
         private List<string>? personIds;
         private string? remarks;
@@ -30,7 +42,11 @@
         private string? source;
         private string? sourceID;
         private List<string>? standardServiceRequestActivityIDsToDelete;
+#if NET6_0_OR_GREATER
         private DateOnly? startDate;
+#else
+        private DateTime? startDate;
+#endif
         private AgreementStatus? status;
         private bool? useKnowledgeFromServiceProvider;
 
@@ -108,7 +124,11 @@
         /// The date through which the service level agreement (SLA) will be active. The SLA expires at the end of this day if it is not renewed before then. When the SLA has expired, its status will automatically be set to "Expired".
         /// </summary>
         [JsonProperty("expiryDate")]
+#if NET6_0_OR_GREATER
         public DateOnly? ExpiryDate
+#else
+        public DateTime? ExpiryDate
+#endif
         {
             get => expiryDate;
             set => expiryDate = Set("expiryDate", value);
@@ -158,7 +178,11 @@
         /// The last day on which the service provider organization can still be contacted to terminate the service level agreement (SLA) to ensure that it expires on the intended expiry date. The Notice date field is left empty, and the Expiry date field is filled out, when the SLA is to expire on a specific date and no notice needs to be given to terminate it.
         /// </summary>
         [JsonProperty("noticeDate")]
+#if NET6_0_OR_GREATER
         public DateOnly? NoticeDate
+#else
+        public DateTime? NoticeDate
+#endif
         {
             get => noticeDate;
             set => noticeDate = Set("noticeDate", value);
@@ -288,7 +312,11 @@
         /// The first day during which the service level agreement (SLA) is active.
         /// </summary>
         [JsonProperty("startDate")]
+#if NET6_0_OR_GREATER
         public DateOnly? StartDate
+#else
+        public DateTime? StartDate
+#endif
         {
             get => startDate;
             set => startDate = Set("startDate", value);

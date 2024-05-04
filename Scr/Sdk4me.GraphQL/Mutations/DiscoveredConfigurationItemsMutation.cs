@@ -1,4 +1,6 @@
-﻿namespace Sdk4me.GraphQL
+﻿using System.Collections.Generic;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// <br>This mutation can be used to push at most 100 discovered configuration items to 4me at once.</br>

@@ -1,4 +1,9 @@
-﻿using System.Collections.ObjectModel;
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 
@@ -219,7 +224,7 @@ namespace Sdk4me.GraphQL
                 IsConnection = query.IsConnection,
                 Depth = depth
             };
-            
+
             foreach (KeyValuePair<string, IQuery> item in query.OnTypesQueries)
                 retval.OnTypeQueries.Add(item.Key, BuildQuery(item.Value, depth + 1, defaultItemsPerRequest));
 
@@ -419,7 +424,7 @@ namespace Sdk4me.GraphQL
                 {
                     0 => "[]",
                     1 => $"[{serializedValues[0]}]",
-                    _ => $"[{string.Join(',', serializedValues)}]"
+                    _ => $"[{string.Join(",", serializedValues)}]"
                 });
                 builder.Append('}');
                 return builder.ToString();
@@ -462,7 +467,7 @@ namespace Sdk4me.GraphQL
                 {
                     0 => "[]",
                     1 => $"[{serializedValues[0]}]",
-                    _ => $"[{string.Join(',', serializedValues)}]"
+                    _ => $"[{string.Join(",", serializedValues)}]"
                 });
                 builder.Append('}');
                 return builder.ToString();

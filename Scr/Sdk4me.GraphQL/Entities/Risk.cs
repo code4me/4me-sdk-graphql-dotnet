@@ -1,4 +1,8 @@
-﻿namespace Sdk4me.GraphQL
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/risk/">Risk</see> object.
@@ -62,7 +66,11 @@
         /// The date by which the risk should have been mitigated.
         /// </summary>
         [JsonProperty("mitigationTargetAt"), Sdk4meField(true)]
+#if NET6_0_OR_GREATER
         public DateOnly? MitigationTargetAt { get; internal set; }
+#else
+        public DateTime? MitigationTargetAt { get; internal set; }
+#endif
 
         [JsonProperty("notes")]
         internal NodeCollection<Note>? NotesCollection { get; set; }

@@ -1,4 +1,8 @@
-﻿namespace Sdk4me.GraphQL
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/input_object/recurrenceinput/">RecurrenceInput</see> object.
@@ -12,11 +16,19 @@
         private List<DayNames>? dayOfWeekDay;
         private RecurrenceDayOfWeekIndex? dayOfWeekIndex;
         private bool? disabled;
+#if NET6_0_OR_GREATER
         private DateOnly? endDate;
+#else
+        private DateTime? endDate;
+#endif
         private RecurrenceFrequency? frequency;
         private long? interval;
         private List<long>? monthOfYear;
+#if NET6_0_OR_GREATER
         private DateOnly? startDate;
+#else
+        private DateTime? startDate;
+#endif
         private TimeSpan? timeOfDay;
         private string? timeZone;
 
@@ -108,7 +120,11 @@
         /// The date at which to end the Recurrence.
         /// </summary>
         [JsonProperty("endDate")]
+#if NET6_0_OR_GREATER
         public DateOnly? EndDate
+#else
+        public DateTime? EndDate
+#endif
         {
             get => endDate;
             set => endDate = Set("endDate", value);
@@ -160,7 +176,11 @@
         /// The date at which to start the Recurrence.
         /// </summary>
         [JsonProperty("startDate")]
+#if NET6_0_OR_GREATER
         public DateOnly? StartDate
+#else
+        public DateTime? StartDate
+#endif
         {
             get => startDate;
             set => startDate = Set("startDate", value);

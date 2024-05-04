@@ -1,11 +1,19 @@
-﻿namespace Sdk4me.GraphQL
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/input_object/knowledgearticlecreateinput/">KnowledgeArticleCreateInput</see> object.
     /// </summary>
     public class KnowledgeArticleCreateInput : PropertyChangeSet
     {
+#if NET6_0_OR_GREATER
         private DateOnly? archiveDate;
+#else
+        private DateTime? archiveDate;
+#endif
         private string? clientMutationId;
         private bool? coveredSpecialists;
         private string? createdById;
@@ -31,7 +39,11 @@
         /// The date until which the knowledge article will be active. The knowledge article will be archived at the beginning of this day. When the knowledge article is archived, its status will automatically be set to "Archived".
         /// </summary>
         [JsonProperty("archiveDate")]
+#if NET6_0_OR_GREATER
         public DateOnly? ArchiveDate
+#else
+        public DateTime? ArchiveDate
+#endif
         {
             get => archiveDate;
             set => archiveDate = Set("archiveDate", value);

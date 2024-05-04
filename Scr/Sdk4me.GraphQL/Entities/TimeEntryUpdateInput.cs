@@ -1,4 +1,7 @@
-﻿namespace Sdk4me.GraphQL
+﻿using Newtonsoft.Json;
+using System;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/input_object/timeentryupdateinput/">TimeEntryUpdateInput</see> object.
@@ -8,7 +11,11 @@
         private string? clientMutationId;
         private bool? correction;
         private string? customerId;
+#if NET6_0_OR_GREATER
         private DateOnly? date;
+#else
+        private DateTime? date;
+#endif
         private bool? deleted;
         private string? description;
         private string? effortClassId;
@@ -58,7 +65,11 @@
         /// The date on which the time was spent.
         /// </summary>
         [JsonProperty("date")]
+#if NET6_0_OR_GREATER
         public DateOnly? Date
+#else
+        public DateTime? Date
+#endif
         {
             get => date;
             set => date = Set("date", value);

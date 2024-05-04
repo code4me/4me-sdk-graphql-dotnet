@@ -1,4 +1,8 @@
-﻿namespace Sdk4me.GraphQL
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/input_object/riskcreateinput/">RiskCreateInput</see> object.
@@ -10,7 +14,11 @@
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
         private string? managerId;
+#if NET6_0_OR_GREATER
         private DateOnly? mitigationTargetAt;
+#else
+        private DateTime? mitigationTargetAt;
+#endif
         private string? note;
         private List<string>? organizationIds;
         private List<string>? projectIds;
@@ -76,7 +84,11 @@
         /// The date by which the risk should have been mitigated.
         /// </summary>
         [JsonProperty("mitigationTargetAt")]
+#if NET6_0_OR_GREATER
         public DateOnly? MitigationTargetAt
+#else
+        public DateTime? MitigationTargetAt
+#endif
         {
             get => mitigationTargetAt;
             set => mitigationTargetAt = Set("mitigationTargetAt", value);

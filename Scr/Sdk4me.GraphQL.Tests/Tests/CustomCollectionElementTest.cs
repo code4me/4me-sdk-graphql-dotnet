@@ -1,4 +1,6 @@
-﻿using System.Diagnostics.Contracts;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Linq;
 
 namespace Sdk4me.GraphQL.Tests
 {

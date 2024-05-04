@@ -1,4 +1,7 @@
-﻿using Newtonsoft.Json.Serialization;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using System;
+using System.Collections.Immutable;
 using System.Reflection;
 
 namespace Sdk4me.GraphQL

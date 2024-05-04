@@ -1,4 +1,6 @@
-﻿using System.Globalization;
+﻿using Newtonsoft.Json.Linq;
+using System.Globalization;
+using System.Linq;
 
 namespace Sdk4me.GraphQL
 {

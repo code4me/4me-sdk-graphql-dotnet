@@ -1,4 +1,7 @@
-﻿namespace Sdk4me.GraphQL
+﻿using System.Collections.Generic;
+using System.Collections.Immutable;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// A 4me GraphQL mutation.

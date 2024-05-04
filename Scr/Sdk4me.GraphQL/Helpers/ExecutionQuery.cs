@@ -1,4 +1,8 @@
-﻿namespace Sdk4me.GraphQL
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// An execution query.

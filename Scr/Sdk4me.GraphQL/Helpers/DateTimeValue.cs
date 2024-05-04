@@ -1,4 +1,6 @@
-﻿namespace Sdk4me.GraphQL
+﻿using System;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// A set of 4me specific date time values.

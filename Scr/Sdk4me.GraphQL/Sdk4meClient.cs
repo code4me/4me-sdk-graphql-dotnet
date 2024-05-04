@@ -1,8 +1,16 @@
-﻿using Newtonsoft.Json.Converters;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace Sdk4me.GraphQL
 {
@@ -12,6 +20,7 @@ namespace Sdk4me.GraphQL
     public sealed class Sdk4meClient : IDisposable
     {
         private readonly AuthenticationTokenCollection authenticationTokens;
+        private readonly DateTime unixEpoch;
         private readonly JsonSerializer jsonSerializer;
         private readonly InterfaceConverter interfaceConverter;
         private readonly string url;
@@ -158,12 +167,10 @@ namespace Sdk4me.GraphQL
             if (string.IsNullOrWhiteSpace(accountID))
                 throw new ArgumentException($"'{nameof(accountID)}' cannot be null or empty.", nameof(accountID));
 
-            if (authenticationTokens is null)
-                ArgumentNullException.ThrowIfNull(authenticationTokens);
+            if (authenticationTokens is null || !authenticationTokens.Any())
+                throw new ArgumentException($"'{nameof(authenticationTokens)}' cannot be null or empty.", nameof(authenticationTokens));
 
-            if (!authenticationTokens.Any())
-                throw new ArgumentException($"'{nameof(authenticationTokens)}' cannot be empty.", nameof(authenticationTokens));
-
+            unixEpoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
             url = EndpointUrlBuilder.Get(domainName);
             restUrl = EndpointUrlBuilder.GetRest(domainName);
             oauth2Url = EndpointUrlBuilder.GetOAuth2(domainName);
@@ -215,7 +222,7 @@ namespace Sdk4me.GraphQL
                 throw new Sdk4meException($"The query exceeds the maximum allowed depth level connections value. The maximum value is set to {maximumQueryDepthLevelConnections}, and the query contains {highestDepthValue} depth level connections.");
 
             DataList<TEntity> retval = new();
-            using (HttpRequestMessage requestMessage = CreateHttpRequest(accountID))
+            using (HttpRequestMessage requestMessage = await CreateHttpRequest(accountID))
             {
                 string query = $"{{\"query\":{JsonConvert.SerializeObject($"query{{{ExecutionQueryBuilder.GetGraphQLQuery(executionQuery)}}}")}}}";
                 JToken responseData = await SendHttpRequest(requestMessage, query, true);
@@ -261,7 +268,7 @@ namespace Sdk4me.GraphQL
             where TOutEntity : Payload
             where TInEntity : PropertyChangeSet
         {
-            using (HttpRequestMessage requestMessage = CreateHttpRequest(accountID))
+            using (HttpRequestMessage requestMessage = await CreateHttpRequest(accountID))
             {
                 JsonSerializerSettings settings = new()
                 {
@@ -307,7 +314,7 @@ namespace Sdk4me.GraphQL
                 throw new FileNotFoundException(file.FullName);
 
             using (FileStream stream = file.OpenRead())
-                return await UploadAttachment(stream as Stream, file.Name, contentType);
+                return await UploadAttachment(stream, file.Name, contentType);
         }
 
         /// <summary>
@@ -373,7 +380,7 @@ namespace Sdk4me.GraphQL
                             WriteDebug(logId, requestMessage, "***", true);
                             Sleep.SleepRemainingTime(0);
 
-                            using (StreamReader reader = new(responseMessage.Content.ReadAsStream()))
+                            using (StreamReader reader = new(await responseMessage.Content.ReadAsStreamAsync()))
                             {
                                 string data = reader.ReadToEnd();
 
@@ -410,7 +417,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The newly created request or already existing request.</returns>
         public async Task<Request> CreateEvent(RequestEventCreateInput requestEventCreateInput)
         {
-            using (HttpRequestMessage requestMessage = CreateHttpRequest(accountID, $"{restUrl}/events"))
+            using (HttpRequestMessage requestMessage = await CreateHttpRequest(accountID, $"{restUrl}/events"))
             {
                 JToken responseData = await SendHttpRequest(requestMessage, requestEventCreateInput.HttpRequestBody, false);
                 int? requestID = responseData.Value<int>("id");
@@ -451,9 +458,9 @@ namespace Sdk4me.GraphQL
         /// <param name="accountID">The account identifier.</param>
         /// <param name="url">Overwrite the default URL when while creating the <see cref="HttpRequestMessage"/>.</param>
         /// <returns>The <see cref="HttpRequestMessage"/> object.</returns>
-        private HttpRequestMessage CreateHttpRequest(string accountID, string? url = null)
+        private async Task<HttpRequestMessage> CreateHttpRequest(string accountID, string? url = null)
         {
-            SetAuthenticationToken();
+            await SetAuthenticationToken();
             HttpRequestMessage retval = new(HttpMethod.Post, url ?? this.url);
             retval.Headers.Authorization = new AuthenticationHeaderValue(currentToken.TokenType, currentToken.Token);
             retval.Headers.Add("x-4me-Account", accountID);
@@ -463,7 +470,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Sets the authentication method, which can be a Personal Access Token or a OAuth 2.0 Client Credential Grant.
         /// </summary>
-        private void SetAuthenticationToken()
+        private async System.Threading.Tasks.Task SetAuthenticationToken()
         {
             currentToken = authenticationTokens.Get();
             if (currentToken.IsTokenExpired())
@@ -476,7 +483,7 @@ namespace Sdk4me.GraphQL
                     WriteDebug(logId, requestMessage, "***");
                     Sleep.RegisterStartTime();
 
-                    using (HttpResponseMessage responseMessage = client.Send(requestMessage))
+                    using (HttpResponseMessage responseMessage = await client.SendAsync(requestMessage))
                     {
                         WriteDebug(logId, requestMessage, "***", true);
                         Sleep.SleepRemainingTime(0);
@@ -542,7 +549,7 @@ namespace Sdk4me.GraphQL
                 {
                     if (responseMessage.Content.Headers.ContentType?.MediaType == applicationJsonMediaType)
                     {
-                        using (StreamReader streamReader = new(responseMessage.Content.ReadAsStream()))
+                        using (StreamReader streamReader = new(await responseMessage.Content.ReadAsStreamAsync()))
                             throw new Sdk4meException(streamReader.ReadToEnd());
                     }
 
@@ -564,14 +571,14 @@ namespace Sdk4me.GraphQL
                 if (responseMessage.Headers.TryGetValues("X-RateLimit-Remaining", out values) && int.TryParse(values?.FirstOrDefault(), out result))
                     currentToken.RequestsRemaining = Convert.ToInt32(result);
                 if (responseMessage.Headers.TryGetValues("X-RateLimit-Reset", out values) && long.TryParse(values?.FirstOrDefault(), out long dateResult))
-                    currentToken.RequestLimitReset = DateTime.UnixEpoch.AddSeconds(dateResult).ToLocalTime();
+                    currentToken.RequestLimitReset = unixEpoch.AddSeconds(dateResult).ToLocalTime();
 
                 if (responseMessage.Headers.TryGetValues("X-CostLimit-Limit", out values) && int.TryParse(values?.FirstOrDefault(), out result))
                     currentToken.CostLimit = result;
                 if (responseMessage.Headers.TryGetValues("X-CostLimit-Remaining", out values) && int.TryParse(values?.FirstOrDefault(), out result))
                     currentToken.CostLimitRemaining = result;
                 if (responseMessage.Headers.TryGetValues("X-CostLimit-Reset", out values) && long.TryParse(values?.FirstOrDefault(), out dateResult))
-                    currentToken.CostLimitReset = DateTime.UnixEpoch.AddSeconds(dateResult).ToLocalTime();
+                    currentToken.CostLimitReset = unixEpoch.AddSeconds(dateResult).ToLocalTime();
             }
         }
 

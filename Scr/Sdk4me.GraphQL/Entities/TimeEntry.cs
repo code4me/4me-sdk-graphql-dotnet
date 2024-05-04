@@ -1,4 +1,8 @@
-﻿namespace Sdk4me.GraphQL
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/timeentry/">TimeEntry</see> object.
@@ -89,7 +93,11 @@
         /// The date on which the time was spent.
         /// </summary>
         [JsonProperty("date"), Sdk4meField(true)]
+#if NET6_0_OR_GREATER
         public DateOnly? Date { get; internal set; }
+#else
+        public DateTime? Date { get; internal set; }
+#endif
 
         /// <summary>
         /// Automatically checked after the time entry has been deleted. The data of a deleted time entry that is older than 3 months can no longer be retrieved.

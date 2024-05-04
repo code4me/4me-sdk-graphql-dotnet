@@ -1,4 +1,8 @@
-﻿namespace Sdk4me.GraphQL
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/knowledgearticle/">KnowledgeArticle</see> object.
@@ -15,7 +19,11 @@
         /// The date until which the knowledge article will be active. The knowledge article will be archived at the beginning of this day. When the knowledge article is archived, its status will automatically be set to "Archived".
         /// </summary>
         [JsonProperty("archiveDate")]
+#if NET6_0_OR_GREATER
         public DateOnly? ArchiveDate { get; internal set; }
+#else
+        public DateTime? ArchiveDate { get; internal set; }
+#endif
 
         /// <summary>
         /// Whether the knowledge article needs to be available to the people who are a member of the support team of one of the service instances that are selected in the Coverage section of an active SLA for the service that is linked to the article.

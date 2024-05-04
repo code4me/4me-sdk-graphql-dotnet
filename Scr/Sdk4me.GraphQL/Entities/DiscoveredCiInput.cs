@@ -1,4 +1,8 @@
-﻿namespace Sdk4me.GraphQL
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/input_object/discoveredciinput/">DiscoveredCiInput</see> object.
@@ -8,8 +12,16 @@
         private DiscoveredCiRelationInput? ciRelations;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
+#if NET6_0_OR_GREATER
         private DateOnly? endOfSupportDate;
+#else
+        private DateTime? endOfSupportDate;
+#endif
+#if NET6_0_OR_GREATER
         private DateOnly? inUseSince;
+#else
+        private DateTime? inUseSince;
+#endif
         private string? label;
         private DateTime? lastSeenAt;
         private string? location;
@@ -28,7 +40,11 @@
         private CiStatus? status;
         private string? systemID;
         private List<string>? userIds;
+#if NET6_0_OR_GREATER
         private DateOnly? warrantyExpiryDate;
+#else
+        private DateTime? warrantyExpiryDate;
+#endif
 
         /// <summary>
         /// Relations to other configuration items.
@@ -64,7 +80,11 @@
         /// The date at which the support for this configuration item ends.
         /// </summary>
         [JsonProperty("endOfSupportDate")]
+#if NET6_0_OR_GREATER
         public DateOnly? EndOfSupportDate
+#else
+        public DateTime? EndOfSupportDate
+#endif
         {
             get => endOfSupportDate;
             set => endOfSupportDate = Set("endOfSupportDate", value);
@@ -74,7 +94,11 @@
         /// The date on which the expense for the configuration item (CI) was incurred or, if the CI is depreciated over time, the date on which the depreciation was started. This is typically the invoice date.
         /// </summary>
         [JsonProperty("inUseSince")]
+#if NET6_0_OR_GREATER
         public DateOnly? InUseSince
+#else
+        public DateTime? InUseSince
+#endif
         {
             get => inUseSince;
             set => inUseSince = Set("inUseSince", value);
@@ -265,7 +289,11 @@
         /// The date through which the warranty coverage for the configuration item is valid. The warranty expires at the end of this day.
         /// </summary>
         [JsonProperty("warrantyExpiryDate")]
+#if NET6_0_OR_GREATER
         public DateOnly? WarrantyExpiryDate
+#else
+        public DateTime? WarrantyExpiryDate
+#endif
         {
             get => warrantyExpiryDate;
             set => warrantyExpiryDate = Set("warrantyExpiryDate", value);

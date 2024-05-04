@@ -1,4 +1,8 @@
-﻿namespace Sdk4me.GraphQL
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// Represent errors that occur during 4me execution.

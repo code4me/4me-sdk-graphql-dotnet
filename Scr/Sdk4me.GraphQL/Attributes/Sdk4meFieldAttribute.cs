@@ -1,4 +1,6 @@
-﻿namespace Sdk4me.GraphQL
+﻿using System;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// Instruct the <see cref="Sdk4meClient"/> to use this as a default property.

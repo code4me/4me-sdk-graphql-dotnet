@@ -1,4 +1,6 @@
-﻿namespace Sdk4me.GraphQL
+﻿using System;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// Root connection for retrieving CustomCollectionElement records.

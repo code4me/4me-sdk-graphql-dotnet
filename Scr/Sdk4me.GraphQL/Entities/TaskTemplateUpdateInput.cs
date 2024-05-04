@@ -1,4 +1,7 @@
-﻿namespace Sdk4me.GraphQL
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/input_object/tasktemplateupdateinput/">TaskTemplateUpdateInput</see> object.

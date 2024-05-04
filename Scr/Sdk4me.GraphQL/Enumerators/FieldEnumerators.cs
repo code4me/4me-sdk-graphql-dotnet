@@ -1,4 +1,6 @@
-﻿namespace Sdk4me.GraphQL
+﻿using System.Runtime.Serialization;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// The <see cref="Account">Account</see> fields.

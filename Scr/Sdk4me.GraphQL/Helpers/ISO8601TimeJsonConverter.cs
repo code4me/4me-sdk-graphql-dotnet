@@ -1,4 +1,7 @@
-﻿namespace Sdk4me.GraphQL
+﻿using Newtonsoft.Json;
+using System;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// An 4me GraphQL ISO8601Time <see cref="JsonConverter"/>.

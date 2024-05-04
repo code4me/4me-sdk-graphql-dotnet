@@ -1,4 +1,8 @@
-﻿namespace Sdk4me.GraphQL
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/contract/">Contract</see> object.
@@ -73,7 +77,11 @@
         /// The date through which the agreement will be active. The agreement expires at the end of this day if it is not renewed before then. When the agreement has expired, its status will automatically be set to <c>expired</c>.
         /// </summary>
         [JsonProperty("expiryDate")]
+#if NET6_0_OR_GREATER
         public DateOnly? ExpiryDate { get; internal set; }
+#else
+        public DateTime? ExpiryDate { get; internal set; }
+#endif
 
         [JsonProperty("invoices")]
         internal NodeCollection<Invoice>? InvoicesCollection { get; set; }
@@ -100,7 +108,11 @@
         /// The last day on which the service provider organization can still be contacted to terminate the agreement to ensure that it expires on the intended expiry date. The notice date field is left empty, and the expiry date field is filled out, when the agreement is to expire on a specific date and no notice needs to be given to terminate it.
         /// </summary>
         [JsonProperty("noticeDate")]
+#if NET6_0_OR_GREATER
         public DateOnly? NoticeDate { get; internal set; }
+#else
+        public DateTime? NoticeDate { get; internal set; }
+#endif
 
         /// <summary>
         /// Any additional information about the contract that might prove useful.
@@ -135,7 +147,11 @@
         /// The first day during which the agreement is active.
         /// </summary>
         [JsonProperty("startDate")]
+#if NET6_0_OR_GREATER
         public DateOnly? StartDate { get; internal set; }
+#else
+        public DateTime? StartDate { get; internal set; }
+#endif
 
         /// <summary>
         /// The current status of the agreement.

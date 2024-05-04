@@ -1,4 +1,8 @@
-﻿namespace Sdk4me.GraphQL
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.Immutable;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// The definition to generate a 4me GraphQL query.

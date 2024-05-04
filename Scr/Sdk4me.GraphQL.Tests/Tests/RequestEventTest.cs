@@ -1,4 +1,6 @@
-﻿namespace Sdk4me.GraphQL.Tests
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+namespace Sdk4me.GraphQL.Tests
 {
     [TestClass]
     public class RequestEventTest
@@ -35,7 +37,8 @@
                 .Team(12);
             Request secondRequest = client.CreateEvent(requestCreate).Result;
             Assert.IsNotNull(request);
-            Assert.IsTrue(!string.IsNullOrEmpty(request.RequestId));
+            Assert.IsNotNull(request.RequestId);
+            Assert.IsTrue(request.RequestId != string.Empty);
             Assert.IsTrue(request.GetIdentifier() > 0);
 
             Assert.IsTrue(request.RequestId.Equals(secondRequest.RequestId));

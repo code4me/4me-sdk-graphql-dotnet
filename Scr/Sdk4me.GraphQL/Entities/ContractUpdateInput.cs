@@ -1,4 +1,8 @@
-﻿namespace Sdk4me.GraphQL
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/input_object/contractupdateinput/">ContractUpdateInput</see> object.
@@ -12,15 +16,27 @@
         private string? customerRepresentativeId;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
+#if NET6_0_OR_GREATER
         private DateOnly? expiryDate;
+#else
+        private DateTime? expiryDate;
+#endif
         private string? id;
         private string? name;
+#if NET6_0_OR_GREATER
         private DateOnly? noticeDate;
+#else
+        private DateTime? noticeDate;
+#endif
         private string? remarks;
         private List<AttachmentInput>? remarksAttachments;
         private string? source;
         private string? sourceID;
+#if NET6_0_OR_GREATER
         private DateOnly? startDate;
+#else
+        private DateTime? startDate;
+#endif
         private AgreementStatus? status;
         private string? supplierContactId;
         private string? supplierId;
@@ -104,7 +120,11 @@
         /// <br>As long as notice still needs to be given to terminate the contract, the <c>expiryDate</c> field is to remain empty.</br>
         /// </summary>
         [JsonProperty("expiryDate")]
+#if NET6_0_OR_GREATER
         public DateOnly? ExpiryDate
+#else
+        public DateTime? ExpiryDate
+#endif
         {
             get => expiryDate;
             set => expiryDate = Set("expiryDate", value);
@@ -141,7 +161,11 @@
         /// <br>As long as notice still needs to be given to terminate the contract, the <c>expiryDate</c> field is to remain empty.</br>
         /// </summary>
         [JsonProperty("noticeDate")]
+#if NET6_0_OR_GREATER
         public DateOnly? NoticeDate
+#else
+        public DateTime? NoticeDate
+#endif
         {
             get => noticeDate;
             set => noticeDate = Set("noticeDate", value);
@@ -191,7 +215,11 @@
         /// The first day during which the contract is active.
         /// </summary>
         [JsonProperty("startDate")]
+#if NET6_0_OR_GREATER
         public DateOnly? StartDate
+#else
+        public DateTime? StartDate
+#endif
         {
             get => startDate;
             set => startDate = Set("startDate", value);

@@ -1,4 +1,8 @@
-﻿namespace Sdk4me.GraphQL
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/configurationitem/">ConfigurationItem</see> object.
@@ -72,7 +76,11 @@
         /// The date at which the support for this configuration item ends.
         /// </summary>
         [JsonProperty("endOfSupportDate")]
+#if NET6_0_OR_GREATER
         public DateOnly? EndOfSupportDate { get; internal set; }
+#else
+        public DateTime? EndOfSupportDate { get; internal set; }
+#endif
 
         /// <summary>
         /// The internal organization which budget is used to pay for the configuration item. If the CI is leased or rented, the organization that pays the lease or rent is selected in this field. When creating a new CI and a value is not specified for this field, it is set to the financial owner of the CI's product.
@@ -84,7 +92,11 @@
         /// The date on which the expense for the configuration item (CI) was incurred or, if the CI is depreciated over time, the date on which the depreciation was started. This is typically the invoice date.
         /// </summary>
         [JsonProperty("inUseSince")]
+#if NET6_0_OR_GREATER
         public DateOnly? InUseSince { get; internal set; }
+#else
+        public DateTime? InUseSince { get; internal set; }
+#endif
 
         [JsonProperty("invoices")]
         internal NodeCollection<Invoice>? InvoicesCollection { get; set; }
@@ -124,7 +136,11 @@
         /// The date through which the temporary software license certificate is valid. The license certificate expires at the end of this day.
         /// </summary>
         [JsonProperty("licenseExpiryDate")]
+#if NET6_0_OR_GREATER
         public DateOnly? LicenseExpiryDate { get; internal set; }
+#else
+        public DateTime? LicenseExpiryDate { get; internal set; }
+#endif
 
         /// <summary>
         /// The type of license that the license certificate covers.
@@ -341,7 +357,11 @@
         /// The date through which the warranty coverage for the configuration item is valid. The warranty expires at the end of this day.
         /// </summary>
         [JsonProperty("warrantyExpiryDate")]
+#if NET6_0_OR_GREATER
         public DateOnly? WarrantyExpiryDate { get; internal set; }
+#else
+        public DateTime? WarrantyExpiryDate { get; internal set; }
+#endif
 
         /// <summary>
         /// The person who will be responsible for coordinating the workflows that will be generated automatically in accordance with the recurrence schedule.

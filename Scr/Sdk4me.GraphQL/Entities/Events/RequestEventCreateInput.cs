@@ -1,4 +1,7 @@
-﻿using Newtonsoft.Json.Converters;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System;
+using System.Collections.Generic;
 
 namespace Sdk4me.GraphQL
 {
@@ -79,7 +82,7 @@ namespace Sdk4me.GraphQL
             {
                 AddToRequest("ci_id", configurationItem.GetIdentifier());
             }
-            else if (!string.IsNullOrEmpty(configurationItem.Source) && !string.IsNullOrEmpty(configurationItem.SourceID))
+            else if (configurationItem.Source != null && configurationItem.Source != string.Empty && configurationItem.SourceID != null && configurationItem.SourceID != string.Empty)
             {
                 AddToRequest("ci_source", configurationItem.Source);
                 AddToRequest("ci_sourceID", configurationItem.SourceID);
@@ -195,7 +198,7 @@ namespace Sdk4me.GraphQL
             {
                 AddToRequest("member_id", person.GetIdentifier());
             }
-            else if (!string.IsNullOrEmpty(person.PrimaryEmail))
+            else if (person.PrimaryEmail != null && person.PrimaryEmail != string.Empty)
             {
                 AddToRequest("member", person.PrimaryEmail);
             }
@@ -283,7 +286,7 @@ namespace Sdk4me.GraphQL
             {
                 AddToRequest("requested_by_id", person.GetIdentifier());
             }
-            else if (!string.IsNullOrEmpty(person.PrimaryEmail))
+            else if (person.PrimaryEmail != null && person.PrimaryEmail != string.Empty)
             {
                 AddToRequest("requested_by", person.PrimaryEmail);
             }
@@ -329,7 +332,7 @@ namespace Sdk4me.GraphQL
             {
                 AddToRequest("requested_for_id", person.GetIdentifier());
             }
-            else if (!string.IsNullOrEmpty(person.PrimaryEmail))
+            else if (person.PrimaryEmail != null && person.PrimaryEmail != string.Empty)
             {
                 AddToRequest("requested_for", person.PrimaryEmail);
             }
@@ -375,7 +378,7 @@ namespace Sdk4me.GraphQL
             {
                 AddToRequest("service_instance_id", serviceInstance.GetIdentifier());
             }
-            else if (!string.IsNullOrEmpty(serviceInstance.Name))
+            else if (serviceInstance.Name != null && serviceInstance.Name != string.Empty)
             {
                 AddToRequest("service_instance", serviceInstance.Name);
             }
@@ -467,7 +470,7 @@ namespace Sdk4me.GraphQL
             {
                 AddToRequest("supplier_id", supplier.GetIdentifier());
             }
-            else if (!string.IsNullOrEmpty(supplier.Name))
+            else if (supplier.Name != null && supplier.Name != string.Empty)
             {
                 AddToRequest("supplier", supplier.Name);
             }
@@ -538,7 +541,7 @@ namespace Sdk4me.GraphQL
             {
                 AddToRequest("team_id", team.GetIdentifier());
             }
-            else if (!string.IsNullOrEmpty(team.Name))
+            else if (team.Name != null && team.Name != string.Empty)
             {
                 AddToRequest("team", team.Name);
             }

@@ -1,24 +1,44 @@
-﻿namespace Sdk4me.GraphQL
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/input_object/invoiceupdateinput/">InvoiceUpdateInput</see> object.
     /// </summary>
     public class InvoiceUpdateInput : PropertyChangeSet
     {
+#if NET6_0_OR_GREATER
         private DateOnly? amortizationEnd;
+#else
+        private DateTime? amortizationEnd;
+#endif
+#if NET6_0_OR_GREATER
         private DateOnly? amortizationStart;
+#else
+        private DateTime? amortizationStart;
+#endif
         private bool? amortize;
         private List<string>? ciIds;
         private string? clientMutationId;
         private string? contractId;
         private string? currency;
         private ProductDepreciationMethod? depreciationMethod;
+#if NET6_0_OR_GREATER
         private DateOnly? depreciationStart;
+#else
+        private DateTime? depreciationStart;
+#endif
         private string? description;
         private string? financialID;
         private string? flsaId;
         private string? id;
+#if NET6_0_OR_GREATER
         private DateOnly? invoiceDate;
+#else
+        private DateTime? invoiceDate;
+#endif
         private string? invoiceNr;
         private string? poNr;
         private string? projectId;
@@ -41,7 +61,11 @@
         /// The end date of the period over which the invoice is to be amortized.
         /// </summary>
         [JsonProperty("amortizationEnd")]
+#if NET6_0_OR_GREATER
         public DateOnly? AmortizationEnd
+#else
+        public DateTime? AmortizationEnd
+#endif
         {
             get => amortizationEnd;
             set => amortizationEnd = Set("amortizationEnd", value);
@@ -51,7 +75,11 @@
         /// The start date of the period over which the invoice is to be amortized.
         /// </summary>
         [JsonProperty("amortizationStart")]
+#if NET6_0_OR_GREATER
         public DateOnly? AmortizationStart
+#else
+        public DateTime? AmortizationStart
+#endif
         {
             get => amortizationStart;
             set => amortizationStart = Set("amortizationStart", value);
@@ -128,7 +156,11 @@
         /// The date on which to start depreciating the asset.
         /// </summary>
         [JsonProperty("depreciationStart")]
+#if NET6_0_OR_GREATER
         public DateOnly? DepreciationStart
+#else
+        public DateTime? DepreciationStart
+#endif
         {
             get => depreciationStart;
             set => depreciationStart = Set("depreciationStart", value);
@@ -178,7 +210,11 @@
         /// The date on which the invoice was sent out by the supplier.
         /// </summary>
         [JsonProperty("invoiceDate")]
+#if NET6_0_OR_GREATER
         public DateOnly? InvoiceDate
+#else
+        public DateTime? InvoiceDate
+#endif
         {
             get => invoiceDate;
             set => invoiceDate = Set("invoiceDate", value);

@@ -1,4 +1,6 @@
-﻿namespace Sdk4me.GraphQL
+﻿using System;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// Represent errors that occur in the 4me query builder.

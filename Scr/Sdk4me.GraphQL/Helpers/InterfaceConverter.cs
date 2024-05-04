@@ -1,4 +1,9 @@
-﻿namespace Sdk4me.GraphQL
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// An 4me GraphQL JSON interface converter.

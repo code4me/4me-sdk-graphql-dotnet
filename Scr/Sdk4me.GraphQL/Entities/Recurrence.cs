@@ -1,4 +1,7 @@
-﻿using System.Diagnostics;
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Sdk4me.GraphQL
 {
@@ -86,7 +89,11 @@ namespace Sdk4me.GraphQL
         /// The date at which to end the Recurrence.
         /// </summary>
         [JsonProperty("endDate"), Sdk4meField(true)]
+#if NET6_0_OR_GREATER
         public DateOnly? EndDate { get; internal set; }
+#else
+        public DateTime? EndDate { get; internal set; }
+#endif
 
         /// <summary>
         /// The frequency of the recurrency.
@@ -146,7 +153,11 @@ namespace Sdk4me.GraphQL
         /// The date at which to start the Recurrence.
         /// </summary>
         [JsonProperty("startDate"), Sdk4meField(true)]
+#if NET6_0_OR_GREATER
         public DateOnly? StartDate { get; internal set; }
+#else
+        public DateTime? StartDate { get; internal set; }
+#endif
 
         /// <summary>
         /// The time of day to start the scheduled occurrence.

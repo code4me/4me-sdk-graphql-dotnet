@@ -1,5 +1,5 @@
 ﻿# .NET SDK for 4me GraphQL
-A .NET client for accessing the [4me GraphQL API](https://developer.4me.com/graphql/).
+A .NET and .NET Framework client for accessing the [4me GraphQL API](https://developer.4me.com/graphql/).
 
 ## Licensing
 The SDK uses the [Newtonsoft.Json framework](https://github.com/JamesNK/Newtonsoft.Json) NuGet Package, which is a high-performance JSON framework for .NET and available under [MIT licensing](https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md).

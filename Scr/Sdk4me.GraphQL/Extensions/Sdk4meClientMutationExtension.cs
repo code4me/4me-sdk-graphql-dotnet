@@ -1,4 +1,7 @@
-﻿namespace Sdk4me.GraphQL
+﻿using System.Linq;
+using System.Threading.Tasks;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// All GraphQL mutation operations.

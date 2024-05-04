@@ -1,4 +1,7 @@
-﻿namespace Sdk4me.GraphQL
+﻿using Newtonsoft.Json;
+using System;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// A Sdk4me log message.

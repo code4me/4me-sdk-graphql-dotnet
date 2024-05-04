@@ -1,4 +1,6 @@
-﻿namespace Sdk4me.GraphQL
+﻿using System;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// Instruct the <see cref="Sdk4meClient"/> to use ignore the <see cref="Node.ID"/> property.
@@ -10,7 +12,6 @@
         /// Returns true when the query should exclude the default identifier property.
         /// </summary>
         public bool IgnoreIdentifier { get; set; } = false;
-
 
         /// <summary>
         /// Create a new instance of the <see cref="Sdk4meFieldAttribute"/> class.

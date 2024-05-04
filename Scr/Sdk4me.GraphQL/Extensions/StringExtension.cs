@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 
 namespace Sdk4me.GraphQL
 {
@@ -25,7 +26,6 @@ namespace Sdk4me.GraphQL
             return data.Length == 3 ? data[1] : string.Empty;
         }
 
-
         /// <summary>
         /// Extract the REST API numerical identifier from a GraphQL identifier.
         /// </summary>
@@ -45,7 +45,8 @@ namespace Sdk4me.GraphQL
                 _ => throw new Sdk4meException("Unsupported identifier value."),
             };
 
-            if (long.TryParse(id.Split('/')[^1], out long result))
+            string[] ids = id.Split('/');
+            if (long.TryParse(ids[ids.Length - 1], out long result))
                 return result;
 
             return 0;

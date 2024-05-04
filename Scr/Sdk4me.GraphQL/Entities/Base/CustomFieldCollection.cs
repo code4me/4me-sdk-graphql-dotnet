@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using Newtonsoft.Json.Linq;
+using System.Collections.ObjectModel;
 
 namespace Sdk4me.GraphQL
 {
@@ -44,10 +45,10 @@ namespace Sdk4me.GraphQL
         /// </param>
         public void AddOrUpdate(string ID, JToken? value)
         {
-            if (TryGetValue(ID, out CustomField? item))
-                item.Value = value;
-            else
+            if (!Contains(ID))
                 Add(new CustomField() { ID = ID, Value = value });
+            else
+                this[ID].Value = value;
         }
     }
 }

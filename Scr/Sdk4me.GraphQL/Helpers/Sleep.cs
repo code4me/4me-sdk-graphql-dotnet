@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Threading;
 
 namespace Sdk4me.GraphQL
 {

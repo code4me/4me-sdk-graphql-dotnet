@@ -1,4 +1,7 @@
-﻿namespace Sdk4me.GraphQL
+﻿using System;
+using System.Runtime.Serialization;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// The default view.

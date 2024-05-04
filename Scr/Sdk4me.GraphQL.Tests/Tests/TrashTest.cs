@@ -1,4 +1,8 @@
-﻿namespace Sdk4me.GraphQL.Tests
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Linq;
+
+namespace Sdk4me.GraphQL.Tests
 {
     [TestClass]
     public class TrashTest

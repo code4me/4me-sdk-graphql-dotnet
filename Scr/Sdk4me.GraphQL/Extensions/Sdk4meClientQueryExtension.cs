@@ -1,4 +1,6 @@
-﻿namespace Sdk4me.GraphQL
+﻿using System.Threading.Tasks;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// All GraphQL query operations.

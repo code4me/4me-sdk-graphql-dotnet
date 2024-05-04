@@ -1,4 +1,8 @@
-﻿namespace Sdk4me.GraphQL
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/invoice/">Invoice</see> object.
@@ -15,13 +19,21 @@
         /// The end date of the period over which the invoice is to be amortized.
         /// </summary>
         [JsonProperty("amortizationEnd")]
+#if NET6_0_OR_GREATER
         public DateOnly? AmortizationEnd { get; internal set; }
+#else
+        public DateTime? AmortizationEnd { get; internal set; }
+#endif
 
         /// <summary>
         /// The start date of the period over which the invoice is to be amortized.
         /// </summary>
         [JsonProperty("amortizationStart")]
+#if NET6_0_OR_GREATER
         public DateOnly? AmortizationStart { get; internal set; }
+#else
+        public DateTime? AmortizationStart { get; internal set; }
+#endif
 
         /// <summary>
         /// Whether the invoice amount is to be amortized over time.
@@ -81,7 +93,11 @@
         /// The date on which to start depreciating the asset.
         /// </summary>
         [JsonProperty("depreciationStart")]
+#if NET6_0_OR_GREATER
         public DateOnly? DepreciationStart { get; internal set; }
+#else
+        public DateTime? DepreciationStart { get; internal set; }
+#endif
 
         /// <summary>
         /// Short description of what was acquired.
@@ -105,7 +121,11 @@
         /// The date on which the invoice was sent out by the supplier.
         /// </summary>
         [JsonProperty("invoiceDate"), Sdk4meField(true)]
+#if NET6_0_OR_GREATER
         public DateOnly? InvoiceDate { get; internal set; }
+#else
+        public DateTime? InvoiceDate { get; internal set; }
+#endif
 
         /// <summary>
         /// The invoice number that the supplier specified on the invoice.
