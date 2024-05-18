@@ -12,7 +12,7 @@ namespace Sdk4me.GraphQL
         private string? clientMutationId;
         private List<DiscoveredProductCategoryInput>? physicalAssets;
         private DiscoveredReferenceStrategiesInput? referenceStrategies;
-        private string? source;
+        private string source;
         private string? supportTeam;
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace Sdk4me.GraphQL
         /// Identifier for the client application submitting the upload.
         /// </summary>
         [JsonProperty("source")]
-        public string? Source
+        public string Source
         {
             get => source;
             set => source = Set("source", value);
@@ -73,6 +73,15 @@ namespace Sdk4me.GraphQL
         {
             get => supportTeam;
             set => supportTeam = Set("supportTeam", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DiscoveredConfigurationItemsInput"/> class.
+        /// </summary>
+        /// <param name="source">Identifier for the client application submitting the upload.</param>
+        public DiscoveredConfigurationItemsInput(string source)
+        {
+            this.source = Set("source", source);
         }
     }
 }

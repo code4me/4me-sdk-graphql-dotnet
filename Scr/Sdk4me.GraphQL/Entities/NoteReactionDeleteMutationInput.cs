@@ -8,7 +8,7 @@ namespace Sdk4me.GraphQL
     public class NoteReactionDeleteMutationInput : PropertyChangeSet
     {
         private string? clientMutationId;
-        private string? id;
+        private string id;
 
         /// <summary>
         /// A unique identifier for the client performing the mutation.
@@ -24,10 +24,19 @@ namespace Sdk4me.GraphQL
         /// The node ID of the record to delete.
         /// </summary>
         [JsonProperty("id")]
-        public string? ID
+        public string ID
         {
             get => id;
             set => id = Set("id", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NoteReactionDeleteMutationInput"/> class.
+        /// </summary>
+        /// <param name="id">The node ID of the record to delete.</param>
+        public NoteReactionDeleteMutationInput(string id)
+        {
+            this.id = Set("id", id);
         }
     }
 }

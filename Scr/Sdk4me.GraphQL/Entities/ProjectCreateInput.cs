@@ -14,26 +14,26 @@ namespace Sdk4me.GraphQL
         private ProjectCompletionReason? completionReason;
         private decimal? costOfEffort;
         private decimal? costOfPurchases;
-        private string? customerId;
+        private string customerId;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
         private long? effort;
-        private ProjectJustification? justification;
-        private string? managerId;
+        private ProjectJustification justification;
+        private string managerId;
         private List<ProjectPhaseInput>? newPhases;
         private string? note;
         private List<string>? problemIds;
         private string? program;
         private List<string>? requestIds;
         private string? riskLevel;
-        private string? serviceId;
+        private string serviceId;
         private string? source;
         private string? sourceID;
         private ProjectStatus? status;
-        private string? subject;
+        private string subject;
         private string? timeZone;
         private string? uiExtensionId;
-        private decimal? datavalue;
+        private decimal? value;
         private List<string>? workflowIds;
         private string? workHoursId;
 
@@ -101,7 +101,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the organization for which the project is to be implemented.
         /// </summary>
         [JsonProperty("customerId")]
-        public string? CustomerId
+        public string CustomerId
         {
             get => customerId;
             set => customerId = Set("customerId", value);
@@ -141,7 +141,7 @@ namespace Sdk4me.GraphQL
         /// The reason why the project should be considered for implementation.
         /// </summary>
         [JsonProperty("justification")]
-        public ProjectJustification? Justification
+        public ProjectJustification Justification
         {
             get => justification;
             set => justification = Set("justification", value);
@@ -151,7 +151,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the person who is responsible for coordinating the implementation of the project.
         /// </summary>
         [JsonProperty("managerId")]
-        public string? ManagerId
+        public string ManagerId
         {
             get => managerId;
             set => managerId = Set("managerId", value);
@@ -221,7 +221,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the service for which the project will be implemented.
         /// </summary>
         [JsonProperty("serviceId")]
-        public string? ServiceId
+        public string ServiceId
         {
             get => serviceId;
             set => serviceId = Set("serviceId", value);
@@ -261,7 +261,7 @@ namespace Sdk4me.GraphQL
         /// A short description of the objective of the project.
         /// </summary>
         [JsonProperty("subject")]
-        public string? Subject
+        public string Subject
         {
             get => subject;
             set => subject = Set("subject", value);
@@ -294,8 +294,8 @@ namespace Sdk4me.GraphQL
         [JsonProperty("value")]
         public decimal? Value
         {
-            get => datavalue;
-            set => datavalue = Set("value", value);
+            get => value;
+            set => this.value = Set("value", value);
         }
 
         /// <summary>
@@ -316,6 +316,23 @@ namespace Sdk4me.GraphQL
         {
             get => workHoursId;
             set => workHoursId = Set("workHoursId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectCreateInput"/> class.
+        /// </summary>
+        /// <param name="customerId">Identifier of the organization for which the project is to be implemented.</param>
+        /// <param name="justification">The reason why the project should be considered for implementation.</param>
+        /// <param name="managerId">Identifier of the person who is responsible for coordinating the implementation of the project.</param>
+        /// <param name="serviceId">Identifier of the service for which the project will be implemented.</param>
+        /// <param name="subject">A short description of the objective of the project.</param>
+        public ProjectCreateInput(string customerId, ProjectJustification justification, string managerId, string serviceId, string subject)
+        {
+            this.customerId = Set("customerId", customerId);
+            this.justification = Set("justification", justification);
+            this.managerId = Set("managerId", managerId);
+            this.serviceId = Set("serviceId", serviceId);
+            this.subject = Set("subject", subject);
         }
     }
 }

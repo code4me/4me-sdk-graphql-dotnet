@@ -12,7 +12,7 @@ namespace Sdk4me.GraphQL
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
         private bool? disabled;
-        private string? name;
+        private string name;
         private string? searchPhrase;
         private string? source;
         private string? sourceID;
@@ -61,7 +61,7 @@ namespace Sdk4me.GraphQL
         /// The name of the SLA coverage group.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -95,6 +95,15 @@ namespace Sdk4me.GraphQL
         {
             get => sourceID;
             set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SlaCoverageGroupCreateInput"/> class.
+        /// </summary>
+        /// <param name="name">The name of the SLA coverage group.</param>
+        public SlaCoverageGroupCreateInput(string name)
+        {
+            this.name = Set("name", name);
         }
     }
 }

@@ -9,15 +9,15 @@ namespace Sdk4me.GraphQL
     public class AppOfferingAutomationRuleCreateInput : PropertyChangeSet
     {
         private List<AutomationRuleActionInput>? actions;
-        private string? appOfferingId;
+        private string appOfferingId;
         private string? clientMutationId;
-        private string? condition;
+        private string condition;
         private string? description;
         private List<AutomationRuleExpressionInput>? expressions;
         private string? generic;
-        private string? name;
+        private string name;
         private long? position;
-        private string? trigger;
+        private string trigger;
 
         /// <summary>
         /// The Actions field is used to define actions that should be executed when the condition of the automation rule is met.
@@ -33,7 +33,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the app offering the rule belongs to.
         /// </summary>
         [JsonProperty("appOfferingId")]
-        public string? AppOfferingId
+        public string AppOfferingId
         {
             get => appOfferingId;
             set => appOfferingId = Set("appOfferingId", value);
@@ -53,7 +53,7 @@ namespace Sdk4me.GraphQL
         /// The Condition field is used to define the condition that needs to be met in order for the update action(s) of the rule to be performed. For example: <c>is_assigned and !badge</c>.
         /// </summary>
         [JsonProperty("condition")]
-        public string? Condition
+        public string Condition
         {
             get => condition;
             set => condition = Set("condition", value);
@@ -97,7 +97,7 @@ namespace Sdk4me.GraphQL
         /// The name of the automation rule.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -117,10 +117,25 @@ namespace Sdk4me.GraphQL
         /// The Trigger field is used to specify when the automation rule is to be triggered, for example <c>on status update</c> or <c>on note added</c>.
         /// </summary>
         [JsonProperty("trigger")]
-        public string? Trigger
+        public string Trigger
         {
             get => trigger;
             set => trigger = Set("trigger", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppOfferingAutomationRuleCreateInput"/> class.
+        /// </summary>
+        /// <param name="appOfferingId">Identifier of the app offering the rule belongs to.</param>
+        /// <param name="condition">The Condition field is used to define the condition that needs to be met in order for the update action(s) of the rule to be performed. For example: <c>is_assigned and !badge</c>.</param>
+        /// <param name="name">The name of the automation rule.</param>
+        /// <param name="trigger">The Trigger field is used to specify when the automation rule is to be triggered, for example <c>on status update</c> or <c>on note added</c>.</param>
+        public AppOfferingAutomationRuleCreateInput(string appOfferingId, string condition, string name, string trigger)
+        {
+            this.appOfferingId = Set("appOfferingId", appOfferingId);
+            this.condition = Set("condition", condition);
+            this.name = Set("name", name);
+            this.trigger = Set("trigger", trigger);
         }
     }
 }

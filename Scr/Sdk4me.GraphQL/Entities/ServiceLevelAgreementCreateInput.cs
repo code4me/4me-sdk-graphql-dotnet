@@ -14,14 +14,14 @@ namespace Sdk4me.GraphQL
         private string? clientMutationId;
         private SlaCoverage? coverage;
         private string? customerAccountId;
-        private string? customerId;
+        private string customerId;
         private List<string>? customerRepresentativeIds;
 #if NET6_0_OR_GREATER
         private DateOnly? expiryDate;
 #else
         private DateTime? expiryDate;
 #endif
-        private string? name;
+        private string name;
         private List<EffortClassRateIDInput>? newEffortClassRateIDs;
         private List<StandardServiceRequestActivityIDInput>? newStandardServiceRequestActivityIDs;
 #if NET6_0_OR_GREATER
@@ -35,7 +35,7 @@ namespace Sdk4me.GraphQL
         private List<AttachmentInput>? remarksAttachments;
         private string? serviceInstanceId;
         private string? serviceLevelManagerId;
-        private string? serviceOfferingId;
+        private string serviceOfferingId;
         private List<string>? siteIds;
         private List<string>? skillPoolIds;
         private string? source;
@@ -102,7 +102,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the organization that pays for the service level agreement.
         /// </summary>
         [JsonProperty("customerId")]
-        public string? CustomerId
+        public string CustomerId
         {
             get => customerId;
             set => customerId = Set("customerId", value);
@@ -136,7 +136,7 @@ namespace Sdk4me.GraphQL
         /// The name of the service level agreement.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -240,7 +240,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the service offering that specifies the conditions that apply to the service level agreement.
         /// </summary>
         [JsonProperty("serviceOfferingId")]
-        public string? ServiceOfferingId
+        public string ServiceOfferingId
         {
             get => serviceOfferingId;
             set => serviceOfferingId = Set("serviceOfferingId", value);
@@ -318,6 +318,19 @@ namespace Sdk4me.GraphQL
         {
             get => useKnowledgeFromServiceProvider;
             set => useKnowledgeFromServiceProvider = Set("useKnowledgeFromServiceProvider", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ServiceLevelAgreementCreateInput"/> class.
+        /// </summary>
+        /// <param name="customerId">Identifier of the organization that pays for the service level agreement.</param>
+        /// <param name="name">The name of the service level agreement.</param>
+        /// <param name="serviceOfferingId">Identifier of the service offering that specifies the conditions that apply to the service level agreement.</param>
+        public ServiceLevelAgreementCreateInput(string customerId, string name, string serviceOfferingId)
+        {
+            this.customerId = Set("customerId", customerId);
+            this.name = Set("name", name);
+            this.serviceOfferingId = Set("serviceOfferingId", serviceOfferingId);
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Sdk4me.GraphQL
         private bool? disabled;
         private string? effortClassId;
         private bool? endUsers;
-        private string? id;
+        private string id;
         private RequestImpact? impact;
         private string? instructions;
         private string? keywords;
@@ -156,7 +156,7 @@ namespace Sdk4me.GraphQL
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
-        public string? ID
+        public string ID
         {
             get => id;
             set => id = Set("id", value);
@@ -371,6 +371,15 @@ namespace Sdk4me.GraphQL
         {
             get => workflowTemplateId;
             set => workflowTemplateId = Set("workflowTemplateId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RequestTemplateUpdateInput"/> class.
+        /// </summary>
+        /// <param name="id">The node ID of the record to update.</param>
+        public RequestTemplateUpdateInput(string id)
+        {
+            this.id = Set("id", id);
         }
     }
 }

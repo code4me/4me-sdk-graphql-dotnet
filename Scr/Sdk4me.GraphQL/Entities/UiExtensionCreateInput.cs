@@ -9,7 +9,7 @@ namespace Sdk4me.GraphQL
     public class UiExtensionCreateInput : PropertyChangeSet
     {
         private bool? activate;
-        private UiExtensionCategory? category;
+        private UiExtensionCategory category;
         private string? clientMutationId;
         private string? css;
         private string? description;
@@ -17,7 +17,7 @@ namespace Sdk4me.GraphQL
         private bool? disabled;
         private string? html;
         private string? javascript;
-        private string? name;
+        private string name;
         private string? source;
         private string? sourceID;
         private string? title;
@@ -36,7 +36,7 @@ namespace Sdk4me.GraphQL
         /// The type of record in which the UI extension can be selected.
         /// </summary>
         [JsonProperty("category")]
-        public UiExtensionCategory? Category
+        public UiExtensionCategory Category
         {
             get => category;
             set => category = Set("category", value);
@@ -116,7 +116,7 @@ namespace Sdk4me.GraphQL
         /// The name of the UI extension.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -150,6 +150,17 @@ namespace Sdk4me.GraphQL
         {
             get => title;
             set => title = Set("title", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UiExtensionCreateInput"/> class.
+        /// </summary>
+        /// <param name="category">The type of record in which the UI extension can be selected.</param>
+        /// <param name="name">The name of the UI extension.</param>
+        public UiExtensionCreateInput(UiExtensionCategory category, string name)
+        {
+            this.category = Set("category", category);
+            this.name = Set("name", name);
         }
     }
 }

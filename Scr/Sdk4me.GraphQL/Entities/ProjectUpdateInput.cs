@@ -18,7 +18,7 @@ namespace Sdk4me.GraphQL
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
         private long? effort;
-        private string? id;
+        private string id;
         private ProjectJustification? justification;
         private string? managerId;
         private List<ProjectPhaseInput>? newPhases;
@@ -36,7 +36,7 @@ namespace Sdk4me.GraphQL
         private string? templateId;
         private string? timeZone;
         private string? uiExtensionId;
-        private decimal? datavalue;
+        private decimal? value;
         private List<string>? workflowIds;
         private string? workHoursId;
 
@@ -144,7 +144,7 @@ namespace Sdk4me.GraphQL
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
-        public string? ID
+        public string ID
         {
             get => id;
             set => id = Set("id", value);
@@ -327,8 +327,8 @@ namespace Sdk4me.GraphQL
         [JsonProperty("value")]
         public decimal? Value
         {
-            get => datavalue;
-            set => datavalue = Set("value", value);
+            get => value;
+            set => this.value = Set("value", value);
         }
 
         /// <summary>
@@ -349,6 +349,15 @@ namespace Sdk4me.GraphQL
         {
             get => workHoursId;
             set => workHoursId = Set("workHoursId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectUpdateInput"/> class.
+        /// </summary>
+        /// <param name="id">The node ID of the record to update.</param>
+        public ProjectUpdateInput(string id)
+        {
+            this.id = Set("id", id);
         }
     }
 }

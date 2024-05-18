@@ -16,7 +16,7 @@ namespace Sdk4me.GraphQL
         private string? fulfillmentTemplateId;
         private string? fullDescription;
         private long? maxQuantity;
-        private string? name;
+        private string name;
         private string? pictureUri;
         private decimal? price;
         private string? priceCurrency;
@@ -117,7 +117,7 @@ namespace Sdk4me.GraphQL
         /// The display name of the shop article.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -274,6 +274,15 @@ namespace Sdk4me.GraphQL
         {
             get => uiExtensionId;
             set => uiExtensionId = Set("uiExtensionId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ShopArticleCreateInput"/> class.
+        /// </summary>
+        /// <param name="name">The display name of the shop article.</param>
+        public ShopArticleCreateInput(string name)
+        {
+            this.name = Set("name", name);
         }
     }
 }

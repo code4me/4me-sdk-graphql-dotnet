@@ -8,24 +8,24 @@ namespace Sdk4me.GraphQL
     /// </summary>
     public class ScrumWorkspaceCreateInput : PropertyChangeSet
     {
-        private string? agileBoardId;
+        private string agileBoardId;
         private string? clientMutationId;
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
         private bool? disabled;
-        private string? name;
+        private string name;
         private string? pictureUri;
-        private string? productBacklogId;
+        private string productBacklogId;
         private string? source;
         private string? sourceID;
-        private long? sprintLength;
-        private string? teamId;
+        private long sprintLength;
+        private string teamId;
 
         /// <summary>
         /// Identifier of the agile board used to track the progress of this workspace's active sprint.
         /// </summary>
         [JsonProperty("agileBoardId")]
-        public string? AgileBoardId
+        public string AgileBoardId
         {
             get => agileBoardId;
             set => agileBoardId = Set("agileBoardId", value);
@@ -75,7 +75,7 @@ namespace Sdk4me.GraphQL
         /// Name of the scrum workspace.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -95,7 +95,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the product backlog used when planning sprints.
         /// </summary>
         [JsonProperty("productBacklogId")]
-        public string? ProductBacklogId
+        public string ProductBacklogId
         {
             get => productBacklogId;
             set => productBacklogId = Set("productBacklogId", value);
@@ -125,7 +125,7 @@ namespace Sdk4me.GraphQL
         /// Standard length in weeks of new sprints planned in this scrum workspace.
         /// </summary>
         [JsonProperty("sprintLength")]
-        public long? SprintLength
+        public long SprintLength
         {
             get => sprintLength;
             set => sprintLength = Set("sprintLength", value);
@@ -135,10 +135,27 @@ namespace Sdk4me.GraphQL
         /// Identifier of the team planning their work using this scrum workspace.
         /// </summary>
         [JsonProperty("teamId")]
-        public string? TeamId
+        public string TeamId
         {
             get => teamId;
             set => teamId = Set("teamId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ScrumWorkspaceCreateInput"/> class.
+        /// </summary>
+        /// <param name="agileBoardId">Identifier of the agile board used to track the progress of this workspace's active sprint.</param>
+        /// <param name="name">Name of the scrum workspace.</param>
+        /// <param name="productBacklogId">Identifier of the product backlog used when planning sprints.</param>
+        /// <param name="sprintLength">Standard length in weeks of new sprints planned in this scrum workspace.</param>
+        /// <param name="teamId">Identifier of the team planning their work using this scrum workspace.</param>
+        public ScrumWorkspaceCreateInput(string agileBoardId, string name, string productBacklogId, long sprintLength, string teamId)
+        {
+            this.agileBoardId = Set("agileBoardId", agileBoardId);
+            this.name = Set("name", name);
+            this.productBacklogId = Set("productBacklogId", productBacklogId);
+            this.sprintLength = Set("sprintLength", sprintLength);
+            this.teamId = Set("teamId", teamId);
         }
     }
 }

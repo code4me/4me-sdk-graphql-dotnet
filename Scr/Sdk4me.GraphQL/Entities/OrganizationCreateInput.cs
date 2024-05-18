@@ -16,7 +16,7 @@ namespace Sdk4me.GraphQL
         private bool? disabled;
         private string? financialID;
         private string? managerId;
-        private string? name;
+        private string name;
         private List<AddressInput>? newAddresses;
         private List<ContactInput>? newContacts;
         private string? parentId;
@@ -114,7 +114,7 @@ namespace Sdk4me.GraphQL
         /// The full name of the organization.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -243,6 +243,15 @@ namespace Sdk4me.GraphQL
         {
             get => uiExtensionId;
             set => uiExtensionId = Set("uiExtensionId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrganizationCreateInput"/> class.
+        /// </summary>
+        /// <param name="name">The full name of the organization.</param>
+        public OrganizationCreateInput(string name)
+        {
+            this.name = Set("name", name);
         }
     }
 }

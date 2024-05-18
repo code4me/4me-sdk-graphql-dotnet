@@ -23,11 +23,11 @@ namespace Sdk4me.GraphQL
         private List<string>? organizationIds;
         private List<string>? projectIds;
         private List<string>? serviceIds;
-        private string? severity;
+        private string severity;
         private string? source;
         private string? sourceID;
         private RiskStatus? status;
-        private string? subject;
+        private string subject;
         private string? uiExtensionId;
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace Sdk4me.GraphQL
         /// The severity of the risk.
         /// </summary>
         [JsonProperty("severity")]
-        public string? Severity
+        public string Severity
         {
             get => severity;
             set => severity = Set("severity", value);
@@ -178,7 +178,7 @@ namespace Sdk4me.GraphQL
         /// The subject of the risk.
         /// </summary>
         [JsonProperty("subject")]
-        public string? Subject
+        public string Subject
         {
             get => subject;
             set => subject = Set("subject", value);
@@ -192,6 +192,17 @@ namespace Sdk4me.GraphQL
         {
             get => uiExtensionId;
             set => uiExtensionId = Set("uiExtensionId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RiskCreateInput"/> class.
+        /// </summary>
+        /// <param name="severity">The severity of the risk.</param>
+        /// <param name="subject">The subject of the risk.</param>
+        public RiskCreateInput(string severity, string subject)
+        {
+            this.severity = Set("severity", severity);
+            this.subject = Set("subject", subject);
         }
     }
 }

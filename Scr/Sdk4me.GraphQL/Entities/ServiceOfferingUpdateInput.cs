@@ -22,7 +22,7 @@ namespace Sdk4me.GraphQL
         private string? defaultEffortClassId;
         private List<string>? effortClassIds;
         private List<string>? effortClassRatesToDelete;
-        private string? id;
+        private string id;
         private string? limitations;
         private string? name;
         private List<EffortClassRateInput>? newEffortClassRates;
@@ -226,7 +226,7 @@ namespace Sdk4me.GraphQL
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
-        public string? ID
+        public string ID
         {
             get => id;
             set => id = Set("id", value);
@@ -818,6 +818,15 @@ namespace Sdk4me.GraphQL
         {
             get => timeZone;
             set => timeZone = Set("timeZone", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ServiceOfferingUpdateInput"/> class.
+        /// </summary>
+        /// <param name="id">The node ID of the record to update.</param>
+        public ServiceOfferingUpdateInput(string id)
+        {
+            this.id = Set("id", id);
         }
     }
 }

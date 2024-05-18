@@ -10,12 +10,12 @@ namespace Sdk4me.GraphQL
     {
         private string? approvalDelegateId;
         private string? clientMutationId;
-        private DateTime? endAt;
-        private string? personId;
+        private DateTime endAt;
+        private string personId;
         private string? reason;
         private string? source;
         private string? sourceID;
-        private DateTime? startAt;
+        private DateTime startAt;
         private string? timeAllocationId;
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace Sdk4me.GraphQL
         /// End time of the out of office period.
         /// </summary>
         [JsonProperty("endAt")]
-        public DateTime? EndAt
+        public DateTime EndAt
         {
             get => endAt;
             set => endAt = Set("endAt", value);
@@ -52,7 +52,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the person who is out of office.
         /// </summary>
         [JsonProperty("personId")]
-        public string? PersonId
+        public string PersonId
         {
             get => personId;
             set => personId = Set("personId", value);
@@ -92,7 +92,7 @@ namespace Sdk4me.GraphQL
         /// Start time of the out of office period.
         /// </summary>
         [JsonProperty("startAt")]
-        public DateTime? StartAt
+        public DateTime StartAt
         {
             get => startAt;
             set => startAt = Set("startAt", value);
@@ -106,6 +106,19 @@ namespace Sdk4me.GraphQL
         {
             get => timeAllocationId;
             set => timeAllocationId = Set("timeAllocationId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OutOfOfficePeriodCreateInput"/> class.
+        /// </summary>
+        /// <param name="endAt">End time of the out of office period.</param>
+        /// <param name="personId">Identifier of the person who is out of office.</param>
+        /// <param name="startAt">Start time of the out of office period.</param>
+        public OutOfOfficePeriodCreateInput(DateTime endAt, string personId, DateTime startAt)
+        {
+            this.endAt = Set("endAt", endAt);
+            this.personId = Set("personId", personId);
+            this.startAt = Set("startAt", startAt);
         }
     }
 }

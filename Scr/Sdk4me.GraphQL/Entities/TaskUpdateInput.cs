@@ -20,7 +20,7 @@ namespace Sdk4me.GraphQL
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
         private DateTime? finishedAt;
-        private string? id;
+        private string id;
         private TaskImpact? impact;
         private string? instructions;
         private List<AttachmentInput>? instructionsAttachments;
@@ -168,7 +168,7 @@ namespace Sdk4me.GraphQL
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
-        public string? ID
+        public string ID
         {
             get => id;
             set => id = Set("id", value);
@@ -492,6 +492,15 @@ namespace Sdk4me.GraphQL
         {
             get => workHoursAre24x7;
             set => workHoursAre24x7 = Set("workHoursAre24x7", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TaskUpdateInput"/> class.
+        /// </summary>
+        /// <param name="id">The node ID of the record to update.</param>
+        public TaskUpdateInput(string id)
+        {
+            this.id = Set("id", id);
         }
     }
 }

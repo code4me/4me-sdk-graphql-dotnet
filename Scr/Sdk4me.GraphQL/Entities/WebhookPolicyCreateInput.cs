@@ -9,7 +9,7 @@ namespace Sdk4me.GraphQL
     {
         private string? clientMutationId;
         private bool? disabled;
-        private WebhookPolicyJwtAlg? jwtAlg;
+        private WebhookPolicyJwtAlg jwtAlg;
         private string? jwtAudience;
         private long? jwtClaimExpiresIn;
 
@@ -37,7 +37,7 @@ namespace Sdk4me.GraphQL
         /// The algorithm to use for cryptographic signing of webhook messages.
         /// </summary>
         [JsonProperty("jwtAlg")]
-        public WebhookPolicyJwtAlg? JwtAlg
+        public WebhookPolicyJwtAlg JwtAlg
         {
             get => jwtAlg;
             set => jwtAlg = Set("jwtAlg", value);
@@ -61,6 +61,15 @@ namespace Sdk4me.GraphQL
         {
             get => jwtClaimExpiresIn;
             set => jwtClaimExpiresIn = Set("jwtClaimExpiresIn", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPolicyCreateInput"/> class.
+        /// </summary>
+        /// <param name="jwtAlg">The algorithm to use for cryptographic signing of webhook messages.</param>
+        public WebhookPolicyCreateInput(WebhookPolicyJwtAlg jwtAlg)
+        {
+            this.jwtAlg = Set("jwtAlg", jwtAlg);
         }
     }
 }

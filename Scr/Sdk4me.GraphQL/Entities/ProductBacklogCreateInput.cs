@@ -12,7 +12,7 @@ namespace Sdk4me.GraphQL
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
         private bool? disabled;
-        private string? name;
+        private string name;
         private string? pictureUri;
         private string? productOwnerId;
         private string? source;
@@ -62,7 +62,7 @@ namespace Sdk4me.GraphQL
         /// Name of the product backlog.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -106,6 +106,15 @@ namespace Sdk4me.GraphQL
         {
             get => sourceID;
             set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProductBacklogCreateInput"/> class.
+        /// </summary>
+        /// <param name="name">Name of the product backlog.</param>
+        public ProductBacklogCreateInput(string name)
+        {
+            this.name = Set("name", name);
         }
     }
 }

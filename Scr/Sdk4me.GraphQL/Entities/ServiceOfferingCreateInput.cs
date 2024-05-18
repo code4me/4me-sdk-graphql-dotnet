@@ -22,7 +22,7 @@ namespace Sdk4me.GraphQL
         private string? defaultEffortClassId;
         private List<string>? effortClassIds;
         private string? limitations;
-        private string? name;
+        private string name;
         private List<EffortClassRateInput>? newEffortClassRates;
         private List<StandardServiceRequestInput>? newStandardServiceRequests;
         private string? penalties;
@@ -64,7 +64,7 @@ namespace Sdk4me.GraphQL
         private long? responseTargetTop;
         private ServiceOfferingReviewFrequency? reviewFrequency;
         private string? serviceHoursId;
-        private string? serviceId;
+        private string serviceId;
         private string? source;
         private string? sourceID;
         private ServiceOfferingStatus? status;
@@ -223,7 +223,7 @@ namespace Sdk4me.GraphQL
         /// The name of the service offering.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -650,7 +650,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the service for which the service offering is being prepared.
         /// </summary>
         [JsonProperty("serviceId")]
-        public string? ServiceId
+        public string ServiceId
         {
             get => serviceId;
             set => serviceId = Set("serviceId", value);
@@ -785,6 +785,17 @@ namespace Sdk4me.GraphQL
         {
             get => timeZone;
             set => timeZone = Set("timeZone", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ServiceOfferingCreateInput"/> class.
+        /// </summary>
+        /// <param name="name">The name of the service offering.</param>
+        /// <param name="serviceId">Identifier of the service for which the service offering is being prepared.</param>
+        public ServiceOfferingCreateInput(string name, string serviceId)
+        {
+            this.name = Set("name", name);
+            this.serviceId = Set("serviceId", serviceId);
         }
     }
 }

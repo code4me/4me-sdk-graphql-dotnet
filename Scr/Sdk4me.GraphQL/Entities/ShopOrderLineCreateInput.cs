@@ -12,9 +12,9 @@ namespace Sdk4me.GraphQL
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
         private List<AddressInput>? newAddresses;
-        private long? quantity;
-        private string? requestedForId;
-        private string? shopArticleId;
+        private long quantity;
+        private string requestedForId;
+        private string shopArticleId;
         private string? source;
         private string? sourceID;
 
@@ -62,7 +62,7 @@ namespace Sdk4me.GraphQL
         /// The number units ordered.
         /// </summary>
         [JsonProperty("quantity")]
-        public long? Quantity
+        public long Quantity
         {
             get => quantity;
             set => quantity = Set("quantity", value);
@@ -72,7 +72,7 @@ namespace Sdk4me.GraphQL
         /// The person for whom the shop order line was submitted.
         /// </summary>
         [JsonProperty("requestedForId")]
-        public string? RequestedForId
+        public string RequestedForId
         {
             get => requestedForId;
             set => requestedForId = Set("requestedForId", value);
@@ -82,7 +82,7 @@ namespace Sdk4me.GraphQL
         /// The shop article that is ordered.
         /// </summary>
         [JsonProperty("shopArticleId")]
-        public string? ShopArticleId
+        public string ShopArticleId
         {
             get => shopArticleId;
             set => shopArticleId = Set("shopArticleId", value);
@@ -106,6 +106,19 @@ namespace Sdk4me.GraphQL
         {
             get => sourceID;
             set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ShopOrderLineCreateInput"/> class.
+        /// </summary>
+        /// <param name="quantity">The number units ordered.</param>
+        /// <param name="requestedForId">The person for whom the shop order line was submitted.</param>
+        /// <param name="shopArticleId">The shop article that is ordered.</param>
+        public ShopOrderLineCreateInput(long quantity, string requestedForId, string shopArticleId)
+        {
+            this.quantity = Set("quantity", quantity);
+            this.requestedForId = Set("requestedForId", requestedForId);
+            this.shopArticleId = Set("shopArticleId", shopArticleId);
         }
     }
 }

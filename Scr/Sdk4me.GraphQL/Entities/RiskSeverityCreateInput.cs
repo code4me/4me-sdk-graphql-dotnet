@@ -11,7 +11,7 @@ namespace Sdk4me.GraphQL
         private string? description;
         private bool? disabled;
         private string? information;
-        private string? name;
+        private string name;
         private long? position;
         private string? source;
         private string? sourceID;
@@ -60,7 +60,7 @@ namespace Sdk4me.GraphQL
         /// The name of the risk severity. Ideally the name of a risk severity consists of a single word, such as "High".
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -94,6 +94,15 @@ namespace Sdk4me.GraphQL
         {
             get => sourceID;
             set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RiskSeverityCreateInput"/> class.
+        /// </summary>
+        /// <param name="name">The name of the risk severity. Ideally the name of a risk severity consists of a single word, such as "High".</param>
+        public RiskSeverityCreateInput(string name)
+        {
+            this.name = Set("name", name);
         }
     }
 }

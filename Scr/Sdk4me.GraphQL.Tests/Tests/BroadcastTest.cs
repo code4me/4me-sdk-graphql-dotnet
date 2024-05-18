@@ -50,11 +50,10 @@ namespace Sdk4me.GraphQL.Tests
         [TestMethod]
         public void Create()
         {
-            BroadcastCreatePayload broadcast = client.Mutation(new BroadcastCreateInput()
+            BroadcastCreatePayload broadcast = client.Mutation(new BroadcastCreateInput(BroadcastMessageType.Info)
             {
                 Message = $"Sdk4me.GraphQL {DateTime.Now:yyyy-MM-dd HH:mm:ss} UTC",
                 Remarks = $"Sdk4me.GraphQL Test {DateTime.Now:yyyy-MM-dd HH:mm:ss} UTC",
-                MessageType = BroadcastMessageType.Info,
                 Source = "Sdk4me",
                 Visibility = BroadcastVisibility.OrganizationsAndDescendants,
                 StartAt = DateTime.Now.AddSeconds(5),
@@ -79,9 +78,8 @@ namespace Sdk4me.GraphQL.Tests
 
             if (broadcasts.Where(x => x.Remarks != null && x.Remarks.StartsWith("Sdk4me.GraphQL")).FirstOrDefault() is Broadcast broadcast)
             {
-                BroadcastUpdatePayload broadcastUpdate = client.Mutation(new BroadcastUpdateInput() 
+                BroadcastUpdatePayload broadcastUpdate = client.Mutation(new BroadcastUpdateInput(broadcast.ID) 
                 {
-                    ID = broadcast.ID,
                     Remarks = $"Sdk4me.GraphQL {DateTime.Now:yyyy-MM-dd HH:mm:ss} UTC",
                     Message = $"Sdk4me.GraphQL {DateTime.Now:yyyy-MM-dd HH:mm:ss} UTC",
                     StartAt = broadcast.StartAt ?? DateTime.Now.AddSeconds(5),

@@ -22,17 +22,17 @@ namespace Sdk4me.GraphQL
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
         private bool? endUsers;
-        private string? instructions;
+        private string instructions;
         private bool? internalSpecialists;
         private bool? keyContacts;
         private string? keywords;
         private bool? @public;
-        private string? serviceId;
+        private string serviceId;
         private List<string>? serviceInstanceIds;
         private string? source;
         private string? sourceID;
         private KnowledgeArticleStatus? status;
-        private string? subject;
+        private string subject;
         private string? templateId;
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace Sdk4me.GraphQL
         /// Used to enter instructions for the service desk analysts, specialists and/or end users who are likely to look up the knowledge article to help them with their work or to resolve an issue.
         /// </summary>
         [JsonProperty("instructions")]
-        public string? Instructions
+        public string Instructions
         {
             get => instructions;
             set => instructions = Set("instructions", value);
@@ -183,7 +183,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the service for which the knowledge article is made available.
         /// </summary>
         [JsonProperty("serviceId")]
-        public string? ServiceId
+        public string ServiceId
         {
             get => serviceId;
             set => serviceId = Set("serviceId", value);
@@ -233,7 +233,7 @@ namespace Sdk4me.GraphQL
         /// A short description of the knowledge article.
         /// </summary>
         [JsonProperty("subject")]
-        public string? Subject
+        public string Subject
         {
             get => subject;
             set => subject = Set("subject", value);
@@ -247,6 +247,19 @@ namespace Sdk4me.GraphQL
         {
             get => templateId;
             set => templateId = Set("templateId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="KnowledgeArticleCreateInput"/> class.
+        /// </summary>
+        /// <param name="instructions">Used to enter instructions for the service desk analysts, specialists and/or end users who are likely to look up the knowledge article to help them with their work or to resolve an issue.</param>
+        /// <param name="serviceId">Identifier of the service for which the knowledge article is made available.</param>
+        /// <param name="subject">A short description of the knowledge article.</param>
+        public KnowledgeArticleCreateInput(string instructions, string serviceId, string subject)
+        {
+            this.instructions = Set("instructions", instructions);
+            this.serviceId = Set("serviceId", serviceId);
+            this.subject = Set("subject", subject);
         }
     }
 }

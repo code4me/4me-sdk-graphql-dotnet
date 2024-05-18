@@ -8,14 +8,14 @@ namespace Sdk4me.GraphQL
     /// </summary>
     public class PermissionInput : PropertyChangeSet
     {
-        private string? accountId;
+        private string accountId;
         private List<PermissionRole>? roles;
 
         /// <summary>
         /// Identifier of the account for which the person has permissions.
         /// </summary>
         [JsonProperty("accountId")]
-        public string? AccountId
+        public string AccountId
         {
             get => accountId;
             set => accountId = Set("accountId", value);
@@ -29,6 +29,15 @@ namespace Sdk4me.GraphQL
         {
             get => roles;
             set => roles = Set("roles", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PermissionInput"/> class.
+        /// </summary>
+        /// <param name="accountId">Identifier of the account for which the person has permissions.</param>
+        public PermissionInput(string accountId)
+        {
+            this.accountId = Set("accountId", accountId);
         }
     }
 }

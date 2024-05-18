@@ -13,7 +13,7 @@ namespace Sdk4me.GraphQL
         private bool? assignToRequesterManager;
         private bool? assignToServiceOwner;
         private bool? assignToWorkflowManager;
-        private TaskCategory? category;
+        private TaskCategory category;
         private string? clientMutationId;
         private List<string>? configurationItemIds;
         private bool? copyNotesToWorkflow;
@@ -25,7 +25,7 @@ namespace Sdk4me.GraphQL
         private List<TaskTemplateApprovalInput>? newApprovals;
         private string? note;
         private string? pdfDesignId;
-        private long? plannedDuration;
+        private long plannedDuration;
         private long? plannedEffort;
         private long? plannedEffortRequester;
         private long? plannedEffortRequesterBusinessUnitManager;
@@ -39,7 +39,7 @@ namespace Sdk4me.GraphQL
         private List<string>? serviceInstanceIds;
         private string? source;
         private string? sourceID;
-        private string? subject;
+        private string subject;
         private string? supplierId;
         private string? teamId;
         private string? uiExtensionId;
@@ -100,7 +100,7 @@ namespace Sdk4me.GraphQL
         /// The category that needs to be selected in the Category field of a new task when it is being created based on the template.
         /// </summary>
         [JsonProperty("category")]
-        public TaskCategory? Category
+        public TaskCategory Category
         {
             get => category;
             set => category = Set("category", value);
@@ -220,7 +220,7 @@ namespace Sdk4me.GraphQL
         /// The number of minutes that should be entered in the Planned duration field of a new task when it is being created based on the template.
         /// </summary>
         [JsonProperty("plannedDuration")]
-        public long? PlannedDuration
+        public long PlannedDuration
         {
             get => plannedDuration;
             set => plannedDuration = Set("plannedDuration", value);
@@ -360,7 +360,7 @@ namespace Sdk4me.GraphQL
         /// A short description that needs to be copied to the Subject field of a new task when it is being created based on the template.
         /// </summary>
         [JsonProperty("subject")]
-        public string? Subject
+        public string Subject
         {
             get => subject;
             set => subject = Set("subject", value);
@@ -414,6 +414,19 @@ namespace Sdk4me.GraphQL
         {
             get => workHoursAre24x7;
             set => workHoursAre24x7 = Set("workHoursAre24x7", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TaskTemplateCreateInput"/> class.
+        /// </summary>
+        /// <param name="category">The category that needs to be selected in the Category field of a new task when it is being created based on the template.</param>
+        /// <param name="plannedDuration">The number of minutes that should be entered in the Planned duration field of a new task when it is being created based on the template.</param>
+        /// <param name="subject">A short description that needs to be copied to the Subject field of a new task when it is being created based on the template.</param>
+        public TaskTemplateCreateInput(TaskCategory category, long plannedDuration, string subject)
+        {
+            this.category = Set("category", category);
+            this.plannedDuration = Set("plannedDuration", plannedDuration);
+            this.subject = Set("subject", subject);
         }
     }
 }

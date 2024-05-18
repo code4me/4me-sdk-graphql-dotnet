@@ -11,7 +11,7 @@ namespace Sdk4me.GraphQL
         private string? clientMutationId;
         private bool? disabled;
         private List<string>? holidayIds;
-        private string? name;
+        private string name;
         private List<CalendarHoursInput>? newCalendarHours;
         private string? source;
         private string? sourceID;
@@ -50,7 +50,7 @@ namespace Sdk4me.GraphQL
         /// The name of the calendar.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -84,6 +84,15 @@ namespace Sdk4me.GraphQL
         {
             get => sourceID;
             set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CalendarCreateInput"/> class.
+        /// </summary>
+        /// <param name="name">The name of the calendar.</param>
+        public CalendarCreateInput(string name)
+        {
+            this.name = Set("name", name);
         }
     }
 }

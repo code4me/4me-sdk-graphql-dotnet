@@ -15,14 +15,14 @@ namespace Sdk4me.GraphQL
         private List<AttachmentInput>? descriptionAttachments;
         private bool? disabled;
         private string? features;
-        private string? name;
+        private string name;
         private List<AppOfferingScopeInput>? newScopes;
         private WebhookPolicyJwtAlg? policyJwtAlg;
         private string? policyJwtAudience;
         private long? policyJwtClaimExpiresIn;
         private string? reference;
         private bool? requiresEnabledOauthPerson;
-        private string? serviceInstanceId;
+        private string serviceInstanceId;
         private string? source;
         private string? sourceID;
         private string? uiExtensionId;
@@ -103,7 +103,7 @@ namespace Sdk4me.GraphQL
         /// Name of the app offering.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -173,7 +173,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the the service instance this app offering is linked to.
         /// </summary>
         [JsonProperty("serviceInstanceId")]
-        public string? ServiceInstanceId
+        public string ServiceInstanceId
         {
             get => serviceInstanceId;
             set => serviceInstanceId = Set("serviceInstanceId", value);
@@ -227,6 +227,17 @@ namespace Sdk4me.GraphQL
         {
             get => webhookUriTemplate;
             set => webhookUriTemplate = Set("webhookUriTemplate", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppOfferingCreateInput"/> class.
+        /// </summary>
+        /// <param name="name">Name of the app offering.</param>
+        /// <param name="serviceInstanceId">Identifier of the the service instance this app offering is linked to.</param>
+        public AppOfferingCreateInput(string name, string serviceInstanceId)
+        {
+            this.name = Set("name", name);
+            this.serviceInstanceId = Set("serviceInstanceId", serviceInstanceId);
         }
     }
 }

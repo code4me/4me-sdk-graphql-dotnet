@@ -11,7 +11,7 @@ namespace Sdk4me.GraphQL
     {
         private string? charges;
         private string? clientMutationId;
-        private string? customerId;
+        private string customerId;
         private string? customerRepresentativeId;
 #if NET6_0_OR_GREATER
         private DateOnly? expiryDate;
@@ -19,7 +19,7 @@ namespace Sdk4me.GraphQL
         private DateTime? expiryDate;
 #endif
         private long? firstCallResolutions;
-        private string? name;
+        private string name;
 #if NET6_0_OR_GREATER
         private DateOnly? noticeDate;
 #else
@@ -27,7 +27,7 @@ namespace Sdk4me.GraphQL
 #endif
         private long? pickupsWithinTarget;
         private long? pickupTarget;
-        private string? providerId;
+        private string providerId;
         private long? rejectedSolutions;
         private string? remarks;
         private List<AttachmentInput>? remarksAttachments;
@@ -71,7 +71,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the organization that pays for the first line support agreement.
         /// </summary>
         [JsonProperty("customerId")]
-        public string? CustomerId
+        public string CustomerId
         {
             get => customerId;
             set => customerId = Set("customerId", value);
@@ -115,7 +115,7 @@ namespace Sdk4me.GraphQL
         /// The name of the first line support agreement.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -159,7 +159,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the organization that provides the first line support agreement.
         /// </summary>
         [JsonProperty("providerId")]
-        public string? ProviderId
+        public string ProviderId
         {
             get => providerId;
             set => providerId = Set("providerId", value);
@@ -308,6 +308,19 @@ namespace Sdk4me.GraphQL
         {
             get => timeZone;
             set => timeZone = Set("timeZone", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FirstLineSupportAgreementCreateInput"/> class.
+        /// </summary>
+        /// <param name="customerId">Identifier of the organization that pays for the first line support agreement.</param>
+        /// <param name="name">The name of the first line support agreement.</param>
+        /// <param name="providerId">Identifier of the organization that provides the first line support agreement.</param>
+        public FirstLineSupportAgreementCreateInput(string customerId, string name, string providerId)
+        {
+            this.customerId = Set("customerId", customerId);
+            this.name = Set("name", name);
+            this.providerId = Set("providerId", providerId);
         }
     }
 }

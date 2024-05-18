@@ -8,14 +8,14 @@ namespace Sdk4me.GraphQL
     /// </summary>
     public class CustomFieldInput : PropertyChangeSet
     {
-        private string? id;
-        private JToken? datavalue;
+        private string id;
+        private JToken? value;
 
         /// <summary>
         /// Id of the field as defined for the UI Extension.
         /// </summary>
         [JsonProperty("id")]
-        public string? ID
+        public string ID
         {
             get => id;
             set => id = Set("id", value);
@@ -30,8 +30,17 @@ namespace Sdk4me.GraphQL
         [JsonProperty("value")]
         public JToken? Value
         {
-            get => datavalue;
-            set => datavalue = Set("value", value);
+            get => value;
+            set => this.value = Set("value", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomFieldInput"/> class.
+        /// </summary>
+        /// <param name="id">Id of the field as defined for the UI Extension.</param>
+        public CustomFieldInput(string id)
+        {
+            this.id = Set("id", id);
         }
     }
 }

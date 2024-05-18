@@ -12,7 +12,7 @@ namespace Sdk4me.GraphQL
         private ContractCategory? category;
         private string? clientMutationId;
         private List<string>? configurationItemIds;
-        private string? customerId;
+        private string customerId;
         private string? customerRepresentativeId;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
@@ -21,7 +21,7 @@ namespace Sdk4me.GraphQL
 #else
         private DateTime? expiryDate;
 #endif
-        private string? name;
+        private string name;
 #if NET6_0_OR_GREATER
         private DateOnly? noticeDate;
 #else
@@ -76,7 +76,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the organization that pays for the contract.
         /// </summary>
         [JsonProperty("customerId")]
-        public string? CustomerId
+        public string CustomerId
         {
             get => customerId;
             set => customerId = Set("customerId", value);
@@ -137,7 +137,7 @@ namespace Sdk4me.GraphQL
         /// <br>• 2EGXQ2W – Dell 3-Year ProSupport and Next Business Day Onsite Repair for CMP00035</br>
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -263,6 +263,23 @@ namespace Sdk4me.GraphQL
         {
             get => uiExtensionId;
             set => uiExtensionId = Set("uiExtensionId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ContractCreateInput"/> class.
+        /// </summary>
+        /// <param name="customerId">Identifier of the organization that pays for the contract.</param>
+        /// <param name="name">
+        /// <br>The name of the contract.</br>
+        /// <br>If a unique ID is given to each contract, then this ID can be added at the start of the name.</br>
+        /// <br></br>
+        /// <br>Example:</br>
+        /// <br>• 2EGXQ2W – Dell 3-Year ProSupport and Next Business Day Onsite Repair for CMP00035</br>
+        /// </param>
+        public ContractCreateInput(string customerId, string name)
+        {
+            this.customerId = Set("customerId", customerId);
+            this.name = Set("name", name);
         }
     }
 }

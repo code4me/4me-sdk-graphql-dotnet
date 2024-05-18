@@ -9,7 +9,7 @@ namespace Sdk4me.GraphQL
     {
         private string? clientMutationId;
         private bool? disabled;
-        private string? id;
+        private string id;
         private WebhookPolicyJwtAlg? jwtAlg;
         private string? jwtAudience;
         private long? jwtClaimExpiresIn;
@@ -38,7 +38,7 @@ namespace Sdk4me.GraphQL
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
-        public string? ID
+        public string ID
         {
             get => id;
             set => id = Set("id", value);
@@ -72,6 +72,15 @@ namespace Sdk4me.GraphQL
         {
             get => jwtClaimExpiresIn;
             set => jwtClaimExpiresIn = Set("jwtClaimExpiresIn", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPolicyUpdateInput"/> class.
+        /// </summary>
+        /// <param name="id">The node ID of the record to update.</param>
+        public WebhookPolicyUpdateInput(string id)
+        {
+            this.id = Set("id", id);
         }
     }
 }

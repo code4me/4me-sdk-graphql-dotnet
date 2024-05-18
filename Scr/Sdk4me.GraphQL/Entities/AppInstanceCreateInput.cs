@@ -8,9 +8,9 @@ namespace Sdk4me.GraphQL
     /// </summary>
     public class AppInstanceCreateInput : PropertyChangeSet
     {
-        private string? appOfferingId;
+        private string appOfferingId;
         private string? clientMutationId;
-        private string? customerAccountId;
+        private string customerAccountId;
         private string? customerRepresentativeId;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
@@ -23,7 +23,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the app offering to create an instance of.
         /// </summary>
         [JsonProperty("appOfferingId")]
-        public string? AppOfferingId
+        public string AppOfferingId
         {
             get => appOfferingId;
             set => appOfferingId = Set("appOfferingId", value);
@@ -43,7 +43,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the account this app instance is for.
         /// </summary>
         [JsonProperty("customerAccountId")]
-        public string? CustomerAccountId
+        public string CustomerAccountId
         {
             get => customerAccountId;
             set => customerAccountId = Set("customerAccountId", value);
@@ -117,6 +117,17 @@ namespace Sdk4me.GraphQL
         {
             get => suspensionComment;
             set => suspensionComment = Set("suspensionComment", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppInstanceCreateInput"/> class.
+        /// </summary>
+        /// <param name="appOfferingId">Identifier of the app offering to create an instance of.</param>
+        /// <param name="customerAccountId">Identifier of the account this app instance is for.</param>
+        public AppInstanceCreateInput(string appOfferingId, string customerAccountId)
+        {
+            this.appOfferingId = Set("appOfferingId", appOfferingId);
+            this.customerAccountId = Set("customerAccountId", customerAccountId);
         }
     }
 }

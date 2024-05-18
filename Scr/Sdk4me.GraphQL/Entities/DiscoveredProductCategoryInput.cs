@@ -9,9 +9,9 @@ namespace Sdk4me.GraphQL
     public class DiscoveredProductCategoryInput : PropertyChangeSet
     {
         private DiscoveredItemMetaData? meta;
-        private string? name;
+        private string name;
         private List<DiscoveredProductInput>? products;
-        private string? reference;
+        private string reference;
         private string? sourceID;
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace Sdk4me.GraphQL
         /// Name of the product category.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -48,7 +48,7 @@ namespace Sdk4me.GraphQL
         /// Reference identifying the product category.
         /// </summary>
         [JsonProperty("reference")]
-        public string? Reference
+        public string Reference
         {
             get => reference;
             set => reference = Set("reference", value);
@@ -62,6 +62,17 @@ namespace Sdk4me.GraphQL
         {
             get => sourceID;
             set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DiscoveredProductCategoryInput"/> class.
+        /// </summary>
+        /// <param name="name">Name of the product category.</param>
+        /// <param name="reference">Reference identifying the product category.</param>
+        public DiscoveredProductCategoryInput(string name, string reference)
+        {
+            this.name = Set("name", name);
+            this.reference = Set("reference", reference);
         }
     }
 }

@@ -7,14 +7,14 @@ namespace Sdk4me.GraphQL
     /// </summary>
     public class ShortUrlGeoInput : PropertyChangeSet
     {
-        private string? latitude;
-        private string? longitude;
+        private string latitude;
+        private string longitude;
 
         /// <summary>
         /// Latitude coordinate of the location.
         /// </summary>
         [JsonProperty("latitude")]
-        public string? Latitude
+        public string Latitude
         {
             get => latitude;
             set => latitude = Set("latitude", value);
@@ -24,10 +24,21 @@ namespace Sdk4me.GraphQL
         /// Longitude coordinate of the location.
         /// </summary>
         [JsonProperty("longitude")]
-        public string? Longitude
+        public string Longitude
         {
             get => longitude;
             set => longitude = Set("longitude", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ShortUrlGeoInput"/> class.
+        /// </summary>
+        /// <param name="latitude">Latitude coordinate of the location.</param>
+        /// <param name="longitude">Longitude coordinate of the location.</param>
+        public ShortUrlGeoInput(string latitude, string longitude)
+        {
+            this.latitude = Set("latitude", latitude);
+            this.longitude = Set("longitude", longitude);
         }
     }
 }

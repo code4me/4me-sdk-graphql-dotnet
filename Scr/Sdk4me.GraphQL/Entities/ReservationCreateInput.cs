@@ -10,21 +10,21 @@ namespace Sdk4me.GraphQL
     public class ReservationCreateInput : PropertyChangeSet
     {
         private string? clientMutationId;
-        private string? configurationItemId;
+        private string configurationItemId;
         private string? createdById;
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
         private long? duration;
         private DateTime? endAt;
-        private string? name;
-        private string? personId;
+        private string name;
+        private string personId;
         private DateTime? preparationStartAt;
         private ReservationRecurrenceInput? recurrence;
         private string? requestId;
-        private string? reservationOfferingId;
+        private string reservationOfferingId;
         private string? source;
         private string? sourceID;
-        private DateTime? startAt;
+        private DateTime startAt;
         private ReservationStatus? status;
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the asset that is being reserved.
         /// </summary>
         [JsonProperty("configurationItemId")]
-        public string? ConfigurationItemId
+        public string ConfigurationItemId
         {
             get => configurationItemId;
             set => configurationItemId = Set("configurationItemId", value);
@@ -101,7 +101,7 @@ namespace Sdk4me.GraphQL
         /// A short description of the reservation
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -111,7 +111,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the person for whom this reservation was created.
         /// </summary>
         [JsonProperty("personId")]
-        public string? PersonId
+        public string PersonId
         {
             get => personId;
             set => personId = Set("personId", value);
@@ -151,7 +151,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the reservation offering that was used to create this reservation.
         /// </summary>
         [JsonProperty("reservationOfferingId")]
-        public string? ReservationOfferingId
+        public string ReservationOfferingId
         {
             get => reservationOfferingId;
             set => reservationOfferingId = Set("reservationOfferingId", value);
@@ -181,7 +181,7 @@ namespace Sdk4me.GraphQL
         /// Used to specify the start date and time of the reservation.
         /// </summary>
         [JsonProperty("startAt")]
-        public DateTime? StartAt
+        public DateTime StartAt
         {
             get => startAt;
             set => startAt = Set("startAt", value);
@@ -195,6 +195,23 @@ namespace Sdk4me.GraphQL
         {
             get => status;
             set => status = Set("status", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReservationCreateInput"/> class.
+        /// </summary>
+        /// <param name="configurationItemId">Identifier of the asset that is being reserved.</param>
+        /// <param name="name">A short description of the reservation</param>
+        /// <param name="personId">Identifier of the person for whom this reservation was created.</param>
+        /// <param name="reservationOfferingId">Identifier of the reservation offering that was used to create this reservation.</param>
+        /// <param name="startAt">Used to specify the start date and time of the reservation.</param>
+        public ReservationCreateInput(string configurationItemId, string name, string personId, string reservationOfferingId, DateTime startAt)
+        {
+            this.configurationItemId = Set("configurationItemId", configurationItemId);
+            this.name = Set("name", name);
+            this.personId = Set("personId", personId);
+            this.reservationOfferingId = Set("reservationOfferingId", reservationOfferingId);
+            this.startAt = Set("startAt", startAt);
         }
     }
 }

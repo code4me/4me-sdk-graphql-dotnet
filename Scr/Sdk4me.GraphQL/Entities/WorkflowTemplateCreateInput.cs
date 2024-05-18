@@ -19,7 +19,7 @@ namespace Sdk4me.GraphQL
         private string? serviceId;
         private string? source;
         private string? sourceID;
-        private string? subject;
+        private string subject;
         private string? uiExtensionId;
         private string? workflowManagerId;
         private string? workflowTypeId;
@@ -138,7 +138,7 @@ namespace Sdk4me.GraphQL
         /// Short description that needs to be copied to the Subject field of a new workflow when it is being created based on the template.
         /// </summary>
         [JsonProperty("subject")]
-        public string? Subject
+        public string Subject
         {
             get => subject;
             set => subject = Set("subject", value);
@@ -172,6 +172,15 @@ namespace Sdk4me.GraphQL
         {
             get => workflowTypeId;
             set => workflowTypeId = Set("workflowTypeId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkflowTemplateCreateInput"/> class.
+        /// </summary>
+        /// <param name="subject">Short description that needs to be copied to the Subject field of a new workflow when it is being created based on the template.</param>
+        public WorkflowTemplateCreateInput(string subject)
+        {
+            this.subject = Set("subject", subject);
         }
     }
 }

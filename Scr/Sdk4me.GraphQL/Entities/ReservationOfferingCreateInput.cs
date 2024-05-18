@@ -9,25 +9,25 @@ namespace Sdk4me.GraphQL
     public class ReservationOfferingCreateInput : PropertyChangeSet
     {
         private bool? allowRepeat;
-        private string? calendarId;
+        private string calendarId;
         private string? clientMutationId;
         private List<string>? configurationItemIds;
         private bool? disabled;
         private List<string>? filters;
         private ReservationStatus? initialStatus;
         private long? maxAdvanceDuration;
-        private long? maxDuration;
+        private long maxDuration;
         private long? minAdvanceDuration;
-        private long? minDuration;
+        private long minDuration;
         private bool? multiDay;
-        private string? name;
+        private string name;
         private long? preparationDuration;
         private bool? privateReservations;
         private string? serviceInstanceId;
         private string? source;
         private string? sourceID;
-        private long? stepDuration;
-        private string? timeZone;
+        private long stepDuration;
+        private string timeZone;
 
         /// <summary>
         /// Whether it is allowed to create recurrent reservations for this offering.
@@ -43,7 +43,7 @@ namespace Sdk4me.GraphQL
         /// Calendar that defines the hours in which reservations may start and end.
         /// </summary>
         [JsonProperty("calendarId")]
-        public string? CalendarId
+        public string CalendarId
         {
             get => calendarId;
             set => calendarId = Set("calendarId", value);
@@ -113,7 +113,7 @@ namespace Sdk4me.GraphQL
         /// The maximum duration of the reservation within the hours of the calendar.
         /// </summary>
         [JsonProperty("maxDuration")]
-        public long? MaxDuration
+        public long MaxDuration
         {
             get => maxDuration;
             set => maxDuration = Set("maxDuration", value);
@@ -133,7 +133,7 @@ namespace Sdk4me.GraphQL
         /// The minimum duration of the reservation within the hours of the calendar.
         /// </summary>
         [JsonProperty("minDuration")]
-        public long? MinDuration
+        public long MinDuration
         {
             get => minDuration;
             set => minDuration = Set("minDuration", value);
@@ -153,7 +153,7 @@ namespace Sdk4me.GraphQL
         /// A short description of the reservation offering
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -213,7 +213,7 @@ namespace Sdk4me.GraphQL
         /// The increments with which the reservation may be prolonged.
         /// </summary>
         [JsonProperty("stepDuration")]
-        public long? StepDuration
+        public long StepDuration
         {
             get => stepDuration;
             set => stepDuration = Set("stepDuration", value);
@@ -224,10 +224,32 @@ namespace Sdk4me.GraphQL
         /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
         /// </summary>
         [JsonProperty("timeZone")]
-        public string? TimeZone
+        public string TimeZone
         {
             get => timeZone;
             set => timeZone = Set("timeZone", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReservationOfferingCreateInput"/> class.
+        /// </summary>
+        /// <param name="calendarId">Calendar that defines the hours in which reservations may start and end.</param>
+        /// <param name="maxDuration">The maximum duration of the reservation within the hours of the calendar.</param>
+        /// <param name="minDuration">The minimum duration of the reservation within the hours of the calendar.</param>
+        /// <param name="name">A short description of the reservation offering</param>
+        /// <param name="stepDuration">The increments with which the reservation may be prolonged.</param>
+        /// <param name="timeZone">
+        /// <br>The time zone that applies to the selected calendar.</br>
+        /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
+        /// </param>
+        public ReservationOfferingCreateInput(string calendarId, long maxDuration, long minDuration, string name, long stepDuration, string timeZone)
+        {
+            this.calendarId = Set("calendarId", calendarId);
+            this.maxDuration = Set("maxDuration", maxDuration);
+            this.minDuration = Set("minDuration", minDuration);
+            this.name = Set("name", name);
+            this.stepDuration = Set("stepDuration", stepDuration);
+            this.timeZone = Set("timeZone", timeZone);
         }
     }
 }

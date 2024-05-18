@@ -8,21 +8,21 @@ namespace Sdk4me.GraphQL
     /// </summary>
     public class DiscoveredProductInput : PropertyChangeSet
     {
-        private string? brand;
+        private string brand;
         private List<DiscoveredCiInput>? configurationItems;
         private DiscoveredItemMetaData? meta;
-        private string? model;
-        private string? name;
+        private string model;
+        private string name;
         private string? productID;
         private string? service;
-        private string? sourceID;
+        private string sourceID;
         private string? uiExtensionId;
 
         /// <summary>
         /// The brand name is typically the name of the product's manufacturer.
         /// </summary>
         [JsonProperty("brand")]
-        public string? Brand
+        public string Brand
         {
             get => brand;
             set => brand = Set("brand", value);
@@ -52,7 +52,7 @@ namespace Sdk4me.GraphQL
         /// The model of the product.
         /// </summary>
         [JsonProperty("model")]
-        public string? Model
+        public string Model
         {
             get => model;
             set => model = Set("model", value);
@@ -62,7 +62,7 @@ namespace Sdk4me.GraphQL
         /// Name of the product.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -92,7 +92,7 @@ namespace Sdk4me.GraphQL
         /// The unique identifier of the product in an external system
         /// </summary>
         [JsonProperty("sourceID")]
-        public string? SourceID
+        public string SourceID
         {
             get => sourceID;
             set => sourceID = Set("sourceID", value);
@@ -106,6 +106,21 @@ namespace Sdk4me.GraphQL
         {
             get => uiExtensionId;
             set => uiExtensionId = Set("uiExtensionId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DiscoveredProductInput"/> class.
+        /// </summary>
+        /// <param name="brand">The brand name is typically the name of the product's manufacturer.</param>
+        /// <param name="model">The model of the product.</param>
+        /// <param name="name">Name of the product.</param>
+        /// <param name="sourceID">The unique identifier of the product in an external system</param>
+        public DiscoveredProductInput(string brand, string model, string name, string sourceID)
+        {
+            this.brand = Set("brand", brand);
+            this.model = Set("model", model);
+            this.name = Set("name", name);
+            this.sourceID = Set("sourceID", sourceID);
         }
     }
 }

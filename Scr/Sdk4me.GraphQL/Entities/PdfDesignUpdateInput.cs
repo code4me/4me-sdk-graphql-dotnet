@@ -15,7 +15,7 @@ namespace Sdk4me.GraphQL
         private List<AttachmentInput>? descriptionAttachments;
         private bool? disabled;
         private string? html;
-        private string? id;
+        private string id;
         private string? name;
         private string? source;
         private string? sourceID;
@@ -94,7 +94,7 @@ namespace Sdk4me.GraphQL
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
-        public string? ID
+        public string ID
         {
             get => id;
             set => id = Set("id", value);
@@ -128,6 +128,15 @@ namespace Sdk4me.GraphQL
         {
             get => sourceID;
             set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PdfDesignUpdateInput"/> class.
+        /// </summary>
+        /// <param name="id">The node ID of the record to update.</param>
+        public PdfDesignUpdateInput(string id)
+        {
+            this.id = Set("id", id);
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Sdk4me.GraphQL
         private string? language;
         private string? location;
         private string? managerId;
-        private string? name;
+        private string name;
         private List<PermissionInput>? newAccountPermissions;
         private List<AddressInput>? newAddresses;
         private List<ContactInput>? newContacts;
@@ -33,7 +33,7 @@ namespace Sdk4me.GraphQL
         private string? organizationId;
         private List<PermissionInput>? permissions;
         private string? pictureUri;
-        private string? primaryEmail;
+        private string primaryEmail;
         private PersonSendEmailNotifications? sendEmailNotifications;
         private PersonShowNotificationPopup? showNotificationPopup;
         private string? siteId;
@@ -223,7 +223,7 @@ namespace Sdk4me.GraphQL
         /// The name of the person.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -303,7 +303,7 @@ namespace Sdk4me.GraphQL
         /// The email address to which email notifications are to be sent. This email address acts as the unique identifier for the person within the 4me account. This primary email address also acts as the person's login name if he/she is a user of the 4me service.
         /// </summary>
         [JsonProperty("primaryEmail")]
-        public string? PrimaryEmail
+        public string PrimaryEmail
         {
             get => primaryEmail;
             set => primaryEmail = Set("primaryEmail", value);
@@ -438,6 +438,17 @@ namespace Sdk4me.GraphQL
         {
             get => workHoursId;
             set => workHoursId = Set("workHoursId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PersonCreateInput"/> class.
+        /// </summary>
+        /// <param name="name">The name of the person.</param>
+        /// <param name="primaryEmail">The email address to which email notifications are to be sent. This email address acts as the unique identifier for the person within the 4me account. This primary email address also acts as the person's login name if he/she is a user of the 4me service.</param>
+        public PersonCreateInput(string name, string primaryEmail)
+        {
+            this.name = Set("name", name);
+            this.primaryEmail = Set("primaryEmail", primaryEmail);
         }
     }
 }

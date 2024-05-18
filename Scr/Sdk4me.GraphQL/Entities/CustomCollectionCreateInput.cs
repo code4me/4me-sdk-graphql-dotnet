@@ -12,7 +12,7 @@ namespace Sdk4me.GraphQL
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
         private bool? disabled;
-        private string? name;
+        private string name;
         private List<CustomCollectionElementInput>? newCollectionElements;
         private string? reference;
         private string? source;
@@ -63,7 +63,7 @@ namespace Sdk4me.GraphQL
         /// Name of the collection.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -117,6 +117,15 @@ namespace Sdk4me.GraphQL
         {
             get => uiExtensionId;
             set => uiExtensionId = Set("uiExtensionId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomCollectionCreateInput"/> class.
+        /// </summary>
+        /// <param name="name">Name of the collection.</param>
+        public CustomCollectionCreateInput(string name)
+        {
+            this.name = Set("name", name);
         }
     }
 }

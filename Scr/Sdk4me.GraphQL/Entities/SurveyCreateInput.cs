@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
     {
         private string? clientMutationId;
         private bool? disabled;
-        private string? name;
+        private string name;
         private List<SurveyQuestionInput>? newQuestions;
         private string? pictureUri;
         private string? source;
@@ -40,7 +40,7 @@ namespace Sdk4me.GraphQL
         /// Name of the survey.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -84,6 +84,15 @@ namespace Sdk4me.GraphQL
         {
             get => sourceID;
             set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SurveyCreateInput"/> class.
+        /// </summary>
+        /// <param name="name">Name of the survey.</param>
+        public SurveyCreateInput(string name)
+        {
+            this.name = Set("name", name);
         }
     }
 }

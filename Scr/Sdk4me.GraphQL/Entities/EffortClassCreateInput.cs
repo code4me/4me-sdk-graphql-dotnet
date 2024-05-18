@@ -11,7 +11,7 @@ namespace Sdk4me.GraphQL
         private string? clientMutationId;
         private decimal? costMultiplier;
         private bool? disabled;
-        private string? name;
+        private string name;
         private long? position;
         private List<string>? serviceOfferingIds;
         private List<string>? skillPoolIds;
@@ -53,7 +53,7 @@ namespace Sdk4me.GraphQL
         /// The name of the effort class.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -117,6 +117,15 @@ namespace Sdk4me.GraphQL
         {
             get => timesheetSettingIds;
             set => timesheetSettingIds = Set("timesheetSettingIds", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EffortClassCreateInput"/> class.
+        /// </summary>
+        /// <param name="name">The name of the effort class.</param>
+        public EffortClassCreateInput(string name)
+        {
+            this.name = Set("name", name);
         }
     }
 }

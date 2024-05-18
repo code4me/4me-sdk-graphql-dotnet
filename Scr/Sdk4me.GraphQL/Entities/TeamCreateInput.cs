@@ -19,7 +19,7 @@ namespace Sdk4me.GraphQL
         private string? inboundEmailLocalPart;
         private string? managerId;
         private List<string>? memberIds;
-        private string? name;
+        private string name;
         private string? pictureUri;
         private string? remarks;
         private List<AttachmentInput>? remarksAttachments;
@@ -143,7 +143,7 @@ namespace Sdk4me.GraphQL
         /// The name of the team.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -228,6 +228,15 @@ namespace Sdk4me.GraphQL
         {
             get => workHoursId;
             set => workHoursId = Set("workHoursId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamCreateInput"/> class.
+        /// </summary>
+        /// <param name="name">The name of the team.</param>
+        public TeamCreateInput(string name)
+        {
+            this.name = Set("name", name);
         }
     }
 }

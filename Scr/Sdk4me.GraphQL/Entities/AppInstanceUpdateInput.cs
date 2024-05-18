@@ -14,7 +14,7 @@ namespace Sdk4me.GraphQL
         private List<AttachmentInput>? customFieldsAttachments;
         private bool? disabled;
         private bool? enabledByCustomer;
-        private string? id;
+        private string id;
         private bool? suspended;
         private string? suspensionComment;
 
@@ -82,7 +82,7 @@ namespace Sdk4me.GraphQL
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
-        public string? ID
+        public string ID
         {
             get => id;
             set => id = Set("id", value);
@@ -106,6 +106,15 @@ namespace Sdk4me.GraphQL
         {
             get => suspensionComment;
             set => suspensionComment = Set("suspensionComment", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppInstanceUpdateInput"/> class.
+        /// </summary>
+        /// <param name="id">The node ID of the record to update.</param>
+        public AppInstanceUpdateInput(string id)
+        {
+            this.id = Set("id", id);
         }
     }
 }

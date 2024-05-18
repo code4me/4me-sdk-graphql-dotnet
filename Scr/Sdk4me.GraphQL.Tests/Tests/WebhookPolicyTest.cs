@@ -30,12 +30,12 @@ namespace Sdk4me.GraphQL.Tests
         [TestMethod]
         public void Create()
         {
-            WebhookPolicyCreatePayload webhookPolicyCreatePayload = client.Mutation(new WebhookPolicyCreateInput() { Disabled = false, JwtAlg = WebhookPolicyJwtAlg.Rs512, ClientMutationId = "CMID" }).Result;
+            WebhookPolicyCreatePayload webhookPolicyCreatePayload = client.Mutation(new WebhookPolicyCreateInput(WebhookPolicyJwtAlg.Rs512) { Disabled = false, ClientMutationId = "CMID" }).Result;
             Assert.IsNotNull(webhookPolicyCreatePayload);
             Assert.IsNotNull(webhookPolicyCreatePayload.WebhookPolicy);
             Assert.IsFalse(string.IsNullOrWhiteSpace(webhookPolicyCreatePayload.WebhookPolicy.PublicKeyPem));
 
-            WebhookPolicyDeleteMutationPayload webhookPolicyDeleteMutationPayload = client.Mutation(new WebhookPolicyDeleteMutationInput() { ID = webhookPolicyCreatePayload.WebhookPolicy.ID }).Result;
+            WebhookPolicyDeleteMutationPayload webhookPolicyDeleteMutationPayload = client.Mutation(new WebhookPolicyDeleteMutationInput(webhookPolicyCreatePayload.WebhookPolicy.ID)).Result;
             Assert.IsNotNull(webhookPolicyDeleteMutationPayload);
         }
     }

@@ -11,12 +11,12 @@ namespace Sdk4me.GraphQL
     {
         private List<string>? calendarIds;
         private string? clientMutationId;
-        private DateTime? endAt;
-        private string? name;
+        private DateTime endAt;
+        private string name;
         private string? pictureUri;
         private string? source;
         private string? sourceID;
-        private DateTime? startAt;
+        private DateTime startAt;
 
         /// <summary>
         /// Identifiers of calendars of the holiday.
@@ -42,7 +42,7 @@ namespace Sdk4me.GraphQL
         /// End of the holiday.
         /// </summary>
         [JsonProperty("endAt")]
-        public DateTime? EndAt
+        public DateTime EndAt
         {
             get => endAt;
             set => endAt = Set("endAt", value);
@@ -52,7 +52,7 @@ namespace Sdk4me.GraphQL
         /// Name of the holiday.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -92,10 +92,23 @@ namespace Sdk4me.GraphQL
         /// Start of the holiday.
         /// </summary>
         [JsonProperty("startAt")]
-        public DateTime? StartAt
+        public DateTime StartAt
         {
             get => startAt;
             set => startAt = Set("startAt", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HolidayCreateInput"/> class.
+        /// </summary>
+        /// <param name="endAt">End of the holiday.</param>
+        /// <param name="name">Name of the holiday.</param>
+        /// <param name="startAt">Start of the holiday.</param>
+        public HolidayCreateInput(DateTime endAt, string name, DateTime startAt)
+        {
+            this.endAt = Set("endAt", endAt);
+            this.name = Set("name", name);
+            this.startAt = Set("startAt", startAt);
         }
     }
 }

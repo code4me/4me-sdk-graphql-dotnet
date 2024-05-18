@@ -13,7 +13,7 @@ namespace Sdk4me.GraphQL
         private bool? @event;
         private string? ownerId;
         private bool? suppressNoteAddedNotifications;
-        private string? text;
+        private string text;
 
         /// <summary>
         /// The attachments used in the <c>note</c> field.
@@ -69,10 +69,19 @@ namespace Sdk4me.GraphQL
         /// Text of the note.
         /// </summary>
         [JsonProperty("text")]
-        public string? Text
+        public string Text
         {
             get => text;
             set => text = Set("text", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NoteCreateInput"/> class.
+        /// </summary>
+        /// <param name="text">Text of the note.</param>
+        public NoteCreateInput(string text)
+        {
+            this.text = Set("text", text);
         }
     }
 }

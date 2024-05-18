@@ -23,7 +23,7 @@ namespace Sdk4me.GraphQL
         private List<string>? doNotTranslateLanguages;
         private string? employeeID;
         private bool? excludeTeamNotifications;
-        private string? id;
+        private string id;
         private string? information;
         private string? jobTitle;
         private string? language;
@@ -207,7 +207,7 @@ namespace Sdk4me.GraphQL
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
-        public string? ID
+        public string ID
         {
             get => id;
             set => id = Set("id", value);
@@ -482,6 +482,15 @@ namespace Sdk4me.GraphQL
         {
             get => workHoursId;
             set => workHoursId = Set("workHoursId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PersonUpdateInput"/> class.
+        /// </summary>
+        /// <param name="id">The node ID of the record to update.</param>
+        public PersonUpdateInput(string id)
+        {
+            this.id = Set("id", id);
         }
     }
 }

@@ -28,7 +28,7 @@ namespace Sdk4me.GraphQL
         private DateTime? startedAt;
         private string? teamId;
         private string? timeAllocationId;
-        private long? timeSpent;
+        private long timeSpent;
 
         /// <summary>
         /// A unique identifier for the client performing the mutation.
@@ -198,10 +198,19 @@ namespace Sdk4me.GraphQL
         /// The number of minutes that was spent on the selected time allocation. The number of minutes is allowed to be negative only when the correction field is set to <c>true</c>.
         /// </summary>
         [JsonProperty("timeSpent")]
-        public long? TimeSpent
+        public long TimeSpent
         {
             get => timeSpent;
             set => timeSpent = Set("timeSpent", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TimeEntryCreateInput"/> class.
+        /// </summary>
+        /// <param name="timeSpent">The number of minutes that was spent on the selected time allocation. The number of minutes is allowed to be negative only when the correction field is set to <c>true</c>.</param>
+        public TimeEntryCreateInput(long timeSpent)
+        {
+            this.timeSpent = Set("timeSpent", timeSpent);
         }
     }
 }

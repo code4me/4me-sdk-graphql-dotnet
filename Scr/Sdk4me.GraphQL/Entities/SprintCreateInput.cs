@@ -15,7 +15,7 @@ namespace Sdk4me.GraphQL
         private DateTime? endAt;
         private List<SprintBacklogItemInput>? newSprintBacklogItems;
         private long? number;
-        private string? scrumWorkspaceId;
+        private string scrumWorkspaceId;
         private string? source;
         private string? sourceID;
         private DateTime? startAt;
@@ -85,7 +85,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of scrum workspace this sprint belongs to.
         /// </summary>
         [JsonProperty("scrumWorkspaceId")]
-        public string? ScrumWorkspaceId
+        public string ScrumWorkspaceId
         {
             get => scrumWorkspaceId;
             set => scrumWorkspaceId = Set("scrumWorkspaceId", value);
@@ -129,6 +129,15 @@ namespace Sdk4me.GraphQL
         {
             get => status;
             set => status = Set("status", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SprintCreateInput"/> class.
+        /// </summary>
+        /// <param name="scrumWorkspaceId">Identifier of scrum workspace this sprint belongs to.</param>
+        public SprintCreateInput(string scrumWorkspaceId)
+        {
+            this.scrumWorkspaceId = Set("scrumWorkspaceId", scrumWorkspaceId);
         }
     }
 }

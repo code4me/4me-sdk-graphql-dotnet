@@ -16,7 +16,7 @@ namespace Sdk4me.GraphQL
         private ProductDepreciationMethod? depreciationMethod;
         private bool? disabled;
         private string? financialOwnerId;
-        private string? id;
+        private string id;
         private string? model;
         private string? name;
         private string? pictureUri;
@@ -126,7 +126,7 @@ namespace Sdk4me.GraphQL
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
-        public string? ID
+        public string ID
         {
             get => id;
             set => id = Set("id", value);
@@ -321,6 +321,15 @@ namespace Sdk4me.GraphQL
         {
             get => workflowTemplateId;
             set => workflowTemplateId = Set("workflowTemplateId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProductUpdateInput"/> class.
+        /// </summary>
+        /// <param name="id">The node ID of the record to update.</param>
+        public ProductUpdateInput(string id)
+        {
+            this.id = Set("id", id);
         }
     }
 }

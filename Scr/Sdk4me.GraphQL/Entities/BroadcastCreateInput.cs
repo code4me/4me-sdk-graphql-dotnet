@@ -16,7 +16,7 @@ namespace Sdk4me.GraphQL
         private string? emailTemplateId;
         private DateTime? endAt;
         private string? message;
-        private BroadcastMessageType? messageType;
+        private BroadcastMessageType messageType;
         private List<string>? organizationIds;
         private string? remarks;
         private List<AttachmentInput>? remarksAttachments;
@@ -107,7 +107,7 @@ namespace Sdk4me.GraphQL
         /// The appropriate icon for the message. The selected icon is displayed alongside the message when the broadcast is presented.
         /// </summary>
         [JsonProperty("messageType")]
-        public BroadcastMessageType? MessageType
+        public BroadcastMessageType MessageType
         {
             get => messageType;
             set => messageType = Set("messageType", value);
@@ -262,6 +262,15 @@ namespace Sdk4me.GraphQL
         {
             get => visibility;
             set => visibility = Set("visibility", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BroadcastCreateInput"/> class.
+        /// </summary>
+        /// <param name="messageType">The appropriate icon for the message. The selected icon is displayed alongside the message when the broadcast is presented.</param>
+        public BroadcastCreateInput(BroadcastMessageType messageType)
+        {
+            this.messageType = Set("messageType", messageType);
         }
     }
 }

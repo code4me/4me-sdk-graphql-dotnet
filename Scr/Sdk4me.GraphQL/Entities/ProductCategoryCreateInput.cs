@@ -10,9 +10,9 @@ namespace Sdk4me.GraphQL
         private string? clientMutationId;
         private bool? disabled;
         private string? group;
-        private string? name;
+        private string name;
         private string? pictureUri;
-        private ProductCategoryRuleSet? ruleSet;
+        private ProductCategoryRuleSet ruleSet;
         private string? source;
         private string? sourceID;
         private string? uiExtensionId;
@@ -51,7 +51,7 @@ namespace Sdk4me.GraphQL
         /// The name of the product category.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -71,7 +71,7 @@ namespace Sdk4me.GraphQL
         /// Used to select a set of rules that are to be applied to the products to which the product category is related, as well as the configuration items that are related to those products. The selected rule set dictates which fields are available for these product and configuration items.
         /// </summary>
         [JsonProperty("ruleSet")]
-        public ProductCategoryRuleSet? RuleSet
+        public ProductCategoryRuleSet RuleSet
         {
             get => ruleSet;
             set => ruleSet = Set("ruleSet", value);
@@ -105,6 +105,17 @@ namespace Sdk4me.GraphQL
         {
             get => uiExtensionId;
             set => uiExtensionId = Set("uiExtensionId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProductCategoryCreateInput"/> class.
+        /// </summary>
+        /// <param name="name">The name of the product category.</param>
+        /// <param name="ruleSet">Used to select a set of rules that are to be applied to the products to which the product category is related, as well as the configuration items that are related to those products. The selected rule set dictates which fields are available for these product and configuration items.</param>
+        public ProductCategoryCreateInput(string name, ProductCategoryRuleSet ruleSet)
+        {
+            this.name = Set("name", name);
+            this.ruleSet = Set("ruleSet", ruleSet);
         }
     }
 }

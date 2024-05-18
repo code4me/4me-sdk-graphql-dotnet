@@ -13,10 +13,10 @@ namespace Sdk4me.GraphQL
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
         private string? firstLineTeamId;
-        private string? name;
+        private string name;
         private string? remarks;
         private List<AttachmentInput>? remarksAttachments;
-        private string? serviceId;
+        private string serviceId;
         private string? source;
         private string? sourceID;
         private ServiceInstanceStatus? status;
@@ -77,7 +77,7 @@ namespace Sdk4me.GraphQL
         /// The name of the service instance.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -107,7 +107,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the service which functionality the service instance provides.
         /// </summary>
         [JsonProperty("serviceId")]
-        public string? ServiceId
+        public string ServiceId
         {
             get => serviceId;
             set => serviceId = Set("serviceId", value);
@@ -161,6 +161,17 @@ namespace Sdk4me.GraphQL
         {
             get => uiExtensionId;
             set => uiExtensionId = Set("uiExtensionId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ServiceInstanceCreateInput"/> class.
+        /// </summary>
+        /// <param name="name">The name of the service instance.</param>
+        /// <param name="serviceId">Identifier of the service which functionality the service instance provides.</param>
+        public ServiceInstanceCreateInput(string name, string serviceId)
+        {
+            this.name = Set("name", name);
+            this.serviceId = Set("serviceId", serviceId);
         }
     }
 }

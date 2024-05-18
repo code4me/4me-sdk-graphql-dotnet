@@ -8,7 +8,7 @@ namespace Sdk4me.GraphQL
     public class AttachmentInput : PropertyChangeSet
     {
         private bool? inline;
-        private string? key;
+        private string key;
         private long? size;
 
         /// <summary>
@@ -25,7 +25,7 @@ namespace Sdk4me.GraphQL
         /// The key obtained from the attachment upload response.
         /// </summary>
         [JsonProperty("key")]
-        public string? Key
+        public string Key
         {
             get => key;
             set => key = Set("key", value);
@@ -39,6 +39,15 @@ namespace Sdk4me.GraphQL
         {
             get => size;
             set => size = Set("size", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AttachmentInput"/> class.
+        /// </summary>
+        /// <param name="key">The key obtained from the attachment upload response.</param>
+        public AttachmentInput(string key)
+        {
+            this.key = Set("key", key);
         }
     }
 }

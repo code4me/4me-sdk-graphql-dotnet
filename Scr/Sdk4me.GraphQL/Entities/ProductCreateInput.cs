@@ -8,8 +8,8 @@ namespace Sdk4me.GraphQL
     /// </summary>
     public class ProductCreateInput : PropertyChangeSet
     {
-        private string? brand;
-        private string? category;
+        private string brand;
+        private string category;
         private string? clientMutationId;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
@@ -17,7 +17,7 @@ namespace Sdk4me.GraphQL
         private bool? disabled;
         private string? financialOwnerId;
         private string? model;
-        private string? name;
+        private string name;
         private string? pictureUri;
         private string? productID;
         private long? rate;
@@ -40,7 +40,7 @@ namespace Sdk4me.GraphQL
         /// The brand name is typically the name of the product's manufacturer.
         /// </summary>
         [JsonProperty("brand")]
-        public string? Brand
+        public string Brand
         {
             get => brand;
             set => brand = Set("brand", value);
@@ -50,7 +50,7 @@ namespace Sdk4me.GraphQL
         /// The appropriate product category for the product.
         /// </summary>
         [JsonProperty("category")]
-        public string? Category
+        public string Category
         {
             get => category;
             set => category = Set("category", value);
@@ -135,7 +135,7 @@ namespace Sdk4me.GraphQL
         /// The name of the product. Fill out the Brand, Model, Product ID (optional) and Category fields to automatically generate a name based on the values entered in these fields.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -310,6 +310,19 @@ namespace Sdk4me.GraphQL
         {
             get => workflowTemplateId;
             set => workflowTemplateId = Set("workflowTemplateId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProductCreateInput"/> class.
+        /// </summary>
+        /// <param name="brand">The brand name is typically the name of the product's manufacturer.</param>
+        /// <param name="category">The appropriate product category for the product.</param>
+        /// <param name="name">The name of the product. Fill out the Brand, Model, Product ID (optional) and Category fields to automatically generate a name based on the values entered in these fields.</param>
+        public ProductCreateInput(string brand, string category, string name)
+        {
+            this.brand = Set("brand", brand);
+            this.category = Set("category", category);
+            this.name = Set("name", name);
         }
     }
 }

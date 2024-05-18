@@ -12,7 +12,7 @@ namespace Sdk4me.GraphQL
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
         private bool? disabled;
-        private string? name;
+        private string name;
         private List<AddressInput>? newAddresses;
         private string? pictureUri;
         private string? remarks;
@@ -66,7 +66,7 @@ namespace Sdk4me.GraphQL
         /// The name of the site or facility.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -151,6 +151,15 @@ namespace Sdk4me.GraphQL
         {
             get => uiExtensionId;
             set => uiExtensionId = Set("uiExtensionId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SiteCreateInput"/> class.
+        /// </summary>
+        /// <param name="name">The name of the site or facility.</param>
+        public SiteCreateInput(string name)
+        {
+            this.name = Set("name", name);
         }
     }
 }

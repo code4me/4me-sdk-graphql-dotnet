@@ -43,7 +43,7 @@ namespace Sdk4me.GraphQL
         private long? nrOfProcessors;
         private string? operatingSystemId;
         private string? pictureUri;
-        private string? productId;
+        private string productId;
         private decimal? purchaseValue;
         private string? purchaseValueCurrency;
         private long? ramAmount;
@@ -58,7 +58,7 @@ namespace Sdk4me.GraphQL
         private bool? siteLicense;
         private string? source;
         private string? sourceID;
-        private CiStatus? status;
+        private CiStatus status;
         private string? supplierId;
         private string? supportTeamId;
         private string? systemID;
@@ -308,7 +308,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the related product.
         /// </summary>
         [JsonProperty("productId")]
-        public string? ProductId
+        public string ProductId
         {
             get => productId;
             set => productId = Set("productId", value);
@@ -459,7 +459,7 @@ namespace Sdk4me.GraphQL
         /// The appropriate status for the configuration item (CI).
         /// </summary>
         [JsonProperty("status")]
-        public CiStatus? Status
+        public CiStatus Status
         {
             get => status;
             set => status = Set("status", value);
@@ -547,6 +547,17 @@ namespace Sdk4me.GraphQL
         {
             get => workflowTemplateId;
             set => workflowTemplateId = Set("workflowTemplateId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConfigurationItemCreateInput"/> class.
+        /// </summary>
+        /// <param name="productId">Identifier of the related product.</param>
+        /// <param name="status">The appropriate status for the configuration item (CI).</param>
+        public ConfigurationItemCreateInput(string productId, CiStatus status)
+        {
+            this.productId = Set("productId", productId);
+            this.status = Set("status", status);
         }
     }
 }

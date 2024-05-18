@@ -14,7 +14,7 @@ namespace Sdk4me.GraphQL
         private WorkflowCompletionReason? completionReason;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
-        private string? id;
+        private string id;
         private WorkflowJustification? justification;
         private string? managerId;
         private string? note;
@@ -85,7 +85,7 @@ namespace Sdk4me.GraphQL
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
-        public string? ID
+        public string ID
         {
             get => id;
             set => id = Set("id", value);
@@ -239,6 +239,15 @@ namespace Sdk4me.GraphQL
         {
             get => workflowType;
             set => workflowType = Set("workflowType", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkflowUpdateInput"/> class.
+        /// </summary>
+        /// <param name="id">The node ID of the record to update.</param>
+        public WorkflowUpdateInput(string id)
+        {
+            this.id = Set("id", id);
         }
     }
 }

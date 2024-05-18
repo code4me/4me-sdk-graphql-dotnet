@@ -15,7 +15,7 @@ namespace Sdk4me.GraphQL
         private DateTime? endAt;
         private string? fulfillmentTemplateId;
         private string? fullDescription;
-        private string? id;
+        private string id;
         private long? maxQuantity;
         private string? name;
         private string? pictureUri;
@@ -108,7 +108,7 @@ namespace Sdk4me.GraphQL
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
-        public string? ID
+        public string ID
         {
             get => id;
             set => id = Set("id", value);
@@ -285,6 +285,15 @@ namespace Sdk4me.GraphQL
         {
             get => uiExtensionId;
             set => uiExtensionId = Set("uiExtensionId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ShopArticleUpdateInput"/> class.
+        /// </summary>
+        /// <param name="id">The node ID of the record to update.</param>
+        public ShopArticleUpdateInput(string id)
+        {
+            this.id = Set("id", id);
         }
     }
 }

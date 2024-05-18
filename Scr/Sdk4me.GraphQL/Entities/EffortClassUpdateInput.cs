@@ -11,7 +11,7 @@ namespace Sdk4me.GraphQL
         private string? clientMutationId;
         private decimal? costMultiplier;
         private bool? disabled;
-        private string? id;
+        private string id;
         private string? name;
         private long? position;
         private List<string>? serviceOfferingIds;
@@ -54,7 +54,7 @@ namespace Sdk4me.GraphQL
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
-        public string? ID
+        public string ID
         {
             get => id;
             set => id = Set("id", value);
@@ -128,6 +128,15 @@ namespace Sdk4me.GraphQL
         {
             get => timesheetSettingIds;
             set => timesheetSettingIds = Set("timesheetSettingIds", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EffortClassUpdateInput"/> class.
+        /// </summary>
+        /// <param name="id">The node ID of the record to update.</param>
+        public EffortClassUpdateInput(string id)
+        {
+            this.id = Set("id", id);
         }
     }
 }

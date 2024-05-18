@@ -25,7 +25,7 @@ namespace Sdk4me.GraphQL
         /// <param name="name">The property name.</param>
         /// <param name="value">The property value.</param>
         /// <returns>The property value.</returns>
-        internal protected T? Set<T>(string name, T value)
+        internal protected T Set<T>(string name, T value)
         {
             fields.Add(name);
             return value;

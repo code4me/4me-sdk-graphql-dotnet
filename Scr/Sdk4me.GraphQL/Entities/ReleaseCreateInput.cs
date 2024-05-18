@@ -11,11 +11,11 @@ namespace Sdk4me.GraphQL
         private string? clientMutationId;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
-        private string? managerId;
+        private string managerId;
         private string? note;
         private string? source;
         private string? sourceID;
-        private string? subject;
+        private string subject;
         private string? uiExtensionId;
         private List<string>? workflowIds;
 
@@ -53,7 +53,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the person who is responsible for coordinating the implementation of the release. The person must have the release Manager role.
         /// </summary>
         [JsonProperty("managerId")]
-        public string? ManagerId
+        public string ManagerId
         {
             get => managerId;
             set => managerId = Set("managerId", value);
@@ -93,7 +93,7 @@ namespace Sdk4me.GraphQL
         /// A short description of the objective of the release.
         /// </summary>
         [JsonProperty("subject")]
-        public string? Subject
+        public string Subject
         {
             get => subject;
             set => subject = Set("subject", value);
@@ -117,6 +117,17 @@ namespace Sdk4me.GraphQL
         {
             get => workflowIds;
             set => workflowIds = Set("workflowIds", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReleaseCreateInput"/> class.
+        /// </summary>
+        /// <param name="managerId">Identifier of the person who is responsible for coordinating the implementation of the release. The person must have the release Manager role.</param>
+        /// <param name="subject">A short description of the objective of the release.</param>
+        public ReleaseCreateInput(string managerId, string subject)
+        {
+            this.managerId = Set("managerId", managerId);
+            this.subject = Set("subject", subject);
         }
     }
 }

@@ -29,12 +29,12 @@ namespace Sdk4me.GraphQL
         private long? productBacklogPosition;
         private string? projectId;
         private List<string>? requestIds;
-        private string? serviceId;
+        private string serviceId;
         private List<string>? serviceInstanceIds;
         private string? source;
         private string? sourceID;
         private ProblemStatus? status;
-        private string? subject;
+        private string subject;
         private string? supplierId;
         private string? supplierRequestID;
         private string? teamId;
@@ -250,7 +250,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the service in which instance(s) the problem resides.
         /// </summary>
         [JsonProperty("serviceId")]
-        public string? ServiceId
+        public string ServiceId
         {
             get => serviceId;
             set => serviceId = Set("serviceId", value);
@@ -300,7 +300,7 @@ namespace Sdk4me.GraphQL
         /// A short description of the symptoms that the problem causes.
         /// </summary>
         [JsonProperty("subject")]
-        public string? Subject
+        public string Subject
         {
             get => subject;
             set => subject = Set("subject", value);
@@ -404,6 +404,17 @@ namespace Sdk4me.GraphQL
         {
             get => workflowId;
             set => workflowId = Set("workflowId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProblemCreateInput"/> class.
+        /// </summary>
+        /// <param name="serviceId">Identifier of the service in which instance(s) the problem resides.</param>
+        /// <param name="subject">A short description of the symptoms that the problem causes.</param>
+        public ProblemCreateInput(string serviceId, string subject)
+        {
+            this.serviceId = Set("serviceId", serviceId);
+            this.subject = Set("subject", subject);
         }
     }
 }

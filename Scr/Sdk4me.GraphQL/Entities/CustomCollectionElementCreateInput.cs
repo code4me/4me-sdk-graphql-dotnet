@@ -16,7 +16,7 @@ namespace Sdk4me.GraphQL
         private string? description;
         private bool? disabled;
         private string? information;
-        private string? name;
+        private string name;
         private string? reference;
         private string? source;
         private string? sourceID;
@@ -105,7 +105,7 @@ namespace Sdk4me.GraphQL
         /// Name of the collection element.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -139,6 +139,15 @@ namespace Sdk4me.GraphQL
         {
             get => sourceID;
             set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomCollectionElementCreateInput"/> class.
+        /// </summary>
+        /// <param name="name">Name of the collection element.</param>
+        public CustomCollectionElementCreateInput(string name)
+        {
+            this.name = Set("name", name);
         }
     }
 }

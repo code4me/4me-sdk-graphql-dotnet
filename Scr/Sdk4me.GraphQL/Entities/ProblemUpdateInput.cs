@@ -18,7 +18,7 @@ namespace Sdk4me.GraphQL
         private List<string>? configurationItemIds;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
-        private string? id;
+        private string id;
         private ProblemImpact? impact;
         private string? knowledgeArticleId;
         private bool? knownError;
@@ -141,7 +141,7 @@ namespace Sdk4me.GraphQL
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
-        public string? ID
+        public string ID
         {
             get => id;
             set => id = Set("id", value);
@@ -415,6 +415,15 @@ namespace Sdk4me.GraphQL
         {
             get => workflowId;
             set => workflowId = Set("workflowId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProblemUpdateInput"/> class.
+        /// </summary>
+        /// <param name="id">The node ID of the record to update.</param>
+        public ProblemUpdateInput(string id)
+        {
+            this.id = Set("id", id);
         }
     }
 }

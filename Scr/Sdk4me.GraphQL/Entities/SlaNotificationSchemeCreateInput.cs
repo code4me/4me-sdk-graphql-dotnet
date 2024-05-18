@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
     {
         private string? clientMutationId;
         private bool? disabled;
-        private string? name;
+        private string name;
         private List<SlaNotificationRuleInput>? newSlaNotificationRules;
         private string? source;
         private string? sourceID;
@@ -39,7 +39,7 @@ namespace Sdk4me.GraphQL
         /// The name of the SLA notification scheme.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -73,6 +73,15 @@ namespace Sdk4me.GraphQL
         {
             get => sourceID;
             set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SlaNotificationSchemeCreateInput"/> class.
+        /// </summary>
+        /// <param name="name">The name of the SLA notification scheme.</param>
+        public SlaNotificationSchemeCreateInput(string name)
+        {
+            this.name = Set("name", name);
         }
     }
 }

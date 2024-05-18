@@ -22,7 +22,7 @@ namespace Sdk4me.GraphQL
         private DateTime? endOfSupportDate;
 #endif
         private string? financialOwnerId;
-        private string? id;
+        private string id;
 #if NET6_0_OR_GREATER
         private DateOnly? inUseSince;
 #else
@@ -172,7 +172,7 @@ namespace Sdk4me.GraphQL
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
-        public string? ID
+        public string ID
         {
             get => id;
             set => id = Set("id", value);
@@ -569,6 +569,15 @@ namespace Sdk4me.GraphQL
         {
             get => workflowTemplateId;
             set => workflowTemplateId = Set("workflowTemplateId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConfigurationItemUpdateInput"/> class.
+        /// </summary>
+        /// <param name="id">The node ID of the record to update.</param>
+        public ConfigurationItemUpdateInput(string id)
+        {
+            this.id = Set("id", id);
         }
     }
 }

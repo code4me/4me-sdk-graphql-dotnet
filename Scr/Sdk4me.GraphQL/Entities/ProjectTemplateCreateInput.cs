@@ -14,7 +14,7 @@ namespace Sdk4me.GraphQL
         private List<ProjectTemplateTaskTemplateInput>? newTaskTemplateRelations;
         private string? source;
         private string? sourceID;
-        private string? subject;
+        private string subject;
 
         /// <summary>
         /// A unique identifier for the client performing the mutation.
@@ -80,10 +80,19 @@ namespace Sdk4me.GraphQL
         /// A short description that needs to be copied to the Subject field of a new project when it is being created based on the template.
         /// </summary>
         [JsonProperty("subject")]
-        public string? Subject
+        public string Subject
         {
             get => subject;
             set => subject = Set("subject", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectTemplateCreateInput"/> class.
+        /// </summary>
+        /// <param name="subject">A short description that needs to be copied to the Subject field of a new project when it is being created based on the template.</param>
+        public ProjectTemplateCreateInput(string subject)
+        {
+            this.subject = Set("subject", subject);
         }
     }
 }

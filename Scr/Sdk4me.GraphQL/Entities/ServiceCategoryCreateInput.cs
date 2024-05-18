@@ -11,7 +11,7 @@ namespace Sdk4me.GraphQL
         private string? clientMutationId;
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
-        private string? name;
+        private string name;
         private string? pictureUri;
         private List<string>? serviceIds;
         private string? source;
@@ -51,7 +51,7 @@ namespace Sdk4me.GraphQL
         /// The name of the service category.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -95,6 +95,15 @@ namespace Sdk4me.GraphQL
         {
             get => sourceID;
             set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ServiceCategoryCreateInput"/> class.
+        /// </summary>
+        /// <param name="name">The name of the service category.</param>
+        public ServiceCategoryCreateInput(string name)
+        {
+            this.name = Set("name", name);
         }
     }
 }

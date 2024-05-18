@@ -15,7 +15,7 @@ namespace Sdk4me.GraphQL
         private string? clientMutationId;
         private bool? disabled;
         private List<string>? effortClassIds;
-        private string? name;
+        private string name;
         private bool? notifyOnIncomplete;
         private List<string>? organizationIds;
         private TimesheetSettingPercentageIncrement? percentageIncrement;
@@ -28,7 +28,7 @@ namespace Sdk4me.GraphQL
         private string? taskEffortClassId;
         private string? timeAllocationEffortClassId;
         private TimesheetSettingTimeIncrement? timeIncrement;
-        private TimesheetSettingUnit? unit;
+        private TimesheetSettingUnit unit;
         private long? workday;
         private long? workweek;
 
@@ -106,7 +106,7 @@ namespace Sdk4me.GraphQL
         /// The name of the timesheet settings.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -236,7 +236,7 @@ namespace Sdk4me.GraphQL
         /// Whether the people of the organizations to which the timesheet settings are linked need to register their time in hours and minutes, or as a percentage of a workday.
         /// </summary>
         [JsonProperty("unit")]
-        public TimesheetSettingUnit? Unit
+        public TimesheetSettingUnit Unit
         {
             get => unit;
             set => unit = Set("unit", value);
@@ -260,6 +260,17 @@ namespace Sdk4me.GraphQL
         {
             get => workweek;
             set => workweek = Set("workweek", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TimesheetSettingCreateInput"/> class.
+        /// </summary>
+        /// <param name="name">The name of the timesheet settings.</param>
+        /// <param name="unit">Whether the people of the organizations to which the timesheet settings are linked need to register their time in hours and minutes, or as a percentage of a workday.</param>
+        public TimesheetSettingCreateInput(string name, TimesheetSettingUnit unit)
+        {
+            this.name = Set("name", name);
+            this.unit = Set("unit", unit);
         }
     }
 }

@@ -31,7 +31,7 @@ namespace Sdk4me.GraphQL
         private string? sourceID;
         private bool? specialists;
         private RequestStatus? status;
-        private string? subject;
+        private string subject;
         private string? supplierId;
         private string? supportHoursId;
         private string? teamId;
@@ -275,7 +275,7 @@ namespace Sdk4me.GraphQL
         /// A short description that needs to be copied to the Subject field of a new request when it is being created based on the template.
         /// </summary>
         [JsonProperty("subject")]
-        public string? Subject
+        public string Subject
         {
             get => subject;
             set => subject = Set("subject", value);
@@ -360,6 +360,15 @@ namespace Sdk4me.GraphQL
         {
             get => workflowTemplateId;
             set => workflowTemplateId = Set("workflowTemplateId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RequestTemplateCreateInput"/> class.
+        /// </summary>
+        /// <param name="subject">A short description that needs to be copied to the Subject field of a new request when it is being created based on the template.</param>
+        public RequestTemplateCreateInput(string subject)
+        {
+            this.subject = Set("subject", subject);
         }
     }
 }

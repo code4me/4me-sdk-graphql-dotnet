@@ -49,7 +49,7 @@ namespace Sdk4me.GraphQL
         private string? timeSpentEffortClassId;
         private bool? urgent;
         private DateTime? waitingUntil;
-        private string? workflowId;
+        private string workflowId;
         private bool? workHoursAre24x7;
 
         /// <summary>
@@ -456,7 +456,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the workflow to which the task belongs.
         /// </summary>
         [JsonProperty("workflowId")]
-        public string? WorkflowId
+        public string WorkflowId
         {
             get => workflowId;
             set => workflowId = Set("workflowId", value);
@@ -470,6 +470,15 @@ namespace Sdk4me.GraphQL
         {
             get => workHoursAre24x7;
             set => workHoursAre24x7 = Set("workHoursAre24x7", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TaskCreateInput"/> class.
+        /// </summary>
+        /// <param name="workflowId">Identifier of the workflow to which the task belongs.</param>
+        public TaskCreateInput(string workflowId)
+        {
+            this.workflowId = Set("workflowId", workflowId);
         }
     }
 }

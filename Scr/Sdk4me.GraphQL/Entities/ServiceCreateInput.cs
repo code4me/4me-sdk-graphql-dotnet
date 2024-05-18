@@ -21,10 +21,10 @@ namespace Sdk4me.GraphQL
         private string? firstLineTeamId;
         private string? keywords;
         private string? knowledgeManagerId;
-        private string? name;
+        private string name;
         private string? pictureUri;
         private string? problemManagerId;
-        private string? providerId;
+        private string providerId;
         private string? releaseManagerId;
         private string? serviceOwnerId;
         private string? source;
@@ -167,7 +167,7 @@ namespace Sdk4me.GraphQL
         /// The name of the service. The service name may be followed by the name of its core application placed between brackets.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -197,7 +197,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the organization who provides the service.
         /// </summary>
         [JsonProperty("providerId")]
-        public string? ProviderId
+        public string ProviderId
         {
             get => providerId;
             set => providerId = Set("providerId", value);
@@ -271,6 +271,17 @@ namespace Sdk4me.GraphQL
         {
             get => uiExtensionId;
             set => uiExtensionId = Set("uiExtensionId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ServiceCreateInput"/> class.
+        /// </summary>
+        /// <param name="name">The name of the service. The service name may be followed by the name of its core application placed between brackets.</param>
+        /// <param name="providerId">Identifier of the organization who provides the service.</param>
+        public ServiceCreateInput(string name, string providerId)
+        {
+            this.name = Set("name", name);
+            this.providerId = Set("providerId", providerId);
         }
     }
 }

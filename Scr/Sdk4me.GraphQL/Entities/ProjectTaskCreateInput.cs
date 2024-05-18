@@ -13,7 +13,7 @@ namespace Sdk4me.GraphQL
         private long? agileBoardColumnPosition;
         private string? agileBoardId;
         private DateTime? assignedAt;
-        private ProjectTaskCategory? category;
+        private ProjectTaskCategory category;
         private string? clientMutationId;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
@@ -22,18 +22,18 @@ namespace Sdk4me.GraphQL
         private List<ProjectTaskAssignmentInput>? newAssignments;
         private string? note;
         private string? pdfDesignId;
-        private string? phaseId;
-        private long? plannedDuration;
+        private string phaseId;
+        private long plannedDuration;
         private long? plannedEffort;
         private List<string>? predecessorIds;
-        private string? projectId;
+        private string projectId;
         private long? requiredApprovals;
         private string? skillPoolId;
         private string? source;
         private string? sourceID;
         private DateTime? startAt;
         private ProjectTaskStatus? status;
-        private string? subject;
+        private string subject;
         private List<string>? successorIds;
         private string? supplierId;
         private string? supplierRequestID;
@@ -89,7 +89,7 @@ namespace Sdk4me.GraphQL
         /// The category of the project task. Activity tasks are used to assign project-related work to people. Approval tasks are used to collect approvals for projects. Milestones are used to mark specific points along a project's implementation plan.
         /// </summary>
         [JsonProperty("category")]
-        public ProjectTaskCategory? Category
+        public ProjectTaskCategory Category
         {
             get => category;
             set => category = Set("category", value);
@@ -179,7 +179,7 @@ namespace Sdk4me.GraphQL
         /// The identifier of the phase of the project to which the project task belongs.
         /// </summary>
         [JsonProperty("phaseId")]
-        public string? PhaseId
+        public string PhaseId
         {
             get => phaseId;
             set => phaseId = Set("phaseId", value);
@@ -189,7 +189,7 @@ namespace Sdk4me.GraphQL
         /// The number of minutes it is expected to take for the project task to be completed following its assignment, or following its fixed start date and time if the Start no earlier than field is filled out.
         /// </summary>
         [JsonProperty("plannedDuration")]
-        public long? PlannedDuration
+        public long PlannedDuration
         {
             get => plannedDuration;
             set => plannedDuration = Set("plannedDuration", value);
@@ -219,7 +219,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the project this task belongs to.
         /// </summary>
         [JsonProperty("projectId")]
-        public string? ProjectId
+        public string ProjectId
         {
             get => projectId;
             set => projectId = Set("projectId", value);
@@ -289,7 +289,7 @@ namespace Sdk4me.GraphQL
         /// A short description of the objective of the project task.
         /// </summary>
         [JsonProperty("subject")]
-        public string? Subject
+        public string Subject
         {
             get => subject;
             set => subject = Set("subject", value);
@@ -393,6 +393,23 @@ namespace Sdk4me.GraphQL
         {
             get => workHoursAre24x7;
             set => workHoursAre24x7 = Set("workHoursAre24x7", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectTaskCreateInput"/> class.
+        /// </summary>
+        /// <param name="category">The category of the project task. Activity tasks are used to assign project-related work to people. Approval tasks are used to collect approvals for projects. Milestones are used to mark specific points along a project's implementation plan.</param>
+        /// <param name="phaseId">The identifier of the phase of the project to which the project task belongs.</param>
+        /// <param name="plannedDuration">The number of minutes it is expected to take for the project task to be completed following its assignment, or following its fixed start date and time if the Start no earlier than field is filled out.</param>
+        /// <param name="projectId">Identifier of the project this task belongs to.</param>
+        /// <param name="subject">A short description of the objective of the project task.</param>
+        public ProjectTaskCreateInput(ProjectTaskCategory category, string phaseId, long plannedDuration, string projectId, string subject)
+        {
+            this.category = Set("category", category);
+            this.phaseId = Set("phaseId", phaseId);
+            this.plannedDuration = Set("plannedDuration", plannedDuration);
+            this.projectId = Set("projectId", projectId);
+            this.subject = Set("subject", subject);
         }
     }
 }

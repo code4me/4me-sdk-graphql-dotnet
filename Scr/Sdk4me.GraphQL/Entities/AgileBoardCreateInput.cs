@@ -14,7 +14,7 @@ namespace Sdk4me.GraphQL
         private List<AttachmentInput>? descriptionAttachments;
         private bool? disabled;
         private string? managerId;
-        private string? name;
+        private string name;
         private List<AgileBoardColumnInput>? newColumns;
         private string? pictureUri;
         private string? source;
@@ -84,7 +84,7 @@ namespace Sdk4me.GraphQL
         /// Name of the agile board.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -128,6 +128,15 @@ namespace Sdk4me.GraphQL
         {
             get => sourceID;
             set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AgileBoardCreateInput"/> class.
+        /// </summary>
+        /// <param name="name">Name of the agile board.</param>
+        public AgileBoardCreateInput(string name)
+        {
+            this.name = Set("name", name);
         }
     }
 }

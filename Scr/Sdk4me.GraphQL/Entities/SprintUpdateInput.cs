@@ -13,7 +13,7 @@ namespace Sdk4me.GraphQL
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
         private DateTime? endAt;
-        private string? id;
+        private string id;
         private List<SprintBacklogItemInput>? newSprintBacklogItems;
         private long? number;
         private string? scrumWorkspaceId;
@@ -67,7 +67,7 @@ namespace Sdk4me.GraphQL
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
-        public string? ID
+        public string ID
         {
             get => id;
             set => id = Set("id", value);
@@ -151,6 +151,15 @@ namespace Sdk4me.GraphQL
         {
             get => status;
             set => status = Set("status", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SprintUpdateInput"/> class.
+        /// </summary>
+        /// <param name="id">The node ID of the record to update.</param>
+        public SprintUpdateInput(string id)
+        {
+            this.id = Set("id", id);
         }
     }
 }

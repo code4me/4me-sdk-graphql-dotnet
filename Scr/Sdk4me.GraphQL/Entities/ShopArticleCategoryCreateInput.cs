@@ -11,7 +11,7 @@ namespace Sdk4me.GraphQL
         private string? clientMutationId;
         private string? fullDescription;
         private List<AttachmentInput>? fullDescriptionAttachments;
-        private string? name;
+        private string name;
         private string? parentId;
         private string? pictureUri;
         private string? shortDescription;
@@ -52,7 +52,7 @@ namespace Sdk4me.GraphQL
         /// The display name of the shop article category.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -106,6 +106,15 @@ namespace Sdk4me.GraphQL
         {
             get => sourceID;
             set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ShopArticleCategoryCreateInput"/> class.
+        /// </summary>
+        /// <param name="name">The display name of the shop article category.</param>
+        public ShopArticleCategoryCreateInput(string name)
+        {
+            this.name = Set("name", name);
         }
     }
 }

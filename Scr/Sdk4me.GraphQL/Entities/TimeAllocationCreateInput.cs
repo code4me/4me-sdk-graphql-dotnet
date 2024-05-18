@@ -9,15 +9,15 @@ namespace Sdk4me.GraphQL
     public class TimeAllocationCreateInput : PropertyChangeSet
     {
         private string? clientMutationId;
-        private TimeAllocationCustomerCategory? customerCategory;
+        private TimeAllocationCustomerCategory customerCategory;
         private List<string>? customerIds;
-        private TimeAllocationDescriptionCategory? descriptionCategory;
+        private TimeAllocationDescriptionCategory descriptionCategory;
         private bool? disabled;
         private string? effortClassId;
         private string? group;
-        private string? name;
+        private string name;
         private List<string>? organizationIds;
-        private TimeAllocationServiceCategory? serviceCategory;
+        private TimeAllocationServiceCategory serviceCategory;
         private List<string>? serviceIds;
         private string? source;
         private string? sourceID;
@@ -36,7 +36,7 @@ namespace Sdk4me.GraphQL
         /// Whether a person who spent on the time allocation needs to select a customer organization, and if this is the case, whether this person may only select from the customer organizations linked to the time allocation or is allowed to select any customer organization.
         /// </summary>
         [JsonProperty("customerCategory")]
-        public TimeAllocationCustomerCategory? CustomerCategory
+        public TimeAllocationCustomerCategory CustomerCategory
         {
             get => customerCategory;
             set => customerCategory = Set("customerCategory", value);
@@ -56,7 +56,7 @@ namespace Sdk4me.GraphQL
         /// Whether the Description field should be available, and if so, whether it should be required, in the time entries to which the time allocation is related.
         /// </summary>
         [JsonProperty("descriptionCategory")]
-        public TimeAllocationDescriptionCategory? DescriptionCategory
+        public TimeAllocationDescriptionCategory DescriptionCategory
         {
             get => descriptionCategory;
             set => descriptionCategory = Set("descriptionCategory", value);
@@ -96,7 +96,7 @@ namespace Sdk4me.GraphQL
         /// The name of the time allocation.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -116,7 +116,7 @@ namespace Sdk4me.GraphQL
         /// Whether a Person who spent on the time allocation needs to select a service, and if this is the case, whether this person may only select from the services linked to the time allocation or is allowed to select any service.
         /// </summary>
         [JsonProperty("serviceCategory")]
-        public TimeAllocationServiceCategory? ServiceCategory
+        public TimeAllocationServiceCategory ServiceCategory
         {
             get => serviceCategory;
             set => serviceCategory = Set("serviceCategory", value);
@@ -150,6 +150,21 @@ namespace Sdk4me.GraphQL
         {
             get => sourceID;
             set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TimeAllocationCreateInput"/> class.
+        /// </summary>
+        /// <param name="customerCategory">Whether a person who spent on the time allocation needs to select a customer organization, and if this is the case, whether this person may only select from the customer organizations linked to the time allocation or is allowed to select any customer organization.</param>
+        /// <param name="descriptionCategory">Whether the Description field should be available, and if so, whether it should be required, in the time entries to which the time allocation is related.</param>
+        /// <param name="name">The name of the time allocation.</param>
+        /// <param name="serviceCategory">Whether a Person who spent on the time allocation needs to select a service, and if this is the case, whether this person may only select from the services linked to the time allocation or is allowed to select any service.</param>
+        public TimeAllocationCreateInput(TimeAllocationCustomerCategory customerCategory, TimeAllocationDescriptionCategory descriptionCategory, string name, TimeAllocationServiceCategory serviceCategory)
+        {
+            this.customerCategory = Set("customerCategory", customerCategory);
+            this.descriptionCategory = Set("descriptionCategory", descriptionCategory);
+            this.name = Set("name", name);
+            this.serviceCategory = Set("serviceCategory", serviceCategory);
         }
     }
 }

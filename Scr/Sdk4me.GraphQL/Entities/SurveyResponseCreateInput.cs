@@ -17,11 +17,11 @@ namespace Sdk4me.GraphQL
         private string? rating;
         private JToken? ratingCalculation;
         private DateTime? respondedAt;
-        private string? serviceId;
+        private string serviceId;
         private List<string>? slaIds;
         private string? source;
         private string? sourceID;
-        private string? surveyId;
+        private string surveyId;
 
         /// <summary>
         /// A unique identifier for the client performing the mutation.
@@ -97,7 +97,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the service this response is about.
         /// </summary>
         [JsonProperty("serviceId")]
-        public string? ServiceId
+        public string ServiceId
         {
             get => serviceId;
             set => serviceId = Set("serviceId", value);
@@ -137,10 +137,21 @@ namespace Sdk4me.GraphQL
         /// Identifier of the survey this response is for.
         /// </summary>
         [JsonProperty("surveyId")]
-        public string? SurveyId
+        public string SurveyId
         {
             get => surveyId;
             set => surveyId = Set("surveyId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SurveyResponseCreateInput"/> class.
+        /// </summary>
+        /// <param name="serviceId">Identifier of the service this response is about.</param>
+        /// <param name="surveyId">Identifier of the survey this response is for.</param>
+        public SurveyResponseCreateInput(string serviceId, string surveyId)
+        {
+            this.serviceId = Set("serviceId", serviceId);
+            this.surveyId = Set("surveyId", surveyId);
         }
     }
 }

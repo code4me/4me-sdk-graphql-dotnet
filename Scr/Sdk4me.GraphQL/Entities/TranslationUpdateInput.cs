@@ -8,8 +8,8 @@ namespace Sdk4me.GraphQL
     public class TranslationUpdateInput : PropertyChangeSet
     {
         private string? clientMutationId;
-        private string? id;
-        private string? text;
+        private string id;
+        private string text;
 
         /// <summary>
         /// A unique identifier for the client performing the mutation.
@@ -25,7 +25,7 @@ namespace Sdk4me.GraphQL
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
-        public string? ID
+        public string ID
         {
             get => id;
             set => id = Set("id", value);
@@ -35,10 +35,21 @@ namespace Sdk4me.GraphQL
         /// The text of the translation.
         /// </summary>
         [JsonProperty("text")]
-        public string? Text
+        public string Text
         {
             get => text;
             set => text = Set("text", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TranslationUpdateInput"/> class.
+        /// </summary>
+        /// <param name="id">The node ID of the record to update.</param>
+        /// <param name="text">The text of the translation.</param>
+        public TranslationUpdateInput(string id, string text)
+        {
+            this.id = Set("id", id);
+            this.text = Set("text", text);
         }
     }
 }

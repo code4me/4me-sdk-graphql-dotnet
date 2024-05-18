@@ -12,10 +12,10 @@ namespace Sdk4me.GraphQL
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
         private bool? disabled;
-        private WebhookEvent? @event;
+        private WebhookEvent @event;
         private string? mailExceptionsTo;
         private string? name;
-        private string? uri;
+        private string uri;
         private string? webhookPolicyId;
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Sdk4me.GraphQL
         /// Event that will trigger this webhook.
         /// </summary>
         [JsonProperty("event")]
-        public WebhookEvent? Event
+        public WebhookEvent Event
         {
             get => @event;
             set => @event = Set("event", value);
@@ -92,7 +92,7 @@ namespace Sdk4me.GraphQL
         /// Publicly accessible URI that 4me can use to POST http messages to.
         /// </summary>
         [JsonProperty("uri")]
-        public string? Uri
+        public string Uri
         {
             get => uri;
             set => uri = Set("uri", value);
@@ -106,6 +106,17 @@ namespace Sdk4me.GraphQL
         {
             get => webhookPolicyId;
             set => webhookPolicyId = Set("webhookPolicyId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCreateInput"/> class.
+        /// </summary>
+        /// <param name="event">Event that will trigger this webhook.</param>
+        /// <param name="uri">Publicly accessible URI that 4me can use to POST http messages to.</param>
+        public WebhookCreateInput(WebhookEvent @event, string uri)
+        {
+            this.@event = Set("event", @event);
+            this.uri = Set("uri", uri);
         }
     }
 }

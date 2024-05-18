@@ -8,8 +8,8 @@ namespace Sdk4me.GraphQL
     public class NoteReactionCreateInput : PropertyChangeSet
     {
         private string? clientMutationId;
-        private string? noteId;
-        private string? reaction;
+        private string noteId;
+        private string reaction;
 
         /// <summary>
         /// A unique identifier for the client performing the mutation.
@@ -25,7 +25,7 @@ namespace Sdk4me.GraphQL
         /// The identifier of the note you want to add a reaction to.
         /// </summary>
         [JsonProperty("noteId")]
-        public string? NoteId
+        public string NoteId
         {
             get => noteId;
             set => noteId = Set("noteId", value);
@@ -41,10 +41,29 @@ namespace Sdk4me.GraphQL
         /// <br>• ❤️</br>
         /// </summary>
         [JsonProperty("reaction")]
-        public string? Reaction
+        public string Reaction
         {
             get => reaction;
             set => reaction = Set("reaction", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NoteReactionCreateInput"/> class.
+        /// </summary>
+        /// <param name="noteId">The identifier of the note you want to add a reaction to.</param>
+        /// <param name="reaction">
+        /// <br>The type of reaction to add to the note. Valid values are:</br>
+        /// <br>• 👍</br>
+        /// <br>• 👎</br>
+        /// <br>• 😀</br>
+        /// <br>• 😕</br>
+        /// <br>• 🎉</br>
+        /// <br>• ❤️</br>
+        /// </param>
+        public NoteReactionCreateInput(string noteId, string reaction)
+        {
+            this.noteId = Set("noteId", noteId);
+            this.reaction = Set("reaction", reaction);
         }
     }
 }

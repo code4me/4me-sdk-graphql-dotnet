@@ -30,18 +30,18 @@ namespace Sdk4me.GraphQL
 #else
         private DateTime? depreciationStart;
 #endif
-        private string? description;
+        private string description;
         private string? financialID;
         private string? flsaId;
 #if NET6_0_OR_GREATER
-        private DateOnly? invoiceDate;
+        private DateOnly invoiceDate;
 #else
-        private DateTime? invoiceDate;
+        private DateTime invoiceDate;
 #endif
-        private string? invoiceNr;
+        private string invoiceNr;
         private string? poNr;
         private string? projectId;
-        private decimal? quantity;
+        private decimal quantity;
         private long? rate;
         private string? remarks;
         private List<AttachmentInput>? remarksAttachments;
@@ -51,8 +51,8 @@ namespace Sdk4me.GraphQL
         private string? slaId;
         private string? source;
         private string? sourceID;
-        private string? supplierId;
-        private decimal? unitPrice;
+        private string supplierId;
+        private decimal unitPrice;
         private long? usefulLife;
         private string? workflowId;
 
@@ -169,7 +169,7 @@ namespace Sdk4me.GraphQL
         /// Short description of what was acquired.
         /// </summary>
         [JsonProperty("description")]
-        public string? Description
+        public string Description
         {
             get => description;
             set => description = Set("description", value);
@@ -200,9 +200,9 @@ namespace Sdk4me.GraphQL
         /// </summary>
         [JsonProperty("invoiceDate")]
 #if NET6_0_OR_GREATER
-        public DateOnly? InvoiceDate
+        public DateOnly InvoiceDate
 #else
-        public DateTime? InvoiceDate
+        public DateTime InvoiceDate
 #endif
         {
             get => invoiceDate;
@@ -213,7 +213,7 @@ namespace Sdk4me.GraphQL
         /// The invoice number that the supplier specified on the invoice.
         /// </summary>
         [JsonProperty("invoiceNr")]
-        public string? InvoiceNr
+        public string InvoiceNr
         {
             get => invoiceNr;
             set => invoiceNr = Set("invoiceNr", value);
@@ -243,7 +243,7 @@ namespace Sdk4me.GraphQL
         /// The number of units that were acquired.
         /// </summary>
         [JsonProperty("quantity")]
-        public decimal? Quantity
+        public decimal Quantity
         {
             get => quantity;
             set => quantity = Set("quantity", value);
@@ -344,7 +344,7 @@ namespace Sdk4me.GraphQL
         /// Identifier of the organization from which the invoice was received.
         /// </summary>
         [JsonProperty("supplierId")]
-        public string? SupplierId
+        public string SupplierId
         {
             get => supplierId;
             set => supplierId = Set("supplierId", value);
@@ -354,7 +354,7 @@ namespace Sdk4me.GraphQL
         /// The amount that the supplier has charged per unit that was acquired.
         /// </summary>
         [JsonProperty("unitPrice")]
-        public decimal? UnitPrice
+        public decimal UnitPrice
         {
             get => unitPrice;
             set => unitPrice = Set("unitPrice", value);
@@ -379,5 +379,37 @@ namespace Sdk4me.GraphQL
             get => workflowId;
             set => workflowId = Set("workflowId", value);
         }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InvoiceCreateInput"/> class.
+        /// </summary>
+        /// <param name="description">Short description of what was acquired.</param>
+        /// <param name="invoiceDate">The date on which the invoice was sent out by the supplier.</param>
+        /// <param name="invoiceNr">The invoice number that the supplier specified on the invoice.</param>
+        /// <param name="quantity">The number of units that were acquired.</param>
+        /// <param name="supplierId">Identifier of the organization from which the invoice was received.</param>
+        /// <param name="unitPrice">The amount that the supplier has charged per unit that was acquired.</param>
+#if NET6_0_OR_GREATER
+        public InvoiceCreateInput(string description, DateOnly invoiceDate, string invoiceNr, decimal quantity, string supplierId, decimal unitPrice)
+        {
+            this.description = description;
+            this.invoiceDate = invoiceDate;
+            this.invoiceNr = invoiceNr;
+            this.quantity = quantity;
+            this.supplierId = supplierId;
+            this.unitPrice = unitPrice;
+        }
+
+#else
+        public InvoiceCreateInput(string description, DateTime invoiceDate, string invoiceNr, decimal quantity, string supplierId, decimal unitPrice)
+        {
+            this.description = description;
+            this.invoiceDate = invoiceDate;
+            this.invoiceNr = invoiceNr;
+            this.quantity = quantity;
+            this.supplierId = supplierId;
+            this.unitPrice = unitPrice;
+        }
+#endif
     }
 }

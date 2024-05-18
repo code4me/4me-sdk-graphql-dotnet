@@ -13,7 +13,7 @@ namespace Sdk4me.GraphQL
         private List<string>? answersToDelete;
         private string? clientMutationId;
         private bool? completed;
-        private string? id;
+        private string id;
         private List<SurveyAnswerInput>? newAnswers;
         private string? personId;
         private string? rating;
@@ -59,7 +59,7 @@ namespace Sdk4me.GraphQL
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
-        public string? ID
+        public string ID
         {
             get => id;
             set => id = Set("id", value);
@@ -163,6 +163,15 @@ namespace Sdk4me.GraphQL
         {
             get => surveyId;
             set => surveyId = Set("surveyId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SurveyResponseUpdateInput"/> class.
+        /// </summary>
+        /// <param name="id">The node ID of the record to update.</param>
+        public SurveyResponseUpdateInput(string id)
+        {
+            this.id = Set("id", id);
         }
     }
 }

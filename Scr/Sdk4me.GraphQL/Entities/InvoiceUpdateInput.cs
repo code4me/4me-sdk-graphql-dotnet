@@ -33,7 +33,7 @@ namespace Sdk4me.GraphQL
         private string? description;
         private string? financialID;
         private string? flsaId;
-        private string? id;
+        private string id;
 #if NET6_0_OR_GREATER
         private DateOnly? invoiceDate;
 #else
@@ -200,7 +200,7 @@ namespace Sdk4me.GraphQL
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
-        public string? ID
+        public string ID
         {
             get => id;
             set => id = Set("id", value);
@@ -389,6 +389,15 @@ namespace Sdk4me.GraphQL
         {
             get => workflowId;
             set => workflowId = Set("workflowId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InvoiceUpdateInput"/> class.
+        /// </summary>
+        /// <param name="id">The node ID of the record to update.</param>
+        public InvoiceUpdateInput(string id)
+        {
+            this.id = Set("id", id);
         }
     }
 }

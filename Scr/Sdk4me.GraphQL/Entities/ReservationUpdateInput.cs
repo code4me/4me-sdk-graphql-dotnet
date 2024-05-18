@@ -16,7 +16,7 @@ namespace Sdk4me.GraphQL
         private List<AttachmentInput>? descriptionAttachments;
         private long? duration;
         private DateTime? endAt;
-        private string? id;
+        private string id;
         private string? name;
         private string? personId;
         private DateTime? preparationStartAt;
@@ -102,7 +102,7 @@ namespace Sdk4me.GraphQL
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
-        public string? ID
+        public string ID
         {
             get => id;
             set => id = Set("id", value);
@@ -206,6 +206,15 @@ namespace Sdk4me.GraphQL
         {
             get => status;
             set => status = Set("status", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReservationUpdateInput"/> class.
+        /// </summary>
+        /// <param name="id">The node ID of the record to update.</param>
+        public ReservationUpdateInput(string id)
+        {
+            this.id = Set("id", id);
         }
     }
 }

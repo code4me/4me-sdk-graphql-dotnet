@@ -23,7 +23,7 @@ namespace Sdk4me.GraphQL
         private DateTime? downtimeEndAt;
         private DateTime? downtimeStartAt;
         private string? groupedIntoId;
-        private string? id;
+        private string id;
         private RequestImpact? impact;
         private string? internalNote;
         private List<AttachmentInput>? internalNoteAttachments;
@@ -205,7 +205,7 @@ namespace Sdk4me.GraphQL
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
-        public string? ID
+        public string ID
         {
             get => id;
             set => id = Set("id", value);
@@ -570,6 +570,15 @@ namespace Sdk4me.GraphQL
         {
             get => workflowId;
             set => workflowId = Set("workflowId", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RequestUpdateInput"/> class.
+        /// </summary>
+        /// <param name="id">The node ID of the record to update.</param>
+        public RequestUpdateInput(string id)
+        {
+            this.id = Set("id", id);
         }
     }
 }

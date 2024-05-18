@@ -26,7 +26,7 @@ namespace Sdk4me.GraphQL
         private DateTime? lastSeenAt;
         private string? location;
         private DiscoveredItemMetaData? meta;
-        private string? name;
+        private string name;
         private long? nrOfCores;
         private long? nrOfProcessors;
         private string? operatingSystemId;
@@ -36,7 +36,7 @@ namespace Sdk4me.GraphQL
         private string? remarks;
         private string? serialNr;
         private string? service;
-        private string? sourceID;
+        private string sourceID;
         private CiStatus? status;
         private string? systemID;
         private List<string>? userIds;
@@ -148,7 +148,7 @@ namespace Sdk4me.GraphQL
         /// Name of the configuration item.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -249,7 +249,7 @@ namespace Sdk4me.GraphQL
         /// The unique identifier of the configuration item in an external system
         /// </summary>
         [JsonProperty("sourceID")]
-        public string? SourceID
+        public string SourceID
         {
             get => sourceID;
             set => sourceID = Set("sourceID", value);
@@ -297,6 +297,17 @@ namespace Sdk4me.GraphQL
         {
             get => warrantyExpiryDate;
             set => warrantyExpiryDate = Set("warrantyExpiryDate", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DiscoveredCiInput"/> class.
+        /// </summary>
+        /// <param name="name">Name of the configuration item.</param>
+        /// <param name="sourceID">The unique identifier of the configuration item in an external system</param>
+        public DiscoveredCiInput(string name, string sourceID)
+        {
+            this.name = Set("name", name);
+            this.sourceID = Set("sourceID", sourceID);
         }
     }
 }

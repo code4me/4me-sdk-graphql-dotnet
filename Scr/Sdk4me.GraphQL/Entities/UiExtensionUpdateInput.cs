@@ -15,7 +15,7 @@ namespace Sdk4me.GraphQL
         private List<AttachmentInput>? descriptionAttachments;
         private bool? disabled;
         private string? html;
-        private string? id;
+        private string id;
         private string? javascript;
         private string? name;
         private string? source;
@@ -96,7 +96,7 @@ namespace Sdk4me.GraphQL
         /// The node ID of the record to update.
         /// </summary>
         [JsonProperty("id")]
-        public string? ID
+        public string ID
         {
             get => id;
             set => id = Set("id", value);
@@ -150,6 +150,15 @@ namespace Sdk4me.GraphQL
         {
             get => title;
             set => title = Set("title", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UiExtensionUpdateInput"/> class.
+        /// </summary>
+        /// <param name="id">The node ID of the record to update.</param>
+        public UiExtensionUpdateInput(string id)
+        {
+            this.id = Set("id", id);
         }
     }
 }

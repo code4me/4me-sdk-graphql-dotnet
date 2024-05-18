@@ -15,7 +15,7 @@ namespace Sdk4me.GraphQL
         private List<AttachmentInput>? descriptionAttachments;
         private bool? disabled;
         private string? html;
-        private string? name;
+        private string name;
         private string? source;
         private string? sourceID;
 
@@ -93,7 +93,7 @@ namespace Sdk4me.GraphQL
         /// Name of the design.
         /// </summary>
         [JsonProperty("name")]
-        public string? Name
+        public string Name
         {
             get => name;
             set => name = Set("name", value);
@@ -117,6 +117,15 @@ namespace Sdk4me.GraphQL
         {
             get => sourceID;
             set => sourceID = Set("sourceID", value);
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PdfDesignCreateInput"/> class.
+        /// </summary>
+        /// <param name="name">Name of the design.</param>
+        public PdfDesignCreateInput(string name)
+        {
+            this.name = Set("name", name);
         }
     }
 }
