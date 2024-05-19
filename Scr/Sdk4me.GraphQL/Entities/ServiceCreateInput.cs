@@ -274,6 +274,15 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ServiceCreateInput"/> class without providing the required values.
+        /// </summary>
+        public ServiceCreateInput()
+        {
+            name = string.Empty;
+            providerId = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ServiceCreateInput"/> class.
         /// </summary>
         /// <param name="name">The name of the service. The service name may be followed by the name of its core application placed between brackets.</param>

@@ -42,6 +42,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="AttachmentInput"/> class without providing the required values.
+        /// </summary>
+        public AttachmentInput()
+        {
+            key = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="AttachmentInput"/> class.
         /// </summary>
         /// <param name="key">The key obtained from the attachment upload response.</param>

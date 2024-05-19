@@ -109,6 +109,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ProductBacklogCreateInput"/> class without providing the required values.
+        /// </summary>
+        public ProductBacklogCreateInput()
+        {
+            name = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ProductBacklogCreateInput"/> class.
         /// </summary>
         /// <param name="name">Name of the product backlog.</param>

@@ -109,6 +109,15 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCreateInput"/> class without providing the required values.
+        /// </summary>
+        public WebhookCreateInput()
+        {
+            @event = default(WebhookEvent);
+            uri = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="WebhookCreateInput"/> class.
         /// </summary>
         /// <param name="event">Event that will trigger this webhook.</param>

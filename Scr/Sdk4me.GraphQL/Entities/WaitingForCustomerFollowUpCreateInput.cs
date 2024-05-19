@@ -87,6 +87,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="WaitingForCustomerFollowUpCreateInput"/> class without providing the required values.
+        /// </summary>
+        public WaitingForCustomerFollowUpCreateInput()
+        {
+            name = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="WaitingForCustomerFollowUpCreateInput"/> class.
         /// </summary>
         /// <param name="name">The name of the waiting for customer follow-up.</param>

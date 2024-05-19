@@ -573,6 +573,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="RequestUpdateInput"/> class without providing the required values.
+        /// </summary>
+        public RequestUpdateInput()
+        {
+            id = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="RequestUpdateInput"/> class.
         /// </summary>
         /// <param name="id">The node ID of the record to update.</param>

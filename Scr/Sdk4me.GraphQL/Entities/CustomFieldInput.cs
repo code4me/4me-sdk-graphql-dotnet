@@ -35,6 +35,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="CustomFieldInput"/> class without providing the required values.
+        /// </summary>
+        public CustomFieldInput()
+        {
+            id = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="CustomFieldInput"/> class.
         /// </summary>
         /// <param name="id">Id of the field as defined for the UI Extension.</param>

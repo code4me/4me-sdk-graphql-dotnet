@@ -154,6 +154,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="SkillPoolCreateInput"/> class without providing the required values.
+        /// </summary>
+        public SkillPoolCreateInput()
+        {
+            name = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="SkillPoolCreateInput"/> class.
         /// </summary>
         /// <param name="name">The name of the skill pool.</param>

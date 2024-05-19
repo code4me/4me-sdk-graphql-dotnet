@@ -162,6 +162,16 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="AutomationRuleCreateInput"/> class without providing the required values.
+        /// </summary>
+        public AutomationRuleCreateInput()
+        {
+            condition = string.Empty;
+            name = string.Empty;
+            trigger = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="AutomationRuleCreateInput"/> class.
         /// </summary>
         /// <param name="condition">The Condition field is used to define the condition that needs to be met in order for the update action(s) of the rule to be performed. For example: <c>is_assigned and !badge</c>.</param>

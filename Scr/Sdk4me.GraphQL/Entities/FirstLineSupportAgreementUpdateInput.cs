@@ -322,6 +322,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="FirstLineSupportAgreementUpdateInput"/> class without providing the required values.
+        /// </summary>
+        public FirstLineSupportAgreementUpdateInput()
+        {
+            id = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="FirstLineSupportAgreementUpdateInput"/> class.
         /// </summary>
         /// <param name="id">The node ID of the record to update.</param>

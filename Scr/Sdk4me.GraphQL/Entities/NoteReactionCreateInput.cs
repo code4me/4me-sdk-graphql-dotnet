@@ -48,6 +48,15 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="NoteReactionCreateInput"/> class without providing the required values.
+        /// </summary>
+        public NoteReactionCreateInput()
+        {
+            noteId = string.Empty;
+            reaction = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="NoteReactionCreateInput"/> class.
         /// </summary>
         /// <param name="noteId">The identifier of the note you want to add a reaction to.</param>

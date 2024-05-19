@@ -120,6 +120,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="PdfDesignCreateInput"/> class without providing the required values.
+        /// </summary>
+        public PdfDesignCreateInput()
+        {
+            name = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="PdfDesignCreateInput"/> class.
         /// </summary>
         /// <param name="name">Name of the design.</param>

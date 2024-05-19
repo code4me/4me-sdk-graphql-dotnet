@@ -266,6 +266,15 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ContractCreateInput"/> class without providing the required values.
+        /// </summary>
+        public ContractCreateInput()
+        {
+            customerId = string.Empty;
+            name = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ContractCreateInput"/> class.
         /// </summary>
         /// <param name="customerId">Identifier of the organization that pays for the contract.</param>

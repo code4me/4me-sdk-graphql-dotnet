@@ -195,6 +195,15 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="RiskCreateInput"/> class without providing the required values.
+        /// </summary>
+        public RiskCreateInput()
+        {
+            severity = string.Empty;
+            subject = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="RiskCreateInput"/> class.
         /// </summary>
         /// <param name="severity">The severity of the risk.</param>

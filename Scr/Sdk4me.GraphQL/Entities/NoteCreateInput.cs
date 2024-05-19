@@ -76,6 +76,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="NoteCreateInput"/> class without providing the required values.
+        /// </summary>
+        public NoteCreateInput()
+        {
+            text = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="NoteCreateInput"/> class.
         /// </summary>
         /// <param name="text">Text of the note.</param>

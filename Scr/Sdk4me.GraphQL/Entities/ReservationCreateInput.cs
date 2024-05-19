@@ -198,6 +198,18 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ReservationCreateInput"/> class without providing the required values.
+        /// </summary>
+        public ReservationCreateInput()
+        {
+            configurationItemId = string.Empty;
+            name = string.Empty;
+            personId = string.Empty;
+            reservationOfferingId = string.Empty;
+            startAt = default(DateTime);
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ReservationCreateInput"/> class.
         /// </summary>
         /// <param name="configurationItemId">Identifier of the asset that is being reserved.</param>

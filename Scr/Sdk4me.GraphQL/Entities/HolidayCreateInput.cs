@@ -99,6 +99,16 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="HolidayCreateInput"/> class without providing the required values.
+        /// </summary>
+        public HolidayCreateInput()
+        {
+            endAt = default(DateTime);
+            name = string.Empty;
+            startAt = default(DateTime);
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="HolidayCreateInput"/> class.
         /// </summary>
         /// <param name="endAt">End of the holiday.</param>

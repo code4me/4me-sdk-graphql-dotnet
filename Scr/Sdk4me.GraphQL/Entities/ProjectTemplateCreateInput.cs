@@ -87,6 +87,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectTemplateCreateInput"/> class without providing the required values.
+        /// </summary>
+        public ProjectTemplateCreateInput()
+        {
+            subject = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ProjectTemplateCreateInput"/> class.
         /// </summary>
         /// <param name="subject">A short description that needs to be copied to the Subject field of a new project when it is being created based on the template.</param>

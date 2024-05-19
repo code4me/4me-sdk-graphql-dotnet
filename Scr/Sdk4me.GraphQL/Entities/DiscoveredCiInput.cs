@@ -300,6 +300,15 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="DiscoveredCiInput"/> class without providing the required values.
+        /// </summary>
+        public DiscoveredCiInput()
+        {
+            name = string.Empty;
+            sourceID = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="DiscoveredCiInput"/> class.
         /// </summary>
         /// <param name="name">Name of the configuration item.</param>

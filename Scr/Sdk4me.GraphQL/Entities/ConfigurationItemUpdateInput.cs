@@ -572,6 +572,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ConfigurationItemUpdateInput"/> class without providing the required values.
+        /// </summary>
+        public ConfigurationItemUpdateInput()
+        {
+            id = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ConfigurationItemUpdateInput"/> class.
         /// </summary>
         /// <param name="id">The node ID of the record to update.</param>

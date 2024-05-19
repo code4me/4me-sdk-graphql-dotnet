@@ -485,6 +485,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="PersonUpdateInput"/> class without providing the required values.
+        /// </summary>
+        public PersonUpdateInput()
+        {
+            id = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="PersonUpdateInput"/> class.
         /// </summary>
         /// <param name="id">The node ID of the record to update.</param>

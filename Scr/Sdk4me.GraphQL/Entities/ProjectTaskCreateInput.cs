@@ -396,6 +396,18 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectTaskCreateInput"/> class without providing the required values.
+        /// </summary>
+        public ProjectTaskCreateInput()
+        {
+            category = default(ProjectTaskCategory);
+            phaseId = string.Empty;
+            plannedDuration = default(long);
+            projectId = string.Empty;
+            subject = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ProjectTaskCreateInput"/> class.
         /// </summary>
         /// <param name="category">The category of the project task. Activity tasks are used to assign project-related work to people. Approval tasks are used to collect approvals for projects. Milestones are used to mark specific points along a project's implementation plan.</param>

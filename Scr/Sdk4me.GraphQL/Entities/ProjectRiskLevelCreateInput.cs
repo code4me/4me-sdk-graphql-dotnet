@@ -97,6 +97,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectRiskLevelCreateInput"/> class without providing the required values.
+        /// </summary>
+        public ProjectRiskLevelCreateInput()
+        {
+            name = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ProjectRiskLevelCreateInput"/> class.
         /// </summary>
         /// <param name="name">The name of the project risk level. Ideally the name of a project risk level consists of a single word, such as "Significant".</param>

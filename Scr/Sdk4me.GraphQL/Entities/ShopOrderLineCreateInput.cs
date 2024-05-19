@@ -109,6 +109,16 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ShopOrderLineCreateInput"/> class without providing the required values.
+        /// </summary>
+        public ShopOrderLineCreateInput()
+        {
+            quantity = default(long);
+            requestedForId = string.Empty;
+            shopArticleId = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ShopOrderLineCreateInput"/> class.
         /// </summary>
         /// <param name="quantity">The number units ordered.</param>

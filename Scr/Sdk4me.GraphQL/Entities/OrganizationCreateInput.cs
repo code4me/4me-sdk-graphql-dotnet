@@ -246,6 +246,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="OrganizationCreateInput"/> class without providing the required values.
+        /// </summary>
+        public OrganizationCreateInput()
+        {
+            name = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="OrganizationCreateInput"/> class.
         /// </summary>
         /// <param name="name">The full name of the organization.</param>

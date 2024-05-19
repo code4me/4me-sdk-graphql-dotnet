@@ -47,6 +47,15 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="AutomationRuleActionInput"/> class without providing the required values.
+        /// </summary>
+        public AutomationRuleActionInput()
+        {
+            name = string.Empty;
+            value = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="AutomationRuleActionInput"/> class.
         /// </summary>
         /// <param name="name">Name of the action.</param>

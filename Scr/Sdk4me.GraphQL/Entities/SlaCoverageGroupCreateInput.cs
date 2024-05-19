@@ -98,6 +98,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="SlaCoverageGroupCreateInput"/> class without providing the required values.
+        /// </summary>
+        public SlaCoverageGroupCreateInput()
+        {
+            name = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="SlaCoverageGroupCreateInput"/> class.
         /// </summary>
         /// <param name="name">The name of the SLA coverage group.</param>

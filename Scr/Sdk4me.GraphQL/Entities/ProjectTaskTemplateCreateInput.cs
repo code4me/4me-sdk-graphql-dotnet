@@ -340,6 +340,16 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectTaskTemplateCreateInput"/> class without providing the required values.
+        /// </summary>
+        public ProjectTaskTemplateCreateInput()
+        {
+            category = default(ProjectTaskCategory);
+            plannedDuration = default(long);
+            subject = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ProjectTaskTemplateCreateInput"/> class.
         /// </summary>
         /// <param name="category">The category that needs to be selected in the Category field of a new project task when it is being created based on the template.</param>

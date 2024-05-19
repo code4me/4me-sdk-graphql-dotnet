@@ -65,6 +65,17 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="TranslationCreateInput"/> class without providing the required values.
+        /// </summary>
+        public TranslationCreateInput()
+        {
+            field = string.Empty;
+            language = string.Empty;
+            ownerId = string.Empty;
+            text = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="TranslationCreateInput"/> class.
         /// </summary>
         /// <param name="field">The field of the record from which the translation is obtained.</param>

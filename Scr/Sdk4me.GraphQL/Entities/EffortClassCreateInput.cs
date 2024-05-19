@@ -120,6 +120,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="EffortClassCreateInput"/> class without providing the required values.
+        /// </summary>
+        public EffortClassCreateInput()
+        {
+            name = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="EffortClassCreateInput"/> class.
         /// </summary>
         /// <param name="name">The name of the effort class.</param>

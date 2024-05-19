@@ -76,6 +76,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="SlaNotificationSchemeCreateInput"/> class without providing the required values.
+        /// </summary>
+        public SlaNotificationSchemeCreateInput()
+        {
+            name = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="SlaNotificationSchemeCreateInput"/> class.
         /// </summary>
         /// <param name="name">The name of the SLA notification scheme.</param>

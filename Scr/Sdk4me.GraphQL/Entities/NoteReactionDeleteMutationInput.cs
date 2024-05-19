@@ -31,6 +31,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="NoteReactionDeleteMutationInput"/> class without providing the required values.
+        /// </summary>
+        public NoteReactionDeleteMutationInput()
+        {
+            id = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="NoteReactionDeleteMutationInput"/> class.
         /// </summary>
         /// <param name="id">The node ID of the record to delete.</param>

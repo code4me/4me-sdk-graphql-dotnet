@@ -209,6 +209,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ReservationUpdateInput"/> class without providing the required values.
+        /// </summary>
+        public ReservationUpdateInput()
+        {
+            id = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ReservationUpdateInput"/> class.
         /// </summary>
         /// <param name="id">The node ID of the record to update.</param>

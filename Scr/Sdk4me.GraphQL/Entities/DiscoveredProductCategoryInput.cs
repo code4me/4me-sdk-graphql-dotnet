@@ -65,6 +65,15 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="DiscoveredProductCategoryInput"/> class without providing the required values.
+        /// </summary>
+        public DiscoveredProductCategoryInput()
+        {
+            name = string.Empty;
+            reference = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="DiscoveredProductCategoryInput"/> class.
         /// </summary>
         /// <param name="name">Name of the product category.</param>

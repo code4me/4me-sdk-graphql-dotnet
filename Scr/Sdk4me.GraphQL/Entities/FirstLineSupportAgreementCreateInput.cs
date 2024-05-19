@@ -311,6 +311,16 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="FirstLineSupportAgreementCreateInput"/> class without providing the required values.
+        /// </summary>
+        public FirstLineSupportAgreementCreateInput()
+        {
+            customerId = string.Empty;
+            name = string.Empty;
+            providerId = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="FirstLineSupportAgreementCreateInput"/> class.
         /// </summary>
         /// <param name="customerId">Identifier of the organization that pays for the first line support agreement.</param>

@@ -120,6 +120,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="OutOfOfficePeriodUpdateInput"/> class without providing the required values.
+        /// </summary>
+        public OutOfOfficePeriodUpdateInput()
+        {
+            id = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="OutOfOfficePeriodUpdateInput"/> class.
         /// </summary>
         /// <param name="id">The node ID of the record to update.</param>

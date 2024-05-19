@@ -76,6 +76,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="DiscoveredConfigurationItemsInput"/> class without providing the required values.
+        /// </summary>
+        public DiscoveredConfigurationItemsInput()
+        {
+            source = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="DiscoveredConfigurationItemsInput"/> class.
         /// </summary>
         /// <param name="source">Identifier for the client application submitting the upload.</param>

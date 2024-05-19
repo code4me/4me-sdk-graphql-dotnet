@@ -87,6 +87,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="SurveyCreateInput"/> class without providing the required values.
+        /// </summary>
+        public SurveyCreateInput()
+        {
+            name = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="SurveyCreateInput"/> class.
         /// </summary>
         /// <param name="name">Name of the survey.</param>

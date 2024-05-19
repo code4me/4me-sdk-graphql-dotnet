@@ -131,6 +131,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="AgileBoardCreateInput"/> class without providing the required values.
+        /// </summary>
+        public AgileBoardCreateInput()
+        {
+            name = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="AgileBoardCreateInput"/> class.
         /// </summary>
         /// <param name="name">Name of the agile board.</param>

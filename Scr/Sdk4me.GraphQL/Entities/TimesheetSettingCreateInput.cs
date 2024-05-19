@@ -263,6 +263,15 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="TimesheetSettingCreateInput"/> class without providing the required values.
+        /// </summary>
+        public TimesheetSettingCreateInput()
+        {
+            name = string.Empty;
+            unit = default(TimesheetSettingUnit);
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="TimesheetSettingCreateInput"/> class.
         /// </summary>
         /// <param name="name">The name of the timesheet settings.</param>

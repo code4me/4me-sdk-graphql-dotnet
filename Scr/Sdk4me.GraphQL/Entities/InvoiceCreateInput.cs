@@ -381,6 +381,31 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="InvoiceCreateInput"/> class without providing the required values.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public InvoiceCreateInput()
+        {
+            description = string.Empty;
+            invoiceDate = default(DateOnly);
+            invoiceNr = string.Empty;
+            quantity = default(decimal);
+            supplierId = string.Empty;
+            unitPrice = default(decimal);
+        }
+#else
+        public InvoiceCreateInput()
+        {
+            description = string.Empty;
+            invoiceDate = default(DateTime);
+            invoiceNr = string.Empty;
+            quantity = default(decimal);
+            supplierId = string.Empty;
+            unitPrice = default(decimal);
+        }
+#endif
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="InvoiceCreateInput"/> class.
         /// </summary>
         /// <param name="description">Short description of what was acquired.</param>

@@ -265,6 +265,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="BroadcastCreateInput"/> class without providing the required values.
+        /// </summary>
+        public BroadcastCreateInput()
+        {
+            messageType = default(BroadcastMessageType);
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="BroadcastCreateInput"/> class.
         /// </summary>
         /// <param name="messageType">The appropriate icon for the message. The selected icon is displayed alongside the message when the broadcast is presented.</param>

@@ -31,6 +31,15 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ShortUrlGeoInput"/> class without providing the required values.
+        /// </summary>
+        public ShortUrlGeoInput()
+        {
+            latitude = string.Empty;
+            longitude = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ShortUrlGeoInput"/> class.
         /// </summary>
         /// <param name="latitude">Latitude coordinate of the location.</param>

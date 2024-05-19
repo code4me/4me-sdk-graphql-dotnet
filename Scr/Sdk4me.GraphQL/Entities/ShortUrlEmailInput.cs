@@ -42,6 +42,16 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ShortUrlEmailInput"/> class without providing the required values.
+        /// </summary>
+        public ShortUrlEmailInput()
+        {
+            body = string.Empty;
+            subject = string.Empty;
+            to = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ShortUrlEmailInput"/> class.
         /// </summary>
         /// <param name="body">Body of the email.</param>

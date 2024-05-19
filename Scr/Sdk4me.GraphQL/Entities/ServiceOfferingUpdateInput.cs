@@ -821,6 +821,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ServiceOfferingUpdateInput"/> class without providing the required values.
+        /// </summary>
+        public ServiceOfferingUpdateInput()
+        {
+            id = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ServiceOfferingUpdateInput"/> class.
         /// </summary>
         /// <param name="id">The node ID of the record to update.</param>

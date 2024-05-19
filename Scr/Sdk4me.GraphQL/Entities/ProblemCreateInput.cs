@@ -407,6 +407,15 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ProblemCreateInput"/> class without providing the required values.
+        /// </summary>
+        public ProblemCreateInput()
+        {
+            serviceId = string.Empty;
+            subject = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ProblemCreateInput"/> class.
         /// </summary>
         /// <param name="serviceId">Identifier of the service in which instance(s) the problem resides.</param>

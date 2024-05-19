@@ -473,6 +473,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="TaskCreateInput"/> class without providing the required values.
+        /// </summary>
+        public TaskCreateInput()
+        {
+            workflowId = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="TaskCreateInput"/> class.
         /// </summary>
         /// <param name="workflowId">Identifier of the workflow to which the task belongs.</param>

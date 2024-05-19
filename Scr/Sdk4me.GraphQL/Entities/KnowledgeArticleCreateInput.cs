@@ -250,6 +250,16 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="KnowledgeArticleCreateInput"/> class without providing the required values.
+        /// </summary>
+        public KnowledgeArticleCreateInput()
+        {
+            instructions = string.Empty;
+            serviceId = string.Empty;
+            subject = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="KnowledgeArticleCreateInput"/> class.
         /// </summary>
         /// <param name="instructions">Used to enter instructions for the service desk analysts, specialists and/or end users who are likely to look up the knowledge article to help them with their work or to resolve an issue.</param>

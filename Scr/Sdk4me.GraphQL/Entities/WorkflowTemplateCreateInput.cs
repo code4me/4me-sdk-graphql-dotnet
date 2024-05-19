@@ -175,6 +175,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="WorkflowTemplateCreateInput"/> class without providing the required values.
+        /// </summary>
+        public WorkflowTemplateCreateInput()
+        {
+            subject = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="WorkflowTemplateCreateInput"/> class.
         /// </summary>
         /// <param name="subject">Short description that needs to be copied to the Subject field of a new workflow when it is being created based on the template.</param>

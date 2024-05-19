@@ -42,6 +42,15 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="TranslationUpdateInput"/> class without providing the required values.
+        /// </summary>
+        public TranslationUpdateInput()
+        {
+            id = string.Empty;
+            text = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="TranslationUpdateInput"/> class.
         /// </summary>
         /// <param name="id">The node ID of the record to update.</param>

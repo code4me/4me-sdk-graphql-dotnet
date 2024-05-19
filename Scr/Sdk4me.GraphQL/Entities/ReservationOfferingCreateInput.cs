@@ -231,6 +231,19 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ReservationOfferingCreateInput"/> class without providing the required values.
+        /// </summary>
+        public ReservationOfferingCreateInput()
+        {
+            calendarId = string.Empty;
+            maxDuration = default(long);
+            minDuration = default(long);
+            name = string.Empty;
+            stepDuration = default(long);
+            timeZone = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ReservationOfferingCreateInput"/> class.
         /// </summary>
         /// <param name="calendarId">Calendar that defines the hours in which reservations may start and end.</param>

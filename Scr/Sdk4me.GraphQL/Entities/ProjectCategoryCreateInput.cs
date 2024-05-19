@@ -97,6 +97,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectCategoryCreateInput"/> class without providing the required values.
+        /// </summary>
+        public ProjectCategoryCreateInput()
+        {
+            name = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ProjectCategoryCreateInput"/> class.
         /// </summary>
         /// <param name="name">The name of the project category. Ideally the name of a project category consists of a single word, such as "Large".</param>

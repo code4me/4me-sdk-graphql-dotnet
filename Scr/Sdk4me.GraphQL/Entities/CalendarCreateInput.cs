@@ -87,6 +87,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="CalendarCreateInput"/> class without providing the required values.
+        /// </summary>
+        public CalendarCreateInput()
+        {
+            name = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="CalendarCreateInput"/> class.
         /// </summary>
         /// <param name="name">The name of the calendar.</param>

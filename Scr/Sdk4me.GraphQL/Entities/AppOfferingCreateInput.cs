@@ -230,6 +230,15 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="AppOfferingCreateInput"/> class without providing the required values.
+        /// </summary>
+        public AppOfferingCreateInput()
+        {
+            name = string.Empty;
+            serviceInstanceId = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="AppOfferingCreateInput"/> class.
         /// </summary>
         /// <param name="name">Name of the app offering.</param>

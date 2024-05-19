@@ -277,6 +277,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ShopArticleCreateInput"/> class without providing the required values.
+        /// </summary>
+        public ShopArticleCreateInput()
+        {
+            name = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ShopArticleCreateInput"/> class.
         /// </summary>
         /// <param name="name">The display name of the shop article.</param>

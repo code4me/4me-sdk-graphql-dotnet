@@ -154,6 +154,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="SiteCreateInput"/> class without providing the required values.
+        /// </summary>
+        public SiteCreateInput()
+        {
+            name = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="SiteCreateInput"/> class.
         /// </summary>
         /// <param name="name">The name of the site or facility.</param>

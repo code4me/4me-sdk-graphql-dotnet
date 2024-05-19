@@ -153,6 +153,15 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="UiExtensionCreateInput"/> class without providing the required values.
+        /// </summary>
+        public UiExtensionCreateInput()
+        {
+            category = default(UiExtensionCategory);
+            name = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="UiExtensionCreateInput"/> class.
         /// </summary>
         /// <param name="category">The type of record in which the UI extension can be selected.</param>

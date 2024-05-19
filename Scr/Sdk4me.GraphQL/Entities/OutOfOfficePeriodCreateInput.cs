@@ -109,6 +109,16 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="OutOfOfficePeriodCreateInput"/> class without providing the required values.
+        /// </summary>
+        public OutOfOfficePeriodCreateInput()
+        {
+            endAt = default(DateTime);
+            personId = string.Empty;
+            startAt = default(DateTime);
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="OutOfOfficePeriodCreateInput"/> class.
         /// </summary>
         /// <param name="endAt">End time of the out of office period.</param>

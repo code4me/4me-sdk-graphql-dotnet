@@ -321,6 +321,16 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ServiceLevelAgreementCreateInput"/> class without providing the required values.
+        /// </summary>
+        public ServiceLevelAgreementCreateInput()
+        {
+            customerId = string.Empty;
+            name = string.Empty;
+            serviceOfferingId = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ServiceLevelAgreementCreateInput"/> class.
         /// </summary>
         /// <param name="customerId">Identifier of the organization that pays for the service level agreement.</param>

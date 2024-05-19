@@ -120,6 +120,15 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ReleaseCreateInput"/> class without providing the required values.
+        /// </summary>
+        public ReleaseCreateInput()
+        {
+            managerId = string.Empty;
+            subject = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ReleaseCreateInput"/> class.
         /// </summary>
         /// <param name="managerId">Identifier of the person who is responsible for coordinating the implementation of the release. The person must have the release Manager role.</param>

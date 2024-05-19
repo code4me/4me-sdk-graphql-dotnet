@@ -132,6 +132,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="SprintCreateInput"/> class without providing the required values.
+        /// </summary>
+        public SprintCreateInput()
+        {
+            scrumWorkspaceId = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="SprintCreateInput"/> class.
         /// </summary>
         /// <param name="scrumWorkspaceId">Identifier of scrum workspace this sprint belongs to.</param>

@@ -153,6 +153,17 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="TimeAllocationCreateInput"/> class without providing the required values.
+        /// </summary>
+        public TimeAllocationCreateInput()
+        {
+            customerCategory = default(TimeAllocationCustomerCategory);
+            descriptionCategory = default(TimeAllocationDescriptionCategory);
+            name = string.Empty;
+            serviceCategory = default(TimeAllocationServiceCategory);
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="TimeAllocationCreateInput"/> class.
         /// </summary>
         /// <param name="customerCategory">Whether a person who spent on the time allocation needs to select a customer organization, and if this is the case, whether this person may only select from the customer organizations linked to the time allocation or is allowed to select any customer organization.</param>

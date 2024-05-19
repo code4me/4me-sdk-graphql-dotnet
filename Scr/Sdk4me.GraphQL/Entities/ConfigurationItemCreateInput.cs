@@ -550,6 +550,15 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ConfigurationItemCreateInput"/> class without providing the required values.
+        /// </summary>
+        public ConfigurationItemCreateInput()
+        {
+            productId = string.Empty;
+            status = default(CiStatus);
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ConfigurationItemCreateInput"/> class.
         /// </summary>
         /// <param name="productId">Identifier of the related product.</param>

@@ -205,6 +205,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="TimeEntryCreateInput"/> class without providing the required values.
+        /// </summary>
+        public TimeEntryCreateInput()
+        {
+            timeSpent = default(long);
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="TimeEntryCreateInput"/> class.
         /// </summary>
         /// <param name="timeSpent">The number of minutes that was spent on the selected time allocation. The number of minutes is allowed to be negative only when the correction field is set to <c>true</c>.</param>

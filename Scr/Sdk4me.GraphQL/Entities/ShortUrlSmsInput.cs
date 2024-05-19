@@ -31,6 +31,15 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ShortUrlSmsInput"/> class without providing the required values.
+        /// </summary>
+        public ShortUrlSmsInput()
+        {
+            body = string.Empty;
+            tel = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ShortUrlSmsInput"/> class.
         /// </summary>
         /// <param name="body">Text of the SMS message</param>

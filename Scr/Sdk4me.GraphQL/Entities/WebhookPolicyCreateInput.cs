@@ -64,6 +64,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPolicyCreateInput"/> class without providing the required values.
+        /// </summary>
+        public WebhookPolicyCreateInput()
+        {
+            jwtAlg = default(WebhookPolicyJwtAlg);
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPolicyCreateInput"/> class.
         /// </summary>
         /// <param name="jwtAlg">The algorithm to use for cryptographic signing of webhook messages.</param>

@@ -124,6 +124,17 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="AppOfferingAutomationRuleCreateInput"/> class without providing the required values.
+        /// </summary>
+        public AppOfferingAutomationRuleCreateInput()
+        {
+            appOfferingId = string.Empty;
+            condition = string.Empty;
+            name = string.Empty;
+            trigger = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="AppOfferingAutomationRuleCreateInput"/> class.
         /// </summary>
         /// <param name="appOfferingId">Identifier of the app offering the rule belongs to.</param>

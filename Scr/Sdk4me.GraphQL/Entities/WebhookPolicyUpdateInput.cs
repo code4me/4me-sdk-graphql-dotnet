@@ -75,6 +75,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPolicyUpdateInput"/> class without providing the required values.
+        /// </summary>
+        public WebhookPolicyUpdateInput()
+        {
+            id = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPolicyUpdateInput"/> class.
         /// </summary>
         /// <param name="id">The node ID of the record to update.</param>

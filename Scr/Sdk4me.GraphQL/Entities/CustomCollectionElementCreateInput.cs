@@ -142,6 +142,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="CustomCollectionElementCreateInput"/> class without providing the required values.
+        /// </summary>
+        public CustomCollectionElementCreateInput()
+        {
+            name = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="CustomCollectionElementCreateInput"/> class.
         /// </summary>
         /// <param name="name">Name of the collection element.</param>

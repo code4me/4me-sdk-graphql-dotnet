@@ -142,6 +142,18 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ScrumWorkspaceCreateInput"/> class without providing the required values.
+        /// </summary>
+        public ScrumWorkspaceCreateInput()
+        {
+            agileBoardId = string.Empty;
+            name = string.Empty;
+            productBacklogId = string.Empty;
+            sprintLength = default(long);
+            teamId = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ScrumWorkspaceCreateInput"/> class.
         /// </summary>
         /// <param name="agileBoardId">Identifier of the agile board used to track the progress of this workspace's active sprint.</param>

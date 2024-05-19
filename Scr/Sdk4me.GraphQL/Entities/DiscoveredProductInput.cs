@@ -109,6 +109,17 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="DiscoveredProductInput"/> class without providing the required values.
+        /// </summary>
+        public DiscoveredProductInput()
+        {
+            brand = string.Empty;
+            model = string.Empty;
+            name = string.Empty;
+            sourceID = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="DiscoveredProductInput"/> class.
         /// </summary>
         /// <param name="brand">The brand name is typically the name of the product's manufacturer.</param>

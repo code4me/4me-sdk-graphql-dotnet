@@ -97,6 +97,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="WorkflowTypeCreateInput"/> class without providing the required values.
+        /// </summary>
+        public WorkflowTypeCreateInput()
+        {
+            name = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="WorkflowTypeCreateInput"/> class.
         /// </summary>
         /// <param name="name">The name of the workflow type. Ideally the name of a workflow type consists of a single word, such as "Large".</param>

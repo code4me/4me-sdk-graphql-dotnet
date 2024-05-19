@@ -32,6 +32,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="PermissionInput"/> class without providing the required values.
+        /// </summary>
+        public PermissionInput()
+        {
+            accountId = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="PermissionInput"/> class.
         /// </summary>
         /// <param name="accountId">Identifier of the account for which the person has permissions.</param>

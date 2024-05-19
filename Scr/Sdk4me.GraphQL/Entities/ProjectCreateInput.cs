@@ -319,6 +319,18 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectCreateInput"/> class without providing the required values.
+        /// </summary>
+        public ProjectCreateInput()
+        {
+            customerId = string.Empty;
+            justification = default(ProjectJustification);
+            managerId = string.Empty;
+            serviceId = string.Empty;
+            subject = string.Empty;
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="ProjectCreateInput"/> class.
         /// </summary>
         /// <param name="customerId">Identifier of the organization for which the project is to be implemented.</param>
