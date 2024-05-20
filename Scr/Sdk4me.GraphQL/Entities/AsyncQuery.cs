@@ -12,49 +12,49 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
-        [JsonProperty("account"), Sdk4meField(true)]
+        [JsonProperty("account"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Account? Account { get; internal set; }
 
         /// <summary>
         /// The date and time at which the async query was set to the status <c>completed</c>.
         /// </summary>
-        [JsonProperty("completedAt"), Sdk4meField(true)]
+        [JsonProperty("completedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CompletedAt { get; internal set; }
 
         /// <summary>
         /// The date and time at which the record was created.
         /// </summary>
-        [JsonProperty("createdAt"), Sdk4meField(true)]
+        [JsonProperty("createdAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
         /// The number of errors encountered during the execution.
         /// </summary>
-        [JsonProperty("errorCount"), Sdk4meField(true)]
+        [JsonProperty("errorCount"), Sdk4meField(IsDefaultQueryProperty = true)]
         public long? ErrorCount { get; internal set; }
 
         /// <summary>
         /// The person or application who created the async query.
         /// </summary>
-        [JsonProperty("person"), Sdk4meField(true)]
+        [JsonProperty("person"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Person? Person { get; internal set; }
 
         /// <summary>
         /// The number of affected records.
         /// </summary>
-        [JsonProperty("resultCount"), Sdk4meField(true)]
+        [JsonProperty("resultCount"), Sdk4meField(IsDefaultQueryProperty = true)]
         public long? ResultCount { get; internal set; }
 
         /// <summary>
         /// Expiring link to the JSON result of the async query. It is available once the async query execution has been completed.
         /// </summary>
-        [JsonProperty("resultUrl"), Sdk4meField(true)]
+        [JsonProperty("resultUrl"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? ResultUrl { get; internal set; }
 
         /// <summary>
         /// The date and time at which the async query was set to status <c>in_progress</c>.
         /// </summary>
-        [JsonProperty("startedAt"), Sdk4meField(true)]
+        [JsonProperty("startedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? StartedAt { get; internal set; }
 
         /// <summary>
@@ -63,13 +63,13 @@ namespace Sdk4me.GraphQL
         /// <br>• <c>in_progress</c>: The async query is being executed.</br>
         /// <br>• <c>completed</c>: The async query execution has been completed. Results can be found by downloading the <c>result_url</c>.</br>
         /// </summary>
-        [JsonProperty("status"), Sdk4meField(true)]
+        [JsonProperty("status"), Sdk4meField(IsDefaultQueryProperty = true)]
         public AsyncQueryStatus? Status { get; internal set; }
 
         /// <summary>
         /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
-        [JsonProperty("updatedAt"), Sdk4meField(true)]
+        [JsonProperty("updatedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

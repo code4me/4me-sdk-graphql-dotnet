@@ -39,7 +39,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The brand name is typically the name of the product's manufacturer.
         /// </summary>
-        [JsonProperty("brand")]
+        [JsonProperty("brand"), Sdk4meField(IsRequiredForMutation = true)]
         public string Brand
         {
             get => brand;
@@ -49,7 +49,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The appropriate product category for the product.
         /// </summary>
-        [JsonProperty("category")]
+        [JsonProperty("category"), Sdk4meField(IsRequiredForMutation = true)]
         public string Category
         {
             get => category;
@@ -134,7 +134,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The name of the product. Fill out the Brand, Model, Product ID (optional) and Category fields to automatically generate a name based on the values entered in these fields.
         /// </summary>
-        [JsonProperty("name")]
+        [JsonProperty("name"), Sdk4meField(IsRequiredForMutation = true)]
         public string Name
         {
             get => name;

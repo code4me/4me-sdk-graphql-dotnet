@@ -13,7 +13,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Name of the expression, which can be used to refer to the expression from the rule's conditions, actions, or from other expressions.'
         /// </summary>
-        [JsonProperty("name")]
+        [JsonProperty("name"), Sdk4meField(IsRequiredForMutation = true)]
         public string Name
         {
             get => name;
@@ -23,7 +23,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The value of the expression. Refer to the 4me Help for guidance on how to form valid expressions.
         /// </summary>
-        [JsonProperty("value")]
+        [JsonProperty("value"), Sdk4meField(IsRequiredForMutation = true)]
         public string Value
         {
             get => value;

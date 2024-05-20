@@ -320,7 +320,7 @@ namespace Sdk4me.GraphQL
                 {
                     retval.Add(new(jsonPropertyName, propertyInfo)
                     {
-                        IsDefault = (propertyInfo.GetCustomAttribute(typeof(Sdk4meFieldAttribute)) is Sdk4meFieldAttribute sdk4meDefaultField) && sdk4meDefaultField.IsDefault,
+                        IsDefault = (propertyInfo.GetCustomAttribute(typeof(Sdk4meFieldAttribute)) is Sdk4meFieldAttribute sdk4meDefaultField) && sdk4meDefaultField.IsDefaultQueryProperty,
                         IsSelected = selectedFields != null && selectedFields.Contains(jsonPropertyName)
                     });
                 }

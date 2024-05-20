@@ -88,7 +88,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The category of the project task. Activity tasks are used to assign project-related work to people. Approval tasks are used to collect approvals for projects. Milestones are used to mark specific points along a project's implementation plan.
         /// </summary>
-        [JsonProperty("category")]
+        [JsonProperty("category"), Sdk4meField(IsRequiredForMutation = true)]
         public ProjectTaskCategory Category
         {
             get => category;
@@ -178,7 +178,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The identifier of the phase of the project to which the project task belongs.
         /// </summary>
-        [JsonProperty("phaseId")]
+        [JsonProperty("phaseId"), Sdk4meField(IsRequiredForMutation = true)]
         public string PhaseId
         {
             get => phaseId;
@@ -188,7 +188,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The number of minutes it is expected to take for the project task to be completed following its assignment, or following its fixed start date and time if the Start no earlier than field is filled out.
         /// </summary>
-        [JsonProperty("plannedDuration")]
+        [JsonProperty("plannedDuration"), Sdk4meField(IsRequiredForMutation = true)]
         public long PlannedDuration
         {
             get => plannedDuration;
@@ -218,7 +218,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the project this task belongs to.
         /// </summary>
-        [JsonProperty("projectId")]
+        [JsonProperty("projectId"), Sdk4meField(IsRequiredForMutation = true)]
         public string ProjectId
         {
             get => projectId;
@@ -288,7 +288,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// A short description of the objective of the project task.
         /// </summary>
-        [JsonProperty("subject")]
+        [JsonProperty("subject"), Sdk4meField(IsRequiredForMutation = true)]
         public string Subject
         {
             get => subject;

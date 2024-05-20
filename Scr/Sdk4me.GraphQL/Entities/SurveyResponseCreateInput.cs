@@ -96,7 +96,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the service this response is about.
         /// </summary>
-        [JsonProperty("serviceId")]
+        [JsonProperty("serviceId"), Sdk4meField(IsRequiredForMutation = true)]
         public string ServiceId
         {
             get => serviceId;
@@ -136,7 +136,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the survey this response is for.
         /// </summary>
-        [JsonProperty("surveyId")]
+        [JsonProperty("surveyId"), Sdk4meField(IsRequiredForMutation = true)]
         public string SurveyId
         {
             get => surveyId;

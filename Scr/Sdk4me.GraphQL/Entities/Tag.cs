@@ -24,7 +24,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The name of the tag.
         /// </summary>
-        [JsonProperty("name"), Sdk4meField(true)]
+        [JsonProperty("name"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Name { get; internal set; }
 
         /// <summary>

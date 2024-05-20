@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("configurationItem"), Sdk4meField(true)]
+        [JsonProperty("configurationItem"), Sdk4meField(IsDefaultQueryProperty = true)]
         public ConfigurationItem? ConfigurationItem { get; internal set; }
     }
 }

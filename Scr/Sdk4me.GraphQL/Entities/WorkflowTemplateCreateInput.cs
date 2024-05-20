@@ -137,7 +137,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Short description that needs to be copied to the Subject field of a new workflow when it is being created based on the template.
         /// </summary>
-        [JsonProperty("subject")]
+        [JsonProperty("subject"), Sdk4meField(IsRequiredForMutation = true)]
         public string Subject
         {
             get => subject;

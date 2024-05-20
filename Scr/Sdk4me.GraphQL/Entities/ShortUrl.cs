@@ -18,25 +18,25 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
-        [JsonProperty("account"), Sdk4meField(true)]
+        [JsonProperty("account"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Account? Account { get; internal set; }
 
         /// <summary>
         /// The date and time at which the record was created.
         /// </summary>
-        [JsonProperty("createdAt"), Sdk4meField(true)]
+        [JsonProperty("createdAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
         /// Kind of URI the short URL forwards to.
         /// </summary>
-        [JsonProperty("dataType"), Sdk4meField(true)]
+        [JsonProperty("dataType"), Sdk4meField(IsDefaultQueryProperty = true)]
         public ShortUrlDataType? DataType { get; internal set; }
 
         /// <summary>
         /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
-        [JsonProperty("updatedAt"), Sdk4meField(true)]
+        [JsonProperty("updatedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The automatically generated website address that is forwarded to URI.
         /// </summary>
-        [JsonProperty("shortUrl"), Sdk4meField(true)]
+        [JsonProperty("shortUrl"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? URL { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

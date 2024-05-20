@@ -13,7 +13,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The unique identifier.
         /// </summary>
-        [JsonProperty("id"), Sdk4meField(true)]
+        [JsonProperty("id"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string ID { get; internal set; } = string.Empty;
 
         /// <summary>

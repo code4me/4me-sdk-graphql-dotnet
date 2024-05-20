@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("riskSeverity"), Sdk4meField(true)]
+        [JsonProperty("riskSeverity"), Sdk4meField(IsDefaultQueryProperty = true)]
         public RiskSeverity? RiskSeverity { get; internal set; }
     }
 }

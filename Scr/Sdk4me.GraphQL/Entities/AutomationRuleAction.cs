@@ -31,13 +31,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Name of the action.
         /// </summary>
-        [JsonProperty("name"), Sdk4meField(true)]
+        [JsonProperty("name"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Name { get; internal set; }
 
         /// <summary>
         /// The action that should be executed when the condition of the automation rule is met.
         /// </summary>
-        [JsonProperty("value"), Sdk4meField(true)]
+        [JsonProperty("value"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Value { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

@@ -12,7 +12,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The person who is selected as the approver for the approval.
         /// </summary>
-        [JsonProperty("approver"), Sdk4meField(true)]
+        [JsonProperty("approver"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Person? Approver { get; internal set; }
 
         /// <summary>
@@ -24,25 +24,25 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time at which the approval was created.
         /// </summary>
-        [JsonProperty("createdAt"), Sdk4meField(true)]
+        [JsonProperty("createdAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
         /// The number of minutes the approver is expected to spend working on the task.
         /// </summary>
-        [JsonProperty("plannedEffort"), Sdk4meField(true)]
+        [JsonProperty("plannedEffort"), Sdk4meField(IsDefaultQueryProperty = true)]
         public long? PlannedEffort { get; internal set; }
 
         /// <summary>
         /// The status of the approval.
         /// </summary>
-        [JsonProperty("status"), Sdk4meField(true)]
+        [JsonProperty("status"), Sdk4meField(IsDefaultQueryProperty = true)]
         public TaskStatus? Status { get; internal set; }
 
         /// <summary>
         /// The date and time of the last update of the approval. If the approval has had no updates it contains the <c>createdAt</c> value.
         /// </summary>
-        [JsonProperty("updatedAt"), Sdk4meField(true)]
+        [JsonProperty("updatedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("agileBoard"), Sdk4meField(true)]
+        [JsonProperty("agileBoard"), Sdk4meField(IsDefaultQueryProperty = true)]
         public AgileBoard? AgileBoard { get; internal set; }
     }
 }

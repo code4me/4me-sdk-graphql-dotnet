@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("translation"), Sdk4meField(true)]
+        [JsonProperty("translation"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Translation? Translation { get; internal set; }
     }
 }

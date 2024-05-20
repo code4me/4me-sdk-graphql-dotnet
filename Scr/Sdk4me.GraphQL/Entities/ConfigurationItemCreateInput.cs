@@ -307,7 +307,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the related product.
         /// </summary>
-        [JsonProperty("productId")]
+        [JsonProperty("productId"), Sdk4meField(IsRequiredForMutation = true)]
         public string ProductId
         {
             get => productId;
@@ -458,7 +458,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The appropriate status for the configuration item (CI).
         /// </summary>
-        [JsonProperty("status")]
+        [JsonProperty("status"), Sdk4meField(IsRequiredForMutation = true)]
         public CiStatus Status
         {
             get => status;

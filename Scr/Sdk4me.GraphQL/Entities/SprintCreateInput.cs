@@ -84,7 +84,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of scrum workspace this sprint belongs to.
         /// </summary>
-        [JsonProperty("scrumWorkspaceId")]
+        [JsonProperty("scrumWorkspaceId"), Sdk4meField(IsRequiredForMutation = true)]
         public string ScrumWorkspaceId
         {
             get => scrumWorkspaceId;

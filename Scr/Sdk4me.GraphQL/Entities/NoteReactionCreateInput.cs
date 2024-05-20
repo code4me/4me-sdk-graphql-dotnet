@@ -24,7 +24,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The identifier of the note you want to add a reaction to.
         /// </summary>
-        [JsonProperty("noteId")]
+        [JsonProperty("noteId"), Sdk4meField(IsRequiredForMutation = true)]
         public string NoteId
         {
             get => noteId;
@@ -40,7 +40,7 @@ namespace Sdk4me.GraphQL
         /// <br>• 🎉</br>
         /// <br>• ❤️</br>
         /// </summary>
-        [JsonProperty("reaction")]
+        [JsonProperty("reaction"), Sdk4meField(IsRequiredForMutation = true)]
         public string Reaction
         {
             get => reaction;

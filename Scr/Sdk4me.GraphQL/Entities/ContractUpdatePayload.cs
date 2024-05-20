@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("contract"), Sdk4meField(true)]
+        [JsonProperty("contract"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Contract? Contract { get; internal set; }
     }
 }

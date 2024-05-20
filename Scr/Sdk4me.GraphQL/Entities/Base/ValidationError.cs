@@ -14,13 +14,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// A description of the error.
         /// </summary>
-        [JsonProperty("message"), Sdk4meField(true)]
+        [JsonProperty("message"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Message { get; set; }
 
         /// <summary>
         /// Which input value this error came from.
         /// </summary>
-        [JsonProperty("path"), Sdk4meField(true)]
+        [JsonProperty("path"), Sdk4meField(IsDefaultQueryProperty = true)]
         public List<string>? Path { get; set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

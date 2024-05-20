@@ -11,31 +11,31 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// A temporary expiring URL that can be used to access the attachment.
         /// </summary>
-        [JsonProperty("expiringUrl"), Sdk4meField(true)]
+        [JsonProperty("expiringUrl"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? ExpiringUrl { get; internal set; }
 
         /// <summary>
         /// The name of the attachment.
         /// </summary>
-        [JsonProperty("filename"), Sdk4meField(true)]
+        [JsonProperty("filename"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Filename { get; internal set; }
 
         /// <summary>
         /// Whether the attachment is an inline image.
         /// </summary>
-        [JsonProperty("inline"), Sdk4meField(true)]
+        [JsonProperty("inline"), Sdk4meField(IsDefaultQueryProperty = true)]
         public bool? Inline { get; internal set; }
 
         /// <summary>
         /// Key of the attachment that can be used to match the attachment to an inline image included in a rich text field.
         /// </summary>
-        [JsonProperty("key"), Sdk4meField(true)]
+        [JsonProperty("key"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Key { get; internal set; }
 
         /// <summary>
         /// The size of the attachment in bytes.
         /// </summary>
-        [JsonProperty("size"), Sdk4meField(true)]
+        [JsonProperty("size"), Sdk4meField(IsDefaultQueryProperty = true)]
         public long? Size { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

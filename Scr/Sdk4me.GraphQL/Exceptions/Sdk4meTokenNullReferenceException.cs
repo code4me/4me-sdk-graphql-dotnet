@@ -3,7 +3,7 @@
 namespace Sdk4me.GraphQL
 {
     /// <summary>
-    /// Represent errors that occur on 4me token usage.
+    /// Represent errors that occurs on 4me token usage.
     /// </summary>
     public sealed class Sdk4meTokenNullReferenceException : Exception
     {

@@ -83,7 +83,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Name of the agile board.
         /// </summary>
-        [JsonProperty("name")]
+        [JsonProperty("name"), Sdk4meField(IsRequiredForMutation = true)]
         public string Name
         {
             get => name;

@@ -12,7 +12,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time at which the note reaction was created.
         /// </summary>
-        [JsonProperty("createdAt"), Sdk4meField(true)]
+        [JsonProperty("createdAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace Sdk4me.GraphQL
         /// <br>• 🎉</br>
         /// <br>• ❤️</br>
         /// </summary>
-        [JsonProperty("reaction"), Sdk4meField(true)]
+        [JsonProperty("reaction"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Reaction { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

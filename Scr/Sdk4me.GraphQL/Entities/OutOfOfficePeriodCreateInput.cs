@@ -41,7 +41,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// End time of the out of office period.
         /// </summary>
-        [JsonProperty("endAt")]
+        [JsonProperty("endAt"), Sdk4meField(IsRequiredForMutation = true)]
         public DateTime EndAt
         {
             get => endAt;
@@ -51,7 +51,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the person who is out of office.
         /// </summary>
-        [JsonProperty("personId")]
+        [JsonProperty("personId"), Sdk4meField(IsRequiredForMutation = true)]
         public string PersonId
         {
             get => personId;
@@ -91,7 +91,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Start time of the out of office period.
         /// </summary>
-        [JsonProperty("startAt")]
+        [JsonProperty("startAt"), Sdk4meField(IsRequiredForMutation = true)]
         public DateTime StartAt
         {
             get => startAt;

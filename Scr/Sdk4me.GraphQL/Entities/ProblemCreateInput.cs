@@ -249,7 +249,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the service in which instance(s) the problem resides.
         /// </summary>
-        [JsonProperty("serviceId")]
+        [JsonProperty("serviceId"), Sdk4meField(IsRequiredForMutation = true)]
         public string ServiceId
         {
             get => serviceId;
@@ -299,7 +299,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// A short description of the symptoms that the problem causes.
         /// </summary>
-        [JsonProperty("subject")]
+        [JsonProperty("subject"), Sdk4meField(IsRequiredForMutation = true)]
         public string Subject
         {
             get => subject;

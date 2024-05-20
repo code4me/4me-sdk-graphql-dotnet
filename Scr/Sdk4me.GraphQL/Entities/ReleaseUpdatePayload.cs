@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("release"), Sdk4meField(true)]
+        [JsonProperty("release"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Release? Release { get; internal set; }
     }
 }

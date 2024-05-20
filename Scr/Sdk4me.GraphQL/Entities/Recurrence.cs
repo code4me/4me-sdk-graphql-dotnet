@@ -45,7 +45,7 @@ namespace Sdk4me.GraphQL
         /// <br>• <c>5</c>: Friday</br>
         /// <br>• <c>6</c>: Saturday</br>
         /// </summary>
-        [JsonProperty("day"), Sdk4meField(true)]
+        [JsonProperty("day"), Sdk4meField(IsDefaultQueryProperty = true)]
         public List<long>? Day { get; internal set; }
 
         /// <summary>
@@ -58,37 +58,37 @@ namespace Sdk4me.GraphQL
         /// <br>• <c>31</c>: Day thirty-one</br>
         /// <br>• <c>-1</c>: Last day of month</br>
         /// </summary>
-        [JsonProperty("dayOfMonth"), Sdk4meField(true)]
+        [JsonProperty("dayOfMonth"), Sdk4meField(IsDefaultQueryProperty = true)]
         public List<long>? DayOfMonth { get; internal set; }
 
         /// <summary>
         /// Indicates whether or not the <c>dayOfWeekIndex</c> and <c>dayOfWeekDay</c> values should be considered. Can only be set to <c>true</c> when <c>frequency</c> is <c>monthly</c> or <c>yearly</c>.
         /// </summary>
-        [JsonProperty("dayOfWeek"), Sdk4meField(true)]
+        [JsonProperty("dayOfWeek"), Sdk4meField(IsDefaultQueryProperty = true)]
         public bool? DayOfWeek { get; internal set; }
 
         /// <summary>
         /// <em>Required</em> when <c>dayOfWeek</c> is <c>true</c>, ignored in all other cases. list of days of the week.
         /// </summary>
-        [JsonProperty("dayOfWeekDay"), Sdk4meField(true)]
+        [JsonProperty("dayOfWeekDay"), Sdk4meField(IsDefaultQueryProperty = true)]
         public List<DayNames>? DayOfWeekDay { get; internal set; }
 
         /// <summary>
         /// <em>Required</em> when <c>dayOfWeek</c> is <c>true</c>, ignored in all other cases.
         /// </summary>
-        [JsonProperty("dayOfWeekIndex"), Sdk4meField(true)]
+        [JsonProperty("dayOfWeekIndex"), Sdk4meField(IsDefaultQueryProperty = true)]
         public RecurrenceDayOfWeekIndex? DayOfWeekIndex { get; internal set; }
 
         /// <summary>
         /// Whether recurrency should be temporarily disabled.
         /// </summary>
-        [JsonProperty("disabled"), Sdk4meField(true)]
+        [JsonProperty("disabled"), Sdk4meField(IsDefaultQueryProperty = true)]
         public bool? Disabled { get; internal set; }
 
         /// <summary>
         /// The date at which to end the Recurrence.
         /// </summary>
-        [JsonProperty("endDate"), Sdk4meField(true)]
+        [JsonProperty("endDate"), Sdk4meField(IsDefaultQueryProperty = true)]
 #if NET6_0_OR_GREATER
         public DateOnly? EndDate { get; internal set; }
 #else
@@ -98,7 +98,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The frequency of the recurrency.
         /// </summary>
-        [JsonProperty("frequency"), Sdk4meField(true)]
+        [JsonProperty("frequency"), Sdk4meField(IsDefaultQueryProperty = true)]
         public RecurrenceFrequency? Frequency { get; internal set; }
 
         /// <summary>
@@ -110,19 +110,19 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The interval of the Frequency, e.g. every 2nd week or every 10th day.
         /// </summary>
-        [JsonProperty("interval"), Sdk4meField(true)]
+        [JsonProperty("interval"), Sdk4meField(IsDefaultQueryProperty = true)]
         public long? Interval { get; internal set; }
 
         /// <summary>
         /// The time and date at which the last occurrence was created.
         /// </summary>
-        [JsonProperty("lastOccurrenceAt"), Sdk4meField(true)]
+        [JsonProperty("lastOccurrenceAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? LastOccurrenceAt { get; internal set; }
 
         /// <summary>
         /// The validation errors during the last occurrence that prevented the record from being created.
         /// </summary>
-        [JsonProperty("lastOccurrenceErrors"), Sdk4meField(true)]
+        [JsonProperty("lastOccurrenceErrors"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? LastOccurrenceErrors { get; internal set; }
 
         /// <summary>
@@ -140,19 +140,19 @@ namespace Sdk4me.GraphQL
         /// <br>• <c>11</c>: November</br>
         /// <br>• <c>12</c>: December</br>
         /// </summary>
-        [JsonProperty("monthOfYear"), Sdk4meField(true)]
+        [JsonProperty("monthOfYear"), Sdk4meField(IsDefaultQueryProperty = true)]
         public List<long>? MonthOfYear { get; internal set; }
 
         /// <summary>
         /// The time and date at which the next occurrence will be created.
         /// </summary>
-        [JsonProperty("nextOccurrenceAt"), Sdk4meField(true)]
+        [JsonProperty("nextOccurrenceAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? NextOccurrenceAt { get; internal set; }
 
         /// <summary>
         /// The date at which to start the Recurrence.
         /// </summary>
-        [JsonProperty("startDate"), Sdk4meField(true)]
+        [JsonProperty("startDate"), Sdk4meField(IsDefaultQueryProperty = true)]
 #if NET6_0_OR_GREATER
         public DateOnly? StartDate { get; internal set; }
 #else
@@ -162,14 +162,14 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The time of day to start the scheduled occurrence.
         /// </summary>
-        [JsonProperty("timeOfDay"), Sdk4meField(true)]
+        [JsonProperty("timeOfDay"), Sdk4meField(IsDefaultQueryProperty = true)]
         public TimeSpan? TimeOfDay { get; internal set; }
 
         /// <summary>
         /// <br>The time zone for the <c>timeOfDay</c> field.</br>
         /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
         /// </summary>
-        [JsonProperty("timeZone"), Sdk4meField(true)]
+        [JsonProperty("timeZone"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? TimeZone { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

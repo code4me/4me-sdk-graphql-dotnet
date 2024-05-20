@@ -12,7 +12,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
-        [JsonProperty("account"), Sdk4meField(true)]
+        [JsonProperty("account"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Account? Account { get; internal set; }
 
         /// <summary>
@@ -24,13 +24,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The category of the project.
         /// </summary>
-        [JsonProperty("category"), Sdk4meField(true)]
+        [JsonProperty("category"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Category { get; internal set; }
 
         /// <summary>
         /// Automatically set to the date and time at which the project is saved with the status "Completed".
         /// </summary>
-        [JsonProperty("completedAt"), Sdk4meField(true)]
+        [JsonProperty("completedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CompletedAt { get; internal set; }
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The target date and time of the last task of the project.
         /// </summary>
-        [JsonProperty("completionTargetAt"), Sdk4meField(true)]
+        [JsonProperty("completionTargetAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CompletionTargetAt { get; internal set; }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time at which the record was created.
         /// </summary>
-        [JsonProperty("createdAt"), Sdk4meField(true)]
+        [JsonProperty("createdAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
@@ -163,7 +163,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The record ID as displayed in the UI
         /// </summary>
-        [JsonProperty("projectId"), Sdk4meField(true)]
+        [JsonProperty("projectId"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? ProjectId { get; internal set; }
 
         [JsonProperty("requests")]
@@ -209,31 +209,31 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The service for which the project will be implemented.
         /// </summary>
-        [JsonProperty("service"), Sdk4meField(true)]
+        [JsonProperty("service"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Service? Service { get; internal set; }
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("source"), Sdk4meField(true)]
+        [JsonProperty("source"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Source { get; internal set; }
 
         /// <summary>
         /// The unique identifier of the resource in an external system.
         /// </summary>
-        [JsonProperty("sourceID"), Sdk4meField(true)]
+        [JsonProperty("sourceID"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? SourceID { get; internal set; }
 
         /// <summary>
         /// Automatically set based on the status of the project's tasks.
         /// </summary>
-        [JsonProperty("status"), Sdk4meField(true)]
+        [JsonProperty("status"), Sdk4meField(IsDefaultQueryProperty = true)]
         public ProjectStatus? Status { get; internal set; }
 
         /// <summary>
         /// A short description of the objective of the project.
         /// </summary>
-        [JsonProperty("subject"), Sdk4meField(true)]
+        [JsonProperty("subject"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Subject { get; internal set; }
 
         [JsonProperty("tasks")]
@@ -269,7 +269,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
-        [JsonProperty("updatedAt"), Sdk4meField(true)]
+        [JsonProperty("updatedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         /// <summary>

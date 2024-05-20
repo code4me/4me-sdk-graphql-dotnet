@@ -61,7 +61,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Event that will trigger this webhook.
         /// </summary>
-        [JsonProperty("event")]
+        [JsonProperty("event"), Sdk4meField(IsRequiredForMutation = true)]
         public WebhookEvent Event
         {
             get => @event;
@@ -91,7 +91,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Publicly accessible URI that 4me can use to POST http messages to.
         /// </summary>
-        [JsonProperty("uri")]
+        [JsonProperty("uri"), Sdk4meField(IsRequiredForMutation = true)]
         public string Uri
         {
             get => uri;

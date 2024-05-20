@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("reservation"), Sdk4meField(true)]
+        [JsonProperty("reservation"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Reservation? Reservation { get; internal set; }
     }
 }

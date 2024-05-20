@@ -12,19 +12,19 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time at which this version of the UI extension was activated.
         /// </summary>
-        [JsonProperty("activatedAt"), Sdk4meField(true)]
+        [JsonProperty("activatedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? ActivatedAt { get; internal set; }
 
         /// <summary>
         /// The date and time at which this version of the UI extension was archived.
         /// </summary>
-        [JsonProperty("archivedAt"), Sdk4meField(true)]
+        [JsonProperty("archivedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? ArchivedAt { get; internal set; }
 
         /// <summary>
         /// The date and time at which this version of the UI extension was created.
         /// </summary>
-        [JsonProperty("createdAt"), Sdk4meField(true)]
+        [JsonProperty("createdAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Indicates the location in the life-cycle.
         /// </summary>
-        [JsonProperty("status"), Sdk4meField(true)]
+        [JsonProperty("status"), Sdk4meField(IsDefaultQueryProperty = true)]
         public UiExtensionVersionStatus? Status { get; internal set; }
 
         /// <summary>
@@ -60,13 +60,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time of the last update of this version of the UI extension. If this version of the UI extension has no updates it contains the <c>createdAt</c> value.
         /// </summary>
-        [JsonProperty("updatedAt"), Sdk4meField(true)]
+        [JsonProperty("updatedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         /// <summary>
         /// The version number (1..) of this version of the UI extension.
         /// </summary>
-        [JsonProperty("versionNr"), Sdk4meField(true)]
+        [JsonProperty("versionNr"), Sdk4meField(IsDefaultQueryProperty = true)]
         public long? VersionNr { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

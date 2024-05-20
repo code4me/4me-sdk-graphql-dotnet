@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("slaCoverageGroup"), Sdk4meField(true)]
+        [JsonProperty("slaCoverageGroup"), Sdk4meField(IsDefaultQueryProperty = true)]
         public SlaCoverageGroup? SlaCoverageGroup { get; internal set; }
     }
 }

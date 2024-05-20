@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("survey"), Sdk4meField(true)]
+        [JsonProperty("survey"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Survey? Survey { get; internal set; }
     }
 }

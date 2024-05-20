@@ -26,7 +26,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The field of the record from which the translation is obtained.
         /// </summary>
-        [JsonProperty("field")]
+        [JsonProperty("field"), Sdk4meField(IsRequiredForMutation = true)]
         public string Field
         {
             get => field;
@@ -37,7 +37,7 @@ namespace Sdk4me.GraphQL
         /// <br>The language in which the text is specified.</br>
         /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/language/">4me developer site</see>.</br>
         /// </summary>
-        [JsonProperty("language")]
+        [JsonProperty("language"), Sdk4meField(IsRequiredForMutation = true)]
         public string Language
         {
             get => language;
@@ -47,7 +47,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The record from which the translation is obtained.
         /// </summary>
-        [JsonProperty("ownerId")]
+        [JsonProperty("ownerId"), Sdk4meField(IsRequiredForMutation = true)]
         public string OwnerId
         {
             get => ownerId;
@@ -57,7 +57,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The text of the translation.
         /// </summary>
-        [JsonProperty("text")]
+        [JsonProperty("text"), Sdk4meField(IsRequiredForMutation = true)]
         public string Text
         {
             get => text;

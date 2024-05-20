@@ -100,7 +100,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the organization for which the project is to be implemented.
         /// </summary>
-        [JsonProperty("customerId")]
+        [JsonProperty("customerId"), Sdk4meField(IsRequiredForMutation = true)]
         public string CustomerId
         {
             get => customerId;
@@ -140,7 +140,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The reason why the project should be considered for implementation.
         /// </summary>
-        [JsonProperty("justification")]
+        [JsonProperty("justification"), Sdk4meField(IsRequiredForMutation = true)]
         public ProjectJustification Justification
         {
             get => justification;
@@ -150,7 +150,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the person who is responsible for coordinating the implementation of the project.
         /// </summary>
-        [JsonProperty("managerId")]
+        [JsonProperty("managerId"), Sdk4meField(IsRequiredForMutation = true)]
         public string ManagerId
         {
             get => managerId;
@@ -220,7 +220,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the service for which the project will be implemented.
         /// </summary>
-        [JsonProperty("serviceId")]
+        [JsonProperty("serviceId"), Sdk4meField(IsRequiredForMutation = true)]
         public string ServiceId
         {
             get => serviceId;
@@ -260,7 +260,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// A short description of the objective of the project.
         /// </summary>
-        [JsonProperty("subject")]
+        [JsonProperty("subject"), Sdk4meField(IsRequiredForMutation = true)]
         public string Subject
         {
             get => subject;

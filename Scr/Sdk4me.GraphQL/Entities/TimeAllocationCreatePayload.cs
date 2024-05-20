@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("timeAllocation"), Sdk4meField(true)]
+        [JsonProperty("timeAllocation"), Sdk4meField(IsDefaultQueryProperty = true)]
         public TimeAllocation? TimeAllocation { get; internal set; }
     }
 }

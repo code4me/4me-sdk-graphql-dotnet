@@ -222,7 +222,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The name of the person.
         /// </summary>
-        [JsonProperty("name")]
+        [JsonProperty("name"), Sdk4meField(IsRequiredForMutation = true)]
         public string Name
         {
             get => name;
@@ -302,7 +302,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The email address to which email notifications are to be sent. This email address acts as the unique identifier for the person within the 4me account. This primary email address also acts as the person's login name if he/she is a user of the 4me service.
         /// </summary>
-        [JsonProperty("primaryEmail")]
+        [JsonProperty("primaryEmail"), Sdk4meField(IsRequiredForMutation = true)]
         public string PrimaryEmail
         {
             get => primaryEmail;

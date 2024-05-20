@@ -32,7 +32,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The permitted file extensions for uploads.
         /// </summary>
-        [JsonProperty("allowedExtensions"), Sdk4meField(true)]
+        [JsonProperty("allowedExtensions"), Sdk4meField(IsDefaultQueryProperty = true)]
         public List<string>? AllowedExtensions { get; internal set; }
 
         /// <summary>
@@ -40,25 +40,25 @@ namespace Sdk4me.GraphQL
         /// <br>• <c>local</c>: On-premise environment storage.</br>
         /// <br>• <c>s3</c>: Cloud environment storage.</br>
         /// </summary>
-        [JsonProperty("provider"), Sdk4meField(true)]
+        [JsonProperty("provider"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Provider { get; internal set; }
 
         /// <summary>
         /// The mandatory fields and their values that should be added to an upload POST to the <c>uploadUri</c>.
         /// </summary>
-        [JsonProperty("providerParameters"), Sdk4meField(true)]
+        [JsonProperty("providerParameters"), Sdk4meField(IsDefaultQueryProperty = true)]
         public JToken? ProviderParameters { get; internal set; }
 
         /// <summary>
         /// The maximum size (in bytes) for uploads.
         /// </summary>
-        [JsonProperty("sizeLimit"), Sdk4meField(true)]
+        [JsonProperty("sizeLimit"), Sdk4meField(IsDefaultQueryProperty = true)]
         public long? SizeLimit { get; internal set; }
 
         /// <summary>
         /// The URI that attachments should be uploaded to.
         /// </summary>
-        [JsonProperty("uploadUri"), Sdk4meField(true)]
+        [JsonProperty("uploadUri"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? UploadUri { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

@@ -106,7 +106,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The appropriate icon for the message. The selected icon is displayed alongside the message when the broadcast is presented.
         /// </summary>
-        [JsonProperty("messageType")]
+        [JsonProperty("messageType"), Sdk4meField(IsRequiredForMutation = true)]
         public BroadcastMessageType MessageType
         {
             get => messageType;

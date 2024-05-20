@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("problem"), Sdk4meField(true)]
+        [JsonProperty("problem"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Problem? Problem { get; internal set; }
     }
 }

@@ -222,7 +222,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The name of the service offering.
         /// </summary>
-        [JsonProperty("name")]
+        [JsonProperty("name"), Sdk4meField(IsRequiredForMutation = true)]
         public string Name
         {
             get => name;
@@ -649,7 +649,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the service for which the service offering is being prepared.
         /// </summary>
-        [JsonProperty("serviceId")]
+        [JsonProperty("serviceId"), Sdk4meField(IsRequiredForMutation = true)]
         public string ServiceId
         {
             get => serviceId;

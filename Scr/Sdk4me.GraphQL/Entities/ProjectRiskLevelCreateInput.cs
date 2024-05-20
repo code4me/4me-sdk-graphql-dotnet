@@ -59,7 +59,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The name of the project risk level. Ideally the name of a project risk level consists of a single word, such as "Significant".
         /// </summary>
-        [JsonProperty("name")]
+        [JsonProperty("name"), Sdk4meField(IsRequiredForMutation = true)]
         public string Name
         {
             get => name;

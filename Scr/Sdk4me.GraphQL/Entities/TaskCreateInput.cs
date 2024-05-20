@@ -455,7 +455,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the workflow to which the task belongs.
         /// </summary>
-        [JsonProperty("workflowId")]
+        [JsonProperty("workflowId"), Sdk4meField(IsRequiredForMutation = true)]
         public string WorkflowId
         {
             get => workflowId;

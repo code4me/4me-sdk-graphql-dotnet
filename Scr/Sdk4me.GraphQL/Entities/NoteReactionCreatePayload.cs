@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("noteReaction"), Sdk4meField(true)]
+        [JsonProperty("noteReaction"), Sdk4meField(IsDefaultQueryProperty = true)]
         public NoteReaction? NoteReaction { get; internal set; }
     }
 }

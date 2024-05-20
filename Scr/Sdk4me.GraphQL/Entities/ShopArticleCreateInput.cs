@@ -116,7 +116,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The display name of the shop article.
         /// </summary>
-        [JsonProperty("name")]
+        [JsonProperty("name"), Sdk4meField(IsRequiredForMutation = true)]
         public string Name
         {
             get => name;

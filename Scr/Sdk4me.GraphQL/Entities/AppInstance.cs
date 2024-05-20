@@ -12,7 +12,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
-        [JsonProperty("account"), Sdk4meField(true)]
+        [JsonProperty("account"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Account? Account { get; internal set; }
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time at which the record was created.
         /// </summary>
-        [JsonProperty("createdAt"), Sdk4meField(true)]
+        [JsonProperty("createdAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Whether the customer has enabled this app instance.
         /// </summary>
-        [JsonProperty("enabledByCustomer"), Sdk4meField(true)]
+        [JsonProperty("enabledByCustomer"), Sdk4meField(IsDefaultQueryProperty = true)]
         public bool? EnabledByCustomer { get; internal set; }
 
         /// <summary>
@@ -94,13 +94,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
-        [JsonProperty("updatedAt"), Sdk4meField(true)]
+        [JsonProperty("updatedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         /// <summary>
         /// Webhook of this app instance.
         /// </summary>
-        [JsonProperty("webhook"), Sdk4meField(true)]
+        [JsonProperty("webhook"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Webhook? Webhook { get; internal set; }
 
         /// <summary>

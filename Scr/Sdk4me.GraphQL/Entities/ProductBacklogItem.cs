@@ -31,19 +31,19 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Product backlog this item is placed on.
         /// </summary>
-        [JsonProperty("productBacklog"), Sdk4meField(true)]
+        [JsonProperty("productBacklog"), Sdk4meField(IsDefaultQueryProperty = true)]
         public ProductBacklog? ProductBacklog { get; internal set; }
 
         /// <summary>
         /// Estimate of the relative size of this item on the product backlog.
         /// </summary>
-        [JsonProperty("productBacklogEstimate"), Sdk4meField(true)]
+        [JsonProperty("productBacklogEstimate"), Sdk4meField(IsDefaultQueryProperty = true)]
         public long? ProductBacklogEstimate { get; internal set; }
 
         /// <summary>
         /// The (one based) position of this item on the backlog.
         /// </summary>
-        [JsonProperty("productBacklogPosition"), Sdk4meField(true)]
+        [JsonProperty("productBacklogPosition"), Sdk4meField(IsDefaultQueryProperty = true)]
         public long? ProductBacklogPosition { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

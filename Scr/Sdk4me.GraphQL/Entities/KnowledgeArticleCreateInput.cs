@@ -132,7 +132,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Used to enter instructions for the service desk analysts, specialists and/or end users who are likely to look up the knowledge article to help them with their work or to resolve an issue.
         /// </summary>
-        [JsonProperty("instructions")]
+        [JsonProperty("instructions"), Sdk4meField(IsRequiredForMutation = true)]
         public string Instructions
         {
             get => instructions;
@@ -182,7 +182,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the service for which the knowledge article is made available.
         /// </summary>
-        [JsonProperty("serviceId")]
+        [JsonProperty("serviceId"), Sdk4meField(IsRequiredForMutation = true)]
         public string ServiceId
         {
             get => serviceId;
@@ -232,7 +232,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// A short description of the knowledge article.
         /// </summary>
-        [JsonProperty("subject")]
+        [JsonProperty("subject"), Sdk4meField(IsRequiredForMutation = true)]
         public string Subject
         {
             get => subject;

@@ -31,13 +31,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// URLs to capture feedback from the person who submitted the request.
         /// </summary>
-        [JsonProperty("requestedBy"), Sdk4meField(true)]
+        [JsonProperty("requestedBy"), Sdk4meField(IsDefaultQueryProperty = true)]
         public FeedbackUrls? RequestedBy { get; internal set; }
 
         /// <summary>
         /// URLs to capture feedback from the person for whom the request was submitted, if that was not the submitter of the request.
         /// </summary>
-        [JsonProperty("requestedFor"), Sdk4meField(true)]
+        [JsonProperty("requestedFor"), Sdk4meField(IsDefaultQueryProperty = true)]
         public FeedbackUrls? RequestedFor { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

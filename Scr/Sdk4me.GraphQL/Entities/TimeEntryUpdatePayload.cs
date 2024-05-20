@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("timeEntry"), Sdk4meField(true)]
+        [JsonProperty("timeEntry"), Sdk4meField(IsDefaultQueryProperty = true)]
         public TimeEntry? TimeEntry { get; internal set; }
     }
 }

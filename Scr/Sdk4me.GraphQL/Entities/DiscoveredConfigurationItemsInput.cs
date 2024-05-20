@@ -58,7 +58,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier for the client application submitting the upload.
         /// </summary>
-        [JsonProperty("source")]
+        [JsonProperty("source"), Sdk4meField(IsRequiredForMutation = true)]
         public string Source
         {
             get => source;

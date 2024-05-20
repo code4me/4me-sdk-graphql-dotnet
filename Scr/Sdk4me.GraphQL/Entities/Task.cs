@@ -12,7 +12,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
-        [JsonProperty("account"), Sdk4meField(true)]
+        [JsonProperty("account"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Account? Account { get; internal set; }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The category of the task. Risk &amp; impact tasks are used to help plan workflows. Approval tasks are used to collect approvals for workflows. These can be used at various stages in the life of the workflow. Implementation tasks are added to workflows for development, installation, configuration, test, transfer and administrative work that needs to be completed for the implementation of the workflow.
         /// </summary>
-        [JsonProperty("category"), Sdk4meField(true)]
+        [JsonProperty("category"), Sdk4meField(IsDefaultQueryProperty = true)]
         public TaskCategory? Category { get; internal set; }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time at which the task is expected to be completed.
         /// </summary>
-        [JsonProperty("completionTargetAt"), Sdk4meField(true)]
+        [JsonProperty("completionTargetAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CompletionTargetAt { get; internal set; }
 
         [JsonProperty("configurationItems")]
@@ -99,7 +99,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time at which the record was created.
         /// </summary>
-        [JsonProperty("createdAt"), Sdk4meField(true)]
+        [JsonProperty("createdAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
@@ -128,13 +128,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Automatically set to the date and time at which the task is saved with the status "Failed", "Rejected", "Completed", "Approved" or "Canceled".
         /// </summary>
-        [JsonProperty("finishedAt"), Sdk4meField(true)]
+        [JsonProperty("finishedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? FinishedAt { get; internal set; }
 
         /// <summary>
         /// The extent to which the service instances related to the task will be impacted by the completion of the task.
         /// </summary>
-        [JsonProperty("impact"), Sdk4meField(true)]
+        [JsonProperty("impact"), Sdk4meField(IsDefaultQueryProperty = true)]
         public TaskImpact? Impact { get; internal set; }
 
         /// <summary>
@@ -163,7 +163,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The person to whom the task is to be assigned. This field's value is <c>null</c> in case of an approval task with multiple approvers.
         /// </summary>
-        [JsonProperty("member"), Sdk4meField(true)]
+        [JsonProperty("member"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Person? Member { get; internal set; }
 
         /// <summary>
@@ -269,13 +269,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("source"), Sdk4meField(true)]
+        [JsonProperty("source"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Source { get; internal set; }
 
         /// <summary>
         /// The unique identifier of the resource in an external system.
         /// </summary>
-        [JsonProperty("sourceID"), Sdk4meField(true)]
+        [JsonProperty("sourceID"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? SourceID { get; internal set; }
 
         [JsonProperty("sprintBacklogItems")]
@@ -298,13 +298,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The Status field is used to select the current status of the task.
         /// </summary>
-        [JsonProperty("status"), Sdk4meField(true)]
+        [JsonProperty("status"), Sdk4meField(IsDefaultQueryProperty = true)]
         public TaskStatus? Status { get; internal set; }
 
         /// <summary>
         /// A short description of the objective of the task.
         /// </summary>
-        [JsonProperty("subject"), Sdk4meField(true)]
+        [JsonProperty("subject"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Subject { get; internal set; }
 
         /// <summary>
@@ -328,7 +328,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The team to which the task is to be assigned.
         /// </summary>
-        [JsonProperty("team"), Sdk4meField(true)]
+        [JsonProperty("team"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Team? Team { get; internal set; }
 
         /// <summary>
@@ -351,7 +351,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
-        [JsonProperty("updatedAt"), Sdk4meField(true)]
+        [JsonProperty("updatedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         /// <summary>

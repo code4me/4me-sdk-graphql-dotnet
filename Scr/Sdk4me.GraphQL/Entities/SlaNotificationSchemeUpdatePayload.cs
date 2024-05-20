@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("slaNotificationScheme"), Sdk4meField(true)]
+        [JsonProperty("slaNotificationScheme"), Sdk4meField(IsDefaultQueryProperty = true)]
         public SlaNotificationScheme? SlaNotificationScheme { get; internal set; }
     }
 }

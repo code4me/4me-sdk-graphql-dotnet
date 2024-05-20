@@ -168,7 +168,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Short description of what was acquired.
         /// </summary>
-        [JsonProperty("description")]
+        [JsonProperty("description"), Sdk4meField(IsRequiredForMutation = true)]
         public string Description
         {
             get => description;
@@ -198,7 +198,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date on which the invoice was sent out by the supplier.
         /// </summary>
-        [JsonProperty("invoiceDate")]
+        [JsonProperty("invoiceDate"), Sdk4meField(IsRequiredForMutation = true)]
 #if NET6_0_OR_GREATER
         public DateOnly InvoiceDate
 #else
@@ -212,7 +212,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The invoice number that the supplier specified on the invoice.
         /// </summary>
-        [JsonProperty("invoiceNr")]
+        [JsonProperty("invoiceNr"), Sdk4meField(IsRequiredForMutation = true)]
         public string InvoiceNr
         {
             get => invoiceNr;
@@ -242,7 +242,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The number of units that were acquired.
         /// </summary>
-        [JsonProperty("quantity")]
+        [JsonProperty("quantity"), Sdk4meField(IsRequiredForMutation = true)]
         public decimal Quantity
         {
             get => quantity;
@@ -343,7 +343,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the organization from which the invoice was received.
         /// </summary>
-        [JsonProperty("supplierId")]
+        [JsonProperty("supplierId"), Sdk4meField(IsRequiredForMutation = true)]
         public string SupplierId
         {
             get => supplierId;
@@ -353,7 +353,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The amount that the supplier has charged per unit that was acquired.
         /// </summary>
-        [JsonProperty("unitPrice")]
+        [JsonProperty("unitPrice"), Sdk4meField(IsRequiredForMutation = true)]
         public decimal UnitPrice
         {
             get => unitPrice;

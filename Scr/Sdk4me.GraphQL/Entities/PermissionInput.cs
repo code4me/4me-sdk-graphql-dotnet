@@ -14,7 +14,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the account for which the person has permissions.
         /// </summary>
-        [JsonProperty("accountId")]
+        [JsonProperty("accountId"), Sdk4meField(IsRequiredForMutation = true)]
         public string AccountId
         {
             get => accountId;

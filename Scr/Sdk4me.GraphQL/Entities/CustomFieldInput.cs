@@ -14,7 +14,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Id of the field as defined for the UI Extension.
         /// </summary>
-        [JsonProperty("id")]
+        [JsonProperty("id"), Sdk4meField(IsRequiredForMutation = true)]
         public string ID
         {
             get => id;

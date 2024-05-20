@@ -35,7 +35,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The type of record in which the UI extension can be selected.
         /// </summary>
-        [JsonProperty("category")]
+        [JsonProperty("category"), Sdk4meField(IsRequiredForMutation = true)]
         public UiExtensionCategory Category
         {
             get => category;
@@ -115,7 +115,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The name of the UI extension.
         /// </summary>
-        [JsonProperty("name")]
+        [JsonProperty("name"), Sdk4meField(IsRequiredForMutation = true)]
         public string Name
         {
             get => name;

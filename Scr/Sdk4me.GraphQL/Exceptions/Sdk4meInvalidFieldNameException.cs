@@ -3,7 +3,7 @@
 namespace Sdk4me.GraphQL
 {
     /// <summary>
-    /// Represent errors that occur in the 4me query builder.
+    /// Represent errors that occurs in the query builder.
     /// </summary>
     public class Sdk4meInvalidFieldNameException : Exception
     {

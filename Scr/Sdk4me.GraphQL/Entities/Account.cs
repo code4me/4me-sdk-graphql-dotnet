@@ -17,7 +17,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The display name of the account.
         /// </summary>
-        [JsonProperty("name"), Sdk4meField(true)]
+        [JsonProperty("name"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Name { get; internal set; }
 
         /// <summary>

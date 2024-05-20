@@ -70,7 +70,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the organization that pays for the first line support agreement.
         /// </summary>
-        [JsonProperty("customerId")]
+        [JsonProperty("customerId"), Sdk4meField(IsRequiredForMutation = true)]
         public string CustomerId
         {
             get => customerId;
@@ -114,7 +114,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The name of the first line support agreement.
         /// </summary>
-        [JsonProperty("name")]
+        [JsonProperty("name"), Sdk4meField(IsRequiredForMutation = true)]
         public string Name
         {
             get => name;
@@ -158,7 +158,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the organization that provides the first line support agreement.
         /// </summary>
-        [JsonProperty("providerId")]
+        [JsonProperty("providerId"), Sdk4meField(IsRequiredForMutation = true)]
         public string ProviderId
         {
             get => providerId;

@@ -50,7 +50,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The name of the product category.
         /// </summary>
-        [JsonProperty("name")]
+        [JsonProperty("name"), Sdk4meField(IsRequiredForMutation = true)]
         public string Name
         {
             get => name;
@@ -70,7 +70,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Used to select a set of rules that are to be applied to the products to which the product category is related, as well as the configuration items that are related to those products. The selected rule set dictates which fields are available for these product and configuration items.
         /// </summary>
-        [JsonProperty("ruleSet")]
+        [JsonProperty("ruleSet"), Sdk4meField(IsRequiredForMutation = true)]
         public ProductCategoryRuleSet RuleSet
         {
             get => ruleSet;

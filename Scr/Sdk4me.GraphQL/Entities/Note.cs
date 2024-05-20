@@ -12,13 +12,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The account.
         /// </summary>
-        [JsonProperty("account"), Sdk4meField(true)]
+        [JsonProperty("account"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Account? Account { get; internal set; }
 
         /// <summary>
         /// The date and time at which the note was created.
         /// </summary>
-        [JsonProperty("createdAt"), Sdk4meField(true)]
+        [JsonProperty("createdAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Whether the notes is internal or not.
         /// </summary>
-        [JsonProperty("internal"), Sdk4meField(true)]
+        [JsonProperty("internal"), Sdk4meField(IsDefaultQueryProperty = true)]
         public bool? Internal { get; internal set; }
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace Sdk4me.GraphQL
         /// <br>• <c>redacted</c>: the note was deleted by an account administrator</br>
         /// <br>• <c>automation</c>: the note was added by an automation rule</br>
         /// </summary>
-        [JsonProperty("medium"), Sdk4meField(true)]
+        [JsonProperty("medium"), Sdk4meField(IsDefaultQueryProperty = true)]
         public NoteMedium? Medium { get; internal set; }
 
         [JsonProperty("noteReactions")]
@@ -59,7 +59,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Person who added this note.
         /// </summary>
-        [JsonProperty("person"), Sdk4meField(true)]
+        [JsonProperty("person"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Person? Person { get; internal set; }
 
         /// <summary>

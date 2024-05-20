@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("taskTemplate"), Sdk4meField(true)]
+        [JsonProperty("taskTemplate"), Sdk4meField(IsDefaultQueryProperty = true)]
         public TaskTemplate? TaskTemplate { get; internal set; }
     }
 }

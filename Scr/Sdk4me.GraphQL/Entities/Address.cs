@@ -11,43 +11,43 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The city name.
         /// </summary>
-        [JsonProperty("city"), Sdk4meField(true)]
+        [JsonProperty("city"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? City { get; internal set; }
 
         /// <summary>
         /// The country name.
         /// </summary>
-        [JsonProperty("country"), Sdk4meField(true)]
+        [JsonProperty("country"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Country { get; internal set; }
 
         /// <summary>
         /// The Integration field is a hidden checkbox that can be set to <c>true</c> using this API or the Import functionality. When checked, the address is displayed as read-only in the user interface to prevent users from updating it.
         /// </summary>
-        [JsonProperty("integration"), Sdk4meField(true)]
+        [JsonProperty("integration"), Sdk4meField(IsDefaultQueryProperty = true)]
         public bool? Integration { get; internal set; }
 
         /// <summary>
         /// The Label of the address details.
         /// </summary>
-        [JsonProperty("label"), Sdk4meField(true)]
+        [JsonProperty("label"), Sdk4meField(IsDefaultQueryProperty = true)]
         public AddressLabel? Label { get; internal set; }
 
         /// <summary>
         /// The state name.
         /// </summary>
-        [JsonProperty("state"), Sdk4meField(true)]
+        [JsonProperty("state"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? State { get; internal set; }
 
         /// <summary>
         /// The address lines.
         /// </summary>
-        [JsonProperty("address"), Sdk4meField(true)]
+        [JsonProperty("address"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Street { get; internal set; }
 
         /// <summary>
         /// The zip code.
         /// </summary>
-        [JsonProperty("zip"), Sdk4meField(true)]
+        [JsonProperty("zip"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Zip { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

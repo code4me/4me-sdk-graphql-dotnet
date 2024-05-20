@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("firstLineSupportAgreement"), Sdk4meField(true)]
+        [JsonProperty("firstLineSupportAgreement"), Sdk4meField(IsDefaultQueryProperty = true)]
         public FirstLineSupportAgreement? FirstLineSupportAgreement { get; internal set; }
     }
 }

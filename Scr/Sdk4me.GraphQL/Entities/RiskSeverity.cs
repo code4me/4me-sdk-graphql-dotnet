@@ -12,13 +12,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
-        [JsonProperty("account"), Sdk4meField(true)]
+        [JsonProperty("account"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Account? Account { get; internal set; }
 
         /// <summary>
         /// The date and time at which the record was created.
         /// </summary>
-        [JsonProperty("createdAt"), Sdk4meField(true)]
+        [JsonProperty("createdAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
@@ -53,31 +53,31 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The name of the risk severity. Ideally the name of a risk severity consists of a single word, such as "High".
         /// </summary>
-        [JsonProperty("name"), Sdk4meField(true)]
+        [JsonProperty("name"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Name { get; internal set; }
 
         /// <summary>
         /// The position that the risk severity takes when it is displayed in a sorted list.
         /// </summary>
-        [JsonProperty("position"), Sdk4meField(true)]
+        [JsonProperty("position"), Sdk4meField(IsDefaultQueryProperty = true)]
         public long? Position { get; internal set; }
 
         /// <summary>
         /// Automatically set to the Name field value, written in lower case characters and with all spaces replaced by the underscore character. This reference can be used to link the risk severity to a risk using the 4me REST API or the 4me Import functionality.
         /// </summary>
-        [JsonProperty("reference"), Sdk4meField(true)]
+        [JsonProperty("reference"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Reference { get; internal set; }
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("source"), Sdk4meField(true)]
+        [JsonProperty("source"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Source { get; internal set; }
 
         /// <summary>
         /// The unique identifier of the resource in an external system.
         /// </summary>
-        [JsonProperty("sourceID"), Sdk4meField(true)]
+        [JsonProperty("sourceID"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? SourceID { get; internal set; }
 
         [JsonProperty("translations")]
@@ -94,7 +94,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
-        [JsonProperty("updatedAt"), Sdk4meField(true)]
+        [JsonProperty("updatedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

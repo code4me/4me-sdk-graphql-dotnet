@@ -5,7 +5,7 @@ using System;
 namespace Sdk4me.GraphQL
 {
     /// <summary>
-    /// Represent errors that occur during 4me execution.
+    /// Represent errors that occurs during 4me execution.
     /// </summary>
     public sealed class Sdk4meException : Exception
     {

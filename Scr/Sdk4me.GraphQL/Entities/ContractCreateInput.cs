@@ -75,7 +75,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the organization that pays for the contract.
         /// </summary>
-        [JsonProperty("customerId")]
+        [JsonProperty("customerId"), Sdk4meField(IsRequiredForMutation = true)]
         public string CustomerId
         {
             get => customerId;
@@ -136,7 +136,7 @@ namespace Sdk4me.GraphQL
         /// <br>Example:</br>
         /// <br>• 2EGXQ2W – Dell 3-Year ProSupport and Next Business Day Onsite Repair for CMP00035</br>
         /// </summary>
-        [JsonProperty("name")]
+        [JsonProperty("name"), Sdk4meField(IsRequiredForMutation = true)]
         public string Name
         {
             get => name;

@@ -27,7 +27,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Name of the product category.
         /// </summary>
-        [JsonProperty("name")]
+        [JsonProperty("name"), Sdk4meField(IsRequiredForMutation = true)]
         public string Name
         {
             get => name;
@@ -47,7 +47,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Reference identifying the product category.
         /// </summary>
-        [JsonProperty("reference")]
+        [JsonProperty("reference"), Sdk4meField(IsRequiredForMutation = true)]
         public string Reference
         {
             get => reference;

@@ -11,13 +11,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Metadata about asynchronous query execution. The <c>asyncQuery { resultUrl }</c> contains an expiring link to the file with the full results.
         /// </summary>
-        [JsonProperty("asyncQuery"), Sdk4meField(true)]
+        [JsonProperty("asyncQuery"), Sdk4meField(IsDefaultQueryProperty = true)]
         public AsyncQuery? AsyncQuery { get; internal set; }
 
         /// <summary>
         /// Configuration items will be <c>null</c> on initial submission. The <c>asyncQuery { resultUrl }</c> contains an expiring link to the file with the full results.
         /// </summary>
-        [JsonProperty("configurationItems"), Sdk4meField(true)]
+        [JsonProperty("configurationItems"), Sdk4meField(IsDefaultQueryProperty = true)]
         public List<ConfigurationItem>? ConfigurationItems { get; internal set; }
     }
 }

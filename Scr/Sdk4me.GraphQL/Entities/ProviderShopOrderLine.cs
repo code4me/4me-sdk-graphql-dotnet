@@ -12,20 +12,20 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// After this moment the shop article is no longer available in the shop.
         /// </summary>
-        [JsonProperty("orderedAt"), Sdk4meField(true)]
+        [JsonProperty("orderedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? OrderedAt { get; internal set; }
 
         /// <summary>
         /// The price of a single unit.
         /// </summary>
-        [JsonProperty("price"), Sdk4meField(true)]
+        [JsonProperty("price"), Sdk4meField(IsDefaultQueryProperty = true)]
         public decimal? Price { get; internal set; }
 
         /// <summary>
         /// <br>The currency of the price of this shop article.</br>
         /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/currency/">4me developer site</see>.</br>
         /// </summary>
-        [JsonProperty("priceCurrency"), Sdk4meField(true)]
+        [JsonProperty("priceCurrency"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? PriceCurrency { get; internal set; }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The total price of a all units.
         /// </summary>
-        [JsonProperty("totalPrice"), Sdk4meField(true)]
+        [JsonProperty("totalPrice"), Sdk4meField(IsDefaultQueryProperty = true)]
         public decimal? TotalPrice { get; internal set; }
 
         /// <summary>

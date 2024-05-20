@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("requestTemplate"), Sdk4meField(true)]
+        [JsonProperty("requestTemplate"), Sdk4meField(IsDefaultQueryProperty = true)]
         public RequestTemplate? RequestTemplate { get; internal set; }
     }
 }

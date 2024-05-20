@@ -32,19 +32,19 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The time at which the calendar becomes active on the given weekday.
         /// </summary>
-        [JsonProperty("timeFrom"), Sdk4meField(true)]
+        [JsonProperty("timeFrom"), Sdk4meField(IsDefaultQueryProperty = true)]
         public TimeSpan? TimeFrom { get; internal set; }
 
         /// <summary>
         /// The time at which the calendar stops being active on the given weekday.
         /// </summary>
-        [JsonProperty("timeUntil"), Sdk4meField(true)]
+        [JsonProperty("timeUntil"), Sdk4meField(IsDefaultQueryProperty = true)]
         public TimeSpan? TimeUntil { get; internal set; }
 
         /// <summary>
         /// The day of the week.
         /// </summary>
-        [JsonProperty("weekday"), Sdk4meField(true)]
+        [JsonProperty("weekday"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Weekday? Weekday { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

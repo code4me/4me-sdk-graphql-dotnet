@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("projectTemplate"), Sdk4meField(true)]
+        [JsonProperty("projectTemplate"), Sdk4meField(IsDefaultQueryProperty = true)]
         public ProjectTemplate? ProjectTemplate { get; internal set; }
     }
 }

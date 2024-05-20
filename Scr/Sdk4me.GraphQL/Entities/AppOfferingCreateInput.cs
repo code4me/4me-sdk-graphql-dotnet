@@ -102,7 +102,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Name of the app offering.
         /// </summary>
-        [JsonProperty("name")]
+        [JsonProperty("name"), Sdk4meField(IsRequiredForMutation = true)]
         public string Name
         {
             get => name;
@@ -172,7 +172,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the the service instance this app offering is linked to.
         /// </summary>
-        [JsonProperty("serviceInstanceId")]
+        [JsonProperty("serviceInstanceId"), Sdk4meField(IsRequiredForMutation = true)]
         public string ServiceInstanceId
         {
             get => serviceInstanceId;

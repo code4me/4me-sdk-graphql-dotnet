@@ -32,19 +32,19 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Start of the period
         /// </summary>
-        [JsonProperty("from"), Sdk4meField(true)]
+        [JsonProperty("from"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? From { get; internal set; }
 
         /// <summary>
         /// Provider Not Accountable
         /// </summary>
-        [JsonProperty("providerNotAccountable"), Sdk4meField(true)]
+        [JsonProperty("providerNotAccountable"), Sdk4meField(IsDefaultQueryProperty = true)]
         public bool? ProviderNotAccountable { get; internal set; }
 
         /// <summary>
         /// End of the period
         /// </summary>
-        [JsonProperty("to"), Sdk4meField(true)]
+        [JsonProperty("to"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? To { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

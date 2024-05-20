@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("appOfferingAutomationRule"), Sdk4meField(true)]
+        [JsonProperty("appOfferingAutomationRule"), Sdk4meField(IsDefaultQueryProperty = true)]
         public AppOfferingAutomationRule? AppOfferingAutomationRule { get; internal set; }
     }
 }

@@ -28,19 +28,19 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The phase of the workflow template that the workflow task template is a part of.
         /// </summary>
-        [JsonProperty("phase"), Sdk4meField(true)]
+        [JsonProperty("phase"), Sdk4meField(IsDefaultQueryProperty = true)]
         public WorkflowTemplatePhase? Phase { get; internal set; }
 
         /// <summary>
         /// Task template related to the workflow template.
         /// </summary>
-        [JsonProperty("taskTemplate"), Sdk4meField(true)]
+        [JsonProperty("taskTemplate"), Sdk4meField(IsDefaultQueryProperty = true)]
         public TaskTemplate? TaskTemplate { get; internal set; }
 
         /// <summary>
         /// Workflow template related to the task template.
         /// </summary>
-        [JsonProperty("workflowTemplate"), Sdk4meField(true)]
+        [JsonProperty("workflowTemplate"), Sdk4meField(IsDefaultQueryProperty = true)]
         public WorkflowTemplate? WorkflowTemplate { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

@@ -99,7 +99,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The category that needs to be selected in the Category field of a new task when it is being created based on the template.
         /// </summary>
-        [JsonProperty("category")]
+        [JsonProperty("category"), Sdk4meField(IsRequiredForMutation = true)]
         public TaskCategory Category
         {
             get => category;
@@ -219,7 +219,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The number of minutes that should be entered in the Planned duration field of a new task when it is being created based on the template.
         /// </summary>
-        [JsonProperty("plannedDuration")]
+        [JsonProperty("plannedDuration"), Sdk4meField(IsRequiredForMutation = true)]
         public long PlannedDuration
         {
             get => plannedDuration;
@@ -359,7 +359,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// A short description that needs to be copied to the Subject field of a new task when it is being created based on the template.
         /// </summary>
-        [JsonProperty("subject")]
+        [JsonProperty("subject"), Sdk4meField(IsRequiredForMutation = true)]
         public string Subject
         {
             get => subject;

@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("uiExtension"), Sdk4meField(true)]
+        [JsonProperty("uiExtension"), Sdk4meField(IsDefaultQueryProperty = true)]
         public UiExtension? UiExtension { get; internal set; }
     }
 }

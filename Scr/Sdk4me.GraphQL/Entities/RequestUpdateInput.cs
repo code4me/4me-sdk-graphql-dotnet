@@ -204,7 +204,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The node ID of the record to update.
         /// </summary>
-        [JsonProperty("id")]
+        [JsonProperty("id"), Sdk4meField(IsRequiredForMutation = true)]
         public string ID
         {
             get => id;

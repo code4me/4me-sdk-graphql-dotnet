@@ -24,7 +24,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The key obtained from the attachment upload response.
         /// </summary>
-        [JsonProperty("key")]
+        [JsonProperty("key"), Sdk4meField(IsRequiredForMutation = true)]
         public string Key
         {
             get => key;

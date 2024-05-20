@@ -32,7 +32,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the app offering the rule belongs to.
         /// </summary>
-        [JsonProperty("appOfferingId")]
+        [JsonProperty("appOfferingId"), Sdk4meField(IsRequiredForMutation = true)]
         public string AppOfferingId
         {
             get => appOfferingId;
@@ -52,7 +52,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The Condition field is used to define the condition that needs to be met in order for the update action(s) of the rule to be performed. For example: <c>is_assigned and !badge</c>.
         /// </summary>
-        [JsonProperty("condition")]
+        [JsonProperty("condition"), Sdk4meField(IsRequiredForMutation = true)]
         public string Condition
         {
             get => condition;
@@ -96,7 +96,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The name of the automation rule.
         /// </summary>
-        [JsonProperty("name")]
+        [JsonProperty("name"), Sdk4meField(IsRequiredForMutation = true)]
         public string Name
         {
             get => name;
@@ -116,7 +116,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The Trigger field is used to specify when the automation rule is to be triggered, for example <c>on status update</c> or <c>on note added</c>.
         /// </summary>
-        [JsonProperty("trigger")]
+        [JsonProperty("trigger"), Sdk4meField(IsRequiredForMutation = true)]
         public string Trigger
         {
             get => trigger;

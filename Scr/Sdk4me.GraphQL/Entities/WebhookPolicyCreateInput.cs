@@ -36,7 +36,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The algorithm to use for cryptographic signing of webhook messages.
         /// </summary>
-        [JsonProperty("jwtAlg")]
+        [JsonProperty("jwtAlg"), Sdk4meField(IsRequiredForMutation = true)]
         public WebhookPolicyJwtAlg JwtAlg
         {
             get => jwtAlg;

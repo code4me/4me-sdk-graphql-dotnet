@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("effortClass"), Sdk4meField(true)]
+        [JsonProperty("effortClass"), Sdk4meField(IsDefaultQueryProperty = true)]
         public EffortClass? EffortClass { get; internal set; }
     }
 }

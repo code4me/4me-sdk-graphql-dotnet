@@ -11,7 +11,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Related configuration item.
         /// </summary>
-        [JsonProperty("configurationItem"), Sdk4meField(true)]
+        [JsonProperty("configurationItem"), Sdk4meField(IsDefaultQueryProperty = true)]
         public ConfigurationItem? ConfigurationItem { get; internal set; }
 
         /// <summary>
@@ -23,7 +23,7 @@ namespace Sdk4me.GraphQL
         /// <br>• <c>continuity</c>: Use this relation type to link a hardware CI to another hardware CI that is located at another site and which is to be used as replacement in case the service instance that the first hardware CI supports needs to be recovered at its continuity site.</br>
         /// <br>• <c>software_dependency</c>: Use this relation type to link a software CI to all other software CIs, software/interface configurations and databases that depend on this software CI, or which the software CI depends on.</br>
         /// </summary>
-        [JsonProperty("relationType"), Sdk4meField(true)]
+        [JsonProperty("relationType"), Sdk4meField(IsDefaultQueryProperty = true)]
         public CiRelationRelationType? RelationType { get; internal set; }
 
         /// <summary>

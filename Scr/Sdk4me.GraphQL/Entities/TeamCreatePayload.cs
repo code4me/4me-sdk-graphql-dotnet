@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("team"), Sdk4meField(true)]
+        [JsonProperty("team"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Team? Team { get; internal set; }
     }
 }

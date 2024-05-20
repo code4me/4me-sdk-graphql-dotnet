@@ -40,7 +40,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the asset that is being reserved.
         /// </summary>
-        [JsonProperty("configurationItemId")]
+        [JsonProperty("configurationItemId"), Sdk4meField(IsRequiredForMutation = true)]
         public string ConfigurationItemId
         {
             get => configurationItemId;
@@ -100,7 +100,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// A short description of the reservation
         /// </summary>
-        [JsonProperty("name")]
+        [JsonProperty("name"), Sdk4meField(IsRequiredForMutation = true)]
         public string Name
         {
             get => name;
@@ -110,7 +110,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the person for whom this reservation was created.
         /// </summary>
-        [JsonProperty("personId")]
+        [JsonProperty("personId"), Sdk4meField(IsRequiredForMutation = true)]
         public string PersonId
         {
             get => personId;
@@ -150,7 +150,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the reservation offering that was used to create this reservation.
         /// </summary>
-        [JsonProperty("reservationOfferingId")]
+        [JsonProperty("reservationOfferingId"), Sdk4meField(IsRequiredForMutation = true)]
         public string ReservationOfferingId
         {
             get => reservationOfferingId;
@@ -180,7 +180,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Used to specify the start date and time of the reservation.
         /// </summary>
-        [JsonProperty("startAt")]
+        [JsonProperty("startAt"), Sdk4meField(IsRequiredForMutation = true)]
         public DateTime StartAt
         {
             get => startAt;

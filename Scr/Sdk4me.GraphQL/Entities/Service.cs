@@ -12,7 +12,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
-        [JsonProperty("account"), Sdk4meField(true)]
+        [JsonProperty("account"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Account? Account { get; internal set; }
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time at which the record was created.
         /// </summary>
-        [JsonProperty("createdAt"), Sdk4meField(true)]
+        [JsonProperty("createdAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The name of the service. The service name may be followed by the name of its core application placed between brackets.
         /// </summary>
-        [JsonProperty("name"), Sdk4meField(true)]
+        [JsonProperty("name"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Name { get; internal set; }
 
         /// <summary>
@@ -169,25 +169,25 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The organization that provides the service.
         /// </summary>
-        [JsonProperty("serviceProvider"), Sdk4meField(true)]
+        [JsonProperty("serviceProvider"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Organization? ServiceProvider { get; internal set; }
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("source"), Sdk4meField(true)]
+        [JsonProperty("source"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Source { get; internal set; }
 
         /// <summary>
         /// The unique identifier of the resource in an external system.
         /// </summary>
-        [JsonProperty("sourceID"), Sdk4meField(true)]
+        [JsonProperty("sourceID"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? SourceID { get; internal set; }
 
         /// <summary>
         /// The team  that will, by default, be selected in the Support team field of a service instance when one is registered for the service. Similarly, this team will be selected in the Team field of a problem when the service is related to it.
         /// </summary>
-        [JsonProperty("supportTeam"), Sdk4meField(true)]
+        [JsonProperty("supportTeam"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Team? SupportTeam { get; internal set; }
 
         /// <summary>
@@ -216,7 +216,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
-        [JsonProperty("updatedAt"), Sdk4meField(true)]
+        [JsonProperty("updatedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

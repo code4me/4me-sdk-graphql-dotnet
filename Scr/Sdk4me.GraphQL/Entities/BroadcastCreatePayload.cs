@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("broadcast"), Sdk4meField(true)]
+        [JsonProperty("broadcast"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Broadcast? Broadcast { get; internal set; }
     }
 }

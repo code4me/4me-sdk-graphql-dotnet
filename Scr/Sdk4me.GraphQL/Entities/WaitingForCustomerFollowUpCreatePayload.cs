@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("waitingForCustomerFollowUp"), Sdk4meField(true)]
+        [JsonProperty("waitingForCustomerFollowUp"), Sdk4meField(IsDefaultQueryProperty = true)]
         public WaitingForCustomerFollowUp? WaitingForCustomerFollowUp { get; internal set; }
     }
 }

@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("shortUrl"), Sdk4meField(true)]
+        [JsonProperty("shortUrl"), Sdk4meField(IsDefaultQueryProperty = true)]
         public ShortUrl? ShortUrl { get; internal set; }
     }
 }

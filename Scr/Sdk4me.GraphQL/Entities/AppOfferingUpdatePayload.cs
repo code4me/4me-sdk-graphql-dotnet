@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("appOffering"), Sdk4meField(true)]
+        [JsonProperty("appOffering"), Sdk4meField(IsDefaultQueryProperty = true)]
         public AppOffering? AppOffering { get; internal set; }
     }
 }

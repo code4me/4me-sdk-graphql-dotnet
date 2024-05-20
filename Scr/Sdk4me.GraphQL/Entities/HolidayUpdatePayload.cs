@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("holiday"), Sdk4meField(true)]
+        [JsonProperty("holiday"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Holiday? Holiday { get; internal set; }
     }
 }

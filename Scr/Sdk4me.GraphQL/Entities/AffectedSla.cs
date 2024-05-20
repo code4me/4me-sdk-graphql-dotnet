@@ -42,7 +42,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time at which the affected SLA was created.
         /// </summary>
-        [JsonProperty("createdAt"), Sdk4meField(true)]
+        [JsonProperty("createdAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The Impact field is automatically set to the impact selected in the request, provided that the service instance (SI) that is selected in the request is the same as the related SI.
         /// </summary>
-        [JsonProperty("impact"), Sdk4meField(true)]
+        [JsonProperty("impact"), Sdk4meField(IsDefaultQueryProperty = true)]
         public RequestImpact? Impact { get; internal set; }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The Next target field value is empty when the Accountability field is set to <c>sla_not_affected</c> or when the Actual resolution field contains a value. It is set to <c>clock_stopped</c> when the clock has been stopped for the affected SLA. The next target equals the response target when a response target exists and the Actual response field is still empty. Otherwise, the next target equals the desired completion when a desired completion exists and a resolution target exists and the desired completion is greater than the resolution target. Otherwise the next target is the resolution target when a resolution target exists. In all other cases, the next target is <c>best_effort</c>.
         /// </summary>
-        [JsonProperty("nextTargetAt"), Sdk4meField(true)]
+        [JsonProperty("nextTargetAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? NextTargetAt { get; internal set; }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The Request field is automatically set to the request for which the affected SLA was generated.
         /// </summary>
-        [JsonProperty("request"), Sdk4meField(true)]
+        [JsonProperty("request"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Request? Request { get; internal set; }
 
         /// <summary>
@@ -150,13 +150,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The Service instance field is automatically set to the Service Instance that, at the time the affected SLA was created, was selected in the Service instance field of the related service level agreement.
         /// </summary>
-        [JsonProperty("serviceInstance"), Sdk4meField(true)]
+        [JsonProperty("serviceInstance"), Sdk4meField(IsDefaultQueryProperty = true)]
         public ServiceInstance? ServiceInstance { get; internal set; }
 
         /// <summary>
         /// The Service level agreement field is automatically set to the service level agreement that is considered affected.
         /// </summary>
-        [JsonProperty("serviceLevelAgreement"), Sdk4meField(true)]
+        [JsonProperty("serviceLevelAgreement"), Sdk4meField(IsDefaultQueryProperty = true)]
         public ServiceLevelAgreement? ServiceLevelAgreement { get; internal set; }
 
         /// <summary>
@@ -217,7 +217,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time of the last update of the affected SLA. If the affected SLA has no updates it contains the <c>createdAt</c> value.
         /// </summary>
-        [JsonProperty("updatedAt"), Sdk4meField(true)]
+        [JsonProperty("updatedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

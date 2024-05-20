@@ -68,7 +68,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Text of the note.
         /// </summary>
-        [JsonProperty("text")]
+        [JsonProperty("text"), Sdk4meField(IsRequiredForMutation = true)]
         public string Text
         {
             get => text;

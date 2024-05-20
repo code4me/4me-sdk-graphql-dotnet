@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("serviceInstance"), Sdk4meField(true)]
+        [JsonProperty("serviceInstance"), Sdk4meField(IsDefaultQueryProperty = true)]
         public ServiceInstance? ServiceInstance { get; internal set; }
     }
 }

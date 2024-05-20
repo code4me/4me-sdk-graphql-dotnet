@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -277,6 +278,14 @@ namespace Sdk4me.GraphQL
                 settings.Converters.Add(new StringEnumConverter());
                 settings.Converters.Add(new ISO8601TimeJsonConverter());
                 settings.Converters.Add(new ISO8601TimestampJsonConverter());
+
+                List<PropertyInfo> requiredProperties = input.Data.GetType().GetProperties().Where(p => p.GetCustomAttributes(typeof(Sdk4meFieldAttribute), true).OfType<Sdk4meFieldAttribute>().Any(a => a.IsRequiredForMutation)).ToList();
+                foreach (PropertyInfo property in requiredProperties)
+                {
+                    object? value = property.GetValue(input.Data);
+                    if (value == null || (value is string text && string.IsNullOrEmpty(text)) || (value is DateTime dateTime && dateTime == default(DateTime)))
+                        throw new Sdk4meMutationException($"The value of the '{property.Name}' field is required and cannot be null, empty, or the default.");
+                }
 
                 string query = $"{{\"query\":{JsonConvert.SerializeObject(ExecutionQueryBuilder.GetGraphQLQuery(input))},\"variables\":{{\"input\":{JsonConvert.SerializeObject(input.Data, settings)}}}}}";
                 JToken responseData = await SendHttpRequest(requestMessage, query, true);

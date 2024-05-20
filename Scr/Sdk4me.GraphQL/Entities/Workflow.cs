@@ -12,7 +12,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
-        [JsonProperty("account"), Sdk4meField(true)]
+        [JsonProperty("account"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Account? Account { get; internal set; }
 
         /// <summary>
@@ -41,13 +41,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The category of the workflow.
         /// </summary>
-        [JsonProperty("category"), Sdk4meField(true)]
+        [JsonProperty("category"), Sdk4meField(IsDefaultQueryProperty = true)]
         public WorkflowCategory? Category { get; internal set; }
 
         /// <summary>
         /// The date and time at which the workflow is saved with the status "Completed".
         /// </summary>
-        [JsonProperty("completedAt"), Sdk4meField(true)]
+        [JsonProperty("completedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CompletedAt { get; internal set; }
 
         /// <summary>
@@ -59,13 +59,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Shows the target date and time of the last task of the workflow.
         /// </summary>
-        [JsonProperty("completionTargetAt"), Sdk4meField(true)]
+        [JsonProperty("completionTargetAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CompletionTargetAt { get; internal set; }
 
         /// <summary>
         /// The date and time at which the record was created.
         /// </summary>
-        [JsonProperty("createdAt"), Sdk4meField(true)]
+        [JsonProperty("createdAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
@@ -88,7 +88,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The maximum impact level that is selected in the tasks that are a part of the workflow. This indicates the maximum extent to which the service is impacted when the implementation tasks that are related to the workflow are executed.
         /// </summary>
-        [JsonProperty("impact"), Sdk4meField(true)]
+        [JsonProperty("impact"), Sdk4meField(IsDefaultQueryProperty = true)]
         public TaskImpact? Impact { get; internal set; }
 
         [JsonProperty("invoices")]
@@ -117,7 +117,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Who is responsible for coordinating the implementation of the workflow. If a manager is not specified for a new workflow, the API user is selected in the Manager field by default.
         /// </summary>
-        [JsonProperty("manager"), Sdk4meField(true)]
+        [JsonProperty("manager"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Person? Manager { get; internal set; }
 
         [JsonProperty("notes")]
@@ -162,13 +162,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Linked project
         /// </summary>
-        [JsonProperty("project"), Sdk4meField(true)]
+        [JsonProperty("project"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Project? Project { get; internal set; }
 
         /// <summary>
         /// The release that the workflow is a part of.
         /// </summary>
-        [JsonProperty("release"), Sdk4meField(true)]
+        [JsonProperty("release"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Release? Release { get; internal set; }
 
         [JsonProperty("requests")]
@@ -191,37 +191,37 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The service that will directly be affected by the workflow implementation, or in case of an emergency change, the service that was directly affected by the workflow implementation.
         /// </summary>
-        [JsonProperty("service"), Sdk4meField(true)]
+        [JsonProperty("service"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Service? Service { get; internal set; }
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("source"), Sdk4meField(true)]
+        [JsonProperty("source"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Source { get; internal set; }
 
         /// <summary>
         /// The unique identifier of the resource in an external system.
         /// </summary>
-        [JsonProperty("sourceID"), Sdk4meField(true)]
+        [JsonProperty("sourceID"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? SourceID { get; internal set; }
 
         /// <summary>
         /// The date and time at which the Status field of the first tasks of the workflow will automatically be set to "Assigned".
         /// </summary>
-        [JsonProperty("startAt"), Sdk4meField(true)]
+        [JsonProperty("startAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? StartAt { get; internal set; }
 
         /// <summary>
         /// Automatically set based on the status of the workflow's tasks.
         /// </summary>
-        [JsonProperty("status"), Sdk4meField(true)]
+        [JsonProperty("status"), Sdk4meField(IsDefaultQueryProperty = true)]
         public WorkflowStatus? Status { get; internal set; }
 
         /// <summary>
         /// A short description of the objective of the workflow.
         /// </summary>
-        [JsonProperty("subject"), Sdk4meField(true)]
+        [JsonProperty("subject"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Subject { get; internal set; }
 
         [JsonProperty("tasks")]
@@ -238,13 +238,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The workflow template that was used to register the workflow.
         /// </summary>
-        [JsonProperty("template"), Sdk4meField(true)]
+        [JsonProperty("template"), Sdk4meField(IsDefaultQueryProperty = true)]
         public WorkflowTemplate? Template { get; internal set; }
 
         /// <summary>
         /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
-        [JsonProperty("updatedAt"), Sdk4meField(true)]
+        [JsonProperty("updatedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         /// <summary>

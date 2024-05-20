@@ -35,7 +35,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Whether a person who spent on the time allocation needs to select a customer organization, and if this is the case, whether this person may only select from the customer organizations linked to the time allocation or is allowed to select any customer organization.
         /// </summary>
-        [JsonProperty("customerCategory")]
+        [JsonProperty("customerCategory"), Sdk4meField(IsRequiredForMutation = true)]
         public TimeAllocationCustomerCategory CustomerCategory
         {
             get => customerCategory;
@@ -55,7 +55,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Whether the Description field should be available, and if so, whether it should be required, in the time entries to which the time allocation is related.
         /// </summary>
-        [JsonProperty("descriptionCategory")]
+        [JsonProperty("descriptionCategory"), Sdk4meField(IsRequiredForMutation = true)]
         public TimeAllocationDescriptionCategory DescriptionCategory
         {
             get => descriptionCategory;
@@ -95,7 +95,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The name of the time allocation.
         /// </summary>
-        [JsonProperty("name")]
+        [JsonProperty("name"), Sdk4meField(IsRequiredForMutation = true)]
         public string Name
         {
             get => name;
@@ -115,7 +115,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Whether a Person who spent on the time allocation needs to select a service, and if this is the case, whether this person may only select from the services linked to the time allocation or is allowed to select any service.
         /// </summary>
-        [JsonProperty("serviceCategory")]
+        [JsonProperty("serviceCategory"), Sdk4meField(IsRequiredForMutation = true)]
         public TimeAllocationServiceCategory ServiceCategory
         {
             get => serviceCategory;

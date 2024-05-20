@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("knowledgeArticle"), Sdk4meField(true)]
+        [JsonProperty("knowledgeArticle"), Sdk4meField(IsDefaultQueryProperty = true)]
         public KnowledgeArticle? KnowledgeArticle { get; internal set; }
     }
 }

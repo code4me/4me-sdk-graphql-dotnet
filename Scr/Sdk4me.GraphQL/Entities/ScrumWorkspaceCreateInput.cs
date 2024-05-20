@@ -24,7 +24,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the agile board used to track the progress of this workspace's active sprint.
         /// </summary>
-        [JsonProperty("agileBoardId")]
+        [JsonProperty("agileBoardId"), Sdk4meField(IsRequiredForMutation = true)]
         public string AgileBoardId
         {
             get => agileBoardId;
@@ -74,7 +74,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Name of the scrum workspace.
         /// </summary>
-        [JsonProperty("name")]
+        [JsonProperty("name"), Sdk4meField(IsRequiredForMutation = true)]
         public string Name
         {
             get => name;
@@ -94,7 +94,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the product backlog used when planning sprints.
         /// </summary>
-        [JsonProperty("productBacklogId")]
+        [JsonProperty("productBacklogId"), Sdk4meField(IsRequiredForMutation = true)]
         public string ProductBacklogId
         {
             get => productBacklogId;
@@ -124,7 +124,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Standard length in weeks of new sprints planned in this scrum workspace.
         /// </summary>
-        [JsonProperty("sprintLength")]
+        [JsonProperty("sprintLength"), Sdk4meField(IsRequiredForMutation = true)]
         public long SprintLength
         {
             get => sprintLength;
@@ -134,7 +134,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the team planning their work using this scrum workspace.
         /// </summary>
-        [JsonProperty("teamId")]
+        [JsonProperty("teamId"), Sdk4meField(IsRequiredForMutation = true)]
         public string TeamId
         {
             get => teamId;

@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("skillPool"), Sdk4meField(true)]
+        [JsonProperty("skillPool"), Sdk4meField(IsDefaultQueryProperty = true)]
         public SkillPool? SkillPool { get; internal set; }
     }
 }

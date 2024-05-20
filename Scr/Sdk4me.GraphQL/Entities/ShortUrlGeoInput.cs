@@ -13,7 +13,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Latitude coordinate of the location.
         /// </summary>
-        [JsonProperty("latitude")]
+        [JsonProperty("latitude"), Sdk4meField(IsRequiredForMutation = true)]
         public string Latitude
         {
             get => latitude;
@@ -23,7 +23,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Longitude coordinate of the location.
         /// </summary>
-        [JsonProperty("longitude")]
+        [JsonProperty("longitude"), Sdk4meField(IsRequiredForMutation = true)]
         public string Longitude
         {
             get => longitude;

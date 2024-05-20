@@ -15,7 +15,7 @@ namespace Sdk4me.GraphQL
         /// <br>• For <c>...-suggest</c> fields the value is the node ID of the selected record.</br>
         /// <br>• For <c>custom-suggest</c> fields the value is the node ID of the selected record. When multiple records are selected the value is an array of node IDs.</br>
         /// </summary>
-        [JsonProperty("value"), Sdk4meField(true)]
+        [JsonProperty("value"), Sdk4meField(IsDefaultQueryProperty = true)]
         public JToken? Value { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

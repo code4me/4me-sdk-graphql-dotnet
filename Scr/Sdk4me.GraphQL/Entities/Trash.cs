@@ -12,25 +12,25 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The account of the trashed record belongs to.
         /// </summary>
-        [JsonProperty("account"), Sdk4meField(true)]
+        [JsonProperty("account"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Account? Account { get; internal set; }
 
         /// <summary>
         /// The date and time at which the trash was created.
         /// </summary>
-        [JsonProperty("createdAt"), Sdk4meField(true)]
+        [JsonProperty("createdAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
         /// The trashed record, e.g. Request.
         /// </summary>
-        [JsonProperty("trashed"), Sdk4meField(true)]
+        [JsonProperty("trashed"), Sdk4meField(IsDefaultQueryProperty = true)]
         public IHasLifeCycleState? Trashed { get; internal set; }
 
         /// <summary>
         /// The person who trashed the record.
         /// </summary>
-        [JsonProperty("trashedBy"), Sdk4meField(true)]
+        [JsonProperty("trashedBy"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Person? TrashedBy { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

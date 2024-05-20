@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// <c>true</c> when the record was successfully deleted, <c>false</c> otherwise.
         /// </summary>
-        [JsonProperty("success"), Sdk4meField(true)]
+        [JsonProperty("success"), Sdk4meField(IsDefaultQueryProperty = true)]
         public bool? Success { get; internal set; }
     }
 }

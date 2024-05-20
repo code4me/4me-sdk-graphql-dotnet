@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("projectCategory"), Sdk4meField(true)]
+        [JsonProperty("projectCategory"), Sdk4meField(IsDefaultQueryProperty = true)]
         public ProjectCategory? ProjectCategory { get; internal set; }
     }
 }

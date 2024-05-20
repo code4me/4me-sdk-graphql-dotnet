@@ -22,7 +22,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the app offering to create an instance of.
         /// </summary>
-        [JsonProperty("appOfferingId")]
+        [JsonProperty("appOfferingId"), Sdk4meField(IsRequiredForMutation = true)]
         public string AppOfferingId
         {
             get => appOfferingId;
@@ -42,7 +42,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the account this app instance is for.
         /// </summary>
-        [JsonProperty("customerAccountId")]
+        [JsonProperty("customerAccountId"), Sdk4meField(IsRequiredForMutation = true)]
         public string CustomerAccountId
         {
             get => customerAccountId;

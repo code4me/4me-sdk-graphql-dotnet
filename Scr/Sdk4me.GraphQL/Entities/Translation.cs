@@ -12,13 +12,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
-        [JsonProperty("account"), Sdk4meField(true)]
+        [JsonProperty("account"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Account? Account { get; internal set; }
 
         /// <summary>
         /// The date and time at which the record was created.
         /// </summary>
-        [JsonProperty("createdAt"), Sdk4meField(true)]
+        [JsonProperty("createdAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
@@ -30,14 +30,14 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The field of the record from which the translation is obtained.
         /// </summary>
-        [JsonProperty("field"), Sdk4meField(true)]
+        [JsonProperty("field"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Field { get; internal set; }
 
         /// <summary>
         /// <br>The language in which the text is specified.</br>
         /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/language/">4me developer site</see>.</br>
         /// </summary>
-        [JsonProperty("language"), Sdk4meField(true)]
+        [JsonProperty("language"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Language { get; internal set; }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
-        [JsonProperty("updatedAt"), Sdk4meField(true)]
+        [JsonProperty("updatedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

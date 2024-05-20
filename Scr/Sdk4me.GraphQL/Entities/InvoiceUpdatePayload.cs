@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("invoice"), Sdk4meField(true)]
+        [JsonProperty("invoice"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Invoice? Invoice { get; internal set; }
     }
 }

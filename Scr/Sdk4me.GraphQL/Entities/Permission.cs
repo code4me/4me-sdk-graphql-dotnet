@@ -31,13 +31,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Account for which the person has permissions.
         /// </summary>
-        [JsonProperty("account"), Sdk4meField(true)]
+        [JsonProperty("account"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Account? Account { get; internal set; }
 
         /// <summary>
         /// Roles the person has within the account.
         /// </summary>
-        [JsonProperty("roles"), Sdk4meField(true)]
+        [JsonProperty("roles"), Sdk4meField(IsDefaultQueryProperty = true)]
         public List<PermissionRole>? Roles { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

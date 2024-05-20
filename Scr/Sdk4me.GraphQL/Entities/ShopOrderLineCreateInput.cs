@@ -61,7 +61,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The number units ordered.
         /// </summary>
-        [JsonProperty("quantity")]
+        [JsonProperty("quantity"), Sdk4meField(IsRequiredForMutation = true)]
         public long Quantity
         {
             get => quantity;
@@ -71,7 +71,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The person for whom the shop order line was submitted.
         /// </summary>
-        [JsonProperty("requestedForId")]
+        [JsonProperty("requestedForId"), Sdk4meField(IsRequiredForMutation = true)]
         public string RequestedForId
         {
             get => requestedForId;
@@ -81,7 +81,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The shop article that is ordered.
         /// </summary>
-        [JsonProperty("shopArticleId")]
+        [JsonProperty("shopArticleId"), Sdk4meField(IsRequiredForMutation = true)]
         public string ShopArticleId
         {
             get => shopArticleId;

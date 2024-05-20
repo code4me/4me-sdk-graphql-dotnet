@@ -31,43 +31,43 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Whether to notify the current assignee of the request.
         /// </summary>
-        [JsonProperty("notifyCurrentAssignee"), Sdk4meField(true)]
+        [JsonProperty("notifyCurrentAssignee"), Sdk4meField(IsDefaultQueryProperty = true)]
         public bool? NotifyCurrentAssignee { get; internal set; }
 
         /// <summary>
         /// Whether to notify the first line team coordinator of the service instance of the affected SLA.
         /// </summary>
-        [JsonProperty("notifyFirstLineTeamCoordinator"), Sdk4meField(true)]
+        [JsonProperty("notifyFirstLineTeamCoordinator"), Sdk4meField(IsDefaultQueryProperty = true)]
         public bool? NotifyFirstLineTeamCoordinator { get; internal set; }
 
         /// <summary>
         /// Whether to notify the first line team manager of the service instance of the affected SLA.
         /// </summary>
-        [JsonProperty("notifyFirstLineTeamManager"), Sdk4meField(true)]
+        [JsonProperty("notifyFirstLineTeamManager"), Sdk4meField(IsDefaultQueryProperty = true)]
         public bool? NotifyFirstLineTeamManager { get; internal set; }
 
         /// <summary>
         /// Whether to notify the service owner of the service of the affected SLA.
         /// </summary>
-        [JsonProperty("notifyServiceOwner"), Sdk4meField(true)]
+        [JsonProperty("notifyServiceOwner"), Sdk4meField(IsDefaultQueryProperty = true)]
         public bool? NotifyServiceOwner { get; internal set; }
 
         /// <summary>
         /// Whether to notify the support team coordinator of the service instance of the affected SLA.
         /// </summary>
-        [JsonProperty("notifySupportTeamCoordinator"), Sdk4meField(true)]
+        [JsonProperty("notifySupportTeamCoordinator"), Sdk4meField(IsDefaultQueryProperty = true)]
         public bool? NotifySupportTeamCoordinator { get; internal set; }
 
         /// <summary>
         /// Whether to notify the support team manager of the service instance of the affected SLA.
         /// </summary>
-        [JsonProperty("notifySupportTeamManager"), Sdk4meField(true)]
+        [JsonProperty("notifySupportTeamManager"), Sdk4meField(IsDefaultQueryProperty = true)]
         public bool? NotifySupportTeamManager { get; internal set; }
 
         /// <summary>
         /// The percentage of the resolution target duration when a notification should be generated.
         /// </summary>
-        [JsonProperty("thresholdPercentage"), Sdk4meField(true)]
+        [JsonProperty("thresholdPercentage"), Sdk4meField(IsDefaultQueryProperty = true)]
         public long? ThresholdPercentage { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

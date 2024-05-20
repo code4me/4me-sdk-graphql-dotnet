@@ -12,7 +12,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
-        [JsonProperty("account"), Sdk4meField(true)]
+        [JsonProperty("account"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Account? Account { get; internal set; }
 
         [JsonProperty("approvals")]
@@ -70,7 +70,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The category that needs to be selected in the Category field of a new task when it is being created based on the template.
         /// </summary>
-        [JsonProperty("category"), Sdk4meField(true)]
+        [JsonProperty("category"), Sdk4meField(IsDefaultQueryProperty = true)]
         public TaskCategory? Category { get; internal set; }
 
         [JsonProperty("configurationItems")]
@@ -93,13 +93,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time at which the record was created.
         /// </summary>
-        [JsonProperty("createdAt"), Sdk4meField(true)]
+        [JsonProperty("createdAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
         /// Whether the task template may not be used to help register new tasks.
         /// </summary>
-        [JsonProperty("disabled"), Sdk4meField(true)]
+        [JsonProperty("disabled"), Sdk4meField(IsDefaultQueryProperty = true)]
         public bool? Disabled { get; internal set; }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The impact level that needs to be selected in the Impact field of a new task when it is being created based on the template.
         /// </summary>
-        [JsonProperty("impact"), Sdk4meField(true)]
+        [JsonProperty("impact"), Sdk4meField(IsDefaultQueryProperty = true)]
         public TaskImpact? Impact { get; internal set; }
 
         /// <summary>
@@ -252,19 +252,19 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("source"), Sdk4meField(true)]
+        [JsonProperty("source"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Source { get; internal set; }
 
         /// <summary>
         /// The unique identifier of the resource in an external system.
         /// </summary>
-        [JsonProperty("sourceID"), Sdk4meField(true)]
+        [JsonProperty("sourceID"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? SourceID { get; internal set; }
 
         /// <summary>
         /// A short description that needs to be copied to the Subject field of a new task when it is being created based on the template.
         /// </summary>
-        [JsonProperty("subject"), Sdk4meField(true)]
+        [JsonProperty("subject"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Subject { get; internal set; }
 
         /// <summary>
@@ -299,7 +299,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
-        [JsonProperty("updatedAt"), Sdk4meField(true)]
+        [JsonProperty("updatedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         /// <summary>

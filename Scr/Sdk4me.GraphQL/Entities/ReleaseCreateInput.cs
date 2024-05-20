@@ -52,7 +52,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the person who is responsible for coordinating the implementation of the release. The person must have the release Manager role.
         /// </summary>
-        [JsonProperty("managerId")]
+        [JsonProperty("managerId"), Sdk4meField(IsRequiredForMutation = true)]
         public string ManagerId
         {
             get => managerId;
@@ -92,7 +92,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// A short description of the objective of the release.
         /// </summary>
-        [JsonProperty("subject")]
+        [JsonProperty("subject"), Sdk4meField(IsRequiredForMutation = true)]
         public string Subject
         {
             get => subject;

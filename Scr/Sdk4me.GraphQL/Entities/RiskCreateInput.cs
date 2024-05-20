@@ -137,7 +137,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The severity of the risk.
         /// </summary>
-        [JsonProperty("severity")]
+        [JsonProperty("severity"), Sdk4meField(IsRequiredForMutation = true)]
         public string Severity
         {
             get => severity;
@@ -177,7 +177,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The subject of the risk.
         /// </summary>
-        [JsonProperty("subject")]
+        [JsonProperty("subject"), Sdk4meField(IsRequiredForMutation = true)]
         public string Subject
         {
             get => subject;

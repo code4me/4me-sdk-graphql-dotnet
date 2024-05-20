@@ -21,7 +21,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The brand name is typically the name of the product's manufacturer.
         /// </summary>
-        [JsonProperty("brand")]
+        [JsonProperty("brand"), Sdk4meField(IsRequiredForMutation = true)]
         public string Brand
         {
             get => brand;
@@ -51,7 +51,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The model of the product.
         /// </summary>
-        [JsonProperty("model")]
+        [JsonProperty("model"), Sdk4meField(IsRequiredForMutation = true)]
         public string Model
         {
             get => model;
@@ -61,7 +61,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Name of the product.
         /// </summary>
-        [JsonProperty("name")]
+        [JsonProperty("name"), Sdk4meField(IsRequiredForMutation = true)]
         public string Name
         {
             get => name;
@@ -91,7 +91,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The unique identifier of the product in an external system
         /// </summary>
-        [JsonProperty("sourceID")]
+        [JsonProperty("sourceID"), Sdk4meField(IsRequiredForMutation = true)]
         public string SourceID
         {
             get => sourceID;

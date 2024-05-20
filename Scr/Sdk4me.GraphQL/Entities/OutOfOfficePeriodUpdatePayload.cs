@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("outOfOfficePeriod"), Sdk4meField(true)]
+        [JsonProperty("outOfOfficePeriod"), Sdk4meField(IsDefaultQueryProperty = true)]
         public OutOfOfficePeriod? OutOfOfficePeriod { get; internal set; }
     }
 }

@@ -101,7 +101,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the organization that pays for the service level agreement.
         /// </summary>
-        [JsonProperty("customerId")]
+        [JsonProperty("customerId"), Sdk4meField(IsRequiredForMutation = true)]
         public string CustomerId
         {
             get => customerId;
@@ -135,7 +135,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The name of the service level agreement.
         /// </summary>
-        [JsonProperty("name")]
+        [JsonProperty("name"), Sdk4meField(IsRequiredForMutation = true)]
         public string Name
         {
             get => name;
@@ -239,7 +239,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the service offering that specifies the conditions that apply to the service level agreement.
         /// </summary>
-        [JsonProperty("serviceOfferingId")]
+        [JsonProperty("serviceOfferingId"), Sdk4meField(IsRequiredForMutation = true)]
         public string ServiceOfferingId
         {
             get => serviceOfferingId;

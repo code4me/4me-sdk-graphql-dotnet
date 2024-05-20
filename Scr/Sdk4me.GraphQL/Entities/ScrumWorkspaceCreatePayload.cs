@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("scrumWorkspace"), Sdk4meField(true)]
+        [JsonProperty("scrumWorkspace"), Sdk4meField(IsDefaultQueryProperty = true)]
         public ScrumWorkspace? ScrumWorkspace { get; internal set; }
     }
 }

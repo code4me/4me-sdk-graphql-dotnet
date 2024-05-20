@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("webhookPolicy"), Sdk4meField(true)]
+        [JsonProperty("webhookPolicy"), Sdk4meField(IsDefaultQueryProperty = true)]
         public WebhookPolicyCreateResponse? WebhookPolicy { get; internal set; }
     }
 }

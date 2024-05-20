@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("appInstance"), Sdk4meField(true)]
+        [JsonProperty("appInstance"), Sdk4meField(IsDefaultQueryProperty = true)]
         public AppInstance? AppInstance { get; internal set; }
     }
 }

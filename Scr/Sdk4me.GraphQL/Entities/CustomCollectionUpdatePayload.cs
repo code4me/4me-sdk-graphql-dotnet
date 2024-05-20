@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("customCollection"), Sdk4meField(true)]
+        [JsonProperty("customCollection"), Sdk4meField(IsDefaultQueryProperty = true)]
         public CustomCollection? CustomCollection { get; internal set; }
     }
 }

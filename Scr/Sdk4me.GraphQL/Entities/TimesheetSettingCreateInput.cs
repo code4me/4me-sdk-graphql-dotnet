@@ -105,7 +105,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The name of the timesheet settings.
         /// </summary>
-        [JsonProperty("name")]
+        [JsonProperty("name"), Sdk4meField(IsRequiredForMutation = true)]
         public string Name
         {
             get => name;
@@ -235,7 +235,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Whether the people of the organizations to which the timesheet settings are linked need to register their time in hours and minutes, or as a percentage of a workday.
         /// </summary>
-        [JsonProperty("unit")]
+        [JsonProperty("unit"), Sdk4meField(IsRequiredForMutation = true)]
         public TimesheetSettingUnit Unit
         {
             get => unit;

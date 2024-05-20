@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("serviceLevelAgreement"), Sdk4meField(true)]
+        [JsonProperty("serviceLevelAgreement"), Sdk4meField(IsDefaultQueryProperty = true)]
         public ServiceLevelAgreement? ServiceLevelAgreement { get; internal set; }
     }
 }

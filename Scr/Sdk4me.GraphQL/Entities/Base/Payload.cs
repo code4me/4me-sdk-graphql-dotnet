@@ -11,13 +11,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// A unique identifier for the client performing the mutation.
         /// </summary>
-        [JsonProperty("clientMutationId"), Sdk4meField(true)]
+        [JsonProperty("clientMutationId"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? ClientMutationId { get; internal set; }
 
         /// <summary>
         /// Errors encountered during the mutation.
         /// </summary>
-        [JsonProperty("errors"), Sdk4meField(true)]
+        [JsonProperty("errors"), Sdk4meField(IsDefaultQueryProperty = true)]
         public List<ValidationError>? Errors { get; internal set; }
 
         /// <summary>

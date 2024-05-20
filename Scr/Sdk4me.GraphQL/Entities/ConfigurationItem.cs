@@ -12,7 +12,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
-        [JsonProperty("account"), Sdk4meField(true)]
+        [JsonProperty("account"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Account? Account { get; internal set; }
 
         /// <summary>
@@ -24,7 +24,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Number under which the configuration item has been registered in the financial application (e.g. SAP).
         /// </summary>
-        [JsonProperty("assetID"), Sdk4meField(true)]
+        [JsonProperty("assetID"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? AssetID { get; internal set; }
 
         [JsonProperty("ciRelations")]
@@ -52,7 +52,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time at which the record was created.
         /// </summary>
-        [JsonProperty("createdAt"), Sdk4meField(true)]
+        [JsonProperty("createdAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The label that is attached to the configuration item (CI). A label is automatically generated using the same prefix of other CIs of the same product category, followed by the next available number as the suffix.
         /// </summary>
-        [JsonProperty("label"), Sdk4meField(true)]
+        [JsonProperty("label"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Label { get; internal set; }
 
         /// <summary>
@@ -157,7 +157,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The name of the configuration item (CI). When creating a new CI and a value is not specified for this field, it is set to the name of the CI's product.
         /// </summary>
-        [JsonProperty("name"), Sdk4meField(true)]
+        [JsonProperty("name"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Name { get; internal set; }
 
         /// <summary>
@@ -204,7 +204,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Related product.
         /// </summary>
-        [JsonProperty("product"), Sdk4meField(true)]
+        [JsonProperty("product"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Product? Product { get; internal set; }
 
         /// <summary>
@@ -250,19 +250,19 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The Rule set field is automatically set to the rule set of the product category, except when the CI is a license certificate, in which case the rule set is <c>license_certificate</c>.
         /// </summary>
-        [JsonProperty("ruleSet"), Sdk4meField(true)]
+        [JsonProperty("ruleSet"), Sdk4meField(IsDefaultQueryProperty = true)]
         public ProductCategoryRuleSet? RuleSet { get; internal set; }
 
         /// <summary>
         /// Serial number of the configuration item. The concatenation of <c>product</c>'s' <c>brand</c> and <c>serialNr</c> must be unique within a 4me account.
         /// </summary>
-        [JsonProperty("serialNr"), Sdk4meField(true)]
+        [JsonProperty("serialNr"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? SerialNr { get; internal set; }
 
         /// <summary>
         /// Which service instance(s) the configuration item is, or will be, a part of. When creating a new CI and a value is not specified for this field, it is set to the service of the CI's product.
         /// </summary>
-        [JsonProperty("service"), Sdk4meField(true)]
+        [JsonProperty("service"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Service? Service { get; internal set; }
 
         [JsonProperty("serviceInstances")]
@@ -291,19 +291,19 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("source"), Sdk4meField(true)]
+        [JsonProperty("source"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Source { get; internal set; }
 
         /// <summary>
         /// The unique identifier of the resource in an external system.
         /// </summary>
-        [JsonProperty("sourceID"), Sdk4meField(true)]
+        [JsonProperty("sourceID"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? SourceID { get; internal set; }
 
         /// <summary>
         /// The appropriate status for the configuration item (CI).
         /// </summary>
-        [JsonProperty("status"), Sdk4meField(true)]
+        [JsonProperty("status"), Sdk4meField(IsDefaultQueryProperty = true)]
         public CiStatus? Status { get; internal set; }
 
         /// <summary>
@@ -327,7 +327,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// System identifier of the configuration item.
         /// </summary>
-        [JsonProperty("systemID"), Sdk4meField(true)]
+        [JsonProperty("systemID"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? SystemID { get; internal set; }
 
         /// <summary>
@@ -339,7 +339,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
-        [JsonProperty("updatedAt"), Sdk4meField(true)]
+        [JsonProperty("updatedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         [JsonProperty("users")]

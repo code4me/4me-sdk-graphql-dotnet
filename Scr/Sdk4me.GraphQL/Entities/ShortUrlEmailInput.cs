@@ -14,7 +14,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Body of the email.
         /// </summary>
-        [JsonProperty("body")]
+        [JsonProperty("body"), Sdk4meField(IsRequiredForMutation = true)]
         public string Body
         {
             get => body;
@@ -24,7 +24,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Subject of the email.
         /// </summary>
-        [JsonProperty("subject")]
+        [JsonProperty("subject"), Sdk4meField(IsRequiredForMutation = true)]
         public string Subject
         {
             get => subject;
@@ -34,7 +34,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Email address of the recipient of the email.
         /// </summary>
-        [JsonProperty("to")]
+        [JsonProperty("to"), Sdk4meField(IsRequiredForMutation = true)]
         public string To
         {
             get => to;

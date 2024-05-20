@@ -42,7 +42,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Calendar that defines the hours in which reservations may start and end.
         /// </summary>
-        [JsonProperty("calendarId")]
+        [JsonProperty("calendarId"), Sdk4meField(IsRequiredForMutation = true)]
         public string CalendarId
         {
             get => calendarId;
@@ -112,7 +112,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The maximum duration of the reservation within the hours of the calendar.
         /// </summary>
-        [JsonProperty("maxDuration")]
+        [JsonProperty("maxDuration"), Sdk4meField(IsRequiredForMutation = true)]
         public long MaxDuration
         {
             get => maxDuration;
@@ -132,7 +132,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The minimum duration of the reservation within the hours of the calendar.
         /// </summary>
-        [JsonProperty("minDuration")]
+        [JsonProperty("minDuration"), Sdk4meField(IsRequiredForMutation = true)]
         public long MinDuration
         {
             get => minDuration;
@@ -152,7 +152,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// A short description of the reservation offering
         /// </summary>
-        [JsonProperty("name")]
+        [JsonProperty("name"), Sdk4meField(IsRequiredForMutation = true)]
         public string Name
         {
             get => name;
@@ -212,7 +212,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The increments with which the reservation may be prolonged.
         /// </summary>
-        [JsonProperty("stepDuration")]
+        [JsonProperty("stepDuration"), Sdk4meField(IsRequiredForMutation = true)]
         public long StepDuration
         {
             get => stepDuration;
@@ -223,7 +223,7 @@ namespace Sdk4me.GraphQL
         /// <br>The time zone that applies to the selected calendar.</br>
         /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
         /// </summary>
-        [JsonProperty("timeZone")]
+        [JsonProperty("timeZone"), Sdk4meField(IsRequiredForMutation = true)]
         public string TimeZone
         {
             get => timeZone;

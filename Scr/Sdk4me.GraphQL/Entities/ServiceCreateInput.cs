@@ -166,7 +166,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The name of the service. The service name may be followed by the name of its core application placed between brackets.
         /// </summary>
-        [JsonProperty("name")]
+        [JsonProperty("name"), Sdk4meField(IsRequiredForMutation = true)]
         public string Name
         {
             get => name;
@@ -196,7 +196,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Identifier of the organization who provides the service.
         /// </summary>
-        [JsonProperty("providerId")]
+        [JsonProperty("providerId"), Sdk4meField(IsRequiredForMutation = true)]
         public string ProviderId
         {
             get => providerId;

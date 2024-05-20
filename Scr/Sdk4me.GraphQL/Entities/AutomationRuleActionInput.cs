@@ -13,7 +13,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Name of the action.
         /// </summary>
-        [JsonProperty("name")]
+        [JsonProperty("name"), Sdk4meField(IsRequiredForMutation = true)]
         public string Name
         {
             get => name;
@@ -39,7 +39,7 @@ namespace Sdk4me.GraphQL
         /// <br>• <c>after 30.minutes trigger 'My Delay Rule'</c></br>
         /// <br>• <c>call webhook 'My Webhook' with payload 'my_payload'</c></br>
         /// </summary>
-        [JsonProperty("value")]
+        [JsonProperty("value"), Sdk4meField(IsRequiredForMutation = true)]
         public string Value
         {
             get => value;

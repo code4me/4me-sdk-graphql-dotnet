@@ -11,7 +11,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Actions this scope applies to.
         /// </summary>
-        [JsonProperty("actions"), Sdk4meField(true)]
+        [JsonProperty("actions"), Sdk4meField(IsDefaultQueryProperty = true)]
         public List<string>? Actions { get; internal set; }
 
         /// <summary>

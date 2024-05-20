@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("projectRiskLevel"), Sdk4meField(true)]
+        [JsonProperty("projectRiskLevel"), Sdk4meField(IsDefaultQueryProperty = true)]
         public ProjectRiskLevel? ProjectRiskLevel { get; internal set; }
     }
 }

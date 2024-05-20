@@ -41,7 +41,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// End of the holiday.
         /// </summary>
-        [JsonProperty("endAt")]
+        [JsonProperty("endAt"), Sdk4meField(IsRequiredForMutation = true)]
         public DateTime EndAt
         {
             get => endAt;
@@ -51,7 +51,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Name of the holiday.
         /// </summary>
-        [JsonProperty("name")]
+        [JsonProperty("name"), Sdk4meField(IsRequiredForMutation = true)]
         public string Name
         {
             get => name;
@@ -91,7 +91,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Start of the holiday.
         /// </summary>
-        [JsonProperty("startAt")]
+        [JsonProperty("startAt"), Sdk4meField(IsRequiredForMutation = true)]
         public DateTime StartAt
         {
             get => startAt;

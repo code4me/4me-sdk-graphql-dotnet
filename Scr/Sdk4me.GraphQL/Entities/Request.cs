@@ -12,7 +12,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
-        [JsonProperty("account"), Sdk4meField(true)]
+        [JsonProperty("account"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Account? Account { get; internal set; }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The category of the request.
         /// </summary>
-        [JsonProperty("category"), Sdk4meField(true)]
+        [JsonProperty("category"), Sdk4meField(IsDefaultQueryProperty = true)]
         public RequestCategory? Category { get; internal set; }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Automatically set to the date and time at which the request is saved with the status "Completed". This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
         /// </summary>
-        [JsonProperty("completedAt"), Sdk4meField(true)]
+        [JsonProperty("completedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CompletedAt { get; internal set; }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time at which the record was created.
         /// </summary>
-        [JsonProperty("createdAt"), Sdk4meField(true)]
+        [JsonProperty("createdAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
@@ -175,13 +175,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Default: <c>none</c>
         /// </summary>
-        [JsonProperty("grouping"), Sdk4meField(true)]
+        [JsonProperty("grouping"), Sdk4meField(IsDefaultQueryProperty = true)]
         public RequestGrouping? Grouping { get; internal set; }
 
         /// <summary>
         /// The extent to which the service instance is impacted.
         /// </summary>
-        [JsonProperty("impact"), Sdk4meField(true)]
+        [JsonProperty("impact"), Sdk4meField(IsDefaultQueryProperty = true)]
         public RequestImpact? Impact { get; internal set; }
 
         /// <summary>
@@ -217,13 +217,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The person to whom the request is to be assigned. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
         /// </summary>
-        [JsonProperty("member"), Sdk4meField(true)]
+        [JsonProperty("member"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Person? Member { get; internal set; }
 
         /// <summary>
         /// Empty when the status of the request is <c>completed</c>. The next target equals the response target when a response target exists and the response target is less than the desired completion. Otherwise, the next target equals the desired completion when a desired completion exists. Otherwise, if the status is <c>waiting_for_customer</c> the next target is <c>clock_stopped</c> when an affected SLA is linked to the request which Accountability field is set to <c>provider</c> or <c>supplier</c>. Otherwise, if the status is <c>waiting_for_customer</c> the next target is <c>best_effort</c>. Otherwise the next target is the resolution target when a resolution target exists. In all other cases, the next target is <c>best_effort</c>. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
         /// </summary>
-        [JsonProperty("nextTargetAt"), Sdk4meField(true)]
+        [JsonProperty("nextTargetAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? NextTargetAt { get; internal set; }
 
         [JsonProperty("notes")]
@@ -361,19 +361,19 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The service instance in which the cause of the incident resides, for which the change is requested, or about which information is needed.
         /// </summary>
-        [JsonProperty("serviceInstance"), Sdk4meField(true)]
+        [JsonProperty("serviceInstance"), Sdk4meField(IsDefaultQueryProperty = true)]
         public ServiceInstance? ServiceInstance { get; internal set; }
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("source"), Sdk4meField(true)]
+        [JsonProperty("source"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Source { get; internal set; }
 
         /// <summary>
         /// The unique identifier of the resource in an external system.
         /// </summary>
-        [JsonProperty("sourceID"), Sdk4meField(true)]
+        [JsonProperty("sourceID"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? SourceID { get; internal set; }
 
         [JsonProperty("sprintBacklogItems")]
@@ -390,13 +390,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Used to select the current status of the request. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
         /// </summary>
-        [JsonProperty("status"), Sdk4meField(true)]
+        [JsonProperty("status"), Sdk4meField(IsDefaultQueryProperty = true)]
         public RequestStatus? Status { get; internal set; }
 
         /// <summary>
         /// A short description of the request.
         /// </summary>
-        [JsonProperty("subject"), Sdk4meField(true)]
+        [JsonProperty("subject"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Subject { get; internal set; }
 
         /// <summary>
@@ -431,7 +431,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The team to which the request is to be assigned. By default, the first line team of the service instance that is related to the request will be selected. If a first line team has not been specified for the service instance, the support team of the service instance will be selected instead. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
         /// </summary>
-        [JsonProperty("team"), Sdk4meField(true)]
+        [JsonProperty("team"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Team? Team { get; internal set; }
 
         /// <summary>
@@ -454,7 +454,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
-        [JsonProperty("updatedAt"), Sdk4meField(true)]
+        [JsonProperty("updatedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         /// <summary>

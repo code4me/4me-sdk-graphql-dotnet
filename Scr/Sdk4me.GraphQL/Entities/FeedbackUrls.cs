@@ -31,13 +31,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Hyperlink that can be used to indicate dissatisfaction with the request resolution.
         /// </summary>
-        [JsonProperty("dissatisfiedUrl"), Sdk4meField(true)]
+        [JsonProperty("dissatisfiedUrl"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? DissatisfiedUrl { get; internal set; }
 
         /// <summary>
         /// Hyperlink that can be used to indicate satisfaction with the request resolution.
         /// </summary>
-        [JsonProperty("satisfiedUrl"), Sdk4meField(true)]
+        [JsonProperty("satisfiedUrl"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? SatisfiedUrl { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

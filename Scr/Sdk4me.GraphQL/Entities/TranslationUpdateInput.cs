@@ -24,7 +24,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The node ID of the record to update.
         /// </summary>
-        [JsonProperty("id")]
+        [JsonProperty("id"), Sdk4meField(IsRequiredForMutation = true)]
         public string ID
         {
             get => id;
@@ -34,7 +34,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The text of the translation.
         /// </summary>
-        [JsonProperty("text")]
+        [JsonProperty("text"), Sdk4meField(IsRequiredForMutation = true)]
         public string Text
         {
             get => text;

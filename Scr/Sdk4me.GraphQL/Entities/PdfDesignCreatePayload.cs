@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("pdfDesign"), Sdk4meField(true)]
+        [JsonProperty("pdfDesign"), Sdk4meField(IsDefaultQueryProperty = true)]
         public PdfDesign? PdfDesign { get; internal set; }
     }
 }

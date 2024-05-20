@@ -12,7 +12,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
-        [JsonProperty("account"), Sdk4meField(true)]
+        [JsonProperty("account"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Account? Account { get; internal set; }
 
         [JsonProperty("addresses")]
@@ -29,7 +29,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Uniquely identify the user for Single Sign-On
         /// </summary>
-        [JsonProperty("authenticationID"), Sdk4meField(true)]
+        [JsonProperty("authenticationID"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? AuthenticationID { get; internal set; }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time at which the record was created.
         /// </summary>
-        [JsonProperty("createdAt"), Sdk4meField(true)]
+        [JsonProperty("createdAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The unique identifier for a person typically based on order of hire or association with an organization.
         /// </summary>
-        [JsonProperty("employeeID"), Sdk4meField(true)]
+        [JsonProperty("employeeID"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? EmployeeID { get; internal set; }
 
         /// <summary>
@@ -188,7 +188,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The person's name.
         /// </summary>
-        [JsonProperty("name"), Sdk4meField(true)]
+        [JsonProperty("name"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Name { get; internal set; }
 
         /// <summary>
@@ -234,7 +234,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The email address to which email notifications are to be sent. This email address acts as the unique identifier for the person within the 4me account. This primary email address also acts as the person's login name if he/she is a user of the 4me service.
         /// </summary>
-        [JsonProperty("primaryEmail"), Sdk4meField(true)]
+        [JsonProperty("primaryEmail"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? PrimaryEmail { get; internal set; }
 
         /// <summary>
@@ -269,19 +269,19 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("source"), Sdk4meField(true)]
+        [JsonProperty("source"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Source { get; internal set; }
 
         /// <summary>
         /// The unique identifier of the resource in an external system.
         /// </summary>
-        [JsonProperty("sourceID"), Sdk4meField(true)]
+        [JsonProperty("sourceID"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? SourceID { get; internal set; }
 
         /// <summary>
         /// A number or code that a service desk analyst can ask the person for when the person contacts the service desk for support.
         /// </summary>
-        [JsonProperty("supportID"), Sdk4meField(true)]
+        [JsonProperty("supportID"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? SupportID { get; internal set; }
 
         [JsonProperty("teams")]
@@ -317,13 +317,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
-        [JsonProperty("updatedAt"), Sdk4meField(true)]
+        [JsonProperty("updatedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         /// <summary>
         /// Whether the person is a very important person.
         /// </summary>
-        [JsonProperty("vip"), Sdk4meField(true)]
+        [JsonProperty("vip"), Sdk4meField(IsDefaultQueryProperty = true)]
         public bool? Vip { get; internal set; }
 
         /// <summary>

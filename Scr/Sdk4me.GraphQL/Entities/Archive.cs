@@ -12,25 +12,25 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
-        [JsonProperty("account"), Sdk4meField(true)]
+        [JsonProperty("account"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Account? Account { get; internal set; }
 
         /// <summary>
         /// The archived record.
         /// </summary>
-        [JsonProperty("archived"), Sdk4meField(true)]
+        [JsonProperty("archived"), Sdk4meField(IsDefaultQueryProperty = true)]
         public IHasLifeCycleState? Archived { get; internal set; }
 
         /// <summary>
         /// The person who archived the record.
         /// </summary>
-        [JsonProperty("archivedBy"), Sdk4meField(true)]
+        [JsonProperty("archivedBy"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Person? ArchivedBy { get; internal set; }
 
         /// <summary>
         /// The date and time at which the archive was created.
         /// </summary>
-        [JsonProperty("createdAt"), Sdk4meField(true)]
+        [JsonProperty("createdAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CreatedAt { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

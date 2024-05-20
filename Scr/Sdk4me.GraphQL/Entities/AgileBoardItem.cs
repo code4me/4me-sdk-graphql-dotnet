@@ -31,19 +31,19 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Board this item is placed on.
         /// </summary>
-        [JsonProperty("agileBoard"), Sdk4meField(true)]
+        [JsonProperty("agileBoard"), Sdk4meField(IsDefaultQueryProperty = true)]
         public AgileBoard? AgileBoard { get; internal set; }
 
         /// <summary>
         /// Column this item is placed in.
         /// </summary>
-        [JsonProperty("agileBoardColumn"), Sdk4meField(true)]
+        [JsonProperty("agileBoardColumn"), Sdk4meField(IsDefaultQueryProperty = true)]
         public AgileBoardColumn? AgileBoardColumn { get; internal set; }
 
         /// <summary>
         /// The (one based) position of this item in its column.
         /// </summary>
-        [JsonProperty("agileBoardColumnPosition"), Sdk4meField(true)]
+        [JsonProperty("agileBoardColumnPosition"), Sdk4meField(IsDefaultQueryProperty = true)]
         public long? AgileBoardColumnPosition { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

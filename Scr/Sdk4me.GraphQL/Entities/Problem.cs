@@ -12,7 +12,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
-        [JsonProperty("account"), Sdk4meField(true)]
+        [JsonProperty("account"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Account? Account { get; internal set; }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Used to specify when the current assignee needs to have completed the root cause analysis of the problem.
         /// </summary>
-        [JsonProperty("analysisTargetAt"), Sdk4meField(true)]
+        [JsonProperty("analysisTargetAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? AnalysisTargetAt { get; internal set; }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time at which the record was created.
         /// </summary>
-        [JsonProperty("createdAt"), Sdk4meField(true)]
+        [JsonProperty("createdAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Used to select the extent to which the service is impacted when an incident occurs that is caused by the problem.
         /// </summary>
-        [JsonProperty("impact"), Sdk4meField(true)]
+        [JsonProperty("impact"), Sdk4meField(IsDefaultQueryProperty = true)]
         public ProblemImpact? Impact { get; internal set; }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Whether the underlying cause of the problem has been found and a temporary workaround has been proposed.
         /// </summary>
-        [JsonProperty("knownError"), Sdk4meField(true)]
+        [JsonProperty("knownError"), Sdk4meField(IsDefaultQueryProperty = true)]
         public bool? KnownError { get; internal set; }
 
         /// <summary>
@@ -106,13 +106,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Person who is responsible for coordinating the problem through root cause analysis, the proposal of a structural solution and ultimately its closure.
         /// </summary>
-        [JsonProperty("manager"), Sdk4meField(true)]
+        [JsonProperty("manager"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Person? Manager { get; internal set; }
 
         /// <summary>
         /// The person to whom the problem is to be assigned.
         /// </summary>
-        [JsonProperty("member"), Sdk4meField(true)]
+        [JsonProperty("member"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Person? Member { get; internal set; }
 
         [JsonProperty("notes")]
@@ -135,7 +135,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The record ID as displayed in the UI
         /// </summary>
-        [JsonProperty("problemId"), Sdk4meField(true)]
+        [JsonProperty("problemId"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? ProblemId { get; internal set; }
 
         /// <summary>
@@ -182,7 +182,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The service in which instance(s) the problem resides.
         /// </summary>
-        [JsonProperty("service"), Sdk4meField(true)]
+        [JsonProperty("service"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Service? Service { get; internal set; }
 
         [JsonProperty("serviceInstances")]
@@ -199,19 +199,19 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Automatically set to the date and time at which the problem is saved with the status "Solved".
         /// </summary>
-        [JsonProperty("solvedAt"), Sdk4meField(true)]
+        [JsonProperty("solvedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? SolvedAt { get; internal set; }
 
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("source"), Sdk4meField(true)]
+        [JsonProperty("source"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Source { get; internal set; }
 
         /// <summary>
         /// The unique identifier of the resource in an external system.
         /// </summary>
-        [JsonProperty("sourceID"), Sdk4meField(true)]
+        [JsonProperty("sourceID"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? SourceID { get; internal set; }
 
         [JsonProperty("sprintBacklogItems")]
@@ -228,13 +228,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The current status of the problem.
         /// </summary>
-        [JsonProperty("status"), Sdk4meField(true)]
+        [JsonProperty("status"), Sdk4meField(IsDefaultQueryProperty = true)]
         public ProblemStatus? Status { get; internal set; }
 
         /// <summary>
         /// A short description of the symptoms that the problem causes.
         /// </summary>
-        [JsonProperty("subject"), Sdk4meField(true)]
+        [JsonProperty("subject"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Subject { get; internal set; }
 
         /// <summary>
@@ -275,7 +275,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
-        [JsonProperty("updatedAt"), Sdk4meField(true)]
+        [JsonProperty("updatedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         /// <summary>

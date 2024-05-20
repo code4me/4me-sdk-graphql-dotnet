@@ -13,7 +13,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Text of the SMS message
         /// </summary>
-        [JsonProperty("body")]
+        [JsonProperty("body"), Sdk4meField(IsRequiredForMutation = true)]
         public string Body
         {
             get => body;
@@ -23,7 +23,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Telephone number of the recipient of the SMS message
         /// </summary>
-        [JsonProperty("tel")]
+        [JsonProperty("tel"), Sdk4meField(IsRequiredForMutation = true)]
         public string Tel
         {
             get => tel;

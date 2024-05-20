@@ -9,17 +9,20 @@ namespace Sdk4me.GraphQL
     public sealed class Sdk4meFieldAttribute : Attribute
     {
         /// <summary>
-        /// Returns true when it is a default property.
+        /// Indicates if this is a default property.
         /// </summary>
-        public bool IsDefault { get; } = false;
+        public bool IsDefaultQueryProperty { get; set; } = false;
+
+        /// <summary>
+        /// Indicates if this field is required in a mutation.
+        /// </summary>
+        public bool IsRequiredForMutation { get; set; } = false;
 
         /// <summary>
         /// Create a new instance of the <see cref="Sdk4meFieldAttribute"/> class.
         /// </summary>
-        /// <param name="isDefault">True when it is a default property; otherwise false.</param>
-        public Sdk4meFieldAttribute(bool isDefault)
+        public Sdk4meFieldAttribute()
         {
-            IsDefault = isDefault;
         }
     }
 }

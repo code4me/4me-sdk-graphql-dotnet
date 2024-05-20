@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Record after mutation.
         /// </summary>
-        [JsonProperty("workflow"), Sdk4meField(true)]
+        [JsonProperty("workflow"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Workflow? Workflow { get; internal set; }
     }
 }

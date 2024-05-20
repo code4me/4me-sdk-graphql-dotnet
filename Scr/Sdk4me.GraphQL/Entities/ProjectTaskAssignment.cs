@@ -12,7 +12,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The person who is selected as the assignee for the assignment.
         /// </summary>
-        [JsonProperty("assignee"), Sdk4meField(true)]
+        [JsonProperty("assignee"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Person? Assignee { get; internal set; }
 
         /// <summary>
@@ -24,25 +24,25 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time at which the assignment was created.
         /// </summary>
-        [JsonProperty("createdAt"), Sdk4meField(true)]
+        [JsonProperty("createdAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
         /// The number of minutes the assignee is expected to spend working on the project task to which the assignment belongs.
         /// </summary>
-        [JsonProperty("plannedEffort"), Sdk4meField(true)]
+        [JsonProperty("plannedEffort"), Sdk4meField(IsDefaultQueryProperty = true)]
         public long? PlannedEffort { get; internal set; }
 
         /// <summary>
         /// The status of the assignment.
         /// </summary>
-        [JsonProperty("status"), Sdk4meField(true)]
+        [JsonProperty("status"), Sdk4meField(IsDefaultQueryProperty = true)]
         public ProjectTaskStatus? Status { get; internal set; }
 
         /// <summary>
         /// The date and time of the last update of the assignment. If the assignment has had no updates it contains the <c>createdAt</c> value.
         /// </summary>
-        [JsonProperty("updatedAt"), Sdk4meField(true)]
+        [JsonProperty("updatedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         /// <summary>

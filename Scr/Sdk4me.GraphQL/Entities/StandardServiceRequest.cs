@@ -18,7 +18,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time at which the standard service request was created.
         /// </summary>
-        [JsonProperty("createdAt"), Sdk4meField(true)]
+        [JsonProperty("createdAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The request template related to the service offering. Only the request templates that are linked to the same service as the service offering can be selected.
         /// </summary>
-        [JsonProperty("requestTemplate"), Sdk4meField(true)]
+        [JsonProperty("requestTemplate"), Sdk4meField(IsDefaultQueryProperty = true)]
         public RequestTemplate? RequestTemplate { get; internal set; }
 
         /// <summary>
@@ -79,7 +79,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Service offering the standard service request belongs to.
         /// </summary>
-        [JsonProperty("serviceOffering"), Sdk4meField(true)]
+        [JsonProperty("serviceOffering"), Sdk4meField(IsDefaultQueryProperty = true)]
         public ServiceOffering? ServiceOffering { get; internal set; }
 
         /// <summary>
@@ -97,7 +97,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The date and time of the last update of the standard service request. If the standard service request has no updates it contains the <c>createdAt</c> value.
         /// </summary>
-        [JsonProperty("updatedAt"), Sdk4meField(true)]
+        [JsonProperty("updatedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

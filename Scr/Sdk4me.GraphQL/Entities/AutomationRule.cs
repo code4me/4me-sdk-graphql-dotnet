@@ -12,25 +12,25 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The account this record belongs to.
         /// </summary>
-        [JsonProperty("account"), Sdk4meField(true)]
+        [JsonProperty("account"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Account? Account { get; internal set; }
 
         /// <summary>
         /// The Actions field is used to define actions that should be executed when the condition of the automation rule is met.
         /// </summary>
-        [JsonProperty("actions"), Sdk4meField(true)]
+        [JsonProperty("actions"), Sdk4meField(IsDefaultQueryProperty = true)]
         public List<AutomationRuleAction>? Actions { get; internal set; }
 
         /// <summary>
         /// The Condition field is used to define the condition that needs to be met in order for the update action(s) of the rule to be performed. For example: <c>is_assigned and !badge</c>.
         /// </summary>
-        [JsonProperty("condition"), Sdk4meField(true)]
+        [JsonProperty("condition"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Condition { get; internal set; }
 
         /// <summary>
         /// The date and time at which the record was created.
         /// </summary>
-        [JsonProperty("createdAt"), Sdk4meField(true)]
+        [JsonProperty("createdAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? CreatedAt { get; internal set; }
 
         /// <summary>
@@ -64,13 +64,13 @@ namespace Sdk4me.GraphQL
         /// <br>• <c>scim_user</c></br>
         /// <br>• <c>scim_group</c></br>
         /// </summary>
-        [JsonProperty("generic"), Sdk4meField(true)]
+        [JsonProperty("generic"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Generic { get; internal set; }
 
         /// <summary>
         /// The name of the automation rule.
         /// </summary>
-        [JsonProperty("name"), Sdk4meField(true)]
+        [JsonProperty("name"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Name { get; internal set; }
 
         /// <summary>
@@ -88,25 +88,25 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
-        [JsonProperty("source"), Sdk4meField(true)]
+        [JsonProperty("source"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Source { get; internal set; }
 
         /// <summary>
         /// The unique identifier of the resource in an external system.
         /// </summary>
-        [JsonProperty("sourceID"), Sdk4meField(true)]
+        [JsonProperty("sourceID"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? SourceID { get; internal set; }
 
         /// <summary>
         /// The Trigger field is used to specify when the automation rule is to be triggered, for example <c>on status update</c> or <c>on note added</c>.
         /// </summary>
-        [JsonProperty("trigger"), Sdk4meField(true)]
+        [JsonProperty("trigger"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Trigger { get; internal set; }
 
         /// <summary>
         /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
-        [JsonProperty("updatedAt"), Sdk4meField(true)]
+        [JsonProperty("updatedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? UpdatedAt { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)
