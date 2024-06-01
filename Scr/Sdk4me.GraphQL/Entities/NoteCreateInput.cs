@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
     {
         private List<AttachmentInput>? attachments;
         private string? clientMutationId;
-        private bool? @event;
+        private bool? @internal;
         private string? ownerId;
         private bool? suppressNoteAddedNotifications;
         private string text;
@@ -41,8 +41,8 @@ namespace Sdk4me.GraphQL
         [JsonProperty("internal")]
         public bool? Internal
         {
-            get => @event;
-            set => @event = Set("internal", value);
+            get => @internal;
+            set => @internal = Set("internal", value);
         }
 
         /// <summary>

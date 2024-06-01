@@ -19,7 +19,7 @@ namespace Sdk4me.GraphQL
         /// </summary>
         /// <param name="query">The GraphQL query.</param>
         /// <param name="defaultItemsPerRequest">The default items per request value.</param>
-        /// <returns>An <see cref="ExecutionQuery"/> based on the GraphQL query.</returns>
+        /// <returns>An <see cref="ExecutionQuery"/> based on the IQuery.</returns>
         /// <exception cref="Sdk4meInvalidFieldNameException"></exception>
         internal static ExecutionQuery BuildQuery(IQuery query, int defaultItemsPerRequest)
         {
@@ -35,7 +35,7 @@ namespace Sdk4me.GraphQL
         /// <typeparam name="TOutEntity">Any type implementing <see cref="Payload"/>.</typeparam>
         /// <typeparam name="TInEntity">Any type implementing <see cref="PropertyChangeSet"/>.</typeparam>
         /// <param name="input">The input data.</param>
-        /// <returns>An <see cref="ExecutionQuery"/> based on the GraphQL query.</returns>
+        /// <returns>A GraphQL mutation based on the <see cref="IQuery"/>.</returns>
         /// <exception cref="Sdk4meInvalidFieldNameException"></exception>
         internal static string GetGraphQLQuery<TOutEntity, TInEntity>(Mutation<TOutEntity, TInEntity> input)
             where TOutEntity : Payload
@@ -69,7 +69,7 @@ namespace Sdk4me.GraphQL
         /// Get the GraphQL query.
         /// </summary>
         /// <param name="executionQuery">The execution query object.</param>
-        /// <returns>The GraphQL query.</returns>
+        /// <returns>A GraphQL query based on the <see cref="ExecutionQuery"/>.</returns>
         internal static string GetGraphQLQuery(ExecutionQuery executionQuery)
         {
             StringBuilder builder = new();
@@ -208,6 +208,13 @@ namespace Sdk4me.GraphQL
             return builder.ToString();
         }
 
+        /// <summary>
+        /// Build the GraphQL query.
+        /// </summary>
+        /// <param name="query">The query.</param>
+        /// <param name="depth">The current connection depth.</param>
+        /// <param name="defaultItemsPerRequest">The default items per request.</param>
+        /// <returns>An <see cref="ExecutionQuery"/> based on the <see cref="IQuery"/>.</returns>
         private static ExecutionQuery BuildQuery(IQuery query, int depth, int defaultItemsPerRequest)
         {
             ExecutionQuery retval = new(query.FieldName, query.DataType)
@@ -235,6 +242,12 @@ namespace Sdk4me.GraphQL
             return retval;
         }
 
+        /// <summary>
+        /// Convert all non-primary field and connections into an <see cref="ExecutionQuery"/>.
+        /// </summary>
+        /// <param name="query">An <see cref="ExecutionQuery"/>.</param>
+        /// <returns></returns>
+        /// <exception cref="ApplicationException"></exception>
         private static ExecutionQuery BuildQuery(ExecutionQuery query)
         {
             foreach (ExecutionQueryField field in query.Fields)
@@ -309,6 +322,13 @@ namespace Sdk4me.GraphQL
             return query;
         }
 
+        /// <summary>
+        /// Get all ExecutionQuery fields.
+        /// </summary>
+        /// <param name="dataType">The data type.</param>
+        /// <param name="selectedFields">The selected fields</param>
+        /// <returns>Returns an <see cref="ExecutionQueryField"/> collection.</returns>
+        /// <exception cref="Sdk4meInvalidFieldNameException"></exception>
         private static List<ExecutionQueryField> GetExecutionQueryFields(Type dataType, ImmutableHashSet<string>? selectedFields)
         {
             List<ExecutionQueryField> retval = new();
@@ -359,67 +379,97 @@ namespace Sdk4me.GraphQL
             return retval;
         }
 
+        /// <summary>
+        /// Build a GraphQL <see cref="DateTime"/> filter.
+        /// </summary>
+        /// <param name="field">The field name.</param>
+        /// <param name="filterOperator">The filter operator</param>
+        /// <param name="values">The <see cref="DateTime"/> values.</param>
+        /// <returns>A partial GraphQL filter statement.</returns>
+        /// <exception cref="Sdk4meFilterException"></exception>
         internal static string BuildDateTimeFilter(string field, FilterOperator filterOperator, params DateTime?[] values)
         {
             string[] serializedValue = SerializeObject(values);
 
-            if (filterOperator == FilterOperator.In || filterOperator == FilterOperator.NotIn || filterOperator == FilterOperator.Equals || filterOperator == FilterOperator.NotEquals)
+            if (filterOperator.IsCommonOperator())
             {
                 return BuildStringFilter(field, filterOperator, serializedValue);
-            }
-            else if (serializedValue.Length.Equals(1))
+            }           
+            else if (filterOperator.IsDateTimeSingleValueOperator() && serializedValue.Length.Equals(1))
             {
-                return filterOperator switch
+                switch (filterOperator)
                 {
-                    FilterOperator.LessThan => $"{field}:{{lessThan:{serializedValue[0]}}}",
-                    FilterOperator.LessThanOrEqualsTo => $"{field}:{{lessThanOrEqualTo:{serializedValue[0]}}}",
-                    FilterOperator.GreaterThan => $"{field}:{{greaterThan:{serializedValue[0]}}}",
-                    FilterOperator.GreaterThanOrEqualsTo => $"{field}:{{greaterThanOrEqualTo:{serializedValue[0]}}}",
-                    _ => throw new Sdk4meFilterException($"Invalid {nameof(DateTime)} filter operator."),
-                };
+                    case FilterOperator.LessThan:
+                        return $"{field}:{{lessThan:{serializedValue[0]}}}";
+                    case FilterOperator.LessThanOrEqualsTo:
+                        return $"{field}:{{lessThanOrEqualTo:{serializedValue[0]}}}";
+                    case FilterOperator.GreaterThan:
+                        return $"{field}:{{greaterThanOrEqualTo:{serializedValue[0]}}}";
+                    case FilterOperator.GreaterThanOrEqualsTo:
+                        return $"{field}:{{greaterThanOrEqualTo:{serializedValue[0]}}}";
+                }
             }
-            else if (serializedValue.Length.Equals(2))
+            else if (filterOperator.IsDateTimeRangeOperator() && serializedValue.Length.Equals(2))
             {
-                return filterOperator switch
+                switch (filterOperator)
                 {
-                    FilterOperator.GreaterThanAndLessThan => $"{field}:{{greaterThan:{serializedValue[0]} lessThan:{serializedValue[1]}}}",
-                    FilterOperator.GreaterThanOrEqualToAndLessThanOrEqualTo => $"{field}:{{greaterThanOrEqualTo:{serializedValue[0]} lessThanOrEqualTo:{serializedValue[1]}}}",
-                    _ => throw new Sdk4meFilterException($"Invalid {nameof(DateTime)} filter operator"),
-                };
+                    case FilterOperator.GreaterThanAndLessThan:
+                        return $"{field}:{{greaterThan:{serializedValue[0]} lessThan:{serializedValue[1]}}}";
+                    case FilterOperator.GreaterThanOrEqualToAndLessThanOrEqualTo:
+                        return $"{field}:{{greaterThanOrEqualTo:{serializedValue[0]} lessThanOrEqualTo:{serializedValue[1]}}}";
+                }
             }
-            else
-            {
-                throw new Sdk4meFilterException($"Unsupported {nameof(DateTime)} filter operator.");
-            }
+
+            throw new Sdk4meFilterException($"Unsupported date time filter operator, use " +
+                $"{nameof(FilterOperator.Equals)}, {nameof(FilterOperator.NotEquals)}, {nameof(FilterOperator.In)}, or {nameof(FilterOperator.NotIn)} with one or multiple values, use {nameof(FilterOperator.LessThan)}, " +
+                $"{nameof(FilterOperator.LessThanOrEqualsTo)}, {nameof(FilterOperator.GreaterThan)} or {nameof(FilterOperator.GreaterThanOrEqualsTo)} with a single value, and use {nameof(FilterOperator.GreaterThanAndLessThan)} or " +
+                $"{nameof(FilterOperator.GreaterThanOrEqualToAndLessThanOrEqualTo)} with two values.");
         }
 
+        /// <summary>
+        /// Build a GraphQL <see cref="bool"/> filter.
+        /// </summary>
+        /// <param name="field">The field name.</param>
+        /// <param name="filterOperator">The filter operator</param>
+        /// <param name="value">The <see cref="bool"/> values.</param>
+        /// <returns>A partial GraphQL filter statement.</returns>
+        /// <exception cref="Sdk4meFilterException"></exception>
         internal static string BuildBooleanFilter(string field, FilterOperator filterOperator, bool value)
         {
-            if (filterOperator == FilterOperator.Equals || filterOperator == FilterOperator.In)
-                return $"{field}:{JsonConvert.SerializeObject(value)}";
-            else if (filterOperator == FilterOperator.NotEquals || filterOperator == FilterOperator.NotIn)
-                return $"{field}:{JsonConvert.SerializeObject(!value)}";
-            else
-                throw new Sdk4meFilterException($"Invalid {nameof(Boolean)} filter operator.");
+            return filterOperator switch
+            {
+                FilterOperator.Equals or FilterOperator.In => $"{field}:{JsonConvert.SerializeObject(value)}",
+                FilterOperator.NotEquals or FilterOperator.NotIn => $"{field}:{JsonConvert.SerializeObject(!value)}",
+                _ => throw new Sdk4meFilterException($"Unsupported boolean filter operator. Supported operators are {nameof(FilterOperator.Equals)}, {nameof(FilterOperator.NotEquals)}, {nameof(FilterOperator.In)}, or {nameof(FilterOperator.NotIn)}."),
+            };
         }
 
-        internal static string BuildQueryFilter(string? value)
+        /// <summary>
+        /// Build a GraphQL FreeFormatFilter.
+        /// </summary>
+        /// <param name="value">The <see cref="string"/> value.</param>
+        /// <returns>A partial GraphQL filter statement.</returns>
+        internal static string BuildFreeFormatFilter(string? value)
         {
             return value == null ? string.Empty : $"query:{SerializeObject(value)}";
         }
 
+        /// <summary>
+        /// Build a GraphQL Custom filter.
+        /// </summary>
+        /// <param name="name">The custom filter name.</param>
+        /// <param name="filterOperator">The filter operator</param>
+        /// <param name="values">The <see cref="string"/> values.</param>
+        /// <returns>A partial GraphQL filter statement.</returns>
+        /// <exception cref="Sdk4meFilterException"></exception>
         internal static string BuildCustomFilter(string name, FilterOperator filterOperator, params string?[] values)
         {
-            if (filterOperator == FilterOperator.In || filterOperator == FilterOperator.NotIn || filterOperator == FilterOperator.Equals || filterOperator == FilterOperator.NotEquals)
+            StringBuilder builder = new($"{{name:{SerializeObject(name)} ");
+            if (filterOperator.IsCommonOperator())
             {
                 string[] serializedValues = SerializeObject(values).Distinct().ToArray();
 
-                StringBuilder builder = new();
-                builder.Append($"{{name:{SerializeObject(name)}");
-                if (filterOperator == FilterOperator.NotIn || filterOperator == FilterOperator.NotEquals)
-                    builder.Append(" negate:true values:");
-                else
-                    builder.Append(" values:");
+                builder.Append(filterOperator.IsNegateOperator() ? "negate:true values:" : "values:");
                 builder.Append(serializedValues.Length switch
                 {
                     0 => "[]",
@@ -427,42 +477,57 @@ namespace Sdk4me.GraphQL
                     _ => $"[{string.Join(",", serializedValues)}]"
                 });
                 builder.Append('}');
-                return builder.ToString();
             }
             else if (filterOperator == FilterOperator.Present)
             {
-                return $"{{name:{SerializeObject(name)} negate:true values:[null]}}";
+                builder.Append("negate:true values:[null]}");
             }
             else if (filterOperator == FilterOperator.Empty)
             {
-                return $"{{name:{SerializeObject(name)} values:[null]}}";
+                builder.Append("values:[null]}");
             }
             else
             {
-                throw new Sdk4meFilterException("Invalid custom filter operator.");
+                throw new Sdk4meFilterException($"Unsupported custom filter operator. Supported operators include " +
+                    $"{nameof(FilterOperator.Equals)}, {nameof(FilterOperator.NotEquals)}, {nameof(FilterOperator.In)}, {nameof(FilterOperator.NotIn)}, " +
+                    $"{nameof(FilterOperator.Present)}, and {nameof(FilterOperator.Empty)}.");
             }
+            return builder.ToString();
         }
 
+        /// <summary>
+        /// Build a GraphQL non-value filter.
+        /// </summary>
+        /// <param name="field">The field name.</param>
+        /// <param name="filterOperator">The filter operator</param>
+        /// <returns>A partial GraphQL filter statement.</returns>
+        /// <exception cref="Sdk4meFilterException"></exception>
         internal static string BuildStringFilter(string field, FilterOperator filterOperator)
         {
-            if (filterOperator == FilterOperator.Present || filterOperator == FilterOperator.Empty)
+            if (filterOperator.IsNullableOperator())
                 return BuildStringFilter(field, filterOperator, Array.Empty<string>());
-            else
-                throw new Sdk4meFilterException("Invalid filter operator.");
+
+            throw new Sdk4meFilterException($"Unsupported string filter operator. Please use either {nameof(FilterOperator.Present)} or {nameof(FilterOperator.Empty)} when no values are provided.");
         }
 
+        /// <summary>
+        /// Build a GraphQL <see cref="string"/> filter.
+        /// </summary>
+        /// <param name="field">The field name.</param>
+        /// <param name="filterOperator">The filter operator.</param>
+        /// <param name="values">The <see cref="string"/> values.</param>
+        /// <returns>A partial GraphQL filter statement.</returns>
+        /// <exception cref="Sdk4meFilterException"></exception>
         internal static string BuildStringFilter(string field, FilterOperator filterOperator, params string?[] values)
         {
-            if (filterOperator == FilterOperator.In || filterOperator == FilterOperator.NotIn || filterOperator == FilterOperator.Equals || filterOperator == FilterOperator.NotEquals)
+            if (field == "id" && values.Any(value => value == null))
+                throw new Sdk4meFilterException("All values must be non-null when the field ID is specified for filtering.");
+
+            StringBuilder builder = new($"{field}:");
+            if (filterOperator.IsCommonOperator())
             {
                 string[] serializedValues = SerializeObject(values);
-
-                StringBuilder builder = new();
-                builder.Append(field);
-                if (filterOperator == FilterOperator.NotIn || filterOperator == FilterOperator.NotEquals)
-                    builder.Append(":{negate:true values:");
-                else
-                    builder.Append(":{values:");
+                builder.Append(filterOperator.IsNegateOperator() ? "{negate:true values:" : "{values:");
                 builder.Append(serializedValues.Length switch
                 {
                     0 => "[]",
@@ -470,29 +535,41 @@ namespace Sdk4me.GraphQL
                     _ => $"[{string.Join(",", serializedValues)}]"
                 });
                 builder.Append('}');
-                return builder.ToString();
             }
             else if (filterOperator == FilterOperator.Present)
             {
-                return $"{field}:{{negate:true values:[]}}";
+                builder.Append("{negate:true values:[]}");
             }
             else if (filterOperator == FilterOperator.Empty)
             {
-                return $"{field}:{{values:[]}}";
+                builder.Append("{values:[]}");
             }
             else
             {
-                throw new Sdk4meFilterException("Invalid filter operator.");
+                throw new Sdk4meFilterException($"Unsupported string filter operator. Supported operators include " +
+                    $"{nameof(FilterOperator.Equals)}, {nameof(FilterOperator.NotEquals)}, {nameof(FilterOperator.In)}, {nameof(FilterOperator.NotIn)}, " +
+                    $"{nameof(FilterOperator.Present)}, and {nameof(FilterOperator.Empty)}.");
             }
+            return builder.ToString();
         }
 
+        /// <summary>
+        /// Serializes a nullable string value to its JSON representation.
+        /// If the input value is null, it returns the string "null".
+        /// </summary>
+        /// <param name="value">The nullable string to serialize.</param>
+        /// <returns>A JSON-formatted string representation of the input value or "null".</returns>
         private static string SerializeObject(string? value)
         {
-            if (value == null)
-                return "null";
-            return JsonConvert.SerializeObject(value);
+            return (value == null) ? "null" : JsonConvert.SerializeObject(value);
         }
 
+        /// <summary>
+        /// Serializes an array of nullable strings into an array of JSON-formatted strings.
+        /// Handles null arrays by returning an empty array of strings.
+        /// </summary>
+        /// <param name="values">The array of nullable strings to serialize.</param>
+        /// <returns>An array of JSON-formatted string representations of the input values.</returns>
         private static string[] SerializeObject(params string?[] values)
         {
             List<string> retval = new();
@@ -502,6 +579,12 @@ namespace Sdk4me.GraphQL
             return retval.ToArray();
         }
 
+        /// <summary>
+        /// Serializes an array of nullable DateTime values into an array of JSON-formatted strings.
+        /// Null DateTime values are represented as the string "null".
+        /// </summary>
+        /// <param name="values">The array of nullable DateTime values to serialize.</param>
+        /// <returns>An array of JSON-formatted string representations of the input DateTime values.</returns>
         private static string[] SerializeObject(params DateTime?[] values)
         {
             List<string> retval = new();
@@ -512,7 +595,6 @@ namespace Sdk4me.GraphQL
                 else
                     retval.Add(JsonConvert.SerializeObject(value));
             }
-
             return retval.ToArray();
         }
     }

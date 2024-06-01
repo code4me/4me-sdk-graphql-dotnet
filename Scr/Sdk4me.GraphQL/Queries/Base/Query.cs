@@ -431,7 +431,7 @@ namespace Sdk4me.GraphQL
         /// <exception cref="NullReferenceException"></exception>
         public TEntity FreeFormatFilter(string? value)
         {
-            queryFilter = ExecutionQueryBuilder.BuildQueryFilter(value);
+            queryFilter = ExecutionQueryBuilder.BuildFreeFormatFilter(value);
             return this as TEntity ?? throw new NullReferenceException(nameof(TEntity));
         }
 
