@@ -67,7 +67,7 @@ namespace Sdk4me.GraphQL
             get => itemsPerRequest;
             set
             {
-                itemsPerRequest = itemsPerRequest switch
+                itemsPerRequest = value switch
                 {
                     <= 0 => 1,
                     > 100 => 100,
