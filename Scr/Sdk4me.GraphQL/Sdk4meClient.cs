@@ -82,7 +82,7 @@ namespace Sdk4me.GraphQL
         public string AccountID
         {
             get => accountID;
-            set => accountID = value;
+            set => accountID = string.IsNullOrWhiteSpace(value) ? accountID : value;
         }
 
         /// <summary>
