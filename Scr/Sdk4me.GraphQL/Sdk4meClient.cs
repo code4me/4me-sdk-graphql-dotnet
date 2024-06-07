@@ -229,7 +229,7 @@ namespace Sdk4me.GraphQL
                 JToken responseData = await SendHttpRequest(requestMessage, query, true);
 
                 NodeCollection<TEntity> nodes = new();
-                if (responseData[executionQuery.GetResponseObjectName()] is JToken responseObject)
+                if (responseData[executionQuery.GetResponseObjectName()] is JToken responseObject && responseObject.HasValues)
                 {
                     interfaceConverter.InterfaceTypeMappings = executionQuery.GetOnTypeQueries();
 
