@@ -84,9 +84,9 @@
         /// <summary>
         /// The fulfillment task of the purchase workflow generated to fulfil this shop order line.
         /// </summary>
-        /// <param name="query">The request query.</param>
+        /// <param name="query">The task query.</param>
         /// <returns>Returns an <see cref="IQuery"/>.</returns>
-        public ShopOrderLineQuery SelectFulfillmentTask(RequestQuery query)
+        public ShopOrderLineQuery SelectFulfillmentTask(TaskQuery query)
         {
             query.FieldName = "fulfillmentTask";
             query.IsConnection = false;

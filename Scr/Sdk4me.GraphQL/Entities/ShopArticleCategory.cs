@@ -7,7 +7,7 @@ namespace Sdk4me.GraphQL
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/shoparticlecategory/">ShopArticleCategory</see> object.
     /// </summary>
-    public class ShopArticleCategory : Node
+    public class ShopArticleCategory : Node, IHasTranslations
     {
         /// <summary>
         /// The account this record belongs to.
@@ -74,6 +74,17 @@ namespace Sdk4me.GraphQL
         [JsonProperty("sourceID")]
         public string? SourceID { get; internal set; }
 
+        [JsonProperty("translations")]
+        internal NodeCollection<Translation>? TranslationsCollection { get; set; }
+
+        /// <summary>
+        /// Translations associated with this object.
+        /// </summary>
+        public DataList<Translation>? Translations
+        {
+            get => TranslationsCollection?.Data;
+        }
+
         /// <summary>
         /// The date and time of the last update of the record. If the record has no updates it contains the <c>createdAt</c> value.
         /// </summary>
@@ -84,12 +95,14 @@ namespace Sdk4me.GraphQL
         {
             HashSet<QueryPageInfo> retval = new();
             retval.AddRange(FullDescriptionAttachmentsCollection?.GetQueryPageInfo("fullDescriptionAttachments", depth + 1));
+            retval.AddRange(TranslationsCollection?.GetQueryPageInfo("translations", depth + 1));
             return retval;
         }
 
         internal override void AddToCollection(object data)
         {
             FullDescriptionAttachments?.AddRange((data as ShopArticleCategory)?.FullDescriptionAttachments);
+            Translations?.AddRange((data as ShopArticleCategory)?.Translations);
         }
     }
 }

@@ -12,5 +12,16 @@
             : base("", typeof(WorkflowTemplatePhase), true)
         {
         }
+
+        /// <summary>
+        /// Translations associated with this object.
+        /// </summary>
+        /// <param name="query">The translation query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
+        public WorkflowTemplatePhaseQuery SelectTranslations(TranslationQuery query)
+        {
+            query.FieldName = "translations";
+            return Select(query);
+        }
     }
 }

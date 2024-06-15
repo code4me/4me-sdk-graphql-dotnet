@@ -7,7 +7,7 @@ namespace Sdk4me.GraphQL
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/shoparticle/">ShopArticle</see> object.
     /// </summary>
-    public class ShopArticle : Node
+    public class ShopArticle : Node, IHasTranslations
     {
         /// <summary>
         /// The account this record belongs to.
@@ -168,6 +168,17 @@ namespace Sdk4me.GraphQL
         [JsonProperty("timeZone")]
         public string? TimeZone { get; internal set; }
 
+        [JsonProperty("translations")]
+        internal NodeCollection<Translation>? TranslationsCollection { get; set; }
+
+        /// <summary>
+        /// Translations associated with this object.
+        /// </summary>
+        public DataList<Translation>? Translations
+        {
+            get => TranslationsCollection?.Data;
+        }
+
         /// <summary>
         /// UI extension that is to be used when the shop article is ordered.
         /// </summary>
@@ -182,11 +193,14 @@ namespace Sdk4me.GraphQL
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)
         {
-            return new HashSet<QueryPageInfo>();
+            HashSet<QueryPageInfo> retval = new();
+            retval.AddRange(TranslationsCollection?.GetQueryPageInfo("translations", depth + 1));
+            return retval;
         }
 
         internal override void AddToCollection(object data)
         {
+            Translations?.AddRange((data as ShopArticle)?.Translations);
         }
     }
 }

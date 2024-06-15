@@ -144,6 +144,19 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Deletes an existing app offering automation rule.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="input">The mutation to execute.</param>
+        /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<AppOfferingAutomationRuleDeleteMutationPayload> Mutation(this Sdk4meClient client, AppOfferingAutomationRuleDeleteMutationInput input, bool throwOnError = true)
+        {
+            return await client.Mutation(new AppOfferingAutomationRuleDeleteMutation(input), throwOnError);
+        }
+
+        /// <summary>
         /// Updates an existing app offering automation rule.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>

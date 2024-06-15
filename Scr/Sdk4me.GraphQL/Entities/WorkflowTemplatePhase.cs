@@ -7,7 +7,7 @@ namespace Sdk4me.GraphQL
     /// <summary>
     /// The <see href="https://developer.4me.com/graphql/object/workflowtemplatephase/">WorkflowTemplatePhase</see> object.
     /// </summary>
-    public class WorkflowTemplatePhase : Node
+    public class WorkflowTemplatePhase : Node, IHasTranslations
     {
         /// <summary>
         /// The date and time at which the workflow template's phase was created.
@@ -27,6 +27,17 @@ namespace Sdk4me.GraphQL
         [JsonProperty("position"), Sdk4meField(IsDefaultQueryProperty = true)]
         public long? Position { get; internal set; }
 
+        [JsonProperty("translations")]
+        internal NodeCollection<Translation>? TranslationsCollection { get; set; }
+
+        /// <summary>
+        /// Translations associated with this object.
+        /// </summary>
+        public DataList<Translation>? Translations
+        {
+            get => TranslationsCollection?.Data;
+        }
+
         /// <summary>
         /// The date and time of the last update of the workflow template's phase. If the phase has no updates it contains the <c>createdAt</c> value.
         /// </summary>
@@ -35,11 +46,14 @@ namespace Sdk4me.GraphQL
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)
         {
-            return new HashSet<QueryPageInfo>();
+            HashSet<QueryPageInfo> retval = new();
+            retval.AddRange(TranslationsCollection?.GetQueryPageInfo("translations", depth + 1));
+            return retval;
         }
 
         internal override void AddToCollection(object data)
         {
+            Translations?.AddRange((data as WorkflowTemplatePhase)?.Translations);
         }
     }
 }

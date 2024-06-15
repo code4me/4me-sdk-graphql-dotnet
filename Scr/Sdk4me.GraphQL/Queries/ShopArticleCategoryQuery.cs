@@ -57,5 +57,16 @@
             query.IsConnection = false;
             return Select(query);
         }
+
+        /// <summary>
+        /// Translations associated with this object.
+        /// </summary>
+        /// <param name="query">The translation query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
+        public ShopArticleCategoryQuery SelectTranslations(TranslationQuery query)
+        {
+            query.FieldName = "translations";
+            return Select(query);
+        }
     }
 }

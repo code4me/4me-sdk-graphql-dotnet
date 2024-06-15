@@ -664,6 +664,11 @@ namespace Sdk4me.GraphQL
         [EnumMember(Value = "name")]
         Name,
         /// <summary>
+        /// The oauth authorization endpoints field.
+        /// </summary>
+        [EnumMember(Value = "oauthAuthorizationEndpoints")]
+        OauthAuthorizationEndpoints,
+        /// <summary>
         /// The picture uri field.
         /// </summary>
         [EnumMember(Value = "pictureUri")]
@@ -827,6 +832,11 @@ namespace Sdk4me.GraphQL
         /// </summary>
         [EnumMember(Value = "effect")]
         Effect,
+        /// <summary>
+        /// The grant type field.
+        /// </summary>
+        [EnumMember(Value = "grantType")]
+        GrantType,
         /// <summary>
         /// The id field.
         /// </summary>
@@ -7999,6 +8009,11 @@ namespace Sdk4me.GraphQL
         [EnumMember(Value = "timeZone")]
         TimeZone,
         /// <summary>
+        /// The translations field.
+        /// </summary>
+        [EnumMember(Value = "translations")]
+        Translations,
+        /// <summary>
         /// The ui extension field.
         /// </summary>
         [EnumMember(Value = "uiExtension")]
@@ -8070,6 +8085,11 @@ namespace Sdk4me.GraphQL
         /// </summary>
         [EnumMember(Value = "sourceID")]
         SourceID,
+        /// <summary>
+        /// The translations field.
+        /// </summary>
+        [EnumMember(Value = "translations")]
+        Translations,
         /// <summary>
         /// The updated at field.
         /// </summary>
@@ -11364,6 +11384,11 @@ namespace Sdk4me.GraphQL
         /// </summary>
         [EnumMember(Value = "position")]
         Position,
+        /// <summary>
+        /// The translations field.
+        /// </summary>
+        [EnumMember(Value = "translations")]
+        Translations,
         /// <summary>
         /// The updated at field.
         /// </summary>

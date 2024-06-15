@@ -65,7 +65,7 @@ namespace Sdk4me.GraphQL
         /// The fulfillment task of the purchase workflow generated to fulfil this shop order line.
         /// </summary>
         [JsonProperty("fulfillmentTask")]
-        public Request? FulfillmentTask { get; internal set; }
+        public Task? FulfillmentTask { get; internal set; }
 
         /// <summary>
         /// The request template used to order one of more units of this shop article.

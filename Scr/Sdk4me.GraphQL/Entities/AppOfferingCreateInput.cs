@@ -8,6 +8,7 @@ namespace Sdk4me.GraphQL
     /// </summary>
     public class AppOfferingCreateInput : PropertyChangeSet
     {
+        private string? cardDescription;
         private string? clientMutationId;
         private string? compliance;
         private string? configurationUriTemplate;
@@ -17,6 +18,7 @@ namespace Sdk4me.GraphQL
         private string? features;
         private string name;
         private List<AppOfferingScopeInput>? newScopes;
+        private List<string>? oauthAuthorizationEndpoints;
         private WebhookPolicyJwtAlg? policyJwtAlg;
         private string? policyJwtAudience;
         private long? policyJwtClaimExpiresIn;
@@ -28,6 +30,16 @@ namespace Sdk4me.GraphQL
         private string? uiExtensionId;
         private string? uiExtensionVersionId;
         private string? webhookUriTemplate;
+
+        /// <summary>
+        /// Short description of the app offering to be shown on the card in the App store.
+        /// </summary>
+        [JsonProperty("cardDescription")]
+        public string? CardDescription
+        {
+            get => cardDescription;
+            set => cardDescription = Set("cardDescription", value);
+        }
 
         /// <summary>
         /// A unique identifier for the client performing the mutation.
@@ -117,6 +129,16 @@ namespace Sdk4me.GraphQL
         {
             get => newScopes;
             set => newScopes = Set("newScopes", value);
+        }
+
+        /// <summary>
+        /// The endpoints for the OAuth application that will be created for this app to use in the <see href="https://developer.4me.com/v1/oauth/authorization_code_grant/">Authorization Code Grant flow</see>.
+        /// </summary>
+        [JsonProperty("oauthAuthorizationEndpoints")]
+        public List<string>? OauthAuthorizationEndpoints
+        {
+            get => oauthAuthorizationEndpoints;
+            set => oauthAuthorizationEndpoints = Set("oauthAuthorizationEndpoints", value);
         }
 
         /// <summary>

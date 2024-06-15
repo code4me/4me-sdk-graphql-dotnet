@@ -768,6 +768,23 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
+    /// The oauth application grant type.
+    /// </summary>
+    public enum OauthApplicationGrantType
+    {
+        /// <summary>
+        /// Authorization code grant.
+        /// </summary>
+        [EnumMember(Value = "authorization_code")]
+        AuthorizationCode = 1,
+        /// <summary>
+        /// Client credentials grant.
+        /// </summary>
+        [EnumMember(Value = "client_credentials")]
+        ClientCredentials,
+    }
+
+    /// <summary>
     /// The parent service instance impact relation.
     /// </summary>
     public enum ParentServiceInstanceImpactRelation

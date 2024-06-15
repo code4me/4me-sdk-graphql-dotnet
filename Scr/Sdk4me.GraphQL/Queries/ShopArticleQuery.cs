@@ -96,6 +96,17 @@
         }
 
         /// <summary>
+        /// Translations associated with this object.
+        /// </summary>
+        /// <param name="query">The translation query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
+        public ShopArticleQuery SelectTranslations(TranslationQuery query)
+        {
+            query.FieldName = "translations";
+            return Select(query);
+        }
+
+        /// <summary>
         /// UI extension that is to be used when the shop article is ordered.
         /// </summary>
         /// <param name="query">The ui extension query.</param>
