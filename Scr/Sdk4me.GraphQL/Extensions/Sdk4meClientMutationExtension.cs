@@ -1,4 +1,4 @@
-﻿using System.Linq;
+﻿using System;
 using System.Threading.Tasks;
 
 namespace Sdk4me.GraphQL
@@ -16,6 +16,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<AgileBoardCreatePayload> Mutation(this Sdk4meClient client, AgileBoardCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new AgileBoardCreateMutation(input, new AgileBoardQuery()), throwOnError);
@@ -43,6 +44,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<AgileBoardUpdatePayload> Mutation(this Sdk4meClient client, AgileBoardUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new AgileBoardUpdateMutation(input, new AgileBoardQuery()), throwOnError);
@@ -70,6 +72,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<AppInstanceCreatePayload> Mutation(this Sdk4meClient client, AppInstanceCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new AppInstanceCreateMutation(input, new AppInstanceQuery()), throwOnError);
@@ -97,6 +100,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<AppInstanceUpdatePayload> Mutation(this Sdk4meClient client, AppInstanceUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new AppInstanceUpdateMutation(input, new AppInstanceQuery()), throwOnError);
@@ -124,6 +128,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<AppOfferingAutomationRuleCreatePayload> Mutation(this Sdk4meClient client, AppOfferingAutomationRuleCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new AppOfferingAutomationRuleCreateMutation(input, new AppOfferingAutomationRuleQuery()), throwOnError);
@@ -164,6 +169,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<AppOfferingAutomationRuleUpdatePayload> Mutation(this Sdk4meClient client, AppOfferingAutomationRuleUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new AppOfferingAutomationRuleUpdateMutation(input, new AppOfferingAutomationRuleQuery()), throwOnError);
@@ -191,6 +197,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<AppOfferingCreatePayload> Mutation(this Sdk4meClient client, AppOfferingCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new AppOfferingCreateMutation(input, new AppOfferingQuery()), throwOnError);
@@ -218,6 +225,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<AppOfferingUpdatePayload> Mutation(this Sdk4meClient client, AppOfferingUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new AppOfferingUpdateMutation(input, new AppOfferingQuery()), throwOnError);
@@ -245,6 +253,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<AutomationRuleCreatePayload> Mutation(this Sdk4meClient client, AutomationRuleCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new AutomationRuleCreateMutation(input, new AutomationRuleQuery()), throwOnError);
@@ -272,6 +281,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<AutomationRuleUpdatePayload> Mutation(this Sdk4meClient client, AutomationRuleUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new AutomationRuleUpdateMutation(input, new AutomationRuleQuery()), throwOnError);
@@ -299,6 +309,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<BroadcastCreatePayload> Mutation(this Sdk4meClient client, BroadcastCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new BroadcastCreateMutation(input, new BroadcastQuery()), throwOnError);
@@ -326,6 +337,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<BroadcastUpdatePayload> Mutation(this Sdk4meClient client, BroadcastUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new BroadcastUpdateMutation(input, new BroadcastQuery()), throwOnError);
@@ -353,6 +365,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<CalendarCreatePayload> Mutation(this Sdk4meClient client, CalendarCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new CalendarCreateMutation(input, new CalendarQuery()), throwOnError);
@@ -380,6 +393,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<CalendarUpdatePayload> Mutation(this Sdk4meClient client, CalendarUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new CalendarUpdateMutation(input, new CalendarQuery()), throwOnError);
@@ -407,6 +421,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ConfigurationItemCreatePayload> Mutation(this Sdk4meClient client, ConfigurationItemCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ConfigurationItemCreateMutation(input, new ConfigurationItemQuery()), throwOnError);
@@ -434,6 +449,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ConfigurationItemUpdatePayload> Mutation(this Sdk4meClient client, ConfigurationItemUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ConfigurationItemUpdateMutation(input, new ConfigurationItemQuery()), throwOnError);
@@ -461,6 +477,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ContractCreatePayload> Mutation(this Sdk4meClient client, ContractCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ContractCreateMutation(input, new ContractQuery()), throwOnError);
@@ -488,6 +505,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ContractUpdatePayload> Mutation(this Sdk4meClient client, ContractUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ContractUpdateMutation(input, new ContractQuery()), throwOnError);
@@ -515,6 +533,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<CustomCollectionCreatePayload> Mutation(this Sdk4meClient client, CustomCollectionCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new CustomCollectionCreateMutation(input, new CustomCollectionQuery()), throwOnError);
@@ -542,6 +561,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<CustomCollectionElementCreatePayload> Mutation(this Sdk4meClient client, CustomCollectionElementCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new CustomCollectionElementCreateMutation(input, new CustomCollectionElementQuery()), throwOnError);
@@ -569,6 +589,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<CustomCollectionElementUpdatePayload> Mutation(this Sdk4meClient client, CustomCollectionElementUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new CustomCollectionElementUpdateMutation(input, new CustomCollectionElementQuery()), throwOnError);
@@ -596,6 +617,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<CustomCollectionUpdatePayload> Mutation(this Sdk4meClient client, CustomCollectionUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new CustomCollectionUpdateMutation(input, new CustomCollectionQuery()), throwOnError);
@@ -639,6 +661,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<DiscoveredConfigurationItemsPayload> Mutation(this Sdk4meClient client, DiscoveredConfigurationItemsInput input, bool throwOnError = true)
         {
             return await client.Mutation(new DiscoveredConfigurationItemsMutation(input, new AsyncQueryQuery()), throwOnError);
@@ -682,6 +705,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<EffortClassCreatePayload> Mutation(this Sdk4meClient client, EffortClassCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new EffortClassCreateMutation(input, new EffortClassQuery()), throwOnError);
@@ -709,6 +733,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<EffortClassUpdatePayload> Mutation(this Sdk4meClient client, EffortClassUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new EffortClassUpdateMutation(input, new EffortClassQuery()), throwOnError);
@@ -736,6 +761,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<FirstLineSupportAgreementCreatePayload> Mutation(this Sdk4meClient client, FirstLineSupportAgreementCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new FirstLineSupportAgreementCreateMutation(input, new FirstLineSupportAgreementQuery()), throwOnError);
@@ -763,6 +789,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<FirstLineSupportAgreementUpdatePayload> Mutation(this Sdk4meClient client, FirstLineSupportAgreementUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new FirstLineSupportAgreementUpdateMutation(input, new FirstLineSupportAgreementQuery()), throwOnError);
@@ -790,6 +817,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<HolidayCreatePayload> Mutation(this Sdk4meClient client, HolidayCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new HolidayCreateMutation(input, new HolidayQuery()), throwOnError);
@@ -817,6 +845,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<HolidayUpdatePayload> Mutation(this Sdk4meClient client, HolidayUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new HolidayUpdateMutation(input, new HolidayQuery()), throwOnError);
@@ -844,6 +873,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<InvoiceCreatePayload> Mutation(this Sdk4meClient client, InvoiceCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new InvoiceCreateMutation(input, new InvoiceQuery()), throwOnError);
@@ -871,6 +901,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<InvoiceUpdatePayload> Mutation(this Sdk4meClient client, InvoiceUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new InvoiceUpdateMutation(input, new InvoiceQuery()), throwOnError);
@@ -898,6 +929,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<KnowledgeArticleCreatePayload> Mutation(this Sdk4meClient client, KnowledgeArticleCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new KnowledgeArticleCreateMutation(input, new KnowledgeArticleQuery()), throwOnError);
@@ -925,6 +957,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<KnowledgeArticleUpdatePayload> Mutation(this Sdk4meClient client, KnowledgeArticleUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new KnowledgeArticleUpdateMutation(input, new KnowledgeArticleQuery()), throwOnError);
@@ -952,6 +985,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<NoteCreatePayload> Mutation(this Sdk4meClient client, NoteCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new NoteCreateMutation(input, new NoteQuery()), throwOnError);
@@ -979,6 +1013,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<NoteReactionCreatePayload> Mutation(this Sdk4meClient client, NoteReactionCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new NoteReactionCreateMutation(input, new NoteReactionQuery()), throwOnError);
@@ -1019,6 +1054,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<OrganizationCreatePayload> Mutation(this Sdk4meClient client, OrganizationCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new OrganizationCreateMutation(input, new OrganizationQuery()), throwOnError);
@@ -1046,6 +1082,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<OrganizationUpdatePayload> Mutation(this Sdk4meClient client, OrganizationUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new OrganizationUpdateMutation(input, new OrganizationQuery()), throwOnError);
@@ -1073,6 +1110,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<OutOfOfficePeriodCreatePayload> Mutation(this Sdk4meClient client, OutOfOfficePeriodCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new OutOfOfficePeriodCreateMutation(input, new OutOfOfficePeriodQuery()), throwOnError);
@@ -1100,6 +1138,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<OutOfOfficePeriodUpdatePayload> Mutation(this Sdk4meClient client, OutOfOfficePeriodUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new OutOfOfficePeriodUpdateMutation(input, new OutOfOfficePeriodQuery()), throwOnError);
@@ -1127,6 +1166,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<PdfDesignCreatePayload> Mutation(this Sdk4meClient client, PdfDesignCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new PdfDesignCreateMutation(input, new PdfDesignQuery()), throwOnError);
@@ -1154,6 +1194,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<PdfDesignUpdatePayload> Mutation(this Sdk4meClient client, PdfDesignUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new PdfDesignUpdateMutation(input, new PdfDesignQuery()), throwOnError);
@@ -1181,6 +1222,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<PersonCreatePayload> Mutation(this Sdk4meClient client, PersonCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new PersonCreateMutation(input, new PersonQuery()), throwOnError);
@@ -1208,6 +1250,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<PersonUpdatePayload> Mutation(this Sdk4meClient client, PersonUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new PersonUpdateMutation(input, new PersonQuery()), throwOnError);
@@ -1235,6 +1278,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ProblemCreatePayload> Mutation(this Sdk4meClient client, ProblemCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ProblemCreateMutation(input, new ProblemQuery()), throwOnError);
@@ -1262,6 +1306,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ProblemUpdatePayload> Mutation(this Sdk4meClient client, ProblemUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ProblemUpdateMutation(input, new ProblemQuery()), throwOnError);
@@ -1289,6 +1334,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ProductBacklogCreatePayload> Mutation(this Sdk4meClient client, ProductBacklogCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ProductBacklogCreateMutation(input, new ProductBacklogQuery()), throwOnError);
@@ -1316,6 +1362,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ProductBacklogUpdatePayload> Mutation(this Sdk4meClient client, ProductBacklogUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ProductBacklogUpdateMutation(input, new ProductBacklogQuery()), throwOnError);
@@ -1343,6 +1390,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ProductCategoryCreatePayload> Mutation(this Sdk4meClient client, ProductCategoryCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ProductCategoryCreateMutation(input, new ProductCategoryQuery()), throwOnError);
@@ -1370,6 +1418,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ProductCategoryUpdatePayload> Mutation(this Sdk4meClient client, ProductCategoryUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ProductCategoryUpdateMutation(input, new ProductCategoryQuery()), throwOnError);
@@ -1397,6 +1446,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ProductCreatePayload> Mutation(this Sdk4meClient client, ProductCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ProductCreateMutation(input, new ProductQuery()), throwOnError);
@@ -1424,6 +1474,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ProductUpdatePayload> Mutation(this Sdk4meClient client, ProductUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ProductUpdateMutation(input, new ProductQuery()), throwOnError);
@@ -1451,6 +1502,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ProjectCategoryCreatePayload> Mutation(this Sdk4meClient client, ProjectCategoryCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ProjectCategoryCreateMutation(input, new ProjectCategoryQuery()), throwOnError);
@@ -1478,6 +1530,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ProjectCategoryUpdatePayload> Mutation(this Sdk4meClient client, ProjectCategoryUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ProjectCategoryUpdateMutation(input, new ProjectCategoryQuery()), throwOnError);
@@ -1505,6 +1558,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ProjectCreatePayload> Mutation(this Sdk4meClient client, ProjectCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ProjectCreateMutation(input, new ProjectQuery()), throwOnError);
@@ -1532,6 +1586,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ProjectRiskLevelCreatePayload> Mutation(this Sdk4meClient client, ProjectRiskLevelCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ProjectRiskLevelCreateMutation(input, new ProjectRiskLevelQuery()), throwOnError);
@@ -1559,6 +1614,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ProjectRiskLevelUpdatePayload> Mutation(this Sdk4meClient client, ProjectRiskLevelUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ProjectRiskLevelUpdateMutation(input, new ProjectRiskLevelQuery()), throwOnError);
@@ -1586,6 +1642,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ProjectTaskCreatePayload> Mutation(this Sdk4meClient client, ProjectTaskCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ProjectTaskCreateMutation(input, new ProjectTaskQuery()), throwOnError);
@@ -1613,6 +1670,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ProjectTaskTemplateCreatePayload> Mutation(this Sdk4meClient client, ProjectTaskTemplateCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ProjectTaskTemplateCreateMutation(input, new ProjectTaskTemplateQuery()), throwOnError);
@@ -1640,6 +1698,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ProjectTaskTemplateUpdatePayload> Mutation(this Sdk4meClient client, ProjectTaskTemplateUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ProjectTaskTemplateUpdateMutation(input, new ProjectTaskTemplateQuery()), throwOnError);
@@ -1667,6 +1726,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ProjectTaskUpdatePayload> Mutation(this Sdk4meClient client, ProjectTaskUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ProjectTaskUpdateMutation(input, new ProjectTaskQuery()), throwOnError);
@@ -1694,6 +1754,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ProjectTemplateCreatePayload> Mutation(this Sdk4meClient client, ProjectTemplateCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ProjectTemplateCreateMutation(input, new ProjectTemplateQuery()), throwOnError);
@@ -1721,6 +1782,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ProjectTemplateUpdatePayload> Mutation(this Sdk4meClient client, ProjectTemplateUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ProjectTemplateUpdateMutation(input, new ProjectTemplateQuery()), throwOnError);
@@ -1748,6 +1810,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ProjectUpdatePayload> Mutation(this Sdk4meClient client, ProjectUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ProjectUpdateMutation(input, new ProjectQuery()), throwOnError);
@@ -1775,6 +1838,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ReleaseCreatePayload> Mutation(this Sdk4meClient client, ReleaseCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ReleaseCreateMutation(input, new ReleaseQuery()), throwOnError);
@@ -1802,6 +1866,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ReleaseUpdatePayload> Mutation(this Sdk4meClient client, ReleaseUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ReleaseUpdateMutation(input, new ReleaseQuery()), throwOnError);
@@ -1829,6 +1894,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<RequestCreatePayload> Mutation(this Sdk4meClient client, RequestCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new RequestCreateMutation(input, new RequestQuery()), throwOnError);
@@ -1856,6 +1922,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<RequestTemplateCreatePayload> Mutation(this Sdk4meClient client, RequestTemplateCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new RequestTemplateCreateMutation(input, new RequestTemplateQuery()), throwOnError);
@@ -1883,6 +1950,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<RequestTemplateUpdatePayload> Mutation(this Sdk4meClient client, RequestTemplateUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new RequestTemplateUpdateMutation(input, new RequestTemplateQuery()), throwOnError);
@@ -1910,6 +1978,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<RequestUpdatePayload> Mutation(this Sdk4meClient client, RequestUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new RequestUpdateMutation(input, new RequestQuery()), throwOnError);
@@ -1937,6 +2006,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ReservationCreatePayload> Mutation(this Sdk4meClient client, ReservationCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ReservationCreateMutation(input, new ReservationQuery()), throwOnError);
@@ -1964,6 +2034,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ReservationOfferingCreatePayload> Mutation(this Sdk4meClient client, ReservationOfferingCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ReservationOfferingCreateMutation(input, new ReservationOfferingQuery()), throwOnError);
@@ -1991,6 +2062,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ReservationOfferingUpdatePayload> Mutation(this Sdk4meClient client, ReservationOfferingUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ReservationOfferingUpdateMutation(input, new ReservationOfferingQuery()), throwOnError);
@@ -2018,6 +2090,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ReservationUpdatePayload> Mutation(this Sdk4meClient client, ReservationUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ReservationUpdateMutation(input, new ReservationQuery()), throwOnError);
@@ -2045,6 +2118,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<RiskCreatePayload> Mutation(this Sdk4meClient client, RiskCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new RiskCreateMutation(input, new RiskQuery()), throwOnError);
@@ -2072,6 +2146,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<RiskSeverityCreatePayload> Mutation(this Sdk4meClient client, RiskSeverityCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new RiskSeverityCreateMutation(input, new RiskSeverityQuery()), throwOnError);
@@ -2099,6 +2174,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<RiskSeverityUpdatePayload> Mutation(this Sdk4meClient client, RiskSeverityUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new RiskSeverityUpdateMutation(input, new RiskSeverityQuery()), throwOnError);
@@ -2126,6 +2202,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<RiskUpdatePayload> Mutation(this Sdk4meClient client, RiskUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new RiskUpdateMutation(input, new RiskQuery()), throwOnError);
@@ -2153,6 +2230,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ScrumWorkspaceCreatePayload> Mutation(this Sdk4meClient client, ScrumWorkspaceCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ScrumWorkspaceCreateMutation(input, new ScrumWorkspaceQuery()), throwOnError);
@@ -2180,6 +2258,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ScrumWorkspaceUpdatePayload> Mutation(this Sdk4meClient client, ScrumWorkspaceUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ScrumWorkspaceUpdateMutation(input, new ScrumWorkspaceQuery()), throwOnError);
@@ -2207,6 +2286,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ServiceCategoryCreatePayload> Mutation(this Sdk4meClient client, ServiceCategoryCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ServiceCategoryCreateMutation(input, new ServiceCategoryQuery()), throwOnError);
@@ -2234,6 +2314,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ServiceCategoryUpdatePayload> Mutation(this Sdk4meClient client, ServiceCategoryUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ServiceCategoryUpdateMutation(input, new ServiceCategoryQuery()), throwOnError);
@@ -2261,6 +2342,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ServiceCreatePayload> Mutation(this Sdk4meClient client, ServiceCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ServiceCreateMutation(input, new ServiceQuery()), throwOnError);
@@ -2288,6 +2370,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ServiceInstanceCreatePayload> Mutation(this Sdk4meClient client, ServiceInstanceCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ServiceInstanceCreateMutation(input, new ServiceInstanceQuery()), throwOnError);
@@ -2315,6 +2398,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ServiceInstanceUpdatePayload> Mutation(this Sdk4meClient client, ServiceInstanceUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ServiceInstanceUpdateMutation(input, new ServiceInstanceQuery()), throwOnError);
@@ -2342,6 +2426,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ServiceLevelAgreementCreatePayload> Mutation(this Sdk4meClient client, ServiceLevelAgreementCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ServiceLevelAgreementCreateMutation(input, new ServiceLevelAgreementQuery()), throwOnError);
@@ -2369,6 +2454,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ServiceLevelAgreementUpdatePayload> Mutation(this Sdk4meClient client, ServiceLevelAgreementUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ServiceLevelAgreementUpdateMutation(input, new ServiceLevelAgreementQuery()), throwOnError);
@@ -2396,6 +2482,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ServiceOfferingCreatePayload> Mutation(this Sdk4meClient client, ServiceOfferingCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ServiceOfferingCreateMutation(input, new ServiceOfferingQuery()), throwOnError);
@@ -2423,6 +2510,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ServiceOfferingUpdatePayload> Mutation(this Sdk4meClient client, ServiceOfferingUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ServiceOfferingUpdateMutation(input, new ServiceOfferingQuery()), throwOnError);
@@ -2450,6 +2538,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ServiceUpdatePayload> Mutation(this Sdk4meClient client, ServiceUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ServiceUpdateMutation(input, new ServiceQuery()), throwOnError);
@@ -2477,6 +2566,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ShopArticleCategoryCreatePayload> Mutation(this Sdk4meClient client, ShopArticleCategoryCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ShopArticleCategoryCreateMutation(input, new ShopArticleCategoryQuery()), throwOnError);
@@ -2504,6 +2594,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ShopArticleCategoryUpdatePayload> Mutation(this Sdk4meClient client, ShopArticleCategoryUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ShopArticleCategoryUpdateMutation(input, new ShopArticleCategoryQuery()), throwOnError);
@@ -2531,6 +2622,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ShopArticleCreatePayload> Mutation(this Sdk4meClient client, ShopArticleCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ShopArticleCreateMutation(input, new ShopArticleQuery()), throwOnError);
@@ -2558,6 +2650,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ShopArticleUpdatePayload> Mutation(this Sdk4meClient client, ShopArticleUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ShopArticleUpdateMutation(input, new ShopArticleQuery()), throwOnError);
@@ -2585,6 +2678,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ShopOrderLineCreatePayload> Mutation(this Sdk4meClient client, ShopOrderLineCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ShopOrderLineCreateMutation(input, new ShopOrderLineQuery()), throwOnError);
@@ -2612,6 +2706,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ShopOrderLineUpdatePayload> Mutation(this Sdk4meClient client, ShopOrderLineUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ShopOrderLineUpdateMutation(input, new ShopOrderLineQuery()), throwOnError);
@@ -2639,6 +2734,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ShortUrlCreatePayload> Mutation(this Sdk4meClient client, ShortUrlCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ShortUrlCreateMutation(input, new ShortUrlQuery()), throwOnError);
@@ -2666,6 +2762,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<ShortUrlUpdatePayload> Mutation(this Sdk4meClient client, ShortUrlUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new ShortUrlUpdateMutation(input, new ShortUrlQuery()), throwOnError);
@@ -2693,6 +2790,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<SiteCreatePayload> Mutation(this Sdk4meClient client, SiteCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new SiteCreateMutation(input, new SiteQuery()), throwOnError);
@@ -2720,6 +2818,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<SiteUpdatePayload> Mutation(this Sdk4meClient client, SiteUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new SiteUpdateMutation(input, new SiteQuery()), throwOnError);
@@ -2747,6 +2846,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<SkillPoolCreatePayload> Mutation(this Sdk4meClient client, SkillPoolCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new SkillPoolCreateMutation(input, new SkillPoolQuery()), throwOnError);
@@ -2774,6 +2874,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<SkillPoolUpdatePayload> Mutation(this Sdk4meClient client, SkillPoolUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new SkillPoolUpdateMutation(input, new SkillPoolQuery()), throwOnError);
@@ -2801,6 +2902,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<SlaCoverageGroupCreatePayload> Mutation(this Sdk4meClient client, SlaCoverageGroupCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new SlaCoverageGroupCreateMutation(input, new SlaCoverageGroupQuery()), throwOnError);
@@ -2828,6 +2930,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<SlaCoverageGroupUpdatePayload> Mutation(this Sdk4meClient client, SlaCoverageGroupUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new SlaCoverageGroupUpdateMutation(input, new SlaCoverageGroupQuery()), throwOnError);
@@ -2855,6 +2958,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<SlaNotificationSchemeCreatePayload> Mutation(this Sdk4meClient client, SlaNotificationSchemeCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new SlaNotificationSchemeCreateMutation(input, new SlaNotificationSchemeQuery()), throwOnError);
@@ -2882,6 +2986,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<SlaNotificationSchemeUpdatePayload> Mutation(this Sdk4meClient client, SlaNotificationSchemeUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new SlaNotificationSchemeUpdateMutation(input, new SlaNotificationSchemeQuery()), throwOnError);
@@ -2909,6 +3014,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<SprintCreatePayload> Mutation(this Sdk4meClient client, SprintCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new SprintCreateMutation(input, new SprintQuery()), throwOnError);
@@ -2936,6 +3042,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<SprintUpdatePayload> Mutation(this Sdk4meClient client, SprintUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new SprintUpdateMutation(input, new SprintQuery()), throwOnError);
@@ -2963,6 +3070,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<SurveyCreatePayload> Mutation(this Sdk4meClient client, SurveyCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new SurveyCreateMutation(input, new SurveyQuery()), throwOnError);
@@ -2990,6 +3098,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<SurveyResponseCreatePayload> Mutation(this Sdk4meClient client, SurveyResponseCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new SurveyResponseCreateMutation(input, new SurveyResponseQuery()), throwOnError);
@@ -3017,6 +3126,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<SurveyResponseUpdatePayload> Mutation(this Sdk4meClient client, SurveyResponseUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new SurveyResponseUpdateMutation(input, new SurveyResponseQuery()), throwOnError);
@@ -3044,6 +3154,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<SurveyUpdatePayload> Mutation(this Sdk4meClient client, SurveyUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new SurveyUpdateMutation(input, new SurveyQuery()), throwOnError);
@@ -3071,6 +3182,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<TaskCreatePayload> Mutation(this Sdk4meClient client, TaskCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new TaskCreateMutation(input, new TaskQuery()), throwOnError);
@@ -3098,6 +3210,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<TaskTemplateCreatePayload> Mutation(this Sdk4meClient client, TaskTemplateCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new TaskTemplateCreateMutation(input, new TaskTemplateQuery()), throwOnError);
@@ -3125,6 +3238,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<TaskTemplateUpdatePayload> Mutation(this Sdk4meClient client, TaskTemplateUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new TaskTemplateUpdateMutation(input, new TaskTemplateQuery()), throwOnError);
@@ -3152,6 +3266,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<TaskUpdatePayload> Mutation(this Sdk4meClient client, TaskUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new TaskUpdateMutation(input, new TaskQuery()), throwOnError);
@@ -3179,6 +3294,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<TeamCreatePayload> Mutation(this Sdk4meClient client, TeamCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new TeamCreateMutation(input, new TeamQuery()), throwOnError);
@@ -3206,6 +3322,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<TeamUpdatePayload> Mutation(this Sdk4meClient client, TeamUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new TeamUpdateMutation(input, new TeamQuery()), throwOnError);
@@ -3233,6 +3350,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<TimeAllocationCreatePayload> Mutation(this Sdk4meClient client, TimeAllocationCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new TimeAllocationCreateMutation(input, new TimeAllocationQuery()), throwOnError);
@@ -3260,6 +3378,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<TimeAllocationUpdatePayload> Mutation(this Sdk4meClient client, TimeAllocationUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new TimeAllocationUpdateMutation(input, new TimeAllocationQuery()), throwOnError);
@@ -3287,6 +3406,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<TimeEntryCreatePayload> Mutation(this Sdk4meClient client, TimeEntryCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new TimeEntryCreateMutation(input, new TimeEntryQuery()), throwOnError);
@@ -3314,6 +3434,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<TimeEntryUpdatePayload> Mutation(this Sdk4meClient client, TimeEntryUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new TimeEntryUpdateMutation(input, new TimeEntryQuery()), throwOnError);
@@ -3341,6 +3462,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<TimesheetSettingCreatePayload> Mutation(this Sdk4meClient client, TimesheetSettingCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new TimesheetSettingCreateMutation(input, new TimesheetSettingQuery()), throwOnError);
@@ -3368,6 +3490,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<TimesheetSettingUpdatePayload> Mutation(this Sdk4meClient client, TimesheetSettingUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new TimesheetSettingUpdateMutation(input, new TimesheetSettingQuery()), throwOnError);
@@ -3395,6 +3518,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<TranslationCreatePayload> Mutation(this Sdk4meClient client, TranslationCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new TranslationCreateMutation(input, new TranslationQuery()), throwOnError);
@@ -3422,6 +3546,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<TranslationUpdatePayload> Mutation(this Sdk4meClient client, TranslationUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new TranslationUpdateMutation(input, new TranslationQuery()), throwOnError);
@@ -3449,6 +3574,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<UiExtensionCreatePayload> Mutation(this Sdk4meClient client, UiExtensionCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new UiExtensionCreateMutation(input, new UiExtensionQuery()), throwOnError);
@@ -3476,6 +3602,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<UiExtensionUpdatePayload> Mutation(this Sdk4meClient client, UiExtensionUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new UiExtensionUpdateMutation(input, new UiExtensionQuery()), throwOnError);
@@ -3503,6 +3630,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<WaitingForCustomerFollowUpCreatePayload> Mutation(this Sdk4meClient client, WaitingForCustomerFollowUpCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new WaitingForCustomerFollowUpCreateMutation(input, new WaitingForCustomerFollowUpQuery()), throwOnError);
@@ -3530,6 +3658,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<WaitingForCustomerFollowUpUpdatePayload> Mutation(this Sdk4meClient client, WaitingForCustomerFollowUpUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new WaitingForCustomerFollowUpUpdateMutation(input, new WaitingForCustomerFollowUpQuery()), throwOnError);
@@ -3557,6 +3686,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<WebhookCreatePayload> Mutation(this Sdk4meClient client, WebhookCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new WebhookCreateMutation(input, new WebhookQuery()), throwOnError);
@@ -3597,6 +3727,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<WebhookPolicyCreatePayload> Mutation(this Sdk4meClient client, WebhookPolicyCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new WebhookPolicyCreateMutation(input, new WebhookPolicyCreateResponseQuery()), throwOnError);
@@ -3637,6 +3768,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<WebhookPolicyUpdatePayload> Mutation(this Sdk4meClient client, WebhookPolicyUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new WebhookPolicyUpdateMutation(input, new WebhookPolicyQuery()), throwOnError);
@@ -3664,6 +3796,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<WebhookUpdatePayload> Mutation(this Sdk4meClient client, WebhookUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new WebhookUpdateMutation(input, new WebhookQuery()), throwOnError);
@@ -3691,6 +3824,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<WorkflowCreatePayload> Mutation(this Sdk4meClient client, WorkflowCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new WorkflowCreateMutation(input, new WorkflowQuery()), throwOnError);
@@ -3718,6 +3852,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<WorkflowTemplateCreatePayload> Mutation(this Sdk4meClient client, WorkflowTemplateCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new WorkflowTemplateCreateMutation(input, new WorkflowTemplateQuery()), throwOnError);
@@ -3745,6 +3880,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<WorkflowTemplateUpdatePayload> Mutation(this Sdk4meClient client, WorkflowTemplateUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new WorkflowTemplateUpdateMutation(input, new WorkflowTemplateQuery()), throwOnError);
@@ -3772,6 +3908,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<WorkflowTypeCreatePayload> Mutation(this Sdk4meClient client, WorkflowTypeCreateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new WorkflowTypeCreateMutation(input, new WorkflowTypeQuery()), throwOnError);
@@ -3799,6 +3936,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<WorkflowTypeUpdatePayload> Mutation(this Sdk4meClient client, WorkflowTypeUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new WorkflowTypeUpdateMutation(input, new WorkflowTypeQuery()), throwOnError);
@@ -3826,6 +3964,7 @@ namespace Sdk4me.GraphQL
         /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
         public static async Task<WorkflowUpdatePayload> Mutation(this Sdk4meClient client, WorkflowUpdateInput input, bool throwOnError = true)
         {
             return await client.Mutation(new WorkflowUpdateMutation(input, new WorkflowQuery()), throwOnError);
