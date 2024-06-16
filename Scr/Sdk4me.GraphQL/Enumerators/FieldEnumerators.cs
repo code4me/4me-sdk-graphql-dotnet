@@ -5839,12 +5839,6 @@ namespace Sdk4me.GraphQL
         [EnumMember(Value = "impact")]
         Impact,
         /// <summary>
-        /// The knowledge article field.
-        /// </summary>        [Obsolete("Use `knowledgeArticles` instead.")]
-
-        [EnumMember(Value = "knowledgeArticle")]
-        KnowledgeArticle,
-        /// <summary>
         /// The knowledge articles field.
         /// </summary>
         [EnumMember(Value = "knowledgeArticles")]

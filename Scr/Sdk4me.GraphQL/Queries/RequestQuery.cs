@@ -165,19 +165,6 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// Automatically set to the latest knowledge article that was applied to the request.
-        /// </summary>
-        /// <param name="query">The knowledge article query.</param>
-        /// <returns>Returns an <see cref="IQuery"/>.</returns>
-        [Obsolete("Use `knowledgeArticles` instead.")]
-        public RequestQuery SelectKnowledgeArticle(KnowledgeArticleQuery query)
-        {
-            query.FieldName = "knowledgeArticle";
-            query.IsConnection = false;
-            return Select(query);
-        }
-
-        /// <summary>
         /// Knowledge articles of the current request account.
         /// </summary>
         /// <param name="query">The knowledge article query.</param>

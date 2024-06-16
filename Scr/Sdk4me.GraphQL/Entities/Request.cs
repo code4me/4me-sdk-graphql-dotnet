@@ -184,13 +184,6 @@ namespace Sdk4me.GraphQL
         [JsonProperty("impact"), Sdk4meField(IsDefaultQueryProperty = true)]
         public RequestImpact? Impact { get; internal set; }
 
-        /// <summary>
-        /// Automatically set to the latest knowledge article that was applied to the request.
-        /// </summary>
-        [Obsolete("Use `knowledgeArticles` instead.")]
-        [JsonProperty("knowledgeArticle")]
-        public KnowledgeArticle? KnowledgeArticle { get; internal set; }
-
         [JsonProperty("knowledgeArticles")]
         internal NodeCollection<KnowledgeArticle>? KnowledgeArticlesCollection { get; set; }
 
