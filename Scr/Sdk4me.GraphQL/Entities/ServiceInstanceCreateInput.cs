@@ -14,6 +14,7 @@ namespace Sdk4me.GraphQL
         private List<AttachmentInput>? customFieldsAttachments;
         private string? firstLineTeamId;
         private string name;
+        private string? pictureUri;
         private string? remarks;
         private List<AttachmentInput>? remarksAttachments;
         private string serviceId;
@@ -81,6 +82,16 @@ namespace Sdk4me.GraphQL
         {
             get => name;
             set => name = Set("name", value);
+        }
+
+        /// <summary>
+        /// The hyperlink to the image file for the record.
+        /// </summary>
+        [JsonProperty("pictureUri")]
+        public string? PictureUri
+        {
+            get => pictureUri;
+            set => pictureUri = Set("pictureUri", value);
         }
 
         /// <summary>

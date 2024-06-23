@@ -19,6 +19,7 @@ namespace Sdk4me.GraphQL
         private string name;
         private List<AppOfferingScopeInput>? newScopes;
         private List<string>? oauthAuthorizationEndpoints;
+        private string? pictureUri;
         private WebhookPolicyJwtAlg? policyJwtAlg;
         private string? policyJwtAudience;
         private long? policyJwtClaimExpiresIn;
@@ -139,6 +140,16 @@ namespace Sdk4me.GraphQL
         {
             get => oauthAuthorizationEndpoints;
             set => oauthAuthorizationEndpoints = Set("oauthAuthorizationEndpoints", value);
+        }
+
+        /// <summary>
+        /// The hyperlink to the image file for the record.
+        /// </summary>
+        [JsonProperty("pictureUri")]
+        public string? PictureUri
+        {
+            get => pictureUri;
+            set => pictureUri = Set("pictureUri", value);
         }
 
         /// <summary>

@@ -709,10 +709,15 @@ namespace Sdk4me.GraphQL
     public enum NoteMedium
     {
         /// <summary>
+        /// Ai.
+        /// </summary>
+        [EnumMember(Value = "ai")]
+        Ai = 1,
+        /// <summary>
         /// Automation.
         /// </summary>
         [EnumMember(Value = "automation")]
-        Automation = 1,
+        Automation,
         /// <summary>
         /// Default.
         /// </summary>

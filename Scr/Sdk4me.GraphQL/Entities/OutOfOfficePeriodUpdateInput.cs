@@ -10,6 +10,7 @@ namespace Sdk4me.GraphQL
     {
         private string? approvalDelegateId;
         private string? clientMutationId;
+        private string? effortClassId;
         private DateTime? endAt;
         private string id;
         private string? personId;
@@ -37,6 +38,16 @@ namespace Sdk4me.GraphQL
         {
             get => clientMutationId;
             set => clientMutationId = Set("clientMutationId", value);
+        }
+
+        /// <summary>
+        /// Used to generate time entries for the out of office period. This field is required if the timesheet settings linked to the person's organization has one or more effort classes.
+        /// </summary>
+        [JsonProperty("effortClassId")]
+        public string? EffortClassId
+        {
+            get => effortClassId;
+            set => effortClassId = Set("effortClassId", value);
         }
 
         /// <summary>

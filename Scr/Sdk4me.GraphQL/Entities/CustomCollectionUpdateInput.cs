@@ -16,6 +16,7 @@ namespace Sdk4me.GraphQL
         private string id;
         private string? name;
         private List<CustomCollectionElementInput>? newCollectionElements;
+        private string? pictureUri;
         private string? reference;
         private string? source;
         private string? sourceID;
@@ -99,6 +100,16 @@ namespace Sdk4me.GraphQL
         {
             get => newCollectionElements;
             set => newCollectionElements = Set("newCollectionElements", value);
+        }
+
+        /// <summary>
+        /// The hyperlink to the image file for the record.
+        /// </summary>
+        [JsonProperty("pictureUri")]
+        public string? PictureUri
+        {
+            get => pictureUri;
+            set => pictureUri = Set("pictureUri", value);
         }
 
         /// <summary>
