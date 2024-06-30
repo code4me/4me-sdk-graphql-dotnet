@@ -218,6 +218,34 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Creates a new, published, app offering based on the current state of a draft app offering.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="input">The mutation to execute.</param>
+        /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        [Obsolete("Use Mutation(this Client client, MutationClass mutation, QueryClass responseQuery, bool throwOnError = true) instead. This method will be removed by February 2025.")]
+        public static async Task<AppOfferingPublishMutationPayload> Mutation(this Sdk4meClient client, AppOfferingPublishMutationInput input, bool throwOnError = true)
+        {
+            return await client.Mutation(new AppOfferingPublishMutation(input, new AppOfferingQuery()), throwOnError);
+        }
+
+        /// <summary>
+        /// Creates a new, published, app offering based on the current state of a draft app offering.
+        /// </summary>
+        /// <param name="client">The <see cref="Sdk4meClient"/>.</param>
+        /// <param name="input">The mutation to execute.</param>
+        /// <param name="query">The app offering response query. Pagination is not supported on connections.</param>
+        /// <param name="throwOnError">Throw an <see cref="Sdk4meException"/> when the mutation fails.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException"></exception>
+        public static async Task<AppOfferingPublishMutationPayload> Mutation(this Sdk4meClient client, AppOfferingPublishMutationInput input, AppOfferingQuery query, bool throwOnError = true)
+        {
+            return await client.Mutation(new AppOfferingPublishMutation(input, query), throwOnError);
+        }
+
+        /// <summary>
         /// Updates an existing app offering.
         /// </summary>
         /// <param name="client">The <see cref="Sdk4meClient"/>.</param>

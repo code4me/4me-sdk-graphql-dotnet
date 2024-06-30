@@ -709,7 +709,7 @@ namespace Sdk4me.GraphQL
     public enum NoteMedium
     {
         /// <summary>
-        /// Ai.
+        /// AI.
         /// </summary>
         [EnumMember(Value = "ai")]
         Ai = 1,

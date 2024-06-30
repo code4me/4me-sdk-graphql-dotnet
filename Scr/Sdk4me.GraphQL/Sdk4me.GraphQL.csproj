@@ -12,7 +12,7 @@
     <Title>Sdk4me.GraphQL</Title>
     <Authors>Klaas Vandeweerdt</Authors>
     <Description>A .NET client for accessing the 4me GraphQL API</Description>
-    <Copyright>MIT License</Copyright>
+    <Copyright>Copyright © 2024 Vandeweerdt Klaas</Copyright>
     <PackageProjectUrl>https://developer.4me.com/graphql</PackageProjectUrl>
     <RepositoryUrl>https://github.com/code4me/4me-sdk-graphql-dotnet</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
