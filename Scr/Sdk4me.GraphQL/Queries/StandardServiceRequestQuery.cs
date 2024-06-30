@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="StandardServiceRequest">StandardServiceRequest</see> query.
     /// </summary>
-    public class StandardServiceRequestQuery : Query<StandardServiceRequestQuery, StandardServiceRequestField, DefaultView, DefaultOrderField>
+    public class StandardServiceRequestQuery : Query<StandardServiceRequestQuery, StandardServiceRequestField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new standard service request query instance.

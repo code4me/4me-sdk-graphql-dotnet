@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving FirstLineSupportAgreement records.
     /// </summary>
-    public class FirstLineSupportAgreementQuery : Query<FirstLineSupportAgreementQuery, FirstLineSupportAgreementField, FirstLineSupportAgreementView, FirstLineSupportAgreementOrderField>
+    public class FirstLineSupportAgreementQuery : Query<FirstLineSupportAgreementQuery, FirstLineSupportAgreementField, FirstLineSupportAgreementView, FirstLineSupportAgreementFilter, FirstLineSupportAgreementOrderField>
     {
         /// <summary>
         /// Initialize a new first line support agreement query instance.

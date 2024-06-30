@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="EmailTemplate">EmailTemplate</see> query.
     /// </summary>
-    public class EmailTemplateQuery : Query<EmailTemplateQuery, EmailTemplateField, DefaultView, DefaultOrderField>
+    public class EmailTemplateQuery : Query<EmailTemplateQuery, EmailTemplateField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new email template query instance.

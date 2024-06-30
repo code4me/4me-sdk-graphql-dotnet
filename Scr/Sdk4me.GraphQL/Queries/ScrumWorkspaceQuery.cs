@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving ScrumWorkspace records.
     /// </summary>
-    public class ScrumWorkspaceQuery : Query<ScrumWorkspaceQuery, ScrumWorkspaceField, ScrumWorkspaceView, ScrumWorkspaceOrderField>
+    public class ScrumWorkspaceQuery : Query<ScrumWorkspaceQuery, ScrumWorkspaceField, ScrumWorkspaceView, ScrumWorkspaceFilter, ScrumWorkspaceOrderField>
     {
         /// <summary>
         /// Initialize a new scrum workspace query instance.

@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving SlaNotificationScheme records.
     /// </summary>
-    public class SlaNotificationSchemeQuery : Query<SlaNotificationSchemeQuery, SlaNotificationSchemeField, DefaultView, DefaultOrderField>
+    public class SlaNotificationSchemeQuery : Query<SlaNotificationSchemeQuery, SlaNotificationSchemeField, DefaultView, SlaNotificationSchemeFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new sla notification scheme query instance.

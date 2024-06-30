@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="AppOfferingScope">AppOfferingScope</see> query.
     /// </summary>
-    public class AppOfferingScopeQuery : Query<AppOfferingScopeQuery, AppOfferingScopeField, DefaultView, DefaultOrderField>
+    public class AppOfferingScopeQuery : Query<AppOfferingScopeQuery, AppOfferingScopeField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new app offering scope query instance.

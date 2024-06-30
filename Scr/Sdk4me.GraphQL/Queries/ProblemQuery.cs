@@ -5,7 +5,7 @@ namespace Sdk4me.GraphQL
     /// <summary>
     /// Root connection for retrieving Problem records.
     /// </summary>
-    public class ProblemQuery : Query<ProblemQuery, ProblemField, ProblemView, ProblemOrderField>
+    public class ProblemQuery : Query<ProblemQuery, ProblemField, ProblemView, ProblemFilter, ProblemOrderField>
     {
         /// <summary>
         /// Initialize a new problem query instance.

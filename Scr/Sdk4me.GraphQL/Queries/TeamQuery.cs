@@ -5,7 +5,7 @@ namespace Sdk4me.GraphQL
     /// <summary>
     /// Root connection for retrieving Team records.
     /// </summary>
-    public class TeamQuery : Query<TeamQuery, TeamField, TeamView, TeamOrderField>
+    public class TeamQuery : Query<TeamQuery, TeamField, TeamView, TeamFilter, TeamOrderField>
     {
         /// <summary>
         /// Initialize a new team query instance.

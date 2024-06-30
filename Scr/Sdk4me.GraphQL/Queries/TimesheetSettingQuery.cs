@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving TimesheetSetting records.
     /// </summary>
-    public class TimesheetSettingQuery : Query<TimesheetSettingQuery, TimesheetSettingField, DefaultView, DefaultOrderField>
+    public class TimesheetSettingQuery : Query<TimesheetSettingQuery, TimesheetSettingField, DefaultView, TimesheetSettingFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new timesheet setting query instance.

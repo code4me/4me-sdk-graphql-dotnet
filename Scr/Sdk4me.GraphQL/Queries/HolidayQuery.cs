@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving Holiday records.
     /// </summary>
-    public class HolidayQuery : Query<HolidayQuery, HolidayField, DefaultView, DefaultOrderField>
+    public class HolidayQuery : Query<HolidayQuery, HolidayField, DefaultView, HolidayFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new holiday query instance.

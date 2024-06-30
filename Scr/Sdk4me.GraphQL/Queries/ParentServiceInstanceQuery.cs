@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="ParentServiceInstance">ParentServiceInstance</see> query.
     /// </summary>
-    public class ParentServiceInstanceQuery : Query<ParentServiceInstanceQuery, ParentServiceInstanceField, DefaultView, DefaultOrderField>
+    public class ParentServiceInstanceQuery : Query<ParentServiceInstanceQuery, ParentServiceInstanceField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new parent service instance query instance.

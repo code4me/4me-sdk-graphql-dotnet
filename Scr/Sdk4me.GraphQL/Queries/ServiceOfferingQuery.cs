@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving ServiceOffering records.
     /// </summary>
-    public class ServiceOfferingQuery : Query<ServiceOfferingQuery, ServiceOfferingField, ServiceOfferingView, ServiceOfferingOrderField>
+    public class ServiceOfferingQuery : Query<ServiceOfferingQuery, ServiceOfferingField, ServiceOfferingView, ServiceOfferingFilter, ServiceOfferingOrderField>
     {
         /// <summary>
         /// Initialize a new service offering query instance.

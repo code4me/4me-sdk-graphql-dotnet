@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving ShopArticleCategory records.
     /// </summary>
-    public class ShopArticleCategoryQuery : Query<ShopArticleCategoryQuery, ShopArticleCategoryField, ShopArticleCategoryView, ShopArticleCategoryOrderField>
+    public class ShopArticleCategoryQuery : Query<ShopArticleCategoryQuery, ShopArticleCategoryField, ShopArticleCategoryView, ShopArticleCategoryFilter, ShopArticleCategoryOrderField>
     {
         /// <summary>
         /// Initialize a new shop article category query instance.

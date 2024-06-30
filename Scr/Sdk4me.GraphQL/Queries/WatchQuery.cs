@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="Watch">Watch</see> query.
     /// </summary>
-    public class WatchQuery : Query<WatchQuery, WatchField, DefaultView, DefaultOrderField>
+    public class WatchQuery : Query<WatchQuery, WatchField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new watch query instance.

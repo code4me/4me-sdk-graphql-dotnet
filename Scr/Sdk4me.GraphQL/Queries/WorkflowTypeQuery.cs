@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving WorkflowType records.
     /// </summary>
-    public class WorkflowTypeQuery : Query<WorkflowTypeQuery, WorkflowTypeField, DefaultView, DefaultOrderField>
+    public class WorkflowTypeQuery : Query<WorkflowTypeQuery, WorkflowTypeField, DefaultView, WorkflowTypeFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new workflow type query instance.

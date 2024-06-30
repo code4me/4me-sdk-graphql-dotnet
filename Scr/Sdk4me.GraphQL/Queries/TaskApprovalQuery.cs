@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="TaskApproval">TaskApproval</see> query.
     /// </summary>
-    public class TaskApprovalQuery : Query<TaskApprovalQuery, TaskApprovalField, DefaultView, DefaultOrderField>
+    public class TaskApprovalQuery : Query<TaskApprovalQuery, TaskApprovalField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new task approval query instance.

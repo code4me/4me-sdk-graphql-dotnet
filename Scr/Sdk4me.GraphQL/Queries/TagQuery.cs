@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="Tag">Tag</see> query.
     /// </summary>
-    public class TagQuery : Query<TagQuery, TagField, DefaultView, DefaultOrderField>
+    public class TagQuery : Query<TagQuery, TagField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new tag query instance.

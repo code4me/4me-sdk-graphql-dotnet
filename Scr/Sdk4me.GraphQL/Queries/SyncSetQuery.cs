@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving SyncSet records.
     /// </summary>
-    public class SyncSetQuery : Query<SyncSetQuery, SyncSetField, DefaultView, DefaultOrderField>
+    public class SyncSetQuery : Query<SyncSetQuery, SyncSetField, DefaultView, SyncSetFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new sync set query instance.

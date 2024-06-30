@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving ShopOrderLine records.
     /// </summary>
-    public class ShopOrderLineQuery : Query<ShopOrderLineQuery, ShopOrderLineField, ShopOrderLineView, ShopOrderLineOrderField>
+    public class ShopOrderLineQuery : Query<ShopOrderLineQuery, ShopOrderLineField, ShopOrderLineView, ShopOrderLineFilter, ShopOrderLineOrderField>
     {
         /// <summary>
         /// Initialize a new shop order line query instance.

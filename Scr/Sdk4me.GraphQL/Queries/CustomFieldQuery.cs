@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="CustomField">CustomField</see> query.
     /// </summary>
-    public class CustomFieldQuery : Query<CustomFieldQuery, CustomFieldField, DefaultView, DefaultOrderField>
+    public class CustomFieldQuery : Query<CustomFieldQuery, CustomFieldField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new custom field query instance.

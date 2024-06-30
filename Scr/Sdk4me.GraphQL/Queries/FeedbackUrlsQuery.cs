@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="FeedbackUrls">FeedbackUrls</see> query.
     /// </summary>
-    public class FeedbackUrlsQuery : Query<FeedbackUrlsQuery, FeedbackUrlsField, DefaultView, DefaultOrderField>
+    public class FeedbackUrlsQuery : Query<FeedbackUrlsQuery, FeedbackUrlsField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new feedback urls query instance.

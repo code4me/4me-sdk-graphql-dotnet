@@ -5,7 +5,7 @@ namespace Sdk4me.GraphQL
     /// <summary>
     /// Root connection for retrieving Task records.
     /// </summary>
-    public class TaskQuery : Query<TaskQuery, TaskField, TaskView, TaskOrderField>
+    public class TaskQuery : Query<TaskQuery, TaskField, TaskView, TaskFilter, TaskOrderField>
     {
         /// <summary>
         /// Initialize a new task query instance.

@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving RequestTemplate records.
     /// </summary>
-    public class RequestTemplateQuery : Query<RequestTemplateQuery, RequestTemplateField, RequestTemplateView, RequestTemplateOrderField>
+    public class RequestTemplateQuery : Query<RequestTemplateQuery, RequestTemplateField, RequestTemplateView, RequestTemplateFilter, RequestTemplateOrderField>
     {
         /// <summary>
         /// Initialize a new request template query instance.

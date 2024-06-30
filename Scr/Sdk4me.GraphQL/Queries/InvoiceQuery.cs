@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving Invoice records.
     /// </summary>
-    public class InvoiceQuery : Query<InvoiceQuery, InvoiceField, InvoiceView, InvoiceOrderField>
+    public class InvoiceQuery : Query<InvoiceQuery, InvoiceField, InvoiceView, InvoiceFilter, InvoiceOrderField>
     {
         /// <summary>
         /// Initialize a new invoice query instance.

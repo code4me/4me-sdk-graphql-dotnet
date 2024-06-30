@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="Note">Note</see> query.
     /// </summary>
-    public class NoteQuery : Query<NoteQuery, NoteField, DefaultView, DefaultOrderField>
+    public class NoteQuery : Query<NoteQuery, NoteField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new note query instance.

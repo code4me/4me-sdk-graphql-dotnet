@@ -5,7 +5,7 @@ namespace Sdk4me.GraphQL
     /// <summary>
     /// Root connection for retrieving ServiceInstance records.
     /// </summary>
-    public class ServiceInstanceQuery : Query<ServiceInstanceQuery, ServiceInstanceField, ServiceInstanceView, ServiceInstanceOrderField>
+    public class ServiceInstanceQuery : Query<ServiceInstanceQuery, ServiceInstanceField, ServiceInstanceView, ServiceInstanceFilter, ServiceInstanceOrderField>
     {
         /// <summary>
         /// Initialize a new service instance query instance.

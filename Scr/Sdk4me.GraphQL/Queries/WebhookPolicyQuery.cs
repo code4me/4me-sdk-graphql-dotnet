@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving WebhookPolicy records.
     /// </summary>
-    public class WebhookPolicyQuery : Query<WebhookPolicyQuery, WebhookPolicyField, DefaultView, DefaultOrderField>
+    public class WebhookPolicyQuery : Query<WebhookPolicyQuery, WebhookPolicyField, DefaultView, WebhookPolicyFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new webhook policy query instance.

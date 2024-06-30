@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving PdfDesign records.
     /// </summary>
-    public class PdfDesignQuery : Query<PdfDesignQuery, PdfDesignField, DefaultView, DefaultOrderField>
+    public class PdfDesignQuery : Query<PdfDesignQuery, PdfDesignField, DefaultView, PdfDesignFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new pdf design query instance.

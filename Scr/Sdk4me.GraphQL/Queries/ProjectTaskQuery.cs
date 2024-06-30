@@ -5,7 +5,7 @@ namespace Sdk4me.GraphQL
     /// <summary>
     /// Root connection for retrieving ProjectTask records.
     /// </summary>
-    public class ProjectTaskQuery : Query<ProjectTaskQuery, ProjectTaskField, ProjectTaskView, ProjectTaskOrderField>
+    public class ProjectTaskQuery : Query<ProjectTaskQuery, ProjectTaskField, ProjectTaskView, ProjectTaskFilter, ProjectTaskOrderField>
     {
         /// <summary>
         /// Initialize a new project task query instance.

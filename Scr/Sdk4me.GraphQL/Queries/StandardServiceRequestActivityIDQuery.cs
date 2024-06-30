@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="StandardServiceRequestActivityID">StandardServiceRequestActivityID</see> query.
     /// </summary>
-    public class StandardServiceRequestActivityIDQuery : Query<StandardServiceRequestActivityIDQuery, StandardServiceRequestActivityIDField, DefaultView, DefaultOrderField>
+    public class StandardServiceRequestActivityIDQuery : Query<StandardServiceRequestActivityIDQuery, StandardServiceRequestActivityIDField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new standard service request activity id query instance.

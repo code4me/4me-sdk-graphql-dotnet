@@ -30,7 +30,11 @@ namespace Sdk4me.GraphQL.Tests
         [TestMethod]
         public void Create()
         {
-            WebhookPolicyCreatePayload webhookPolicyCreatePayload = client.Mutation(new WebhookPolicyCreateInput(WebhookPolicyJwtAlg.Rs512) { Disabled = false, ClientMutationId = "CMID" }).Result;
+            WebhookPolicyCreatePayload webhookPolicyCreatePayload = client.Mutation(
+                new WebhookPolicyCreateInput(WebhookPolicyJwtAlg.Rs512) { Disabled = false, ClientMutationId = "CMID" }, 
+                new WebhookPolicyCreateResponseQuery().Select(WebhookPolicyCreateResponseField.ID, WebhookPolicyCreateResponseField.PublicKeyPem)
+                ).Result;
+
             Assert.IsNotNull(webhookPolicyCreatePayload);
             Assert.IsNotNull(webhookPolicyCreatePayload.WebhookPolicy);
             Assert.IsFalse(string.IsNullOrWhiteSpace(webhookPolicyCreatePayload.WebhookPolicy.PublicKeyPem));

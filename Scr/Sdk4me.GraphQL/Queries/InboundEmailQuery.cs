@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="InboundEmail">InboundEmail</see> query.
     /// </summary>
-    public class InboundEmailQuery : Query<InboundEmailQuery, InboundEmailField, DefaultView, DefaultOrderField>
+    public class InboundEmailQuery : Query<InboundEmailQuery, InboundEmailField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new inbound email query instance.

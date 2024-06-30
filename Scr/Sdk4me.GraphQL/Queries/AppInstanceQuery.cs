@@ -5,7 +5,7 @@ namespace Sdk4me.GraphQL
     /// <summary>
     /// Root connection for retrieving AppInstance records.
     /// </summary>
-    public class AppInstanceQuery : Query<AppInstanceQuery, AppInstanceField, AppInstanceView, AppInstanceOrderField>
+    public class AppInstanceQuery : Query<AppInstanceQuery, AppInstanceField, AppInstanceView, AppInstanceFilter, AppInstanceOrderField>
     {
         /// <summary>
         /// Initialize a new app instance query instance.

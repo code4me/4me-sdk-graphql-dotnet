@@ -10,12 +10,14 @@ namespace Sdk4me.GraphQL
     /// <typeparam name="TEntity">Any type implementing <see cref="Node"/>.</typeparam>
     /// <typeparam name="TFields">Any enumerator.</typeparam>
     /// <typeparam name="TView">Any enumerator.</typeparam>
+    /// <typeparam name="TFilterFields">Any enumerator.</typeparam>
     /// <typeparam name="TOrderBy">Any enumerator.</typeparam>
-    public abstract class Query<TEntity, TFields, TView, TOrderBy> : IQuery
-    where TEntity : Query<TEntity, TFields, TView, TOrderBy>
-    where TFields : Enum
-    where TView : Enum
-    where TOrderBy : Enum
+    public abstract class Query<TEntity, TFields, TView, TFilterFields, TOrderBy> : IQuery
+        where TEntity : Query<TEntity, TFields, TView, TFilterFields, TOrderBy>
+        where TFields : Enum
+        where TView : Enum
+        where TFilterFields: Enum
+        where TOrderBy : Enum
     {
         private HashSet<string> fields = new();
         private readonly Type dataType = typeof(TEntity);
@@ -339,7 +341,21 @@ namespace Sdk4me.GraphQL
         /// <param name="values">The filter values.</param>
         /// <returns>The current <see cref="IQuery"/>.</returns>
         /// <exception cref="NullReferenceException"></exception>
+        [Obsolete("Use Filter(TFilterFields field, FilterOperator filterOperator, params string?[] values) instead. This method will be removed by February 2025.")]
         public TEntity Filter(TFields field, FilterOperator filterOperator, params string?[] values)
+        {
+            return Filter(field.GetEnumMemberValue(), filterOperator, values);
+        }
+
+        /// <summary>
+        /// Add a filter to the query.
+        /// </summary>
+        /// <param name="field">The field name.</param>
+        /// <param name="filterOperator">The filter operator.</param>
+        /// <param name="values">The filter values.</param>
+        /// <returns>The current <see cref="IQuery"/>.</returns>
+        /// <exception cref="NullReferenceException"></exception>
+        public TEntity Filter(TFilterFields field, FilterOperator filterOperator, params string?[] values)
         {
             return Filter(field.GetEnumMemberValue(), filterOperator, values);
         }
@@ -364,7 +380,20 @@ namespace Sdk4me.GraphQL
         /// <param name="filterOperator">The filter operator, which should be <c>Present</c> or <c>Blankt</c>.</param>
         /// <returns>The current <see cref="IQuery"/>.</returns>
         /// <exception cref="NullReferenceException"></exception>
+        [Obsolete("Use Filter(TFilterFields field, FilterOperator filterOperator) instead. This method will be removed by February 2025.")]
         public TEntity Filter(TFields field, FilterOperator filterOperator)
+        {
+            return Filter(field.GetEnumMemberValue(), filterOperator);
+        }
+
+        /// <summary>
+        /// Add a filter to the query.
+        /// </summary>
+        /// <param name="field">The field name.</param>
+        /// <param name="filterOperator">The filter operator, which should be <c>Present</c> or <c>Blankt</c>.</param>
+        /// <returns>The current <see cref="IQuery"/>.</returns>
+        /// <exception cref="NullReferenceException"></exception>
+        public TEntity Filter(TFilterFields field, FilterOperator filterOperator)
         {
             return Filter(field.GetEnumMemberValue(), filterOperator);
         }
@@ -391,7 +420,21 @@ namespace Sdk4me.GraphQL
         /// <param name="values">The filter values.</param>
         /// <returns>The current <see cref="IQuery"/>.</returns>
         /// <exception cref="NullReferenceException"></exception>
+        [Obsolete("Use Filter(TFilterFields field, FilterOperator filterOperator, params DateTime?[] values) instead. This method will be removed by February 2025.")]
         public TEntity Filter(TFields field, FilterOperator filterOperator, params DateTime?[] values)
+        {
+            return Filter(field.GetEnumMemberValue(), filterOperator, values);
+        }
+
+        /// <summary>
+        /// Add a filter to the query.
+        /// </summary>
+        /// <param name="field">The field name.</param>
+        /// <param name="filterOperator">The filter operator.</param>
+        /// <param name="values">The filter values.</param>
+        /// <returns>The current <see cref="IQuery"/>.</returns>
+        /// <exception cref="NullReferenceException"></exception>
+        public TEntity Filter(TFilterFields field, FilterOperator filterOperator, params DateTime?[] values)
         {
             return Filter(field.GetEnumMemberValue(), filterOperator, values);
         }
@@ -418,7 +461,21 @@ namespace Sdk4me.GraphQL
         /// <param name="value">The filter value.</param>
         /// <returns>The current <see cref="IQuery"/>.</returns>
         /// <exception cref="NullReferenceException"></exception>
+        [Obsolete("Use Filter(TFilterFields field, FilterOperator filterOperator, bool value) instead. This method will be removed by February 2025.")]
         public TEntity Filter(TFields field, FilterOperator filterOperator, bool value)
+        {
+            return Filter(field.GetEnumMemberValue(), filterOperator, value);
+        }
+
+        /// <summary>
+        /// Add a filter to the query.
+        /// </summary>
+        /// <param name="field">The field name.</param>
+        /// <param name="filterOperator">The filter operator.</param>
+        /// <param name="value">The filter value.</param>
+        /// <returns>The current <see cref="IQuery"/>.</returns>
+        /// <exception cref="NullReferenceException"></exception>
+        public TEntity Filter(TFilterFields field, FilterOperator filterOperator, bool value)
         {
             return Filter(field.GetEnumMemberValue(), filterOperator, value);
         }
@@ -453,9 +510,9 @@ namespace Sdk4me.GraphQL
         ///  Clone the Query object excluding OnTypeQueries.
         /// </summary>
         /// <returns>A new instance of the Query object with the OnType query values.</returns>
-        internal protected Query<TEntity, TFields, TView, TOrderBy> Clone()
+        internal protected Query<TEntity, TFields, TView, TFilterFields, TOrderBy> Clone()
         {
-            Query<TEntity, TFields, TView, TOrderBy> clone = (Query<TEntity, TFields, TView, TOrderBy>)MemberwiseClone();
+            Query<TEntity, TFields, TView, TFilterFields, TOrderBy> clone = (Query<TEntity, TFields, TView, TFilterFields, TOrderBy>)MemberwiseClone();
             clone.fields = new(fields);
             clone.queries = new(queries);
             clone.filters = new(filters);

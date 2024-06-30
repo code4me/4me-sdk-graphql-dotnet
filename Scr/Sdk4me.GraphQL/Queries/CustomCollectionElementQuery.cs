@@ -5,7 +5,7 @@ namespace Sdk4me.GraphQL
     /// <summary>
     /// Root connection for retrieving CustomCollectionElement records.
     /// </summary>
-    public class CustomCollectionElementQuery : Query<CustomCollectionElementQuery, CustomCollectionElementField, CustomCollectionElementView, CustomCollectionElementOrderField>
+    public class CustomCollectionElementQuery : Query<CustomCollectionElementQuery, CustomCollectionElementField, CustomCollectionElementView, CustomCollectionElementFilter, CustomCollectionElementOrderField>
     {
         /// <summary>
         /// Initialize a new custom collection element query instance.

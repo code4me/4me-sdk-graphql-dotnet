@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="EffortClassRate">EffortClassRate</see> query.
     /// </summary>
-    public class EffortClassRateQuery : Query<EffortClassRateQuery, EffortClassRateField, DefaultView, DefaultOrderField>
+    public class EffortClassRateQuery : Query<EffortClassRateQuery, EffortClassRateField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new effort class rate query instance.

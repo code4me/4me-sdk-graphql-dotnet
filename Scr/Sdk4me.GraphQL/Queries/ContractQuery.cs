@@ -5,7 +5,7 @@ namespace Sdk4me.GraphQL
     /// <summary>
     /// Root connection for retrieving Contract records.
     /// </summary>
-    public class ContractQuery : Query<ContractQuery, ContractField, ContractView, ContractOrderField>
+    public class ContractQuery : Query<ContractQuery, ContractField, ContractView, ContractFilter, ContractOrderField>
     {
         /// <summary>
         /// Initialize a new contract query instance.

@@ -5,7 +5,7 @@ namespace Sdk4me.GraphQL
     /// <summary>
     /// Root connection for retrieving Workflow records.
     /// </summary>
-    public class WorkflowQuery : Query<WorkflowQuery, WorkflowField, WorkflowView, WorkflowOrderField>
+    public class WorkflowQuery : Query<WorkflowQuery, WorkflowField, WorkflowView, WorkflowFilter, WorkflowOrderField>
     {
         /// <summary>
         /// Initialize a new workflow query instance.

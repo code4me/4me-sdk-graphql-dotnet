@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="Record">Record</see> query.
     /// </summary>
-    public class RecordQuery : Query<RecordQuery, RecordField, DefaultView, DefaultOrderField>
+    public class RecordQuery : Query<RecordQuery, RecordField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new record query instance.

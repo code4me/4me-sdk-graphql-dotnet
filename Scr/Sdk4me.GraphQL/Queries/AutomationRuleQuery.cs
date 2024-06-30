@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving AutomationRule records.
     /// </summary>
-    public class AutomationRuleQuery : Query<AutomationRuleQuery, AutomationRuleField, AutomationRuleView, AutomationRuleOrderField>
+    public class AutomationRuleQuery : Query<AutomationRuleQuery, AutomationRuleField, AutomationRuleView, AutomationRuleFilter, AutomationRuleOrderField>
     {
         /// <summary>
         /// Initialize a new automation rule query instance.

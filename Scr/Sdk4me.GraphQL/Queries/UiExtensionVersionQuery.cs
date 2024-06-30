@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="UiExtensionVersion">UiExtensionVersion</see> query.
     /// </summary>
-    public class UiExtensionVersionQuery : Query<UiExtensionVersionQuery, UiExtensionVersionField, DefaultView, DefaultOrderField>
+    public class UiExtensionVersionQuery : Query<UiExtensionVersionQuery, UiExtensionVersionField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new ui extension version query instance.

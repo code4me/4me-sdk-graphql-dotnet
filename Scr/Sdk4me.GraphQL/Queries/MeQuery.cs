@@ -3,7 +3,7 @@
     /// <summary>
     /// The currently authenticated person.
     /// </summary>
-    public class MeQuery : Query<MeQuery, PersonField, DefaultView, DefaultOrderField>
+    public class MeQuery : Query<MeQuery, PersonField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new person query instance.

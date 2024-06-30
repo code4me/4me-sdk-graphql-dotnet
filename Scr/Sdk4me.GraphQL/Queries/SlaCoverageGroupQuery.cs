@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="SlaCoverageGroup">SlaCoverageGroup</see> query.
     /// </summary>
-    public class SlaCoverageGroupQuery : Query<SlaCoverageGroupQuery, SlaCoverageGroupField, DefaultView, DefaultOrderField>
+    public class SlaCoverageGroupQuery : Query<SlaCoverageGroupQuery, SlaCoverageGroupField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new sla coverage group query instance.

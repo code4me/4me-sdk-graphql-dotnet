@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving ProjectTemplate records.
     /// </summary>
-    public class ProjectTemplateQuery : Query<ProjectTemplateQuery, ProjectTemplateField, ProjectTemplateView, ProjectTemplateOrderField>
+    public class ProjectTemplateQuery : Query<ProjectTemplateQuery, ProjectTemplateField, ProjectTemplateView, ProjectTemplateFilter, ProjectTemplateOrderField>
     {
         /// <summary>
         /// Initialize a new project template query instance.

@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving ServiceCategory records.
     /// </summary>
-    public class ServiceCategoryQuery : Query<ServiceCategoryQuery, ServiceCategoryField, DefaultView, DefaultOrderField>
+    public class ServiceCategoryQuery : Query<ServiceCategoryQuery, ServiceCategoryField, DefaultView, ServiceCategoryFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new service category query instance.

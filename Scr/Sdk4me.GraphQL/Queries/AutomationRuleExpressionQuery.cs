@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="AutomationRuleExpression">AutomationRuleExpression</see> query.
     /// </summary>
-    public class AutomationRuleExpressionQuery : Query<AutomationRuleExpressionQuery, AutomationRuleExpressionField, DefaultView, DefaultOrderField>
+    public class AutomationRuleExpressionQuery : Query<AutomationRuleExpressionQuery, AutomationRuleExpressionField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new automation rule expression query instance.

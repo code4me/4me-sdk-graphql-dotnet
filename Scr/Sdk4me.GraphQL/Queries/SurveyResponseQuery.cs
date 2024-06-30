@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving SurveyResponse records.
     /// </summary>
-    public class SurveyResponseQuery : Query<SurveyResponseQuery, SurveyResponseField, SurveyResponseView, SurveyResponseOrderField>
+    public class SurveyResponseQuery : Query<SurveyResponseQuery, SurveyResponseField, SurveyResponseView, SurveyResponseFilter, SurveyResponseOrderField>
     {
         /// <summary>
         /// Initialize a new survey response query instance.

@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving OutOfOfficePeriod records.
     /// </summary>
-    public class OutOfOfficePeriodQuery : Query<OutOfOfficePeriodQuery, OutOfOfficePeriodField, OutOfOfficePeriodView, OutOfOfficePeriodOrderField>
+    public class OutOfOfficePeriodQuery : Query<OutOfOfficePeriodQuery, OutOfOfficePeriodField, OutOfOfficePeriodView, OutOfOfficePeriodFilter, OutOfOfficePeriodOrderField>
     {
         /// <summary>
         /// Initialize a new out of office period query instance.

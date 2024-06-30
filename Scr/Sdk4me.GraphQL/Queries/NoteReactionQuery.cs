@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="NoteReaction">NoteReaction</see> query.
     /// </summary>
-    public class NoteReactionQuery : Query<NoteReactionQuery, NoteReactionField, DefaultView, DefaultOrderField>
+    public class NoteReactionQuery : Query<NoteReactionQuery, NoteReactionField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new note reaction query instance.

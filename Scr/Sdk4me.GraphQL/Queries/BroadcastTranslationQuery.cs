@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="BroadcastTranslation">BroadcastTranslation</see> query.
     /// </summary>
-    public class BroadcastTranslationQuery : Query<BroadcastTranslationQuery, BroadcastTranslationField, DefaultView, DefaultOrderField>
+    public class BroadcastTranslationQuery : Query<BroadcastTranslationQuery, BroadcastTranslationField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new broadcast translation query instance.

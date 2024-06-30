@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving ProductCategory records.
     /// </summary>
-    public class ProductCategoryQuery : Query<ProductCategoryQuery, ProductCategoryField, DefaultView, DefaultOrderField>
+    public class ProductCategoryQuery : Query<ProductCategoryQuery, ProductCategoryField, DefaultView, ProductCategoryFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new product category query instance.

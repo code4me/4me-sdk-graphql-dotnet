@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving UiExtension records.
     /// </summary>
-    public class UiExtensionQuery : Query<UiExtensionQuery, UiExtensionField, UiExtensionView, UiExtensionOrderField>
+    public class UiExtensionQuery : Query<UiExtensionQuery, UiExtensionField, UiExtensionView, UiExtensionFilter, UiExtensionOrderField>
     {
         /// <summary>
         /// Initialize a new ui extension query instance.

@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="ProjectTaskAssignment">ProjectTaskAssignment</see> query.
     /// </summary>
-    public class ProjectTaskAssignmentQuery : Query<ProjectTaskAssignmentQuery, ProjectTaskAssignmentField, DefaultView, DefaultOrderField>
+    public class ProjectTaskAssignmentQuery : Query<ProjectTaskAssignmentQuery, ProjectTaskAssignmentField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new project task assignment query instance.

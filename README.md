@@ -168,7 +168,7 @@ There are three methods to filtering: `Filter`, `CustomFilter` and, `FreeFormatF
 Filters can only be applied at the top level of the query.
 
 ```csharp
-IQuery query = Query.Person.Filter(PersonField.Name, FilterOperator.Equals, "Howard");
+IQuery query = Query.Person.Filter(PersonFilter.Name, FilterOperator.Equals, "Howard");
 ```
 The `Filter` method allows you to specify field filters at the top level of the query.
 You can define the field, the operator (e.g., equals, not equals), and the value to match against.
@@ -179,7 +179,7 @@ PersonQuery query = new PersonQuery("NG1lLnFhL1blcnNvbi8yMjMxSjIx");
 ```
 The `ID` filtering allows you to search for an object based on its unique ID.
 When using the `ID` filter, any additional filters and view selections will be ignored.
-It is recommended to use the ID filter instead of the `.Filter(PersonField.ID, FilterOperator.Equals, "")` approach, as it provides an average response time improvement of approximately 15%.
+It is recommended to use the ID filter instead of the `.Filter(PersonFilter.ID, FilterOperator.Equals, "")` approach, as it provides an average response time improvement of approximately 15%.
 
 ```csharp
 PersonQuery query = new PersonQuery()
@@ -204,7 +204,7 @@ Sorting can only be used on the top level query.
 PersonQuery query = new PersonQuery()
     .View(PersonView.All)
     .OrderBy(PersonOrderField.Vip, OrderBySortOrder.Descending)
-    .Filter(PersonField.CreatedAt, FilterOperator.GreaterThanOrEqualsTo, new DateTime(2020, 1, 1))
+    .Filter(PersonFilter.CreatedAt, FilterOperator.GreaterThanOrEqualsTo, new DateTime(2020, 1, 1))
     .SelectContacts(new ContactQuery()
         .SelectAll())
     .SelectPermissions(new PermissionQuery()
@@ -313,7 +313,7 @@ PersonUpdatePayload result = client.Mutation(new PersonUpdateInput()
 ```csharp
 var request = client.Get(new RequestQuery()
     .Select(RequestField.ID)
-    .Filter("requestId", FilterOperator.Equals, "123")
+    .Filter(RequestFilter.ID, FilterOperator.Equals, "123")
     ).Result.First();
 
 var response = client.UploadAttachment(@".\HelloWorld.txt", "text/plain").Result;
@@ -370,7 +370,7 @@ using (HttpClient httpClient = new())
 ```csharp
 var request = client.Get(new RequestQuery()
     .Select(RequestField.ID)
-    .Filter("requestId", FilterOperator.Equals, "123")
+    .Filter(RequestFilter.ID, FilterOperator.Equals, "123")
     ).Result.First();
 
 var attachment = client.UploadAttachment(@".\image.png", "image/png").Result;

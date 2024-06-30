@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving ProjectTaskTemplate records.
     /// </summary>
-    public class ProjectTaskTemplateQuery : Query<ProjectTaskTemplateQuery, ProjectTaskTemplateField, ProjectTaskTemplateView, ProjectTaskTemplateOrderField>
+    public class ProjectTaskTemplateQuery : Query<ProjectTaskTemplateQuery, ProjectTaskTemplateField, ProjectTaskTemplateView, ProjectTaskTemplateFilter, ProjectTaskTemplateOrderField>
     {
         /// <summary>
         /// Initialize a new project task template query instance.

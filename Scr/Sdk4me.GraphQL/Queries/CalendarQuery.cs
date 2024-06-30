@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving Calendar records.
     /// </summary>
-    public class CalendarQuery : Query<CalendarQuery, CalendarField, DefaultView, DefaultOrderField>
+    public class CalendarQuery : Query<CalendarQuery, CalendarField, DefaultView, CalendarFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new calendar query instance.

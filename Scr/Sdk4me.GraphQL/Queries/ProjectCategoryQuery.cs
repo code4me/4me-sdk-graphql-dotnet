@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving ProjectCategory records.
     /// </summary>
-    public class ProjectCategoryQuery : Query<ProjectCategoryQuery, ProjectCategoryField, DefaultView, DefaultOrderField>
+    public class ProjectCategoryQuery : Query<ProjectCategoryQuery, ProjectCategoryField, DefaultView, ProjectCategoryFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new project category query instance.

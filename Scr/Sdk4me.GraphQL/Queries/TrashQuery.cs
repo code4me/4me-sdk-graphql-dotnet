@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving Trash records.
     /// </summary>
-    public class TrashQuery : Query<TrashQuery, TrashField, TrashView, TrashOrderField>
+    public class TrashQuery : Query<TrashQuery, TrashField, TrashView, TrashFilter, TrashOrderField>
     {
         /// <summary>
         /// Initialize a new trash query instance.

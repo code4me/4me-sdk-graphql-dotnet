@@ -5,7 +5,7 @@ namespace Sdk4me.GraphQL
     /// <summary>
     /// Root connection for retrieving Risk records.
     /// </summary>
-    public class RiskQuery : Query<RiskQuery, RiskField, RiskView, RiskOrderField>
+    public class RiskQuery : Query<RiskQuery, RiskField, RiskView, RiskFilter, RiskOrderField>
     {
         /// <summary>
         /// Initialize a new risk query instance.

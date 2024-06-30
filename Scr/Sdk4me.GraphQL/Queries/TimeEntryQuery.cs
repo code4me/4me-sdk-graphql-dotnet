@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving TimeEntry records.
     /// </summary>
-    public class TimeEntryQuery : Query<TimeEntryQuery, TimeEntryField, TimeEntryView, TimeEntryOrderField>
+    public class TimeEntryQuery : Query<TimeEntryQuery, TimeEntryField, TimeEntryView, TimeEntryFilter, TimeEntryOrderField>
     {
         /// <summary>
         /// Initialize a new time entry query instance.

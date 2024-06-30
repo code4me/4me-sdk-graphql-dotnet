@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="Recurrence">Recurrence</see> query.
     /// </summary>
-    public class RecurrenceQuery : Query<RecurrenceQuery, RecurrenceField, DefaultView, DefaultOrderField>
+    public class RecurrenceQuery : Query<RecurrenceQuery, RecurrenceField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new recurrence query instance.

@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving TaskTemplate records.
     /// </summary>
-    public class TaskTemplateQuery : Query<TaskTemplateQuery, TaskTemplateField, TaskTemplateView, TaskTemplateOrderField>
+    public class TaskTemplateQuery : Query<TaskTemplateQuery, TaskTemplateField, TaskTemplateView, TaskTemplateFilter, TaskTemplateOrderField>
     {
         /// <summary>
         /// Initialize a new task template query instance.

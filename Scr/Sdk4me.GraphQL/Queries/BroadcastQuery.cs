@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving Broadcast records.
     /// </summary>
-    public class BroadcastQuery : Query<BroadcastQuery, BroadcastField, DefaultView, DefaultOrderField>
+    public class BroadcastQuery : Query<BroadcastQuery, BroadcastField, DefaultView, BroadcastFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new broadcast query instance.

@@ -5,7 +5,7 @@ namespace Sdk4me.GraphQL
     /// <summary>
     /// Root connection for retrieving Person records.
     /// </summary>
-    public class PersonQuery : Query<PersonQuery, PersonField, PersonView, PersonOrderField>
+    public class PersonQuery : Query<PersonQuery, PersonField, PersonView, PersonFilter, PersonOrderField>
     {
         /// <summary>
         /// Initialize a new person query instance.

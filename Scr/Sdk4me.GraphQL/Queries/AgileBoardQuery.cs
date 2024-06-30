@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving AgileBoard records.
     /// </summary>
-    public class AgileBoardQuery : Query<AgileBoardQuery, AgileBoardField, AgileBoardView, AgileBoardOrderField>
+    public class AgileBoardQuery : Query<AgileBoardQuery, AgileBoardField, AgileBoardView, AgileBoardFilter, AgileBoardOrderField>
     {
         /// <summary>
         /// Initialize a new agile board query instance.

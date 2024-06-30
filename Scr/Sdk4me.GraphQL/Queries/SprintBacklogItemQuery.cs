@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="SprintBacklogItem">SprintBacklogItem</see> query.
     /// </summary>
-    public class SprintBacklogItemQuery : Query<SprintBacklogItemQuery, SprintBacklogItemField, DefaultView, DefaultOrderField>
+    public class SprintBacklogItemQuery : Query<SprintBacklogItemQuery, SprintBacklogItemField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new sprint backlog item query instance.

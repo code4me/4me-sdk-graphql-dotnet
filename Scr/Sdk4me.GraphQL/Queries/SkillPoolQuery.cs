@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving SkillPool records.
     /// </summary>
-    public class SkillPoolQuery : Query<SkillPoolQuery, SkillPoolField, SkillPoolView, SkillPoolOrderField>
+    public class SkillPoolQuery : Query<SkillPoolQuery, SkillPoolField, SkillPoolView, SkillPoolFilter, SkillPoolOrderField>
     {
         /// <summary>
         /// Initialize a new skill pool query instance.

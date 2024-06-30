@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving RiskSeverity records.
     /// </summary>
-    public class RiskSeverityQuery : Query<RiskSeverityQuery, RiskSeverityField, DefaultView, DefaultOrderField>
+    public class RiskSeverityQuery : Query<RiskSeverityQuery, RiskSeverityField, DefaultView, RiskSeverityFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new risk severity query instance.

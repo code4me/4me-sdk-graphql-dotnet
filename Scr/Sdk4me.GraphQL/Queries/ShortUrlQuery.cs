@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving ShortUrl records.
     /// </summary>
-    public class ShortUrlQuery : Query<ShortUrlQuery, ShortUrlField, ShortUrlView, ShortUrlOrderField>
+    public class ShortUrlQuery : Query<ShortUrlQuery, ShortUrlField, ShortUrlView, ShortUrlFilter, ShortUrlOrderField>
     {
         /// <summary>
         /// Initialize a new short url query instance.

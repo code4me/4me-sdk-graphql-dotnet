@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="WebhookPolicyCreateResponse">WebhookPolicyCreateResponse</see> query.
     /// </summary>
-    public class WebhookPolicyCreateResponseQuery : Query<WebhookPolicyCreateResponseQuery, WebhookPolicyCreateResponseField, DefaultView, DefaultOrderField>
+    public class WebhookPolicyCreateResponseQuery : Query<WebhookPolicyCreateResponseQuery, WebhookPolicyCreateResponseField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new webhook policy create response query instance.

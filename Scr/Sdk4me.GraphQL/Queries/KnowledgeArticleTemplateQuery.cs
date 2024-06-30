@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving KnowledgeArticleTemplate records.
     /// </summary>
-    public class KnowledgeArticleTemplateQuery : Query<KnowledgeArticleTemplateQuery, KnowledgeArticleTemplateField, KnowledgeArticleTemplateView, KnowledgeArticleTemplateOrderField>
+    public class KnowledgeArticleTemplateQuery : Query<KnowledgeArticleTemplateQuery, KnowledgeArticleTemplateField, KnowledgeArticleTemplateView, KnowledgeArticleTemplateFilter, KnowledgeArticleTemplateOrderField>
     {
         /// <summary>
         /// Initialize a new knowledge article template query instance.

@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="ProjectTemplatePhase">ProjectTemplatePhase</see> query.
     /// </summary>
-    public class ProjectTemplatePhaseQuery : Query<ProjectTemplatePhaseQuery, ProjectTemplatePhaseField, DefaultView, DefaultOrderField>
+    public class ProjectTemplatePhaseQuery : Query<ProjectTemplatePhaseQuery, ProjectTemplatePhaseField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new project template phase query instance.

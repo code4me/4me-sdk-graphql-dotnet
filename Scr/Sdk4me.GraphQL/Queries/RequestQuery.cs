@@ -5,7 +5,7 @@ namespace Sdk4me.GraphQL
     /// <summary>
     /// Root connection for retrieving Request records.
     /// </summary>
-    public class RequestQuery : Query<RequestQuery, RequestField, RequestView, RequestOrderField>
+    public class RequestQuery : Query<RequestQuery, RequestField, RequestView, RequestFilter, RequestOrderField>
     {
         /// <summary>
         /// Initialize a new request query instance.

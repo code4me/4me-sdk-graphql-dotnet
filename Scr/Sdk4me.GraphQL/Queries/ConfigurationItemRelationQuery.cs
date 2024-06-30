@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="ConfigurationItemRelation">ConfigurationItemRelation</see> query.
     /// </summary>
-    public class ConfigurationItemRelationQuery : Query<ConfigurationItemRelationQuery, ConfigurationItemRelationField, DefaultView, DefaultOrderField>
+    public class ConfigurationItemRelationQuery : Query<ConfigurationItemRelationQuery, ConfigurationItemRelationField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new configuration item relation query instance.

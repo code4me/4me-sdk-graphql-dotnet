@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="WorkflowTemplatePhase">WorkflowTemplatePhase</see> query.
     /// </summary>
-    public class WorkflowTemplatePhaseQuery : Query<WorkflowTemplatePhaseQuery, WorkflowTemplatePhaseField, DefaultView, DefaultOrderField>
+    public class WorkflowTemplatePhaseQuery : Query<WorkflowTemplatePhaseQuery, WorkflowTemplatePhaseField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new workflow template phase query instance.

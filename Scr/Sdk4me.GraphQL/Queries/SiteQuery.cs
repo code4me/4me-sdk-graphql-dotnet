@@ -5,7 +5,7 @@ namespace Sdk4me.GraphQL
     /// <summary>
     /// Root connection for retrieving Site records.
     /// </summary>
-    public class SiteQuery : Query<SiteQuery, SiteField, SiteView, SiteOrderField>
+    public class SiteQuery : Query<SiteQuery, SiteField, SiteView, SiteFilter, SiteOrderField>
     {
         /// <summary>
         /// Initialize a new site query instance.

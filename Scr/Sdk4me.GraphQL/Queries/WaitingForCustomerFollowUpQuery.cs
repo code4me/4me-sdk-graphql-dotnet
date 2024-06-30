@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving WaitingForCustomerFollowUp records.
     /// </summary>
-    public class WaitingForCustomerFollowUpQuery : Query<WaitingForCustomerFollowUpQuery, WaitingForCustomerFollowUpField, DefaultView, DefaultOrderField>
+    public class WaitingForCustomerFollowUpQuery : Query<WaitingForCustomerFollowUpQuery, WaitingForCustomerFollowUpField, DefaultView, WaitingForCustomerFollowUpFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new waiting for customer follow up query instance.

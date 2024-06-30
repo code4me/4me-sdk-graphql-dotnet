@@ -5,7 +5,7 @@ namespace Sdk4me.GraphQL
     /// <summary>
     /// Root connection for retrieving Release records.
     /// </summary>
-    public class ReleaseQuery : Query<ReleaseQuery, ReleaseField, ReleaseView, ReleaseOrderField>
+    public class ReleaseQuery : Query<ReleaseQuery, ReleaseField, ReleaseView, ReleaseFilter, ReleaseOrderField>
     {
         /// <summary>
         /// Initialize a new release query instance.

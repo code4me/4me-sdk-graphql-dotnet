@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving ProductBacklog records.
     /// </summary>
-    public class ProductBacklogQuery : Query<ProductBacklogQuery, ProductBacklogField, ProductBacklogView, ProductBacklogOrderField>
+    public class ProductBacklogQuery : Query<ProductBacklogQuery, ProductBacklogField, ProductBacklogView, ProductBacklogFilter, ProductBacklogOrderField>
     {
         /// <summary>
         /// Initialize a new product backlog query instance.

@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving AffectedSla records.
     /// </summary>
-    public class AffectedSlaQuery : Query<AffectedSlaQuery, AffectedSlaField, AffectedSlaView, AffectedSlaOrderField>
+    public class AffectedSlaQuery : Query<AffectedSlaQuery, AffectedSlaField, AffectedSlaView, AffectedSlaFilter, AffectedSlaOrderField>
     {
         /// <summary>
         /// Initialize a new affected sla query instance.

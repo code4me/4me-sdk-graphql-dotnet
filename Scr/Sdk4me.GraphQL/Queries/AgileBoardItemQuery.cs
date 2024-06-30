@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="AgileBoardItem">AgileBoardItem</see> query.
     /// </summary>
-    public class AgileBoardItemQuery : Query<AgileBoardItemQuery, AgileBoardItemField, DefaultView, DefaultOrderField>
+    public class AgileBoardItemQuery : Query<AgileBoardItemQuery, AgileBoardItemField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new agile board item query instance.

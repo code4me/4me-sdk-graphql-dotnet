@@ -3,7 +3,7 @@
     /// <summary>
     /// The current account.
     /// </summary>
-    public class AccountQuery : Query<AccountQuery, AccountField, DefaultView, DefaultOrderField>
+    public class AccountQuery : Query<AccountQuery, AccountField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new account query instance.

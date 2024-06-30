@@ -5,7 +5,7 @@ namespace Sdk4me.GraphQL
     /// <summary>
     /// Root connection for retrieving Product records.
     /// </summary>
-    public class ProductQuery : Query<ProductQuery, ProductField, ProductView, ProductOrderField>
+    public class ProductQuery : Query<ProductQuery, ProductField, ProductView, ProductFilter, ProductOrderField>
     {
         /// <summary>
         /// Initialize a new product query instance.

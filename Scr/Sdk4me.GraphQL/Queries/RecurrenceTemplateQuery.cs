@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="RecurrenceTemplate">RecurrenceTemplate</see> query.
     /// </summary>
-    public class RecurrenceTemplateQuery : Query<RecurrenceTemplateQuery, RecurrenceTemplateField, DefaultView, DefaultOrderField>
+    public class RecurrenceTemplateQuery : Query<RecurrenceTemplateQuery, RecurrenceTemplateField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new recurrence template query instance.

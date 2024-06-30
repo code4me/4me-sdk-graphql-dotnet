@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving CustomCollection records.
     /// </summary>
-    public class CustomCollectionQuery : Query<CustomCollectionQuery, CustomCollectionField, DefaultView, DefaultOrderField>
+    public class CustomCollectionQuery : Query<CustomCollectionQuery, CustomCollectionField, DefaultView, CustomCollectionFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new custom collection query instance.

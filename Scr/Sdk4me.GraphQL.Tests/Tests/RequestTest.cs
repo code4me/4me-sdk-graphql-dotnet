@@ -57,5 +57,12 @@ namespace Sdk4me.GraphQL.Tests
                 Assert.IsTrue(request.GetIdentifier() == Convert.ToInt64(request.RequestId));
             }
         }
+
+        [TestMethod]
+        public void TestNewFilterEnumerator()
+        {
+            PersonQuery personQuery = new PersonQuery().Filter(PersonFilter.Team, FilterOperator.Present);
+            Assert.IsNotNull(personQuery);
+        }
     }
 }

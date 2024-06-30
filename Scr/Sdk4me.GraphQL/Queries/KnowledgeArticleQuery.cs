@@ -5,7 +5,7 @@ namespace Sdk4me.GraphQL
     /// <summary>
     /// Root connection for retrieving KnowledgeArticle records.
     /// </summary>
-    public class KnowledgeArticleQuery : Query<KnowledgeArticleQuery, KnowledgeArticleField, KnowledgeArticleView, KnowledgeArticleOrderField>
+    public class KnowledgeArticleQuery : Query<KnowledgeArticleQuery, KnowledgeArticleField, KnowledgeArticleView, KnowledgeArticleFilter, KnowledgeArticleOrderField>
     {
         /// <summary>
         /// Initialize a new knowledge article query instance.

@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="ProjectTaskTemplateRelation">ProjectTaskTemplateRelation</see> query.
     /// </summary>
-    public class ProjectTaskTemplateRelationQuery : Query<ProjectTaskTemplateRelationQuery, ProjectTaskTemplateRelationField, DefaultView, DefaultOrderField>
+    public class ProjectTaskTemplateRelationQuery : Query<ProjectTaskTemplateRelationQuery, ProjectTaskTemplateRelationField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new project task template relation query instance.

@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="ProjectTaskTemplateAssignment">ProjectTaskTemplateAssignment</see> query.
     /// </summary>
-    public class ProjectTaskTemplateAssignmentQuery : Query<ProjectTaskTemplateAssignmentQuery, ProjectTaskTemplateAssignmentField, DefaultView, DefaultOrderField>
+    public class ProjectTaskTemplateAssignmentQuery : Query<ProjectTaskTemplateAssignmentQuery, ProjectTaskTemplateAssignmentField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new project task template assignment query instance.

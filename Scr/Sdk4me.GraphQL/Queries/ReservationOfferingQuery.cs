@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving ReservationOffering records.
     /// </summary>
-    public class ReservationOfferingQuery : Query<ReservationOfferingQuery, ReservationOfferingField, ReservationOfferingView, ReservationOfferingOrderField>
+    public class ReservationOfferingQuery : Query<ReservationOfferingQuery, ReservationOfferingField, ReservationOfferingView, ReservationOfferingFilter, ReservationOfferingOrderField>
     {
         /// <summary>
         /// Initialize a new reservation offering query instance.

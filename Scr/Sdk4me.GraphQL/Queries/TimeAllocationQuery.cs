@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving TimeAllocation records.
     /// </summary>
-    public class TimeAllocationQuery : Query<TimeAllocationQuery, TimeAllocationField, TimeAllocationView, TimeAllocationOrderField>
+    public class TimeAllocationQuery : Query<TimeAllocationQuery, TimeAllocationField, TimeAllocationView, TimeAllocationFilter, TimeAllocationOrderField>
     {
         /// <summary>
         /// Initialize a new time allocation query instance.

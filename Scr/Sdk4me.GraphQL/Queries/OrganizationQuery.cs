@@ -5,7 +5,7 @@ namespace Sdk4me.GraphQL
     /// <summary>
     /// Root connection for retrieving Organization records.
     /// </summary>
-    public class OrganizationQuery : Query<OrganizationQuery, OrganizationField, OrganizationView, OrganizationOrderField>
+    public class OrganizationQuery : Query<OrganizationQuery, OrganizationField, OrganizationView, OrganizationFilter, OrganizationOrderField>
     {
         /// <summary>
         /// Initialize a new organization query instance.

@@ -5,7 +5,7 @@ namespace Sdk4me.GraphQL
     /// <summary>
     /// Root connection for retrieving Project records.
     /// </summary>
-    public class ProjectQuery : Query<ProjectQuery, ProjectField, ProjectView, ProjectOrderField>
+    public class ProjectQuery : Query<ProjectQuery, ProjectField, ProjectView, ProjectFilter, ProjectOrderField>
     {
         /// <summary>
         /// Initialize a new project query instance.

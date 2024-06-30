@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving ProjectRiskLevel records.
     /// </summary>
-    public class ProjectRiskLevelQuery : Query<ProjectRiskLevelQuery, ProjectRiskLevelField, DefaultView, DefaultOrderField>
+    public class ProjectRiskLevelQuery : Query<ProjectRiskLevelQuery, ProjectRiskLevelField, DefaultView, ProjectRiskLevelFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new project risk level query instance.

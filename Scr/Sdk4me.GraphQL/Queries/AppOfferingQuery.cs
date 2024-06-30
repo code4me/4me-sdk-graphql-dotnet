@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving AppOffering records.
     /// </summary>
-    public class AppOfferingQuery : Query<AppOfferingQuery, AppOfferingField, AppOfferingView, AppOfferingOrderField>
+    public class AppOfferingQuery : Query<AppOfferingQuery, AppOfferingField, AppOfferingView, AppOfferingFilter, AppOfferingOrderField>
     {
         /// <summary>
         /// Initialize a new app offering query instance.

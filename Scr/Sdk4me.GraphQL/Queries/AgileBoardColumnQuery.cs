@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="AgileBoardColumn">AgileBoardColumn</see> query.
     /// </summary>
-    public class AgileBoardColumnQuery : Query<AgileBoardColumnQuery, AgileBoardColumnField, DefaultView, DefaultOrderField>
+    public class AgileBoardColumnQuery : Query<AgileBoardColumnQuery, AgileBoardColumnField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new agile board column query instance.

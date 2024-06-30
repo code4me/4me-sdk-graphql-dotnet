@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="Period">Period</see> query.
     /// </summary>
-    public class PeriodQuery : Query<PeriodQuery, PeriodField, DefaultView, DefaultOrderField>
+    public class PeriodQuery : Query<PeriodQuery, PeriodField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new period query instance.

@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving EffortClass records.
     /// </summary>
-    public class EffortClassQuery : Query<EffortClassQuery, EffortClassField, DefaultView, DefaultOrderField>
+    public class EffortClassQuery : Query<EffortClassQuery, EffortClassField, DefaultView, EffortClassFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new effort class query instance.

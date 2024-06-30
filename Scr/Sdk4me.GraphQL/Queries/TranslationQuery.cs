@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving Translation records.
     /// </summary>
-    public class TranslationQuery : Query<TranslationQuery, TranslationField, TranslationView, TranslationOrderField>
+    public class TranslationQuery : Query<TranslationQuery, TranslationField, TranslationView, TranslationFilter, TranslationOrderField>
     {
         /// <summary>
         /// Initialize a new translation query instance.

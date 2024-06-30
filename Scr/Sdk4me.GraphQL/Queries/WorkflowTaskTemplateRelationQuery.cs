@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="WorkflowTaskTemplateRelation">WorkflowTaskTemplateRelation</see> query.
     /// </summary>
-    public class WorkflowTaskTemplateRelationQuery : Query<WorkflowTaskTemplateRelationQuery, WorkflowTaskTemplateRelationField, DefaultView, DefaultOrderField>
+    public class WorkflowTaskTemplateRelationQuery : Query<WorkflowTaskTemplateRelationQuery, WorkflowTaskTemplateRelationField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new workflow task template relation query instance.

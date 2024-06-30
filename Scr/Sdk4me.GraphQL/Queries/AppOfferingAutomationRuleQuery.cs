@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="AppOfferingAutomationRule">AppOfferingAutomationRule</see> query.
     /// </summary>
-    public class AppOfferingAutomationRuleQuery : Query<AppOfferingAutomationRuleQuery, AppOfferingAutomationRuleField, DefaultView, DefaultOrderField>
+    public class AppOfferingAutomationRuleQuery : Query<AppOfferingAutomationRuleQuery, AppOfferingAutomationRuleField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new app offering automation rule query instance.

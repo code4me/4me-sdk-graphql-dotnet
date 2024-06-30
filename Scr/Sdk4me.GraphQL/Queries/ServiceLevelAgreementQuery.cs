@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving ServiceLevelAgreement records.
     /// </summary>
-    public class ServiceLevelAgreementQuery : Query<ServiceLevelAgreementQuery, ServiceLevelAgreementField, ServiceLevelAgreementView, ServiceLevelAgreementOrderField>
+    public class ServiceLevelAgreementQuery : Query<ServiceLevelAgreementQuery, ServiceLevelAgreementField, ServiceLevelAgreementView, ServiceLevelAgreementFilter, ServiceLevelAgreementOrderField>
     {
         /// <summary>
         /// Initialize a new service level agreement query instance.

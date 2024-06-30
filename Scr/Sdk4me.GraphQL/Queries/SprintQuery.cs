@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving Sprint records.
     /// </summary>
-    public class SprintQuery : Query<SprintQuery, SprintField, SprintView, SprintOrderField>
+    public class SprintQuery : Query<SprintQuery, SprintField, SprintView, SprintFilter, SprintOrderField>
     {
         /// <summary>
         /// Initialize a new sprint query instance.

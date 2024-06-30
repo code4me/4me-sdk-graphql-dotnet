@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="AsyncQuery">AsyncQuery</see> query.
     /// </summary>
-    public class AsyncQueryQuery : Query<AsyncQueryQuery, AsyncQueryField, DefaultView, DefaultOrderField>
+    public class AsyncQueryQuery : Query<AsyncQueryQuery, AsyncQueryField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new async query query instance.

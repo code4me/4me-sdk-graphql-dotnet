@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving Reservation records.
     /// </summary>
-    public class ReservationQuery : Query<ReservationQuery, ReservationField, ReservationView, ReservationOrderField>
+    public class ReservationQuery : Query<ReservationQuery, ReservationField, ReservationView, ReservationFilter, ReservationOrderField>
     {
         /// <summary>
         /// Initialize a new reservation query instance.

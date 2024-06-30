@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="SurveyQuestion">SurveyQuestion</see> query.
     /// </summary>
-    public class SurveyQuestionQuery : Query<SurveyQuestionQuery, SurveyQuestionField, DefaultView, DefaultOrderField>
+    public class SurveyQuestionQuery : Query<SurveyQuestionQuery, SurveyQuestionField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new survey question query instance.

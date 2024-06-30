@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving Webhook records.
     /// </summary>
-    public class WebhookQuery : Query<WebhookQuery, WebhookField, DefaultView, DefaultOrderField>
+    public class WebhookQuery : Query<WebhookQuery, WebhookField, DefaultView, WebhookFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new webhook query instance.

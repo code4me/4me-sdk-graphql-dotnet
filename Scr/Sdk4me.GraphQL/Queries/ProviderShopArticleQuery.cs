@@ -3,7 +3,7 @@
     /// <summary>
     /// The <see cref="ProviderShopArticle">ProviderShopArticle</see> query.
     /// </summary>
-    public class ProviderShopArticleQuery : Query<ProviderShopArticleQuery, ProviderShopArticleField, DefaultView, DefaultOrderField>
+    public class ProviderShopArticleQuery : Query<ProviderShopArticleQuery, ProviderShopArticleField, DefaultView, DefaultFilter, DefaultOrderField>
     {
         /// <summary>
         /// Initialize a new provider shop article query instance.

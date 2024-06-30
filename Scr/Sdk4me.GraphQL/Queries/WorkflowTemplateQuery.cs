@@ -3,7 +3,7 @@
     /// <summary>
     /// Root connection for retrieving WorkflowTemplate records.
     /// </summary>
-    public class WorkflowTemplateQuery : Query<WorkflowTemplateQuery, WorkflowTemplateField, WorkflowTemplateView, WorkflowTemplateOrderField>
+    public class WorkflowTemplateQuery : Query<WorkflowTemplateQuery, WorkflowTemplateField, WorkflowTemplateView, WorkflowTemplateFilter, WorkflowTemplateOrderField>
     {
         /// <summary>
         /// Initialize a new workflow template query instance.

@@ -5,7 +5,7 @@ namespace Sdk4me.GraphQL
     /// <summary>
     /// Root connection for retrieving ConfigurationItem records.
     /// </summary>
-    public class ConfigurationItemQuery : Query<ConfigurationItemQuery, ConfigurationItemField, ConfigurationItemView, ConfigurationItemOrderField>
+    public class ConfigurationItemQuery : Query<ConfigurationItemQuery, ConfigurationItemField, ConfigurationItemView, ConfigurationItemFilter, ConfigurationItemOrderField>
     {
         /// <summary>
         /// Initialize a new configuration item query instance.
