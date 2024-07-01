@@ -15,7 +15,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The affected sla filter.
+    /// Filter to determine which AffectedSla records are returned.
     /// </summary>
     public enum AffectedSlaFilter
     {
@@ -222,7 +222,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The agile board filter.
+    /// Filter to determine which AgileBoard records are returned.
     /// </summary>
     public enum AgileBoardFilter
     {
@@ -269,7 +269,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The app instance filter.
+    /// Filter to determine which AppInstance records are returned.
     /// </summary>
     public enum AppInstanceFilter
     {
@@ -336,7 +336,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The app offering filter.
+    /// Filter to determine which AppOffering records are returned.
     /// </summary>
     public enum AppOfferingFilter
     {
@@ -408,7 +408,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The archive filter.
+    /// Filter to determine which Archive records are returned.
     /// </summary>
     public enum ArchiveFilter
     {
@@ -430,7 +430,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The automation rule filter.
+    /// Filter to determine which AutomationRule records are returned.
     /// </summary>
     public enum AutomationRuleFilter
     {
@@ -492,7 +492,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The broadcast filter.
+    /// Attributes to filter on basic fields.
     /// </summary>
     public enum BroadcastFilter
     {
@@ -524,7 +524,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The calendar filter.
+    /// Attributes to filter calendars.
     /// </summary>
     public enum CalendarFilter
     {
@@ -561,7 +561,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The configuration item filter.
+    /// Filter to determine which ConfigurationItem records are returned.
     /// </summary>
     public enum ConfigurationItemFilter
     {
@@ -758,7 +758,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The contract filter.
+    /// Filter to determine which Contract records are returned.
     /// </summary>
     public enum ContractFilter
     {
@@ -845,7 +845,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The custom collection element filter.
+    /// Filter to determine which CustomCollectionElement records are returned.
     /// </summary>
     public enum CustomCollectionElementFilter
     {
@@ -897,7 +897,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The custom collection filter.
+    /// Attributes to filter on basic fields.
     /// </summary>
     public enum CustomCollectionFilter
     {
@@ -929,7 +929,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The effort class filter.
+    /// Attributes to filter on basic fields.
     /// </summary>
     public enum EffortClassFilter
     {
@@ -961,7 +961,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The first line support agreement filter.
+    /// Filter to determine which FirstLineSupportAgreement records are returned.
     /// </summary>
     public enum FirstLineSupportAgreementFilter
     {
@@ -1038,7 +1038,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The holiday filter.
+    /// Attributes to filter on basic fields.
     /// </summary>
     public enum HolidayFilter
     {
@@ -1070,7 +1070,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The invoice filter.
+    /// Filter to determine which Invoice records are returned.
     /// </summary>
     public enum InvoiceFilter
     {
@@ -1197,7 +1197,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The knowledge article filter.
+    /// Filter to determine which KnowledgeArticle records are returned.
     /// </summary>
     public enum KnowledgeArticleFilter
     {
@@ -1304,7 +1304,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The knowledge article template filter.
+    /// Filter to determine which KnowledgeArticleTemplate records are returned.
     /// </summary>
     public enum KnowledgeArticleTemplateFilter
     {
@@ -1361,7 +1361,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The organization filter.
+    /// Filter to determine which Organization records are returned.
     /// </summary>
     public enum OrganizationFilter
     {
@@ -1443,7 +1443,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The out of office period filter.
+    /// Filter to determine which OutOfOfficePeriod records are returned.
     /// </summary>
     public enum OutOfOfficePeriodFilter
     {
@@ -1505,7 +1505,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The pdf design filter.
+    /// Attributes to filter on basic fields.
     /// </summary>
     public enum PdfDesignFilter
     {
@@ -1527,7 +1527,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The person filter.
+    /// Filter to determine which Person records are returned.
     /// </summary>
     public enum PersonFilter
     {
@@ -1654,7 +1654,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The problem filter.
+    /// Filter to determine which Problem records are returned.
     /// </summary>
     public enum ProblemFilter
     {
@@ -1791,7 +1791,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The product backlog filter.
+    /// Filter to determine which ProductBacklog records are returned.
     /// </summary>
     public enum ProductBacklogFilter
     {
@@ -1838,7 +1838,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The product category filter.
+    /// Attributes to filter product categories.
     /// </summary>
     public enum ProductCategoryFilter
     {
@@ -1885,7 +1885,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The product filter.
+    /// Filter to determine which Product records are returned.
     /// </summary>
     public enum ProductFilter
     {
@@ -1982,7 +1982,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The project category filter.
+    /// Attributes to filter on basic fields.
     /// </summary>
     public enum ProjectCategoryFilter
     {
@@ -2014,7 +2014,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The project filter.
+    /// Filter to determine which Project records are returned.
     /// </summary>
     public enum ProjectFilter
     {
@@ -2131,7 +2131,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The project risk level filter.
+    /// Attributes to filter on basic fields.
     /// </summary>
     public enum ProjectRiskLevelFilter
     {
@@ -2163,7 +2163,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The project task filter.
+    /// Filter to determine which ProjectTask records are returned.
     /// </summary>
     public enum ProjectTaskFilter
     {
@@ -2300,7 +2300,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The project task template filter.
+    /// Filter to determine which ProjectTaskTemplate records are returned.
     /// </summary>
     public enum ProjectTaskTemplateFilter
     {
@@ -2367,7 +2367,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The project template filter.
+    /// Filter to determine which ProjectTemplate records are returned.
     /// </summary>
     public enum ProjectTemplateFilter
     {
@@ -2409,7 +2409,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The release filter.
+    /// Filter to determine which Release records are returned.
     /// </summary>
     public enum ReleaseFilter
     {
@@ -2491,7 +2491,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The request filter.
+    /// Filter to determine which Request records are returned.
     /// </summary>
     public enum RequestFilter
     {
@@ -2893,7 +2893,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The request template filter.
+    /// Filter to determine which RequestTemplate records are returned.
     /// </summary>
     public enum RequestTemplateFilter
     {
@@ -2985,7 +2985,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The reservation filter.
+    /// Filter to determine which Reservation records are returned.
     /// </summary>
     public enum ReservationFilter
     {
@@ -3077,7 +3077,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The reservation offering filter.
+    /// Filter to determine which ReservationOffering records are returned.
     /// </summary>
     public enum ReservationOfferingFilter
     {
@@ -3134,7 +3134,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The risk filter.
+    /// Filter to determine which Risk records are returned.
     /// </summary>
     public enum RiskFilter
     {
@@ -3236,7 +3236,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The risk severity filter.
+    /// Attributes to filter on basic fields.
     /// </summary>
     public enum RiskSeverityFilter
     {
@@ -3268,7 +3268,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The scrum workspace filter.
+    /// Filter to determine which ScrumWorkspace records are returned.
     /// </summary>
     public enum ScrumWorkspaceFilter
     {
@@ -3320,7 +3320,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The service category filter.
+    /// Attributes to filter service categories.
     /// </summary>
     public enum ServiceCategoryFilter
     {
@@ -3357,7 +3357,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The service filter.
+    /// Filter to determine which Service records are returned.
     /// </summary>
     public enum ServiceFilter
     {
@@ -3464,7 +3464,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The service instance filter.
+    /// Filter to determine which ServiceInstance records are returned.
     /// </summary>
     public enum ServiceInstanceFilter
     {
@@ -3541,7 +3541,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The service level agreement filter.
+    /// Filter to determine which ServiceLevelAgreement records are returned.
     /// </summary>
     public enum ServiceLevelAgreementFilter
     {
@@ -3658,7 +3658,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The service offering filter.
+    /// Filter to determine which ServiceOffering records are returned.
     /// </summary>
     public enum ServiceOfferingFilter
     {
@@ -3710,7 +3710,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The shop article category filter.
+    /// Filter to determine which ShopArticleCategory records are returned.
     /// </summary>
     public enum ShopArticleCategoryFilter
     {
@@ -3752,7 +3752,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The shop article filter.
+    /// Filter to determine which ShopArticle records are returned.
     /// </summary>
     public enum ShopArticleFilter
     {
@@ -3859,7 +3859,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The shop order line filter.
+    /// Filter to determine which ShopOrderLine records are returned.
     /// </summary>
     public enum ShopOrderLineFilter
     {
@@ -3971,7 +3971,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The short url filter.
+    /// Filter to determine which ShortUrl records are returned.
     /// </summary>
     public enum ShortUrlFilter
     {
@@ -4003,7 +4003,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The site filter.
+    /// Filter to determine which Site records are returned.
     /// </summary>
     public enum SiteFilter
     {
@@ -4050,7 +4050,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The skill pool filter.
+    /// Filter to determine which SkillPool records are returned.
     /// </summary>
     public enum SkillPoolFilter
     {
@@ -4097,7 +4097,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The sla notification scheme filter.
+    /// Attributes to filter on basic fields.
     /// </summary>
     public enum SlaNotificationSchemeFilter
     {
@@ -4129,7 +4129,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The sprint filter.
+    /// Filter to determine which Sprint records are returned.
     /// </summary>
     public enum SprintFilter
     {
@@ -4181,7 +4181,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The survey filter.
+    /// Filter to determine which Survey records are returned.
     /// </summary>
     public enum SurveyFilter
     {
@@ -4228,7 +4228,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The survey response filter.
+    /// Filter to determine which SurveyResponse records are returned.
     /// </summary>
     public enum SurveyResponseFilter
     {
@@ -4300,7 +4300,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The sync set filter.
+    /// Attributes to filter on basic fields.
     /// </summary>
     public enum SyncSetFilter
     {
@@ -4322,7 +4322,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The task filter.
+    /// Filter to determine which Task records are returned.
     /// </summary>
     public enum TaskFilter
     {
@@ -4509,7 +4509,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The task template filter.
+    /// Filter to determine which TaskTemplate records are returned.
     /// </summary>
     public enum TaskTemplateFilter
     {
@@ -4586,7 +4586,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The team filter.
+    /// Filter to determine which Team records are returned.
     /// </summary>
     public enum TeamFilter
     {
@@ -4638,7 +4638,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The time allocation filter.
+    /// Filter to determine which TimeAllocation records are returned.
     /// </summary>
     public enum TimeAllocationFilter
     {
@@ -4680,7 +4680,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The time entry filter.
+    /// Filter to determine which TimeEntry records are returned.
     /// </summary>
     public enum TimeEntryFilter
     {
@@ -4802,7 +4802,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The timesheet setting filter.
+    /// Attributes to filter on basic fields.
     /// </summary>
     public enum TimesheetSettingFilter
     {
@@ -4834,7 +4834,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The translation filter.
+    /// Filter to determine which Translation records are returned.
     /// </summary>
     public enum TranslationFilter
     {
@@ -4881,7 +4881,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The trash filter.
+    /// Filter to determine which Trash records are returned.
     /// </summary>
     public enum TrashFilter
     {
@@ -4903,7 +4903,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The ui extension filter.
+    /// Filter to determine which UiExtension records are returned.
     /// </summary>
     public enum UiExtensionFilter
     {
@@ -4960,7 +4960,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The waiting for customer follow up filter.
+    /// Attributes to filter on basic fields.
     /// </summary>
     public enum WaitingForCustomerFollowUpFilter
     {
@@ -4992,7 +4992,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The webhook filter.
+    /// Attributes to filter on basic fields.
     /// </summary>
     public enum WebhookFilter
     {
@@ -5024,7 +5024,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The webhook policy filter.
+    /// Attributes to filter on basic fields.
     /// </summary>
     public enum WebhookPolicyFilter
     {
@@ -5046,7 +5046,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The workflow filter.
+    /// Filter to determine which Workflow records are returned.
     /// </summary>
     public enum WorkflowFilter
     {
@@ -5208,7 +5208,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The workflow template filter.
+    /// Filter to determine which WorkflowTemplate records are returned.
     /// </summary>
     public enum WorkflowTemplateFilter
     {
@@ -5275,7 +5275,7 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// The workflow type filter.
+    /// Attributes to filter on basic fields.
     /// </summary>
     public enum WorkflowTypeFilter
     {
