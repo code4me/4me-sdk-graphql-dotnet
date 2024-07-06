@@ -87,7 +87,7 @@ Each request produces two entries with identical identifiers — the initial one
 
 # Examples
 
-### Minimum example
+## Minimum example
 ```csharp
 using Sdk4me.GraphQL;
 
@@ -97,9 +97,9 @@ Person me = client.Me().Result;
 Console.WriteLine($"{me.Name} ({me.PrimaryEmail})");
 ```
 
-### Queries
+## Queries
 
-#### Get people
+### Get people
 ```csharp
 DataList<Person> people = await client.Get(Query.Person);
 foreach (Person person in people)
@@ -107,7 +107,7 @@ foreach (Person person in people)
 }
 ```
 
-##### Specific fields
+#### Specific fields
 ```csharp
 DataList<Person> people = await client.Get(Query.Person
     .Select(PersonField.ID, PersonField.Organization, PersonField.Name, PersonField.CustomFields));
@@ -127,7 +127,7 @@ To further refine the selection of fields by using a query for a specific GraphQ
 By using the `SelectOrganization` method on the `Query.Person` object, you can specify the fields to include for the `Organization` field.
 The example demonstrates the selection of fields like `ID`, `Name`, and `Disabled` for the `Organization` field.
 
-##### All fields
+#### All fields
 ```csharp
 DataList<Person> people = await client.Get(Query.Person.SelectAll());
 ```
@@ -135,7 +135,7 @@ DataList<Person> people = await client.Get(Query.Person.SelectAll());
 `SelectAll()` should only be used for debugging purposes as it may include fields that are not yet available in production and can negatively impact performance.
 It's recommended to only select the necessary fields.
 
-#### Get all people in the Directory and Support Domain accounts
+### Get all people in the Directory and Support Domain accounts
 ```csharp
 DataList<Person> people = await client.Get(Query.Person.View(PeronsView.All));
 ```
@@ -166,7 +166,7 @@ The default maximum depth for nested queries is 2. While it is possible to incre
 client.MaximumQueryDepthLevelConnections = 5;
 ```
 
-#### Filtering
+### Filtering
 There are three methods to filtering: `Filter`, `CustomFilter` and, `FreeFormatFilter`.
 Filters can only be applied at the top level of the query.
 
@@ -195,13 +195,13 @@ PersonQuery query = new PersonQuery()
     .FreeFormatFilter("Howard");
 ```
 
-#### Sorting
+### Sorting
 ```csharp
 IQuery query = Query.Person.OrderBy(PersonOrderField.Name, OrderBySortOrder.Ascending);
 ```
 Sorting can only be used on the top level query.
 
-#### Nested query with filtering and sorting
+### Nested query with filtering and sorting
 ```csharp
 PersonQuery query = new PersonQuery()
     .View(PersonView.All)
@@ -229,7 +229,7 @@ PersonQuery query = new PersonQuery()
 DataList<Person> people = client.Get(query).Result;
 ```
 
-#### Interface-based properties
+### Interface-based properties
 Retrieve all archived properties and cast only those belonging to `Person`, `Request`, or `Task` types, each with their unique properties.
 ```csharp
 DataList<Archive> archives = client.Get(Query.Archive
@@ -244,9 +244,9 @@ DataList<Archive> archives = client.Get(Query.Archive
     ).Result;
 ```
 
-### Mutations
+## Mutations
 
-#### Create a new person and return the `ID`
+### Create a new person and return the `ID`
 ```csharp
 CustomFieldCollection customFields = new();
 customFields.AddOrUpdate("internal_reference", "an internal reference");
@@ -274,7 +274,7 @@ if (result.IsError())
 Person newPerson = result.Person;
 ```
 
-#### Updating an existing person and return the `ID`, `Name` and `Site`
+### Updating an existing person and return the `ID`, `Name` and `Site`
 ```csharp
 try
 {
@@ -293,7 +293,7 @@ catch (Sdk4meException ex)
 }
 ```
 
-#### Updating the custom fields of an existing person
+### Updating the custom fields of an existing person
 ```csharp
 Person person = client.Get(
     new PersonQuery("NG1lLnFhL1blcnNvbi8yMjMxSjIx")
@@ -309,9 +309,9 @@ PersonUpdatePayload result = client.Mutation(new PersonUpdateInput()
 }).Result;
 ```
 
-### Attachments
+## Attachments
 
-#### Upload an attachment
+### Upload an attachment
 ```csharp
 var request = client.Get(new RequestQuery()
     .Select(RequestField.ID)
@@ -335,7 +335,7 @@ var updatedRequest = client.Mutation(new RequestUpdateInput()
 }).Result;
 ```
 
-#### Upload an attachment
+### Upload an attachment
 ```csharp
 using (HttpClient httpClient = new())
 {
@@ -368,7 +368,7 @@ using (HttpClient httpClient = new())
 }
 ```
 
-#### Upload an inline attachment
+### Upload an inline attachment
 ```csharp
 var request = client.Get(new RequestQuery()
     .Select(RequestField.ID)
@@ -392,7 +392,7 @@ var updatedRequest = client.Mutation(new RequestUpdateInput()
 }).Result;
 ```
 
-### Create a new event via the events API
+## Create a new event via the events API
 ```csharp
 RequestEventCreateInput requestCreate = new RequestEventCreateInput()
     .Category(RequestCategory.Incident)
@@ -409,7 +409,7 @@ Request request = client.CreateEvent(requestCreate).Result;
 ```
 Note that the 4me Events API operates as a REST API, not GraphQL. The response is transformed into the GraphQL `Request` object.
 
-### Bulk Import and Export
+## Bulk Import and Export
 The Bulk API lets you export CSV and Excel files, and import CSV files.
 
 Start an Excel export of the configuration items and people, waits until the export completes, and saves the file.
@@ -438,7 +438,7 @@ if (response.State == ImportExportStatus.Done)
 }
 ```
 
-### Exception handling
+## Exception handling
 ```csharp
 try
 {
@@ -457,7 +457,7 @@ catch (Sdk4meException ex)
 ```
 By default the SDK will throw an new exception. The mutation method has one additional argument `throwOnError`, when false the `result` property will contain the error messages.
 
-### Authentication tokens, account, environment and environment regions usage
+## Authentication tokens, account, environment and environment regions usage
 ```csharp
 AuthenticationTokenCollection tokens = new AuthenticationTokenCollection()
 {
@@ -469,7 +469,7 @@ Sdk4meClient client = new(tokens, "account-name", EnvironmentType.Demo, Environm
 client.AccountID = "new-account-name";
 ```
 
-### Multiple accounts usage
+## Multiple accounts usage
 To ensure effective management of multiple accounts, it's recommended to employ a dictionary structure. This structure facilitates mapping each account to its corresponding `Sdk4meClient` instance.
 
 ```csharp
@@ -483,7 +483,7 @@ Dictionary<string, Sdk4meClient> clients = new()
 clients["account-1"].Get(new AccountQuery().Select(AccountField.ID)).Result;
 ```
 
-### Multiple tokens - Request and cost scores
+## Multiple tokens - Request and cost scores
 In the context of multiple 4me authentication tokens, request and cost scores are essential metrics used to determine the priority of tokens when making API requests. These scores help prioritize tokens efficiently by considering two critical factors.
 
 **Request Score:**
@@ -503,7 +503,7 @@ client.ConfigureAuthenticationTokenWeight(requestWeight: 0.5, costWeight: 0.5);
 
 To learn more about GraphQL Service Quotas, refer to the [Service Quota](https://developer.4me.com/graphql/#service-quotas-1) section, and for information on Rate Limiting, explore the [Rate Limiting](https://developer.4me.com/v1/#rate-limiting) section in the 4me developer documentation.
 
-### Trace output
+## Trace output
 A trace output providing details of a GraphQL query request and response time.
 ```json
 {"id":"b1685ff0-6356-49eb-ab58-6ef32b9b4a61","method":"POST","uri":"https://graphql.4me.qa/","content":"{\"query\":\"query{node(id: \\\"KG1jIx\\\") {... on Person {id}}}\"}","account_id":"account-name"}
