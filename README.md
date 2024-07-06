@@ -170,31 +170,30 @@ client.MaximumQueryDepthLevelConnections = 5;
 There are three methods to filtering: `Filter`, `CustomFilter` and, `FreeFormatFilter`.
 Filters can only be applied at the top level of the query.
 
+The `Filter` method allows you to specify field filters at the top level of the query.
+You can define the field, the operator (e.g., equals, not equals), and the value to match against.
 ```csharp
 IQuery query = Query.Person.Filter(PersonFilter.Name, FilterOperator.Equals, "Howard");
 ```
-The `Filter` method allows you to specify field filters at the top level of the query.
-You can define the field, the operator (e.g., equals, not equals), and the value to match against.
-
-
-```csharp
-PersonQuery query = new PersonQuery("NG1lLnFhL1blcnNvbi8yMjMxSjIx");
-```
+---
 The `ID` filtering allows you to search for an object based on its unique ID.
 When using the `ID` filter, any additional filters and view selections will be ignored.
 It is recommended to use the ID filter instead of the `.Filter(PersonFilter.ID, FilterOperator.Equals, "")` approach, as it provides an average response time improvement of approximately 15%.
-
+```csharp
+PersonQuery query = new PersonQuery("NG1lLnFhL1blcnNvbi8yMjMxSjIx");
+```
+---
+The `CustomFilter` method enables the use of existing custom filters.
 ```csharp
 PersonQuery query = new PersonQuery()
     .CustomFilter("Age", FilterOperator.NotEquals, new string[] { null });
 ```
-The `CustomFilter` method enables the use of existing custom filters.
-
+---
+The `FreeFormatFilter` method enables the usage of same filter functionality available in the top screen filter in the user interface (UI).
 ```csharp
 PersonQuery query = new PersonQuery()
     .FreeFormatFilter("Howard");
 ```
-The `FreeFormatFilter` method enables the usage of same filter functionality available in the top screen filter in the user interface (UI).
 
 #### Sorting
 ```csharp
@@ -412,20 +411,20 @@ Note that the 4me Events API operates as a REST API, not GraphQL. The response i
 
 ### Bulk Import and Export
 The Bulk API lets you export CSV and Excel files, and import CSV files.
-For more details and possible types, check out the [4me developer documentation](https://developer.4me.com/v1/bulk/).
 
+Start an Excel export of the configuration items and people, waits until the export completes, and saves the file.
 ```csharp
 string token = await client.Bulk.StartXlsxExport("cis", "people");
 await client.Bulk.AwaitDownloadAndSave(token, 5, @".\export.zip");
 ```
-This code starts an Excel export of the configuration items and people, waits until the export completes, and saves the file.
-
+---
+Start a CSV export of the configuration items, waits until the export completes, and saves the file.
 ```csharp
 string token = client.Bulk.StartCsvExport(DateTime.Now.AddMonths(1), ExportLineSeparator.LineFeed, "cis");
 await client.Bulk.AwaitDownloadAndSave(token, 5, @"c:\temp\cis.csv");
 ```
-This code starts a CSV export of the configuration items, waits until the export completes, and saves the file.
-
+---
+Start an import, waits for the completion, and writes the output to the console.
 ```csharp
 string token = client.Bulk.StartImport("cis", @"c:\temp\cis_import_.csv").Result;
 BulkImportResponse response = client.Bulk.AwaitImport(token, 5).Result;
@@ -438,7 +437,6 @@ if (response.State == ImportExportStatus.Done)
     Console.WriteLine($"Unchanged: {response.Results.Unchanged}");
 }
 ```
-This code starts an import, waits for the completion, and writes the output to the console.
 
 ### Exception handling
 ```csharp
