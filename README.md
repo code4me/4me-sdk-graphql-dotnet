@@ -64,7 +64,10 @@ The SDK features an `UploadAttachment` method for easily uploading attachments, 
 The response from this request includes information necessary for linking these attachments.
 
 ## Events API
-The .NET SDK provides access to the 4me Events API as well. For more information check out the [4me developer pages](https://developer.4me.com/v1/requests/events/).
+The .NET SDK provides access to the 4me Events REST API. For more information, please visit the [4me developer pages](https://developer.4me.com/v1/requests/events/).
+
+## Bulk API
+The .NET SDK provides access to the 4me Bulk REST API, enabling data import and export. For more information, please visit the [4me developer pages](https://developer.4me.com/v1/bulk/).
 
 ## Multiple tokens
 The client allows for the use of multiple authentication tokens. A single token is limited to 3600 API requests per hour or 5000 points per hour for Query Cost. In some situations, this may not be sufficient.
@@ -406,6 +409,36 @@ RequestEventCreateInput requestCreate = new RequestEventCreateInput()
 Request request = client.CreateEvent(requestCreate).Result;
 ```
 Note that the 4me Events API operates as a REST API, not GraphQL. The response is transformed into the GraphQL `Request` object.
+
+### Bulk Import and Export
+The Bulk API lets you export CSV and Excel files, and import CSV files.
+For more details and possible types, check out the [4me developer documentation](https://developer.4me.com/v1/bulk/).
+
+```csharp
+string token = await client.Bulk.StartXlsxExport("cis", "people");
+await client.Bulk.AwaitDownloadAndSave(token, 5, @".\export.zip");
+```
+This code starts an Excel export of the configuration items and people, waits until the export completes, and saves the file.
+
+```csharp
+string token = client.Bulk.StartCsvExport(DateTime.Now.AddMonths(1), ExportLineSeparator.LineFeed, "cis");
+await client.Bulk.AwaitDownloadAndSave(token, 5, @"c:\temp\cis.csv");
+```
+This code starts a CSV export of the configuration items, waits until the export completes, and saves the file.
+
+```csharp
+string token = client.Bulk.StartImport("cis", @"c:\temp\cis_import_.csv").Result;
+BulkImportResponse response = client.Bulk.AwaitImport(token, 5).Result;
+if (response.State == ImportExportStatus.Done)
+{
+    Console.WriteLine($"  Created: {response.Results.Created}");
+    Console.WriteLine($"   Update: {response.Results.Updated}");
+    Console.WriteLine($"  Deleted: {response.Results.Deleted}");
+    Console.WriteLine($" Failures: {response.Results.Failures}");
+    Console.WriteLine($"Unchanged: {response.Results.Unchanged}");
+}
+```
+This code starts an import, waits for the completion, and writes the output to the console.
 
 ### Exception handling
 ```csharp

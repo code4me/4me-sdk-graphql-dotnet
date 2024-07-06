@@ -24,6 +24,7 @@ namespace Sdk4me.GraphQL
         private readonly DateTime unixEpoch;
         private readonly JsonSerializer jsonSerializer;
         private readonly InterfaceConverter interfaceConverter;
+        private readonly Sdk4meClientBulk bulk;
         private readonly string url;
         private readonly string restUrl;
         private readonly string oauth2Url;
@@ -111,6 +112,14 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// The 4me import and export REST APIs.
+        /// </summary>
+        public Sdk4meClientBulk Bulk
+        {
+            get => bulk;
+        }
+
+        /// <summary>
         /// Create a new instance of the <see cref="Sdk4meClient"/>.
         /// </summary>
         /// <param name="authenticationToken">The authentication token.</param>
@@ -190,6 +199,8 @@ namespace Sdk4me.GraphQL
             client = new();
             client.SetUserAgent("Sdk4me.GraphQL");
             currentToken = authenticationTokens.Get();
+
+            bulk = new(this);
         }
 
         /// <summary>
@@ -462,10 +473,185 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Starts a 4me export.
+        /// </summary>
+        /// <param name="from">The date after which a record needs to have been created or updated in order to be included in the export.</param>
+        /// <param name="exportFormat">The export format.</param>
+        /// <param name="lineSeparator">The line separator for a CSV export file.</param>
+        /// <param name="types">The type or types of files to export. Must contain at least one value.</param>
+        /// <exception cref="ArgumentException">Thrown when no types are specified.</exception>
+        /// <returns>A task representing the asynchronous operation, with a string result containing the export token if the operation succeeds, or null when there is no exportable data.</returns>
+        internal async Task<string?> StartExport(DateTime? from, string exportFormat, ExportLineSeparator? lineSeparator, params string[] types)
+        {
+            if (types == null || types.Length == 0)
+                throw new ArgumentException("At least one type must be specified.", nameof(types));
+
+            MultipartFormDataContent content = new()
+            {
+                { new StringContent(string.Join(",", types)), "type" },
+                { new StringContent(exportFormat), "export_format" },
+            };
+
+            if (exportFormat == "csv" && lineSeparator.HasValue)
+                content.Add(new StringContent(lineSeparator.GetEnumMemberValue()), "line_separator");
+
+            if (from.HasValue)
+                content.Add(new StringContent(from.Value.ToString("o")), "from");
+
+            using (HttpRequestMessage requestMessage = await CreateHttpRequest(accountID, $"{restUrl}/export"))
+            {
+                requestMessage.Content = content;
+                Guid logId = Guid.NewGuid();
+                WriteDebug(logId, requestMessage, JsonConvert.SerializeObject(new
+                {
+                    multipart_form_data = new
+                    {
+                        type = string.Join(",", types),
+                        export_format = exportFormat,
+                        line_separator = exportFormat == "csv" && lineSeparator.HasValue ? lineSeparator.GetEnumMemberValue() : null,
+                        from
+                    }
+                }));
+                Sleep.RegisterStartTime();
+
+                using (HttpResponseMessage responseMessage = await client.SendAsync(requestMessage))
+                {
+                    WriteDebug(logId, requestMessage, null, true);
+                    Sleep.SleepRemainingTime();
+
+                    if (responseMessage.IsSuccessStatusCode && responseMessage.Content.Headers.ContentType?.MediaType == applicationJsonMediaType)
+                    {
+                        UpdateAccountRateLimits(responseMessage);
+
+                        JObject response = JObject.Parse(await responseMessage.Content.ReadAsStringAsync());
+                        return response["token"]?.ToString() ?? throw new Sdk4meException("The response could not be processed.");
+                    }
+                    else if (responseMessage.IsSuccessStatusCode && responseMessage.StatusCode == System.Net.HttpStatusCode.NoContent)
+                    {
+                        UpdateAccountRateLimits(responseMessage);
+                        return null;
+                    }
+                    else
+                    {
+                        if (responseMessage.Content.Headers.ContentType?.MediaType == applicationJsonMediaType)
+                        {
+                            using (StreamReader streamReader = new(await responseMessage.Content.ReadAsStreamAsync()))
+                                throw new Sdk4meException(streamReader.ReadToEnd());
+                        }
+
+                        throw new Sdk4meException(responseMessage.StatusCode.ToString());
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Starts an import process by uploading the specified data.
+        /// </summary>
+        /// <param name="type">The type of the import.</param>
+        /// <param name="filename">The name of the file being imported.</param>
+        /// <param name="stream">The stream containing the file data to be imported.</param>
+        /// <returns>A task representing the asynchronous operation, with a string result containing the import token if the operation succeeds, or null if it fails.</returns>
+        internal async Task<string?> StartImport(string type, string filename, Stream stream)
+        {
+            MultipartFormDataContent content = new()
+            {
+                { new StringContent(type), "type" },
+                { new StreamContent(stream), "file", filename }
+            };
+
+            using (HttpRequestMessage requestMessage = await CreateHttpRequest(accountID, $"{restUrl}/import"))
+            {
+                requestMessage.Content = content;
+                Guid logId = Guid.NewGuid();
+                WriteDebug(logId, requestMessage, JsonConvert.SerializeObject(new
+                {
+                    multipart_form_data = new
+                    {
+                        type,
+                        filename
+                    }
+                }));
+                Sleep.RegisterStartTime();
+
+                using (HttpResponseMessage responseMessage = await client.SendAsync(requestMessage))
+                {
+                    WriteDebug(logId, requestMessage, null, true);
+                    Sleep.SleepRemainingTime();
+
+                    if (responseMessage.IsSuccessStatusCode && responseMessage.Content.Headers.ContentType?.MediaType == applicationJsonMediaType)
+                    {
+                        UpdateAccountRateLimits(responseMessage);
+
+                        JObject response = JObject.Parse(await responseMessage.Content.ReadAsStringAsync());
+                        return response["token"]?.ToString() ?? throw new Sdk4meException("The response could not be processed.");
+                    }
+                    else
+                    {
+                        if (responseMessage.Content.Headers.ContentType?.MediaType == applicationJsonMediaType)
+                        {
+                            using (StreamReader streamReader = new(await responseMessage.Content.ReadAsStreamAsync()))
+                                throw new Sdk4meException(streamReader.ReadToEnd());
+                        }
+
+                        throw new Sdk4meException(responseMessage.StatusCode.ToString());
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets the 4me status for the specified token.
+        /// </summary>
+        /// <typeparam name="T">The type of the status response, either <see cref="BulkExportResponse"/> or <see cref="BulkImportResponse"/>.</typeparam>
+        /// <param name="token">The token for the export or import.</param>
+        /// <returns>A task representing the asynchronous operation, with the status response of type <typeparamref name="T"/>.</returns>
+        /// <exception cref="Sdk4meException">Thrown when the response cannot be processed.</exception>
+        /// <exception cref="ArgumentException">Thrown when the type is not supported.</exception>
+        internal async Task<T> GetImportExportStatus<T>(string token) where T : class
+        {
+            string endpoint = typeof(T) == typeof(BulkExportResponse) ? "export" :
+                              typeof(T) == typeof(BulkImportResponse) ? "import" :
+                              throw new ArgumentException("Unsupported type. Only ExportStatusResponse and ImportStatusResponse are supported.", nameof(T));
+
+            using (HttpRequestMessage requestMessage = await CreateHttpRequest(accountID, $"{restUrl}/{endpoint}/{token}"))
+            {
+                requestMessage.Method = HttpMethod.Get;
+
+                Guid logId = Guid.NewGuid();
+                WriteDebug(logId, requestMessage, null);
+                Sleep.RegisterStartTime();
+
+                using (HttpResponseMessage responseMessage = await client.SendAsync(requestMessage))
+                {
+                    WriteDebug(logId, requestMessage, null, true);
+                    Sleep.SleepRemainingTime();
+
+                    if (responseMessage.IsSuccessStatusCode && responseMessage.Content.Headers.ContentType?.MediaType == applicationJsonMediaType)
+                    {
+                        UpdateAccountRateLimits(responseMessage);
+                        string data = await responseMessage.Content.ReadAsStringAsync();
+                        return JsonConvert.DeserializeObject<T>(data) ?? throw new Sdk4meException("The response could not be processed.");
+                    }
+                    else
+                    {
+                        if (responseMessage.Content.Headers.ContentType?.MediaType == applicationJsonMediaType)
+                        {
+                            using (StreamReader streamReader = new(await responseMessage.Content.ReadAsStreamAsync()))
+                                throw new Sdk4meException(streamReader.ReadToEnd());
+                        }
+
+                        throw new Sdk4meException(responseMessage.StatusCode.ToString());
+                    }
+                }
+            }
+        }
+
+        /// <summary>
         /// Create a new <see cref="HttpRequestMessage"/>.
         /// </summary>
         /// <param name="accountID">The account identifier.</param>
-        /// <param name="url">Overwrite the default URL when while creating the <see cref="HttpRequestMessage"/>.</param>
+        /// <param name="url">Overwrite the default URL while creating the <see cref="HttpRequestMessage"/>.</param>
         /// <returns>The <see cref="HttpRequestMessage"/> object.</returns>
         private async Task<HttpRequestMessage> CreateHttpRequest(string accountID, string? url = null)
         {

@@ -1,4 +1,6 @@
-﻿namespace Sdk4me.GraphQL
+﻿using System.Runtime.Serialization;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// A 4me environment type.
@@ -131,5 +133,59 @@
         /// Greater than or equal to given value and less than or equal to the other given value (numeric and date / time types only)
         /// </summary>
         GreaterThanOrEqualToAndLessThanOrEqualTo
+    }
+
+    /// <summary>
+    /// The 4me export line separators.
+    /// </summary>
+    public enum ExportLineSeparator
+    {
+        /// <summary>
+        /// Line Feed (ASCII 10, \n)
+        /// </summary>
+        [EnumMember(Value = "lf")]
+        LineFeed,
+        /// <summary>
+        /// Carriage Return (ASCII 13, \r) Line Feed (ASCII 10, \n)
+        /// </summary>
+        [EnumMember(Value = "crlf")]
+        CarriageReturnLineFeed
+    }
+
+    /// <summary>
+    /// The 4me import and export states.
+    /// </summary>
+    public enum ImportExportStatus
+    {
+        /// <summary>
+        /// The import or export job is done.
+        /// </summary>
+        [EnumMember(Value = "done")]
+        Done,
+        /// <summary>
+        /// The import or export job failed due to an error.
+        /// </summary>
+        [EnumMember(Value = "error")]
+        Error,
+        /// <summary>
+        /// The import or export job failed.
+        /// </summary>
+        [EnumMember(Value = "failed")]
+        Failed,
+        /// <summary>
+        /// The import or export job is being processed.
+        /// </summary>
+        [EnumMember(Value = "processing")]
+        Processing,
+        /// <summary>
+        /// The import or export job is queued.
+        /// </summary>
+        [EnumMember(Value = "queued")]
+        Queued,
+        /// <summary>
+        /// The import or export job is scheduled.
+        /// </summary>
+        [EnumMember(Value = "scheduled")]
+        Scheduled
     }
 }
