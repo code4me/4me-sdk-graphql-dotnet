@@ -12,7 +12,7 @@ namespace Sdk4me.GraphQL.Tests
         {
             Account account = client.Account().Result;
             Assert.IsNotNull(account);
-            Assert.IsTrue(account.GetIdentifier() == 0);
+            Assert.ThrowsException<Sdk4meException>(() => account.GetIdentifier());
         }
     }
 }

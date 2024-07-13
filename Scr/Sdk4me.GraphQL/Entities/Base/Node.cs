@@ -35,16 +35,6 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// Get the REST API numerical identifier.
-        /// </summary>
-        /// <returns>Returns the REST API numerical identifier; or 0 if the <see cref="ID"/> is null or empty.</returns>
-        /// <exception cref="Sdk4meException"></exception>
-        public long GetIdentifier()
-        {
-            return ID.Get4meIdentifier();
-        }
-
-        /// <summary>
         /// Get the <see cref="QueryPageInfo"/> for all <see cref="NodeCollection{TEntity}"/> properties.
         /// </summary>
         /// <param name="fieldName">The field name.</param>
