@@ -1,13 +1,47 @@
 ﻿# .NET SDK for 4me GraphQL
 A .NET and .NET Framework client for accessing the [4me GraphQL API](https://developer.4me.com/graphql/).
 
+## Table of Contents
+- [Licensing](#licensing)
+- [NuGet](#nuget)
+- [Introduction](#introduction)
+- [Client](#client)
+- [Authentication](#authentication)
+- [Querying](#querying)
+  - [Filtering](#filtering)
+  - [Views](#views)
+  - [Pagination](#pagination)
+  - [Date and time exceptions](#date-and-time-exceptions)
+  - [Interface-based properties](#interface-based-properties)
+- [Mutations](#mutations)
+- [Attachments](#attachments)
+- [Events API](#events-api)
+- [Bulk API](#bulk-api)
+- [Multiple tokens](#multiple-tokens)
+- [Multiple accounts](#multiple-accounts)
+- [Response timing](#response-timing)
+- [Trace capabilities](#trace-capabilities)
+- [Examples](#examples)
+  - [Minimum example](#minimum-example)
+  - [Queries](#queries)
+  - [Mutations](#mutations-1)
+  - [Attachments](#attachments-1)
+  - [Create a new event via the events API](#create-a-new-event-via-the-events-api)
+  - [Bulk Import and Export](#bulk-import-and-export)
+  - [Exception handling](#exception-handling)
+  - [Authentication tokens, account, environment and environment regions usage](#authentication-tokens-account-environment-and-environment-regions-usage)
+  - [Multiple accounts usage](#multiple-accounts-usage)
+  - [Multiple tokens - Request and cost scores](#multiple-tokens---request-and-cost-scores)
+  - [Trace output](#trace-output)
+
+
 ## Licensing
 The SDK uses the [Newtonsoft.Json framework](https://github.com/JamesNK/Newtonsoft.Json) NuGet Package, which is a high-performance JSON framework for .NET and available under [MIT licensing](https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md).
 
 ## NuGet
 Stable binaries are published to [NuGet.org](https://www.nuget.org), and contain everything you need to use [.NET SDK for 4me GraphQL](https://www.nuget.org/packages/Sdk4me.GraphQL) in your application.
 
-# Introduction
+## Introduction
 The .NET SDK simplifies the process of interacting with the 4me GraphQL API, allowing you to take full advantage of its query and mutation capabilities with ease.
 It abstracts away the complex task of managing low-level details such as sending requests, parsing responses, filtering and pagination, making it simple to integrate 4me GraphQL API into your .NET applications and fully leverage its functionalities.
 
@@ -27,7 +61,7 @@ The SDK supports both Personal Access Token and OAuth 2.0 Client Credential Gran
 
 ## Querying
 The SDK provides a simple and intuitive way to write queries, allowing you to easily retrieve the data you need.
-The query interface also enables you to write nested queries, which can generate GraphQL connections, making it simple to work with related data.
+The query interface also enables you to write nested queries, making it simple to work with related data.
 You can easily execute complex queries and retrieve data with minimal effort, making it simple to build efficient and performant applications that leverage the full capabilities of the 4me GraphQL API.
 
 ### Filtering
