@@ -211,7 +211,7 @@ namespace Sdk4me.GraphQL
         /// The amount of RAM (in GB) of this configuration item.
         /// </summary>
         [JsonProperty("ramAmount")]
-        public long? RamAmount { get; internal set; }
+        public decimal? RamAmount { get; internal set; }
 
         /// <summary>
         /// Recurrence for maintenance of the configuration item.

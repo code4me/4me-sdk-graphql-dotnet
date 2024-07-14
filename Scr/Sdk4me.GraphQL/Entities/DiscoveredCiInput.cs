@@ -32,7 +32,7 @@ namespace Sdk4me.GraphQL
         private string? operatingSystemId;
         private decimal? purchaseValue;
         private string? purchaseValueCurrency;
-        private long? ramAmount;
+        private decimal? ramAmount;
         private string? remarks;
         private string? serialNr;
         private string? service;
@@ -209,7 +209,7 @@ namespace Sdk4me.GraphQL
         /// The amount of RAM (in GB) of this configuration item.
         /// </summary>
         [JsonProperty("ramAmount")]
-        public long? RamAmount
+        public decimal? RamAmount
         {
             get => ramAmount;
             set => ramAmount = Set("ramAmount", value);

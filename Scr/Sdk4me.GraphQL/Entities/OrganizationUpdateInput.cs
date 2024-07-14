@@ -16,6 +16,7 @@ namespace Sdk4me.GraphQL
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
         private bool? disabled;
+        private bool? endUserPrivacy;
         private string? financialID;
         private string id;
         private string? managerId;
@@ -111,6 +112,16 @@ namespace Sdk4me.GraphQL
         {
             get => disabled;
             set => disabled = Set("disabled", value);
+        }
+
+        /// <summary>
+        /// Whether end users from this organization should be prevented from seeing information of other end users.
+        /// </summary>
+        [JsonProperty("endUserPrivacy")]
+        public bool? EndUserPrivacy
+        {
+            get => endUserPrivacy;
+            set => endUserPrivacy = Set("endUserPrivacy", value);
         }
 
         /// <summary>

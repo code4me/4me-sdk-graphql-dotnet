@@ -3084,6 +3084,11 @@ namespace Sdk4me.GraphQL
         [EnumMember(Value = "disabled")]
         Disabled,
         /// <summary>
+        /// The end user privacy field.
+        /// </summary>
+        [EnumMember(Value = "endUserPrivacy")]
+        EndUserPrivacy,
+        /// <summary>
         /// The financial id field.
         /// </summary>
         [EnumMember(Value = "financialID")]

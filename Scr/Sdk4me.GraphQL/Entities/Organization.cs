@@ -101,6 +101,12 @@ namespace Sdk4me.GraphQL
         public bool? Disabled { get; internal set; }
 
         /// <summary>
+        /// Whether end users from this organization should be prevented from seeing information of other end users.
+        /// </summary>
+        [JsonProperty("endUserPrivacy")]
+        public bool? EndUserPrivacy { get; internal set; }
+
+        /// <summary>
         /// The unique identifier by which the organization is known in the financial system.
         /// </summary>
         [JsonProperty("financialID"), Sdk4meField(IsDefaultQueryProperty = true)]

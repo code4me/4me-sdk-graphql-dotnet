@@ -46,7 +46,7 @@ namespace Sdk4me.GraphQL
         private string productId;
         private decimal? purchaseValue;
         private string? purchaseValueCurrency;
-        private long? ramAmount;
+        private decimal? ramAmount;
         private RecurrenceInput? recurrence;
         private string? remarks;
         private List<AttachmentInput>? remarksAttachments;
@@ -339,7 +339,7 @@ namespace Sdk4me.GraphQL
         /// The amount of RAM (in GB) of this configuration item.
         /// </summary>
         [JsonProperty("ramAmount")]
-        public long? RamAmount
+        public decimal? RamAmount
         {
             get => ramAmount;
             set => ramAmount = Set("ramAmount", value);
