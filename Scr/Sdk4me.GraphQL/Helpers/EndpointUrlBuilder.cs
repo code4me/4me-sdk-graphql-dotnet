@@ -6,12 +6,12 @@
     internal static class EndpointUrlBuilder
     {
         /// <summary>
-        /// Returns the domain name for a specific environment.
+        /// Returns the base URL for a specific environment.
         /// </summary>
         /// <param name="environment">The environment type.</param>
         /// <param name="environmentRegion">The environment region.</param>
         /// <returns>The API endpoint URL for the specified environment.</returns>
-        internal static string GetDomainName(EnvironmentRegion environmentRegion, EnvironmentType environment)
+        internal static string GetBaseUrl(EnvironmentRegion environmentRegion, EnvironmentType environment)
         {
             return environmentRegion switch
             {

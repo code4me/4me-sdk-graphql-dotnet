@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Sdk4me.GraphQL
@@ -76,7 +77,7 @@ namespace Sdk4me.GraphQL
         /// <returns>A task representing the asynchronous operation, with an <see cref="BulkExportResponse"/> containing detailed information about the export process.</returns>
         public async Task<BulkExportResponse> GetExportStatus(string token)
         {
-            return await client.GetImportExportStatus<BulkExportResponse>(token);
+            return await client.GetImportExportStatus<BulkExportResponse>(token, CancellationToken.None);
         }
 
         /// <summary>
@@ -90,6 +91,9 @@ namespace Sdk4me.GraphQL
         {
             if (exportResponse.State != ImportExportStatus.Done)
                 throw new ArgumentException("The export process is not yet completed.");
+
+            if (exportResponse.State == ImportExportStatus.Failed || exportResponse.State == ImportExportStatus.Error)
+                throw new Sdk4meException("The export process failed.");
 
             if (string.IsNullOrEmpty(exportResponse.Url))
                 throw new ArgumentNullException(nameof(exportResponse), "The URL cannot be null or empty.");
@@ -113,17 +117,87 @@ namespace Sdk4me.GraphQL
         /// <exception cref="ArgumentOutOfRangeException">Thrown when the polling interval is outside the allowed range.</exception>
         public async Task<Stream> AwaitDownload(string token, int pollingIntervalInSeconds)
         {
+            return await AwaitDownload(token, pollingIntervalInSeconds, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Waits for the export to complete and then downloads the file.
+        /// <para>Be mindful of the API rate limit when setting the polling interval.</para>
+        /// </summary>
+        /// <param name="token">The export token.</param>
+        /// <param name="pollingIntervalInSeconds">
+        /// The interval in seconds to wait between status checks. Must be between 2 seconds and 900 seconds (15 minutes).
+        /// Select the interval based on the expected number of objects to be exported, as frequent polling can potentially exceed the API rate limit.
+        /// </param>
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>A task representing the asynchronous operation, with a stream representing the file content.</returns>
+        /// <exception cref="Sdk4meException">Thrown when the export fails.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when the polling interval is outside the allowed range.</exception>
+        public async Task<Stream> AwaitDownload(string token, int pollingIntervalInSeconds, CancellationToken cancellationToken)
+        {
             if (pollingIntervalInSeconds < 2 || pollingIntervalInSeconds > 900)
                 throw new ArgumentOutOfRangeException(nameof(pollingIntervalInSeconds), "Polling interval must be between 2 seconds and 900 seconds.");
 
-            BulkExportResponse response = await client.GetImportExportStatus<BulkExportResponse>(token);
+            BulkExportResponse response = await client.GetImportExportStatus<BulkExportResponse>(token, cancellationToken);
             while (response.State != ImportExportStatus.Done)
             {
+                cancellationToken.ThrowIfCancellationRequested();
+
                 if (response.State == ImportExportStatus.Failed || response.State == ImportExportStatus.Error)
                     throw new Sdk4meException("The export process failed.");
 
-                await System.Threading.Tasks.Task.Delay(pollingIntervalInSeconds * 1000);
-                response = await client.GetImportExportStatus<BulkExportResponse>(token);
+                await System.Threading.Tasks.Task.Delay(pollingIntervalInSeconds * 1000, cancellationToken);
+                response = await client.GetImportExportStatus<BulkExportResponse>(token, cancellationToken);
+            }
+            return await Download(response);
+        }
+
+        /// <summary>
+        /// Waits for the export to complete and then downloads the file.
+        /// <para>Be mindful of the API rate limit when setting the polling interval.</para>
+        /// </summary>
+        /// <param name="token">The export token.</param>
+        /// <param name="pollingIntervalInSeconds">
+        /// The interval in seconds to wait between status checks. Must be between 2 seconds and 900 seconds (15 minutes).
+        /// Select the interval based on the expected number of objects to be exported, as frequent polling can potentially exceed the API rate limit.
+        /// </param>
+        /// <param name="timeoutInSeconds">
+        /// The maximum time in seconds to wait for the export to complete. If the export process does not complete within this time, a <see cref="TimeoutException"/> will be thrown.
+        /// <para>A value of 0 or less means the operation will wait indefinitely until the export is completed or fails.</para>
+        /// </param>
+        /// <returns>A task representing the asynchronous operation, with a stream representing the file content.</returns>
+        /// <exception cref="Sdk4meException">Thrown when the export fails.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when the polling interval is outside the allowed range.</exception>
+        /// <exception cref="TimeoutException">Thrown when the operation times out.</exception>
+        public async Task<Stream> AwaitDownload(string token, int pollingIntervalInSeconds, int timeoutInSeconds)
+        {
+            if (pollingIntervalInSeconds < 2 || pollingIntervalInSeconds > 900)
+                throw new ArgumentOutOfRangeException(nameof(pollingIntervalInSeconds), "Polling interval must be between 2 seconds and 900 seconds.");
+
+            DateTime startTime = DateTime.UtcNow;
+            DateTime lastRequestTime = DateTime.UtcNow;
+
+            BulkExportResponse response = await client.GetImportExportStatus<BulkExportResponse>(token, CancellationToken.None);
+
+            if (response.State == ImportExportStatus.Failed || response.State == ImportExportStatus.Error)
+                throw new Sdk4meException("The export process failed.");
+
+            while (response.State != ImportExportStatus.Done)
+            {
+                double elapsedSeconds = (DateTime.UtcNow - startTime).TotalSeconds;
+                if (timeoutInSeconds > 0 && elapsedSeconds > timeoutInSeconds)
+                    throw new TimeoutException($"The await download operation for token '{token}' has timed out after {elapsedSeconds:N2} seconds, exceeding the timeout limit of {timeoutInSeconds} seconds.");
+
+                if ((DateTime.UtcNow - lastRequestTime).TotalSeconds >= pollingIntervalInSeconds)
+                {
+                    response = await client.GetImportExportStatus<BulkExportResponse>(token, CancellationToken.None);
+                    lastRequestTime = DateTime.UtcNow;
+
+                    if (response.State == ImportExportStatus.Failed || response.State == ImportExportStatus.Error)
+                        throw new Sdk4meException("The export process failed.");
+
+                }
+                await System.Threading.Tasks.Task.Delay(1000);
             }
             return await Download(response);
         }
@@ -143,7 +217,59 @@ namespace Sdk4me.GraphQL
         /// <exception cref="ArgumentOutOfRangeException">Thrown when the polling interval is outside the allowed range.</exception>
         public async System.Threading.Tasks.Task AwaitDownloadAndSave(string token, int pollingIntervalInSeconds, string path)
         {
-            using (Stream downloadStream = await AwaitDownload(token, pollingIntervalInSeconds))
+            await AwaitDownloadAndSave(token, pollingIntervalInSeconds, path, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Waits for the export to complete, downloads the file, and saves it to the specified path.
+        /// <para>Be mindful of the API rate limit when setting the polling interval.</para>
+        /// </summary>
+        /// <param name="token">The export token.</param>
+        /// <param name="pollingIntervalInSeconds">
+        /// The interval in seconds to wait between status checks. Must be between 2 seconds and 900 seconds (15 minutes).
+        /// Select the interval based on the expected number of objects to be exported, as frequent polling can potentially exceed the API rate limit.
+        /// </param>
+        /// <param name="path">The file path where the downloaded content will be saved.</param>
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>A task representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException">Thrown when the export fails.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when the polling interval is outside the allowed range.</exception>
+        public async System.Threading.Tasks.Task AwaitDownloadAndSave(string token, int pollingIntervalInSeconds, string path, CancellationToken cancellationToken)
+        {
+            using (Stream downloadStream = await AwaitDownload(token, pollingIntervalInSeconds, cancellationToken))
+            {
+                using (FileStream fileStream = new(path, FileMode.Create, FileAccess.Write, FileShare.None))
+                {
+#if NET6_0_OR_GREATER
+                        await downloadStream.CopyToAsync(fileStream, cancellationToken);
+#else
+                        await downloadStream.CopyToAsync(fileStream);
+#endif
+                }
+            }
+        }
+
+        /// <summary>
+        /// Waits for the export to complete, downloads the file, and saves it to the specified path.
+        /// <para>Be mindful of the API rate limit when setting the polling interval.</para>
+        /// </summary>
+        /// <param name="token">The export token.</param>
+        /// <param name="pollingIntervalInSeconds">
+        /// The interval in seconds to wait between status checks. Must be between 2 seconds and 900 seconds (15 minutes).
+        /// Select the interval based on the expected number of objects to be exported, as frequent polling can potentially exceed the API rate limit.
+        /// </param>
+        /// <param name="path">The file path where the downloaded content will be saved.</param>
+        /// <param name="timeoutInSeconds">
+        /// The maximum time in seconds to wait for the export to complete. If the export process does not complete within this time, a <see cref="TimeoutException"/> will be thrown.
+        /// <para>A value of 0 or less means the operation will wait indefinitely until the export is completed or fails.</para>
+        /// </param>
+        /// <returns>A task representing the asynchronous operation.</returns>
+        /// <exception cref="Sdk4meException">Thrown when the export fails.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when the polling interval is outside the allowed range.</exception>
+        /// <exception cref="TimeoutException">Thrown when the operation times out.</exception>
+        public async System.Threading.Tasks.Task AwaitDownloadAndSave(string token, int pollingIntervalInSeconds, string path, int timeoutInSeconds)
+        {
+            using (Stream downloadStream = await AwaitDownload(token, pollingIntervalInSeconds, timeoutInSeconds))
             {
                 using (FileStream fileStream = new(path, FileMode.Create, FileAccess.Write, FileShare.None))
                 {
@@ -224,7 +350,7 @@ namespace Sdk4me.GraphQL
         /// <returns>A task representing the asynchronous operation, with an <see cref="BulkImportResponse"/> containing detailed information about the import process.</returns>
         public async Task<BulkImportResponse> GetImportStatus(string token)
         {
-            return await client.GetImportExportStatus<BulkImportResponse>(token);
+            return await client.GetImportExportStatus<BulkImportResponse>(token, CancellationToken.None);
         }
 
         /// <summary>
@@ -241,15 +367,77 @@ namespace Sdk4me.GraphQL
         /// <exception cref="ArgumentOutOfRangeException">Thrown when the polling interval is outside the allowed range.</exception>
         public async Task<BulkImportResponse> AwaitImport(string token, int pollingIntervalInSeconds)
         {
+            return await AwaitImport(token, pollingIntervalInSeconds, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Waits for the import process to complete by periodically checking the import status.
+        /// <para>Be mindful of the API rate limit when setting the polling interval.</para>
+        /// </summary>
+        /// <param name="token">The import token.</param>
+        /// <param name="pollingIntervalInSeconds">
+        /// The interval in seconds to wait between status checks. Must be between 2 seconds and 900 seconds (15 minutes).
+        /// Select the interval based on the expected number of objects to be imported, as frequent polling can potentially exceed the API rate limit.
+        /// </param>
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>A task representing the asynchronous operation, with the final <see cref="BulkImportResponse"/> indicating the outcome of the import process.</returns>
+        /// <exception cref="Sdk4meException">Thrown when the import process fails.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when the polling interval is outside the allowed range.</exception>
+        public async Task<BulkImportResponse> AwaitImport(string token, int pollingIntervalInSeconds, CancellationToken cancellationToken)
+        {
             if (pollingIntervalInSeconds < 2 || pollingIntervalInSeconds > 900)
                 throw new ArgumentOutOfRangeException(nameof(pollingIntervalInSeconds), "Polling interval must be between 2 seconds and 900 seconds.");
 
-            // Wait for the import to complete
-            BulkImportResponse response = await client.GetImportExportStatus<BulkImportResponse>(token);
+            BulkImportResponse response = await client.GetImportExportStatus<BulkImportResponse>(token, cancellationToken);
             while (response.State != ImportExportStatus.Done && response.State != ImportExportStatus.Failed && response.State != ImportExportStatus.Error)
             {
-                await System.Threading.Tasks.Task.Delay(pollingIntervalInSeconds * 1000);
-                response = await client.GetImportExportStatus<BulkImportResponse>(token);
+                cancellationToken.ThrowIfCancellationRequested();
+
+                await System.Threading.Tasks.Task.Delay(pollingIntervalInSeconds * 1000, cancellationToken);
+                response = await client.GetImportExportStatus<BulkImportResponse>(token, cancellationToken);
+            }
+            return response;
+        }
+
+        /// <summary>
+        /// Waits for the import process to complete by periodically checking the import status.
+        /// <para>Be mindful of the API rate limit when setting the polling interval.</para>
+        /// </summary>
+        /// <param name="token">The import token.</param>
+        /// <param name="pollingIntervalInSeconds">
+        /// The interval in seconds to wait between status checks. Must be between 2 seconds and 900 seconds (15 minutes).
+        /// Select the interval based on the expected number of objects to be imported, as frequent polling can potentially exceed the API rate limit.
+        /// </param>
+        /// <param name="timeoutInSeconds">
+        /// The maximum time in seconds to wait for the import to complete. If the import process does not complete within this time, a <see cref="TimeoutException"/> will be thrown.
+        /// <para>A value of 0 or less means the operation will wait indefinitely until the import is completed or fails.</para>
+        /// </param>
+        /// <returns>A task representing the asynchronous operation, with the final <see cref="BulkImportResponse"/> indicating the outcome of the import process.</returns>
+        /// <exception cref="Sdk4meException">Thrown when the import process fails.</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when the polling interval is outside the allowed range.</exception>
+        /// <exception cref="TimeoutException">Thrown when the operation times out.</exception>
+        public async Task<BulkImportResponse> AwaitImport(string token, int pollingIntervalInSeconds, int timeoutInSeconds)
+        {
+            if (pollingIntervalInSeconds < 2 || pollingIntervalInSeconds > 900)
+                throw new ArgumentOutOfRangeException(nameof(pollingIntervalInSeconds), "Polling interval must be between 2 seconds and 900 seconds.");
+
+            DateTime startTime = DateTime.UtcNow;
+            DateTime lastRequestTime = DateTime.UtcNow;
+
+            BulkImportResponse response = await client.GetImportExportStatus<BulkImportResponse>(token, CancellationToken.None);
+            while (response.State != ImportExportStatus.Done && response.State != ImportExportStatus.Failed && response.State != ImportExportStatus.Error)
+            {
+                double elapsedSeconds = (DateTime.UtcNow - startTime).TotalSeconds;
+                if (timeoutInSeconds > 0 && elapsedSeconds > timeoutInSeconds)
+                    throw new TimeoutException($"The await import operation for token '{token}' has timed out after {elapsedSeconds:N2} seconds, exceeding the timeout limit of {timeoutInSeconds} seconds.");
+
+                if ((DateTime.UtcNow - lastRequestTime).TotalSeconds >= pollingIntervalInSeconds)
+                {
+                    response = await client.GetImportExportStatus<BulkImportResponse>(token, CancellationToken.None);
+                    lastRequestTime = DateTime.UtcNow;
+                }
+
+                await System.Threading.Tasks.Task.Delay(1000);
             }
             return response;
         }

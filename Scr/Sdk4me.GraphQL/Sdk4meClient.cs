@@ -11,6 +11,7 @@ using System.Net.Http.Headers;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Sdk4me.GraphQL
@@ -130,7 +131,7 @@ namespace Sdk4me.GraphQL
         /// <exception cref="ArgumentException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
         public Sdk4meClient(AuthenticationToken authenticationToken, string accountID, EnvironmentType environment, EnvironmentRegion environmentRegion, int maximumRecursiveRequests = 10)
-            : this(new AuthenticationTokenCollection(authenticationToken), accountID, EndpointUrlBuilder.GetDomainName(environmentRegion, environment), maximumRecursiveRequests)
+            : this(new AuthenticationTokenCollection(authenticationToken), accountID, EndpointUrlBuilder.GetBaseUrl(environmentRegion, environment), maximumRecursiveRequests)
         {
         }
 
@@ -139,12 +140,12 @@ namespace Sdk4me.GraphQL
         /// </summary>
         /// <param name="authenticationToken">The authentication token.</param>
         /// <param name="accountID">The 4me Account ID.</param>
-        /// <param name="domainName">The 4me domain name.</param>
+        /// <param name="apiBaseUrl">The base URL for constructing the full API endpoint.</param>
         /// <param name="maximumRecursiveRequests">The number of recursive requests.</param>
         /// <exception cref="ArgumentException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
-        public Sdk4meClient(AuthenticationToken authenticationToken, string accountID, string domainName, int maximumRecursiveRequests = 10)
-            : this(new AuthenticationTokenCollection(authenticationToken), accountID, domainName, maximumRecursiveRequests)
+        public Sdk4meClient(AuthenticationToken authenticationToken, string accountID, string apiBaseUrl, int maximumRecursiveRequests = 10)
+            : this(new AuthenticationTokenCollection(authenticationToken), accountID, apiBaseUrl, maximumRecursiveRequests)
         {
         }
 
@@ -159,7 +160,7 @@ namespace Sdk4me.GraphQL
         /// <exception cref="ArgumentException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
         public Sdk4meClient(AuthenticationTokenCollection authenticationTokens, string accountID, EnvironmentType environment, EnvironmentRegion environmentRegion, int maximumRecursiveRequests = 10)
-            : this(authenticationTokens, accountID, EndpointUrlBuilder.GetDomainName(environmentRegion, environment), maximumRecursiveRequests)
+            : this(authenticationTokens, accountID, EndpointUrlBuilder.GetBaseUrl(environmentRegion, environment), maximumRecursiveRequests)
         {
         }
 
@@ -168,11 +169,11 @@ namespace Sdk4me.GraphQL
         /// </summary>
         /// <param name="authenticationTokens">The authentication token collection.</param>
         /// <param name="accountID">The 4me Account ID.</param>
-        /// <param name="domainName">The 4me domain name.</param>
+        /// <param name="apiBaseUrl">The base URL for constructing the full API endpoint.</param>
         /// <param name="maximumRecursiveRequests">The number of recursive requests.</param>
         /// <exception cref="ArgumentException"></exception>
         /// <exception cref="ArgumentNullException"></exception>
-        public Sdk4meClient(AuthenticationTokenCollection authenticationTokens, string accountID, string domainName, int maximumRecursiveRequests = 10)
+        public Sdk4meClient(AuthenticationTokenCollection authenticationTokens, string accountID, string apiBaseUrl, int maximumRecursiveRequests = 10)
         {
             if (string.IsNullOrWhiteSpace(accountID))
                 throw new ArgumentException($"'{nameof(accountID)}' cannot be null or empty.", nameof(accountID));
@@ -181,9 +182,9 @@ namespace Sdk4me.GraphQL
                 throw new ArgumentException($"'{nameof(authenticationTokens)}' cannot be null or empty.", nameof(authenticationTokens));
 
             unixEpoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-            url = EndpointUrlBuilder.Get(domainName);
-            restUrl = EndpointUrlBuilder.GetRest(domainName);
-            oauth2Url = EndpointUrlBuilder.GetOAuth2(domainName);
+            url = EndpointUrlBuilder.Get(apiBaseUrl);
+            restUrl = EndpointUrlBuilder.GetRest(apiBaseUrl);
+            oauth2Url = EndpointUrlBuilder.GetOAuth2(apiBaseUrl);
             this.authenticationTokens = authenticationTokens;
             this.accountID = accountID;
             this.maximumRecursiveRequests = (maximumRecursiveRequests < 1 || maximumRecursiveRequests > 1000) ? 10 : maximumRecursiveRequests;
@@ -605,10 +606,11 @@ namespace Sdk4me.GraphQL
         /// </summary>
         /// <typeparam name="T">The type of the status response, either <see cref="BulkExportResponse"/> or <see cref="BulkImportResponse"/>.</typeparam>
         /// <param name="token">The token for the export or import.</param>
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>A task representing the asynchronous operation, with the status response of type <typeparamref name="T"/>.</returns>
         /// <exception cref="Sdk4meException">Thrown when the response cannot be processed.</exception>
         /// <exception cref="ArgumentException">Thrown when the type is not supported.</exception>
-        internal async Task<T> GetImportExportStatus<T>(string token) where T : class
+        internal async Task<T> GetImportExportStatus<T>(string token, CancellationToken cancellationToken) where T : class
         {
             string endpoint = typeof(T) == typeof(BulkExportResponse) ? "export" :
                               typeof(T) == typeof(BulkImportResponse) ? "import" :
@@ -622,7 +624,7 @@ namespace Sdk4me.GraphQL
                 WriteDebug(logId, requestMessage, null);
                 Sleep.RegisterStartTime();
 
-                using (HttpResponseMessage responseMessage = await client.SendAsync(requestMessage))
+                using (HttpResponseMessage responseMessage = await client.SendAsync(requestMessage, cancellationToken))
                 {
                     WriteDebug(logId, requestMessage, null, true);
                     Sleep.SleepRemainingTime();

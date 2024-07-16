@@ -18,17 +18,25 @@ namespace Sdk4me.GraphQL.Tests
 
             string? result = client.Bulk.StartCsvExport(ExportLineSeparator.LineFeed, "cis").Result;
             Assert.IsNotNull(result);
-            client.Bulk.AwaitDownloadAndSave(result, 10, csvPath).GetAwaiter().GetResult();
+            client.Bulk.AwaitDownloadAndSave(result, 5, csvPath).GetAwaiter().GetResult();
             FileInfo fileInfo = new(csvPath);
             Assert.IsTrue(fileInfo.Exists);
             Assert.IsTrue(fileInfo.Length > 0);
 
-            result = client.Bulk.StartExcelExport("cis", "people").Result;
+            result = client.Bulk.StartExcelExport("calendars", "holidays").Result;
             Assert.IsNotNull(result);
-            client.Bulk.AwaitDownloadAndSave(result, 5, zipPath).GetAwaiter().GetResult();
+            client.Bulk.AwaitDownloadAndSave(result, 10, zipPath).GetAwaiter().GetResult();
             fileInfo = new(zipPath);
             Assert.IsTrue(fileInfo.Exists);
             Assert.IsTrue(fileInfo.Length > 0);
+
+            result = client.Bulk.StartExcelExport("cis", "people", "services", "tasks").Result;
+            Assert.IsNotNull(result);
+            TimeoutException exception = Assert.ThrowsException<TimeoutException>(() =>
+            {
+                client.Bulk.AwaitDownloadAndSave(result, 10, zipPath, 5).GetAwaiter().GetResult();
+            });
+            Assert.IsNotNull(exception);
         }
 
         [TestMethod]
@@ -39,7 +47,7 @@ namespace Sdk4me.GraphQL.Tests
             File.WriteAllText(csvPath, $"\"ID\",Source,Source ID\n20,Sdk4me.GraphQL,\"{DateTime.Now:o}\"\n", new UTF8Encoding(false));
             string? result = client.Bulk.StartImport("cis", csvPath).Result;
             Assert.IsNotNull(result);
-            BulkImportResponse importResult = client.Bulk.AwaitImport(result, 2).Result;
+            BulkImportResponse importResult = client.Bulk.AwaitImport(result, 2, 120).Result;
             Assert.IsTrue(importResult.State == ImportExportStatus.Done);
             Assert.IsTrue(importResult.Results.Updated == 1);
         }
