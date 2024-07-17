@@ -161,15 +161,15 @@ namespace Sdk4me.GraphQL
         /// The interval in seconds to wait between status checks. Must be between 2 seconds and 900 seconds (15 minutes).
         /// Select the interval based on the expected number of objects to be exported, as frequent polling can potentially exceed the API rate limit.
         /// </param>
-        /// <param name="timeoutInSeconds">
-        /// The maximum time in seconds to wait for the export to complete. If the export process does not complete within this time, a <see cref="TimeoutException"/> will be thrown.
-        /// <para>A value of 0 or less means the operation will wait indefinitely until the export is completed or fails.</para>
+        /// <param name="timeout">
+        /// The maximum time to wait for the export to complete. If the export process does not complete within this time, a <see cref="TimeoutException"/> will be thrown.
+        /// <para>A value of TimeSpan.Zero means the operation will wait indefinitely until the export is completed or fails.</para>
         /// </param>
         /// <returns>A task representing the asynchronous operation, with a stream representing the file content.</returns>
         /// <exception cref="Sdk4meException">Thrown when the export fails.</exception>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when the polling interval is outside the allowed range.</exception>
         /// <exception cref="TimeoutException">Thrown when the operation times out.</exception>
-        public async Task<Stream> AwaitDownload(string token, int pollingIntervalInSeconds, int timeoutInSeconds)
+        public async Task<Stream> AwaitDownload(string token, int pollingIntervalInSeconds, TimeSpan timeout)
         {
             if (pollingIntervalInSeconds < 2 || pollingIntervalInSeconds > 900)
                 throw new ArgumentOutOfRangeException(nameof(pollingIntervalInSeconds), "Polling interval must be between 2 seconds and 900 seconds.");
@@ -184,9 +184,9 @@ namespace Sdk4me.GraphQL
 
             while (response.State != ImportExportStatus.Done)
             {
-                double elapsedSeconds = (DateTime.UtcNow - startTime).TotalSeconds;
-                if (timeoutInSeconds > 0 && elapsedSeconds > timeoutInSeconds)
-                    throw new TimeoutException($"The await download operation for token '{token}' has timed out after {elapsedSeconds:N2} seconds, exceeding the timeout limit of {timeoutInSeconds} seconds.");
+                TimeSpan elapsed = DateTime.UtcNow - startTime;
+                if (timeout > TimeSpan.Zero && elapsed > timeout)
+                    throw new TimeoutException($"The await download operation for token '{token}' has timed out after {elapsed.TotalSeconds:N2} seconds, exceeding the timeout limit of {timeout.TotalSeconds} seconds.");
 
                 if ((DateTime.UtcNow - lastRequestTime).TotalSeconds >= pollingIntervalInSeconds)
                 {
@@ -259,17 +259,17 @@ namespace Sdk4me.GraphQL
         /// Select the interval based on the expected number of objects to be exported, as frequent polling can potentially exceed the API rate limit.
         /// </param>
         /// <param name="path">The file path where the downloaded content will be saved.</param>
-        /// <param name="timeoutInSeconds">
-        /// The maximum time in seconds to wait for the export to complete. If the export process does not complete within this time, a <see cref="TimeoutException"/> will be thrown.
-        /// <para>A value of 0 or less means the operation will wait indefinitely until the export is completed or fails.</para>
+        /// <param name="timeout">
+        /// The maximum time to wait for the export to complete. If the export process does not complete within this time, a <see cref="TimeoutException"/> will be thrown.
+        /// <para>A value of TimeSpan.Zero means the operation will wait indefinitely until the export is completed or fails.</para>
         /// </param>
         /// <returns>A task representing the asynchronous operation.</returns>
         /// <exception cref="Sdk4meException">Thrown when the export fails.</exception>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when the polling interval is outside the allowed range.</exception>
         /// <exception cref="TimeoutException">Thrown when the operation times out.</exception>
-        public async System.Threading.Tasks.Task AwaitDownloadAndSave(string token, int pollingIntervalInSeconds, string path, int timeoutInSeconds)
+        public async System.Threading.Tasks.Task AwaitDownloadAndSave(string token, int pollingIntervalInSeconds, string path, TimeSpan timeout)
         {
-            using (Stream downloadStream = await AwaitDownload(token, pollingIntervalInSeconds, timeoutInSeconds))
+            using (Stream downloadStream = await AwaitDownload(token, pollingIntervalInSeconds, timeout))
             {
                 using (FileStream fileStream = new(path, FileMode.Create, FileAccess.Write, FileShare.None))
                 {
@@ -408,15 +408,15 @@ namespace Sdk4me.GraphQL
         /// The interval in seconds to wait between status checks. Must be between 2 seconds and 900 seconds (15 minutes).
         /// Select the interval based on the expected number of objects to be imported, as frequent polling can potentially exceed the API rate limit.
         /// </param>
-        /// <param name="timeoutInSeconds">
-        /// The maximum time in seconds to wait for the import to complete. If the import process does not complete within this time, a <see cref="TimeoutException"/> will be thrown.
-        /// <para>A value of 0 or less means the operation will wait indefinitely until the import is completed or fails.</para>
+        /// <param name="timeout">
+        /// The maximum time to wait for the export to complete. If the export process does not complete within this time, a <see cref="TimeoutException"/> will be thrown.
+        /// <para>A value of TimeSpan.Zero means the operation will wait indefinitely until the import is completed or fails.</para>
         /// </param>
         /// <returns>A task representing the asynchronous operation, with the final <see cref="BulkImportResponse"/> indicating the outcome of the import process.</returns>
         /// <exception cref="Sdk4meException">Thrown when the import process fails.</exception>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when the polling interval is outside the allowed range.</exception>
         /// <exception cref="TimeoutException">Thrown when the operation times out.</exception>
-        public async Task<BulkImportResponse> AwaitImport(string token, int pollingIntervalInSeconds, int timeoutInSeconds)
+        public async Task<BulkImportResponse> AwaitImport(string token, int pollingIntervalInSeconds, TimeSpan timeout)
         {
             if (pollingIntervalInSeconds < 2 || pollingIntervalInSeconds > 900)
                 throw new ArgumentOutOfRangeException(nameof(pollingIntervalInSeconds), "Polling interval must be between 2 seconds and 900 seconds.");
@@ -427,9 +427,9 @@ namespace Sdk4me.GraphQL
             BulkImportResponse response = await client.GetImportExportStatus<BulkImportResponse>(token, CancellationToken.None);
             while (response.State != ImportExportStatus.Done && response.State != ImportExportStatus.Failed && response.State != ImportExportStatus.Error)
             {
-                double elapsedSeconds = (DateTime.UtcNow - startTime).TotalSeconds;
-                if (timeoutInSeconds > 0 && elapsedSeconds > timeoutInSeconds)
-                    throw new TimeoutException($"The await import operation for token '{token}' has timed out after {elapsedSeconds:N2} seconds, exceeding the timeout limit of {timeoutInSeconds} seconds.");
+                TimeSpan elapsed = DateTime.UtcNow - startTime;
+                if (timeout > TimeSpan.Zero && elapsed > timeout)
+                    throw new TimeoutException($"The await import operation for token '{token}' has timed out after {elapsed.TotalSeconds:N2} seconds, exceeding the timeout limit of {timeout.TotalSeconds} seconds.");
 
                 if ((DateTime.UtcNow - lastRequestTime).TotalSeconds >= pollingIntervalInSeconds)
                 {

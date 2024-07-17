@@ -34,7 +34,7 @@ namespace Sdk4me.GraphQL.Tests
             Assert.IsNotNull(result);
             TimeoutException exception = Assert.ThrowsException<TimeoutException>(() =>
             {
-                client.Bulk.AwaitDownloadAndSave(result, 10, zipPath, 5).GetAwaiter().GetResult();
+                client.Bulk.AwaitDownloadAndSave(result, 10, zipPath, TimeSpan.FromSeconds(5)).GetAwaiter().GetResult();
             });
             Assert.IsNotNull(exception);
         }
@@ -47,7 +47,7 @@ namespace Sdk4me.GraphQL.Tests
             File.WriteAllText(csvPath, $"\"ID\",Source,Source ID\n20,Sdk4me.GraphQL,\"{DateTime.Now:o}\"\n", new UTF8Encoding(false));
             string? result = client.Bulk.StartImport("cis", csvPath).Result;
             Assert.IsNotNull(result);
-            BulkImportResponse importResult = client.Bulk.AwaitImport(result, 2, 120).Result;
+            BulkImportResponse importResult = client.Bulk.AwaitImport(result, 2, TimeSpan.FromMinutes(2)).Result;
             Assert.IsTrue(importResult.State == ImportExportStatus.Done);
             Assert.IsTrue(importResult.Results.Updated == 1);
         }
