@@ -9,6 +9,7 @@ namespace Sdk4me.GraphQL
     /// </summary>
     public class DiscoveredCiInput : PropertyChangeSet
     {
+        private string? assetID;
         private DiscoveredCiRelationInput? ciRelations;
         private CustomFieldCollection? customFields;
         private List<AttachmentInput>? customFieldsAttachments;
@@ -45,6 +46,16 @@ namespace Sdk4me.GraphQL
 #else
         private DateTime? warrantyExpiryDate;
 #endif
+
+        /// <summary>
+        /// Asset identifier of the configuration item.
+        /// </summary>
+        [JsonProperty("assetID")]
+        public string? AssetID
+        {
+            get => assetID;
+            set => assetID = Set("assetID", value);
+        }
 
         /// <summary>
         /// Relations to other configuration items.

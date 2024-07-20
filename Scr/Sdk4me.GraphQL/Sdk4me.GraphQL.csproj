@@ -16,7 +16,7 @@
 	<PackageProjectUrl>https://developer.4me.com/graphql</PackageProjectUrl>
 	<RepositoryUrl>https://github.com/code4me/4me-sdk-graphql-dotnet</RepositoryUrl>
 	<RepositoryType>git</RepositoryType>
-	<PackageTags>4me;Sdk4me</PackageTags>
+	<PackageTags>4me;Sdk4me;GraphQL</PackageTags>
 	<AssemblyVersion>1.4</AssemblyVersion>
 	<FileVersion>1.4</FileVersion>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>

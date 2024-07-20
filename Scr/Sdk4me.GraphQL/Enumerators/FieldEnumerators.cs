@@ -10615,6 +10615,11 @@ namespace Sdk4me.GraphQL
         [EnumMember(Value = "css")]
         Css,
         /// <summary>
+        /// The form definition field.
+        /// </summary>
+        [EnumMember(Value = "formDefinition")]
+        FormDefinition,
+        /// <summary>
         /// The html field.
         /// </summary>
         [EnumMember(Value = "html")]

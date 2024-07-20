@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 
 namespace Sdk4me.GraphQL
@@ -14,6 +15,7 @@ namespace Sdk4me.GraphQL
         private string? description;
         private List<AttachmentInput>? descriptionAttachments;
         private bool? disabled;
+        private JToken? formDefinition;
         private string? html;
         private string id;
         private string? javascript;
@@ -80,6 +82,16 @@ namespace Sdk4me.GraphQL
         {
             get => disabled;
             set => disabled = Set("disabled", value);
+        }
+
+        /// <summary>
+        /// Sets the Form Definition of the Prepared Version if updated.
+        /// </summary>
+        [JsonProperty("formDefinition")]
+        public JToken? FormDefinition
+        {
+            get => formDefinition;
+            set => formDefinition = Set("formDefinition", value);
         }
 
         /// <summary>

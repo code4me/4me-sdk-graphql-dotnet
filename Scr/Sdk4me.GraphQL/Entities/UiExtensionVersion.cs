@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 
@@ -32,6 +33,12 @@ namespace Sdk4me.GraphQL
         /// </summary>
         [JsonProperty("css")]
         public string? Css { get; internal set; }
+
+        /// <summary>
+        /// The Form Definition.
+        /// </summary>
+        [JsonProperty("formDefinition")]
+        public JToken? FormDefinition { get; internal set; }
 
         /// <summary>
         /// The HTML code.
