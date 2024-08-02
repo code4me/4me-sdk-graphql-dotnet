@@ -409,7 +409,7 @@ namespace Sdk4me.GraphQL
         /// <returns>The current <see cref="RequestEventCreateInput"/> instance.</returns>
         public RequestEventCreateInput SourceID(string sourceID)
         {
-            AddToRequest("source_id", sourceID);
+            AddToRequest("sourceID", sourceID);
             return this;
         }
 
