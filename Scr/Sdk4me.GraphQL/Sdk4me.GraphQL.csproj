@@ -12,18 +12,18 @@
 	<Title>Sdk4me.GraphQL</Title>
 	<Authors>Klaas Vandeweerdt</Authors>
 	<Description>A .NET client for accessing the 4me GraphQL API</Description>
-	<Copyright>Copyright © 2024 Vandeweerdt Klaas</Copyright>
+	<Copyright>Copyright © 2024 Klaas Vandeweerdt</Copyright>
 	<PackageProjectUrl>https://developer.4me.com/graphql</PackageProjectUrl>
 	<RepositoryUrl>https://github.com/code4me/4me-sdk-graphql-dotnet</RepositoryUrl>
 	<RepositoryType>git</RepositoryType>
 	<PackageTags>4me;Sdk4me;GraphQL</PackageTags>
-	<AssemblyVersion>1.4</AssemblyVersion>
-	<FileVersion>1.4</FileVersion>
+	<AssemblyVersion>1.4.1</AssemblyVersion>
+	<FileVersion>1.4.1</FileVersion>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	<PackageIcon>LogoDark128x218.png</PackageIcon>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
 	<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
-	<Version>1.4</Version>
+	<Version>1.4.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0|AnyCPU'">
