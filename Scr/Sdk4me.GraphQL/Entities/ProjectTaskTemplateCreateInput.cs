@@ -8,6 +8,8 @@ namespace Sdk4me.GraphQL
     /// </summary>
     public class ProjectTaskTemplateCreateInput : PropertyChangeSet
     {
+        private string? agileBoardColumnId;
+        private string? agileBoardId;
         private bool? assignToProjectManager;
         private bool? assignToRequester;
         private bool? assignToRequesterBusinessUnitManager;
@@ -38,6 +40,26 @@ namespace Sdk4me.GraphQL
         private string? teamId;
         private string? uiExtensionId;
         private bool? workHoursAre24x7;
+
+        /// <summary>
+        /// Identifier of the Agile board column the project task will be placed in.
+        /// </summary>
+        [JsonProperty("agileBoardColumnId")]
+        public string? AgileBoardColumnId
+        {
+            get => agileBoardColumnId;
+            set => agileBoardColumnId = Set("agileBoardColumnId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the Agile board the project task will be placed on.
+        /// </summary>
+        [JsonProperty("agileBoardId")]
+        public string? AgileBoardId
+        {
+            get => agileBoardId;
+            set => agileBoardId = Set("agileBoardId", value);
+        }
 
         /// <summary>
         /// Whether the project manager is to be selected in the Assignees field of a new project task when it is being created based on the template.

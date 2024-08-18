@@ -36,6 +36,30 @@
         }
 
         /// <summary>
+        /// Agile board the project task will be placed on.
+        /// </summary>
+        /// <param name="query">The agile board query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
+        public ProjectTaskTemplateQuery SelectAgileBoard(AgileBoardQuery query)
+        {
+            query.FieldName = "agileBoard";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// Agile board column the project task will be placed in.
+        /// </summary>
+        /// <param name="query">The agile board column query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
+        public ProjectTaskTemplateQuery SelectAgileBoardColumn(AgileBoardColumnQuery query)
+        {
+            query.FieldName = "agileBoardColumn";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Assignments of the project task template.
         /// </summary>
         /// <param name="query">The project task template assignment query.</param>

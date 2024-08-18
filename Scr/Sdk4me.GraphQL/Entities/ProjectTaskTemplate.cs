@@ -15,6 +15,18 @@ namespace Sdk4me.GraphQL
         [JsonProperty("account"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Account? Account { get; internal set; }
 
+        /// <summary>
+        /// Agile board the project task will be placed on.
+        /// </summary>
+        [JsonProperty("agileBoard")]
+        public AgileBoard? AgileBoard { get; internal set; }
+
+        /// <summary>
+        /// Agile board column the project task will be placed in.
+        /// </summary>
+        [JsonProperty("agileBoardColumn")]
+        public AgileBoardColumn? AgileBoardColumn { get; internal set; }
+
         [JsonProperty("assignments")]
         internal NodeCollection<ProjectTaskTemplateAssignment>? AssignmentsCollection { get; set; }
 

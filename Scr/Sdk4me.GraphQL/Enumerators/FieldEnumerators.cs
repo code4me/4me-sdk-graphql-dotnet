@@ -4925,6 +4925,16 @@ namespace Sdk4me.GraphQL
         [EnumMember(Value = "account")]
         Account,
         /// <summary>
+        /// The agile board field.
+        /// </summary>
+        [EnumMember(Value = "agileBoard")]
+        AgileBoard,
+        /// <summary>
+        /// The agile board column field.
+        /// </summary>
+        [EnumMember(Value = "agileBoardColumn")]
+        AgileBoardColumn,
+        /// <summary>
         /// The assignments field.
         /// </summary>
         [EnumMember(Value = "assignments")]
