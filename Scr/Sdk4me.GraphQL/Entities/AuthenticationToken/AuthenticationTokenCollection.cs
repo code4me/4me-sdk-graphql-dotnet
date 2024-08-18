@@ -127,7 +127,7 @@ namespace Sdk4me.GraphQL
                 throw new Sdk4meTokenNullReferenceException(nameof(authenticationToken));
 
             if (string.IsNullOrWhiteSpace(authenticationToken.Token) && (string.IsNullOrWhiteSpace(authenticationToken.ClientID) || string.IsNullOrWhiteSpace(authenticationToken.ClientSecret)))
-                throw new Sdk4meTokenNullReferenceException($"Missing Client ID and Client Secret, or Personal Access Token");
+                throw new Sdk4meTokenNullReferenceException($"Missing Client ID and Client Secret, or Personal Access Token.");
 
             for (int i = 0; i < authenticationTokens.Count; i++)
             {
@@ -156,7 +156,7 @@ namespace Sdk4me.GraphQL
                 throw new Sdk4meTokenNullReferenceException(nameof(authenticationToken));
 
             if (string.IsNullOrWhiteSpace(authenticationToken.Token) && (string.IsNullOrWhiteSpace(authenticationToken.ClientID) || string.IsNullOrWhiteSpace(authenticationToken.ClientSecret)))
-                throw new Sdk4meTokenNullReferenceException($"Missing Client ID and Client Secret, or Personal Access Token");
+                throw new Sdk4meTokenNullReferenceException($"Missing Client ID and Client Secret, or Personal Access Token.");
 
             for (int i = authenticationTokens.Count - 1; i >= 0; i--)
             {
