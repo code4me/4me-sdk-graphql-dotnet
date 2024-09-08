@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace Sdk4me.GraphQL
 {
@@ -12,6 +13,7 @@ namespace Sdk4me.GraphQL
         private bool? disabled;
         private string id;
         private string? information;
+        private List<AttachmentInput>? informationAttachments;
         private string? name;
         private long? position;
         private string? source;
@@ -65,6 +67,16 @@ namespace Sdk4me.GraphQL
         {
             get => information;
             set => information = Set("information", value);
+        }
+
+        /// <summary>
+        /// The attachments used in the <c>information</c> field.
+        /// </summary>
+        [JsonProperty("informationAttachments")]
+        public List<AttachmentInput>? InformationAttachments
+        {
+            get => informationAttachments;
+            set => informationAttachments = Set("informationAttachments", value);
         }
 
         /// <summary>
