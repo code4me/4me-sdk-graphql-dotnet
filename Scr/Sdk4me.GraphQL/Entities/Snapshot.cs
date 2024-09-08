@@ -32,13 +32,13 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Expiring link to the snapshot content.
         /// </summary>
-        [JsonProperty("downloadUrl")]
+        [JsonProperty("downloadUrl"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? DownloadUrl { get; internal set; }
 
         /// <summary>
         /// Time at which snapshot was taken.
         /// </summary>
-        [JsonProperty("startedAt")]
+        [JsonProperty("startedAt"), Sdk4meField(IsDefaultQueryProperty = true)]
         public DateTime? StartedAt { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

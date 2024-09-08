@@ -32,7 +32,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Select a calendar to skip occurrences of the recurrence during off-hours and holidays.
         /// </summary>
-        [JsonProperty("calendar")]
+        [JsonProperty("calendar"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Calendar? Calendar { get; internal set; }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The ICAL representation of the recurrency (without time_of_day)
         /// </summary>
-        [JsonProperty("ical")]
+        [JsonProperty("ical"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Ical { get; internal set; }
 
         /// <summary>

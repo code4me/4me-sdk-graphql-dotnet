@@ -14,6 +14,18 @@ namespace Sdk4me.GraphQL
     /// </summary>
     internal sealed class ExecutionQueryBuilder
     {
+        private static bool defaultFieldSelection = true;
+
+        /// <summary>
+        /// Select 'hard-coded' default response fields when no field were selected.
+        /// This only applies to entities that contains and ID field in GraphQL.
+        /// </summary>
+        internal static bool DefaultFieldSelection
+        {
+            get => defaultFieldSelection;
+            set => defaultFieldSelection = value; 
+        }
+        
         /// <summary>
         /// Create an execution query object.
         /// </summary>
@@ -237,9 +249,8 @@ namespace Sdk4me.GraphQL
 
             foreach (IQuery subQuery in query.Queries)
                 retval.Queries.Add(BuildQuery(subQuery, depth + 1, defaultItemsPerRequest));
-
-            BuildQuery(retval);
-            return retval;
+            
+            return BuildQuery(retval);
         }
 
         /// <summary>
@@ -332,6 +343,7 @@ namespace Sdk4me.GraphQL
         private static List<ExecutionQueryField> GetExecutionQueryFields(Type dataType, ImmutableHashSet<string>? selectedFields)
         {
             List<ExecutionQueryField> retval = new();
+            bool ignoreIdentifier = dataType.GetCustomAttribute(typeof(Sdk4meEntityAttribute)) is Sdk4meEntityAttribute sdk4MeEntity && sdk4MeEntity.IgnoreIdentifier;
 
             PropertyInfo[] allProperties = dataType.GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance).Where(x => !x.PropertyType.IsInterface).ToArray();
             foreach (PropertyInfo propertyInfo in allProperties)
@@ -357,12 +369,12 @@ namespace Sdk4me.GraphQL
                 }
             }
 
-            if (selectedFields == null || selectedFields.Count.Equals(0))
+            if ((selectedFields == null || selectedFields.Count.Equals(0)) && (defaultFieldSelection || ignoreIdentifier))
             {
                 foreach (ExecutionQueryField field in retval)
                     field.IsSelected = field.IsDefault;
             }
-            else if (selectedFields.Contains("*"))
+            else if (selectedFields != null && selectedFields.Contains("*"))
             {
                 foreach (ExecutionQueryField field in retval)
                     field.IsSelected = !field.IsConnection;
@@ -370,10 +382,7 @@ namespace Sdk4me.GraphQL
 
             if (retval.FirstOrDefault(x => x.Name == "id") is ExecutionQueryField queryField)
             {
-                if (dataType.GetCustomAttribute(typeof(Sdk4meEntityAttribute)) is Sdk4meEntityAttribute attribute && attribute.IgnoreIdentifier)
-                    queryField.IsSelected = false;
-                else
-                    queryField.IsSelected = true;
+                queryField.IsSelected = !ignoreIdentifier;
             }
 
             return retval;
@@ -391,11 +400,7 @@ namespace Sdk4me.GraphQL
         {
             string[] serializedValue = SerializeObject(values);
 
-            if (filterOperator.IsCommonOperator())
-            {
-                return BuildStringFilter(field, filterOperator, serializedValue);
-            }           
-            else if (filterOperator.IsDateTimeSingleValueOperator() && serializedValue.Length.Equals(1))
+            if (filterOperator.IsDateTimeSingleValueOperator() && serializedValue.Length.Equals(1))
             {
                 switch (filterOperator)
                 {
@@ -420,10 +425,8 @@ namespace Sdk4me.GraphQL
                 }
             }
 
-            throw new Sdk4meFilterException($"Unsupported date time filter operator, use " +
-                $"{nameof(FilterOperator.Equals)}, {nameof(FilterOperator.NotEquals)}, {nameof(FilterOperator.In)}, or {nameof(FilterOperator.NotIn)} with one or multiple values, use {nameof(FilterOperator.LessThan)}, " +
-                $"{nameof(FilterOperator.LessThanOrEqualsTo)}, {nameof(FilterOperator.GreaterThan)} or {nameof(FilterOperator.GreaterThanOrEqualsTo)} with a single value, and use {nameof(FilterOperator.GreaterThanAndLessThan)} or " +
-                $"{nameof(FilterOperator.GreaterThanOrEqualToAndLessThanOrEqualTo)} with two values.");
+            throw new Sdk4meFilterException($"Unsupported date time filter operator, use {nameof(FilterOperator.LessThan)}, {nameof(FilterOperator.LessThanOrEqualsTo)}, {nameof(FilterOperator.GreaterThan)} or " +
+                $"{nameof(FilterOperator.GreaterThanOrEqualsTo)} with a single value, and use {nameof(FilterOperator.GreaterThanAndLessThan)} or {nameof(FilterOperator.GreaterThanOrEqualToAndLessThanOrEqualTo)} with two values.");
         }
 
         /// <summary>

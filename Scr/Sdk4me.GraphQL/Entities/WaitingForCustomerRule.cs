@@ -31,7 +31,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Notify the requester after the request has been waiting for a customer for this number of business days.
         /// </summary>
-        [JsonProperty("nrOfBusinessDays")]
+        [JsonProperty("nrOfBusinessDays"), Sdk4meField(IsDefaultQueryProperty = true)]
         public long? NrOfBusinessDays { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

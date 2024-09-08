@@ -113,6 +113,20 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// <para>
+        /// <br>Gets or sets the default field selection behavior for queries</br>.
+        /// <br>When set to <c>true</c>, some fields are returned by default in queries</br>.
+        /// <br>The default value is <c>true</c> to maintain backward compatibility with existing code, but it is recommended to set this to <c>false</c>.</br>
+        /// </para>
+        /// Note: The ID property will always be populated, and for entities without an ID property, all fields will be selected.
+        /// </summary>
+        public bool DefaultFieldSelection
+        {
+            get => ExecutionQueryBuilder.DefaultFieldSelection;
+            set => ExecutionQueryBuilder.DefaultFieldSelection = value;
+        }
+
+        /// <summary>
         /// The 4me import and export REST APIs.
         /// </summary>
         public Sdk4meClientBulk Bulk

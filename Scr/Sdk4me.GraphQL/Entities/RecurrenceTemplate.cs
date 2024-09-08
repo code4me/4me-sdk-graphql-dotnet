@@ -32,7 +32,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Select a calendar to skip occurrences of the recurrence during off-hours and holidays.
         /// </summary>
-        [JsonProperty("calendar")]
+        [JsonProperty("calendar"), Sdk4meField(IsDefaultQueryProperty = true)]
         public Calendar? Calendar { get; internal set; }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace Sdk4me.GraphQL
         /// <br>• <c>5</c>: Friday</br>
         /// <br>• <c>6</c>: Saturday</br>
         /// </summary>
-        [JsonProperty("day")]
+        [JsonProperty("day"), Sdk4meField(IsDefaultQueryProperty = true)]
         public List<long>? Day { get; internal set; }
 
         /// <summary>
@@ -58,43 +58,43 @@ namespace Sdk4me.GraphQL
         /// <br>• <c>31</c>: Day thirty-one</br>
         /// <br>• <c>-1</c>: Last day of month</br>
         /// </summary>
-        [JsonProperty("dayOfMonth")]
+        [JsonProperty("dayOfMonth"), Sdk4meField(IsDefaultQueryProperty = true)]
         public List<long>? DayOfMonth { get; internal set; }
 
         /// <summary>
         /// Indicates whether or not the <c>dayOfWeekIndex</c> and <c>dayOfWeekDay</c> values should be considered. Can only be set to <c>true</c> when <c>frequency</c> is <c>monthly</c> or <c>yearly</c>.
         /// </summary>
-        [JsonProperty("dayOfWeek")]
+        [JsonProperty("dayOfWeek"), Sdk4meField(IsDefaultQueryProperty = true)]
         public bool? DayOfWeek { get; internal set; }
 
         /// <summary>
         /// <em>Required</em> when <c>dayOfWeek</c> is <c>true</c>, ignored in all other cases. list of days of the week.
         /// </summary>
-        [JsonProperty("dayOfWeekDay")]
+        [JsonProperty("dayOfWeekDay"), Sdk4meField(IsDefaultQueryProperty = true)]
         public List<DayNames>? DayOfWeekDay { get; internal set; }
 
         /// <summary>
         /// <em>Required</em> when <c>dayOfWeek</c> is <c>true</c>, ignored in all other cases.
         /// </summary>
-        [JsonProperty("dayOfWeekIndex")]
+        [JsonProperty("dayOfWeekIndex"), Sdk4meField(IsDefaultQueryProperty = true)]
         public RecurrenceDayOfWeekIndex? DayOfWeekIndex { get; internal set; }
 
         /// <summary>
         /// Whether recurrency should be temporarily disabled.
         /// </summary>
-        [JsonProperty("disabled")]
+        [JsonProperty("disabled"), Sdk4meField(IsDefaultQueryProperty = true)]
         public bool? Disabled { get; internal set; }
 
         /// <summary>
         /// The frequency of the recurrency.
         /// </summary>
-        [JsonProperty("frequency")]
+        [JsonProperty("frequency"), Sdk4meField(IsDefaultQueryProperty = true)]
         public RecurrenceFrequency? Frequency { get; internal set; }
 
         /// <summary>
         /// The interval of the Frequency, e.g. every 2nd week or every 10th day.
         /// </summary>
-        [JsonProperty("interval")]
+        [JsonProperty("interval"), Sdk4meField(IsDefaultQueryProperty = true)]
         public long? Interval { get; internal set; }
 
         /// <summary>
@@ -112,20 +112,20 @@ namespace Sdk4me.GraphQL
         /// <br>• <c>11</c>: November</br>
         /// <br>• <c>12</c>: December</br>
         /// </summary>
-        [JsonProperty("monthOfYear")]
+        [JsonProperty("monthOfYear"), Sdk4meField(IsDefaultQueryProperty = true)]
         public List<long>? MonthOfYear { get; internal set; }
 
         /// <summary>
         /// The time of day to start the scheduled occurrence.
         /// </summary>
-        [JsonProperty("timeOfDay")]
+        [JsonProperty("timeOfDay"), Sdk4meField(IsDefaultQueryProperty = true)]
         public TimeSpan? TimeOfDay { get; internal set; }
 
         /// <summary>
         /// <br>The time zone for the <c>timeOfDay</c> field.</br>
         /// <br>The complete list is available on the <see href="https://developer.4me.com/graphql/scalar/timezone/">4me developer site</see>.</br>
         /// </summary>
-        [JsonProperty("timeZone")]
+        [JsonProperty("timeZone"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? TimeZone { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

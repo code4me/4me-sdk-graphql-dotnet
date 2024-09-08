@@ -31,43 +31,43 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// Represents the activityID for cases. The Activity ID is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider.
         /// </summary>
-        [JsonProperty("case")]
+        [JsonProperty("case"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Case { get; internal set; }
 
         /// <summary>
         /// Represents the activityID for high incidents. The Activity ID is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider.
         /// </summary>
-        [JsonProperty("high")]
+        [JsonProperty("high"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? High { get; internal set; }
 
         /// <summary>
         /// Represents the activityID for low incidents. The Activity ID is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider.
         /// </summary>
-        [JsonProperty("low")]
+        [JsonProperty("low"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Low { get; internal set; }
 
         /// <summary>
         /// Represents the activityID for medium incidents. The Activity ID is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider.
         /// </summary>
-        [JsonProperty("medium")]
+        [JsonProperty("medium"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Medium { get; internal set; }
 
         /// <summary>
         /// Represents the activityID for RFCs. The Activity ID is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider.
         /// </summary>
-        [JsonProperty("rfc")]
+        [JsonProperty("rfc"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Rfc { get; internal set; }
 
         /// <summary>
         /// Represents the activityID for RFIs. The Activity ID is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider.
         /// </summary>
-        [JsonProperty("rfi")]
+        [JsonProperty("rfi"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Rfi { get; internal set; }
 
         /// <summary>
         /// Represents the activityID for top incidents. The Activity ID is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider.
         /// </summary>
-        [JsonProperty("top")]
+        [JsonProperty("top"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Top { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)

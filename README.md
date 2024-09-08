@@ -49,11 +49,12 @@ For a general introduction to the GraphQL query language please see [graphql.org
 The data entities in the SDK are modeled after the 4me Quality Assurance GraphQL schema, which may include objects or properties that are not yet available in production.
 
 ## Client
-The `Sdk4meClient` class provides access to all the necessary methods for querying and modifying data. With the `Get` and `Mutation` methods, there are four properties that allow for default behavior customization.
+The `Sdk4meClient` class provides access to all the necessary methods for querying and modifying data. With the `Get` and `Mutation` methods, there are five properties that allow for default behavior customization.
 - The `EnumeratorTolerantSerializer` property, when set to true, allows for ignoring unmappable enumerator values and instead returns null or a default value.
 - The `DefaultItemsPerRequest` property sets the number of items per connection request, with a default and maximum value of 100.
 - The `MaximumRecursiveRequests` property controls the number of recursive requests that the client can make when pagination occurs in the top level query. The default value is 10.
 - The `MaximumQueryDepthLevelConnections` property controls the depth of nested queries. While it is possible to increase this limit, it can negatively affect performance. The default value is 2.
+- The `DefaultFieldSelection` property automatically selects a predefined set of commonly used fields when no specific fields are requested. It is enabled by default for backwards compatibility, but the recommended setting is `false`. When enabled, it may select objects for which the current token does not have the necessary permissions.
 
 ## Authentication
 The SDK supports both Personal Access Token and OAuth 2.0 Client Credential Grant authentication methods. It automatically renews the token 1 minute before it expires when using OAuth 2.0 Client Credential Grant.

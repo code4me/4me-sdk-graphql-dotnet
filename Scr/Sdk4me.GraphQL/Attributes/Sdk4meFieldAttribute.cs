@@ -18,6 +18,7 @@ namespace Sdk4me.GraphQL
         /// </summary>
         public bool IsRequiredForMutation { get; set; } = false;
 
+
         /// <summary>
         /// Create a new instance of the <see cref="Sdk4meFieldAttribute"/> class.
         /// </summary>
