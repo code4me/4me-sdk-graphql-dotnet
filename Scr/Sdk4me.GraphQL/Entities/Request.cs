@@ -156,6 +156,12 @@ namespace Sdk4me.GraphQL
         public Feedback? Feedback { get; internal set; }
 
         /// <summary>
+        /// The knowledge article that this request provides feedback on.
+        /// </summary>
+        [JsonProperty("feedbackOnKnowledgeArticle")]
+        public KnowledgeArticle? FeedbackOnKnowledgeArticle { get; internal set; }
+
+        /// <summary>
         /// The request group that is used to group the requests that have been submitted for the resolution of exactly the same incident, for the implementation of exactly the same change, for the provision of exactly the same information, etc.
         /// </summary>
         [JsonProperty("groupedInto")]

@@ -142,6 +142,18 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// The knowledge article that this request provides feedback on.
+        /// </summary>
+        /// <param name="query">The knowledge article query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
+        public RequestQuery SelectFeedbackOnKnowledgeArticle(KnowledgeArticleQuery query)
+        {
+            query.FieldName = "feedbackOnKnowledgeArticle";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// The request group that is used to group the requests that have been submitted for the resolution of exactly the same incident, for the implementation of exactly the same change, for the provision of exactly the same information, etc.
         /// </summary>
         /// <param name="query">The request query.</param>

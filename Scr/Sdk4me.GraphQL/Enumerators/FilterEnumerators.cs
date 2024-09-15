@@ -2826,6 +2826,11 @@ namespace Sdk4me.GraphQL
         [EnumMember(Value = "lastNoteByRequester")]
         LastNoteByRequester,
         /// <summary>
+        /// Filter on feedback on knowledge article.
+        /// </summary>
+        [EnumMember(Value = "feedbackOnKnowledgeArticle")]
+        FeedbackOnKnowledgeArticle,
+        /// <summary>
         /// Filter on customer account.
         /// </summary>
         [EnumMember(Value = "slaCustomerAccount")]

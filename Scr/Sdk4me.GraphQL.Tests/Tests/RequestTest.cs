@@ -28,6 +28,8 @@ namespace Sdk4me.GraphQL.Tests
                     .SelectAll())
                 .SelectKnowledgeArticles(new KnowledgeArticleQuery()
                     .SelectAll())
+                .SelectFeedbackOnKnowledgeArticle(new KnowledgeArticleQuery()
+                    .SelectAll())
                 .SelectNotes(new NoteQuery()
                     .SelectAll()
                     .SelectNoteReactions(new NoteReactionQuery()

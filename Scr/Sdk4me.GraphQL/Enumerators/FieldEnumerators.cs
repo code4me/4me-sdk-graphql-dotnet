@@ -5829,6 +5829,11 @@ namespace Sdk4me.GraphQL
         [EnumMember(Value = "feedback")]
         Feedback,
         /// <summary>
+        /// The feedback on knowledge article field.
+        /// </summary>
+        [EnumMember(Value = "feedbackOnKnowledgeArticle")]
+        FeedbackOnKnowledgeArticle,
+        /// <summary>
         /// The grouped into field.
         /// </summary>
         [EnumMember(Value = "groupedInto")]
