@@ -27,6 +27,11 @@ namespace Sdk4me.GraphQL
         /// </summary>
         [EnumMember(Value = "organization")]
         Organization,
+        /// <summary>
+        /// The url field.
+        /// </summary>
+        [EnumMember(Value = "url")]
+        Url,
     }
 
     /// <summary>
@@ -2307,6 +2312,11 @@ namespace Sdk4me.GraphQL
         /// </summary>
         [EnumMember(Value = "invoices")]
         Invoices,
+        /// <summary>
+        /// The major incident managers field.
+        /// </summary>
+        [EnumMember(Value = "majorIncidentManagers")]
+        MajorIncidentManagers,
         /// <summary>
         /// The name field.
         /// </summary>

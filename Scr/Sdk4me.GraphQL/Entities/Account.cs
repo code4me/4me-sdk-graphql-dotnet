@@ -26,6 +26,12 @@ namespace Sdk4me.GraphQL
         [JsonProperty("organization")]
         public Organization? Organization { get; internal set; }
 
+        /// <summary>
+        /// The web address that is used to access the account.
+        /// </summary>
+        [JsonProperty("url")]
+        public string? Url { get; internal set; }
+
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)
         {
             return new HashSet<QueryPageInfo>();

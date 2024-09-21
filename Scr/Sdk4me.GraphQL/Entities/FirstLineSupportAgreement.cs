@@ -83,6 +83,17 @@ namespace Sdk4me.GraphQL
             get => InvoicesCollection?.Data;
         }
 
+        [JsonProperty("majorIncidentManagers")]
+        internal NodeCollection<Person>? MajorIncidentManagersCollection { get; set; }
+
+        /// <summary>
+        /// The people who can assume the role of major incident manager for the organization that is covered by the first line support agreement.
+        /// </summary>
+        public DataList<Person>? MajorIncidentManagers
+        {
+            get => MajorIncidentManagersCollection?.Data;
+        }
+
         /// <summary>
         /// The name of the first line support agreement.
         /// </summary>
@@ -233,6 +244,7 @@ namespace Sdk4me.GraphQL
             HashSet<QueryPageInfo> retval = new();
             retval.AddRange(ChargesAttachmentsCollection?.GetQueryPageInfo("chargesAttachments", depth + 1));
             retval.AddRange(InvoicesCollection?.GetQueryPageInfo("invoices", depth + 1));
+            retval.AddRange(MajorIncidentManagersCollection?.GetQueryPageInfo("majorIncidentManagers", depth + 1));
             retval.AddRange(RemarksAttachmentsCollection?.GetQueryPageInfo("remarksAttachments", depth + 1));
             retval.AddRange(TargetDetailsAttachmentsCollection?.GetQueryPageInfo("targetDetailsAttachments", depth + 1));
             return retval;
@@ -242,6 +254,7 @@ namespace Sdk4me.GraphQL
         {
             ChargesAttachments?.AddRange((data as FirstLineSupportAgreement)?.ChargesAttachments);
             Invoices?.AddRange((data as FirstLineSupportAgreement)?.Invoices);
+            MajorIncidentManagers?.AddRange((data as FirstLineSupportAgreement)?.MajorIncidentManagers);
             RemarksAttachments?.AddRange((data as FirstLineSupportAgreement)?.RemarksAttachments);
             TargetDetailsAttachments?.AddRange((data as FirstLineSupportAgreement)?.TargetDetailsAttachments);
         }

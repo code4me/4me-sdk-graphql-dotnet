@@ -21,6 +21,10 @@ namespace Sdk4me.GraphQL.Tests
                     .SelectAll())
                 .SelectTargetDetailsAttachments(new AttachmentQuery()
                     .SelectAll())
+                .SelectCustomerRepresentative(new PersonQuery()
+                    .SelectAll())
+                .SelectMajorIncidentManagers(new PersonQuery()
+                    .SelectAll())
                 ).Result;
 
             Assert.IsNotNull(firstLineSupportAgreements);

@@ -94,6 +94,17 @@
         }
 
         /// <summary>
+        /// The people who can assume the role of major incident manager for the organization that is covered by the first line support agreement.
+        /// </summary>
+        /// <param name="query">The person query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
+        public FirstLineSupportAgreementQuery SelectMajorIncidentManagers(PersonQuery query)
+        {
+            query.FieldName = "majorIncidentManagers";
+            return Select(query);
+        }
+
+        /// <summary>
         /// Organization that provides the first line support agreement.
         /// </summary>
         /// <param name="query">The organization query.</param>
