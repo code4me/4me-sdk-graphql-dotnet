@@ -145,7 +145,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// The endpoints for the OAuth application that will be created for this app to use in the <see href="https://developer.4me.com/v1/oauth/authorization_code_grant/">Authorization Code Grant flow</see>.
+        /// The endpoints for the OAuth application that will be created for this app to use in the <see href="https://developer.xurrent.com/v1/oauth/authorization_code_grant/">Authorization Code Grant flow</see>.
         /// </summary>
         [JsonProperty("oauthAuthorizationEndpoints")]
         public List<string>? OauthAuthorizationEndpoints

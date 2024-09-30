@@ -295,7 +295,7 @@ namespace Sdk4me.GraphQL
         public decimal? Value
         {
             get => value;
-            set => this.value = Set("value", value);
+            set => this.@value = Set("value", value);
         }
 
         /// <summary>

@@ -1700,6 +1700,11 @@ namespace Sdk4me.GraphQL
         /// </summary>
         [EnumMember(Value = "uri")]
         Uri,
+        /// <summary>
+        /// The verified field.
+        /// </summary>
+        [EnumMember(Value = "verified")]
+        Verified,
     }
 
     /// <summary>

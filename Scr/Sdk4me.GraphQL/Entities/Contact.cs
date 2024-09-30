@@ -40,6 +40,12 @@ namespace Sdk4me.GraphQL
         [JsonProperty("uri"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Uri { get; internal set; }
 
+        /// <summary>
+        /// Only for person <c>email</c>. Indicates whether the email address is verified.
+        /// </summary>
+        [JsonProperty("verified")]
+        public bool? Verified { get; internal set; }
+
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)
         {
             return new HashSet<QueryPageInfo>();

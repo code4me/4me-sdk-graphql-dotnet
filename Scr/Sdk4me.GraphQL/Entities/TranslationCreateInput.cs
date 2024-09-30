@@ -8,7 +8,7 @@ namespace Sdk4me.GraphQL
     public class TranslationCreateInput : PropertyChangeSet
     {
         private string? clientMutationId;
-        private string field;
+        private string @field;
         private string language;
         private string ownerId;
         private string text;
@@ -29,8 +29,8 @@ namespace Sdk4me.GraphQL
         [JsonProperty("field"), Sdk4meField(IsRequiredForMutation = true)]
         public string Field
         {
-            get => field;
-            set => field = Set("field", value);
+            get => @field;
+            set => @field = Set("field", value);
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace Sdk4me.GraphQL
         /// </summary>
         public TranslationCreateInput()
         {
-            field = string.Empty;
+            @field = string.Empty;
             language = string.Empty;
             ownerId = string.Empty;
             text = string.Empty;
@@ -85,9 +85,9 @@ namespace Sdk4me.GraphQL
         /// </param>
         /// <param name="ownerId">The record from which the translation is obtained.</param>
         /// <param name="text">The text of the translation.</param>
-        public TranslationCreateInput(string field, string language, string ownerId, string text)
+        public TranslationCreateInput(string @field, string language, string ownerId, string text)
         {
-            this.field = Set("field", field);
+            this.@field = Set("field", @field);
             this.language = Set("language", language);
             this.ownerId = Set("ownerId", ownerId);
             this.text = Set("text", text);

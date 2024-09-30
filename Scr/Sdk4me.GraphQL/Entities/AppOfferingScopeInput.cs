@@ -45,7 +45,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// Whether this scope is for the app's OAuth application using <see href="https://developer.4me.com/v1/oauth/client_credentials_grant/">client credentials</see> or <see href="https://developer.4me.com/v1/oauth/authorization_code_grant/">authorization code grant</see>.
+        /// Whether this scope is for the app's OAuth application using <see href="https://developer.xurrent.com/v1/oauth/client_credentials_grant/">client credentials</see> or <see href="https://developer.xurrent.com/v1/oauth/authorization_code_grant/">authorization code grant</see>.
         /// </summary>
         [JsonProperty("grantType")]
         public OauthApplicationGrantType? GrantType

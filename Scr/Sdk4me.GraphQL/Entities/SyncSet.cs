@@ -51,7 +51,7 @@ namespace Sdk4me.GraphQL
         public string? Name { get; internal set; }
 
         /// <summary>
-        /// Record types included in the sync set. The types match the values supported for the <see href="https://developer.4me.com/v1/import/#parameters"><c>type</c> parameter of CSV import</see>.
+        /// Record types included in the sync set. The types match the values supported for the <see href="https://developer.xurrent.com/v1/import/#parameters"><c>type</c> parameter of CSV import</see>.
         /// </summary>
         [JsonProperty("resolvedTypes")]
         public List<string>? ResolvedTypes { get; internal set; }
@@ -68,7 +68,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// Record types for which all records are included in the sync set. The types match the values supported for the <see href="https://developer.4me.com/v1/import/#parameters"><c>type</c> parameter of CSV import</see>.
+        /// Record types for which all records are included in the sync set. The types match the values supported for the <see href="https://developer.xurrent.com/v1/import/#parameters"><c>type</c> parameter of CSV import</see>.
         /// </summary>
         [JsonProperty("types")]
         public List<string>? Types { get; internal set; }

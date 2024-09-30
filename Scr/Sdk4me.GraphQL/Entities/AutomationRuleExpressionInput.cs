@@ -27,7 +27,7 @@ namespace Sdk4me.GraphQL
         public string Value
         {
             get => value;
-            set => this.value = Set("value", value);
+            set => this.@value = Set("value", value);
         }
 
         /// <summary>

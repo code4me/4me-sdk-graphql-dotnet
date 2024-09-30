@@ -5,7 +5,7 @@ namespace Sdk4me.GraphQL
     /// <summary>
     /// <br>This mutation can be used to push at most 100 discovered configuration items to 4me at once.</br>
     /// <br>A more extensive description of this functionality can be found on the</br>
-    /// <br><see href="https://developer.4me.com/v1/import/discovery_tools/#using-graphql">Discovery Tools page of the developer documentation</see>.</br>
+    /// <br><see href="https://developer.xurrent.com/v1/import/discovery_tools/#using-graphql">Discovery Tools page of the developer documentation</see>.</br>
     /// <br></br>
     /// <br>The query will be executed in the background. Typically the following fields should be queried:</br>
     /// <code>
