@@ -26,6 +26,30 @@
         }
 
         /// <summary>
+        /// The resolution target notification scheme for a request when it affects an active SLA that is based on the service offering. Only enabled SLA notification schemes that are linked to the same account as the service offering can be selected.
+        /// </summary>
+        /// <param name="query">The sla notification scheme query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
+        public StandardServiceRequestQuery SelectResolutionTargetNotificationScheme(SlaNotificationSchemeQuery query)
+        {
+            query.FieldName = "resolutionTargetNotificationScheme";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The response target notification scheme for a request when it affects an active SLA that is based on the service offering. Only enabled SLA notification schemes that are linked to the same account as the service offering can be selected.
+        /// </summary>
+        /// <param name="query">The sla notification scheme query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
+        public StandardServiceRequestQuery SelectResponseTargetNotificationScheme(SlaNotificationSchemeQuery query)
+        {
+            query.FieldName = "responseTargetNotificationScheme";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// Service offering the standard service request belongs to.
         /// </summary>
         /// <param name="query">The service offering query.</param>
@@ -38,7 +62,7 @@
         }
 
         /// <summary>
-        /// The SLA notification scheme for a request when it affects an active SLA that is based on the service offering. Only enabled SLA notification schemes that are linked to the same account as the service offering can be selected.
+        /// The resolution target notification scheme for a request when it affects an active SLA that is based on the service offering. Only enabled SLA notification schemes that are linked to the same account as the service offering can be selected.
         /// </summary>
         /// <param name="query">The sla notification scheme query.</param>
         /// <returns>Returns an <see cref="IQuery"/>.</returns>

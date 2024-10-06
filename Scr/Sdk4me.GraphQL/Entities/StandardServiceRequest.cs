@@ -59,6 +59,12 @@ namespace Sdk4me.GraphQL
         public long? ResolutionTargetInDays { get; internal set; }
 
         /// <summary>
+        /// The resolution target notification scheme for a request when it affects an active SLA that is based on the service offering. Only enabled SLA notification schemes that are linked to the same account as the service offering can be selected.
+        /// </summary>
+        [JsonProperty("resolutionTargetNotificationScheme")]
+        public SlaNotificationScheme? ResolutionTargetNotificationScheme { get; internal set; }
+
+        /// <summary>
         /// Number of minutes within which a response needs to have been provided for a request to which the request template has been applied and which requester is covered by an SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("responseTarget")]
@@ -77,13 +83,19 @@ namespace Sdk4me.GraphQL
         public long? ResponseTargetInDays { get; internal set; }
 
         /// <summary>
+        /// The response target notification scheme for a request when it affects an active SLA that is based on the service offering. Only enabled SLA notification schemes that are linked to the same account as the service offering can be selected.
+        /// </summary>
+        [JsonProperty("responseTargetNotificationScheme")]
+        public SlaNotificationScheme? ResponseTargetNotificationScheme { get; internal set; }
+
+        /// <summary>
         /// Service offering the standard service request belongs to.
         /// </summary>
         [JsonProperty("serviceOffering"), Sdk4meField(IsDefaultQueryProperty = true)]
         public ServiceOffering? ServiceOffering { get; internal set; }
 
         /// <summary>
-        /// The SLA notification scheme for a request when it affects an active SLA that is based on the service offering. Only enabled SLA notification schemes that are linked to the same account as the service offering can be selected.
+        /// The resolution target notification scheme for a request when it affects an active SLA that is based on the service offering. Only enabled SLA notification schemes that are linked to the same account as the service offering can be selected.
         /// </summary>
         [JsonProperty("slaNotificationScheme")]
         public SlaNotificationScheme? SlaNotificationScheme { get; internal set; }

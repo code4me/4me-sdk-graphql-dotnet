@@ -65,7 +65,7 @@ namespace Sdk4me.GraphQL
         public bool? NotifySupportTeamManager { get; internal set; }
 
         /// <summary>
-        /// The percentage of the resolution target duration when a notification should be generated.
+        /// The percentage of the target duration when a notification should be generated.
         /// </summary>
         [JsonProperty("thresholdPercentage"), Sdk4meField(IsDefaultQueryProperty = true)]
         public long? ThresholdPercentage { get; internal set; }

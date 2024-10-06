@@ -375,6 +375,30 @@ namespace Sdk4me.GraphQL
         public long? ResolutionTargetMediumInDays { get; internal set; }
 
         /// <summary>
+        /// The resolution target notification scheme for a request with the impact "High - Service Degraded for Several Users" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        [JsonProperty("resolutionTargetNotificationSchemeHigh")]
+        public SlaNotificationScheme? ResolutionTargetNotificationSchemeHigh { get; internal set; }
+
+        /// <summary>
+        /// The resolution target notification scheme for a request with the impact "Low - Service Degraded for One User" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        [JsonProperty("resolutionTargetNotificationSchemeLow")]
+        public SlaNotificationScheme? ResolutionTargetNotificationSchemeLow { get; internal set; }
+
+        /// <summary>
+        /// The resolution target notification scheme for a request with the impact "Medium - Service Down for One User" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        [JsonProperty("resolutionTargetNotificationSchemeMedium")]
+        public SlaNotificationScheme? ResolutionTargetNotificationSchemeMedium { get; internal set; }
+
+        /// <summary>
+        /// The resolution target notification scheme for a request with the impact "Top - Service Down for Several Users" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        [JsonProperty("resolutionTargetNotificationSchemeTop")]
+        public SlaNotificationScheme? ResolutionTargetNotificationSchemeTop { get; internal set; }
+
+        /// <summary>
         /// The number of minutes within which a request with the category "RFC - Request for Change" is to be resolved when it affects an active SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("resolutionTargetRfc")]
@@ -465,6 +489,30 @@ namespace Sdk4me.GraphQL
         public long? ResponseTargetMediumInDays { get; internal set; }
 
         /// <summary>
+        /// The response target notification scheme for a request with the impact "High - Service Degraded for Several Users" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        [JsonProperty("responseTargetNotificationSchemeHigh")]
+        public SlaNotificationScheme? ResponseTargetNotificationSchemeHigh { get; internal set; }
+
+        /// <summary>
+        /// The response target notification scheme for a request with the impact "Low - Service Degraded for One User" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        [JsonProperty("responseTargetNotificationSchemeLow")]
+        public SlaNotificationScheme? ResponseTargetNotificationSchemeLow { get; internal set; }
+
+        /// <summary>
+        /// The response target notification scheme for a request with the impact "Medium - Service Down for One User" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        [JsonProperty("responseTargetNotificationSchemeMedium")]
+        public SlaNotificationScheme? ResponseTargetNotificationSchemeMedium { get; internal set; }
+
+        /// <summary>
+        /// The response target notification scheme for a request with the impact "Top - Service Down for Several Users" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        [JsonProperty("responseTargetNotificationSchemeTop")]
+        public SlaNotificationScheme? ResponseTargetNotificationSchemeTop { get; internal set; }
+
+        /// <summary>
         /// The number of minutes within which a response needs to have been provided for a request with the category "RFC - Request for Change" when it affects an active SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("responseTargetRfc")]
@@ -541,26 +589,30 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// The SLA notification scheme for a request with the impact "High - Service Degraded for Several Users" when it affects an active SLA that is based on the service offering.
+        /// The resolution target notification scheme for a request with the impact "High - Service Degraded for Several Users" when it affects an active SLA that is based on the service offering.
         /// </summary>
+        [Obsolete("Use resolution_target_notification_scheme_high instead.")]
         [JsonProperty("slaNotificationSchemeHigh")]
         public SlaNotificationScheme? SlaNotificationSchemeHigh { get; internal set; }
 
         /// <summary>
-        /// The SLA notification scheme for a request with the impact "Low - Service Degraded for One User" when it affects an active SLA that is based on the service offering.
+        /// The resolution target notification scheme for a request with the impact "Low - Service Degraded for One User" when it affects an active SLA that is based on the service offering.
         /// </summary>
+        [Obsolete("Use resolution_target_notification_scheme_low instead.")]
         [JsonProperty("slaNotificationSchemeLow")]
         public SlaNotificationScheme? SlaNotificationSchemeLow { get; internal set; }
 
         /// <summary>
-        /// The SLA notification scheme for a request with the impact "Medium - Service Down for One User" when it affects an active SLA that is based on the service offering.
+        /// The resolution target notification scheme for a request with the impact "Medium - Service Down for One User" when it affects an active SLA that is based on the service offering.
         /// </summary>
+        [Obsolete("Use resolution_target_notification_scheme_medium instead.")]
         [JsonProperty("slaNotificationSchemeMedium")]
         public SlaNotificationScheme? SlaNotificationSchemeMedium { get; internal set; }
 
         /// <summary>
-        /// The SLA notification scheme for a request with the impact "Top - Service Down for Several Users" when it affects an active SLA that is based on the service offering.
+        /// The resolution target notification scheme for a request with the impact "Top - Service Down for Several Users" when it affects an active SLA that is based on the service offering.
         /// </summary>
+        [Obsolete("Use resolution_target_notification_scheme_top instead.")]
         [JsonProperty("slaNotificationSchemeTop")]
         public SlaNotificationScheme? SlaNotificationSchemeTop { get; internal set; }
 

@@ -1700,11 +1700,6 @@ namespace Sdk4me.GraphQL
         /// </summary>
         [EnumMember(Value = "uri")]
         Uri,
-        /// <summary>
-        /// The verified field.
-        /// </summary>
-        [EnumMember(Value = "verified")]
-        Verified,
     }
 
     /// <summary>
@@ -7656,6 +7651,26 @@ namespace Sdk4me.GraphQL
         [EnumMember(Value = "resolutionTargetMediumInDays")]
         ResolutionTargetMediumInDays,
         /// <summary>
+        /// The resolution target notification scheme high field.
+        /// </summary>
+        [EnumMember(Value = "resolutionTargetNotificationSchemeHigh")]
+        ResolutionTargetNotificationSchemeHigh,
+        /// <summary>
+        /// The resolution target notification scheme low field.
+        /// </summary>
+        [EnumMember(Value = "resolutionTargetNotificationSchemeLow")]
+        ResolutionTargetNotificationSchemeLow,
+        /// <summary>
+        /// The resolution target notification scheme medium field.
+        /// </summary>
+        [EnumMember(Value = "resolutionTargetNotificationSchemeMedium")]
+        ResolutionTargetNotificationSchemeMedium,
+        /// <summary>
+        /// The resolution target notification scheme top field.
+        /// </summary>
+        [EnumMember(Value = "resolutionTargetNotificationSchemeTop")]
+        ResolutionTargetNotificationSchemeTop,
+        /// <summary>
         /// The resolution target rfc field.
         /// </summary>
         [EnumMember(Value = "resolutionTargetRfc")]
@@ -7731,6 +7746,26 @@ namespace Sdk4me.GraphQL
         [EnumMember(Value = "responseTargetMediumInDays")]
         ResponseTargetMediumInDays,
         /// <summary>
+        /// The response target notification scheme high field.
+        /// </summary>
+        [EnumMember(Value = "responseTargetNotificationSchemeHigh")]
+        ResponseTargetNotificationSchemeHigh,
+        /// <summary>
+        /// The response target notification scheme low field.
+        /// </summary>
+        [EnumMember(Value = "responseTargetNotificationSchemeLow")]
+        ResponseTargetNotificationSchemeLow,
+        /// <summary>
+        /// The response target notification scheme medium field.
+        /// </summary>
+        [EnumMember(Value = "responseTargetNotificationSchemeMedium")]
+        ResponseTargetNotificationSchemeMedium,
+        /// <summary>
+        /// The response target notification scheme top field.
+        /// </summary>
+        [EnumMember(Value = "responseTargetNotificationSchemeTop")]
+        ResponseTargetNotificationSchemeTop,
+        /// <summary>
         /// The response target rfc field.
         /// </summary>
         [EnumMember(Value = "responseTargetRfc")]
@@ -7787,22 +7822,26 @@ namespace Sdk4me.GraphQL
         ShopArticles,
         /// <summary>
         /// The sla notification scheme high field.
-        /// </summary>
+        /// </summary>        [Obsolete("Use resolution_target_notification_scheme_high instead.")]
+
         [EnumMember(Value = "slaNotificationSchemeHigh")]
         SlaNotificationSchemeHigh,
         /// <summary>
         /// The sla notification scheme low field.
-        /// </summary>
+        /// </summary>        [Obsolete("Use resolution_target_notification_scheme_low instead.")]
+
         [EnumMember(Value = "slaNotificationSchemeLow")]
         SlaNotificationSchemeLow,
         /// <summary>
         /// The sla notification scheme medium field.
-        /// </summary>
+        /// </summary>        [Obsolete("Use resolution_target_notification_scheme_medium instead.")]
+
         [EnumMember(Value = "slaNotificationSchemeMedium")]
         SlaNotificationSchemeMedium,
         /// <summary>
         /// The sla notification scheme top field.
-        /// </summary>
+        /// </summary>        [Obsolete("Use resolution_target_notification_scheme_top instead.")]
+
         [EnumMember(Value = "slaNotificationSchemeTop")]
         SlaNotificationSchemeTop,
         /// <summary>
@@ -8867,6 +8906,11 @@ namespace Sdk4me.GraphQL
         [EnumMember(Value = "resolutionTargetInDays")]
         ResolutionTargetInDays,
         /// <summary>
+        /// The resolution target notification scheme field.
+        /// </summary>
+        [EnumMember(Value = "resolutionTargetNotificationScheme")]
+        ResolutionTargetNotificationScheme,
+        /// <summary>
         /// The response target field.
         /// </summary>
         [EnumMember(Value = "responseTarget")]
@@ -8881,6 +8925,11 @@ namespace Sdk4me.GraphQL
         /// </summary>
         [EnumMember(Value = "responseTargetInDays")]
         ResponseTargetInDays,
+        /// <summary>
+        /// The response target notification scheme field.
+        /// </summary>
+        [EnumMember(Value = "responseTargetNotificationScheme")]
+        ResponseTargetNotificationScheme,
         /// <summary>
         /// The service offering field.
         /// </summary>

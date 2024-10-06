@@ -1,4 +1,6 @@
-﻿namespace Sdk4me.GraphQL
+﻿using System;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// Root connection for retrieving ServiceOffering records.
@@ -136,6 +138,102 @@
         }
 
         /// <summary>
+        /// The resolution target notification scheme for a request with the impact "High - Service Degraded for Several Users" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        /// <param name="query">The sla notification scheme query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
+        public ServiceOfferingQuery SelectResolutionTargetNotificationSchemeHigh(SlaNotificationSchemeQuery query)
+        {
+            query.FieldName = "resolutionTargetNotificationSchemeHigh";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The resolution target notification scheme for a request with the impact "Low - Service Degraded for One User" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        /// <param name="query">The sla notification scheme query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
+        public ServiceOfferingQuery SelectResolutionTargetNotificationSchemeLow(SlaNotificationSchemeQuery query)
+        {
+            query.FieldName = "resolutionTargetNotificationSchemeLow";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The resolution target notification scheme for a request with the impact "Medium - Service Down for One User" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        /// <param name="query">The sla notification scheme query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
+        public ServiceOfferingQuery SelectResolutionTargetNotificationSchemeMedium(SlaNotificationSchemeQuery query)
+        {
+            query.FieldName = "resolutionTargetNotificationSchemeMedium";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The resolution target notification scheme for a request with the impact "Top - Service Down for Several Users" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        /// <param name="query">The sla notification scheme query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
+        public ServiceOfferingQuery SelectResolutionTargetNotificationSchemeTop(SlaNotificationSchemeQuery query)
+        {
+            query.FieldName = "resolutionTargetNotificationSchemeTop";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The response target notification scheme for a request with the impact "High - Service Degraded for Several Users" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        /// <param name="query">The sla notification scheme query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
+        public ServiceOfferingQuery SelectResponseTargetNotificationSchemeHigh(SlaNotificationSchemeQuery query)
+        {
+            query.FieldName = "responseTargetNotificationSchemeHigh";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The response target notification scheme for a request with the impact "Low - Service Degraded for One User" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        /// <param name="query">The sla notification scheme query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
+        public ServiceOfferingQuery SelectResponseTargetNotificationSchemeLow(SlaNotificationSchemeQuery query)
+        {
+            query.FieldName = "responseTargetNotificationSchemeLow";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The response target notification scheme for a request with the impact "Medium - Service Down for One User" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        /// <param name="query">The sla notification scheme query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
+        public ServiceOfferingQuery SelectResponseTargetNotificationSchemeMedium(SlaNotificationSchemeQuery query)
+        {
+            query.FieldName = "responseTargetNotificationSchemeMedium";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
+        /// The response target notification scheme for a request with the impact "Top - Service Down for Several Users" when it affects an active SLA that is based on the service offering.
+        /// </summary>
+        /// <param name="query">The sla notification scheme query.</param>
+        /// <returns>Returns an <see cref="IQuery"/>.</returns>
+        public ServiceOfferingQuery SelectResponseTargetNotificationSchemeTop(SlaNotificationSchemeQuery query)
+        {
+            query.FieldName = "responseTargetNotificationSchemeTop";
+            query.IsConnection = false;
+            return Select(query);
+        }
+
+        /// <summary>
         /// The service for which the service offering is being prepared.
         /// </summary>
         /// <param name="query">The service query.</param>
@@ -182,10 +280,11 @@
         }
 
         /// <summary>
-        /// The SLA notification scheme for a request with the impact "High - Service Degraded for Several Users" when it affects an active SLA that is based on the service offering.
+        /// The resolution target notification scheme for a request with the impact "High - Service Degraded for Several Users" when it affects an active SLA that is based on the service offering.
         /// </summary>
         /// <param name="query">The sla notification scheme query.</param>
         /// <returns>Returns an <see cref="IQuery"/>.</returns>
+        [Obsolete("Use resolution_target_notification_scheme_high instead.")]
         public ServiceOfferingQuery SelectSlaNotificationSchemeHigh(SlaNotificationSchemeQuery query)
         {
             query.FieldName = "slaNotificationSchemeHigh";
@@ -194,10 +293,11 @@
         }
 
         /// <summary>
-        /// The SLA notification scheme for a request with the impact "Low - Service Degraded for One User" when it affects an active SLA that is based on the service offering.
+        /// The resolution target notification scheme for a request with the impact "Low - Service Degraded for One User" when it affects an active SLA that is based on the service offering.
         /// </summary>
         /// <param name="query">The sla notification scheme query.</param>
         /// <returns>Returns an <see cref="IQuery"/>.</returns>
+        [Obsolete("Use resolution_target_notification_scheme_low instead.")]
         public ServiceOfferingQuery SelectSlaNotificationSchemeLow(SlaNotificationSchemeQuery query)
         {
             query.FieldName = "slaNotificationSchemeLow";
@@ -206,10 +306,11 @@
         }
 
         /// <summary>
-        /// The SLA notification scheme for a request with the impact "Medium - Service Down for One User" when it affects an active SLA that is based on the service offering.
+        /// The resolution target notification scheme for a request with the impact "Medium - Service Down for One User" when it affects an active SLA that is based on the service offering.
         /// </summary>
         /// <param name="query">The sla notification scheme query.</param>
         /// <returns>Returns an <see cref="IQuery"/>.</returns>
+        [Obsolete("Use resolution_target_notification_scheme_medium instead.")]
         public ServiceOfferingQuery SelectSlaNotificationSchemeMedium(SlaNotificationSchemeQuery query)
         {
             query.FieldName = "slaNotificationSchemeMedium";
@@ -218,10 +319,11 @@
         }
 
         /// <summary>
-        /// The SLA notification scheme for a request with the impact "Top - Service Down for Several Users" when it affects an active SLA that is based on the service offering.
+        /// The resolution target notification scheme for a request with the impact "Top - Service Down for Several Users" when it affects an active SLA that is based on the service offering.
         /// </summary>
         /// <param name="query">The sla notification scheme query.</param>
         /// <returns>Returns an <see cref="IQuery"/>.</returns>
+        [Obsolete("Use resolution_target_notification_scheme_top instead.")]
         public ServiceOfferingQuery SelectSlaNotificationSchemeTop(SlaNotificationSchemeQuery query)
         {
             query.FieldName = "slaNotificationSchemeTop";

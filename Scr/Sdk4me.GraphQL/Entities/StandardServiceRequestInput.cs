@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 
 namespace Sdk4me.GraphQL
 {
@@ -15,9 +16,11 @@ namespace Sdk4me.GraphQL
         private long? resolutionTarget;
         private bool? resolutionTargetBestEffort;
         private long? resolutionTargetInDays;
+        private string? resolutionTargetNotificationSchemeId;
         private long? responseTarget;
         private bool? responseTargetBestEffort;
         private long? responseTargetInDays;
+        private string? responseTargetNotificationSchemeId;
         private string? slaNotificationSchemeId;
         private string? supportHoursId;
 
@@ -103,6 +106,16 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
+        /// Identifier of the resolution target notification scheme for a request when it affects an active SLA that is based on the service offering. Only enabled SLA notification schemes that are linked to the same account as the service offering can be selected.
+        /// </summary>
+        [JsonProperty("resolutionTargetNotificationSchemeId")]
+        public string? ResolutionTargetNotificationSchemeId
+        {
+            get => resolutionTargetNotificationSchemeId;
+            set => resolutionTargetNotificationSchemeId = Set("resolutionTargetNotificationSchemeId", value);
+        }
+
+        /// <summary>
         /// Number of minutes within which a response needs to have been provided for a request to which the request template has been applied and which requester is covered by an SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("responseTarget")]
@@ -133,8 +146,19 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// Identifier of the SLA notification scheme for a request when it affects an active SLA that is based on the service offering. Only enabled SLA notification schemes that are linked to the same account as the service offering can be selected.
+        /// Identifier of the response target notification scheme for a request when it affects an active SLA that is based on the service offering. Only enabled SLA notification schemes that are linked to the same account as the service offering can be selected.
         /// </summary>
+        [JsonProperty("responseTargetNotificationSchemeId")]
+        public string? ResponseTargetNotificationSchemeId
+        {
+            get => responseTargetNotificationSchemeId;
+            set => responseTargetNotificationSchemeId = Set("responseTargetNotificationSchemeId", value);
+        }
+
+        /// <summary>
+        /// Identifier of the resolution target notification scheme for a request when it affects an active SLA that is based on the service offering. Only enabled SLA notification schemes that are linked to the same account as the service offering can be selected.
+        /// </summary>
+        [Obsolete("Use resolution_target_notification_scheme_id instead.")]
         [JsonProperty("slaNotificationSchemeId")]
         public string? SlaNotificationSchemeId
         {
