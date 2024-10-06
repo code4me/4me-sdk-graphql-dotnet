@@ -22,6 +22,7 @@ namespace Sdk4me.GraphQL
     public sealed class Sdk4meClient : IDisposable
     {
         private readonly AuthenticationTokenCollection authenticationTokens;
+        private readonly Sleep sleepEnforcer;
         private readonly DateTime unixEpoch;
         private readonly JsonSerializer jsonSerializer;
         private readonly InterfaceConverter interfaceConverter;
@@ -195,6 +196,7 @@ namespace Sdk4me.GraphQL
             if (authenticationTokens is null || !authenticationTokens.Any())
                 throw new ArgumentException($"'{nameof(authenticationTokens)}' cannot be null or empty.", nameof(authenticationTokens));
 
+            sleepEnforcer = new();
             unixEpoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
             url = EndpointUrlBuilder.Get(apiBaseUrl);
             restUrl = EndpointUrlBuilder.GetRest(apiBaseUrl);
@@ -408,12 +410,12 @@ namespace Sdk4me.GraphQL
                     {
                         Guid logId = Guid.NewGuid();
                         WriteDebug(logId, requestMessage, "***");
-                        Sleep.RegisterStartTime();
+                        sleepEnforcer.RegisterStartTime();
 
                         using (HttpResponseMessage responseMessage = await client.SendAsync(requestMessage))
                         {
                             WriteDebug(logId, requestMessage, "***", true);
-                            Sleep.SleepRemainingTime(0);
+                            await sleepEnforcer.SleepRemainingTime(0);
 
                             using (StreamReader reader = new(await responseMessage.Content.ReadAsStreamAsync()))
                             {
@@ -527,12 +529,12 @@ namespace Sdk4me.GraphQL
                         from
                     }
                 }));
-                Sleep.RegisterStartTime();
+                sleepEnforcer.RegisterStartTime();
 
                 using (HttpResponseMessage responseMessage = await client.SendAsync(requestMessage))
                 {
                     WriteDebug(logId, requestMessage, null, true);
-                    Sleep.SleepRemainingTime();
+                    await sleepEnforcer.SleepRemainingTime();
 
                     if (responseMessage.IsSuccessStatusCode && responseMessage.Content.Headers.ContentType?.MediaType == applicationJsonMediaType)
                     {
@@ -587,12 +589,12 @@ namespace Sdk4me.GraphQL
                         filename
                     }
                 }));
-                Sleep.RegisterStartTime();
+                sleepEnforcer.RegisterStartTime();
 
                 using (HttpResponseMessage responseMessage = await client.SendAsync(requestMessage))
                 {
                     WriteDebug(logId, requestMessage, null, true);
-                    Sleep.SleepRemainingTime();
+                    await sleepEnforcer.SleepRemainingTime();
 
                     if (responseMessage.IsSuccessStatusCode && responseMessage.Content.Headers.ContentType?.MediaType == applicationJsonMediaType)
                     {
@@ -636,12 +638,12 @@ namespace Sdk4me.GraphQL
 
                 Guid logId = Guid.NewGuid();
                 WriteDebug(logId, requestMessage, null);
-                Sleep.RegisterStartTime();
+                sleepEnforcer.RegisterStartTime();
 
                 using (HttpResponseMessage responseMessage = await client.SendAsync(requestMessage, cancellationToken))
                 {
                     WriteDebug(logId, requestMessage, null, true);
-                    Sleep.SleepRemainingTime();
+                    await sleepEnforcer.SleepRemainingTime();
 
                     if (responseMessage.IsSuccessStatusCode && responseMessage.Content.Headers.ContentType?.MediaType == applicationJsonMediaType)
                     {
@@ -692,12 +694,12 @@ namespace Sdk4me.GraphQL
 
                     Guid logId = Guid.NewGuid();
                     WriteDebug(logId, requestMessage, "***");
-                    Sleep.RegisterStartTime();
+                    sleepEnforcer.RegisterStartTime();
 
                     using (HttpResponseMessage responseMessage = await client.SendAsync(requestMessage))
                     {
                         WriteDebug(logId, requestMessage, "***", true);
-                        Sleep.SleepRemainingTime(0);
+                        await sleepEnforcer.SleepRemainingTime(0);
 
                         responseMessage.EnsureSuccessStatusCode();
                         string content = responseMessage.Content.ReadAsStringAsync().Result;
@@ -725,11 +727,11 @@ namespace Sdk4me.GraphQL
 
             Guid logId = Guid.NewGuid();
             WriteDebug(logId, requestMessage, content);
-            Sleep.RegisterStartTime();
+            sleepEnforcer.RegisterStartTime();
             using (HttpResponseMessage responseMessage = await client.SendAsync(requestMessage))
             {
                 WriteDebug(logId, requestMessage, content, true);
-                Sleep.SleepRemainingTime();
+                await sleepEnforcer.SleepRemainingTime();
 
                 if (responseMessage.IsSuccessStatusCode && responseMessage.Content.Headers.ContentType?.MediaType == applicationJsonMediaType)
                 {
@@ -815,7 +817,7 @@ namespace Sdk4me.GraphQL
                         Method = isResponse ? null : requestMessage.Method.ToString(),
                         URI = isResponse ? null : requestMessage.RequestUri?.AbsoluteUri,
                         Content = isResponse ? null : content,
-                        ResponseTimeInMilliseconds = isResponse ? Sleep.ResponseTimeInMilliseconds : null
+                        ResponseTimeInMilliseconds = isResponse ? sleepEnforcer.ResponseTimeInMilliseconds : null
                     });
                     Trace.Flush();
                 }

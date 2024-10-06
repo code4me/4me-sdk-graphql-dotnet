@@ -1,39 +1,63 @@
-﻿using System.Diagnostics;
-using System.Threading;
+﻿using System;
+using System.Diagnostics;
 
 namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// A class to force a 100 milliseconds sleep minus the request processing time.
     /// </summary>
-    internal static class Sleep
+    internal class Sleep
     {
-        private static readonly Stopwatch stopwatch = new();
+        private readonly Stopwatch stopwatch;
 
         /// <summary>
-        /// Returns the last HTTP request response time.
+        /// Initializes a new instance of the <see cref="Sleep"/> class.
         /// </summary>
-        internal static long ResponseTimeInMilliseconds
+        public Sleep()
+        {
+            stopwatch = new Stopwatch();
+        }
+
+        /// <summary>
+        /// Returns the last HTTP request response time in milliseconds.
+        /// </summary>
+        internal long ResponseTimeInMilliseconds
         {
             get => stopwatch.ElapsedMilliseconds;
         }
 
         /// <summary>
-        /// Stores the current Environment.TickCount value. This value will be used by the <see cref="SleepRemainingTime"/> method.
+        /// Stores the current start time by restarting the stopwatch.
+        /// This method should be called before initiating the request.
         /// </summary>
-        internal static void RegisterStartTime()
+        internal void RegisterStartTime()
         {
             stopwatch.Restart();
         }
 
         /// <summary>
-        /// Puts the current thread in sleep for 100 milliseconds minus the elapsed milliseconds between now an the value stored via the <see cref="RegisterStartTime"/> method.
+        /// Asynchronously puts the current task in delay for the remaining time to ensure the request takes at least the specified minimum duration.
         /// </summary>
-        internal static void SleepRemainingTime(int minimumDurationPerRequestInMiliseconds = 100)
+        /// <param name="minimumDurationPerRequestInMilliseconds">The minimum duration each request should take, in milliseconds. Defaults to 100 ms.</param>
+        /// <returns>A task representing the asynchronous delay operation.</returns>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when the specified minimum duration is not positive.</exception>
+        public async System.Threading.Tasks.Task SleepRemainingTime(int minimumDurationPerRequestInMilliseconds = 100)
         {
             stopwatch.Stop();
-            if (stopwatch.ElapsedMilliseconds < minimumDurationPerRequestInMiliseconds)
-                Thread.Sleep(stopwatch.ElapsedMilliseconds <= int.MaxValue ? minimumDurationPerRequestInMiliseconds - (int)stopwatch.ElapsedMilliseconds : minimumDurationPerRequestInMiliseconds);
+
+            if (minimumDurationPerRequestInMilliseconds <= 0)
+                return;
+
+            long elapsedMilliseconds = stopwatch.ElapsedMilliseconds;
+            long remainingTime = minimumDurationPerRequestInMilliseconds - elapsedMilliseconds;
+
+            if (remainingTime > 0)
+            {
+                if (remainingTime > int.MaxValue)
+                    remainingTime = minimumDurationPerRequestInMilliseconds;
+
+                await System.Threading.Tasks.Task.Delay((int)remainingTime).ConfigureAwait(false);
+            }
         }
     }
 }
