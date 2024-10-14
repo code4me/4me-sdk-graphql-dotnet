@@ -399,6 +399,12 @@ namespace Sdk4me.GraphQL
         public string? Subject { get; internal set; }
 
         /// <summary>
+        /// AI Summary created for the current request account.  Be aware that the AI summary might not always be fully up to date, because it can take a while for an AI Summary to be generated after adding a new note.
+        /// </summary>
+        [JsonProperty("summary")]
+        public string? Summary { get; internal set; }
+
+        /// <summary>
         /// The supplier organization that has been asked to assist with the request. The supplier organization is automatically selected in this field after a service instance has been selected that is provided by an external service provider organization. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
         /// </summary>
         [JsonProperty("supplier")]

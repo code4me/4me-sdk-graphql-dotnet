@@ -6029,6 +6029,11 @@ namespace Sdk4me.GraphQL
         [EnumMember(Value = "subject")]
         Subject,
         /// <summary>
+        /// The summary field.
+        /// </summary>
+        [EnumMember(Value = "summary")]
+        Summary,
+        /// <summary>
         /// The supplier field.
         /// </summary>
         [EnumMember(Value = "supplier")]
@@ -7822,25 +7827,25 @@ namespace Sdk4me.GraphQL
         ShopArticles,
         /// <summary>
         /// The sla notification scheme high field.
-        /// </summary>        [Obsolete("Use resolution_target_notification_scheme_high instead.")]
+        /// </summary>        [Obsolete("Use resolutionTargetNotificationSchemeHigh instead.")]
 
         [EnumMember(Value = "slaNotificationSchemeHigh")]
         SlaNotificationSchemeHigh,
         /// <summary>
         /// The sla notification scheme low field.
-        /// </summary>        [Obsolete("Use resolution_target_notification_scheme_low instead.")]
+        /// </summary>        [Obsolete("Use resolutionTargetNotificationSchemeLow instead.")]
 
         [EnumMember(Value = "slaNotificationSchemeLow")]
         SlaNotificationSchemeLow,
         /// <summary>
         /// The sla notification scheme medium field.
-        /// </summary>        [Obsolete("Use resolution_target_notification_scheme_medium instead.")]
+        /// </summary>        [Obsolete("Use resolutionTargetNotificationSchemeMedium instead.")]
 
         [EnumMember(Value = "slaNotificationSchemeMedium")]
         SlaNotificationSchemeMedium,
         /// <summary>
         /// The sla notification scheme top field.
-        /// </summary>        [Obsolete("Use resolution_target_notification_scheme_top instead.")]
+        /// </summary>        [Obsolete("Use resolutionTargetNotificationSchemeTop instead.")]
 
         [EnumMember(Value = "slaNotificationSchemeTop")]
         SlaNotificationSchemeTop,
@@ -8937,7 +8942,8 @@ namespace Sdk4me.GraphQL
         ServiceOffering,
         /// <summary>
         /// The sla notification scheme field.
-        /// </summary>
+        /// </summary>        [Obsolete("Use resolutionTargetNotificationScheme instead.")]
+
         [EnumMember(Value = "slaNotificationScheme")]
         SlaNotificationScheme,
         /// <summary>

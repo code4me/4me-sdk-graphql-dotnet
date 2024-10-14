@@ -1,4 +1,6 @@
-﻿namespace Sdk4me.GraphQL
+﻿using System;
+
+namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// The <see cref="StandardServiceRequest">StandardServiceRequest</see> query.
@@ -66,6 +68,7 @@
         /// </summary>
         /// <param name="query">The sla notification scheme query.</param>
         /// <returns>Returns an <see cref="IQuery"/>.</returns>
+        [Obsolete("Use resolutionTargetNotificationScheme instead.")]
         public StandardServiceRequestQuery SelectSlaNotificationScheme(SlaNotificationSchemeQuery query)
         {
             query.FieldName = "slaNotificationScheme";

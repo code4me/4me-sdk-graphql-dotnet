@@ -97,6 +97,7 @@ namespace Sdk4me.GraphQL
         /// <summary>
         /// The resolution target notification scheme for a request when it affects an active SLA that is based on the service offering. Only enabled SLA notification schemes that are linked to the same account as the service offering can be selected.
         /// </summary>
+        [Obsolete("Use resolutionTargetNotificationScheme instead.")]
         [JsonProperty("slaNotificationScheme")]
         public SlaNotificationScheme? SlaNotificationScheme { get; internal set; }
 

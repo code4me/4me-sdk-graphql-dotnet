@@ -284,7 +284,7 @@ namespace Sdk4me.GraphQL
         /// </summary>
         /// <param name="query">The sla notification scheme query.</param>
         /// <returns>Returns an <see cref="IQuery"/>.</returns>
-        [Obsolete("Use resolution_target_notification_scheme_high instead.")]
+        [Obsolete("Use resolutionTargetNotificationSchemeHigh instead.")]
         public ServiceOfferingQuery SelectSlaNotificationSchemeHigh(SlaNotificationSchemeQuery query)
         {
             query.FieldName = "slaNotificationSchemeHigh";
@@ -297,7 +297,7 @@ namespace Sdk4me.GraphQL
         /// </summary>
         /// <param name="query">The sla notification scheme query.</param>
         /// <returns>Returns an <see cref="IQuery"/>.</returns>
-        [Obsolete("Use resolution_target_notification_scheme_low instead.")]
+        [Obsolete("Use resolutionTargetNotificationSchemeLow instead.")]
         public ServiceOfferingQuery SelectSlaNotificationSchemeLow(SlaNotificationSchemeQuery query)
         {
             query.FieldName = "slaNotificationSchemeLow";
@@ -310,7 +310,7 @@ namespace Sdk4me.GraphQL
         /// </summary>
         /// <param name="query">The sla notification scheme query.</param>
         /// <returns>Returns an <see cref="IQuery"/>.</returns>
-        [Obsolete("Use resolution_target_notification_scheme_medium instead.")]
+        [Obsolete("Use resolutionTargetNotificationSchemeMedium instead.")]
         public ServiceOfferingQuery SelectSlaNotificationSchemeMedium(SlaNotificationSchemeQuery query)
         {
             query.FieldName = "slaNotificationSchemeMedium";
@@ -323,7 +323,7 @@ namespace Sdk4me.GraphQL
         /// </summary>
         /// <param name="query">The sla notification scheme query.</param>
         /// <returns>Returns an <see cref="IQuery"/>.</returns>
-        [Obsolete("Use resolution_target_notification_scheme_top instead.")]
+        [Obsolete("Use resolutionTargetNotificationSchemeTop instead.")]
         public ServiceOfferingQuery SelectSlaNotificationSchemeTop(SlaNotificationSchemeQuery query)
         {
             query.FieldName = "slaNotificationSchemeTop";
