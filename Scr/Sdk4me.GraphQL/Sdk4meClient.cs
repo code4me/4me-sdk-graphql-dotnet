@@ -702,7 +702,7 @@ namespace Sdk4me.GraphQL
                         await sleepEnforcer.SleepRemainingTime(0);
 
                         responseMessage.EnsureSuccessStatusCode();
-                        string content = responseMessage.Content.ReadAsStringAsync().Result;
+                        string content = await responseMessage.Content.ReadAsStringAsync();
                         AuthenticationOAuth2Reponse response = JsonConvert.DeserializeObject<AuthenticationOAuth2Reponse>(content) ?? throw new Sdk4meException("Invalid authentication response.");
                         currentToken.Token = response.AccessToken;
                         currentToken.TokenType = response.TokenType;
