@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
 
 namespace Sdk4me.GraphQL
 {
@@ -7827,25 +7828,29 @@ namespace Sdk4me.GraphQL
         ShopArticles,
         /// <summary>
         /// The sla notification scheme high field.
-        /// </summary>        [Obsolete("Use resolutionTargetNotificationSchemeHigh instead.")]
+        /// </summary>
+        [Obsolete("Use resolutionTargetNotificationSchemeHigh instead.")]
 
         [EnumMember(Value = "slaNotificationSchemeHigh")]
         SlaNotificationSchemeHigh,
         /// <summary>
         /// The sla notification scheme low field.
-        /// </summary>        [Obsolete("Use resolutionTargetNotificationSchemeLow instead.")]
+        /// </summary>
+        [Obsolete("Use resolutionTargetNotificationSchemeLow instead.")]
 
         [EnumMember(Value = "slaNotificationSchemeLow")]
         SlaNotificationSchemeLow,
         /// <summary>
         /// The sla notification scheme medium field.
-        /// </summary>        [Obsolete("Use resolutionTargetNotificationSchemeMedium instead.")]
+        /// </summary>
+        [Obsolete("Use resolutionTargetNotificationSchemeMedium instead.")]
 
         [EnumMember(Value = "slaNotificationSchemeMedium")]
         SlaNotificationSchemeMedium,
         /// <summary>
         /// The sla notification scheme top field.
-        /// </summary>        [Obsolete("Use resolutionTargetNotificationSchemeTop instead.")]
+        /// </summary>
+        [Obsolete("Use resolutionTargetNotificationSchemeTop instead.")]
 
         [EnumMember(Value = "slaNotificationSchemeTop")]
         SlaNotificationSchemeTop,
@@ -8942,7 +8947,8 @@ namespace Sdk4me.GraphQL
         ServiceOffering,
         /// <summary>
         /// The sla notification scheme field.
-        /// </summary>        [Obsolete("Use resolutionTargetNotificationScheme instead.")]
+        /// </summary>
+        [Obsolete("Use resolutionTargetNotificationScheme instead.")]
 
         [EnumMember(Value = "slaNotificationScheme")]
         SlaNotificationScheme,

@@ -2891,6 +2891,16 @@ namespace Sdk4me.GraphQL
         [EnumMember(Value = "affectedServiceProvider")]
         AffectedServiceProvider,
         /// <summary>
+        /// Filter on sentiment.
+        /// </summary>
+        [EnumMember(Value = "sentiment")]
+        Sentiment,
+        /// <summary>
+        /// Filter on sentiment trend.
+        /// </summary>
+        [EnumMember(Value = "sentimentTrend")]
+        SentimentTrend,
+        /// <summary>
         /// Filter on record id as displayed in ui.
         /// </summary>
         [EnumMember(Value = "requestId")]
