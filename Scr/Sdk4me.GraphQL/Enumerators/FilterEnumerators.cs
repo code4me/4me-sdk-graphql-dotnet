@@ -160,6 +160,11 @@ namespace Sdk4me.GraphQL
         [EnumMember(Value = "requesterSite")]
         RequesterSite,
         /// <summary>
+        /// Filter on template.
+        /// </summary>
+        [EnumMember(Value = "template")]
+        Template,
+        /// <summary>
         /// Filter on service instance.
         /// </summary>
         [EnumMember(Value = "serviceInstance")]
