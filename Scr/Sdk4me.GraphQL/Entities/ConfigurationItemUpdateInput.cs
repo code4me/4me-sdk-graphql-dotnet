@@ -408,7 +408,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// Serial number of the configuration item. The concatenation of <c>product</c>'s' <c>brand</c> and <c>serialNr</c> must be unique within a 4me account.
+        /// Serial number of the configuration item. The concatenation of <c>product</c>'s' <c>brand</c> and <c>serialNr</c> must be unique within a Xurrent account.
         /// </summary>
         [JsonProperty("serialNr")]
         public string? SerialNr

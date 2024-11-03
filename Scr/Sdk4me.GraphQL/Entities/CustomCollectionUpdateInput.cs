@@ -113,7 +113,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// The Reference field defaults to the Name field value, written in lower case characters and with all spaces replaced by the underscore character. This reference can be used to link the collection to an element using the 4me APIs or the 4me Import functionality.
+        /// The Reference field defaults to the Name field value, written in lower case characters and with all spaces replaced by the underscore character. This reference can be used to link the collection to an element using the Xurrent APIs or the Xurrent Import functionality.
         /// </summary>
         [JsonProperty("reference")]
         public string? Reference

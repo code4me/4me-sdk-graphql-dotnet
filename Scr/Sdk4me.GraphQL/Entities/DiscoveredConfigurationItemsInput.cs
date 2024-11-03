@@ -16,7 +16,7 @@ namespace Sdk4me.GraphQL
         private string? supportTeam;
 
         /// <summary>
-        /// Alternative identifiers for the client application. When a configuration item or product with the given <c>sourceID</c> is found linked to one of these alternative sources it will be identified as the same. For configuration items the source field in 4me will be updated to the <c>source</c> value supplied.
+        /// Alternative identifiers for the client application. When a configuration item or product with the given <c>sourceID</c> is found linked to one of these alternative sources it will be identified as the same. For configuration items the source field in Xurrent will be updated to the <c>source</c> value supplied.
         /// </summary>
         [JsonProperty("alternativeSources")]
         public List<string>? AlternativeSources
@@ -46,7 +46,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// How to handle references to records already present in 4me.
+        /// How to handle references to records already present in Xurrent.
         /// </summary>
         [JsonProperty("referenceStrategies")]
         public DiscoveredReferenceStrategiesInput? ReferenceStrategies

@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         private DiscoveredItemStrategy? strategy;
 
         /// <summary>
-        /// How to handle records already present in 4me.
+        /// How to handle records already present in Xurrent.
         /// </summary>
         [JsonProperty("strategy")]
         public DiscoveredItemStrategy? Strategy

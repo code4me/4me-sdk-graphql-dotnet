@@ -2141,11 +2141,6 @@ namespace Sdk4me.GraphQL
     public enum EffortClassRateIDField
     {
         /// <summary>
-        /// The created at field.
-        /// </summary>
-        [EnumMember(Value = "createdAt")]
-        CreatedAt,
-        /// <summary>
         /// The effort class field.
         /// </summary>
         [EnumMember(Value = "effortClass")]
@@ -2160,11 +2155,6 @@ namespace Sdk4me.GraphQL
         /// </summary>
         [EnumMember(Value = "rateID")]
         RateID,
-        /// <summary>
-        /// The updated at field.
-        /// </summary>
-        [EnumMember(Value = "updatedAt")]
-        UpdatedAt,
     }
 
     /// <summary>
@@ -7827,34 +7817,6 @@ namespace Sdk4me.GraphQL
         [EnumMember(Value = "shopArticles")]
         ShopArticles,
         /// <summary>
-        /// The sla notification scheme high field.
-        /// </summary>
-        [Obsolete("Use resolutionTargetNotificationSchemeHigh instead.")]
-
-        [EnumMember(Value = "slaNotificationSchemeHigh")]
-        SlaNotificationSchemeHigh,
-        /// <summary>
-        /// The sla notification scheme low field.
-        /// </summary>
-        [Obsolete("Use resolutionTargetNotificationSchemeLow instead.")]
-
-        [EnumMember(Value = "slaNotificationSchemeLow")]
-        SlaNotificationSchemeLow,
-        /// <summary>
-        /// The sla notification scheme medium field.
-        /// </summary>
-        [Obsolete("Use resolutionTargetNotificationSchemeMedium instead.")]
-
-        [EnumMember(Value = "slaNotificationSchemeMedium")]
-        SlaNotificationSchemeMedium,
-        /// <summary>
-        /// The sla notification scheme top field.
-        /// </summary>
-        [Obsolete("Use resolutionTargetNotificationSchemeTop instead.")]
-
-        [EnumMember(Value = "slaNotificationSchemeTop")]
-        SlaNotificationSchemeTop,
-        /// <summary>
         /// The source field.
         /// </summary>
         [EnumMember(Value = "source")]
@@ -8945,13 +8907,6 @@ namespace Sdk4me.GraphQL
         /// </summary>
         [EnumMember(Value = "serviceOffering")]
         ServiceOffering,
-        /// <summary>
-        /// The sla notification scheme field.
-        /// </summary>
-        [Obsolete("Use resolutionTargetNotificationScheme instead.")]
-
-        [EnumMember(Value = "slaNotificationScheme")]
-        SlaNotificationScheme,
         /// <summary>
         /// The support hours field.
         /// </summary>

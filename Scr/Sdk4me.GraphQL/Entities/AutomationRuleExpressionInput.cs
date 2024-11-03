@@ -21,7 +21,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// The value of the expression. Refer to the 4me Help for guidance on how to form valid expressions.
+        /// The value of the expression. Refer to the Xurrent Help for guidance on how to form valid expressions.
         /// </summary>
         [JsonProperty("value"), Sdk4meField(IsRequiredForMutation = true)]
         public string Value
@@ -43,7 +43,7 @@ namespace Sdk4me.GraphQL
         /// Initializes a new instance of the <see cref="AutomationRuleExpressionInput"/> class.
         /// </summary>
         /// <param name="name">Name of the expression, which can be used to refer to the expression from the rule's conditions, actions, or from other expressions.'</param>
-        /// <param name="value">The value of the expression. Refer to the 4me Help for guidance on how to form valid expressions.</param>
+        /// <param name="value">The value of the expression. Refer to the Xurrent Help for guidance on how to form valid expressions.</param>
         public AutomationRuleExpressionInput(string name, string value)
         {
             this.name = Set("name", name);

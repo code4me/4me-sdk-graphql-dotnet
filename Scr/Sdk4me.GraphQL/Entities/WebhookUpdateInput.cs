@@ -100,7 +100,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// Publicly accessible URI that 4me can use to POST http messages to.
+        /// Publicly accessible URI that Xurrent can use to POST http messages to.
         /// </summary>
         [JsonProperty("uri")]
         public string? Uri

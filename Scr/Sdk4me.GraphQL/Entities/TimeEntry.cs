@@ -16,13 +16,13 @@ namespace Sdk4me.GraphQL
         public Account? Account { get; internal set; }
 
         /// <summary>
-        /// The Activity ID is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider. Some examples of activities are standard requests, a high impact incident or a request for information. The Activity ID can be used to support integrations between the billing system of the service provider and the 4me account in which the activities are performed.
+        /// The Activity ID is the unique identifier by which an activity that is performed in the context of a service offering is known in the billing system of the service provider. Some examples of activities are standard requests, a high impact incident or a request for information. The Activity ID can be used to support integrations between the billing system of the service provider and the Xurrent account in which the activities are performed.
         /// </summary>
         [JsonProperty("activityID")]
         public string? ActivityID { get; internal set; }
 
         /// <summary>
-        /// The Agreement ID is the unique identifier by which all the activities that are performed through the coverage of the SLA are known in the billing system of the service provider. The agreement ID can be used to support integrations between the billing system of the service provider and the 4me account in which the activities are performed.
+        /// The Agreement ID is the unique identifier by which all the activities that are performed through the coverage of the SLA are known in the billing system of the service provider. The agreement ID can be used to support integrations between the billing system of the service provider and the Xurrent account in which the activities are performed.
         /// </summary>
         [JsonProperty("agreementID")]
         public string? AgreementID { get; internal set; }
@@ -136,7 +136,7 @@ namespace Sdk4me.GraphQL
         public Person? Person { get; internal set; }
 
         /// <summary>
-        /// The Rate ID is the unique identifier by which an effort class that is linked to a time entry when an activity was performed through the coverage of the SLA is known in the billing system of the service provider. The effort class represents the type of effort that was performed when working on an activity. Some examples of effort classes are 'Billable - Normal Hours', 'Billable overtime', 'Non Billable' or 'Senior System Engineer'. The Rate ID can be used to support integrations between the billing system of the service provider and the 4me account in which the activities are performed. In the billing system the Rate IDs will be linked to the rates that have been agreed on in the service contract.
+        /// The Rate ID is the unique identifier by which an effort class that is linked to a time entry when an activity was performed through the coverage of the SLA is known in the billing system of the service provider. The effort class represents the type of effort that was performed when working on an activity. Some examples of effort classes are 'Billable - Normal Hours', 'Billable overtime', 'Non Billable' or 'Senior System Engineer'. The Rate ID can be used to support integrations between the billing system of the service provider and the Xurrent account in which the activities are performed. In the billing system the Rate IDs will be linked to the rates that have been agreed on in the service contract.
         /// </summary>
         [JsonProperty("rateID")]
         public string? RateID { get; internal set; }

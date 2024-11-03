@@ -163,7 +163,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// The unique identifier of the product that is used by the manufacturer. The concatenation of <c>brand</c> and <c>productID</c> must be unique within a 4me account.
+        /// The unique identifier of the product that is used by the manufacturer. The concatenation of <c>brand</c> and <c>productID</c> must be unique within a Xurrent account.
         /// </summary>
         [JsonProperty("productID")]
         public string? ProductID

@@ -81,7 +81,7 @@ namespace Sdk4me.GraphQL
         public DateTime? UpdatedAt { get; internal set; }
 
         /// <summary>
-        /// Publicly accessible URI that 4me can use to POST http messages to.
+        /// Publicly accessible URI that Xurrent can use to POST http messages to.
         /// </summary>
         [JsonProperty("uri"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Uri { get; internal set; }

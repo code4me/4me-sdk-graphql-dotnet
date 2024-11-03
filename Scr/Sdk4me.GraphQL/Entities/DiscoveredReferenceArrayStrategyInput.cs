@@ -10,7 +10,7 @@ namespace Sdk4me.GraphQL
         private DiscoveredReferenceArrayStrategy? strategy;
 
         /// <summary>
-        /// How to handle existing references, to other objects, for discovered items already present in 4me.
+        /// How to handle existing references, to other objects, for discovered items already present in Xurrent.
         /// </summary>
         [JsonProperty("strategy")]
         public DiscoveredReferenceArrayStrategy? Strategy

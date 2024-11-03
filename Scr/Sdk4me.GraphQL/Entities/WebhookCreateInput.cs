@@ -89,7 +89,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// Publicly accessible URI that 4me can use to POST http messages to.
+        /// Publicly accessible URI that Xurrent can use to POST http messages to.
         /// </summary>
         [JsonProperty("uri"), Sdk4meField(IsRequiredForMutation = true)]
         public string Uri
@@ -121,7 +121,7 @@ namespace Sdk4me.GraphQL
         /// Initializes a new instance of the <see cref="WebhookCreateInput"/> class.
         /// </summary>
         /// <param name="event">Event that will trigger this webhook.</param>
-        /// <param name="uri">Publicly accessible URI that 4me can use to POST http messages to.</param>
+        /// <param name="uri">Publicly accessible URI that Xurrent can use to POST http messages to.</param>
         public WebhookCreateInput(WebhookEvent @event, string uri)
         {
             this.@event = Set("event", @event);

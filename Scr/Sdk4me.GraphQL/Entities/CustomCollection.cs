@@ -68,7 +68,7 @@ namespace Sdk4me.GraphQL
         public string? PictureUri { get; internal set; }
 
         /// <summary>
-        /// This reference can be used to link the collection to an element using the 4me APIs or the 4me Import functionality.
+        /// This reference can be used to link the collection to an element using the Xurrent APIs or the Xurrent Import functionality.
         /// </summary>
         [JsonProperty("reference")]
         public string? Reference { get; internal set; }

@@ -210,7 +210,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// Used to provide information that is visible only for people who have the Auditor, Specialist or Account Administrator role of the account for which the internal note is intended. The <c>X-4me-Account</c> header sent determines the account.
+        /// Used to provide information that is visible only for people who have the Auditor, Specialist or Account Administrator role of the account for which the internal note is intended. The <c>x-xurrent-account</c> header sent determines the account.
         /// </summary>
         [JsonProperty("internalNote")]
         public string? InternalNote
@@ -471,7 +471,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// Used to specify the support domain account ID in which the request is to be registered. This parameter needs to be specified when the current user's Person record is registered in a directory account. The ID of a 4me account can be found in the 'Account Overview' section of the Settings console.
+        /// Used to specify the support domain account ID in which the request is to be registered. This parameter needs to be specified when the current user's Person record is registered in a directory account. The ID of a Xurrent account can be found in the 'Account Overview' section of the Settings console.
         /// </summary>
         [JsonProperty("supportDomain")]
         public string? SupportDomain

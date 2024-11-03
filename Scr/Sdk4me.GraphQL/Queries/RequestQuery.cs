@@ -84,7 +84,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// Configuration items of the request. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
+        /// Configuration items of the request. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>x-xurrent-account</c> header of the API call.
         /// </summary>
         /// <param name="query">The configuration item query.</param>
         /// <returns>Returns an <see cref="IQuery"/>.</returns>
@@ -188,7 +188,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// The person to whom the request is to be assigned. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
+        /// The person to whom the request is to be assigned. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>x-xurrent-account</c> header of the API call.
         /// </summary>
         /// <param name="query">The person query.</param>
         /// <returns>Returns an <see cref="IQuery"/>.</returns>
@@ -306,7 +306,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// The supplier organization that has been asked to assist with the request. The supplier organization is automatically selected in this field after a service instance has been selected that is provided by an external service provider organization. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
+        /// The supplier organization that has been asked to assist with the request. The supplier organization is automatically selected in this field after a service instance has been selected that is provided by an external service provider organization. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>x-xurrent-account</c> header of the API call.
         /// </summary>
         /// <param name="query">The organization query.</param>
         /// <returns>Returns an <see cref="IQuery"/>.</returns>
@@ -341,7 +341,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// The team to which the request is to be assigned. By default, the first line team of the service instance that is related to the request will be selected. If a first line team has not been specified for the service instance, the support team of the service instance will be selected instead. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>X-4me-Account</c> header of the API call.
+        /// The team to which the request is to be assigned. By default, the first line team of the service instance that is related to the request will be selected. If a first line team has not been specified for the service instance, the support team of the service instance will be selected instead. This field is account specific, which means that its value can be different for the same request, depending on the account that has been specified in the <c>x-xurrent-account</c> header of the API call.
         /// </summary>
         /// <param name="query">The team query.</param>
         /// <returns>Returns an <see cref="IQuery"/>.</returns>

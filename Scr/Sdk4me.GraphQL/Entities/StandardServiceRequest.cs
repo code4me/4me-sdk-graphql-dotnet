@@ -95,13 +95,6 @@ namespace Sdk4me.GraphQL
         public ServiceOffering? ServiceOffering { get; internal set; }
 
         /// <summary>
-        /// The resolution target notification scheme for a request when it affects an active SLA that is based on the service offering. Only enabled SLA notification schemes that are linked to the same account as the service offering can be selected.
-        /// </summary>
-        [Obsolete("Use resolutionTargetNotificationScheme instead.")]
-        [JsonProperty("slaNotificationScheme")]
-        public SlaNotificationScheme? SlaNotificationScheme { get; internal set; }
-
-        /// <summary>
         /// The calendar that defines the support hours for a request to which the request template has been applied and which requester is covered by an SLA that is based on the service offering.
         /// </summary>
         [JsonProperty("supportHours")]

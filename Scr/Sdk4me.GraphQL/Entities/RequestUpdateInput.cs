@@ -222,7 +222,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// Used to provide information that is visible only for people who have the Auditor, Specialist or Account Administrator role of the account for which the internal note is intended. The <c>X-4me-Account</c> header sent determines the account.
+        /// Used to provide information that is visible only for people who have the Auditor, Specialist or Account Administrator role of the account for which the internal note is intended. The <c>x-xurrent-account</c> header sent determines the account.
         /// </summary>
         [JsonProperty("internalNote")]
         public string? InternalNote

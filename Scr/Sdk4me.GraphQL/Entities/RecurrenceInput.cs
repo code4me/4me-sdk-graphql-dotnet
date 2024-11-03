@@ -13,7 +13,7 @@ namespace Sdk4me.GraphQL
         private List<long>? day;
         private List<long>? dayOfMonth;
         private bool? dayOfWeek;
-        private List<DayNames>? dayOfWeekDay;
+        private DayNames? dayOfWeekDay;
         private RecurrenceDayOfWeekIndex? dayOfWeekIndex;
         private bool? disabled;
 #if NET6_0_OR_GREATER
@@ -87,10 +87,10 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// <em>Required</em> when <c>dayOfWeek</c> is <c>true</c>, ignored in all other cases. list of days of the week.
+        /// <em>Required</em> when <c>dayOfWeek</c> is <c>true</c>, ignored in all other cases.
         /// </summary>
         [JsonProperty("dayOfWeekDay")]
-        public List<DayNames>? DayOfWeekDay
+        public DayNames? DayOfWeekDay
         {
             get => dayOfWeekDay;
             set => dayOfWeekDay = Set("dayOfWeekDay", value);

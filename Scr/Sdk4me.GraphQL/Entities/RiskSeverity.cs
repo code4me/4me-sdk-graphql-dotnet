@@ -63,7 +63,7 @@ namespace Sdk4me.GraphQL
         public long? Position { get; internal set; }
 
         /// <summary>
-        /// Automatically set to the Name field value, written in lower case characters and with all spaces replaced by the underscore character. This reference can be used to link the risk severity to a risk using the 4me REST API or the 4me Import functionality.
+        /// Automatically set to the Name field value, written in lower case characters and with all spaces replaced by the underscore character. This reference can be used to link the risk severity to a risk using the Xurrent REST API or the Xurrent Import functionality.
         /// </summary>
         [JsonProperty("reference"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? Reference { get; internal set; }

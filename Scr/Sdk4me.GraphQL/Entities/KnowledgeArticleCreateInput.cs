@@ -170,7 +170,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// Whether the knowledge article needs to be available to anyone, including people without access to 4me.
+        /// Whether the knowledge article needs to be available to anyone, including people without access to Xurrent.
         /// </summary>
         [JsonProperty("public")]
         public bool? Public

@@ -196,7 +196,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// This reference can be used to link the shop article to a shop order line using the 4me APIs or the 4me Import functionality.
+        /// This reference can be used to link the shop article to a shop order line using the Xurrent APIs or the Xurrent Import functionality.
         /// </summary>
         [JsonProperty("reference")]
         public string? Reference

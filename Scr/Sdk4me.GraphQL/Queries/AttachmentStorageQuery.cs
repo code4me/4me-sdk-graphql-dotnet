@@ -1,7 +1,7 @@
 ﻿namespace Sdk4me.GraphQL
 {
     /// <summary>
-    /// Details on how to upload files to the 4me attachment storage facility.
+    /// Details on how to upload files to the Xurrent attachment storage facility.
     /// </summary>
     public class AttachmentStorageQuery : Query<AttachmentStorageQuery, AttachmentStorageField, DefaultView, DefaultFilter, DefaultOrderField>
     {

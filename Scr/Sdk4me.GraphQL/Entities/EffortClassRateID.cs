@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 
 namespace Sdk4me.GraphQL
@@ -9,12 +8,6 @@ namespace Sdk4me.GraphQL
     /// </summary>
     public class EffortClassRateID : Node
     {
-        /// <summary>
-        /// The date and time at which the rateID was created.
-        /// </summary>
-        [JsonProperty("createdAt")]
-        public DateTime? CreatedAt { get; internal set; }
-
         /// <summary>
         /// The effort class for which a rateID is provided.
         /// </summary>
@@ -26,12 +19,6 @@ namespace Sdk4me.GraphQL
         /// </summary>
         [JsonProperty("rateID")]
         public string? RateID { get; internal set; }
-
-        /// <summary>
-        /// The date and time at which the rateID was updated.
-        /// </summary>
-        [JsonProperty("updatedAt")]
-        public DateTime? UpdatedAt { get; internal set; }
 
         internal override HashSet<QueryPageInfo> GetQueryPageInfo(string fieldName, int depth)
         {

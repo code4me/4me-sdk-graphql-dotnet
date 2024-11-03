@@ -254,7 +254,7 @@ namespace Sdk4me.GraphQL
         public ProductCategoryRuleSet? RuleSet { get; internal set; }
 
         /// <summary>
-        /// Serial number of the configuration item. The concatenation of <c>product</c>'s' <c>brand</c> and <c>serialNr</c> must be unique within a 4me account.
+        /// Serial number of the configuration item. The concatenation of <c>product</c>'s' <c>brand</c> and <c>serialNr</c> must be unique within a Xurrent account.
         /// </summary>
         [JsonProperty("serialNr"), Sdk4meField(IsDefaultQueryProperty = true)]
         public string? SerialNr { get; internal set; }

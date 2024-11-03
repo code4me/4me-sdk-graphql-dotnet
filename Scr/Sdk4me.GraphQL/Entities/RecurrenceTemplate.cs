@@ -68,10 +68,10 @@ namespace Sdk4me.GraphQL
         public bool? DayOfWeek { get; internal set; }
 
         /// <summary>
-        /// <em>Required</em> when <c>dayOfWeek</c> is <c>true</c>, ignored in all other cases. list of days of the week.
+        /// <em>Required</em> when <c>dayOfWeek</c> is <c>true</c>, ignored in all other cases.
         /// </summary>
         [JsonProperty("dayOfWeekDay"), Sdk4meField(IsDefaultQueryProperty = true)]
-        public List<DayNames>? DayOfWeekDay { get; internal set; }
+        public DayNames? DayOfWeekDay { get; internal set; }
 
         /// <summary>
         /// <em>Required</em> when <c>dayOfWeek</c> is <c>true</c>, ignored in all other cases.

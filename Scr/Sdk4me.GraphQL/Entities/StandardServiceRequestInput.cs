@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
 
 namespace Sdk4me.GraphQL
 {
@@ -21,7 +20,6 @@ namespace Sdk4me.GraphQL
         private bool? responseTargetBestEffort;
         private long? responseTargetInDays;
         private string? responseTargetNotificationSchemeId;
-        private string? slaNotificationSchemeId;
         private string? supportHoursId;
 
         /// <summary>
@@ -153,17 +151,6 @@ namespace Sdk4me.GraphQL
         {
             get => responseTargetNotificationSchemeId;
             set => responseTargetNotificationSchemeId = Set("responseTargetNotificationSchemeId", value);
-        }
-
-        /// <summary>
-        /// Identifier of the resolution target notification scheme for a request when it affects an active SLA that is based on the service offering. Only enabled SLA notification schemes that are linked to the same account as the service offering can be selected.
-        /// </summary>
-        [Obsolete("Use resolutionTargetNotificationSchemeId instead.")]
-        [JsonProperty("slaNotificationSchemeId")]
-        public string? SlaNotificationSchemeId
-        {
-            get => slaNotificationSchemeId;
-            set => slaNotificationSchemeId = Set("slaNotificationSchemeId", value);
         }
 
         /// <summary>

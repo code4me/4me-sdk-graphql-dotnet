@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Sdk4me.GraphQL
+﻿namespace Sdk4me.GraphQL
 {
     /// <summary>
     /// The <see cref="StandardServiceRequest">StandardServiceRequest</see> query.
@@ -59,19 +57,6 @@ namespace Sdk4me.GraphQL
         public StandardServiceRequestQuery SelectServiceOffering(ServiceOfferingQuery query)
         {
             query.FieldName = "serviceOffering";
-            query.IsConnection = false;
-            return Select(query);
-        }
-
-        /// <summary>
-        /// The resolution target notification scheme for a request when it affects an active SLA that is based on the service offering. Only enabled SLA notification schemes that are linked to the same account as the service offering can be selected.
-        /// </summary>
-        /// <param name="query">The sla notification scheme query.</param>
-        /// <returns>Returns an <see cref="IQuery"/>.</returns>
-        [Obsolete("Use resolutionTargetNotificationScheme instead.")]
-        public StandardServiceRequestQuery SelectSlaNotificationScheme(SlaNotificationSchemeQuery query)
-        {
-            query.FieldName = "slaNotificationScheme";
             query.IsConnection = false;
             return Select(query);
         }

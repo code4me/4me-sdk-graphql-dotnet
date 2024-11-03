@@ -311,7 +311,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// The email address to which email notifications are to be sent. This email address acts as the unique identifier for the person within the 4me account. This primary email address also acts as the person's login name if he/she is a user of the 4me service.
+        /// The email address to which email notifications are to be sent. This email address acts as the unique identifier for the person within the Xurrent account. This primary email address also acts as the person's login name if he/she is a user of the Xurrent service.
         /// </summary>
         [JsonProperty("primaryEmail"), Sdk4meField(IsRequiredForMutation = true)]
         public string PrimaryEmail
@@ -401,7 +401,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// Whether the person prefers to see times displayed within the 4me service in the 24-hour format or not (in which case the 12-hour format is applied).
+        /// Whether the person prefers to see times displayed within the Xurrent service in the 24-hour format or not (in which case the 12-hour format is applied).
         /// </summary>
         [JsonProperty("timeFormat24h")]
         public bool? TimeFormat24h
@@ -464,7 +464,7 @@ namespace Sdk4me.GraphQL
         /// Initializes a new instance of the <see cref="PersonCreateInput"/> class.
         /// </summary>
         /// <param name="name">The name of the person.</param>
-        /// <param name="primaryEmail">The email address to which email notifications are to be sent. This email address acts as the unique identifier for the person within the 4me account. This primary email address also acts as the person's login name if he/she is a user of the 4me service.</param>
+        /// <param name="primaryEmail">The email address to which email notifications are to be sent. This email address acts as the unique identifier for the person within the Xurrent account. This primary email address also acts as the person's login name if he/she is a user of the Xurrent service.</param>
         public PersonCreateInput(string name, string primaryEmail)
         {
             this.name = Set("name", name);

@@ -25,7 +25,7 @@ namespace Sdk4me.GraphQL
         private string? websiteUrl;
 
         /// <summary>
-        /// Identifier of the CI for which a request is to be registered in 4me Self Service when the short URL is used.
+        /// Identifier of the CI for which a request is to be registered in Xurrent Self Service when the short URL is used.
         /// </summary>
         [JsonProperty("ciId")]
         public string? CiId
@@ -75,7 +75,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// Identifier of the knowledge article which instructions need to be displayed when the short URL is used in 4me Self Service.
+        /// Identifier of the knowledge article which instructions need to be displayed when the short URL is used in Xurrent Self Service.
         /// </summary>
         [JsonProperty("knowledgeArticleId")]
         public string? KnowledgeArticleId
@@ -105,7 +105,7 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// The identifier of the request template that is to be applied to each new request that is opened when in 4me Self Service when the short URL is used.
+        /// The identifier of the request template that is to be applied to each new request that is opened when in Xurrent Self Service when the short URL is used.
         /// </summary>
         [JsonProperty("requestTemplateId")]
         public string? RequestTemplateId

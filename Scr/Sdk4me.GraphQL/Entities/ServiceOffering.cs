@@ -589,34 +589,6 @@ namespace Sdk4me.GraphQL
         }
 
         /// <summary>
-        /// The resolution target notification scheme for a request with the impact "High - Service Degraded for Several Users" when it affects an active SLA that is based on the service offering.
-        /// </summary>
-        [Obsolete("Use resolutionTargetNotificationSchemeHigh instead.")]
-        [JsonProperty("slaNotificationSchemeHigh")]
-        public SlaNotificationScheme? SlaNotificationSchemeHigh { get; internal set; }
-
-        /// <summary>
-        /// The resolution target notification scheme for a request with the impact "Low - Service Degraded for One User" when it affects an active SLA that is based on the service offering.
-        /// </summary>
-        [Obsolete("Use resolutionTargetNotificationSchemeLow instead.")]
-        [JsonProperty("slaNotificationSchemeLow")]
-        public SlaNotificationScheme? SlaNotificationSchemeLow { get; internal set; }
-
-        /// <summary>
-        /// The resolution target notification scheme for a request with the impact "Medium - Service Down for One User" when it affects an active SLA that is based on the service offering.
-        /// </summary>
-        [Obsolete("Use resolutionTargetNotificationSchemeMedium instead.")]
-        [JsonProperty("slaNotificationSchemeMedium")]
-        public SlaNotificationScheme? SlaNotificationSchemeMedium { get; internal set; }
-
-        /// <summary>
-        /// The resolution target notification scheme for a request with the impact "Top - Service Down for Several Users" when it affects an active SLA that is based on the service offering.
-        /// </summary>
-        [Obsolete("Use resolutionTargetNotificationSchemeTop instead.")]
-        [JsonProperty("slaNotificationSchemeTop")]
-        public SlaNotificationScheme? SlaNotificationSchemeTop { get; internal set; }
-
-        /// <summary>
         /// An identifier for the client application submitting the resource or the name of an external system.
         /// </summary>
         [JsonProperty("source"), Sdk4meField(IsDefaultQueryProperty = true)]
