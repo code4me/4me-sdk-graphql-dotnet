@@ -9,6 +9,12 @@ namespace Sdk4me.GraphQL
     public class Account : Node
     {
         /// <summary>
+        /// Indicates whether the account is a directory account.
+        /// </summary>
+        [JsonProperty("directory")]
+        public bool? Directory { get; internal set; }
+
+        /// <summary>
         /// Indicates whether the account is disabled.
         /// </summary>
         [JsonProperty("disabled")]

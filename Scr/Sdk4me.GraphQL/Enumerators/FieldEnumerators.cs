@@ -9,6 +9,11 @@ namespace Sdk4me.GraphQL
     public enum AccountField
     {
         /// <summary>
+        /// The directory field.
+        /// </summary>
+        [EnumMember(Value = "directory")]
+        Directory,
+        /// <summary>
         /// The disabled field.
         /// </summary>
         [EnumMember(Value = "disabled")]
