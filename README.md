@@ -371,7 +371,7 @@ var updatedRequest = client.Mutation(new RequestUpdateInput()
             Inline = false
         } 
     }
-}).Result;
+}, new RequestQuery().Select(RequestField.ID)).Result;
 ```
 
 ### Upload an Attachment from URL
@@ -400,7 +400,7 @@ using (HttpClient httpClient = new())
                             Inline = false
                         }
                     }
-                });
+                }, new RequestQuery().Select(RequestField.ID));
             }
         }
     }
@@ -428,7 +428,7 @@ var updatedRequest = client.Mutation(new RequestUpdateInput()
             Inline = true
         } 
     }
-}).Result;
+}, new RequestQuery().Select(RequestField.ID)).Result;
 ```
 
 ## Create a New Event via the Events API
