@@ -1,5 +1,19 @@
-﻿# .NET SDK for 4me GraphQL
+# .NET SDK for 4me GraphQL
 A .NET and .NET Framework client for accessing the [4me GraphQL API](https://developer.4me.com/graphql/).
+
+### ⚠️ **Notice**
+
+This repository and package will be replaced by the new [Xurrent GraphQL repository](https://github.com/xurrent/graphql-dotnet) and the [Xurrent.GraphQL](https://www.nuget.org/packages/Xurrent.GraphQL) NuGet package. However, this repository and its associated NuGet package will remain actively maintained until January 2026.
+
+#### Transition Details
+- **New Repository**: [xurrent/graphql-dotnet](https://github.com/xurrent/graphql-dotnet)
+- **New NuGet Package**: [Xurrent.GraphQL](https://www.nuget.org/packages/Xurrent.GraphQL)
+
+Both repositories and packages will be actively maintained until January 2026. Plan your adoption of the new repository and package in advance of the deadline.
+
+#### Next Steps
+- **New Projects**: Start using the [Xurrent.GraphQL repository](https://github.com/xurrent/graphql-dotnet) and [NuGet package](https://www.nuget.org/packages/Xurrent.GraphQL).
+- **Existing Projects**: You can continue using this repository and package but should plan your transition to the new one in advance of January 2026.
 
 ## Table of Contents
 - [Licensing](#licensing)
