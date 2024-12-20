@@ -1843,25 +1843,35 @@ namespace Sdk4me.GraphQL
     }
 
     /// <summary>
-    /// Attributes to filter product categories.
+    /// Filter to determine which ProductCategory records are returned.
     /// </summary>
     public enum ProductCategoryFilter
     {
         /// <summary>
-        /// Ids to select.
+        /// Filter on node id.
         /// </summary>
         [EnumMember(Value = "id")]
         ID,
         /// <summary>
-        /// Created at in supplied range.
+        /// Filter on account.
+        /// </summary>
+        [EnumMember(Value = "account")]
+        Account,
+        /// <summary>
+        /// Created in supplied range.
         /// </summary>
         [EnumMember(Value = "createdAt")]
         CreatedAt,
         /// <summary>
-        /// Updated at in supplied range.
+        /// Updated in supplied range.
         /// </summary>
         [EnumMember(Value = "updatedAt")]
         UpdatedAt,
+        /// <summary>
+        /// Filter on reference.
+        /// </summary>
+        [EnumMember(Value = "reference")]
+        Reference,
         /// <summary>
         /// Filter on source.
         /// </summary>
@@ -1873,20 +1883,35 @@ namespace Sdk4me.GraphQL
         [EnumMember(Value = "sourceID")]
         SourceID,
         /// <summary>
-        /// References to select.
+        /// Filter on name.
         /// </summary>
-        [EnumMember(Value = "references")]
-        References,
+        [EnumMember(Value = "name")]
+        Name,
         /// <summary>
-        /// Groups to select.
+        /// Filter on group.
         /// </summary>
-        [EnumMember(Value = "groups")]
-        Groups,
+        [EnumMember(Value = "group")]
+        Group,
+        /// <summary>
+        /// Include only if disabled matches supplied value.
+        /// </summary>
+        [EnumMember(Value = "disabled")]
+        Disabled,
         /// <summary>
         /// Filter on rule set.
         /// </summary>
         [EnumMember(Value = "ruleSet")]
         RuleSet,
+        /// <summary>
+        /// Deprecated: use `reference` instead. references to select.
+        /// </summary>
+        [EnumMember(Value = "references")]
+        References,
+        /// <summary>
+        /// Deprecated: use `group` instead. groups to select.
+        /// </summary>
+        [EnumMember(Value = "groups")]
+        Groups,
     }
 
     /// <summary>

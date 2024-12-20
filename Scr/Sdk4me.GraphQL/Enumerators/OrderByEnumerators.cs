@@ -74,6 +74,11 @@ namespace Sdk4me.GraphQL
         /// </summary>
         [EnumMember(Value = "responseTargetAt")]
         ResponseTargetAt,
+        /// <summary>
+        /// Order by updated at.
+        /// </summary>
+        [EnumMember(Value = "updatedAt")]
+        UpdatedAt,
     }
 
     /// <summary>
@@ -82,10 +87,20 @@ namespace Sdk4me.GraphQL
     public enum AgileBoardOrderField
     {
         /// <summary>
+        /// Order by created at.
+        /// </summary>
+        [EnumMember(Value = "createdAt")]
+        CreatedAt,
+        /// <summary>
         /// Order by name.
         /// </summary>
         [EnumMember(Value = "name")]
         Name,
+        /// <summary>
+        /// Order by updated at.
+        /// </summary>
+        [EnumMember(Value = "updatedAt")]
+        UpdatedAt,
     }
 
     /// <summary>
@@ -744,10 +759,57 @@ namespace Sdk4me.GraphQL
     public enum ProductBacklogOrderField
     {
         /// <summary>
+        /// Order by created at.
+        /// </summary>
+        [EnumMember(Value = "createdAt")]
+        CreatedAt,
+        /// <summary>
         /// Order by name.
         /// </summary>
         [EnumMember(Value = "name")]
         Name,
+        /// <summary>
+        /// Order by updated at.
+        /// </summary>
+        [EnumMember(Value = "updatedAt")]
+        UpdatedAt,
+    }
+
+    /// <summary>
+    /// The product category order.
+    /// </summary>
+    public enum ProductCategoryOrderField
+    {
+        /// <summary>
+        /// Order by created at.
+        /// </summary>
+        [EnumMember(Value = "createdAt")]
+        CreatedAt,
+        /// <summary>
+        /// Order by disabled.
+        /// </summary>
+        [EnumMember(Value = "disabled")]
+        Disabled,
+        /// <summary>
+        /// Order by group.
+        /// </summary>
+        [EnumMember(Value = "group")]
+        Group,
+        /// <summary>
+        /// Order by name.
+        /// </summary>
+        [EnumMember(Value = "name")]
+        Name,
+        /// <summary>
+        /// Order by rule set.
+        /// </summary>
+        [EnumMember(Value = "ruleSet")]
+        RuleSet,
+        /// <summary>
+        /// Order by updated at.
+        /// </summary>
+        [EnumMember(Value = "updatedAt")]
+        UpdatedAt,
     }
 
     /// <summary>
@@ -1822,10 +1884,20 @@ namespace Sdk4me.GraphQL
     public enum SurveyOrderField
     {
         /// <summary>
+        /// Order by created at.
+        /// </summary>
+        [EnumMember(Value = "createdAt")]
+        CreatedAt,
+        /// <summary>
         /// Order by name.
         /// </summary>
         [EnumMember(Value = "name")]
         Name,
+        /// <summary>
+        /// Order by updated at.
+        /// </summary>
+        [EnumMember(Value = "updatedAt")]
+        UpdatedAt,
     }
 
     /// <summary>
@@ -1834,10 +1906,20 @@ namespace Sdk4me.GraphQL
     public enum SurveyResponseOrderField
     {
         /// <summary>
+        /// Order by created at.
+        /// </summary>
+        [EnumMember(Value = "createdAt")]
+        CreatedAt,
+        /// <summary>
         /// Order by responded at.
         /// </summary>
         [EnumMember(Value = "respondedAt")]
         RespondedAt,
+        /// <summary>
+        /// Order by updated at.
+        /// </summary>
+        [EnumMember(Value = "updatedAt")]
+        UpdatedAt,
     }
 
     /// <summary>
