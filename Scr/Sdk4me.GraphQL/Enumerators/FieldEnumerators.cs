@@ -14,6 +14,11 @@ namespace Sdk4me.GraphQL
         [EnumMember(Value = "directory")]
         Directory,
         /// <summary>
+        /// The directory account field.
+        /// </summary>
+        [EnumMember(Value = "directoryAccount")]
+        DirectoryAccount,
+        /// <summary>
         /// The disabled field.
         /// </summary>
         [EnumMember(Value = "disabled")]
