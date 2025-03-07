@@ -2571,7 +2571,7 @@ namespace Sdk4me.GraphQL
         [EnumMember(Value = "nextTargetAt")]
         NextTargetAt,
         /// <summary>
-        /// Customer target at in supplied range.
+        /// Customer target in supplied range.
         /// </summary>
         [EnumMember(Value = "customerTargetAt")]
         CustomerTargetAt,
